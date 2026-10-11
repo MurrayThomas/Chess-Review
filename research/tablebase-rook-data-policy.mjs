@@ -21,8 +21,12 @@ async function admission(root,purpose){
 }
 export async function openResearchRookTablebaseSources({root=repo}={}){const a=await admission(root,'collect');return{exports:structuredClone(a.r.source.exports),receipt:a.receipt};}
 export async function openResearchRookTablebaseSource(url,{root=repo}={}){const a=await openResearchRookTablebaseSources({root}),e=a.exports.find(e=>e.url===url);if(!e)fail('unregistered exact export');return{...e,receipt:a.receipt};}
-export async function openResearchRookTablebases({root=repo,purpose='test'}={}){
- const a=await admission(root,purpose),raw=await bytes(root,a.r.manifest),m=JSON.parse(raw);if(m.schema!=='syzygy-rook-wdl-manifest-v1'||m.dataset!=='T002'||m.originFormat!=='syzygy-krpvkr-wdl-v1'||m.status!=='complete'||m.material!=='KRPvKR'||m.capturePromotionClosure!=='complete20-WDL-plus-KK-mechanical'||!Array.isArray(m.files)||m.files.length!==exports.length)fail('incomplete/unsupported manifest');
+export async function openResearchRookTablebaseSession({root=repo,purpose='test'}={}){
+ const a=await admission(root,purpose);return{receipt:structuredClone(a.receipt),readTables:()=>admittedFiles(root,a)};
+}
+export async function openResearchRookTablebases(options={}){return(await openResearchRookTablebaseSession(options)).readTables();}
+async function admittedFiles(root,a){
+ const raw=await bytes(root,a.r.manifest),m=JSON.parse(raw);if(m.schema!=='syzygy-rook-wdl-manifest-v1'||m.dataset!=='T002'||m.originFormat!=='syzygy-krpvkr-wdl-v1'||m.status!=='complete'||m.material!=='KRPvKR'||m.capturePromotionClosure!=='complete20-WDL-plus-KK-mechanical'||!Array.isArray(m.files)||m.files.length!==exports.length)fail('incomplete/unsupported manifest');
  const files={};for(const e of a.r.source.exports){const f=m.files.find(f=>f.name===e.name);if(!f||f.path!==dataDir+'/files/'+e.name||f.url!==e.url||f.finalUrl!==e.url||f.bytes!==e.bytes||f.sha256!==e.sha256||!f.retrievedAt||f.sourceRegistrySha256!==a.receipt.registrySha256)fail('acquisition origin differs');const data=await bytes(root,f.path);if(data.length!==e.bytes||sha256(data)!==e.sha256||data.subarray(0,4).toString('hex')!=='71e8235d'||data.length%64!==16)fail('table hash/size/header differs');files[e.name]={path:f.path,bytes:f.bytes,sha256:f.sha256};}
  return{directory:await realpath(path.join(root,dataDir,'files')),receipt:{...a.receipt,manifestSha256:sha256(raw),files}};
 }
