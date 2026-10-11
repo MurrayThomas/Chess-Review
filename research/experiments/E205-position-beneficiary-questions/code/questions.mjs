@@ -1,0 +1,17 @@
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+import {inspectMinorContext} from '../../E186-minor-context-comparisons/code/minors.mjs';
+const all=['C1069','C1070'],keys=['actual','fresh','replaced','context','contextReplaced'];
+export function inspectPositionBeneficiary(input,options={}){
+ plain([input,options]);
+ if(!options||typeof options!=='object'||Array.isArray(options)||Object.keys(options).some(k=>!['enabled','player','ids','maxNodes','comparison'].includes(k)))throw Error('Invalid position-question options');
+ const enabled=options.enabled??false,player=options.player,ids=options.ids===undefined?all:options.ids,limit=options.maxNodes===undefined?50000:options.maxNodes,comparison=options.comparison===undefined?{}:options.comparison;
+ if(options.enabled===null||typeof enabled!=='boolean'||player!==undefined&&!['w','b'].includes(player)||enabled&&player===undefined||!Array.isArray(ids)||!ids.length||new Set(ids).size!==ids.length||ids.some(id=>!all.includes(id))||!Number.isSafeInteger(limit)||limit<0||limit>50000||!comparison||typeof comparison!=='object'||Array.isArray(comparison)||Object.keys(comparison).some(k=>!['pawn','contextMoves','plies','proofs'].includes(k)))throw Error('Invalid position-question controls');
+ let nodes=0;const empty=()=>ids.map(id=>({id,available:false,side:null,relation:null,frame:null,criterion:'finite-conversion-or-mate-context-resource',reason:null})),done=(status,source=null,witness=null,answers=empty())=>({schema:'E205-position-beneficiary',status,limit,nodes,player:player??null,ids:[...ids],answers,source,witness}),exhaust=()=>{nodes=limit+1;return done('exhausted');};
+ if(!enabled)return done('disabled');if(!limit)return exhaust();nodes=1;
+ const source=inspectMinorContext(input,{...comparison,enabled:true,maxNodes:limit-1});if(source.status==='exhausted')return exhaust();nodes+=source.nodes;
+ if(!source.witness)return done(source.status,structuredClone(source));
+ const w=source.witness,extra=2+w.actualType.pawns.length+w.relocations.length+keys.length+(w.blockedKingRoute?1:0)+ids.length;if(nodes+extra>limit)return exhaust();nodes+=extra;
+ const witness={actor:w.actor,frame:w.after,frameKind:'recorded-after-actual',history:structuredClone(input.history),goal:{kind:'actor-mate-or-positive-retained-queen-after-every-immediate-defense',pawn:w.pawn,plies:source.plies,baseline:w.before},operationalContext:structuredClone(w.actualType),comparison:{kind:'artificial-material-matched-pawn-relocation-and-equal-valued-minor-replacement',frame:w.contextAfter,context:structuredClone(w.counterType),relocations:structuredClone(w.relocations),queries:keys.map(key=>({key,frame:w.queries[key].rootFen,win:w.queries[key].win}))},functionalRole:structuredClone(w.blockedKingRoute),observedClosedComparison:w.observedClosedComparison,closedPrerequisite:'fixed-pawn-causal-route-or-blockage-proof'};
+ const answers=ids.map(id=>{const available=id==='C1069'&&source.claims.C0711;return{id,available:!!available,side:available?w.actor:null,relation:available?(w.actor===player?'own':'opponent'):null,frame:w.after,criterion:'finite-conversion-or-mate-context-resource',reason:available?null:id==='C1070'?'context-causality-prerequisite':'functional-open-resource-prerequisite'};});
+ return done(answers.some(a=>a.available)?'proven':source.status==='context-causality-prerequisite'?'context-causality-prerequisite':'bounded-unresolved',structuredClone(source),witness,answers);
+}
