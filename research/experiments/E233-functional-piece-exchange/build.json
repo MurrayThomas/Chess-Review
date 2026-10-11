@@ -1,0 +1,47 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E233",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0866",
+      "scope": "Same original nonpawn piece has a legal immediate mating alternative; actual ordinary capture exchanges it for an enemy nonpawn piece and a legal recapture of that original unit immediately mates its own king. No forced-recapture, general activity/value, best move or mental-state claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E233-functional-piece-exchange/code/check-result.mjs": "31e2e8023b507827bf5fa121ee31a820ea060c84a93ccfc0adeb79464020c280",
+    "research/experiments/E233-functional-piece-exchange/code/contract.mjs": "7926e1e4750c6e6ed1b619e611602b8383c4dcacbb11a72bcfa488dee3043c7a",
+    "research/experiments/E233-functional-piece-exchange/code/exchange.mjs": "63e50b0c7dd9b9e5a20808456d5a8ab96af6523197b4c262fca943b5d98bb8ae",
+    "research/experiments/E233-functional-piece-exchange/code/exchange.test.mjs": "b43c6af2a7d9aee5f7d361890403f5b4b64117f3f83b0c1d117c11c1478cf353",
+    "research/experiments/E233-functional-piece-exchange/code/fixtures.mjs": "3be456a9f4a558b0684c22cd53fece313ed02a54ea3fa69724b39c5887ead293",
+    "research/experiments/E233-functional-piece-exchange/code/record-build.mjs": "ee15e587a3f0d915142167aa60692e417e5b2884e590c84cffed4d6ba492a47f",
+    "research/experiments/E233-functional-piece-exchange/code/run-focused.mjs": "fa715f09b8afd809c35dcb5f6c2ed38f16bef2bdc589a3c009bfbfb2f57f0502",
+    "research/experiments/E233-functional-piece-exchange/plan.md": "ddd3ebde8c3edfd95e22ebe799bdcdf1f3784df9c4652dc762f990db1bedeeab",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E233-functional-piece-exchange/code/exchange.test.mjs (11 focused checks)",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined independent saved replay/original occurrence/integration/claim/history/terminal/priority matrices",
+    "changed main/repeat/initially clean reproductions at combined freeze",
+    "general activity/strong-piece/lasting value, longer and equal-material exchanges, complete earlier history",
+    "independent chess truth, eligible real-game precision/human usefulness and separate production promotion"
+  ]
+}
