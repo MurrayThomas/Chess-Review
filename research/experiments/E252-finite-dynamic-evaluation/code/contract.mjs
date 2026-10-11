@@ -1,0 +1,4 @@
+import {validate as parent} from '../../E245-adaptive-rook-defense/code/contract.mjs';
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+export function validate(input,options={}){plain([input,options]);if(!options||Array.isArray(options)||typeof options!=='object'||Object.keys(options).some(k=>!['enabled','maxRecords','policy'].includes(k)))throw Error('Invalid dynamic controls');const policy=options.policy===undefined?'all-legal':options.policy;if(!['all-legal','same-rook-checks'].includes(policy))throw Error('Invalid dynamic policy');const o=parent(input,Object.fromEntries(Object.entries(options).filter(([k])=>k!=='policy')));return{...o,policy};}
+export const empty=o=>({schema:'E252-finite-dynamic-evaluation',status:'disabled',policy:o.policy,limit:o.maxRecords,requiredRecords:0,usedRecords:0,view:null,claims:{C0570:false},qualityClaim:false});
