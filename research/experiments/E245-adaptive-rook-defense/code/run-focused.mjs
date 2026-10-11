@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {execFileSync,spawnSync} from 'node:child_process';
+import {openResearchData} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {admitSaved} from './admission.mjs';
+import {inspectAdaptiveRookDefense} from './policy.mjs';
+import {checkAdaptiveDefense} from './check-result.mjs';
+const dir='research/experiments/E245-adaptive-rook-defense',out=dir+'/evidence/focused',guard=await openResearchData(['D001'],{purpose:'test'}),parent=JSON.parse(await readFile('research/experiments/E244-static-material-dynamic-resource/build.json','utf8'));assert.deepEqual(parent.inputHashes,await bindings(Object.keys(parent.inputHashes)));await mkdir(out,{recursive:true});
+const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),inputHashes=await bindings([dir+'/plan.md',dir+'/code/archive-lock.json',dir+'/code/run-focused.mjs',dir+'/code/policy.test.mjs',...Object.keys(parent.inputHashes)]),receipt=guard.receipt;await writeFile(out+'/started.json',JSON.stringify({revision,inputHashes,receipt},null,2)+'\n',{flag:'wx'});
+const rows=[];let error=null;const start=performance.now();try{for(const x of await admitSaved()){const result=inspectAdaptiveRookDefense(x.input,{enabled:true},x.token);checkAdaptiveDefense(x.input,{enabled:true},x.token,result);rows.push({id:x.id,input:x.input,result});assert(result.available);}assert.equal(rows.length,2);}catch(e){error=e.stack;}
+const seconds=(performance.now()-start)/1000;await writeFile(out+'/'+(error?'pilot-failure':'pilot')+'.json.gz',gzipSync(JSON.stringify({revision,inputHashes,receipt,rows,seconds,error,freshProbes:0})+'\n'),{flag:'wx'});
+console.log(JSON.stringify({rows:rows.length,seconds,error,policies:rows.map(r=>({id:r.id,requiredRecords:r.result.requiredRecords,adaptive:r.result.context.adaptiveNonloss,checking:r.result.context.checkingNonloss,quietChecking:r.result.context.quietCheckingNonloss,refutations:r.result.context.checkingRefutations,branches:r.result.context.replies.map(p=>({reply:p.reply,nonlosing:p.nonlosing,checking:p.checkingRook,quietChecking:p.quietCheckingRook,capturingChecks:p.afterReply.actions.filter(a=>a.checking&&a.captured).map(a=>({move:a.move,actorWdl:a.actorWdl,material:a.material}))}))}))}));assert.equal(error,null);
+const t=performance.now(),r=spawnSync(process.execPath,['--test',dir+'/code/policy.test.mjs'],{encoding:'utf8',windowsHide:true,timeout:30000}),focusedSeconds=(performance.now()-t)/1000;await writeFile(out+'/'+(r.status===0?'focused-checks':'focused-failure')+'.json',JSON.stringify({revision,inputHashes,receipt,command:'node --test '+dir+'/code/policy.test.mjs',seconds:focusedSeconds,exitCode:r.status,signal:r.signal,processError:r.error?.message??null,stdout:r.stdout,stderr:r.stderr,freshProbes:0},null,2)+'\n',{flag:'wx'});console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);console.log(JSON.stringify({focusedSeconds}));
