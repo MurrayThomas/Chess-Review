@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {Chess} from '../../../../lib/chess.js';
+import {failure} from './failure-saved.mjs';
+import {inspectSecondWeakness,checkResult} from './second.mjs';
+const a=await failure(),f=a.row;
+test('retained full negative semantically replays unchanged detector and independent checker',()=>{const r=inspectSecondWeakness(f.input,f.options,f.panel);assert.deepEqual(r,a.failed.result);checkResult(f.input,f.options,f.panel,r);assert.deepEqual(r.claims,{C0913:false,C0915:false,C1079:false});});
+test('root and retained first vulnerabilities do not substitute for target exploitation',()=>{const w=a.failed.result.witness;assert.equal(w.first.profitable,true);assert.ok(w.roles.every(r=>r.first.profitable));assert.equal(w.structure.forced,false);assert.equal(w.created,false);assert.equal(w.second,false);assert.ok(w.structure.escapes.length);});
+test('promotion with check is a legal complete-search counterchoice after target capture',()=>{const r=f.panel.variants[0].replies[0],cap=r.captures[0],c=new Chess(f.input.history.fen);for(const m of f.input.history.moves)c.move(m);for(const m of [f.input.move,r.played.move,cap.played.move])c.move(m);assert.equal(cap.query.tree.win,false);assert.equal(cap.query.tree.kind,'counterchoice');assert.equal(cap.query.tree.move,'d2d1q');const move=c.move(cap.query.tree.move);assert.equal(move.promotion,'q');assert.equal(c.isCheck(),true);assert.equal(c.get('a1')?.type,'k');});
+test('six cheap context checks retained; source collection stopped after first unexpected result',()=>{assert.equal(a.context.rows.length,6);assert.equal(a.context.freshSearchQueries,0);assert.equal(a.failed.freshContexts,1);assert.equal(a.failed.freshNodes,305);assert.ok(a.context.rows[0].root.captures.some(q=>q.positive));assert.ok(a.context.rows[0].root.captures.some(q=>!q.positive));});

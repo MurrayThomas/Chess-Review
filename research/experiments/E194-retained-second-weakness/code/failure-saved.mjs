@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {sha256} from '../../../data-policy.mjs';
+import {saved as inherited} from '../../E193-forced-second-weakness/code/final-saved.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+export async function failure(){const a=await inherited(),dir='research/experiments/E194-retained-second-weakness',file=dir+'/evidence/observations.json.gz',bytes=await readFile(file),raw=JSON.parse(gunzipSync(bytes)),ff=dir+'/evidence/hypothesis-failure.json.gz',fb=await readFile(ff),failed=JSON.parse(gunzipSync(fb)),cf=dir+'/evidence/context-checks.json',cb=await readFile(cf),context=JSON.parse(cb);assert.deepEqual(raw.datasetReceipt,a.receipt);assert.deepEqual(raw.parentArchives,a.hashes);assert.deepEqual(raw.sourceHashes,await bindings([dir+'/code/collect.mjs']));assert.equal(raw.contextChecksSha256,sha256(cb));assert.equal(context.passed,true);assert.deepEqual(context.datasetReceipt,a.receipt);assert.deepEqual(context.sourceHashes,await bindings([dir+'/code/context-smoke.mjs']));assert.equal(raw.rows.length,1);assert.equal(failed.observationHash,sha256(bytes));assert.deepEqual(failed.datasetReceipt,a.receipt);assert.deepEqual(failed.sourceHashes,raw.sourceHashes);assert.equal(failed.freshNodes,305);return{row:raw.rows[0],context,failed,receipt:a.receipt,hashes:{...a.hashes,[file]:sha256(bytes),[ff]:sha256(fb),[cf]:sha256(cb)}};}
