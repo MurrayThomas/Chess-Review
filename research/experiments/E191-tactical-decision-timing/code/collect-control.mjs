@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {saved,key,parents} from './saved.mjs';
+import {claimControl as f} from './fixtures.mjs';
+import {context} from '../../E169-passive-defense-counterplay/code/context.mjs';
+import {collectPanel} from '../../E169-passive-defense-counterplay/code/panel.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+const a=await saved(),k=key(f.source,f.input,f.options);assert.ok(!a.rows.some(r=>r.source===f.source&&r.key===k),'Reuse matching archived panel');
+const i={fen:f.input.fen,move:f.input.move,history:f.input.history,defenseAlternative:f.input.alternative},ctx=context(i,0,0);assert.equal(ctx.status,'ready');
+const panel=collectPanel(ctx,50000),dir='research/experiments/E191-tactical-decision-timing/evidence';await mkdir(dir,{recursive:true});await writeFile(dir+'/claim-control.json.gz',gzipSync(JSON.stringify({datasetReceipt:a.receipt,sourceHashes:await bindings(['research/experiments/E191-tactical-decision-timing/code/collect-control.mjs']),reuseAudit:{key:k,archives:a.hashes,matched:0},input:f.input,options:f.options,panel})+'\n'));console.log(JSON.stringify({freshContexts:1,nodes:panel.nodes,reusedArchives:Object.keys(a.hashes).length}));

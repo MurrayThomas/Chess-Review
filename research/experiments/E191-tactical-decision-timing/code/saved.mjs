@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {sha256,openResearchData} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+export const parents={defense:'research/experiments/E169-passive-defense-counterplay',structure:'research/experiments/E168-forced-pawn-weakness'};
+export const key=(source,i,o)=>JSON.stringify(source==='defense'?[i.fen,i.history,[i.move,i.alternative].sort(),o.ownPlies??2,o.enemyPlies??3]:[i.fen,i.history,i.move,i.alternative,i.pawn,o.ownPlies??2]);
+export async function saved(){const data=await openResearchData(['D001'],{purpose:'test'}),hashes={},rows=[];for(const [source,parent]of Object.entries(parents)){const file=parent+'/evidence/observations.json.gz',bytes=await readFile(file),raw=JSON.parse(gunzipSync(bytes)),closure=await bindings([parent+'/code/panel.mjs',...(source==='defense'?[parent+'/code/context.mjs']:[])]);hashes[file]=sha256(bytes);assert.deepEqual(raw.datasetReceipt,data.receipt);assert.deepEqual(raw.sourceHashes,closure);for(const [index,r]of raw.rows.entries()){const p=r.panel??(source==='defense'?r.result?.defenseComparisonAnalysis?.witness?.panel:r.result?.forcedWeaknessAnalysis?.witness?.panel);if(!p)continue;const i=r.input;rows.push({source,key:key(source,{fen:i.fen,history:i.history,move:i.move,alternative:source==='defense'?i.defenseAlternative:i.weaknessQuiet,pawn:i.weaknessPawn},{ownPlies:source==='defense'?i.counterplayPlies:i.weaknessMatePlies,enemyPlies:i.passiveLossPlies}),panel:p,ref:{file,index,source}});}}
+ return{receipt:data.receipt,hashes,rows,find:(source,input,options)=>{const r=rows.find(r=>r.source===source&&r.key===key(source,input,options));assert.ok(r,'No exact saved timing source panel');return r;}};}
