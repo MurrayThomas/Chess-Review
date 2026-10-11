@@ -1,0 +1,69 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E242",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0860",
+      "scope": "Reported ignore-development rule excludes first original-minor departure in full standard-start opening history; actual permits named immediate enemy mate, alternative has complete absence of enemy mate-in-one and positive legal same-original-developed-unit defense to that named check. Bounded reported opportunity only, not inferred intent, globally safe/unique/best development or general strategic value."
+    },
+    {
+      "id": "C0861",
+      "scope": "Reported material-only rule excludes a same-original-mover noncapturing immediate mate; actual maximizes explicit captured-unit nominal value across ALL legal captures but permits named enemy immediate mate. No motive inferred from a capture alone, authenticated cognition, general material value or forced/global-loss claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E025-pawn-formations/code/formations.mjs": "e1d52eddcd92da7229213fa99e3bfd3bc6ebe1bcb5a4492aacee0c6bdd0a81cf",
+    "research/experiments/E025-pawn-formations/code/selection.mjs": "189e73c5fc6a7f2083cb70644baf1d980f86f32cac281a21a829ccd88c7e70fc",
+    "research/experiments/E026-pin-proofs/code/proofs.mjs": "4e2962a201f90858d7f0d5255d9d718e30449fdae51db2868c4c40e3bc5dade8",
+    "research/experiments/E027-defensive-resources/code/defense.mjs": "43e8d09fe3928793cdea30d00b33fb6538640a1b7903ee12f18c9e074195eeab",
+    "research/experiments/E028-mating-patterns/code/patterns.mjs": "5655557ef51dcda0688c98b3518408cbe6b509b0e255637257c4f0ea9c1e552e",
+    "research/experiments/E029-forced-mates/code/mates.mjs": "dabf4dac0f0e6cc54eb26783b4ade335a0b37d61ca851e9ded1448a825092228",
+    "research/experiments/E030-mating-sacrifices/code/sacrifices.mjs": "4a16a83f2c7cd0ad452670be45e5441f890aec375221f193875cc2da47e9b88f",
+    "research/experiments/E031-intermediate-moves/code/intermediate.mjs": "a0e6fa2d206e864ea120b488c85b5753df9defe70463b6d37b03a9402f567e4a",
+    "research/experiments/E032-draw-history/code/draws.mjs": "29a7fee649b44a611ba1705707c64a3a7b386bb27f0de35dad157342fb5961cf",
+    "research/experiments/E033-mobility-traps/code/traps.mjs": "de29e49c614ad22e2d5fdc08995a37fb074e025766391de51d40785fb991a872",
+    "research/experiments/E034-bishop-patterns/code/bishops.mjs": "c3e647d4464e94063085d6943e9672c5c749b13cdbce1622899c78af62db1764",
+    "research/experiments/E035-opening-development/code/opening.mjs": "2401040f3d2c85f58d0d96968911459b6a71ae726a1f79be7e143a03a4ed2b08",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E233-functional-piece-exchange/code/fixtures.mjs": "3be456a9f4a558b0684c22cd53fece313ed02a54ea3fa69724b39c5887ead293",
+    "research/experiments/E242-reported-material-development/code/check-result.mjs": "9ee627d75417ca2aa0c337c94ba9401ec8594744b87417a536224ca4ef347c1b",
+    "research/experiments/E242-reported-material-development/code/choices.mjs": "e3554a73062acde4d05abe13ceab9435178d5709371757a3f51a357d268008f6",
+    "research/experiments/E242-reported-material-development/code/choices.test.mjs": "570e3e931ad048de0bc0622b9b08bc995e7298209b5bce833abf2db4a2cfe7ab",
+    "research/experiments/E242-reported-material-development/code/contract.mjs": "fefb36acb12c42307e43aa6073ab330b3546b51eb71c06605063b27830d05904",
+    "research/experiments/E242-reported-material-development/code/fixtures.mjs": "cf5d459ddc1b8198ba32a0b823a79c25414a6decfab6d41886f0c0fc5bf05304",
+    "research/experiments/E242-reported-material-development/code/record-build.mjs": "a6271ba96e3632170924817ebeef9aaab51873152527188fd8003168ac00fe56",
+    "research/experiments/E242-reported-material-development/code/run-focused.mjs": "62c8112c5b38ba88da582b00e1bd977b803f6acacfe336f660bf25b47e20107c",
+    "research/experiments/E242-reported-material-development/plan.md": "d110aecd456bc11ae207ca81d86766a31ae092f7739f7df075e82b7838643459",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E242-reported-material-development/code/choices.test.mjs (9 focused checks)",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined original occurrence/absence/history/claim/terminal/priority/budget matrices, independent replay/integration",
+    "changed main/repeat/initially clean reproductions at combined freeze",
+    "authenticated decision evidence and broader nonmating material/development causality/strategic quality",
+    "independent chess truth, eligible real-game precision/human usefulness and separate production promotion"
+  ]
+}
