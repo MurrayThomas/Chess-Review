@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {mkdir,readFile,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {execFileSync} from 'node:child_process';
+import {Chess} from '../../../../lib/chess.js';
+import {saved} from '../../E190-liquidation-commitment/code/saved.mjs';
+import {fixtures as oldSacrifices} from '../../E108-exchange-sacrifice-choices/code/fixtures.mjs';
+import {tracedQuery} from '../../E144-causal-piece-coordination/code/query.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {fresh} from './fixtures.mjs';
+const dir='research/experiments/E196-phase-change-simplification-window',file=dir+'/evidence/delays.json.gz',a=await saved();try{await readFile(file);throw Error('Raw exists: reuse instead of recollection');}catch(e){if(e.code!=='ENOENT')throw e;}await mkdir(dir+'/evidence',{recursive:true});const sourceHashes=await bindings([dir+'/code/collect-delay.mjs']),revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),rows=[];
+for(const f of fresh){const parent=a.find(f.input);assert.ok(parent.panel.variants.every(v=>v.query.plies===2));const priorMatches=oldSacrifices.filter(s=>s.fen===f.input.fen&&JSON.stringify(s.history)===JSON.stringify(f.input.history)).length;assert.equal(priorMatches,0,'Inspect exact E108 reuse before collection');const c=new Chess(f.input.history.fen);let nodes=0,error,proof;const visited=[],tick=()=>{visited.push(c.fen());if(++nodes>5000)throw Error('delay-pilot-budget');};try{tick();for(const m of f.input.history.moves){tick();c.move(m);}assert.equal(c.fen(),new Chess(f.input.fen).fen());const actor=c.turn();tick();c.move(f.input.alternative);const query=tracedQuery(c,actor,4,tick);proof={schema:'E196-delay-proof-v1',input:{fen:f.input.fen,history:f.input.history,alternative:f.input.alternative,actor,plies:4},query,nodes};}catch(e){error=e.stack;}rows.push({id:f.id,input:f.input,proof,error,partialVisited:error?visited:undefined,reuseAudit:{parent:parent.ref,parentH:2,priorFixtureMatches:priorMatches,queryH:4,matched:0}});await writeFile(file,gzipSync(JSON.stringify({schema:'E196-delays-v1',revision,node:process.version,argv:process.argv,datasetReceipt:a.receipt,sourceHashes,parentArchives:a.hashes,cap:5000,rows})+'\n'));if(error)throw Error(error);assert.equal(proof.query.tree.win,false,'Extended delay hypothesis refuted: stop new collection');console.log(JSON.stringify({id:f.id,nodes:proof.nodes,win:proof.query.tree.win,claim:proof.query.searchClaim}));}

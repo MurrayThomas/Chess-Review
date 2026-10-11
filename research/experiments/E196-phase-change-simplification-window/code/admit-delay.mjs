@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import {Chess} from '../../../../lib/chess.js';
+import {replayTrace} from '../../E144-causal-piece-coordination/code/trace-check.mjs';
+export function admitDelay(input,p){const c=new Chess(input.history.fen);for(const m of input.history.moves){assert.equal(c.isGameOver(),false);c.move(m);}assert.equal(c.fen(),new Chess(input.fen).fen());const actor=c.turn();c.move(input.alternative);assert.deepEqual(Object.keys(p).sort(),['input','nodes','query','schema']);assert.equal(p.schema,'E196-delay-proof-v1');assert.deepEqual(p.input,{fen:input.fen,history:input.history,alternative:input.alternative,actor,plies:4});const checked=replayTrace(c,p.query,actor,4),nodes=2+input.history.moves.length+checked.nodes;assert.equal(p.nodes,nodes);return{nodes,claim:checked.claim};}
