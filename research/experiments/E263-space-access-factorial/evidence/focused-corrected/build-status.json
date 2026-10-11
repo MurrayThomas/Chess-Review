@@ -1,0 +1,38 @@
+{
+  "acceptedExperiment": "E082",
+  "accepted": 378,
+  "entries": 1085,
+  "provisional": 535,
+  "acceptedOrCandidate": 913,
+  "readyBatches": 158,
+  "staleBatches": 0,
+  "withoutReadyCode": 172,
+  "newBatch": [
+    {
+      "experiment": "E263",
+      "stage": "code-ready",
+      "claims": [
+        {
+          "id": "C0887",
+          "scope": "Source-admitted finite quiet supported enemy-half knight-post access: same-placement two-army four-ply policies plus matched single-pawn relocation and reflected joint gate. Saved authored matrix only; five failed contexts abstain. No general space value, optimal play, all-piece access, lasting safety/support or human truth; full original scope remains open."
+        }
+      ],
+      "pendingIds": [
+        "C0887"
+      ],
+      "changedInputs": [],
+      "focusedChecks": [
+        "node --test research/experiments/E263-space-access-factorial/code/comparison.test.mjs (14/14 pass; zero fresh queries)",
+        "node --test research/experiments/E261-two-army-outpost-space/code/proof.test.mjs research/experiments/E262-direct-outpost-space/code/proof.test.mjs (17/17 pass)",
+        "Twelve saved comparisons independently reconstructed at the focused freeze, all48 factorial policies and4neutrals semantically admitted; one context qualifies in both colors"
+      ],
+      "deferredChecks": [
+        "full original space-imbalance meaning: whole-position value, other pieces, durable support/safety and independently assessed usefulness",
+        "combined full original-occurrence, history/terminal/priority/budget integration and cumulative coach regression",
+        "independent saved semantic cross-check and changed main/repeat/initially clean reproductions",
+        "arbitrary real-game position/history adapters and real-game precision; saved synthetic input only"
+      ],
+      "recordPath": "C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E263-space-access-factorial\\build.json"
+    }
+  ]
+}
