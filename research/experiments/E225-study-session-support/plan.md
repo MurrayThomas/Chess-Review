@@ -65,3 +65,9 @@ solutions, adaptivity/mastery, learning benefit, mental-state truth, source/data
 eligibility for real model games, persistent/multi-user UI, combined integration
 and separate production promotion remain open. Every original strategic scope
 remains required; a session or matching answer does not discharge it.
+
+Pre-evaluation projection clarification: hidden preparation totals could hint at
+key length or context content. Public pliesUsed stays null until all tasks reveal;
+submittedPlies reports only the learner's own charged moves. Full accounting is
+then disclosed. Adapter review materials are explicitly supplied context, not an
+implicit same-position or causal link to the exercise.
