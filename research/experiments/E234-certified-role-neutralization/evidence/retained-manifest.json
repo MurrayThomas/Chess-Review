@@ -1,0 +1,43 @@
+{
+  "schema": "E234-retained-evidence-manifest",
+  "datasetRegistrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+  "hashMode": "exact-file-bytes",
+  "files": {
+    "started.json": {
+      "bytes": 12076,
+      "sha256": "e58b52b0a3f8551bf7fcba102e8663f3509b7a66b3ffec18d747a77bc34675f3"
+    },
+    "pilot-failure.json": {
+      "bytes": 66980,
+      "sha256": "bdcbf1ee4db9758e3caa33f29ffdba45d8363e8e9465e281b6a5a29acb3a9e24"
+    },
+    "revised/started.json": {
+      "bytes": 12220,
+      "sha256": "7749e17105b26d876321a7377402a619c85cd2468f90311b8521b6b5f82134d0"
+    },
+    "revised/pilot.json": {
+      "bytes": 73422,
+      "sha256": "23152d559b7b04bfedc968a955db7edbe5898c6ab77f87ed7349843d2fd1b8f4"
+    },
+    "revised/focused-failure.json": {
+      "bytes": 14682,
+      "sha256": "66e7b877491abfc427c6188b5d01ce1c3929ad576b36657730fbadee3b884536"
+    },
+    "role-control/started.json": {
+      "bytes": 12377,
+      "sha256": "e059853e9ea61178133f5b2ae36fb3817655d641dd2c8e9a76bda2c94431b6c7"
+    },
+    "role-control/pilot.json": {
+      "bytes": 72988,
+      "sha256": "b3ea0129fabbc965225eed6cee04705fa98f7a78c5aa512cb7859bbc8e932326"
+    },
+    "role-control/focused-checks.json": {
+      "bytes": 13755,
+      "sha256": "4e343a73339ba92c925bd99a5cf52bc8635f44820550c641f36baf3d1321e901"
+    },
+    "role-control/provenance.json": {
+      "bytes": 13257,
+      "sha256": "aedba3a79df56e4143990590c685e92a1a53c217eec1c6fb0d3934b3759151cd"
+    }
+  }
+}

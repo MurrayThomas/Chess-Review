@@ -1,0 +1,49 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E234",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0784",
+      "scope": "Actual ordinary capture of a named original enemy nonpawn piece gives mate; a distinct legal quiet move by the same actor unit leaves that exact enemy piece able to give mate instead. Positive identity-bound role and opposed outcomes only; no general strength/value or best-move claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E234-certified-role-neutralization/amendment.md": "a5293a6f3e6e3cdb0c4c43150bdba1173b797abd399e252da381ed64d7e107e8",
+    "research/experiments/E234-certified-role-neutralization/code/check-result.mjs": "3f7c46aa7c843a279fa6430a3a8dd7314cf0c4398e8b46e8b09963865450b972",
+    "research/experiments/E234-certified-role-neutralization/code/contract.mjs": "088a755355f8df2ff4949a1687ddb780f596229639c4ebb41d9b71375099ae40",
+    "research/experiments/E234-certified-role-neutralization/code/fixtures.mjs": "07ac4da5e73b7fa33ab64ff6abe2a1e196902ea02908c1590a0eb86aad97a5d1",
+    "research/experiments/E234-certified-role-neutralization/code/neutralize.mjs": "ad180515bd3ea2b2dff2ae5050e8378bd5f30a04269c707ea0c5194e3c869356",
+    "research/experiments/E234-certified-role-neutralization/code/neutralize.test.mjs": "5f84694880b2eae4e4ec1da1dc8353d30f92f26404982c193ff9305ff37bd9b1",
+    "research/experiments/E234-certified-role-neutralization/code/record-build.mjs": "867cebc266f33b349554e691944f989488b5d27ec9e6df455e4ca1fb41db7df9",
+    "research/experiments/E234-certified-role-neutralization/code/run-focused.mjs": "a40e396d1a8014d93850276772b61178e613b0c698e29997530860d197a5b2c9",
+    "research/experiments/E234-certified-role-neutralization/plan.md": "9bc199e37204eaf1222cff42166531131274041cd40c1ee74c44ba797e2e7a02",
+    "research/experiments/E234-certified-role-neutralization/role-control-amendment.md": "953514d92ad7540be25e630c066773b9c4da9d56ec64f2aab097cc4267583766",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E234-certified-role-neutralization/code/neutralize.test.mjs (12 focused checks)",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined independent saved replay/original occurrence/integration/claim/history/terminal/priority matrices",
+    "changed main/repeat/initially clean reproductions at combined freeze",
+    "general strength/nontactical value, sustained noncapturing neutralization, longer comparisons and complete earlier history",
+    "independent chess truth, eligible real-game precision/human usefulness and separate production promotion"
+  ]
+}
