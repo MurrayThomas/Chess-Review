@@ -1,0 +1,13 @@
+{
+  "id": "exchange-h5h7-quiet",
+  "phase": "quiet",
+  "seconds": 1.3753954000000004,
+  "probes": 16,
+  "rootWdl": 0,
+  "outcome": true,
+  "nonterminal": true,
+  "deficit": true,
+  "rows": true,
+  "costPass": true,
+  "passes": true
+}

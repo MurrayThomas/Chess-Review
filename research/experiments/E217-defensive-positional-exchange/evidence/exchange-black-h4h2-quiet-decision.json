@@ -1,0 +1,13 @@
+{
+  "id": "exchange-black-h4h2-quiet",
+  "phase": "quiet",
+  "seconds": 1.5755511999999998,
+  "probes": 16,
+  "rootWdl": 0,
+  "outcome": true,
+  "nonterminal": true,
+  "deficit": true,
+  "rows": true,
+  "costPass": true,
+  "passes": true
+}

@@ -1,0 +1,28 @@
+{
+  "revision": "b36861cf3d791c3a35a830319207588b957fe6eb",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
+    "research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs": "c3922383bbb583679f87b23034321ee7545afba0cd0c19c7038a32a4ff7ad034",
+    "research/experiments/E211-rook-tablebase-admission/code/collect-observed.mjs": "a7de9138d08bc3d3860f45598a150afdf11767c5edb1b635c376b58ee175b81b",
+    "research/experiments/E211-rook-tablebase-admission/code/collect.mjs": "b5a46b3f59f54e99f1ccfab207140582a5bffbe76c74539e58f70ca103b44177",
+    "research/experiments/E211-rook-tablebase-admission/code/context.mjs": "6da0974638c556cc6b5b0eb8fffbe735ad7c0fad6fb0e6e079e71b715b4e51ec",
+    "research/experiments/E211-rook-tablebase-admission/code/exports.mjs": "bf9aeb0370116265582f0ddd27abe17ba3b14c8789ffe46f289e6c41de193e09",
+    "research/experiments/E217-defensive-positional-exchange/code/pilot.mjs": "45da0bfd3243853e35c3aff0df96414f3890cdcb547abd58dd87919524b9eb62",
+    "research/experiments/E217-defensive-positional-exchange/plan.md": "2e8dc09cf8fe90212d9626096c2ef12825f9926463fc5f9d2f07cc8846c0f693",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "research/tablebase-rook-data-policy.mjs": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  }
+}

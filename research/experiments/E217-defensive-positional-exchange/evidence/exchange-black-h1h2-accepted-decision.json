@@ -1,0 +1,13 @@
+{
+  "id": "exchange-black-h1h2-accepted",
+  "phase": "accepted",
+  "seconds": 1.5255869000000002,
+  "probes": 13,
+  "rootWdl": 0,
+  "outcome": true,
+  "nonterminal": true,
+  "deficit": true,
+  "rows": true,
+  "costPass": true,
+  "passes": true
+}

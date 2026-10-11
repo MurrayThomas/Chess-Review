@@ -1,0 +1,636 @@
+{
+  "revision": "b36861cf3d791c3a35a830319207588b957fe6eb",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
+    "research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs": "c3922383bbb583679f87b23034321ee7545afba0cd0c19c7038a32a4ff7ad034",
+    "research/experiments/E211-rook-tablebase-admission/code/collect-observed.mjs": "a7de9138d08bc3d3860f45598a150afdf11767c5edb1b635c376b58ee175b81b",
+    "research/experiments/E211-rook-tablebase-admission/code/collect.mjs": "b5a46b3f59f54e99f1ccfab207140582a5bffbe76c74539e58f70ca103b44177",
+    "research/experiments/E211-rook-tablebase-admission/code/context.mjs": "6da0974638c556cc6b5b0eb8fffbe735ad7c0fad6fb0e6e079e71b715b4e51ec",
+    "research/experiments/E211-rook-tablebase-admission/code/exports.mjs": "bf9aeb0370116265582f0ddd27abe17ba3b14c8789ffe46f289e6c41de193e09",
+    "research/experiments/E217-defensive-positional-exchange/code/pilot.mjs": "45da0bfd3243853e35c3aff0df96414f3890cdcb547abd58dd87919524b9eb62",
+    "research/experiments/E217-defensive-positional-exchange/plan.md": "2e8dc09cf8fe90212d9626096c2ef12825f9926463fc5f9d2f07cc8846c0f693",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "research/tablebase-rook-data-policy.mjs": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "id": "exchange-black-h4h2-quiet",
+  "input": {
+    "fen": "2b5/8/8/8/8/8/7R/4k2K w - - 1 3",
+    "history": {
+      "fen": "2b5/8/8/8/7R/8/5krB/7K b - - 0 1",
+      "moves": [
+        "g2h2",
+        "h4h2",
+        "f2e1"
+      ]
+    }
+  },
+  "options": {
+    "maxProbes": 128
+  },
+  "bundle": {
+    "schema": "E211-observed-rook-panel-v2",
+    "status": "complete",
+    "maxProbes": 128,
+    "requiredProbes": 16,
+    "gameGuardReceipt": {
+      "schema": "research-data-eligibility-v1",
+      "policyVersion": "public-data-v1",
+      "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+      "validatorSha256": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+      "originValidatorSha256": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+      "registrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+      "purpose": "test",
+      "manifestHashes": {
+        "D001": "a333bd2a96240f10a084b41f63931901e22fa804e50106606efc20617bd691cf"
+      },
+      "sourceEvidence": {
+        "lichess-standard-2026-summer": {
+          "license": "CC0-1.0",
+          "termsUrl": "https://database.lichess.org/",
+          "verifiedOn": "2026-10-05",
+          "evidenceSha256": "a227e286dce1e9e355101356507e57c4ad89ec39d65f9762f94ab76a6ffdd4ac"
+        }
+      },
+      "inputHashes": {
+        "tools/calibration/public/sources.json": "13e7e502f8dc39ddfb917d3966ae3d483238597b2fd2de38591a581e8365033a",
+        "tools/calibration/public/dataset.json.gz": "802f4fa8819408df565de0b3a0316ee24b5a302fa92291cba788a8ad5e9ac15f",
+        "tools/calibration/public/sf18-evidence.json.gz": "2771b2b8a7839e4d9f2ddbff73aa6e0dfbe017f3aa3a7b052584147ee21c968b",
+        "tools/calibration/public/sf18-rating-evidence.json.gz": "f41178347bc9569390b744f9e6fb2206882cf2307c762de8b8f8aab35c2a1e31",
+        "tools/calibration/public/sf19-rating-evidence.json.gz": "8ac253f86fa87a945c06e86f2b7c82d4f2b7e8c96ae9b990a6efadbac9f7d721",
+        "tools/calibration/public/expected-scores.json": "969664315be01fab6f719ce158926741c45ec59ef8e3accfe28f0dcc595b7df6",
+        "tools/calibration/public/validation.json": "865aa647f484f3932c42baa2bd15625bd7cdfd253f504aa6d64aba3e4eb07076",
+        "research/experiments/E003-sf19-archive-replay/evidence/sf19-quality.json.gz": "5cef8a6d20482a743351c8ca3a85da030fd95b3eb91a6395aeca0b8d7f7fe745",
+        "research/experiments/E001-evidence-audit/evidence/sf19-quality-archive.json": "3953a2a13f8e491e5c0dedbf40d38bb7d0d24ac4abe546278b8fb8360e1d3c2d",
+        "research/experiments/E003-sf19-archive-replay/evidence/sf19-choice-confirmation.json.gz": "5e9e1f61b48d39030e91dea0615aee4510ac9c29e3fcf3d2b7e3ad47b82efbae",
+        "research/experiments/E001-evidence-audit/evidence/sf19-choice-confirmation-archive.json": "a762d73fb732e107da84d7edae8991cc89227f3252b164d3008e64a7c1c6906b",
+        "research/experiments/E002-nonlinear-rating/evidence/results.json": "9219f67a34e1c1f6ba8252f1b5a46958b8afd7dba13b90c24d660b2370f64f18",
+        "research/experiments/E002-nonlinear-rating/evidence/predictions.json.gz": "a78f5b9f69f1a4ea21a8e17cbedb373e6b56cc432f36b9d1dbdb75d2cbebc8ac",
+        "tools/calibration/public/manifest.json": "e7d928e440f8a4b73bfa64c11e11f48320f9f3cc556c29a3bca72e1e5d15ff6a",
+        "research/experiments/E003-sf19-archive-replay/evidence/inputs.json": "e752fd0883e2db58b1121071dc59e879adcd8e982984198e58e9056f9ad84447",
+        "research/experiments/E004-practical-outcomes/evidence/results.json": "f2d89e9d9e07b45bceca955af522fca4d0ad39db100b0bece0e235403c93adea",
+        "research/experiments/E004-practical-outcomes/evidence/predictions.json.gz": "89bc0719cc00708a80d55b6c5c7a88d53d0f52e05d252eddda052b434d1c3e96",
+        "research/experiments/E005-category-review/evidence/cases.json": "b6974f3159c839f3764eed3d8da5dff406dece9bb2414c958e8484d81271c41f",
+        "research/experiments/E005-category-review/evidence/selection-key.json": "33e75aa79f26b07358d53f432535c862a85aa79a4e5f38101eff3ec8ff94b5c0",
+        "research/experiments/E005-category-review/evidence/run.json": "6e9042785eba0be3a842763f8e0b14de1590174d3ba21b1b09595ab703ffc817",
+        "research/experiments/E006-rating-uncertainty/evidence/results.json": "bf5380629014af3bf06db4324a93f347e9f858ebe27731c8a00f06146c68ea2e",
+        "research/experiments/E006-rating-uncertainty/evidence/predictions.json.gz": "10b4cd8fb5462eaa9ee6beff4ba62fc94dfe4f79f9fa5b23d69d5dfa4b97c14f",
+        "research/experiments/E006-rating-uncertainty/evidence/run.json": "c4b7ac8a82d4b6f3f165c1ce2c0191de5a00b0f3777c7b93e9edb7158056c9e8",
+        "research/experiments/E012-offer-evidence/evidence/policy.json": "a7365e813d97470d55056fda3baf5b3a8311b85bcc301ecc9c88403e5314a6b4",
+        "research/experiments/E012-offer-evidence/evidence/freeze-run.json": "0287e95d96658a7b3c190ac763469b4b165441bd5d261e05a1854eeae13b7d07",
+        "research/experiments/E012-offer-evidence/evidence/sf18-observations.json.gz": "02367574df6676276243cd1f60e23e5c2ec984eb70a49df24d2188aaea6be547",
+        "research/experiments/E012-offer-evidence/evidence/collection-run.json": "555eeff8f289050ea81ea140fb722515a3d3cfdb127fdd0044b23d4386c5108a",
+        "research/experiments/E012-offer-evidence/evidence/results.json": "d31ed066a4fdcea3e81a79320c0e06f358177d84f4c3332c42ada85b49a9db0d",
+        "research/experiments/E012-offer-evidence/evidence/run.json": "134203b7f0d839b05287454db0f45211037e36a0fb6f7eeaeeddf86f7ba10b15",
+        "research/experiments/E012-offer-evidence/evidence/verification.json": "9da4fbd2ee6aa54a1eb906de1d2f18d40066fb87de71a9d2c6c4032c3991beed",
+        "research/experiments/E012-offer-evidence/evidence/clean-replay.json": "6bd00b4aebde0cac726784c81bc7299bccd1e04e3b5450af5051e8edf53e0546",
+        "research/experiments/E012-offer-evidence/evidence/clean-archive.json": "0c9cab45a3767ee9ed7d69b9d4d3e811e01242a6ef79c08617ef902186b3d5af",
+        "research/experiments/E013-net-offer-pack/evidence/policy.json": "f9f60ba511e03a1826d442504315baa9d7dd0ac16511d34008c006f0cfee5d5d",
+        "research/experiments/E013-net-offer-pack/evidence/cases.json": "d6f0c63a657901d822bdb0920895576371457f134a82c3aed35ccce04fc8c521",
+        "research/experiments/E013-net-offer-pack/evidence/selection-key.json": "32dbeb26b0e078b431156344602d2115fb4ce9e263b3ca331170d330312948ea",
+        "research/experiments/E013-net-offer-pack/evidence/build-run.json": "c36523f4429231afd19da0a5a67147eb8b3568470b8b3ec63a2f3e91798f8831",
+        "research/experiments/E013-net-offer-pack/evidence/sf18-observations.json.gz": "b7ee839acb88813dce83d16eae6dd93ee2a6d1eca8557471dae947b29ced68ea",
+        "research/experiments/E013-net-offer-pack/evidence/collection-run.json": "b077265c7ab656bc6e002ed07f567f5347dcde781f35eb386300f4835986e47c",
+        "research/experiments/E013-net-offer-pack/evidence/results.json": "7a7357cc21d012cace4782f26a407110feb14e57674e37d55da51ae239348d5a",
+        "research/experiments/E013-net-offer-pack/evidence/run.json": "43c9cd128d206e51218f2229d7a71b0c6a4b1aafdc995fcc468a9643f7273692",
+        "research/experiments/E013-net-offer-pack/evidence/verification.json": "d89a486c70dd3685c08fe078ad7e91780a4c6907deb3b40ff20e6c09cc5ca970",
+        "research/experiments/E013-net-offer-pack/evidence/clean-replay.json": "2d6932ab2d1af6e3e1a8a17a747f1bd4d4d45ac4a2eb4633594fbaef01b8112a",
+        "research/experiments/E013-net-offer-pack/evidence/clean-archive.json": "fbc50686a4b22b96f53c24b8db3b777b16ac9bde6522d4817ea4367fab399c82",
+        "research/experiments/E014-root-pair-consistency/evidence/freeze-SF18.json": "d4dab90dbc0c03d33ebab7f88728c89730e1a2e5f1165dd93a550034b2a8a110",
+        "research/experiments/E014-root-pair-consistency/evidence/freeze-run-SF18.json": "7dc93a3d18af5668871e688aaf270fcc59b32eaef0e01b103ee804743de095f1",
+        "research/experiments/E014-root-pair-consistency/evidence/results-SF18.json": "a6f2a640274b6c02e571db210b8bb46989447c62739ed95c54fc9ab742e3b56c",
+        "research/experiments/E014-root-pair-consistency/evidence/run-SF18.json": "49d8e22c8a96dfd0f535af919316e36541762454d084ec0e161e06c041bcee10",
+        "research/experiments/E014-root-pair-consistency/evidence/verification-SF18.json": "91f7a74cec294c57ea444d53e043f3e6e6ee6b8f161b12b65d7b6960826a54b6",
+        "research/experiments/E014-root-pair-consistency/evidence/source-line-endings-SF18.json": "5c073480f6cfb10450c73fb5c9dac5ff03c90bff3d415944717961a0decacbb4",
+        "research/experiments/E014-root-pair-consistency/evidence/failed-clean-replay-SF18.json": "c579eadadc1bf36894816642da325544ccb66da65977587bd73322f6e588108d",
+        "research/experiments/E014-root-pair-consistency/evidence/clean-replay-SF18.json": "172fc46b1bfc875a5c97e4d258de4d09c860482ce8df12920cfdd82eaf7f90b5",
+        "research/experiments/E014-root-pair-consistency/evidence/clean-archive-SF18.json": "61f904ac8a64af5a762974f5e7246da834843a734aa52adda4a2f7ac1bc7b124",
+        "research/datasets/D001-public-baseline/locators.json.gz": "f42bd028f7fca5950ca206164405385f6324363f7d720242e1250b4b83736cf6",
+        "research/datasets/D001-public-baseline/reconstruction.json": "af54589497239c4f851d74a1a4b1fac296ec54a779efca9193629adac9a67307"
+      },
+      "datasets": {
+        "D001": {
+          "gameCount": 2000,
+          "archives": [
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-06.pgn.zst",
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-07.pgn.zst",
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-08.pgn.zst"
+          ],
+          "provenanceStatus": "reconstruction-verified",
+          "limitations": [
+            "Archive-window/rating-quota convenience sample; not representative of the whole blitz population.",
+            "Only recorded fragment bytes are verified; no whole-archive checksum or publisher signature is claimed.",
+            "Provisional-rating status is unavailable; recorded ratings do not establish stable playing strength.",
+            "Engine observations are retained, not regenerated by dataset reconstruction.",
+            "Existing development/test exposure prevents new confirmation claims."
+          ]
+        }
+      }
+    },
+    "tablebaseReceipt": {
+      "schema": "tablebase-rook-data-eligibility-v1",
+      "dataset": "T002",
+      "policyVersion": "tablebase-rook-data-v1",
+      "originFormat": "syzygy-krpvkr-wdl-v1",
+      "purpose": "test",
+      "registrySha256": "047d2e5397fbb7dcadc43f39a985c1216955c477cbbb5f869b9a3d11d45331ed",
+      "policySha256": "e2ffc8de4753de5866472eb28cf6d2a871447658a99ead4a82558ba1b086b309",
+      "validatorSha256": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+      "permissionSha256": "c9014fa695ff89df2e49dbdff74334d5bbbe58abacc098ac6ac80c5a12ab0c3e",
+      "permissionSnapshotSha256": "0eeb6c83b1cbce8c097c9fb15ddd9eaf3440e2a751a2297dc676909b9dc32f87",
+      "publisherChecksumSha256": "0483153e1fcda34c11aaed4f7207433d0d79e26136eed475e49281b9d1b57380",
+      "gameGuardReceipt": {
+        "schema": "research-data-eligibility-v1",
+        "policyVersion": "public-data-v1",
+        "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+        "validatorSha256": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+        "originValidatorSha256": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+        "registrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+        "purpose": "test",
+        "manifestHashes": {
+          "D001": "a333bd2a96240f10a084b41f63931901e22fa804e50106606efc20617bd691cf"
+        },
+        "sourceEvidence": {
+          "lichess-standard-2026-summer": {
+            "license": "CC0-1.0",
+            "termsUrl": "https://database.lichess.org/",
+            "verifiedOn": "2026-10-05",
+            "evidenceSha256": "a227e286dce1e9e355101356507e57c4ad89ec39d65f9762f94ab76a6ffdd4ac"
+          }
+        },
+        "inputHashes": {
+          "tools/calibration/public/sources.json": "13e7e502f8dc39ddfb917d3966ae3d483238597b2fd2de38591a581e8365033a",
+          "tools/calibration/public/dataset.json.gz": "802f4fa8819408df565de0b3a0316ee24b5a302fa92291cba788a8ad5e9ac15f",
+          "tools/calibration/public/sf18-evidence.json.gz": "2771b2b8a7839e4d9f2ddbff73aa6e0dfbe017f3aa3a7b052584147ee21c968b",
+          "tools/calibration/public/sf18-rating-evidence.json.gz": "f41178347bc9569390b744f9e6fb2206882cf2307c762de8b8f8aab35c2a1e31",
+          "tools/calibration/public/sf19-rating-evidence.json.gz": "8ac253f86fa87a945c06e86f2b7c82d4f2b7e8c96ae9b990a6efadbac9f7d721",
+          "tools/calibration/public/expected-scores.json": "969664315be01fab6f719ce158926741c45ec59ef8e3accfe28f0dcc595b7df6",
+          "tools/calibration/public/validation.json": "865aa647f484f3932c42baa2bd15625bd7cdfd253f504aa6d64aba3e4eb07076",
+          "research/experiments/E003-sf19-archive-replay/evidence/sf19-quality.json.gz": "5cef8a6d20482a743351c8ca3a85da030fd95b3eb91a6395aeca0b8d7f7fe745",
+          "research/experiments/E001-evidence-audit/evidence/sf19-quality-archive.json": "3953a2a13f8e491e5c0dedbf40d38bb7d0d24ac4abe546278b8fb8360e1d3c2d",
+          "research/experiments/E003-sf19-archive-replay/evidence/sf19-choice-confirmation.json.gz": "5e9e1f61b48d39030e91dea0615aee4510ac9c29e3fcf3d2b7e3ad47b82efbae",
+          "research/experiments/E001-evidence-audit/evidence/sf19-choice-confirmation-archive.json": "a762d73fb732e107da84d7edae8991cc89227f3252b164d3008e64a7c1c6906b",
+          "research/experiments/E002-nonlinear-rating/evidence/results.json": "9219f67a34e1c1f6ba8252f1b5a46958b8afd7dba13b90c24d660b2370f64f18",
+          "research/experiments/E002-nonlinear-rating/evidence/predictions.json.gz": "a78f5b9f69f1a4ea21a8e17cbedb373e6b56cc432f36b9d1dbdb75d2cbebc8ac",
+          "tools/calibration/public/manifest.json": "e7d928e440f8a4b73bfa64c11e11f48320f9f3cc556c29a3bca72e1e5d15ff6a",
+          "research/experiments/E003-sf19-archive-replay/evidence/inputs.json": "e752fd0883e2db58b1121071dc59e879adcd8e982984198e58e9056f9ad84447",
+          "research/experiments/E004-practical-outcomes/evidence/results.json": "f2d89e9d9e07b45bceca955af522fca4d0ad39db100b0bece0e235403c93adea",
+          "research/experiments/E004-practical-outcomes/evidence/predictions.json.gz": "89bc0719cc00708a80d55b6c5c7a88d53d0f52e05d252eddda052b434d1c3e96",
+          "research/experiments/E005-category-review/evidence/cases.json": "b6974f3159c839f3764eed3d8da5dff406dece9bb2414c958e8484d81271c41f",
+          "research/experiments/E005-category-review/evidence/selection-key.json": "33e75aa79f26b07358d53f432535c862a85aa79a4e5f38101eff3ec8ff94b5c0",
+          "research/experiments/E005-category-review/evidence/run.json": "6e9042785eba0be3a842763f8e0b14de1590174d3ba21b1b09595ab703ffc817",
+          "research/experiments/E006-rating-uncertainty/evidence/results.json": "bf5380629014af3bf06db4324a93f347e9f858ebe27731c8a00f06146c68ea2e",
+          "research/experiments/E006-rating-uncertainty/evidence/predictions.json.gz": "10b4cd8fb5462eaa9ee6beff4ba62fc94dfe4f79f9fa5b23d69d5dfa4b97c14f",
+          "research/experiments/E006-rating-uncertainty/evidence/run.json": "c4b7ac8a82d4b6f3f165c1ce2c0191de5a00b0f3777c7b93e9edb7158056c9e8",
+          "research/experiments/E012-offer-evidence/evidence/policy.json": "a7365e813d97470d55056fda3baf5b3a8311b85bcc301ecc9c88403e5314a6b4",
+          "research/experiments/E012-offer-evidence/evidence/freeze-run.json": "0287e95d96658a7b3c190ac763469b4b165441bd5d261e05a1854eeae13b7d07",
+          "research/experiments/E012-offer-evidence/evidence/sf18-observations.json.gz": "02367574df6676276243cd1f60e23e5c2ec984eb70a49df24d2188aaea6be547",
+          "research/experiments/E012-offer-evidence/evidence/collection-run.json": "555eeff8f289050ea81ea140fb722515a3d3cfdb127fdd0044b23d4386c5108a",
+          "research/experiments/E012-offer-evidence/evidence/results.json": "d31ed066a4fdcea3e81a79320c0e06f358177d84f4c3332c42ada85b49a9db0d",
+          "research/experiments/E012-offer-evidence/evidence/run.json": "134203b7f0d839b05287454db0f45211037e36a0fb6f7eeaeeddf86f7ba10b15",
+          "research/experiments/E012-offer-evidence/evidence/verification.json": "9da4fbd2ee6aa54a1eb906de1d2f18d40066fb87de71a9d2c6c4032c3991beed",
+          "research/experiments/E012-offer-evidence/evidence/clean-replay.json": "6bd00b4aebde0cac726784c81bc7299bccd1e04e3b5450af5051e8edf53e0546",
+          "research/experiments/E012-offer-evidence/evidence/clean-archive.json": "0c9cab45a3767ee9ed7d69b9d4d3e811e01242a6ef79c08617ef902186b3d5af",
+          "research/experiments/E013-net-offer-pack/evidence/policy.json": "f9f60ba511e03a1826d442504315baa9d7dd0ac16511d34008c006f0cfee5d5d",
+          "research/experiments/E013-net-offer-pack/evidence/cases.json": "d6f0c63a657901d822bdb0920895576371457f134a82c3aed35ccce04fc8c521",
+          "research/experiments/E013-net-offer-pack/evidence/selection-key.json": "32dbeb26b0e078b431156344602d2115fb4ce9e263b3ca331170d330312948ea",
+          "research/experiments/E013-net-offer-pack/evidence/build-run.json": "c36523f4429231afd19da0a5a67147eb8b3568470b8b3ec63a2f3e91798f8831",
+          "research/experiments/E013-net-offer-pack/evidence/sf18-observations.json.gz": "b7ee839acb88813dce83d16eae6dd93ee2a6d1eca8557471dae947b29ced68ea",
+          "research/experiments/E013-net-offer-pack/evidence/collection-run.json": "b077265c7ab656bc6e002ed07f567f5347dcde781f35eb386300f4835986e47c",
+          "research/experiments/E013-net-offer-pack/evidence/results.json": "7a7357cc21d012cace4782f26a407110feb14e57674e37d55da51ae239348d5a",
+          "research/experiments/E013-net-offer-pack/evidence/run.json": "43c9cd128d206e51218f2229d7a71b0c6a4b1aafdc995fcc468a9643f7273692",
+          "research/experiments/E013-net-offer-pack/evidence/verification.json": "d89a486c70dd3685c08fe078ad7e91780a4c6907deb3b40ff20e6c09cc5ca970",
+          "research/experiments/E013-net-offer-pack/evidence/clean-replay.json": "2d6932ab2d1af6e3e1a8a17a747f1bd4d4d45ac4a2eb4633594fbaef01b8112a",
+          "research/experiments/E013-net-offer-pack/evidence/clean-archive.json": "fbc50686a4b22b96f53c24b8db3b777b16ac9bde6522d4817ea4367fab399c82",
+          "research/experiments/E014-root-pair-consistency/evidence/freeze-SF18.json": "d4dab90dbc0c03d33ebab7f88728c89730e1a2e5f1165dd93a550034b2a8a110",
+          "research/experiments/E014-root-pair-consistency/evidence/freeze-run-SF18.json": "7dc93a3d18af5668871e688aaf270fcc59b32eaef0e01b103ee804743de095f1",
+          "research/experiments/E014-root-pair-consistency/evidence/results-SF18.json": "a6f2a640274b6c02e571db210b8bb46989447c62739ed95c54fc9ab742e3b56c",
+          "research/experiments/E014-root-pair-consistency/evidence/run-SF18.json": "49d8e22c8a96dfd0f535af919316e36541762454d084ec0e161e06c041bcee10",
+          "research/experiments/E014-root-pair-consistency/evidence/verification-SF18.json": "91f7a74cec294c57ea444d53e043f3e6e6ee6b8f161b12b65d7b6960826a54b6",
+          "research/experiments/E014-root-pair-consistency/evidence/source-line-endings-SF18.json": "5c073480f6cfb10450c73fb5c9dac5ff03c90bff3d415944717961a0decacbb4",
+          "research/experiments/E014-root-pair-consistency/evidence/failed-clean-replay-SF18.json": "c579eadadc1bf36894816642da325544ccb66da65977587bd73322f6e588108d",
+          "research/experiments/E014-root-pair-consistency/evidence/clean-replay-SF18.json": "172fc46b1bfc875a5c97e4d258de4d09c860482ce8df12920cfdd82eaf7f90b5",
+          "research/experiments/E014-root-pair-consistency/evidence/clean-archive-SF18.json": "61f904ac8a64af5a762974f5e7246da834843a734aa52adda4a2f7ac1bc7b124",
+          "research/datasets/D001-public-baseline/locators.json.gz": "f42bd028f7fca5950ca206164405385f6324363f7d720242e1250b4b83736cf6",
+          "research/datasets/D001-public-baseline/reconstruction.json": "af54589497239c4f851d74a1a4b1fac296ec54a779efca9193629adac9a67307"
+        },
+        "datasets": {
+          "D001": {
+            "gameCount": 2000,
+            "archives": [
+              "https://database.lichess.org/standard/lichess_db_standard_rated_2026-06.pgn.zst",
+              "https://database.lichess.org/standard/lichess_db_standard_rated_2026-07.pgn.zst",
+              "https://database.lichess.org/standard/lichess_db_standard_rated_2026-08.pgn.zst"
+            ],
+            "provenanceStatus": "reconstruction-verified",
+            "limitations": [
+              "Archive-window/rating-quota convenience sample; not representative of the whole blitz population.",
+              "Only recorded fragment bytes are verified; no whole-archive checksum or publisher signature is claimed.",
+              "Provisional-rating status is unavailable; recorded ratings do not establish stable playing strength.",
+              "Engine observations are retained, not regenerated by dataset reconstruction.",
+              "Existing development/test exposure prevents new confirmation claims."
+            ]
+          }
+        }
+      },
+      "manifestSha256": "766e49f9d91db9a74ac1a7495e0baaef9a97b6144d4dbe262c1a009cb3fe69cc",
+      "files": {
+        "KBvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KBvK.rtbw",
+          "bytes": 80,
+          "sha256": "bc0d8ab3560de9038460f0e8f61e3b7efd3e3d0327d19ae0387c0da7ddeb244d"
+        },
+        "KNvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KNvK.rtbw",
+          "bytes": 80,
+          "sha256": "9d3518b12df3d2006441df758bce31e961346e70a11920aaad75c647003bb6e7"
+        },
+        "KPvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KPvK.rtbw",
+          "bytes": 7824,
+          "sha256": "02fd2bdcd92821c869458f019f63524def1c9e7a2862ca8d2b16dc7712b16183"
+        },
+        "KQRvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KQRvK.rtbw",
+          "bytes": 4560,
+          "sha256": "b018ece9cc195618981b027268f9cca929a1ed4c0bdd739874b7846640ef479a"
+        },
+        "KQRvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KQRvKR.rtbw",
+          "bytes": 279824,
+          "sha256": "13477ef681468dfb19d09ab8dbeb08d259f9db57a6e5e2c7cdb902880fc2166b"
+        },
+        "KQvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KQvK.rtbw",
+          "bytes": 272,
+          "sha256": "517667dff787162dbb1ed9d5d6484d30ee854e686ee0675c08d99ecf045d2d50"
+        },
+        "KQvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KQvKR.rtbw",
+          "bytes": 20496,
+          "sha256": "8cdbe3c8e098037875de5854c656f8afeadb8327c85b5b7b1cac81719afd3e2c"
+        },
+        "KRBvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRBvK.rtbw",
+          "bytes": 2832,
+          "sha256": "9e6eced11a37cad71b4fc1a4f62a15e191e58883b51ce8c4c45f341051c6ae8e"
+        },
+        "KRBvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRBvKR.rtbw",
+          "bytes": 2035280,
+          "sha256": "6343cff1ca9d4026aed57ede37ebd29004d11c9d8ec932351b04b4e8018ce8b9"
+        },
+        "KRNvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRNvK.rtbw",
+          "bytes": 2320,
+          "sha256": "4f96cab9fc0005f2679eacb92cec32edf9c932db7bb29b5dc7659be0012d6c35"
+        },
+        "KRNvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRNvKR.rtbw",
+          "bytes": 1491856,
+          "sha256": "163432941d6f625c093c7291d2045453f712435e906e9d91d371105da96f97c4"
+        },
+        "KRPvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRPvK.rtbw",
+          "bytes": 5136,
+          "sha256": "6bc2aa9db5ee7fcc287e6c3b006ab6cfc2be4dff4ae7ca4a524a78520eea61db"
+        },
+        "KRPvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRPvKR.rtbw",
+          "bytes": 16378576,
+          "sha256": "1100e6deaee14ca9a56b69441208462c02ef45b3f56daa3d75f687eb5cf12319"
+        },
+        "KRRvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRRvK.rtbw",
+          "bytes": 1936,
+          "sha256": "4c05ec32e6e43b690d235307de75432a3ceecdbc3d2659d8101ed15b48b8445d"
+        },
+        "KRRvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRRvKR.rtbw",
+          "bytes": 334224,
+          "sha256": "7897a69c7ad337adc93aa39c9d22dcf1a5e215908437b36d92db5e4bebf9217e"
+        },
+        "KRvK.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRvK.rtbw",
+          "bytes": 208,
+          "sha256": "386fbde73308e49a4207836922c68b30b664e83c5a37f7fa37305a15cd16f2f1"
+        },
+        "KRvKB.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRvKB.rtbw",
+          "bytes": 32912,
+          "sha256": "69b247cb390ffcd729cf5fe5c40f8a24803190bf67b108b8f05b8b08b26a6a72"
+        },
+        "KRvKN.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRvKN.rtbw",
+          "bytes": 100048,
+          "sha256": "a8cde902b010bf6c8763c97d19b5430b422e74db9cb8e9d5e67fa07373c13c5b"
+        },
+        "KRvKP.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRvKP.rtbw",
+          "bytes": 179408,
+          "sha256": "3968c2bfced3a5ecfbb54166ec13d4e7b70f3b03c495af4ae87cad2ec75a0749"
+        },
+        "KRvKR.rtbw": {
+          "path": "research/datasets/T002-syzygy-rook-wdl/files/KRvKR.rtbw",
+          "bytes": 12944,
+          "sha256": "797081b5b3fbac20c4baa5453d68bdae1425b63895f5c9a5ac5c68ea63a97712"
+        }
+      }
+    },
+    "probeSource": {
+      "program": "research/experiments/E211-rook-tablebase-admission/code/probe.py",
+      "programSha256": "3465337fefd49f33890654e6891f4353727c829336caabc655caf14b0186f7a6",
+      "vendorLockSha256": "d3f029517e9a714971b7fb635795caba8d527ce8e93b4411d39e6d2cd433f409",
+      "modules": {
+        "chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+        "chess/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+        "COPYING": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+      },
+      "executable": "C:/Users/thoma/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+      "executableSha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "argv": [
+        "research/experiments/E211-rook-tablebase-admission/code/probe.py"
+      ]
+    },
+    "rawStdout": "{\"schema\": \"local-syzygy-rook-wdl-panel-v1\", \"status\": \"complete\", \"observationKind\": \"local-syzygy\", \"material\": \"KRvKB\", \"closure\": [\"KBvK\", \"KNvK\", \"KPvK\", \"KQRvK\", \"KQRvKR\", \"KQvK\", \"KQvKR\", \"KRBvK\", \"KRBvKR\", \"KRNvK\", \"KRNvKR\", \"KRPvK\", \"KRPvKR\", \"KRRvK\", \"KRRvKR\", \"KRvK\", \"KRvKB\", \"KRvKN\", \"KRvKP\", \"KRvKR\"], \"root\": {\"fen\": \"2b5/8/8/8/8/8/7R/4k2K w - - 1 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, \"rows\": [{\"move\": \"h1g1\", \"san\": \"Kg1\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/7R/4k1K1 b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h1g2\", \"san\": \"Kg2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/6KR/4k3 b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2a2\", \"san\": \"Ra2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/R7/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2b2\", \"san\": \"Rb2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/1R6/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2c2\", \"san\": \"Rc2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/2R5/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2d2\", \"san\": \"Rd2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/3R4/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2e2\", \"san\": \"Re2+\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/4R3/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2f2\", \"san\": \"Rf2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/5R2/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2g2\", \"san\": \"Rg2\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/8/6R1/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h3\", \"san\": \"Rh3\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/8/7R/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h4\", \"san\": \"Rh4\", \"zeroing\": false, \"fen\": \"2b5/8/8/8/7R/8/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h5\", \"san\": \"Rh5\", \"zeroing\": false, \"fen\": \"2b5/8/8/7R/8/8/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h6\", \"san\": \"Rh6\", \"zeroing\": false, \"fen\": \"2b5/8/7R/8/8/8/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h7\", \"san\": \"Rh7\", \"zeroing\": false, \"fen\": \"2b5/7R/8/8/8/8/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}, {\"move\": \"h2h8\", \"san\": \"Rh8\", \"zeroing\": false, \"fen\": \"2b4R/8/8/8/8/8/8/4k2K b - - 2 3\", \"wdl\": 0, \"flags\": {\"checkmate\": false, \"stalemate\": false, \"insufficient\": false}}], \"positionProbes\": 16, \"ruleModel\": \"WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication\", \"metadata\": {\"package\": \"chess\", \"version\": \"1.11.2\", \"modules\": {\"chess/__init__.py\": \"1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b\", \"chess/syzygy.py\": \"e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754\", \"COPYING\": \"8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903\"}, \"tables\": {\"KBvK.rtbw\": \"bc0d8ab3560de9038460f0e8f61e3b7efd3e3d0327d19ae0387c0da7ddeb244d\", \"KNvK.rtbw\": \"9d3518b12df3d2006441df758bce31e961346e70a11920aaad75c647003bb6e7\", \"KPvK.rtbw\": \"02fd2bdcd92821c869458f019f63524def1c9e7a2862ca8d2b16dc7712b16183\", \"KQRvK.rtbw\": \"b018ece9cc195618981b027268f9cca929a1ed4c0bdd739874b7846640ef479a\", \"KQRvKR.rtbw\": \"13477ef681468dfb19d09ab8dbeb08d259f9db57a6e5e2c7cdb902880fc2166b\", \"KQvK.rtbw\": \"517667dff787162dbb1ed9d5d6484d30ee854e686ee0675c08d99ecf045d2d50\", \"KQvKR.rtbw\": \"8cdbe3c8e098037875de5854c656f8afeadb8327c85b5b7b1cac81719afd3e2c\", \"KRBvK.rtbw\": \"9e6eced11a37cad71b4fc1a4f62a15e191e58883b51ce8c4c45f341051c6ae8e\", \"KRBvKR.rtbw\": \"6343cff1ca9d4026aed57ede37ebd29004d11c9d8ec932351b04b4e8018ce8b9\", \"KRNvK.rtbw\": \"4f96cab9fc0005f2679eacb92cec32edf9c932db7bb29b5dc7659be0012d6c35\", \"KRNvKR.rtbw\": \"163432941d6f625c093c7291d2045453f712435e906e9d91d371105da96f97c4\", \"KRPvK.rtbw\": \"6bc2aa9db5ee7fcc287e6c3b006ab6cfc2be4dff4ae7ca4a524a78520eea61db\", \"KRPvKR.rtbw\": \"1100e6deaee14ca9a56b69441208462c02ef45b3f56daa3d75f687eb5cf12319\", \"KRRvK.rtbw\": \"4c05ec32e6e43b690d235307de75432a3ceecdbc3d2659d8101ed15b48b8445d\", \"KRRvKR.rtbw\": \"7897a69c7ad337adc93aa39c9d22dcf1a5e215908437b36d92db5e4bebf9217e\", \"KRvK.rtbw\": \"386fbde73308e49a4207836922c68b30b664e83c5a37f7fa37305a15cd16f2f1\", \"KRvKB.rtbw\": \"69b247cb390ffcd729cf5fe5c40f8a24803190bf67b108b8f05b8b08b26a6a72\", \"KRvKN.rtbw\": \"a8cde902b010bf6c8763c97d19b5430b422e74db9cb8e9d5e67fa07373c13c5b\", \"KRvKP.rtbw\": \"3968c2bfced3a5ecfbb54166ec13d4e7b70f3b03c495af4ae87cad2ec75a0749\", \"KRvKR.rtbw\": \"797081b5b3fbac20c4baa5453d68bdae1425b63895f5c9a5ac5c68ea63a97712\"}, \"python\": {\"version\": \"3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]\", \"implementation\": \"CPython\", \"executable\": \"C:\\\\Users\\\\thoma\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\python\\\\python.exe\", \"sha256\": \"10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1\"}}}\r\n",
+    "rawStderr": "",
+    "panel": {
+      "schema": "local-syzygy-rook-wdl-panel-v1",
+      "status": "complete",
+      "observationKind": "local-syzygy",
+      "material": "KRvKB",
+      "closure": [
+        "KBvK",
+        "KNvK",
+        "KPvK",
+        "KQRvK",
+        "KQRvKR",
+        "KQvK",
+        "KQvKR",
+        "KRBvK",
+        "KRBvKR",
+        "KRNvK",
+        "KRNvKR",
+        "KRPvK",
+        "KRPvKR",
+        "KRRvK",
+        "KRRvKR",
+        "KRvK",
+        "KRvKB",
+        "KRvKN",
+        "KRvKP",
+        "KRvKR"
+      ],
+      "root": {
+        "fen": "2b5/8/8/8/8/8/7R/4k2K w - - 1 3",
+        "wdl": 0,
+        "flags": {
+          "checkmate": false,
+          "stalemate": false,
+          "insufficient": false
+        }
+      },
+      "rows": [
+        {
+          "move": "h1g1",
+          "san": "Kg1",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/7R/4k1K1 b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h1g2",
+          "san": "Kg2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/6KR/4k3 b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2a2",
+          "san": "Ra2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/R7/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2b2",
+          "san": "Rb2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/1R6/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2c2",
+          "san": "Rc2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/2R5/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2d2",
+          "san": "Rd2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/3R4/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2e2",
+          "san": "Re2+",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/4R3/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2f2",
+          "san": "Rf2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/5R2/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2g2",
+          "san": "Rg2",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/8/6R1/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h3",
+          "san": "Rh3",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/8/7R/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h4",
+          "san": "Rh4",
+          "zeroing": false,
+          "fen": "2b5/8/8/8/7R/8/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h5",
+          "san": "Rh5",
+          "zeroing": false,
+          "fen": "2b5/8/8/7R/8/8/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h6",
+          "san": "Rh6",
+          "zeroing": false,
+          "fen": "2b5/8/7R/8/8/8/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h7",
+          "san": "Rh7",
+          "zeroing": false,
+          "fen": "2b5/7R/8/8/8/8/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        },
+        {
+          "move": "h2h8",
+          "san": "Rh8",
+          "zeroing": false,
+          "fen": "2b4R/8/8/8/8/8/8/4k2K b - - 2 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          }
+        }
+      ],
+      "positionProbes": 16,
+      "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication",
+      "metadata": {
+        "package": "chess",
+        "version": "1.11.2",
+        "modules": {
+          "chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+          "chess/syzygy.py": "e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754",
+          "COPYING": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        },
+        "tables": {
+          "KBvK.rtbw": "bc0d8ab3560de9038460f0e8f61e3b7efd3e3d0327d19ae0387c0da7ddeb244d",
+          "KNvK.rtbw": "9d3518b12df3d2006441df758bce31e961346e70a11920aaad75c647003bb6e7",
+          "KPvK.rtbw": "02fd2bdcd92821c869458f019f63524def1c9e7a2862ca8d2b16dc7712b16183",
+          "KQRvK.rtbw": "b018ece9cc195618981b027268f9cca929a1ed4c0bdd739874b7846640ef479a",
+          "KQRvKR.rtbw": "13477ef681468dfb19d09ab8dbeb08d259f9db57a6e5e2c7cdb902880fc2166b",
+          "KQvK.rtbw": "517667dff787162dbb1ed9d5d6484d30ee854e686ee0675c08d99ecf045d2d50",
+          "KQvKR.rtbw": "8cdbe3c8e098037875de5854c656f8afeadb8327c85b5b7b1cac81719afd3e2c",
+          "KRBvK.rtbw": "9e6eced11a37cad71b4fc1a4f62a15e191e58883b51ce8c4c45f341051c6ae8e",
+          "KRBvKR.rtbw": "6343cff1ca9d4026aed57ede37ebd29004d11c9d8ec932351b04b4e8018ce8b9",
+          "KRNvK.rtbw": "4f96cab9fc0005f2679eacb92cec32edf9c932db7bb29b5dc7659be0012d6c35",
+          "KRNvKR.rtbw": "163432941d6f625c093c7291d2045453f712435e906e9d91d371105da96f97c4",
+          "KRPvK.rtbw": "6bc2aa9db5ee7fcc287e6c3b006ab6cfc2be4dff4ae7ca4a524a78520eea61db",
+          "KRPvKR.rtbw": "1100e6deaee14ca9a56b69441208462c02ef45b3f56daa3d75f687eb5cf12319",
+          "KRRvK.rtbw": "4c05ec32e6e43b690d235307de75432a3ceecdbc3d2659d8101ed15b48b8445d",
+          "KRRvKR.rtbw": "7897a69c7ad337adc93aa39c9d22dcf1a5e215908437b36d92db5e4bebf9217e",
+          "KRvK.rtbw": "386fbde73308e49a4207836922c68b30b664e83c5a37f7fa37305a15cd16f2f1",
+          "KRvKB.rtbw": "69b247cb390ffcd729cf5fe5c40f8a24803190bf67b108b8f05b8b08b26a6a72",
+          "KRvKN.rtbw": "a8cde902b010bf6c8763c97d19b5430b422e74db9cb8e9d5e67fa07373c13c5b",
+          "KRvKP.rtbw": "3968c2bfced3a5ecfbb54166ec13d4e7b70f3b03c495af4ae87cad2ec75a0749",
+          "KRvKR.rtbw": "797081b5b3fbac20c4baa5453d68bdae1425b63895f5c9a5ac5c68ea63a97712"
+        },
+        "python": {
+          "version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+          "implementation": "CPython",
+          "executable": "C:\\Users\\thoma\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+          "sha256": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1"
+        }
+      }
+    },
+    "error": null,
+    "execution": {
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "timeoutMs": 15000
+    }
+  },
+  "seconds": 1.5755511999999998
+}

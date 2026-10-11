@@ -1,0 +1,13 @@
+{
+  "id": "exchange-h5h7-accepted",
+  "phase": "accepted",
+  "seconds": 1.5099039000000003,
+  "probes": 6,
+  "rootWdl": 0,
+  "outcome": true,
+  "nonterminal": true,
+  "deficit": true,
+  "rows": true,
+  "costPass": true,
+  "passes": true
+}
