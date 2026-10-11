@@ -1,0 +1,7 @@
+import {isDeepStrictEqual} from 'node:util';
+import {controls,prepare} from './context.mjs';
+import {features} from './features.mjs';
+import {verifyPanel} from '../../E168-forced-pawn-weakness/code/verify-panel.mjs';
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+const admitted=[];
+export function inspectWeaknessCreation(input,options={},panel){const o=controls(input,options),r={schema:'E193-weakness-creation-v1',limit:o.limit,plies:o.H,nodes:0,status:'disabled',claims:{C0913:false,C0915:false,C1079:false},qualityClaim:false,witness:null,panel:null};if(!o.enabled)return r;const x=prepare(input,o.H);r.status=x.status;if(x.status!=='ready')return r;const exhaust=()=>({...r,nodes:o.limit+1,status:'exhausted'});if(x.work>o.limit)return exhaust();if(panel===undefined)return{...r,nodes:x.work,status:'panel-prerequisite'};plain(panel);if(!panel||!Number.isSafeInteger(panel.nodes)||panel.nodes<0)throw Error('Require full weakness panel');if(x.work+panel.nodes>o.limit)return exhaust();const key=[x.mapped,o.H,panel];let v=admitted.find(a=>isDeepStrictEqual(a.key,key));if(!v){const checked=verifyPanel(x.mapped,o.H,panel);v={key:structuredClone(key),...checked};admitted.push(v);}const w=features(input,panel,v.claim),cost=x.work+v.nodes+w.work;if(cost>o.limit)return exhaust();r.nodes=cost;r.panel=structuredClone(panel);if(w.claim)return{...r,status:'claim-rule-prerequisite'};r.witness=w;r.claims={C0913:w.created,C0915:w.provoked,C1079:w.second};r.status=Object.values(r.claims).some(Boolean)?'proven':'compared';return r;}
