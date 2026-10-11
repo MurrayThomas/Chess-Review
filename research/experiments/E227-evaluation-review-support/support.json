@@ -1,0 +1,187 @@
+{
+  "schema": "coach-prerequisite-v1",
+  "experiment": "E227",
+  "stage": "typed-evaluation-review-support",
+  "coverageCredit": false,
+  "futureClaims": [
+    "C0847",
+    "C0848",
+    "C0849",
+    "C1007",
+    "C1008",
+    "C1009",
+    "C1010",
+    "C1024",
+    "C1025",
+    "C1026",
+    "C1027",
+    "C1028",
+    "C1029",
+    "C1030",
+    "C1031"
+  ],
+  "supportedOccurrences": [
+    {
+      "id": "C0847",
+      "name": "Blunder",
+      "category": "34. Common mistakes",
+      "disposition": "existing-category-reported-interface",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C0848",
+      "name": "Mistake",
+      "category": "34. Common mistakes",
+      "disposition": "existing-category-reported-interface",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C0849",
+      "name": "Inaccuracy",
+      "category": "34. Common mistakes",
+      "disposition": "existing-category-reported-interface",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1007",
+      "name": "Mating evaluation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1008",
+      "name": "Centipawn evaluation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1009",
+      "name": "Engine evaluation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1010",
+      "name": "Depth",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1024",
+      "name": "Mate search",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1025",
+      "name": "Engine tactical analysis",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1026",
+      "name": "Engine positional evaluation",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1027",
+      "name": "Human versus engine move",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1028",
+      "name": "Top engine move",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1029",
+      "name": "Evaluation swing",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1030",
+      "name": "Blunder according to engine",
+      "category": "40. Computer-chess concepts",
+      "disposition": "existing-category-reported-interface",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    },
+    {
+      "id": "C1031",
+      "name": "Accuracy",
+      "category": "40. Computer-chess concepts",
+      "disposition": "typed-evaluation-report-or-display-estimate",
+      "scope": "Caller-reported existing category/analysis context, typed same-frame engine evaluations and legal move identities, or unchanged explicitly chosen display scoring on a supplied sample; no authenticated classification, mate/strategy truth, whole-game accuracy, player skill or detector credit."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "lib/public-scoring.js": "4e2124a1bb1896b3ceaeb499504ca9ae7eba93cf4b701b46a04972546113e706",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/REMOVAL-SUGGESTIONS.md": "a502f139c781cd5113b84106c0b894789f39405dde967d711fa1f59dc47f3b47",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/observations.mjs": "a47bdeb1a9a490ba52fbc21f644dc19d7bcbef56df0297a3845b93589dd09a50",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E223-engine-diagnostic-support/code/check-result.mjs": "a4aa346dd9e766c14ceba69ac2f7c06751bd04a46210a0c92d423a6f45f973d4",
+    "research/experiments/E223-engine-diagnostic-support/code/contract.mjs": "6fdd6aa061ca94fcdb530e63815236b097e0d7f42020e7f635b0c8728bef4cc8",
+    "research/experiments/E223-engine-diagnostic-support/code/parse.mjs": "c396d30614a01040f18421ba16c0707a5a381f7377388cbd0f820e6a8808f6e1",
+    "research/experiments/E223-engine-diagnostic-support/code/support.mjs": "27eafe89797196c50b978a8cd055d697840bfbf3323ba953d8f2b8d99ed461e5",
+    "research/experiments/E227-evaluation-review-support/amendment.md": "41ddb3f036d1456aab3362347dfbcdacb25c745b5b3bce07acd68849f62c37a1",
+    "research/experiments/E227-evaluation-review-support/code/check-result.mjs": "e78da923a9241e43e673689fac908da4b676d75b8634ab663bacc75b5c3abd5d",
+    "research/experiments/E227-evaluation-review-support/code/contract.mjs": "7ff2c0835bf874468da9c021477f50f4b4bb6d06c2cace3e8502559849593f97",
+    "research/experiments/E227-evaluation-review-support/code/fixtures.mjs": "a5527b0509b53efa98ecd33418a13b45424215e8b8c093feb6d3bb685340d2fa",
+    "research/experiments/E227-evaluation-review-support/code/record-support.mjs": "7e4dd26391c2b773f305f02619215a3849a87eda0dc1a2a2bd6d2e0910f9d8b2",
+    "research/experiments/E227-evaluation-review-support/code/run-amended-checks.mjs": "2598154514ddb264682981cb33fd4c78e9850d59d5a9f300f44d5b7677260841",
+    "research/experiments/E227-evaluation-review-support/code/run-focused.mjs": "b925aea37e8c838caf67340590e102cbc09f619943b1dfca41e05568cfb97e2d",
+    "research/experiments/E227-evaluation-review-support/code/saved.mjs": "309d831006f44ec1f7a1e90bb916cd9480b25bbba3f058dab961919a20f94106",
+    "research/experiments/E227-evaluation-review-support/code/support.mjs": "9d8e65604118912a7bb18a403b809b8d79e9271ab7479483459bae49bce5ddd3",
+    "research/experiments/E227-evaluation-review-support/code/support.test.mjs": "3b1d146b290d1e572a198c9fedc7412e0d20f83fd93cf082097171b4a1dfd1f5",
+    "research/experiments/E227-evaluation-review-support/plan.md": "54857bcac17f6db9c4dc48facdb83cd12928b2fbf2e3016e6d1b35eb0ebc5cb8",
+    "research/experiments/E227-evaluation-review-support/record-notes.md": "182dc7871ab47bf5be1c8395b6ac3e9a8d90a937d7fc4adafd2f515d49e34310",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace",
+    "analysis.js": "38cec44e0049de33be4f006cd4ff93fdf9ce568cff67ceadbf013231d35924b2"
+  },
+  "implemented": "Default-disabled typed engine review adapter; same-frame actual-actor CP/mate comparison, exact reported move identity, caller category/context provenance, unchanged explicitly chosen display scoring and duplicate/missing/forced-aware sample groups; no new category thresholds or detector truth.",
+  "focusedChecks": [
+    "node --test research/experiments/E227-evaluation-review-support/code/support.test.mjs (16/16 pass; 2.756 seconds; zero searches)",
+    "14synthetic cases independently replay; CP both actors/negative/exact-large residual, mate signs/zero/mixed/bounds, incomplete/conflicting/split frames and absent ranks",
+    "reported categories/context, legal human/underpromotion, unchanged scoring equations/forced exclusion, configuration/actor groups, duplicate/missing sample suppression",
+    "strict/getter/unknown/disabled, exact/short/zero shared budgets, genuine declined/automatic histories, clones and scalar/category/top/proof/accuracy forgeries",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "authenticated runtime category/engine/frame/configuration adapters and validated causal explanations",
+    "independent engine score, mate/outcome and strategic truth",
+    "full-game source/sequence/selection validity, SF18 calibrated scoring, real-game precision and human usefulness",
+    "all original broader strategic prerequisites, combined integration/semantic validation and separate production promotion"
+  ]
+}
