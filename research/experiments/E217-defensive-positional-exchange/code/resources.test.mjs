@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {writeFile} from 'node:fs/promises';
+import {readFile,writeFile} from 'node:fs/promises';
 import {Chess} from '../../../../lib/chess.js';
 import {boardFen} from '../../FRIEND-shared/lib.mjs';
 import {admitSaved,readAdmission} from './admission.mjs';
@@ -19,4 +19,4 @@ test('ordinary quiet rook move does not qualify',()=>{const r=rows[0],input={...
 test('immediate bishop recapture is excluded before source admission',()=>{const fen=boardFen({f7:'K',g8:'B',g7:'R',h8:'k',h5:'r',h7:'b'}),input={fen,history:{fen,moves:[]},move:'g7h7',quietMove:'f7e8'};const c=new Chess(fen);c.move(input.move);assert.deepEqual(c.moves(),['Rxh7+']);c.move('h5h7');assert.ok(c.moves().includes('Bxh7'));assert.equal(inspectDefensiveExchange(input,{enabled:true}).status,'nonmaterial-prerequisite');});
 test('strict input options getters and genuine history',()=>{const r=rows[0];for(const o of [{enabled:'yes'},{enabled:true,maxRecords:-1},{maxRecords:257},{maxRecords:1.5},{extra:true}])assert.throws(()=>inspectDefensiveExchange(r.input,o,r.token));for(const i of [{...r.input,move:'Rxh7+'},{...r.input,extra:true},{...r.input,history:{fen:r.input.fen,moves:['f7e8']}}])assert.throws(()=>inspectDefensiveExchange(i,{enabled:true},r.token));let touched=false;const i={...r.input};Object.defineProperty(i,'fen',{enumerable:true,get(){touched=true;return r.input.fen;}});assert.throws(()=>inspectDefensiveExchange(i,{enabled:true}));assert.equal(touched,false);});
 test('actual halfmove counters preserved in zero-counter observation model',()=>{for(const r of rows){const a=readAdmission(r.token);assert.ok(a.observations.filter(o=>o.id.endsWith('-accepted')).every(o=>o.input.fen.split(' ')[4]==='0'));assert.ok(a.observations.filter(o=>o.id.endsWith('-quiet')).every(o=>o.input.fen.split(' ')[4]==='1'));assert.ok(a.observations.every(o=>o.view.outcomeScope.includes('zero-counter')));}});
-test('retain exactly two independently checked examples',async()=>{assert.equal(examples.length,2);await writeFile('research/experiments/E217-defensive-positional-exchange/evidence/examples.json',JSON.stringify(examples,null,2)+'\n',{flag:'wx'});});
+test('retain exactly two independently checked examples',async()=>{assert.equal(examples.length,2);const file='research/experiments/E217-defensive-positional-exchange/evidence/examples.json';try{assert.deepEqual(JSON.parse(await readFile(file,'utf8')),examples);}catch(e){if(e.code!=='ENOENT')throw e;await writeFile(file,JSON.stringify(examples,null,2)+'\n',{flag:'wx'});}});

@@ -1,0 +1,472 @@
+[
+  {
+    "id": "exchange",
+    "input": {
+      "fen": "7k/5KRb/8/7r/8/8/8/2B5 w - - 0 1",
+      "history": {
+        "fen": "7k/5KRb/8/7r/8/8/8/2B5 w - - 0 1",
+        "moves": []
+      },
+      "move": "g7h7",
+      "quietMove": "f7e8"
+    },
+    "result": {
+      "schema": "E217-defensive-exchange-resource",
+      "claims": [
+        "C0092",
+        "C0907"
+      ],
+      "available": true,
+      "status": "observed-defensive-exchange",
+      "actor": "w",
+      "requiredRecords": 52,
+      "usedRecords": 52,
+      "branches": [
+        {
+          "reply": "h5h7",
+          "acceptedFen": "7k/5K1r/8/8/8/8/8/2B5 w - - 0 2",
+          "acceptedActorWdl": 0,
+          "quietMove": "f7e8",
+          "quietFen": "4K2k/7r/8/8/8/8/8/2B5 b - - 1 2",
+          "quietActorWdl": 0,
+          "materialDelta": -2,
+          "bishop": "c1",
+          "defenses": [
+            {
+              "move": "h7a7",
+              "fen": "4K2k/r7/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7b7",
+              "fen": "4K2k/1r6/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7c7",
+              "fen": "4K2k/2r5/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7d7",
+              "fen": "4K2k/3r4/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7e7",
+              "fen": "4K2k/4r3/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7f7",
+              "fen": "4K2k/5r2/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7g7",
+              "fen": "4K2k/6r1/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h1",
+              "fen": "4K2k/8/8/8/8/8/8/2B4r w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h2",
+              "fen": "4K2k/8/8/8/8/8/7r/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h3",
+              "fen": "4K2k/8/8/8/8/7r/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h4",
+              "fen": "4K2k/8/8/8/7r/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h5",
+              "fen": "4K2k/8/8/7r/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h6",
+              "fen": "4K2k/8/7r/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h8g7",
+              "fen": "4K3/6kr/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h8g8",
+              "fen": "4K1k1/7r/8/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            }
+          ]
+        },
+        {
+          "reply": "h8h7",
+          "acceptedFen": "8/5K1k/8/7r/8/8/8/2B5 w - - 0 2",
+          "acceptedActorWdl": 0,
+          "quietMove": "f7e8",
+          "quietFen": "4K3/7k/8/7r/8/8/8/2B5 b - - 1 2",
+          "quietActorWdl": 0,
+          "materialDelta": -2,
+          "bishop": "c1",
+          "defenses": [
+            {
+              "move": "h5a5",
+              "fen": "4K3/7k/8/r7/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5b5",
+              "fen": "4K3/7k/8/1r6/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5c5",
+              "fen": "4K3/7k/8/2r5/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5d5",
+              "fen": "4K3/7k/8/3r4/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5e5",
+              "fen": "4K3/7k/8/4r3/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5f5",
+              "fen": "4K3/7k/8/5r2/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5g5",
+              "fen": "4K3/7k/8/6r1/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5h1",
+              "fen": "4K3/7k/8/8/8/8/8/2B4r w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5h2",
+              "fen": "4K3/7k/8/8/8/8/7r/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5h3",
+              "fen": "4K3/7k/8/8/8/7r/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5h4",
+              "fen": "4K3/7k/8/8/7r/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h5h6",
+              "fen": "4K3/7k/7r/8/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7g6",
+              "fen": "4K3/8/6k1/7r/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7g7",
+              "fen": "4K3/6k1/8/7r/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7g8",
+              "fen": "4K1k1/8/8/7r/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h7h8",
+              "fen": "4K2k/8/8/7r/8/8/8/2B5 w - - 2 3",
+              "actorWdl": 0
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h5h7-accepted.json",
+          "sha256": "b32bf9d71895ec4cadee337fb086847f7514682a2b8fee7c66b189cb92d98d19",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h5h7-quiet.json",
+          "sha256": "85e5cc02631bd8b015964480b1ffba6cbe0845303bf7a48a2369abea020af9b7",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h8h7-accepted.json",
+          "sha256": "3fc12772e252ad4fe50b78ad4add1ad12ba9c5a1022abdd5930f744c9b84cf4c",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h8h7-quiet.json",
+          "sha256": "44266bca2e36b40f6d98d9d4bb30ed646c2eea05973e24f3d7ee624e2540adfc",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        }
+      ],
+      "outcomeScope": "WDL50 zero-counter observations at actual recorded FENs; no arbitrary-clock/repetition adjudication or initial-position quality claim",
+      "qualityClaim": false
+    },
+    "check": {
+      "passed": true,
+      "branches": 2,
+      "defenses": 31,
+      "records": 52
+    }
+  },
+  {
+    "id": "exchange-black",
+    "input": {
+      "fen": "2b5/8/8/8/7R/8/5krB/7K b - - 0 1",
+      "history": {
+        "fen": "2b5/8/8/8/7R/8/5krB/7K b - - 0 1",
+        "moves": []
+      },
+      "move": "g2h2",
+      "quietMove": "f2e1"
+    },
+    "result": {
+      "schema": "E217-defensive-exchange-resource",
+      "claims": [
+        "C0092",
+        "C0907"
+      ],
+      "available": true,
+      "status": "observed-defensive-exchange",
+      "actor": "b",
+      "requiredRecords": 52,
+      "usedRecords": 52,
+      "branches": [
+        {
+          "reply": "h1h2",
+          "acceptedFen": "2b5/8/8/8/7R/8/5k1K/8 b - - 0 2",
+          "acceptedActorWdl": 0,
+          "quietMove": "f2e1",
+          "quietFen": "2b5/8/8/8/7R/8/7K/4k3 w - - 1 3",
+          "quietActorWdl": 0,
+          "materialDelta": -2,
+          "bishop": "c8",
+          "defenses": [
+            {
+              "move": "h2g1",
+              "fen": "2b5/8/8/8/7R/8/8/4k1K1 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2g2",
+              "fen": "2b5/8/8/8/7R/8/6K1/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2g3",
+              "fen": "2b5/8/8/8/7R/6K1/8/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h1",
+              "fen": "2b5/8/8/8/7R/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4a4",
+              "fen": "2b5/8/8/8/R7/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4b4",
+              "fen": "2b5/8/8/8/1R6/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4c4",
+              "fen": "2b5/8/8/8/2R5/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4d4",
+              "fen": "2b5/8/8/8/3R4/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4e4",
+              "fen": "2b5/8/8/8/4R3/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4f4",
+              "fen": "2b5/8/8/8/5R2/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4g4",
+              "fen": "2b5/8/8/8/6R1/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4h3",
+              "fen": "2b5/8/8/8/8/7R/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4h5",
+              "fen": "2b5/8/8/7R/8/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4h6",
+              "fen": "2b5/8/7R/8/8/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4h7",
+              "fen": "2b5/7R/8/8/8/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h4h8",
+              "fen": "2b4R/8/8/8/8/8/7K/4k3 b - - 2 3",
+              "actorWdl": 0
+            }
+          ]
+        },
+        {
+          "reply": "h4h2",
+          "acceptedFen": "2b5/8/8/8/8/8/5k1R/7K b - - 0 2",
+          "acceptedActorWdl": 0,
+          "quietMove": "f2e1",
+          "quietFen": "2b5/8/8/8/8/8/7R/4k2K w - - 1 3",
+          "quietActorWdl": 0,
+          "materialDelta": -2,
+          "bishop": "c8",
+          "defenses": [
+            {
+              "move": "h1g1",
+              "fen": "2b5/8/8/8/8/8/7R/4k1K1 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h1g2",
+              "fen": "2b5/8/8/8/8/8/6KR/4k3 b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2a2",
+              "fen": "2b5/8/8/8/8/8/R7/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2b2",
+              "fen": "2b5/8/8/8/8/8/1R6/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2c2",
+              "fen": "2b5/8/8/8/8/8/2R5/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2d2",
+              "fen": "2b5/8/8/8/8/8/3R4/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2e2",
+              "fen": "2b5/8/8/8/8/8/4R3/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2f2",
+              "fen": "2b5/8/8/8/8/8/5R2/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2g2",
+              "fen": "2b5/8/8/8/8/8/6R1/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h3",
+              "fen": "2b5/8/8/8/8/7R/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h4",
+              "fen": "2b5/8/8/8/7R/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h5",
+              "fen": "2b5/8/8/7R/8/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h6",
+              "fen": "2b5/8/7R/8/8/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h7",
+              "fen": "2b5/7R/8/8/8/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            },
+            {
+              "move": "h2h8",
+              "fen": "2b4R/8/8/8/8/8/8/4k2K b - - 2 3",
+              "actorWdl": 0
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-accepted.json",
+          "sha256": "7cd0531d2d632e02bce8587b848afd7cc9443abd0ac7c5c43c3130408c241909",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-quiet.json",
+          "sha256": "62981317cda22f528774bae07bc45eee93ddf3f259f4293a96220bcaa288ce8a",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h4h2-accepted.json",
+          "sha256": "9f443b8f4bc1efd9d410b85dd2cf49db5dfdace2bf4cf66baadf815283c3c23f",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h4h2-quiet.json",
+          "sha256": "4892244e3c033f81e0c1e89c373fc2264638bc368bcd51c0342ad1c18725676a",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        }
+      ],
+      "outcomeScope": "WDL50 zero-counter observations at actual recorded FENs; no arbitrary-clock/repetition adjudication or initial-position quality claim",
+      "qualityClaim": false
+    },
+    "check": {
+      "passed": true,
+      "branches": 2,
+      "defenses": 31,
+      "records": 52
+    }
+  }
+]
