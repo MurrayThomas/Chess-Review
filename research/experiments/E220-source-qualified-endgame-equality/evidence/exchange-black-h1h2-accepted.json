@@ -1,0 +1,353 @@
+{
+  "revision": "ae5ea398466e0c04de4e4a44602b0e76bc33d481",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
+    "research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs": "c3922383bbb583679f87b23034321ee7545afba0cd0c19c7038a32a4ff7ad034",
+    "research/experiments/E211-rook-tablebase-admission/code/context.mjs": "6da0974638c556cc6b5b0eb8fffbe735ad7c0fad6fb0e6e079e71b715b4e51ec",
+    "research/experiments/E211-rook-tablebase-admission/code/exports.mjs": "bf9aeb0370116265582f0ddd27abe17ba3b14c8789ffe46f289e6c41de193e09",
+    "research/experiments/E211-rook-tablebase-admission/code/saved.mjs": "e8684e52ce344fc7aa930813a964edf98a685b89bf90157463c5da702f2e6efa",
+    "research/experiments/E217-defensive-positional-exchange/code/admission.mjs": "110f6bec90ee1d97447eec7134cb7f40bcd7e8319781f10141a7f293ad6409cc",
+    "research/experiments/E220-source-qualified-endgame-equality/code/admission.mjs": "db523c603c17c23b735d5fac8463b8bb9529939b3e2999b1bec2a9dab9bd67a7",
+    "research/experiments/E220-source-qualified-endgame-equality/code/check-result.mjs": "84e9aee7693c7b4f4f957803c16c428c6eca6a512bdddf44038ab41ede8d0831",
+    "research/experiments/E220-source-qualified-endgame-equality/code/equality.mjs": "1f15008e9b4318a3b375098014b44058f179ffbcb5492ce128de511229fd02ed",
+    "research/experiments/E220-source-qualified-endgame-equality/code/pilot.mjs": "40bbf3b198ee32757bfca9c50a7932177a9d65c848bf20e2ebf1c133a21b4b92",
+    "research/experiments/E220-source-qualified-endgame-equality/plan.md": "a40b41feeabe84a53033388cc691da94b0e99e780f7bfa59de4b5849f69249cf",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "research/tablebase-rook-data-policy.mjs": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "id": "exchange-black-h1h2-accepted",
+  "role": "equality-pair",
+  "input": {
+    "fen": "2b5/8/8/8/7R/8/5k1K/8 b - - 0 2",
+    "history": {
+      "fen": "2b5/8/8/8/7R/8/5krB/7K b - - 0 1",
+      "moves": [
+        "g2h2",
+        "h1h2"
+      ]
+    },
+    "move": "f2e1"
+  },
+  "options": {
+    "enabled": true,
+    "player": "b"
+  },
+  "result": {
+    "schema": "E220-source-qualified-equality",
+    "claims": [
+      "C0571",
+      "C0580",
+      "C0968"
+    ],
+    "available": true,
+    "status": "source-observed-equality",
+    "player": "b",
+    "limit": 256,
+    "requiredRecords": 30,
+    "usedRecords": 30,
+    "qualityClaim": false,
+    "witness": {
+      "before": "2b5/8/8/8/7R/8/5k1K/8 b - - 0 2",
+      "actualMove": "f2e1",
+      "after": "2b5/8/8/8/7R/8/7K/4k3 w - - 1 3",
+      "root": {
+        "actor": "b",
+        "fen": "2b5/8/8/8/7R/8/5k1K/8 b - - 0 2",
+        "rootWdl": 0,
+        "records": 13,
+        "actions": [
+          {
+            "move": "c8a6",
+            "fen": "8/8/b7/8/7R/8/5k1K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "c8b7",
+            "fen": "8/1b6/8/8/7R/8/5k1K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "c8d7",
+            "fen": "8/3b4/8/8/7R/8/5k1K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "c8e6",
+            "fen": "8/8/4b3/8/7R/8/5k1K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "c8f5",
+            "fen": "8/8/8/5b2/7R/8/5k1K/8 w - - 1 3",
+            "actorWdl": -2,
+            "actorCategory": "loss",
+            "playerWdl": -2,
+            "playerCategory": "loss"
+          },
+          {
+            "move": "c8g4",
+            "fen": "8/8/8/8/6bR/8/5k1K/8 w - - 1 3",
+            "actorWdl": -2,
+            "actorCategory": "loss",
+            "playerWdl": -2,
+            "playerCategory": "loss"
+          },
+          {
+            "move": "c8h3",
+            "fen": "8/8/8/8/7R/7b/5k1K/8 w - - 1 3",
+            "actorWdl": -2,
+            "actorCategory": "loss",
+            "playerWdl": -2,
+            "playerCategory": "loss"
+          },
+          {
+            "move": "f2e1",
+            "fen": "2b5/8/8/8/7R/8/7K/4k3 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "f2e2",
+            "fen": "2b5/8/8/8/7R/8/4k2K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "f2e3",
+            "fen": "2b5/8/8/8/7R/4k3/7K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "f2f1",
+            "fen": "2b5/8/8/8/7R/8/7K/5k2 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "f2f3",
+            "fen": "2b5/8/8/8/7R/5k2/7K/8 w - - 1 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          }
+        ],
+        "preserving": [
+          "c8a6",
+          "c8b7",
+          "c8d7",
+          "c8e6",
+          "f2e1",
+          "f2e2",
+          "f2e3",
+          "f2f1",
+          "f2f3"
+        ],
+        "maximum": 0
+      },
+      "next": {
+        "actor": "w",
+        "fen": "2b5/8/8/8/7R/8/7K/4k3 w - - 1 3",
+        "rootWdl": 0,
+        "records": 17,
+        "actions": [
+          {
+            "move": "h2g1",
+            "fen": "2b5/8/8/8/7R/8/8/4k1K1 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h2g2",
+            "fen": "2b5/8/8/8/7R/8/6K1/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h2g3",
+            "fen": "2b5/8/8/8/7R/6K1/8/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h2h1",
+            "fen": "2b5/8/8/8/7R/8/8/4k2K b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4a4",
+            "fen": "2b5/8/8/8/R7/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4b4",
+            "fen": "2b5/8/8/8/1R6/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4c4",
+            "fen": "2b5/8/8/8/2R5/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4d4",
+            "fen": "2b5/8/8/8/3R4/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4e4",
+            "fen": "2b5/8/8/8/4R3/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4f4",
+            "fen": "2b5/8/8/8/5R2/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4g4",
+            "fen": "2b5/8/8/8/6R1/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4h3",
+            "fen": "2b5/8/8/8/8/7R/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4h5",
+            "fen": "2b5/8/8/7R/8/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4h6",
+            "fen": "2b5/8/7R/8/8/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4h7",
+            "fen": "2b5/7R/8/8/8/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          },
+          {
+            "move": "h4h8",
+            "fen": "2b4R/8/8/8/8/8/7K/4k3 b - - 2 3",
+            "actorWdl": 0,
+            "actorCategory": "draw",
+            "playerWdl": 0,
+            "playerCategory": "draw"
+          }
+        ],
+        "preserving": [
+          "h2g1",
+          "h2g2",
+          "h2g3",
+          "h2h1",
+          "h4a4",
+          "h4b4",
+          "h4c4",
+          "h4d4",
+          "h4e4",
+          "h4f4",
+          "h4g4",
+          "h4h3",
+          "h4h5",
+          "h4h6",
+          "h4h7",
+          "h4h8"
+        ],
+        "maximum": 0
+      },
+      "sources": [
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-accepted.json",
+          "sha256": "7cd0531d2d632e02bce8587b848afd7cc9443abd0ac7c5c43c3130408c241909",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        },
+        {
+          "artifact": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-quiet.json",
+          "sha256": "62981317cda22f528774bae07bc45eee93ddf3f259f4293a96220bcaa288ce8a",
+          "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+        }
+      ],
+      "model": "WDL50 zero-counter observations; actual FEN/history counters retained; no arbitrary-clock/repetition/DTZ adjudication",
+      "interpretation": "theoretical outcome equality with draw-preserving actions for both actual actors, not equal practical chances or opening equalization"
+    }
+  },
+  "observedRootWdl": 0
+}
