@@ -1,0 +1,9 @@
+{
+  "id": "a3-e5",
+  "seconds": 5.506005,
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "stdout": "{\"id\":\"a3-e5\",\"seconds\":3.7061958999999995,\"error\":null,\"values\":{\"actor\":\"b\",\"top\":[[\"d7d5\"],[\"d7d5\"]],\"actualActor\":[{\"cp\":5,\"wdl\":[22,963,15]},{\"cp\":5,\"wdl\":[22,963,15]}],\"alternativeActor\":[{\"cp\":-33,\"wdl\":[5,930,65]},{\"cp\":-24,\"wdl\":[7,947,46]}],\"searches\":42}}\n",
+  "stderr": ""
+}

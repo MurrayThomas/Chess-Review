@@ -1,0 +1,180 @@
+{
+  "source": "E147",
+  "observationsSha256": "de96c6a62165067090ee1beb082f55299ec40c599bd34b58d398f27991cc91b2",
+  "sourceAuditSha256": "a4214a1bb6965c01716d60f85a0c9ecd0904a812bd74073fa85f8d3990def236",
+  "borrowed": [
+    {
+      "key": {
+        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+        "history": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "moves": [
+            "e2e4"
+          ]
+        },
+        "move": "e7e5"
+      },
+      "bundleSha256": "7629b2cb20449a138987419f124abd906f5436963c9a530a0cb252cc0a0cc71e",
+      "values": {
+        "actor": "b",
+        "top": [
+          [
+            "e7e5"
+          ],
+          [
+            "c7c5"
+          ]
+        ],
+        "actualActor": [
+          {
+            "cp": -15,
+            "wdl": [
+              10,
+              957,
+              33
+            ]
+          },
+          {
+            "cp": -31,
+            "wdl": [
+              5,
+              935,
+              60
+            ]
+          }
+        ],
+        "alternativeActor": [
+          {
+            "cp": -72,
+            "wdl": [
+              1,
+              752,
+              247
+            ]
+          },
+          {
+            "cp": -66,
+            "wdl": [
+              1,
+              791,
+              208
+            ]
+          }
+        ],
+        "searches": 42
+      }
+    },
+    {
+      "key": {
+        "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4",
+        "history": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "moves": [
+            "e2e4",
+            "e7e5",
+            "g1f3",
+            "b8c6",
+            "f1c4",
+            "g8f6",
+            "d2d3"
+          ]
+        },
+        "move": "f8c5"
+      },
+      "bundleSha256": "62d21f43c1a8b66b50629a1a657b193fc3f1e0245472e4e3c320bac810e8ef8c",
+      "values": {
+        "actor": "b",
+        "top": [
+          [
+            "f8e7"
+          ],
+          [
+            "d7d5"
+          ]
+        ],
+        "actualActor": [
+          {
+            "cp": -28,
+            "wdl": [
+              6,
+              940,
+              54
+            ]
+          },
+          {
+            "cp": -23,
+            "wdl": [
+              8,
+              948,
+              44
+            ]
+          }
+        ],
+        "alternativeActor": [
+          {
+            "cp": -35,
+            "wdl": [
+              5,
+              924,
+              71
+            ]
+          },
+          {
+            "cp": -27,
+            "wdl": [
+              6,
+              942,
+              52
+            ]
+          }
+        ],
+        "searches": 61
+      }
+    },
+    {
+      "key": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "history": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "moves": []
+        },
+        "move": "e2e4"
+      },
+      "bundleSha256": "23f664126080073fd074f58a333ef2b68fd78847f1de0e6e2190ce6b0a361a6f",
+      "values": {
+        "actor": "w",
+        "top": [
+          [
+            "e2e4"
+          ],
+          [
+            "e2e4"
+          ]
+        ],
+        "actualActor": [
+          {
+            "cp": 32,
+            "wdl": [
+              64,
+              931,
+              5
+            ]
+          },
+          {
+            "cp": 18,
+            "wdl": [
+              37,
+              954,
+              9
+            ]
+          }
+        ],
+        "alternativeActor": [
+          null,
+          null
+        ],
+        "searches": 42
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "h3-d5",
+  "seconds": 5.2718737,
+  "exitCode": 0,
+  "signal": null,
+  "processError": null,
+  "stdout": "{\"id\":\"h3-d5\",\"seconds\":3.5305573,\"error\":null,\"values\":{\"actor\":\"b\",\"top\":[[\"e7e5\"],[\"d7d5\"]],\"actualActor\":[{\"cp\":16,\"wdl\":[34,956,10]},{\"cp\":12,\"wdl\":[30,959,11]}],\"alternativeActor\":[{\"cp\":-19,\"wdl\":[9,952,39]},{\"cp\":-27,\"wdl\":[6,942,52]}],\"searches\":42}}\n",
+  "stderr": ""
+}
