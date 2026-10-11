@@ -1,0 +1,39 @@
+{
+  "id": "philidor-retreat-reflection",
+  "phase": "philidor-retreat",
+  "seconds": 1.4899211999999997,
+  "probes": 15,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "w",
+      "pawn": "e3",
+      "king": "e1",
+      "attackerKing": "d4",
+      "rook": "b3",
+      "longSign": -1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 1,
+      "rookSharesKingRank": false,
+      "attacker": "b",
+      "pawnRank": 6,
+      "attackerKingRank": 5,
+      "rookRank": 6,
+      "attackerRook": "h7",
+      "kingOnPromotionSquare": true,
+      "entryTargets": [],
+      "recordedAdvance": true,
+      "supported": true
+    },
+    "resources": [
+      "b3b8"
+    ],
+    "alternatives": [
+      "b3b1",
+      "b3b2"
+    ]
+  },
+  "costPass": true
+}

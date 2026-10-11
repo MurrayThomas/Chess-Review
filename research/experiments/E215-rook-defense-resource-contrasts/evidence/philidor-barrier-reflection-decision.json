@@ -1,0 +1,44 @@
+{
+  "id": "philidor-barrier-reflection",
+  "phase": "philidor-barrier",
+  "seconds": 1.6147346,
+  "probes": 20,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "w",
+      "pawn": "e4",
+      "king": "e1",
+      "attackerKing": "d4",
+      "rook": "a3",
+      "longSign": -1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 2,
+      "rookSharesKingRank": false,
+      "attacker": "b",
+      "pawnRank": 5,
+      "attackerKingRank": 5,
+      "rookRank": 6,
+      "attackerRook": "h7",
+      "kingOnPromotionSquare": true,
+      "entryTargets": [
+        "c3",
+        "d3",
+        "e3"
+      ],
+      "recordedAdvance": false,
+      "supported": true
+    },
+    "resources": [
+      "a3b3",
+      "a3g3"
+    ],
+    "alternatives": [
+      "a3a1",
+      "a3a2"
+    ]
+  },
+  "costPass": true
+}

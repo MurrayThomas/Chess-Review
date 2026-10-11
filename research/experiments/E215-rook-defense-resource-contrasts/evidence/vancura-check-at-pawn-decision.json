@@ -1,0 +1,46 @@
+{
+  "id": "vancura-check-at-pawn",
+  "phase": "vancura-check-at-pawn",
+  "seconds": 1.5063770000000003,
+  "probes": 20,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "b",
+      "pawn": "a6",
+      "king": "g7",
+      "attackerKing": "b6",
+      "rook": "f5",
+      "longSign": 1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 3,
+      "rookSharesKingRank": false,
+      "attacker": "w",
+      "pawnRank": 6,
+      "attackerKingRank": 6,
+      "rookRank": 5,
+      "attackerRook": "a8",
+      "kingOnPromotionSquare": false,
+      "entryTargets": [],
+      "recordedAdvance": false,
+      "supported": true
+    },
+    "resources": [
+      "f5f6"
+    ],
+    "alternatives": [
+      "f5d5",
+      "f5e5",
+      "f5f1",
+      "f5f2",
+      "f5f3",
+      "f5f4",
+      "f5f7",
+      "f5g5",
+      "f5h5"
+    ]
+  },
+  "costPass": true
+}

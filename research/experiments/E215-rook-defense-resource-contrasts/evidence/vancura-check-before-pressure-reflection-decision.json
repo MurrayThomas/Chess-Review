@@ -1,0 +1,42 @@
+{
+  "id": "vancura-check-before-pressure-reflection",
+  "phase": "vancura-check-before-pressure",
+  "seconds": 1.5842147999999998,
+  "probes": 19,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "w",
+      "pawn": "a3",
+      "king": "g2",
+      "attackerKing": "a4",
+      "rook": "f3",
+      "longSign": 1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 4,
+      "rookSharesKingRank": false,
+      "attacker": "b",
+      "pawnRank": 6,
+      "attackerKingRank": 5,
+      "rookRank": 6,
+      "attackerRook": "a1",
+      "kingOnPromotionSquare": false,
+      "entryTargets": [],
+      "recordedAdvance": false,
+      "supported": true
+    },
+    "resources": [
+      "f3f4"
+    ],
+    "alternatives": [
+      "f3c3",
+      "f3d3",
+      "f3e3",
+      "f3g3",
+      "f3h3"
+    ]
+  },
+  "costPass": true
+}

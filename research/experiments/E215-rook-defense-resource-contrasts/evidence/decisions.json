@@ -1,0 +1,347 @@
+{
+  "revision": "c3360c098edfdcfceee442f3d8144aac9b4eee79",
+  "decisions": [
+    {
+      "id": "E214-philidor-barrier",
+      "phase": "philidor-barrier",
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "e5",
+          "king": "e8",
+          "attackerKing": "d5",
+          "rook": "a6",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 2,
+          "rookSharesKingRank": false,
+          "attacker": "w",
+          "pawnRank": 5,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "h2",
+          "kingOnPromotionSquare": true,
+          "entryTargets": [
+            "c6",
+            "d6",
+            "e6"
+          ],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "a6b6",
+          "a6g6"
+        ],
+        "alternatives": [
+          "a6a7",
+          "a6a8"
+        ]
+      },
+      "reused": true
+    },
+    {
+      "id": "E214-philidor-retreat",
+      "phase": "philidor-retreat",
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "e6",
+          "king": "e8",
+          "attackerKing": "d5",
+          "rook": "b6",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 1,
+          "rookSharesKingRank": false,
+          "attacker": "w",
+          "pawnRank": 6,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "h2",
+          "kingOnPromotionSquare": true,
+          "entryTargets": [],
+          "recordedAdvance": true,
+          "supported": true
+        },
+        "resources": [
+          "b6b1"
+        ],
+        "alternatives": [
+          "b6b7",
+          "b6b8"
+        ]
+      },
+      "reused": true
+    },
+    {
+      "id": "E214-vancura-pressure",
+      "phase": "vancura-check-before-pressure",
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "a6",
+          "king": "g7",
+          "attackerKing": "a5",
+          "rook": "f6",
+          "longSign": 1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false,
+          "attacker": "w",
+          "pawnRank": 6,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "a8",
+          "kingOnPromotionSquare": false,
+          "entryTargets": [],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "f6f5"
+        ],
+        "alternatives": [
+          "f6c6",
+          "f6d6",
+          "f6e6",
+          "f6g6",
+          "f6h6"
+        ]
+      },
+      "reused": true
+    },
+    {
+      "id": "philidor-barrier-reflection",
+      "phase": "philidor-barrier",
+      "seconds": 1.6147346,
+      "probes": 20,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "w",
+          "pawn": "e4",
+          "king": "e1",
+          "attackerKing": "d4",
+          "rook": "a3",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 2,
+          "rookSharesKingRank": false,
+          "attacker": "b",
+          "pawnRank": 5,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "h7",
+          "kingOnPromotionSquare": true,
+          "entryTargets": [
+            "c3",
+            "d3",
+            "e3"
+          ],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "a3b3",
+          "a3g3"
+        ],
+        "alternatives": [
+          "a3a1",
+          "a3a2"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "philidor-retreat-reflection",
+      "phase": "philidor-retreat",
+      "seconds": 1.4899211999999997,
+      "probes": 15,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "w",
+          "pawn": "e3",
+          "king": "e1",
+          "attackerKing": "d4",
+          "rook": "b3",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 1,
+          "rookSharesKingRank": false,
+          "attacker": "b",
+          "pawnRank": 6,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "h7",
+          "kingOnPromotionSquare": true,
+          "entryTargets": [],
+          "recordedAdvance": true,
+          "supported": true
+        },
+        "resources": [
+          "b3b8"
+        ],
+        "alternatives": [
+          "b3b1",
+          "b3b2"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "vancura-check-before-pressure-reflection",
+      "phase": "vancura-check-before-pressure",
+      "seconds": 1.5842147999999998,
+      "probes": 19,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "w",
+          "pawn": "a3",
+          "king": "g2",
+          "attackerKing": "a4",
+          "rook": "f3",
+          "longSign": 1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false,
+          "attacker": "b",
+          "pawnRank": 6,
+          "attackerKingRank": 5,
+          "rookRank": 6,
+          "attackerRook": "a1",
+          "kingOnPromotionSquare": false,
+          "entryTargets": [],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "f3f4"
+        ],
+        "alternatives": [
+          "f3c3",
+          "f3d3",
+          "f3e3",
+          "f3g3",
+          "f3h3"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "vancura-check-at-pawn",
+      "phase": "vancura-check-at-pawn",
+      "seconds": 1.5063770000000003,
+      "probes": 20,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "a6",
+          "king": "g7",
+          "attackerKing": "b6",
+          "rook": "f5",
+          "longSign": 1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 3,
+          "rookSharesKingRank": false,
+          "attacker": "w",
+          "pawnRank": 6,
+          "attackerKingRank": 6,
+          "rookRank": 5,
+          "attackerRook": "a8",
+          "kingOnPromotionSquare": false,
+          "entryTargets": [],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "f5f6"
+        ],
+        "alternatives": [
+          "f5d5",
+          "f5e5",
+          "f5f1",
+          "f5f2",
+          "f5f3",
+          "f5f4",
+          "f5f7",
+          "f5g5",
+          "f5h5"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "vancura-check-at-pawn-reflection",
+      "phase": "vancura-check-at-pawn",
+      "seconds": 1.507594,
+      "probes": 20,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "w",
+          "pawn": "a3",
+          "king": "g2",
+          "attackerKing": "b3",
+          "rook": "f4",
+          "longSign": 1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 3,
+          "rookSharesKingRank": false,
+          "attacker": "b",
+          "pawnRank": 6,
+          "attackerKingRank": 6,
+          "rookRank": 5,
+          "attackerRook": "a1",
+          "kingOnPromotionSquare": false,
+          "entryTargets": [],
+          "recordedAdvance": false,
+          "supported": true
+        },
+        "resources": [
+          "f4f3"
+        ],
+        "alternatives": [
+          "f4d4",
+          "f4e4",
+          "f4f2",
+          "f4f5",
+          "f4f6",
+          "f4f7",
+          "f4f8",
+          "f4g4",
+          "f4h4"
+        ]
+      },
+      "costPass": true
+    }
+  ],
+  "families": {
+    "philidor": true,
+    "vancura": true
+  },
+  "stoppedForCost": false,
+  "reusedObservations": "previously exposed development, not fresh confirmation"
+}
