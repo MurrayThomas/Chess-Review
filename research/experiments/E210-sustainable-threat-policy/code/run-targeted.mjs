@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {spawnSync,execFileSync} from 'node:child_process';
+import {openResearchData} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {dir} from './fixtures.mjs';
+const data=await openResearchData(['D001'],{purpose:'test'}),before=JSON.parse(gunzipSync(await readFile(dir+'/evidence/pre-hardening-sources.json.gz')));
+for(const f of ['rules.mjs','policy.mjs','fixtures.mjs','run-focused.mjs'])assert.equal(before[f],await readFile(dir+'/code/'+f,'utf8'));
+const old="assert.ok(typeof s.mateThreat==='string');diagram.move(s.mateThreat);",next="assert.ok(typeof s.mateThreat==='string'&&/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(s.mateThreat));assert.ok(diagram.moves({verbose:true}).some(m=>uci(m)===s.mateThreat),'Threat must use legal UCI');diagram.move(s.mateThreat);";
+assert.equal(before['check-result.mjs'].replace(old,next),await readFile(dir+'/code/check-result.mjs','utf8'));const tests=await readFile(dir+'/code/policy.test.mjs','utf8');assert.ok(tests.startsWith(before['policy.test.mjs']));assert.equal((tests.slice(before['policy.test.mjs'].length).match(/test\('/g)||[]).length,1);
+const pattern='strict UCI threat rejects consistently forged SAN proof',inputHashes=await bindings([dir+'/code/run-targeted.mjs',dir+'/code/policy.test.mjs']),revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),start=performance.now(),r=spawnSync(process.execPath,['--test','--test-name-pattern='+pattern,dir+'/code/policy.test.mjs'],{encoding:'utf8',windowsHide:true}),seconds=(performance.now()-start)/1000;
+await writeFile(dir+'/evidence/targeted-'+(r.status===0?'checks':'failure')+'.json',JSON.stringify({command:'node --test --test-name-pattern="'+pattern+'" '+dir+'/code/policy.test.mjs',preregisteredRevision:revision,datasetReceipt:data.receipt,inputHashes,seconds,exitCode:r.status,addedChecks:1,runtimeRulesFixturesUnchanged:true,checkerOnlyStrictUciChanged:true,freshPolicyCollection:0,freshStrategySearches:0,stdout:r.stdout,stderr:r.stderr},null,2)+'\n');console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);console.log(JSON.stringify({addedChecks:1,seconds}));

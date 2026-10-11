@@ -1,0 +1,66 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E210",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0467",
+      "scope": "Sustainable perpetual nonchecking mate-threat resource using a fully admitted finite closed policy certificate: every selected quiet actor move renews a legal explicitly artificial mate-in-one threat, EVERY legal defense remains in the graph. Finite actor-state recurrence guarantees an actor threefold/fifty claim opportunity within4N plies or earlier actual draw. Genuine history/rights/legal EP/clocks and claim/automatic distinctions retained; one sample is not all-path enumeration. No infinite play, best-move/usefulness/intent claim. Other nonmating attacks and policy discovery remain open."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "package.json": "2e41edb6006876e10c1c02bd95e70a220323fbbd39cfadc4431e57cf7cacd38d",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E025-pawn-formations/code/formations.mjs": "e1d52eddcd92da7229213fa99e3bfd3bc6ebe1bcb5a4492aacee0c6bdd0a81cf",
+    "research/experiments/E025-pawn-formations/code/selection.mjs": "189e73c5fc6a7f2083cb70644baf1d980f86f32cac281a21a829ccd88c7e70fc",
+    "research/experiments/E026-pin-proofs/code/proofs.mjs": "4e2962a201f90858d7f0d5255d9d718e30449fdae51db2868c4c40e3bc5dade8",
+    "research/experiments/E027-defensive-resources/code/defense.mjs": "43e8d09fe3928793cdea30d00b33fb6538640a1b7903ee12f18c9e074195eeab",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/AMENDMENT-2026-10-11.md": "a1c612171a00a867693f11743df35f7209fd09894fd277110ddafd98f773a599",
+    "research/experiments/E210-sustainable-threat-policy/AMENDMENT-CHECKER-2026-10-11.md": "ff1c3d36a1b7d10ba62a31f62e3403f20ccbdfd9ab47195d42874af59b45e0e9",
+    "research/experiments/E210-sustainable-threat-policy/PREREQUISITES.md": "178a0c1f5dbdbacce96800565474bf83e3a2c978fced50f33329808a0d50fbe1",
+    "research/experiments/E210-sustainable-threat-policy/SOURCES.md": "7ea431d47b99247439c35ebac0154525a3a9fafde609db762b830ae29563cc81",
+    "research/experiments/E210-sustainable-threat-policy/code/check-result.mjs": "ab031f21da891ced6f1042d057c3c694e0300e6711650af0cb753fc5326c7ca4",
+    "research/experiments/E210-sustainable-threat-policy/code/fixtures.mjs": "76f3c7ba40d674638421767bf6ea15dab4e28ed61b6aa938ad2a18fe60943dd4",
+    "research/experiments/E210-sustainable-threat-policy/code/pilot.mjs": "0321056ff52282f2e96e32e5865ff4fde7eafc8a6381810d4e37d24d5dae03ad",
+    "research/experiments/E210-sustainable-threat-policy/code/policy.mjs": "905585ac00db5b39d378612a58a032619d82850c8fc8b7a6ca987e018a802221",
+    "research/experiments/E210-sustainable-threat-policy/code/policy.test.mjs": "f3a27b85b7a5a6b1806f0ca33240043be8c931b20e9e72d3085b2482b5689589",
+    "research/experiments/E210-sustainable-threat-policy/code/record-build.mjs": "47ee62198519fdbe3221c91ea2ab52a6ba471ca4e0cdf1b0677a40b4e7268d38",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E210-sustainable-threat-policy/code/run-focused.mjs": "c40f39cf8b541a0bd7aa142fb5b527d2fe751df7be885710cf943d444d44dd1a",
+    "research/experiments/E210-sustainable-threat-policy/code/run-targeted.mjs": "73a6e1ac58354e7d8fe67781667d82a85f5f51061f3100fa25073952f0bbbe55",
+    "research/experiments/E210-sustainable-threat-policy/plan.md": "6ef7c3c7a1e069ba8480f4b06013382545e8ba41ed99c77f59915f77486d9695",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E210-sustainable-threat-policy/code/policy.test.mjs (initial15/15 pass; 2.744 seconds; exact pre-verifier source retained)",
+    "node --test --test-name-pattern=\"strict UCI threat rejects consistently forged SAN proof\" research/experiments/E210-sustainable-threat-policy/code/policy.test.mjs (1/1 added strict-UCI adversarial pass; 1.349 seconds; runtime/rules/fixtures unchanged; no final whole-file pass claimed)",
+    "revised four-state admission plus independent checker pilot 0.072 seconds below prospective2second gate; initial illegal-route failure preserved",
+    "six authored both-color/prior-cycle/clock99 policy observations collected in 0.233 seconds; no fresh strategy search/engine/tablebase/game acquisition",
+    "exact source/receipt/plan/amendment/preserved-failure/passing-source/archive hashes verified",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "branching positive policies/larger graphs/more claim/history/rights/EP/current-check/mate-terminal-clock matrices",
+    "general perpetual nonmating attacks, queen/piece chasing, mixed checking policies and certificate discovery",
+    "combined original-occurrence/support/absence/priority/history/terminal/claim/budget integration, saved semantic replay and changed main/repeat/clean reproductions",
+    "eligible real-game precision, human teaching utility, necessity/optimality and production promotion"
+  ]
+}
