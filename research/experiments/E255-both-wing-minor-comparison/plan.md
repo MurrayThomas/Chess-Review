@@ -68,20 +68,3 @@ Combined full original-scope/history/terminal/priority/budget validation,
 cumulative suite and changed main/repeat/clean reproductions remain deferred;
 real-game precision and human usefulness remain unmeasured. Full catalog stays
 in scope, including strategic prerequisites and support work.
-
-## 2026-10-11 exposure and focused-test amendment
-
-All eight fixed queries completed once under original caps. H1 passes; H2 fails:
-same-wing bishop fails and knight succeeds in both colors. The c4/c5 relocation
-also checks Kb3/Kb6. No roots/horizons/gates or observed results are changed;
-C0713 stays unready. Record a neutral negative audit, no build.json.
-
-Initial focused run8/9passed; the leaf test incorrectly required all retained
-attempted prefixes (including failed OR candidates) to be winning policy leaves.
-Correct ONLY that test to follow the selected last successful OR branch and all
-AND branches, preserving attempted-prefix checks in the independent proof
-replayer. Runtime/query/checkers/fixtures/observations remain unchanged. Preserve
-initial failure and its source freeze; rerun ONLY repaired named check under
-30second subprocess cap. Reuse unchanged eight passed checks and successful
-saved-result replay with audited old/new source bindings. No fresh searches or
-observations, no historical/cumulative suite, no strategic readiness credit.
