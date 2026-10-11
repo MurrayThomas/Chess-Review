@@ -41,3 +41,8 @@ export function reconstruct(input,options={},policy=false){
  }catch(e){if(e!==halt)throw e;return{...result,status:'budget-unavailable',reason:why,work:o.maxWork+1,context:null};}
 }
 export function checkComparison(input,options,result,policy=false){assert.deepEqual(result,reconstruct(input,options,policy));return true;}
+export function rejectedPreparation(input){
+ assert.throws(()=>reconstruct(input,{enabled:true}),/Illegal attack\/preparation/);
+ const c=legalPosition(input.fen),legal=moves(c);assert(legal.includes(input.attack));assert(!legal.includes(input.preparation));
+ return{kind:'illegal-registered-preparation',fen:c.fen(),legalRoot:legal,attackLegal:true,preparationLegal:false};
+}
