@@ -1,0 +1,54 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E239",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0802",
+      "scope": "Witnessed nonidentifiability of declared worst policy shortfall from missing reversible history: two legal zero-counter-anchored completions match the exact observed suffix/root and complete all-win ordinary policy, but differ in positive enemy draw-claim eligibility and attained risk. Reports both histories, discrete values and enclosure; not a probability/confidence interval, unresolved-search proxy or recovered actual history."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E235-two-result-policy/code/check-result.mjs": "ec46c5cc6b49df43157950d3dcad1b89cc1d278cfecab49e1422f9af380c964e",
+    "research/experiments/E235-two-result-policy/code/contract.mjs": "f92d1390b74f480fddecc325da6e634156ffc8fb365b66080c468f808c77a51c",
+    "research/experiments/E235-two-result-policy/code/policy.mjs": "2c3ff316d483fc5190c1d1f0a089035eef52b561b9ebbdbf51aa2a12a2f90680",
+    "research/experiments/E238-declared-worst-case-risk/code/contract.mjs": "d625cd143a167931c6b8b2c75380df485366088c2c63da1d21331e385a4b57b9",
+    "research/experiments/E239-history-risk-uncertainty/code/check-result.mjs": "4d6d103a382bf2e0eed5f5a1c164d21248b23edf4720c87e6f671bc513c6d26a",
+    "research/experiments/E239-history-risk-uncertainty/code/contract.mjs": "5b16f9d32f4ba0b2c3e4995678496288e6ec741ff0d4146ce988d2c0372e9de8",
+    "research/experiments/E239-history-risk-uncertainty/code/fixtures.mjs": "eb6520eef50caa25083fcd40d66625a02d216fa527b1c7ac0f605fc4cffcbd7a",
+    "research/experiments/E239-history-risk-uncertainty/code/record-build.mjs": "b45f2b8b718b3301312482839d8ee703dd19a8c911a77f5786967a1e99e1e30e",
+    "research/experiments/E239-history-risk-uncertainty/code/run-focused.mjs": "21fd6e15efe5c4023d5ae175df42e1d9ff6be8abecf68c40ce316e01f5880a0c",
+    "research/experiments/E239-history-risk-uncertainty/code/uncertainty.mjs": "0f9e244ecae1d24f76623666bed5b58359dfcaaa0a29a0a5ece2bb43ad316cd2",
+    "research/experiments/E239-history-risk-uncertainty/code/uncertainty.test.mjs": "51104b139ff2550167b867e35dd53656b47041e1e7cef06153015bbeb87c7f45",
+    "research/experiments/E239-history-risk-uncertainty/control-correction.md": "902c832bb4a57a3864b5419a87dc7695b32ecfdf8cb6c69709cb1ffcf5e9e51a",
+    "research/experiments/E239-history-risk-uncertainty/missing-history-correction.md": "41c75b6860d98f644350fea817fa7582e79d043bd24ebaa4ec3af0702d7ea93b",
+    "research/experiments/E239-history-risk-uncertainty/plan.md": "5637efe9bed2612ef971eb406d9b2b66617ac2b007cbf7401080ec3b5053eee3",
+    "research/experiments/E239-history-risk-uncertainty/prefix-correction.md": "b5ba80723f12bed51f42a16cda4f40b846c7715564b7630b7bb4886560ee0af1",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E239-history-risk-uncertainty/code/uncertainty.test.mjs (11 focused checks)",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined original occurrence/absence/history/claim/terminal/priority/budget matrices, independent replay/integration",
+    "changed main/repeat/initially clean reproductions at combined freeze",
+    "full initial-position reachability/adjudication and authenticated earlier history, other uncertainty estimands/causes",
+    "independent chess truth, eligible real-game precision/human usefulness and separate production promotion"
+  ]
+}
