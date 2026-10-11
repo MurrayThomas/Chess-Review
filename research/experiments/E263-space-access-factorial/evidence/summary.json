@@ -1,0 +1,123 @@
+{
+  "revision": "3207f6ac126864207a214866c3966af018c6ec1d",
+  "rows": 48,
+  "freshQueries": 32,
+  "reusedQueries": 16,
+  "neutrals": 4,
+  "freshTicks": 77455,
+  "seconds": 14.9632111,
+  "bytes": 234235,
+  "sha256": "d8b12bd44feddaa0ef38e591d2b9205e0338c43750a798cfaeca37cacc37d399",
+  "error": null,
+  "incomplete": false,
+  "cells": [
+    {
+      "context": "a8-h6",
+      "outcomes": [
+        [
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          true,
+          false
+        ]
+      ],
+      "qualifies": false
+    },
+    {
+      "context": "a8-g6",
+      "outcomes": [
+        [
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          false,
+          true,
+          false,
+          true
+        ]
+      ],
+      "qualifies": false
+    },
+    {
+      "context": "a8-f8",
+      "outcomes": [
+        [
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          true,
+          false
+        ]
+      ],
+      "qualifies": false
+    },
+    {
+      "context": "h8-h6",
+      "outcomes": [
+        [
+          false,
+          false,
+          true,
+          false
+        ],
+        [
+          false,
+          false,
+          true,
+          false
+        ]
+      ],
+      "qualifies": false
+    },
+    {
+      "context": "h8-g6",
+      "outcomes": [
+        [
+          false,
+          true,
+          false,
+          true
+        ],
+        [
+          false,
+          true,
+          false,
+          true
+        ]
+      ],
+      "qualifies": false
+    },
+    {
+      "context": "h8-f8",
+      "outcomes": [
+        [
+          false,
+          true,
+          true,
+          true
+        ],
+        [
+          false,
+          true,
+          true,
+          true
+        ]
+      ],
+      "qualifies": true
+    }
+  ]
+}
