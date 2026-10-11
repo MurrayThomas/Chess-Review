@@ -1,0 +1,7 @@
+import {isDeepStrictEqual} from 'node:util';
+import {controls,prepare} from './context.mjs';
+import {features} from './features.mjs';
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+import {verifyPanel} from '../../E153-second-target-defense/code/verify-panel.mjs';
+const admitted=[];
+export function inspectFronts(i,o={},panel){const {enabled,limit}=controls(i,o),r={schema:'E198-fronts-v1',limit,nodes:0,status:'disabled',claims:{C0922:false},qualityClaim:false,context:null,panel:null,witness:null};if(!enabled)return r;const ctx=prepare(i);if(ctx.status!=='ready')return{...r,status:ctx.status};const exhaust=()=>({...r,nodes:limit+1,status:'exhausted'});if(ctx.setup>limit)return exhaust();if(panel===undefined)return{...r,nodes:ctx.setup,status:'panel-prerequisite'};plain(panel);if(!panel||!Number.isSafeInteger(panel.nodes)||panel.nodes<0)throw Error('Require full source panel');if(ctx.setup+panel.nodes>limit)return exhaust();const key=[ctx.source,panel];let v=admitted.find(q=>isDeepStrictEqual(q.key,key));if(!v){v={key:structuredClone(key),...verifyPanel(ctx.source,panel)};admitted.push(v);}const w=features(i,ctx,panel),cost=ctx.setup+v.nodes+w.work;if(cost>limit)return exhaust();r.nodes=cost;r.context=structuredClone(ctx);r.panel=structuredClone(panel);if(panel.claimContexts.length)return{...r,status:'claim-rule-prerequisite'};r.witness=w;r.claims.C0922=w.multipleFronts;r.status=w.multipleFronts?'proven':'compared';return r;}
