@@ -68,6 +68,14 @@ graph and require rejection if its defender inventory becomes incomplete, rather
 than silently repairing the policy. Fresh pilot queries are legal enumeration
 only; no repeated historical searches. Reuse matching saved observations.
 
+Pre-evaluation negative addition: also author the same static layout with white
+rook on g4 instead of g6. This is an artificial different-position control,
+NOT a legal rook move through Kf6/Pg5. Register the same nominated king cycle,
+then enumerate its complete defender domain; expect the old cage to fail. The
+Pg5-removal control is not asserted causal: the stationary Rg6 itself controls
+h6, so retain whichever full-domain outcome is observed without inferring pawn
+necessity or changing the positive gates.
+
 Only demonstrated scopes get build.json/prototype INDEX credit. Full strategic
 compensation/long-term plans, branching positives, more materials and practical
 desirability remain open. Combined original-occurrence/regression/semantic/
