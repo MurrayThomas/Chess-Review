@@ -1,0 +1,49 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E254",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0698",
+      "scope": "Finite joint KBvKPP defense: actual original bishop captures opposite-wing original pawn, same shared bishop/king policy against EVERY legal enemy reply neutralizes BOTH original pawns/promoted descendants and reaches actual insufficient-material draw with original bishop retained within3total plies. Both king-flank roles and colors; same-root quiet bishop and distant-king controls fail this same finite goal. No unbounded optimal defense, generic bishop preference, theoretical loss from failure, independent chess truth or human validation."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/admission.mjs": "827c0fc0e37cd4015a6ffd3d8f14da6acf24a4358bfa61dbaa52b66cd90dc1f2",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/archive-lock.json": "a0cf5693434ceaa0d9b57f72c9111379f7aece3bbe162fad9a63f1712e1a7689",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/check-proof.mjs": "e1cc3991854941bfa280b54428696aadb8e7c62b062937f826089afac9b3a16f",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/check-result.mjs": "ead693101d7bec176bb9a4f187fd7613f670a46ac8a43cb70b64a425d4c1de52",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/collect.mjs": "fcd7b5ba597b68dfc85c0ed65b73016ca243917ecb61dd036d46174a1f35c1fe",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/defense.mjs": "a1b2d68052f9184441b02527d3d162dd04e6a55c95af2b71f3923f056732324e",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/defense.test.mjs": "1709844313be12776d4ba5cd905563aa4f99c776bb9f5ab3639f55f33fd457ef",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/fixtures.mjs": "0616dba180dacde8f944abc8a269f09702d7a919773215f8258d4d6e6d785c15",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/query.mjs": "23c745419758bd27d41430a290d08bff1381fa92fb63cf3c500f0b6e2c6e2e64",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/record-build.mjs": "9722c97c23e3f0e67cc43e4e44fddda02a6b91b8a421944764309a7b3be706f3",
+    "research/experiments/E254-joint-bishop-pawn-defense/code/run-focused.mjs": "31500371bb86edbb28d8a0eb44a28fb7620412cf3addc5ecfbec8c848850006a",
+    "research/experiments/E254-joint-bishop-pawn-defense/plan.md": "a152a4f8ac2dcf1c41e60a0a2c894efb6d40658608c826552d5fe899fb23159a",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E254-joint-bishop-pawn-defense/code/defense.test.mjs (8pass; 6.521seconds)",
+    "14saved result/proof reconstructions; 3.175seconds pilot; zero focused queries",
+    "14authored queries/234ticks; 2.150seconds including independent proof replay; four joint positives/all ten bounded-negative controls",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "full C0698 theoretical joint defense, other materials/pawns/horizons and genuinely threatening advanced-pawn positives",
+    "complete earlier history/claim/automatic adjudication and independent chess truth/human usefulness",
+    "combined original-occurrence/priority/history/terminal/budget integration, cumulative suite and changed main-repeat-clean reproduction"
+  ]
+}
