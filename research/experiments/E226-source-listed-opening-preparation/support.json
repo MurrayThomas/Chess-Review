@@ -1,0 +1,149 @@
+{
+  "schema": "coach-prerequisite-v1",
+  "experiment": "E226",
+  "stage": "source-listed-opening-preparation-contract",
+  "coverageCredit": false,
+  "futureClaims": [
+    "C0150",
+    "C0151",
+    "C0152",
+    "C0153",
+    "C0154",
+    "C0157",
+    "C0158",
+    "C0833",
+    "C0834",
+    "C1021",
+    "C1032"
+  ],
+  "supportedOccurrences": [
+    {
+      "id": "C0150",
+      "name": "Opening theory",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0151",
+      "name": "Main line",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0152",
+      "name": "Sideline",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0153",
+      "name": "Novelty",
+      "category": "5. Opening principles",
+      "disposition": "reference-only",
+      "scope": "Historical novelty unavailable; source departure is not novelty."
+    },
+    {
+      "id": "C0154",
+      "name": "Preparation",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0157",
+      "name": "Opening repertoire",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0158",
+      "name": "Repertoire depth",
+      "category": "5. Opening principles",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0833",
+      "name": "Opening preparation",
+      "category": "33. Practical chess concepts",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C0834",
+      "name": "Opponent preparation",
+      "category": "33. Practical chess concepts",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C1021",
+      "name": "Opening book",
+      "category": "40. Computer-chess concepts",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    },
+    {
+      "id": "C1032",
+      "name": "Computer-assisted preparation",
+      "category": "40. Computer-chess concepts",
+      "disposition": "source-listed-or-declared-support",
+      "scope": "Finite legally replayed source paths, explicit repertoire selection/depth or caller-reported preparation; no theory quality, exhaustiveness, historical novelty or player/opponent knowledge claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/REMOVAL-SUGGESTIONS.md": "a502f139c781cd5113b84106c0b894789f39405dde967d711fa1f59dc47f3b47",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/observations.mjs": "a47bdeb1a9a490ba52fbc21f644dc19d7bcbef56df0297a3845b93589dd09a50",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E223-engine-diagnostic-support/code/check-result.mjs": "a4aa346dd9e766c14ceba69ac2f7c06751bd04a46210a0c92d423a6f45f973d4",
+    "research/experiments/E223-engine-diagnostic-support/code/contract.mjs": "6fdd6aa061ca94fcdb530e63815236b097e0d7f42020e7f635b0c8728bef4cc8",
+    "research/experiments/E223-engine-diagnostic-support/code/parse.mjs": "c396d30614a01040f18421ba16c0707a5a381f7377388cbd0f820e6a8808f6e1",
+    "research/experiments/E223-engine-diagnostic-support/code/support.mjs": "27eafe89797196c50b978a8cd055d697840bfbf3323ba953d8f2b8d99ed461e5",
+    "research/experiments/E226-source-listed-opening-preparation/code/check-result.mjs": "1a06abe49141536e87f2ff44e24a0f15e357782ed7f5bb23461bac2ef623512d",
+    "research/experiments/E226-source-listed-opening-preparation/code/contract.mjs": "57fec6e926e83411fa19ce5c52e145cb690757ff896e1e8879f2a30f338b6b9f",
+    "research/experiments/E226-source-listed-opening-preparation/code/fixtures.mjs": "4648bca79fcd357efa9a4573b368cd17ec12945d320079489c2488f055a750cd",
+    "research/experiments/E226-source-listed-opening-preparation/code/record-support.mjs": "6fc5bc79ccd1cbd55dde1a43422e220ce81aa11d7435f14a3c095f705eb1f0bc",
+    "research/experiments/E226-source-listed-opening-preparation/code/run-focused.mjs": "1384d7f4a5794636e7b2f88530f76246c712c9e8874f2460f34cb67ad461f589",
+    "research/experiments/E226-source-listed-opening-preparation/code/support.mjs": "f775db7b2beb28d3130c84d5590cafd386eccfdc1406313422fb76cce76690ba",
+    "research/experiments/E226-source-listed-opening-preparation/code/support.test.mjs": "708acc5858ba6ebb628b3e16c7fe5b4a77a3a2c516ff7094c3001885f98c3c85",
+    "research/experiments/E226-source-listed-opening-preparation/plan.md": "d8901950b280b9af1cf4937034b7a143074f59272deade7c503704797a6e6957",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "implemented": "Default-disabled finite legal opening source histories, exact path/position separation, author main/side roles, source departure versus coverage end, selected repertoire depth and typed caller-reported opening/opponent/computer preparation; historical novelty remains reference-only.",
+  "focusedChecks": [
+    "node --test research/experiments/E226-source-listed-opening-preparation/code/support.test.mjs (13/13 pass; 2.001 seconds; zero searches)",
+    "14authored cases independently replay unchanged; both actors, endpoints, conflicting source roles, transposition/root counters, coverage departure, castling/EP and declined claims",
+    "strict/getter/duplicate/reference contracts, atomic exact/short/zero/combined-context budgets, output clone isolation and membership/novelty/knowledge/diagnostic forgeries",
+    "focused reuse of unchanged E223 adapters, no inherited full suite",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "eligible externally acquired source/book licensing and source authentication",
+    "historical novelty/completeness, theoretical and strategic opening quality",
+    "actual study/player/opponent knowledge and predictive preparation success",
+    "real-game precision, independent human usefulness, combined integration and separate production promotion"
+  ]
+}
