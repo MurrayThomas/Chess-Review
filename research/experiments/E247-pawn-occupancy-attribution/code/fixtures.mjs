@@ -1,0 +1,2 @@
+import {boardFen,reflect,flip} from '../../FRIEND-shared/lib.mjs';
+export function cases(){return ['f7','b7'].flatMap(pawn=>{const fen=boardFen({h4:'K',c8:'N',[pawn]:'P',d3:'P',h6:'P',d7:'k',h3:'b',d4:'p',e7:'p'}),id=pawn==='f7'?'f8-occupancy':'b8-control',input={fen,move:'c8d6',history:{fen,moves:[]}},options={enabled:true,pawn,entry:'e7',partner:'h6',maxNodes:50000},r=reflect({id,...input});return[{id,input,options},{id:r.id,input:{fen:r.fen,move:r.move,history:r.history},options:{...options,pawn:flip(pawn),entry:flip(options.entry),partner:flip(options.partner)}}];});}
