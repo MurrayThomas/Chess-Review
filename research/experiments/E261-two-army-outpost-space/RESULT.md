@@ -32,7 +32,8 @@ escape to h4 immediately; it does not establish safe access from h6. Other
 eligible Black maneuvers fail the bound, with complete actor alternatives and
 counterchoices in the archive. A first recorded enemy king move can be a
 successful prefix for Black; the decisive counterchoice is the LAST branch,
-not the first branch of the retained enemy node. Do not discard these prefixes
+not the first branch of the retained enemy node. See evidence/counterchoice-audit.json
+for the physically retained Na4/Nb6+ line and distinct legal exf5 alternative. Do not discard these prefixes
 or misidentify them as the reason for the negative result.
 
 H1 requires genuine main two-army asymmetry and H2 its matched release while

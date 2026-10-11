@@ -1,0 +1,12 @@
+{
+  "query": "original-main-b",
+  "first": "h6f5",
+  "fullEnemyInventoryContainsPawnCapture": true,
+  "selectedEnemy": "c3a4",
+  "attemptedEntry": "f5h4",
+  "selectedFinalCounter": "a4b6",
+  "finalKind": "goal",
+  "finalWin": false,
+  "finalFen": "k7/8/1Np5/6p1/4P2n/8/8/K7 b - - 4 3",
+  "meaning": "exf5 is a legal alternative in the complete enemy inventory, not the retained decisive policy. Na4 and Nb6+ deprive the final legal-support counterframe because Black is in check."
+}
