@@ -1,0 +1,8 @@
+{
+  "schema": "E249-stopped-archive-v1",
+  "evidenceHashes": {
+    "started.json": "f29eb57f4bb06bf86e410395a6d58cff68f7ad8a8e04ae638d5411e8f25cc25a",
+    "h2-win.json.gz": "9e4785ed637dcdb8eaec8238b6de1257d6cea63d953aad4f4cbf6692983401a9",
+    "collection-failure.json": "c813ca53d451d4a6af3ff71ae56f06b42395d41f0f660b115151ead9e7a85fe2"
+  }
+}
