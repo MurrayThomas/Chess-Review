@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,mkdir,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {spawnSync,execFileSync} from 'node:child_process';
+import {openResearchData} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {admitSaved} from './admission.mjs';
+import {inspectStaticEvaluation} from './static.mjs';
+import {checkStaticEvaluation} from './check-result.mjs';
+const dir='research/experiments/E251-authenticated-static-evaluation',out=dir+'/evidence/focused',guard=await openResearchData(['D001'],{purpose:'test'}),old=JSON.parse(await readFile(dir+'/evidence/started.json','utf8')),inputHashes=await bindings([...Object.keys(old.inputHashes),dir+'/code/archive-lock.json']),revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim();for(const [p,h]of Object.entries(old.inputHashes))assert.equal(inputHashes[p],h);await mkdir(out,{recursive:true});await writeFile(out+'/started.json',JSON.stringify({revision,inputHashes,receipt:guard.receipt},null,2)+'\n',{flag:'wx'});
+const t=performance.now(),pilot={revision,inputHashes,receipt:guard.receipt,rows:[],error:null};try{for(const x of await admitSaved()){const result=inspectStaticEvaluation(x.input,{enabled:true},x.token);checkStaticEvaluation(x.input,{enabled:true},x.token,result);pilot.rows.push({id:x.id,input:x.input,result});}}catch(e){pilot.error=e.message;}pilot.seconds=(performance.now()-t)/1000;await writeFile(out+'/pilot.json.gz',gzipSync(Buffer.from(JSON.stringify(pilot)+'\n'),{level:9}),{flag:'wx'});assert.equal(pilot.error,null);
+const start=performance.now(),r=spawnSync(process.execPath,['--test',dir+'/code/static.test.mjs'],{encoding:'utf8',windowsHide:true,timeout:30000}),seconds=(performance.now()-start)/1000;await writeFile(out+'/'+(r.status===0?'focused-checks':'focused-failure')+'.json',JSON.stringify({revision,inputHashes,receipt:guard.receipt,command:'node --test '+dir+'/code/static.test.mjs',seconds,exitCode:r.status,signal:r.signal,processError:r.error?.message??null,stdout:r.stdout,stderr:r.stderr,freshSearches:0,freshEvals:0},null,2)+'\n',{flag:'wx'});console.log(r.stdout);console.error(r.stderr);console.log(JSON.stringify({pilotSeconds:pilot.seconds,focusedSeconds:seconds}));assert.equal(r.status,0);

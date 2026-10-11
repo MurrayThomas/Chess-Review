@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';
+import {validate,unavailable} from './contract.mjs';
+import {snapshot} from './admission.mjs';
+export function inspectStaticEvaluation(input,options={},token){
+ const {c,maxRecords,hasHistory}=validate(input,options),out={schema:'E251-static-evaluation-v1',status:'disabled',view:null,records:0,claims:{C0569:false},qualityClaim:false};if(!options.enabled)return out;if(!hasHistory){out.status='history-unavailable';return out;}const skip=unavailable(c);if(skip){out.status=skip;return out;}if(maxRecords<1){out.status='budget-unavailable';return out;}const saved=snapshot(token);assert.deepEqual(input,saved.input);assert.equal(saved.status,'observed');
+ const summaries=saved.lines.filter(l=>l.startsWith('Final evaluation'));assert.equal(summaries.length,1);const match=/^Final evaluation\s+([+-])(\d+)\.(\d{2}) \(white side\)(?: \[with scaled NNUE,.*\])?$/.exec(summaries[0]);if(!match)throw Error('Unsupported static summary');let hundredths=(Number(match[2])*100+Number(match[3]))*(match[1]==='-'?-1:1);if(hundredths===0)hundredths=0;if(!Number.isSafeInteger(hundredths))throw Error('Unsafe static score');const player=options.player??c.turn(),value=player==='w'?hundredths:hundredths===0?0:-hundredths;
+ out.status='authenticated-static-evaluation';out.records=1;out.claims.C0569=true;out.view={fen:c.fen(),history:structuredClone(input.history),actor:c.turn(),player,printedWhiteHundredths:hundredths,playerHundredths:value,unit:'engine-displayed pawn-scale hundredths',precision:2,meaning:'current-position static evaluator estimate; no search',searches:0,source:structuredClone(saved.source),rawSummary:summaries[0],rawTrace:[...saved.lines],strategicTruth:false,humanValidity:false};return out;
+}
