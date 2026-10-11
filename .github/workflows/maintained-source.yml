@@ -42,4 +42,10 @@ jobs:
         shell: pwsh
         run: ./scripts/setup-research-python.ps1
       - run: npm run research:preflight -- D001 D002 --purpose test
-      - run: npm run test:research
+      - name: Run complete research tests
+        shell: pwsh
+        run: |
+          $env:NODE_OPTIONS = '--import=' + ([System.Uri](Join-Path $env:GITHUB_WORKSPACE 'scripts/research-test-outputs.mjs')).AbsoluteUri
+          npm run test:research
+        env:
+          CHESS_REVIEW_VERIFY_TEST_OUTPUTS: '1'

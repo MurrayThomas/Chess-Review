@@ -22,6 +22,13 @@ and `ArchivePath` arguments support isolated setup validation with a previously
 downloaded, identically hashed archive.
 
 The research CI job runs the complete existing `npm run test:research` suite.
+Its explicit `research-test-outputs.mjs` preload handles frozen tests that try
+to create already-tracked example files with `flag: 'wx'`: it checks the generated
+bytes against the retained file and fails on any difference or missing file.
+Matching retained examples are left untouched; new files keep ordinary exclusive
+creation semantics. This avoids `EEXIST` without weakening output validation.
+The original E211 observed-process panel also receives byte-for-byte comparison
+when its execution test generates a fresh result, without overwriting that file.
 No tests are omitted and no research source, data, receipts, or saved observations
 are rewritten. This runtime is development/test infrastructure only, outside the
 extension package's maintained calibration directory.
