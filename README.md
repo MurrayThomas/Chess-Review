@@ -126,6 +126,11 @@ before the test suites. The history check inspects reachable commits and histori
 blobs in batches targeting 16 MiB, so growing research history does not overflow one
 combined subprocess output buffer. All existing content and path checks remain active.
 
+The complete research suite runs in a separate Windows CI job with the original
+Python runtime bound by the E211 saved observations. Setup verifies the pinned
+archive, retained executable hash, and full build version; existing research
+evidence and checks remain unchanged. See [runtime setup](tools/research-python/README.md).
+
 ## Release packages
 
 Run `npm ci`, `npm test`, `npm run verify:engines`, and `npm run build`.

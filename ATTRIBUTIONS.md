@@ -189,3 +189,13 @@ Each font's copyright notice and full license accompany it in `fonts/`:
 - [Lora](https://github.com/google/fonts/tree/main/ofl/lora) — `fonts/lora-OFL.txt`
 - [Bitter](https://github.com/google/fonts/tree/main/ofl/bitter) — `fonts/bitter-OFL.txt`
 - [Cabin](https://github.com/google/fonts/tree/main/ofl/cabin) — `fonts/cabin-OFL.txt`
+
+
+## Research CI Python runtime
+
+The development-only Python executable in 	ools/research-python/ is CPython
+3.12.14, redistributed under the included [Python license](tools/research-python/LICENSE.txt).
+It retains the signed executable identity from Codex primary runtime 26.1007.11041
+recorded in the research evidence. The matching libraries are acquired from a
+SHA-256-pinned [Python Build Standalone release](https://github.com/astral-sh/python-build-standalone/releases/tag/20260825).
+See the [runtime provenance and setup](tools/research-python/README.md).
