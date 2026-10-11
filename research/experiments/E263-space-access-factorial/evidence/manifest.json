@@ -1,0 +1,95 @@
+{
+  "revision": "9ef3b7e42a4da7c18aef508014c5bea1413c7dc9",
+  "meaning": "Authored synthetic retained collection, failed/corrected focused runs and superseded/current metadata; no games or new queries",
+  "files": {
+    "research/experiments/E263-space-access-factorial/evidence/collection.json.gz": {
+      "bytes": 234235,
+      "sha256": "d8b12bd44feddaa0ef38e591d2b9205e0338c43750a798cfaeca37cacc37d399"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused/checks.json": {
+      "bytes": 12370,
+      "sha256": "21a71bbc4119d76607893bcbb9204c864536b6cdd2abd75ee95671919d0f716c"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused/pilot.json.gz": {
+      "bytes": 459216,
+      "sha256": "cf74615576f74fd63ab51094714f92f9f3a72dbac34c04c821d1e6a47e802966"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused/started.json": {
+      "bytes": 12098,
+      "sha256": "55f1ef57ab0976526b36af2d01c3406bd4fbd1bd33cb423a64e1a1304b778ed2"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/affected-checks.json": {
+      "bytes": 11567,
+      "sha256": "a3774bde7d32dfd7a611111e48cafcdc3ec04a84b76af649d29d12123573b5b5"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/build-provenance.json": {
+      "bytes": 16259,
+      "sha256": "90d145ab54bff3fef3293831a9fcbd46a20490792c9852ff96606a3d243672bf"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/build-status.json": {
+      "bytes": 1984,
+      "sha256": "2134c689fc2ef048237375e26fa4d1a7e25f883ec9908e97c7f814d89a4ba8b2"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/checks.json": {
+      "bytes": 13813,
+      "sha256": "6a219353b333cf1fdd92653d4f47ce98dc2146eaf6541db36c0584da0ef5fafb"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/pilot.json.gz": {
+      "bytes": 459268,
+      "sha256": "cc22f236311af020b3e3784e3358500aac44855a838b4c075dbd1e1dbb80a3c2"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/provenance.json": {
+      "bytes": 13592,
+      "sha256": "a0df9471a61ae51a436d01e764416293d7e0ef9e236999c906fc1cb963ade80f"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-corrected/started.json": {
+      "bytes": 12235,
+      "sha256": "80c88997f931caf9d5c68368cf2d02d01a6bd47a26fa15459a707b5a6febf70c"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/affected-checks.json": {
+      "bytes": 11562,
+      "sha256": "734ef372d69cba298a69808a2e91e8ddd72f9a0a67672be5d3cf7750f81a616b"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/build-provenance.json": {
+      "bytes": 16943,
+      "sha256": "5d24bc593527914f02aa5dc22f6a8a6b9cb9477b445d3620dc7f6e7745d27a77"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/build-status.json": {
+      "bytes": 359,
+      "sha256": "45c33f219257f13cb773feaf85cd28bccaafdbd3a609f26b163201e2d71416ba"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/checks.json": {
+      "bytes": 13953,
+      "sha256": "33527ea097d0ca3d79268afef903e2283f2a329fcafd045925edb7ec7dfbfe18"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/pilot.json.gz": {
+      "bytes": 459321,
+      "sha256": "6e37e5ba8ce91926560e5fdef235fac15b564133ddb6efbb171254aebf8f78c9"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/provenance.json": {
+      "bytes": 13718,
+      "sha256": "9bb4f16bd5c6c0a77e5d8c7dc0d6f40f162f38169717d88cff7108824361a723"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/focused-label/started.json": {
+      "bytes": 12374,
+      "sha256": "066491beec8fc8ba9f233a652e033b8a27e5c8ff7d5929ed9380b819f2cd157e"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/partial.json.gz": {
+      "bytes": 234226,
+      "sha256": "269a6bfd64411e97b622c6eb2bbf2c2e001cc913553558468538fadbd871efe6"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/pre-label-build.json": {
+      "bytes": 5751,
+      "sha256": "6e8298933a1c0bd9822a1b1597ea10fd979094b2f0bfc335f4ba2c1204dc666e"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/started.json": {
+      "bytes": 12606,
+      "sha256": "f847d731ea04993be685c59cfc42b7a6160974d2905d678c4c2cb516d5490244"
+    },
+    "research/experiments/E263-space-access-factorial/evidence/summary.json": {
+      "bytes": 1928,
+      "sha256": "1e6af9f38f7d308b0d1ffa11217c2274e05a224952a332d1f656ba8cea428455"
+    }
+  },
+  "bytes": 2029378
+}
