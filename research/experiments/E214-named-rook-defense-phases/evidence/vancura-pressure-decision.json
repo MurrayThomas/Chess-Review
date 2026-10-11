@@ -1,0 +1,40 @@
+{
+  "id": "vancura-pressure",
+  "phase": "vancura-pressure",
+  "seconds": 1.8734002999999992,
+  "probes": 19,
+  "contrast": {
+    "passes": false,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "b",
+      "pawn": "a6",
+      "king": "g7",
+      "attackerKing": "a5",
+      "rook": "f6",
+      "longSign": 1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 4,
+      "rookSharesKingRank": false,
+      "attacker": "w",
+      "pawnRank": 6,
+      "attackerKingRank": 5,
+      "rookRank": 6,
+      "attackerRook": "a8",
+      "kingOnPromotionSquare": false,
+      "entryTargets": [],
+      "recordedAdvance": false,
+      "supported": true
+    },
+    "resources": [],
+    "alternatives": [
+      "f6f1",
+      "f6f2",
+      "f6f3",
+      "f6f4",
+      "f6f7"
+    ]
+  },
+  "costPass": true
+}
