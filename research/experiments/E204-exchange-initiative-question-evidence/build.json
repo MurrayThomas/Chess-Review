@@ -1,0 +1,80 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E204",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C1068",
+      "scope": "Who benefits from exchanges? Complement existing E108 outcome scope: explicit actor/player perspective, actual forced queen exchange into live original-rook KRK, full H2 actor mate versus legal noncapture alternative H2 failure. Finite objective beneficiary only; alternative global loss/draw and general exchange quality unresolved."
+    },
+    {
+      "id": "C1073",
+      "scope": "Who has the initiative? Actual live checked after-capture frame and complete saved positive forced-mate policy: every attacking choice checks and every defending branch is replayed. Explicit own/opponent relation; bounded checking initiative, not sustained positional pressure or terminal mate."
+    },
+    {
+      "id": "C1078",
+      "scope": "Can counterplay be eliminated before trying to win? Certified live queen-exchange conversion additionally removes every profitable immediate enemy capture policy present after declared alternative, using common original-root balance and every live immediate own counterreply. Specific capture-resource removal only, not all later/positional counterplay."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "package.json": "2e41edb6006876e10c1c02bd95e70a220323fbbd39cfadc4431e57cf7cacd38d",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E025-pawn-formations/code/formations.mjs": "e1d52eddcd92da7229213fa99e3bfd3bc6ebe1bcb5a4492aacee0c6bdd0a81cf",
+    "research/experiments/E025-pawn-formations/code/selection.mjs": "189e73c5fc6a7f2083cb70644baf1d980f86f32cac281a21a829ccd88c7e70fc",
+    "research/experiments/E026-pin-proofs/code/proofs.mjs": "4e2962a201f90858d7f0d5255d9d718e30449fdae51db2868c4c40e3bc5dade8",
+    "research/experiments/E027-defensive-resources/code/defense.mjs": "43e8d09fe3928793cdea30d00b33fb6538640a1b7903ee12f18c9e074195eeab",
+    "research/experiments/E028-mating-patterns/code/patterns.mjs": "5655557ef51dcda0688c98b3518408cbe6b509b0e255637257c4f0ea9c1e552e",
+    "research/experiments/E029-forced-mates/code/mates.mjs": "dabf4dac0f0e6cc54eb26783b4ade335a0b37d61ca851e9ded1448a825092228",
+    "research/experiments/E029-forced-mates/code/replay.mjs": "0b9856b7ee87c8b5d42252f4abd0905cc32e514104a6e8a4cbc32d749f63a57e",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E144-causal-piece-coordination/code/query.mjs": "92e898fe61de8e5db20d56e40f283d67fa86eb1cce860bd4a3cc98302f110579",
+    "research/experiments/E144-causal-piece-coordination/code/trace-check.mjs": "c090cf981edb9d8e24807f770f75f78c7f659cabe63470fb4f1e43c00d2c0755",
+    "research/experiments/E177-queen-exchange-ending/code/context.mjs": "f84a18d74f0ffd77280ce7f67b9ed0d9360f9d429697dd44dbee4195d03671e9",
+    "research/experiments/E177-queen-exchange-ending/code/derive.mjs": "a359bab2454a30f05b6aca4a5eed55a193a38b3b9fce57d666c304aed42e1d7b",
+    "research/experiments/E177-queen-exchange-ending/code/fixtures.mjs": "b99e643e458ee70156209c7db6102fbdf1bcd1439a571a00212d13ba7fbba7e2",
+    "research/experiments/E177-queen-exchange-ending/code/panel.mjs": "37732d88a807a32dccb951a853e7b63e2618545ced2adb019e5b40fb267aa7dc",
+    "research/experiments/E177-queen-exchange-ending/code/verify-panel.mjs": "dcda4a588f6949d7b5eb296333c82add6eee17c5efba1310248ae47546d79fb0",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E190-liquidation-commitment/code/check-result.mjs": "47f6843aaa63d0cbd09fe6c5f947d068cceccf52eedb6a93a4eb436ad641b0af",
+    "research/experiments/E190-liquidation-commitment/code/context.mjs": "0c2cadb24a12c8cc4782c283d9b7a833e866750e5a43e296900b773d351fb1e1",
+    "research/experiments/E190-liquidation-commitment/code/fixtures.mjs": "b36525cd462983b3c3d76bc10de6606c538c3c0542424a6cee08dc9923aaedd1",
+    "research/experiments/E190-liquidation-commitment/code/liquidation.mjs": "8a33d8eeadb13487e4857a76ec29b572871190e7067a532718ad19b6586936ef",
+    "research/experiments/E190-liquidation-commitment/code/saved.mjs": "4f30967ba22302226e4282f0c45cbe21e8bc1a5c517eae9a84afbc0ace5a80b9",
+    "research/experiments/E204-exchange-initiative-question-evidence/PREREQUISITES.md": "730d9e1dd9c0014dc52b341add4cd46783de1fe56901de6842e45257ee1c42d5",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/check-result.mjs": "ad1e8a1538e73f74bbf9678117db65c7a116306b9c0cc4a09618981c92f85f72",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/questions.mjs": "f042cd47a37c25b89b1fa41d70f2da8d300b92b701c64edf795d3b721f4c25ac",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/questions.test.mjs": "3121666ac09ebe21f72b42fa620c7eb287cc8332fcd8ee1fbe7c7a1b8dac7e3a",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/record-build.mjs": "b637ad239d281bf7c34c7af9dc44d1f7df4424d7492e543cef7889a90822965c",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/run-focused.mjs": "d1a2d3b3d6992168cc92cfd732e59437e81530f3fb64bbebb8fd2a7b49365d21",
+    "research/experiments/E204-exchange-initiative-question-evidence/code/saved.mjs": "cec84201b569c32e83599be28cdd7ca89eda236bf7e46ec8b37a9023b4f3e8ad",
+    "research/experiments/E204-exchange-initiative-question-evidence/plan.md": "772f4eca28dc3af8d73069c08dedc5abf412eb0da9ced4595a4cc069e1bebbc4",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E204-exchange-initiative-question-evidence/code/questions.test.mjs (30/30 pass; 4.664 seconds;22player roles/11reused source contexts)",
+    "current receipt/archive/original collector source closure and preregistered plan bindings verified; zero new collection/search",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined cumulative original-occurrence/support/absence/priority/terminal/claim/history/budget integration",
+    "complete independent inherited replay and changed main/repeat/initially clean reproductions at combined freeze",
+    "general exchange value/sustained initiative/all counterplay/timescale outcomes",
+    "eligible real-game precision, human usefulness and production promotion"
+  ]
+}
