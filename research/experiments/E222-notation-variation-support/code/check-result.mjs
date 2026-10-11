@@ -33,14 +33,15 @@ export function checkNotationSupport(input,options,result){
  const start=legalPosition(find('FEN')??new Chess().fen()).fen();
  function walk(line,fen,history,depth){
   assert(depth<=limits.maxDepth);keys(line,['startFen','comments','moves']);assert.equal(line.startFen,fen);assert(Array.isArray(line.comments)&&Array.isArray(line.moves));
-  const c=legalPosition(fen);for(const value of line.comments)assert.deepEqual(ts[pos++],{type:'comment',value});
+  const c=legalPosition(fen);let pendingNumber=false;
+  const number=()=>{if(ts[pos]?.type==='number'){assert(!pendingNumber);assert.deepEqual(ts[pos++],{type:'number',value:+c.fen().split(' ')[5],side:c.turn()});pendingNumber=true;}};
+  for(const value of line.comments){number();assert.deepEqual(ts[pos++],{type:'comment',value});}
   for(const m of line.moves){keys(m,['san','uci','before','after','number','side','annotations']);assert.equal(m.before,c.fen());assert.equal(m.side,c.turn());assert.equal(m.number,+c.fen().split(' ')[5]);
-   if(ts[pos]?.type==='number'){assert.deepEqual(ts[pos++],{type:'number',value:m.number,side:m.side});}
-   assert.deepEqual(ts[pos++],{type:'move',value:m.san});assert(count++<limits.maxMoves);
+   number();assert.deepEqual(ts[pos++],{type:'move',value:m.san});pendingNumber=false;assert(count++<limits.maxMoves);
    assert(!c.isCheckmate()&&!c.isStalemate()&&!c.isInsufficientMaterial()&&+c.fen().split(' ')[4]<150&&(history.get(key(c))??0)<5);
    const beforeHistory=new Map(history),played=c.move(m.san,{strict:true});assert.equal(played.san,m.san);assert.equal(m.uci,played.from+played.to+(played.promotion??''));assert.equal(m.after,c.fen());history.set(key(c),(history.get(key(c))??0)+1);
-   for(const a of m.annotations){if(a.type==='variation'){keys(a,['type','line']);assert.deepEqual(ts[pos++],{type:'('});assert(a.line.moves.length>0);walk(a.line,m.before,new Map(beforeHistory),depth+1);assert.deepEqual(ts[pos++],{type:')'});}else{keys(a,['type','value']);assert(['comment','nag'].includes(a.type));assert.deepEqual(ts[pos++],a);}}
-  }
+   for(const a of m.annotations){if(a.type==='variation'){assert(!pendingNumber);keys(a,['type','line']);assert.deepEqual(ts[pos++],{type:'('});assert(a.line.moves.length>0);walk(a.line,m.before,new Map(beforeHistory),depth+1);assert.deepEqual(ts[pos++],{type:')'});}else{keys(a,['type','value']);assert(['comment','nag'].includes(a.type));if(a.type==='comment')number();else assert(!pendingNumber);assert.deepEqual(ts[pos++],a);}}
+  }assert(!pendingNumber);
  }
  const initial=legalPosition(start);walk(doc.line,start,new Map([[key(initial),1]]),0);assert.deepEqual(ts[pos++],{type:'result',value:doc.result});assert.equal(pos,ts.length);assert.equal(count,doc.usedMoves);
  assert(find('Result')===undefined||find('Result')===doc.result);

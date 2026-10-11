@@ -64,3 +64,14 @@ Implementation clarification before evaluation: preserve comments, NAGs and RAVs
 in one ordered annotation stream per move. Wrap only between tokens at a soft
 80-column target; indivisible long comments/tags may exceed it. Semicolon comments
 containing a closing brace export as semicolon lines rather than losing text.
+
+Post-focused source-review amendment2026-10-11:18 pilot cases and12 checks passed.
+The raw-token checker did not allow a comment between a move number and its move,
+although the parser supports that placement. Before further checks, add two
+authored placements (before the first move and before Black's move), separately
+consume and validate their number tokens, and preserve all old outputs unchanged.
+Audit original source933f753; only plan, checker and fixtures change in its pilot
+closure. Retain the original focused process record and write a distinct second
+focused record. No pilot collection is repeated. Near the hard input character
+limit, normalized export may exceed that same import limit; this provisional
+interoperability boundary remains explicit pending an output-budget policy.

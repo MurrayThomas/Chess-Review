@@ -22,6 +22,7 @@ export const cases=[
  ['set-up-zero','[SetUp "0"]\n\n1. e4 *']
 ].map(([id,pgn])=>({id,input:input(pgn),options:{enabled:true}}));
 export const startFen=new Chess().fen();
+export const commentBoundaries=['1. {before first move} e4 *','1. e4 1... {before Black move} e5 *'].map(input);
 export const invalids=[
  '1. e5 *','1. e4+ *','1. Pe4 *','1. e2e4 *','1. e4!!! *','1.. e4 *','1... e4 *','2. e4 *',
  '1. e4 (1. d5) *','(1. e4) *','1. e4 () *','1. e4 (1. d4 *','1. e4 (1. d4 1-0) *',

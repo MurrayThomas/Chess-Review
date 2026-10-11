@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
 import {openResearchData} from '../../../data-policy.mjs';
-import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
-export async function saved(){const guard=await openResearchData(['D001'],{purpose:'test'}),p=JSON.parse(await readFile('research/experiments/E222-notation-variation-support/evidence/pilot.json','utf8'));assert.equal(p.error,null);assert.equal(p.rows.length,18);assert.equal(p.freshSearches,0);assert.deepEqual(p.receipt,guard.receipt);assert.deepEqual(p.inputHashes,await bindings(Object.keys(p.inputHashes)));return p;}
+import {bindings,digest,normalized} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+export async function saved(){const guard=await openResearchData(['D001'],{purpose:'test'}),p=JSON.parse(await readFile('research/experiments/E222-notation-variation-support/evidence/pilot.json','utf8'));assert.equal(p.error,null);assert.equal(p.rows.length,18);assert.equal(p.freshSearches,0);assert.deepEqual(p.receipt,guard.receipt);assert.equal(p.revision,'933f753d82c31b0657961bb1661d5485607a8afc');const now=await bindings(Object.keys(p.inputHashes)),amendments=[];for(const [name,hash]of Object.entries(p.inputHashes)){const old=execFileSync('git',['show',p.revision+':'+name],{windowsHide:true,maxBuffer:4*1024*1024});assert.equal(digest(normalized(name,old)),hash);if(now[name]!==hash){assert(['plan.md','code/check-result.mjs','code/fixtures.mjs'].some(s=>name==='research/experiments/E222-notation-variation-support/'+s));amendments.push({file:name,original:hash,current:now[name]});}}return{...p,amendments};}
