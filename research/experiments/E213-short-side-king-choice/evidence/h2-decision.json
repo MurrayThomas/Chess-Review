@@ -1,0 +1,28 @@
+{
+  "id": "h2",
+  "seconds": 1.5145405999999995,
+  "probes": 15,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "b",
+      "pawn": "f6",
+      "king": "f8",
+      "attackerKing": "f5",
+      "rook": "a8",
+      "longSign": -1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 4,
+      "rookSharesKingRank": false
+    },
+    "resources": [
+      "f8g8"
+    ],
+    "alternatives": [
+      "f8e8"
+    ]
+  },
+  "costPass": true
+}

@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,access} from 'node:fs/promises';
+import {execFileSync,spawnSync} from 'node:child_process';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {context} from '../../E211-rook-tablebase-admission/code/context.mjs';
+const dir='research/experiments/E213-short-side-king-choice',ctx=await context();try{await access(dir+'/evidence/focused-checks.json');throw Error('Refusing to overwrite checks');}catch(e){if(e.code!=='ENOENT')throw e;}
+const parent=JSON.parse(await readFile('research/experiments/E212-rook-side-defense/build.json','utf8'));assert.deepEqual(parent.inputHashes,await bindings(Object.keys(parent.inputHashes)));const inputHashes=await bindings([dir+'/plan.md',dir+'/code/run-focused.mjs',dir+'/code/resources.test.mjs',...Object.keys(parent.inputHashes)]),revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),start=performance.now(),r=spawnSync(process.execPath,['--test',dir+'/code/resources.test.mjs'],{encoding:'utf8',windowsHide:true,timeout:30000}),seconds=(performance.now()-start)/1000;
+await writeFile(dir+'/evidence/'+(r.status===0?'focused-checks':'focused-failure')+'.json',JSON.stringify({revision,inputHashes,datasetReceipt:ctx.data.receipt.gameGuardReceipt,tablebaseReceipt:ctx.data.receipt,probeSource:ctx.probeSource,command:'node --test '+dir+'/code/resources.test.mjs',seconds,exitCode:r.status,signal:r.signal,processError:r.error?.message??null,stdout:r.stdout,stderr:r.stderr,freshProbes:0},null,2)+'\n',{flag:'wx'});console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);console.log(JSON.stringify({seconds,freshProbes:0}));

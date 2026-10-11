@@ -1,0 +1,28 @@
+{
+  "id": "reflection",
+  "seconds": 1.4186764999999997,
+  "probes": 15,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "w",
+      "pawn": "f3",
+      "king": "f1",
+      "attackerKing": "f4",
+      "rook": "a1",
+      "longSign": -1,
+      "kingOnShortSide": false,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 4,
+      "rookSharesKingRank": false
+    },
+    "resources": [
+      "f1g1"
+    ],
+    "alternatives": [
+      "f1e1"
+    ]
+  },
+  "costPass": true
+}

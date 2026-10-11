@@ -1,0 +1,114 @@
+{
+  "revision": "7c87aa0a176fc4ac2959f32180491900b2c8a5a0",
+  "decisions": [
+    {
+      "id": "d2",
+      "seconds": 1.7214573999999998,
+      "probes": 15,
+      "contrast": {
+        "passes": false,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "f6",
+          "king": "f8",
+          "attackerKing": "f5",
+          "rook": "a8",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false
+        },
+        "resources": [],
+        "alternatives": [
+          "f8e8"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "b2",
+      "seconds": 1.5250789,
+      "probes": 15,
+      "contrast": {
+        "passes": false,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "f6",
+          "king": "f8",
+          "attackerKing": "f5",
+          "rook": "a8",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false
+        },
+        "resources": [],
+        "alternatives": [
+          "f8e8"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "h2",
+      "seconds": 1.5145405999999995,
+      "probes": 15,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "b",
+          "pawn": "f6",
+          "king": "f8",
+          "attackerKing": "f5",
+          "rook": "a8",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false
+        },
+        "resources": [
+          "f8g8"
+        ],
+        "alternatives": [
+          "f8e8"
+        ]
+      },
+      "costPass": true
+    },
+    {
+      "id": "reflection",
+      "seconds": 1.4186764999999997,
+      "probes": 15,
+      "contrast": {
+        "passes": true,
+        "rootWdl": 0,
+        "geometry": {
+          "defender": "w",
+          "pawn": "f3",
+          "king": "f1",
+          "attackerKing": "f4",
+          "rook": "a1",
+          "longSign": -1,
+          "kingOnShortSide": false,
+          "rookOnLongSide": true,
+          "rookCheckingDistance": 4,
+          "rookSharesKingRank": false
+        },
+        "resources": [
+          "f1g1"
+        ],
+        "alternatives": [
+          "f1e1"
+        ]
+      },
+      "costPass": true
+    }
+  ],
+  "ready": true
+}
