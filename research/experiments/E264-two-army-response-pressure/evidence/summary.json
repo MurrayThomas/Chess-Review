@@ -1,0 +1,141 @@
+{
+  "revision": "f036094215ebc9d77cfde2cab9502deba39c5f34",
+  "rows": 16,
+  "ticks": 3942,
+  "seconds": 3.6802181000000003,
+  "bytes": 46046,
+  "error": null,
+  "incomplete": null,
+  "gates": true,
+  "outcomes": [
+    {
+      "id": "b2-b7-w-original",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 2,
+      "ticks": 553
+    },
+    {
+      "id": "b2-b7-w-reflected",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 2,
+      "ticks": 553
+    },
+    {
+      "id": "b2-b7-b-original",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b2-b7-b-reflected",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b2-g7-w-original",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b2-g7-w-reflected",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b2-g7-b-original",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 58
+    },
+    {
+      "id": "b2-g7-b-reflected",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 58
+    },
+    {
+      "id": "b4-b7-w-original",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 1,
+      "ticks": 298
+    },
+    {
+      "id": "b4-b7-w-reflected",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 1,
+      "ticks": 298
+    },
+    {
+      "id": "b4-b7-b-original",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 3,
+      "ticks": 444
+    },
+    {
+      "id": "b4-b7-b-reflected",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 3,
+      "ticks": 444
+    },
+    {
+      "id": "b4-g7-w-original",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b4-g7-w-reflected",
+      "eligible": true,
+      "pressure": false,
+      "expected": false,
+      "obligations": 0,
+      "ticks": 90
+    },
+    {
+      "id": "b4-g7-b-original",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 2,
+      "ticks": 348
+    },
+    {
+      "id": "b4-g7-b-reflected",
+      "eligible": true,
+      "pressure": true,
+      "expected": true,
+      "obligations": 2,
+      "ticks": 348
+    }
+  ],
+  "sha256": "b944f610ea61d3cf4a1e976ebe5968908ee056b5a6d5134f85be62e026523f2b"
+}
