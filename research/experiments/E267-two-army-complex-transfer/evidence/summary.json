@@ -1,0 +1,149 @@
+{
+  "revision": "cb2414d69eeff0d63c9ff950d54df7cc32c9bb6c",
+  "rows": 16,
+  "nodes": 12926,
+  "seconds": 5.5496116,
+  "bytes": 188630,
+  "error": null,
+  "incomplete": null,
+  "calibration": {
+    "references": 2,
+    "reusedPanels": 8,
+    "actualSuccesses": 4,
+    "alternativeFailures": 4
+  },
+  "forecastsMatch": true,
+  "readinessCredit": false,
+  "newOccurrences": 0,
+  "outcomes": [
+    {
+      "id": "f1-f8-w-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 12,
+      "individualBishopTargets": 0,
+      "nodes": 978
+    },
+    {
+      "id": "f1-f8-w-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 12,
+      "individualBishopTargets": 0,
+      "nodes": 978
+    },
+    {
+      "id": "f1-f8-b-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 1382
+    },
+    {
+      "id": "f1-f8-b-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 1382
+    },
+    {
+      "id": "f1-c8-w-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 12,
+      "individualBishopTargets": 0,
+      "nodes": 933
+    },
+    {
+      "id": "f1-c8-w-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 12,
+      "individualBishopTargets": 0,
+      "nodes": 933
+    },
+    {
+      "id": "f1-c8-b-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 10,
+      "individualBishopTargets": 0,
+      "nodes": 485
+    },
+    {
+      "id": "f1-c8-b-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 10,
+      "individualBishopTargets": 0,
+      "nodes": 485
+    },
+    {
+      "id": "c1-f8-w-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 477
+    },
+    {
+      "id": "c1-f8-w-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 477
+    },
+    {
+      "id": "c1-f8-b-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 1288
+    },
+    {
+      "id": "c1-f8-b-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 1288
+    },
+    {
+      "id": "c1-c8-w-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 465
+    },
+    {
+      "id": "c1-c8-w-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 14,
+      "individualBishopTargets": 0,
+      "nodes": 465
+    },
+    {
+      "id": "c1-c8-b-original",
+      "bishop": false,
+      "knight": false,
+      "panels": 10,
+      "individualBishopTargets": 0,
+      "nodes": 455
+    },
+    {
+      "id": "c1-c8-b-reflected",
+      "bishop": false,
+      "knight": false,
+      "panels": 10,
+      "individualBishopTargets": 0,
+      "nodes": 455
+    }
+  ],
+  "sha256": "05d81f329971692103e0441231ee5fa8d1491f607f31272a79d617ecbd942f1e"
+}

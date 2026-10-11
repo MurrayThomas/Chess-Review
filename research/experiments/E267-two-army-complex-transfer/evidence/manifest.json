@@ -1,0 +1,60 @@
+{
+  "revision": "5c479a1f467b1640ced8e8b15eb63d022667920c",
+  "meaning": "Complete authored bishop-color transfer matrix with no full-complex coverage, exact exposed positive calibration, saved independent replay/focused/affected/source evidence; zero readiness or game-data use",
+  "totals": {
+    "censuses": 16,
+    "quietBishopPlacements": 100,
+    "freshPanels": 200,
+    "captures": 330,
+    "counters": 3876,
+    "nodes": 12926,
+    "reusedCalibrationPanels": 8
+  },
+  "files": {
+    "research/experiments/E267-two-army-complex-transfer/evidence/collection.json.gz": {
+      "bytes": 188630,
+      "sha256": "05d81f329971692103e0441231ee5fa8d1491f607f31272a79d617ecbd942f1e"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/affected-checks.json": {
+      "bytes": 33436,
+      "sha256": "85be1a88e12714cea1733488ad151668971e5877757d9f2f2ac76d5245243992"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/build-status.json": {
+      "bytes": 1446,
+      "sha256": "ff7892c8396b7508c411c9466a8581432388bd65ed44a1fb2601563f8dc98524"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/checks.json": {
+      "bytes": 32901,
+      "sha256": "b70f59e86677ac14fe8a2a31e27eab6ade24fe5232ca1814bf062d26e501fbd5"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/provenance.json": {
+      "bytes": 32653,
+      "sha256": "a818214d9bf6f2546985418ce1ae06944cb984914ee826f41050b4bd72ed8858"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/replay.json.gz": {
+      "bytes": 11206,
+      "sha256": "00f998ac9032088a7a6e2964a7c7b07e555c3f714fa00f0c98b89a94311ab78f"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/source-checks.json": {
+      "bytes": 10211,
+      "sha256": "0df5181464817b12ce596337b1970617e385c4d05c8e3dc9808478b60ae0d0ed"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/focused/started.json": {
+      "bytes": 30902,
+      "sha256": "35e23a48676d2524b1f8ff857a9e005b692436860e73a4b80d0f4ace63c7a91f"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/partial.json.gz": {
+      "bytes": 188621,
+      "sha256": "edae93a721f22da59eb2f50e48f64663a24e5ecbd88a2f6e2903b1c4b23b9ce4"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/started.json": {
+      "bytes": 13547,
+      "sha256": "a7c6f35192c56ef4878ef8d93afc109835aa38ee7083ae0669e91676734173d2"
+    },
+    "research/experiments/E267-two-army-complex-transfer/evidence/summary.json": {
+      "bytes": 3143,
+      "sha256": "4166eace9a26072f292ecd4493166873a958bc700c1de39aeea5ccaf7c46fe0b"
+    }
+  },
+  "totalBytes": 546696
+}

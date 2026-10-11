@@ -1,0 +1,78 @@
+{
+  "acceptedExperiment": "E082",
+  "accepted": 378,
+  "entries": 1085,
+  "provisional": 538,
+  "acceptedOrCandidate": 916,
+  "percent": 84.4,
+  "readyBatches": 161,
+  "staleBatches": 0,
+  "withoutReadyCode": 169,
+  "newOccurrences": 0,
+  "next": [
+    {
+      "id": "C0895",
+      "name": "Color-complex imbalance",
+      "rank": 510,
+      "needsCodeIds": [
+        "C0895"
+      ]
+    },
+    {
+      "id": "C0896",
+      "name": "Good-piece/bad-piece imbalance",
+      "rank": 511,
+      "needsCodeIds": [
+        "C0896"
+      ]
+    },
+    {
+      "id": "C0898",
+      "name": "Principle of two weaknesses",
+      "rank": 513,
+      "needsCodeIds": [
+        "C0898"
+      ]
+    },
+    {
+      "id": "C0904",
+      "name": "Maximal piece activity",
+      "rank": 514,
+      "needsCodeIds": [
+        "C0904"
+      ]
+    },
+    {
+      "id": "C0906",
+      "name": "Accumulation of small advantages",
+      "rank": 516,
+      "needsCodeIds": [
+        "C0906"
+      ]
+    },
+    {
+      "id": "C0908",
+      "name": "Positional pawn sacrifice",
+      "rank": 518,
+      "needsCodeIds": [
+        "C0908"
+      ]
+    },
+    {
+      "id": "C0918",
+      "name": "Good version versus bad version of a structure",
+      "rank": 522,
+      "needsCodeIds": [
+        "C0918"
+      ]
+    },
+    {
+      "id": "C0921",
+      "name": "Restricting before breaking through",
+      "rank": 525,
+      "needsCodeIds": [
+        "C0921"
+      ]
+    }
+  ]
+}
