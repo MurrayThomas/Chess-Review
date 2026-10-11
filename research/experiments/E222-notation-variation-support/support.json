@@ -1,0 +1,232 @@
+{
+  "schema": "coach-prerequisite-v1",
+  "experiment": "E222",
+  "stage": "bounded-notation-contract",
+  "coverageCredit": false,
+  "futureClaims": [
+    "C0985",
+    "C0986",
+    "C0987",
+    "C0988",
+    "C0989",
+    "C0990",
+    "C0991",
+    "C0992",
+    "C0993",
+    "C0994",
+    "C0995",
+    "C0996",
+    "C0997",
+    "C0998",
+    "C0999",
+    "C1000",
+    "C1001",
+    "C1002",
+    "C1003",
+    "C1004",
+    "C1005",
+    "C1006"
+  ],
+  "supportedOccurrences": [
+    {
+      "id": "C0985",
+      "name": "Algebraic notation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0986",
+      "name": "Descriptive notation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C0987",
+      "name": "SAN",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0988",
+      "name": "PGN",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0989",
+      "name": "FEN",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0990",
+      "name": "Move number",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0991",
+      "name": "Variation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0992",
+      "name": "Main line",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0993",
+      "name": "Side variation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0994",
+      "name": "Annotation",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0995",
+      "name": "!",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0996",
+      "name": "!!",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0997",
+      "name": "?",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0998",
+      "name": "??",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C0999",
+      "name": "!?",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C1000",
+      "name": "?!",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "bounded-notation-contract",
+      "scope": "Legal bounded notation/variation syntax and reported annotations, not quality, best play or metadata truth."
+    },
+    {
+      "id": "C1001",
+      "name": "+=",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C1002",
+      "name": "=+",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C1003",
+      "name": "±",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C1004",
+      "name": "∓",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C1005",
+      "name": "=",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    },
+    {
+      "id": "C1006",
+      "name": "∞",
+      "category": "39. Chess notation and analysis language",
+      "disposition": "reference-only",
+      "scope": "Teaching reference only; no descriptive conversion or evaluation inference."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/REMOVAL-SUGGESTIONS.md": "a502f139c781cd5113b84106c0b894789f39405dde967d711fa1f59dc47f3b47",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E222-notation-variation-support/SOURCES.md": "67984da13637579bc67d84c4955f0bd9bb4630668108b4316eca417f24fb3727",
+    "research/experiments/E222-notation-variation-support/code/check-result.mjs": "34f520acefff5af230fc60cee6ec3f3719e428349821372d391aaf78370fe1d0",
+    "research/experiments/E222-notation-variation-support/code/contract.mjs": "b4157ecfb5990d695ae2d8d789512fa7eb4ac11a6d283031a70ec17b32723570",
+    "research/experiments/E222-notation-variation-support/code/fixtures.mjs": "459ea7c7baed5633896d40a1dfe8246d26fd2d5ec2689a5555eb7d4a05b36f72",
+    "research/experiments/E222-notation-variation-support/code/lex.mjs": "612f91c28ee12518329d53690ef4f516ad814cc840e8c74c4e0f1666c5a8aa27",
+    "research/experiments/E222-notation-variation-support/code/parse.mjs": "b46af00594669f76f85e1cb1aa68c90d1d953710a543fc8211ccb9b3d36e8aff",
+    "research/experiments/E222-notation-variation-support/code/pilot.mjs": "bb0bf55e3d07e19c23ea67916452b6959ace3a2c44859f93b542d25ecc02e841",
+    "research/experiments/E222-notation-variation-support/code/record-support.mjs": "1363a956775c7a06bd3b8ced78e1a6952705cd57a9695d21754b4aa8d0b1aa71",
+    "research/experiments/E222-notation-variation-support/code/reference.mjs": "00f68545274fbd9811974e2967f828ae18ce3f5d44d287e80d6cfe9f2bcd3559",
+    "research/experiments/E222-notation-variation-support/code/run-focused.mjs": "f306844738f4b90da87d9922d4d43c2c193f031b2ed80e03a316b730bf713a3e",
+    "research/experiments/E222-notation-variation-support/code/saved.mjs": "8f5b45de61175bed3886358b3e6075c2e4da70ec61cab5649977b0a5c35a8850",
+    "research/experiments/E222-notation-variation-support/code/serialize.mjs": "36c633056d52b9c90cb013e3bad451d0ffa17a3e593d32316e65d6807fd52b49",
+    "research/experiments/E222-notation-variation-support/code/support.mjs": "c74370b9c56fbf3bdc2460329e900b3d045a203807efa799615a4733de85c9da",
+    "research/experiments/E222-notation-variation-support/code/support.test.mjs": "4e0bb7cccf70041ae96d57d8011096d65bbc3db16ee47b093e2fc78a9263e161",
+    "research/experiments/E222-notation-variation-support/plan.md": "3fede0d9e262b3b6d5c66ed96db93a7510b0b047daee5732ea736a7b0c77bf01",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "implemented": "Default-disabled single-game canonical-SAN PGN/FEN move/branch and ordered annotation parser/exporter, bounded atomic inputs; all22 catalog references retained, seven reference-only; no inferred move quality or result adjudication.",
+  "focusedChecks": [
+    "node --test research/experiments/E222-notation-variation-support/code/support.test.mjs (13/13 pass; 4.849 seconds; zero searches)",
+    "18original outputs unchanged with audited frozen source and two new comment-placement controls",
+    "legal main/nested/sibling branches; special moves/FEN/counters; escaped tags/comments/NAGs; strict malformed/automatic-terminal controls; exact/short/zero/default-disabled budgets; forgeries/getters/output isolation",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "descriptive notation dialect/disambiguation and conversion; alternate SAN/import dialects, variants, null moves and multi-game files",
+    "near-limit normalized-export/import budget interoperability and broader external-file conformance",
+    "annotation correctness/position evaluation, metadata authenticity and arbitrary-FEN prehistory",
+    "human usefulness/accessibility assessment, combined semantic/integration checks and production promotion"
+  ]
+}
