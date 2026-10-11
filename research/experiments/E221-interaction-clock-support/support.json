@@ -1,0 +1,207 @@
+{
+  "schema": "coach-prerequisite-v1",
+  "experiment": "E221",
+  "stage": "observable-input-contract",
+  "coverageCredit": false,
+  "futureClaims": [
+    "C0018",
+    "C0019",
+    "C0814",
+    "C0815",
+    "C0816",
+    "C0817",
+    "C0818",
+    "C0819",
+    "C0820",
+    "C0871",
+    "C0872",
+    "C1033",
+    "C1034",
+    "C1035",
+    "C1036",
+    "C1037",
+    "C1038",
+    "C1039",
+    "C1040"
+  ],
+  "supportedOccurrences": [
+    {
+      "id": "C0018",
+      "name": "Touch-move rule",
+      "category": "1. Board, rules, and fundamental concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0019",
+      "name": "Checkmate versus resignation",
+      "category": "1. Board, rules, and fundamental concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0814",
+      "name": "Time management",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0815",
+      "name": "Clock awareness",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0816",
+      "name": "Time trouble",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0817",
+      "name": "Zeitnot",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0818",
+      "name": "Increment",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1039",
+      "name": "Increment",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0819",
+      "name": "Delay",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1040",
+      "name": "Delay",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0820",
+      "name": "Thinking on the opponent's time",
+      "category": "33. Practical chess concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C0871",
+      "name": "Playing too quickly",
+      "category": "34. Common mistakes",
+      "disposition": "quality-rubric-prerequisite",
+      "scope": "Clock observations do not establish timing quality; unavailable without independent validated rubric."
+    },
+    {
+      "id": "C0872",
+      "name": "Using too much time",
+      "category": "34. Common mistakes",
+      "disposition": "quality-rubric-prerequisite",
+      "scope": "Clock observations do not establish timing quality; unavailable without independent validated rubric."
+    },
+    {
+      "id": "C1033",
+      "name": "Classical chess",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1034",
+      "name": "Rapid chess",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1035",
+      "name": "Blitz chess",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1036",
+      "name": "Bullet chess",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1037",
+      "name": "Armageddon",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    },
+    {
+      "id": "C1038",
+      "name": "Time control",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "observable-input-contract",
+      "scope": "Typed reported/computed/convention facts through inspectInteractionClockSupport; full adjudication, mental truth, human utility and production integration unproved."
+    }
+  ],
+  "implemented": "Default-disabled strict support contract for19original occurrences: observed clock/phase/increment/delay/correction reconciliation; versioned limited rapid/blitz calculation; reported event category/draw-odds, termination and touch legal-options; explicit mental self-reports and declared trouble thresholds; timing quality and adjudication remain unavailable.",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/REMOVAL-SUGGESTIONS.md": "a502f139c781cd5113b84106c0b894789f39405dde967d711fa1f59dc47f3b47",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E221-interaction-clock-support/SOURCES.md": "f7e549aebecf2ebbbd766b23bb9f6ded05bd0f227e7bcdc09496d4d643563ea8",
+    "research/experiments/E221-interaction-clock-support/code/check-result.mjs": "ebcd5c9554f887511d19d17d56ed58d2a1f9c09ff142ce7c9b29fd213b8e33a3",
+    "research/experiments/E221-interaction-clock-support/code/contract.mjs": "248d9d4e2dba9f897de15966837747795e3bf49753e33cbe235d6efa2099013b",
+    "research/experiments/E221-interaction-clock-support/code/fixtures.mjs": "74f51d2a62bc90f4fb905e1c43ba29e20ca187fccb604a6599be83f89fe0d072",
+    "research/experiments/E221-interaction-clock-support/code/pilot.mjs": "8cb405d32bf85d5dba58a4eccc12524331da0e1aea6a3e382fdef99a2683c111",
+    "research/experiments/E221-interaction-clock-support/code/record-support.mjs": "b177e2bf1c75b873ac4113ce402f50f6350aeab7c44d3e3e3a068be69f9f5046",
+    "research/experiments/E221-interaction-clock-support/code/run-focused.mjs": "fa677ce9ecc7c5962b35bcfa57538f5e42556a1c12e3b5f8e6f1cb358eed12a1",
+    "research/experiments/E221-interaction-clock-support/code/saved.mjs": "37d850ea8dd392d6029afe9240d532bd0590c722ffbcfbac1777cd0da9c6b1c8",
+    "research/experiments/E221-interaction-clock-support/code/support.mjs": "ee931a1b813379088921f1033ecabe8c1c105c93b931dd21e24bd045a452c0b6",
+    "research/experiments/E221-interaction-clock-support/code/support.test.mjs": "254ff6debb2540274ade82479abfb405107169e55df011564e5a1cc625b8afe8",
+    "research/experiments/E221-interaction-clock-support/plan.md": "03b288d344e0cb2a7cb8e4c765c0582fb9d57b1077af435ba4d99b0d1bebd388",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E221-interaction-clock-support/code/support.test.mjs (16/16 pass; 3.726 seconds; no chess searches)",
+    "31original synthetic observations independently replay unchanged; preserved original pilot hashes with declared exact-zero flag/result/FEN guard amendments",
+    "19canonical IDs and duplicate increment/delay contexts preserved; detector/accepted coverage unchanged and no build.json",
+    "ordinary/Fischer/delay/stage/correction/asymmetric/category/termination/touch/EP-victim/self-report cases, atomic caps, strict schema/getters and output/missing-rubric forgeries",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "real device/platform/PGN clock adapters and trustworthy event/interaction provenance",
+    "full touch-move/multiple-touch/intent rulings and legal possible-mate termination adjudication",
+    "timing-performance and mental-state truth, practical time-trouble usefulness and player-specific thresholds",
+    "broader event profiles/categories and automatic tournament-format/result inference",
+    "combined original-occurrence/integration/semantic validation, independent human usefulness and separate production promotion"
+  ]
+}
