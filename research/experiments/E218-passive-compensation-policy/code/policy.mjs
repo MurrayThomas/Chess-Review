@@ -9,7 +9,7 @@ const nonkings=c=>pieces(c).filter(p=>p.type!=='k').map(p=>({square:p.square,typ
 const balance=(c,actor)=>pieces(c).reduce((s,p)=>s+(p.color===actor?1:-1)*values[p.type],0);
 export function inspectPassiveCompensation(input,options={},certificate){
  plain([input,options,certificate]);if(!fields(input,['fen','history'])||typeof input.fen!=='string'||input.history!==undefined&&!exact(input.history,['fen','moves'])||!fields(options,['enabled','player','maxNodes']))throw Error('Invalid passive policy interface');
- const enabled=options.enabled??false,actor=options.player,limit=options.maxNodes??5000;if(typeof enabled!=='boolean'||actor!==undefined&&!['w','b'].includes(actor)||enabled&&!actor||!Number.isSafeInteger(limit)||limit<0||limit>5000)throw Error('Invalid policy controls');
+ const enabled=options.enabled===undefined?false:options.enabled,actor=options.player,limit=options.maxNodes===undefined?5000:options.maxNodes;if(typeof enabled!=='boolean'||actor!==undefined&&!['w','b'].includes(actor)||enabled&&!actor||!Number.isSafeInteger(limit)||limit<0||limit>5000)throw Error('Invalid policy controls');
  let nodes=0;const done=(status,witness=null)=>({schema:'E218-passive-compensation',claims:['C0280','C0519'],status,available:status==='proven',actor:actor??null,limit,nodes,qualityClaim:false,witness});if(!enabled)return done('disabled');
  const a=actual(input);if(!a)return done('history-prerequisite');const tick=()=>{if(++nodes>limit)throw Error('passive-budget');};
  try{

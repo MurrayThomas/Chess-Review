@@ -81,3 +81,13 @@ compensation/long-term plans, branching positives, more materials and practical
 desirability remain open. Combined original-occurrence/regression/semantic/
 interaction/history/budget validation, changed main/repeat/clean reproductions,
 eligible real-game precision/human usefulness and production promotion deferred.
+
+Post-pilot interface hardening, before focused checks: six registered positives
+passed. Review found optional controls used null-coalescing, admitting explicit
+null as an omitted value. Reject null controls in runtime and independent checker;
+no chess invariant, valid-input behavior, budget or registered gate changes.
+Retain original observations and frozen Git source hashes. Independently replay
+their unchanged valid inputs/results under current sources; audit every original
+source hash against frozen2ad89a6, allowing only this plan/runtime/checker amendment
+to differ currently. Do not repeat collection or pretend original source bindings
+are current. Final build binds the current complete implementation.

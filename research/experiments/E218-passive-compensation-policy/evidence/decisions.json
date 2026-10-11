@@ -1,0 +1,66 @@
+{
+  "revision": "2ad89a69c62ed3363dffebf86e4bcb9f7c0c4a3a",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E218-passive-compensation-policy/code/check-result.mjs": "c03994c71598a68479e9b441d7e2c302ae8b7f3e502c2bb3c5ba4ecc452db3e1",
+    "research/experiments/E218-passive-compensation-policy/code/fixtures.mjs": "52878e27e12d56c84736a7cc2acfeac0895bb5b5f95d22bf9fad4308b9833f7a",
+    "research/experiments/E218-passive-compensation-policy/code/pilot.mjs": "f55496eab39431b6fdf88341702ef16f3a1444f5798b6eed6ff8ff47a214d546",
+    "research/experiments/E218-passive-compensation-policy/code/policy.mjs": "4d69d24c98515446ec503ed0f84f28a1ab1300be028ee9d8bc8880ebd6b98152",
+    "research/experiments/E218-passive-compensation-policy/plan.md": "8a80cf06ead4182436369471912b7b716dac524341d17a5685e8df349347f3cf",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "results": [
+    {
+      "id": "white-prior0-clock0",
+      "seconds": 0.023354299999999967,
+      "status": "proven",
+      "error": null,
+      "nodes": 23
+    },
+    {
+      "id": "black-prior0-clock0",
+      "seconds": 0.005171700000000101,
+      "status": "proven",
+      "error": null,
+      "nodes": 23
+    },
+    {
+      "id": "white-prior1-clock0",
+      "seconds": 0.0061463000000001105,
+      "status": "proven",
+      "error": null,
+      "nodes": 23
+    },
+    {
+      "id": "black-prior1-clock0",
+      "seconds": 0.005285999999999831,
+      "status": "proven",
+      "error": null,
+      "nodes": 23
+    },
+    {
+      "id": "white-prior0-clock99",
+      "seconds": 0.005209800000000086,
+      "status": "proven",
+      "error": null,
+      "nodes": 17
+    },
+    {
+      "id": "black-prior0-clock99",
+      "seconds": 0.005010099999999966,
+      "status": "proven",
+      "error": null,
+      "nodes": 17
+    }
+  ],
+  "failure": null,
+  "passes": true
+}
