@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,stat} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {saved,controls,panel,dir} from './saved.mjs';
+import {checkPawnObstruction} from './check-result.mjs';
+const guard=await openResearchData(['D001'],{purpose:'test'}),source=await saved(guard.receipt),out=dir+'/evidence/focused',p=JSON.parse(gunzipSync(await readFile(out+'/pilot.json.gz'))),c=JSON.parse(await readFile(out+'/focused-checks.json','utf8'));
+assert.equal(p.error,null);assert.equal(c.exitCode,0);assert.equal(c.signal,null);assert.equal(c.processError,null);assert.match(c.stdout,/tests 8/);assert.match(c.stdout,/pass 8/);assert.deepEqual(c.inputHashes,p.inputHashes);assert.deepEqual(p.inputHashes,await bindings(Object.keys(p.inputHashes)));assert.equal(p.receipt.registrySha256,guard.receipt.registrySha256);assert.equal(p.rows.length,source.rows.length);
+for(const [i,x]of source.rows.entries()){const r=p.rows[i];assert.equal(r.id,x.id);checkPawnObstruction(x.input,controls(x),panel(x),r.result);assert.equal(r.result.readinessCredit,false);assert.deepEqual(r.result.claims,{C0712:false,C0714:false});}
+const evidenceHashes={};let bytes=0;for(const f of ['started.json','panels.json.gz','focused/started.json','focused/pilot.json.gz','focused/focused-checks.json']){const path=dir+'/evidence/'+f;evidenceHashes[f]=sha256(await readFile(path));bytes+=(await stat(path)).size;}
+await writeFile(out+'/provenance.json',JSON.stringify({schema:'negative-causal-audit-v1',experiment:'E246',revision:p.revision,collectionRevision:source.revision,inputHashes:p.inputHashes,evidenceHashes,receipt:guard.receipt,sourceQueries:28,freshFocusedQueries:0,independentRows:4,collectionSeconds:source.seconds,pilotSeconds:p.seconds,focusedSeconds:c.seconds,evidenceBytesBeforeProvenance:bytes,readinessCredit:false,claims:{C0712:false,C0714:false},deferred:['full original occurrence/history/claim/terminal/priority/budget integration matrix','combined source freeze, full regression, main/repeat/clean reproduction','independent chess truth, broader strategic causes and human utility']},null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({sourceBindings:Object.keys(p.inputHashes).length,independentRows:4,sourceQueries:28,collectionSeconds:source.seconds,pilotSeconds:p.seconds,focusedSeconds:c.seconds,evidenceBytesBeforeProvenance:bytes,newOccurrences:0}));
