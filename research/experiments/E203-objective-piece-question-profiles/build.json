@@ -1,0 +1,71 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E203",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C1063",
+      "scope": "Which pieces are badly placed? Selected-color, declared profitable tracked-pawn-capture objective only: EVERY alive B/N/R/Q has full original-identity all-defense/all-counter coverage profile; return all failing units only with a covering comparator in complete domain. Actual source-after recorded frame; not all-color/general strategic diagnosis."
+    },
+    {
+      "id": "C1064",
+      "scope": "What is my worst piece? Supplement E151 immediate-freedom scope with own-color complete all-unit declared capture-objective coverage. All failing ties retained only with a covering comparator; no arbitrary ranking or broad strategic worst-piece claim."
+    },
+    {
+      "id": "C1065",
+      "scope": "What is my opponent's best piece? Explicit opponent-color complete all-unit declared capture-objective coverage, all covering ties retained with a failing comparator; unselected third unit included, exact full defensive/counter inventories and original identities. Other-side/no-separation/claim prerequisites abstain; general best-piece/value remains open."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "package.json": "2e41edb6006876e10c1c02bd95e70a220323fbbd39cfadc4431e57cf7cacd38d",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E156-piece-objective-effectiveness/code/collect.mjs": "125dd49ed1d5862c0a060f31e78d7dc23ab64ba724c2d4a986e3c83b360d629f",
+    "research/experiments/E156-piece-objective-effectiveness/code/fixtures.mjs": "332aaf4ba2cdcac12e1c67ef1d1cd566cab1f3dd8571a9260c7ea886ade0ccca",
+    "research/experiments/E156-piece-objective-effectiveness/code/panel.mjs": "a24c3afdfdc15e49abd2317da640721a9c322073842dda0db56368e870f0f470",
+    "research/experiments/E156-piece-objective-effectiveness/code/saved-panels.mjs": "cd3ce6ef82c973737b61b72e35f0579d28aaccc74c9206e3d1cab3bddce1d6aa",
+    "research/experiments/E156-piece-objective-effectiveness/code/verify-panel.mjs": "d3426818c3fd3cd63a6f9b225192f014c66fc534cffce6fceb84e084052b9918",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E200-recorded-move-changes/code/changes.mjs": "6f2d24ad26fd8a949eed5c2c89c4c84a230c97289d28f2cd1290ef6af2f2ea62",
+    "research/experiments/E200-recorded-move-changes/code/check-result.mjs": "4fd4f9a87090b255c6997fedf7b6cf15239f108d6d1e782734c8b39b2ee48620",
+    "research/experiments/E203-objective-piece-question-profiles/AMENDMENT-2026-10-11.md": "f8b85bbb9413425d0c6bc38466038e88dde1d141d3ac14b5165459d635956e19",
+    "research/experiments/E203-objective-piece-question-profiles/PREREQUISITES.md": "b8c0b222e316a0a082d76fb836f982bf821788165a8c0f04f17b3659f849da83",
+    "research/experiments/E203-objective-piece-question-profiles/code/check-result.mjs": "d4f4c37534b7759318f62307548874f1c79c4b7d6aeaafaa25a28500f392a458",
+    "research/experiments/E203-objective-piece-question-profiles/code/collect-claim.mjs": "ee6e3c33c9fbe0c259b2129ed5c062cb60c07e94d1528e2ef4d9e63d69024f00",
+    "research/experiments/E203-objective-piece-question-profiles/code/questions.mjs": "c446eff8129cd38280ddd1187158d7a194d3b9d6094259a407feac7fd55971a3",
+    "research/experiments/E203-objective-piece-question-profiles/code/questions.test.mjs": "ea54b90409fc9a30a5e7ccd66df6d8d2a485e43a8f488919ce67ad72e2f6fc07",
+    "research/experiments/E203-objective-piece-question-profiles/code/record-build.mjs": "2e45a6e62614af9f2f7fdda2ff337fa23d6508b366e344251b0f6779c70dc468",
+    "research/experiments/E203-objective-piece-question-profiles/code/run-focused.mjs": "5553462fccd13ab10db4934f6f223bd28d08d91e55c1c5a10085ec7e0f8a1dc6",
+    "research/experiments/E203-objective-piece-question-profiles/code/saved.mjs": "a302477babf05b50ed267e85a5842677a9e408e4f99a2293a366b092513b4199",
+    "research/experiments/E203-objective-piece-question-profiles/plan.md": "628a6b1f1bb34a0978dd5ebc9f17392640c5ab1382c688c86f5f0b1d498cc8a1",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E203-objective-piece-question-profiles/code/questions.test.mjs (23/23 pass; 3.481 seconds;14roles/six reused tactical panels)",
+    "one prospectively registered valid claim panel21declared nodes/five visited contexts; all labels withheld; no mate-query/engine collection",
+    "exact current receipt/archive/full original collector and source/plan/amendment bindings verified",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined full cumulative original-occurrence/support/absence/priority/history/terminal/claim/budget integration matrices",
+    "complete independent inherited replay and changed main/repeat/initially clean reproductions at combined freeze",
+    "all-cover/nonquiet/checking/terminal/target-advance/promotion/EP/promoted-unit integration matrices",
+    "general all-color/strategic quality rubrics, eligible real-game precision/human usefulness/production promotion"
+  ]
+}
