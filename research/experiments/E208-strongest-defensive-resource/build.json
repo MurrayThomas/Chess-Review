@@ -1,0 +1,66 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E208",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C1083",
+      "scope": "What is the opponent's strongest defensive resource? Genuine current opponent-turn after-recorded frame, complete EVERY-legal-defense finite tree with certified exact defender win/draw/loss minimax outcomes. Return ALL best outcome ties, including forced all-loss outcomes; unresolved frontier/own-turn/visited claim withhold. Full source/original actor/current defender/history preserved; no imaginary turn, engine best move, nominal gain or maximum mate-delay claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "package.json": "2e41edb6006876e10c1c02bd95e70a220323fbbd39cfadc4431e57cf7cacd38d",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E143-forcing-tempo-initiative/code/fixtures.mjs": "3851068126ebff46ffd32221d746c0abb7d6630a40708d8fa1e4a8dea769353d",
+    "research/experiments/E146-retrograde-calculation/code/fixtures.mjs": "d09aa14295c6615f9d79f5b3a2fd98a58008a948b37dad8ddd6f9497b912c789",
+    "research/experiments/E146-retrograde-calculation/code/tree.mjs": "9fd945b3855028e0e0b948ece9c14ac277c8f066a271cf5fc50dc069a4f3ed79",
+    "research/experiments/E146-retrograde-calculation/code/verify-tree.mjs": "ee89869a36b6176735d3db79d058a5885ecff4c8eae5a1092c79987295b24db6",
+    "research/experiments/E155-recorded-advantage-conversion/code/collect.mjs": "d1e87832769c38a8298a89c0277f22bada2c86a14c025d0b69f4550544cdae00",
+    "research/experiments/E155-recorded-advantage-conversion/code/contexts.mjs": "bbb01ef296f1e15cb6f9f48ababf7fcbb6258caddd640bb48bb336f5e8b54cb2",
+    "research/experiments/E155-recorded-advantage-conversion/code/fixtures.mjs": "cf94f56624bbbd4e5a2ced6ebc120c6a8d77ae5a6748b38fc4beaa687e70f8f0",
+    "research/experiments/E155-recorded-advantage-conversion/code/saved-graphs.mjs": "12d2dde42c88af320ff9fac4dc79f3d66948b6fc10252e3a5875a8ae34e69a60",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E208-strongest-defensive-resource/AMENDMENT-2026-10-11.md": "3f3c6d21f8d666ed7f8bbcd80dc14dc5506c2b49e237a954d465dfeb032bc5ed",
+    "research/experiments/E208-strongest-defensive-resource/PREREQUISITES.md": "64d1671d0a7f2dc7e9bd98f09ab63033a5278177a58e39d495e9f12c1542eab4",
+    "research/experiments/E208-strongest-defensive-resource/code/check-result.mjs": "4968bfffea242d0559469c52c34abf2d4881bf4899547ccafe561637db6bdbfa",
+    "research/experiments/E208-strongest-defensive-resource/code/defenses.mjs": "412a5ced590dd8f4948676e4e6da20c4c7d12a29f91a7036d3271781e7fef5e4",
+    "research/experiments/E208-strongest-defensive-resource/code/defenses.test.mjs": "b3223e36736421ff8441f2bef78dcee5ff162f98f8b723d0bdb932c544347963",
+    "research/experiments/E208-strongest-defensive-resource/code/pilot-admission.mjs": "0d249ed3673bd2991c961cfd7184039ceccc17429a6f8a8e0accc773a528285c",
+    "research/experiments/E208-strongest-defensive-resource/code/record-build.mjs": "f00de968987098f8e752482e6e837d5782283c77bc1828d371d78ff4de82daff",
+    "research/experiments/E208-strongest-defensive-resource/code/run-focused.mjs": "873e136bea16907e1dbabef8e5a0821b3502cd72c231beb994757ff268e2b0a4",
+    "research/experiments/E208-strongest-defensive-resource/code/run-targeted.mjs": "80d4965a0ccf5d91725b0b23acd487e879509ad796a254036667939a250ae8b9",
+    "research/experiments/E208-strongest-defensive-resource/code/saved.mjs": "538e66c0099964083f3c1d234576faea3e48f53cbd9ecd7aba9b81812fcedcb0",
+    "research/experiments/E208-strongest-defensive-resource/plan.md": "091f9ffcd03936b492b5647cac93f1d8ba013630a066d9c674bd3654cca49d7f",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E208-strongest-defensive-resource/code/defenses.test.mjs (initial25/25 pass; 3.528 seconds; initial own-turn overreach preserved, not final routing evidence)",
+    "node --test --test-name-pattern=\"complete defensive outcomes|explicit player\" research/experiments/E208-strongest-defensive-resource/code/defenses.test.mjs (17/17 affected checks pass; 2.508 seconds; eight unchanged passed tests retained, no final whole-file rerun claimed)",
+    "pilot one63-node admission 0.077 seconds below registered2second cap; eight retained trees/16player perspectives; zero collection",
+    "exact initial/current source/archive/receipt/plan/amendment/snapshot bindings verified; numeric/source/domain/budget paths and eight unaffected tests unchanged",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "dedicated multiple-best ties/defender wins/H0/nonchecking/genuine-prefix/source-visited-claim and threefold matrices",
+    "general strategic strongest defense, mate-distance resistance, nonterminal draw/unknown outcome and broader interval dominance",
+    "combined cumulative original-occurrence/support/absence/priority/history/terminal/claim/budget integration, full inherited replay and changed main/repeat/clean reproductions",
+    "eligible real-game precision, human utility and production promotion"
+  ]
+}
