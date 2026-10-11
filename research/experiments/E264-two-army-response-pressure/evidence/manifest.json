@@ -1,0 +1,51 @@
+{
+  "revision": "19102311e7d681f9a5e487af5e8a78e541e73731",
+  "meaning": "Authored synthetic full guard matrix and saved-output/focused/affected/source evidence; no game contents or new queries",
+  "files": {
+    "research/experiments/E264-two-army-response-pressure/evidence/collection.json.gz": {
+      "bytes": 46046,
+      "sha256": "b944f610ea61d3cf4a1e976ebe5968908ee056b5a6d5134f85be62e026523f2b"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/affected-checks.json": {
+      "bytes": 11290,
+      "sha256": "1b7826b5a887c712fca675de7d064a16f3d8b3e750b85457936478c91f24483e"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/build-provenance.json": {
+      "bytes": 19060,
+      "sha256": "22f8e0a643e079c5aee911a20648ba3d87a4f2c39fbc0a007dd92af6e3e7b166"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/build-status.json": {
+      "bytes": 359,
+      "sha256": "e7f5c6bcd23cef7014833e7a0c1533709d513073cd13764f43c9202a9bc84466"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/checks.json": {
+      "bytes": 14222,
+      "sha256": "2c0a110971bdf69c5609a4ee0a413e5c984072641e6e4012d19d44b3109ac6ad"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/pilot.json.gz": {
+      "bytes": 327965,
+      "sha256": "709f8361d7eaf2c57c675af2ae24fee3e09668e343fcd8376c0ee3d04b0b3354"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/provenance.json": {
+      "bytes": 13504,
+      "sha256": "7ff176b887d9c639142bbe890ff546d192190c9818aba4afd4551c644e142beb"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/focused/started.json": {
+      "bytes": 12135,
+      "sha256": "ba68e76796fbaa79ab9d9cc4d55c5e9e0829be16fa19a61cab2594586384f14c"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/partial.json.gz": {
+      "bytes": 46035,
+      "sha256": "2359b7884c5ed40dda5c133e5da86cf7fa7cba3ce64386d944ad5b928170a1c1"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/started.json": {
+      "bytes": 11526,
+      "sha256": "343c83f5fcdbc1316f38078dafd830707910bd2aa2c1514e68b47d82c91ba210"
+    },
+    "research/experiments/E264-two-army-response-pressure/evidence/summary.json": {
+      "bytes": 2875,
+      "sha256": "966b40d966edacf5953b18997b6ab25ac4f5d49ad5cc5f3c7e9ddfb170447155"
+    }
+  },
+  "bytes": 505017
+}
