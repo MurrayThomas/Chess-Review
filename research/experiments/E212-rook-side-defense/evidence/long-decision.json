@@ -1,0 +1,34 @@
+{
+  "kind": "long",
+  "seconds": 1.6321886,
+  "probes": 18,
+  "contrast": {
+    "passes": true,
+    "rootWdl": 0,
+    "geometry": {
+      "defender": "b",
+      "pawn": "f6",
+      "king": "h7",
+      "attackerKing": "f5",
+      "rook": "a8",
+      "longSign": -1,
+      "kingOnShortSide": true,
+      "rookOnLongSide": true,
+      "rookCheckingDistance": 4,
+      "rookSharesKingRank": false
+    },
+    "resources": [
+      "a8a5"
+    ],
+    "alternatives": [
+      "a8a2",
+      "a8a7",
+      "a8d8",
+      "a8e8",
+      "a8f8",
+      "a8g8",
+      "a8h8"
+    ]
+  },
+  "costPass": true
+}
