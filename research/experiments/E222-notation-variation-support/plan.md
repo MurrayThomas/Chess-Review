@@ -59,3 +59,8 @@ Retain complete small fixture outputs, process status, source/evidence hashes,
 guard receipt and support.json coverageCredit:false. Broader dialects, descriptive
 conversion, semantic quality of annotations, external metadata truth, real-file
 interoperability, human usefulness, combined validation and promotion remain open.
+
+Implementation clarification before evaluation: preserve comments, NAGs and RAVs
+in one ordered annotation stream per move. Wrap only between tokens at a soft
+80-column target; indivisible long comments/tags may exceed it. Semicolon comments
+containing a closing brace export as semicolon lines rather than losing text.
