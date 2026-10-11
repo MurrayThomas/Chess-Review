@@ -1,0 +1,2 @@
+import {Chess} from '../../../../lib/chess.js';import {fixtures as original} from '../../E261-two-army-outpost-space/code/fixtures.mjs';
+export const fixtures=original.filter(f=>f.role==='main'||f.role==='control').map(f=>{const input=structuredClone(f.input),c=new Chess(input.fen),from=f.reflected?'h3':'h6',to=f.reflected?'g3':'g6',p=c.remove(from);c.put(p,to);input.fen=c.fen();if(f.originalActor==='b')input.knight=to;return {...f,input,originalInput:structuredClone(f.input),intervention:{from,to}};});
