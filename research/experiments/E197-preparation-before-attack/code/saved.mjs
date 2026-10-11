@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+export async function saved(){const data=await openResearchData(['D001'],{purpose:'test'}),dir='research/experiments/E166-development-defender-capacity',file=dir+'/evidence/observations.json.gz',runFile=dir+'/evidence/run.json',bytes=await readFile(file),runBytes=await readFile(runFile),run=JSON.parse(runBytes),raw=JSON.parse(gunzipSync(bytes));assert.deepEqual(run.datasetReceipt,data.receipt);assert.equal(sha256(bytes),run.outputs.observations);assert.deepEqual(raw.sourceHashes,await bindings(Object.keys(raw.sourceHashes)));return{receipt:data.receipt,hashes:{[file]:sha256(bytes),[runFile]:sha256(runBytes)},find(input,H=2){const index=raw.rows.findIndex(r=>r.input.attackContextMode==='development'&&r.raw.plies===H&&JSON.stringify([r.input.fen,r.input.history,r.input.move,r.input.developmentAlternativeHistory])===JSON.stringify([input.fen,input.history,input.move,input.alternativeHistory]));assert.ok(index>=0,'No exact saved E166 query pair');return{panel:raw.rows[index].raw,ref:{file,index}};}};}
