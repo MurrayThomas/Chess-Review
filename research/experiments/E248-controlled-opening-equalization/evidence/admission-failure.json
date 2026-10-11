@@ -1,0 +1,12 @@
+{
+  "revision": "3fd4c08",
+  "command": "node research/experiments/E248-controlled-opening-equalization/code/collect-pilot.mjs",
+  "exitCode": 1,
+  "stage": "first borrowed E147 panel, before new child engine collection",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal: actual undefined; expected rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+  "location": "E138 check-panel.mjs:13, E248 collect-pilot.mjs:25 borrowed source loop",
+  "freshEngineSearches": 0,
+  "freshPanels": 0,
+  "retainedOriginalStart": "evidence/started.json",
+  "repair": "Restore omitted result.after in compact adapter; unchanged checker and chess gates; distinct evidence/v2 retry"
+}
