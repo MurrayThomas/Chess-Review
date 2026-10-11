@@ -1,0 +1,5225 @@
+{
+  "revision": "5d61e040c1133588086c00523c438906249074f0",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/observations.mjs": "a47bdeb1a9a490ba52fbc21f644dc19d7bcbef56df0297a3845b93589dd09a50",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E223-engine-diagnostic-support/code/check-result.mjs": "a4aa346dd9e766c14ceba69ac2f7c06751bd04a46210a0c92d423a6f45f973d4",
+    "research/experiments/E223-engine-diagnostic-support/code/contract.mjs": "6fdd6aa061ca94fcdb530e63815236b097e0d7f42020e7f635b0c8728bef4cc8",
+    "research/experiments/E223-engine-diagnostic-support/code/fixtures.mjs": "b751b9b914e253ac727ff501e82d2854025bc2834cdd3c8a63dca683dbb096f0",
+    "research/experiments/E223-engine-diagnostic-support/code/parse.mjs": "c396d30614a01040f18421ba16c0707a5a381f7377388cbd0f820e6a8808f6e1",
+    "research/experiments/E223-engine-diagnostic-support/code/run-focused.mjs": "c1551c3273be05a301cc658ee8351a8650914cd4c666267d93e23bf42671292c",
+    "research/experiments/E223-engine-diagnostic-support/code/support.mjs": "27eafe89797196c50b978a8cd055d697840bfbf3323ba953d8f2b8d99ed461e5",
+    "research/experiments/E223-engine-diagnostic-support/code/support.test.mjs": "0d25687801f8e075cc08b2d2bd9216a58b3bfe5ecc7923013e27c9d4913f15f9",
+    "research/experiments/E223-engine-diagnostic-support/plan.md": "7e9191387d538e12c44364042b4c857e1f73c1f2b8f405060455c2a10d742d88",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "receipt": {
+    "schema": "research-data-eligibility-v1",
+    "policyVersion": "public-data-v1",
+    "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "validatorSha256": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "originValidatorSha256": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "registrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+    "purpose": "test",
+    "manifestHashes": {
+      "D001": "a333bd2a96240f10a084b41f63931901e22fa804e50106606efc20617bd691cf"
+    },
+    "sourceEvidence": {
+      "lichess-standard-2026-summer": {
+        "license": "CC0-1.0",
+        "termsUrl": "https://database.lichess.org/",
+        "verifiedOn": "2026-10-05",
+        "evidenceSha256": "a227e286dce1e9e355101356507e57c4ad89ec39d65f9762f94ab76a6ffdd4ac"
+      }
+    },
+    "inputHashes": {
+      "tools/calibration/public/sources.json": "13e7e502f8dc39ddfb917d3966ae3d483238597b2fd2de38591a581e8365033a",
+      "tools/calibration/public/dataset.json.gz": "802f4fa8819408df565de0b3a0316ee24b5a302fa92291cba788a8ad5e9ac15f",
+      "tools/calibration/public/sf18-evidence.json.gz": "2771b2b8a7839e4d9f2ddbff73aa6e0dfbe017f3aa3a7b052584147ee21c968b",
+      "tools/calibration/public/sf18-rating-evidence.json.gz": "f41178347bc9569390b744f9e6fb2206882cf2307c762de8b8f8aab35c2a1e31",
+      "tools/calibration/public/sf19-rating-evidence.json.gz": "8ac253f86fa87a945c06e86f2b7c82d4f2b7e8c96ae9b990a6efadbac9f7d721",
+      "tools/calibration/public/expected-scores.json": "969664315be01fab6f719ce158926741c45ec59ef8e3accfe28f0dcc595b7df6",
+      "tools/calibration/public/validation.json": "865aa647f484f3932c42baa2bd15625bd7cdfd253f504aa6d64aba3e4eb07076",
+      "research/experiments/E003-sf19-archive-replay/evidence/sf19-quality.json.gz": "5cef8a6d20482a743351c8ca3a85da030fd95b3eb91a6395aeca0b8d7f7fe745",
+      "research/experiments/E001-evidence-audit/evidence/sf19-quality-archive.json": "3953a2a13f8e491e5c0dedbf40d38bb7d0d24ac4abe546278b8fb8360e1d3c2d",
+      "research/experiments/E003-sf19-archive-replay/evidence/sf19-choice-confirmation.json.gz": "5e9e1f61b48d39030e91dea0615aee4510ac9c29e3fcf3d2b7e3ad47b82efbae",
+      "research/experiments/E001-evidence-audit/evidence/sf19-choice-confirmation-archive.json": "a762d73fb732e107da84d7edae8991cc89227f3252b164d3008e64a7c1c6906b",
+      "research/experiments/E002-nonlinear-rating/evidence/results.json": "9219f67a34e1c1f6ba8252f1b5a46958b8afd7dba13b90c24d660b2370f64f18",
+      "research/experiments/E002-nonlinear-rating/evidence/predictions.json.gz": "a78f5b9f69f1a4ea21a8e17cbedb373e6b56cc432f36b9d1dbdb75d2cbebc8ac",
+      "tools/calibration/public/manifest.json": "e7d928e440f8a4b73bfa64c11e11f48320f9f3cc556c29a3bca72e1e5d15ff6a",
+      "research/experiments/E003-sf19-archive-replay/evidence/inputs.json": "e752fd0883e2db58b1121071dc59e879adcd8e982984198e58e9056f9ad84447",
+      "research/experiments/E004-practical-outcomes/evidence/results.json": "f2d89e9d9e07b45bceca955af522fca4d0ad39db100b0bece0e235403c93adea",
+      "research/experiments/E004-practical-outcomes/evidence/predictions.json.gz": "89bc0719cc00708a80d55b6c5c7a88d53d0f52e05d252eddda052b434d1c3e96",
+      "research/experiments/E005-category-review/evidence/cases.json": "b6974f3159c839f3764eed3d8da5dff406dece9bb2414c958e8484d81271c41f",
+      "research/experiments/E005-category-review/evidence/selection-key.json": "33e75aa79f26b07358d53f432535c862a85aa79a4e5f38101eff3ec8ff94b5c0",
+      "research/experiments/E005-category-review/evidence/run.json": "6e9042785eba0be3a842763f8e0b14de1590174d3ba21b1b09595ab703ffc817",
+      "research/experiments/E006-rating-uncertainty/evidence/results.json": "bf5380629014af3bf06db4324a93f347e9f858ebe27731c8a00f06146c68ea2e",
+      "research/experiments/E006-rating-uncertainty/evidence/predictions.json.gz": "10b4cd8fb5462eaa9ee6beff4ba62fc94dfe4f79f9fa5b23d69d5dfa4b97c14f",
+      "research/experiments/E006-rating-uncertainty/evidence/run.json": "c4b7ac8a82d4b6f3f165c1ce2c0191de5a00b0f3777c7b93e9edb7158056c9e8",
+      "research/experiments/E012-offer-evidence/evidence/policy.json": "a7365e813d97470d55056fda3baf5b3a8311b85bcc301ecc9c88403e5314a6b4",
+      "research/experiments/E012-offer-evidence/evidence/freeze-run.json": "0287e95d96658a7b3c190ac763469b4b165441bd5d261e05a1854eeae13b7d07",
+      "research/experiments/E012-offer-evidence/evidence/sf18-observations.json.gz": "02367574df6676276243cd1f60e23e5c2ec984eb70a49df24d2188aaea6be547",
+      "research/experiments/E012-offer-evidence/evidence/collection-run.json": "555eeff8f289050ea81ea140fb722515a3d3cfdb127fdd0044b23d4386c5108a",
+      "research/experiments/E012-offer-evidence/evidence/results.json": "d31ed066a4fdcea3e81a79320c0e06f358177d84f4c3332c42ada85b49a9db0d",
+      "research/experiments/E012-offer-evidence/evidence/run.json": "134203b7f0d839b05287454db0f45211037e36a0fb6f7eeaeeddf86f7ba10b15",
+      "research/experiments/E012-offer-evidence/evidence/verification.json": "9da4fbd2ee6aa54a1eb906de1d2f18d40066fb87de71a9d2c6c4032c3991beed",
+      "research/experiments/E012-offer-evidence/evidence/clean-replay.json": "6bd00b4aebde0cac726784c81bc7299bccd1e04e3b5450af5051e8edf53e0546",
+      "research/experiments/E012-offer-evidence/evidence/clean-archive.json": "0c9cab45a3767ee9ed7d69b9d4d3e811e01242a6ef79c08617ef902186b3d5af",
+      "research/experiments/E013-net-offer-pack/evidence/policy.json": "f9f60ba511e03a1826d442504315baa9d7dd0ac16511d34008c006f0cfee5d5d",
+      "research/experiments/E013-net-offer-pack/evidence/cases.json": "d6f0c63a657901d822bdb0920895576371457f134a82c3aed35ccce04fc8c521",
+      "research/experiments/E013-net-offer-pack/evidence/selection-key.json": "32dbeb26b0e078b431156344602d2115fb4ce9e263b3ca331170d330312948ea",
+      "research/experiments/E013-net-offer-pack/evidence/build-run.json": "c36523f4429231afd19da0a5a67147eb8b3568470b8b3ec63a2f3e91798f8831",
+      "research/experiments/E013-net-offer-pack/evidence/sf18-observations.json.gz": "b7ee839acb88813dce83d16eae6dd93ee2a6d1eca8557471dae947b29ced68ea",
+      "research/experiments/E013-net-offer-pack/evidence/collection-run.json": "b077265c7ab656bc6e002ed07f567f5347dcde781f35eb386300f4835986e47c",
+      "research/experiments/E013-net-offer-pack/evidence/results.json": "7a7357cc21d012cace4782f26a407110feb14e57674e37d55da51ae239348d5a",
+      "research/experiments/E013-net-offer-pack/evidence/run.json": "43c9cd128d206e51218f2229d7a71b0c6a4b1aafdc995fcc468a9643f7273692",
+      "research/experiments/E013-net-offer-pack/evidence/verification.json": "d89a486c70dd3685c08fe078ad7e91780a4c6907deb3b40ff20e6c09cc5ca970",
+      "research/experiments/E013-net-offer-pack/evidence/clean-replay.json": "2d6932ab2d1af6e3e1a8a17a747f1bd4d4d45ac4a2eb4633594fbaef01b8112a",
+      "research/experiments/E013-net-offer-pack/evidence/clean-archive.json": "fbc50686a4b22b96f53c24b8db3b777b16ac9bde6522d4817ea4367fab399c82",
+      "research/experiments/E014-root-pair-consistency/evidence/freeze-SF18.json": "d4dab90dbc0c03d33ebab7f88728c89730e1a2e5f1165dd93a550034b2a8a110",
+      "research/experiments/E014-root-pair-consistency/evidence/freeze-run-SF18.json": "7dc93a3d18af5668871e688aaf270fcc59b32eaef0e01b103ee804743de095f1",
+      "research/experiments/E014-root-pair-consistency/evidence/results-SF18.json": "a6f2a640274b6c02e571db210b8bb46989447c62739ed95c54fc9ab742e3b56c",
+      "research/experiments/E014-root-pair-consistency/evidence/run-SF18.json": "49d8e22c8a96dfd0f535af919316e36541762454d084ec0e161e06c041bcee10",
+      "research/experiments/E014-root-pair-consistency/evidence/verification-SF18.json": "91f7a74cec294c57ea444d53e043f3e6e6ee6b8f161b12b65d7b6960826a54b6",
+      "research/experiments/E014-root-pair-consistency/evidence/source-line-endings-SF18.json": "5c073480f6cfb10450c73fb5c9dac5ff03c90bff3d415944717961a0decacbb4",
+      "research/experiments/E014-root-pair-consistency/evidence/failed-clean-replay-SF18.json": "c579eadadc1bf36894816642da325544ccb66da65977587bd73322f6e588108d",
+      "research/experiments/E014-root-pair-consistency/evidence/clean-replay-SF18.json": "172fc46b1bfc875a5c97e4d258de4d09c860482ce8df12920cfdd82eaf7f90b5",
+      "research/experiments/E014-root-pair-consistency/evidence/clean-archive-SF18.json": "61f904ac8a64af5a762974f5e7246da834843a734aa52adda4a2f7ac1bc7b124",
+      "research/datasets/D001-public-baseline/locators.json.gz": "f42bd028f7fca5950ca206164405385f6324363f7d720242e1250b4b83736cf6",
+      "research/datasets/D001-public-baseline/reconstruction.json": "af54589497239c4f851d74a1a4b1fac296ec54a779efca9193629adac9a67307"
+    },
+    "datasets": {
+      "D001": {
+        "gameCount": 2000,
+        "archives": [
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-06.pgn.zst",
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-07.pgn.zst",
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-08.pgn.zst"
+        ],
+        "provenanceStatus": "reconstruction-verified",
+        "limitations": [
+          "Archive-window/rating-quota convenience sample; not representative of the whole blitz population.",
+          "Only recorded fragment bytes are verified; no whole-archive checksum or publisher signature is claimed.",
+          "Provisional-rating status is unavailable; recorded ratings do not establish stable playing strength.",
+          "Engine observations are retained, not regenerated by dataset reconstruction.",
+          "Existing development/test exposure prevents new confirmation claims."
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "menu",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+              "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3 g8f6"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 2,
+          "pvPlies": 4,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3 g8f6",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 2
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3",
+                      "g8f6"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "g8f6",
+                        "san": "Nf6",
+                        "fen": "rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 2 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 2,
+                "reportedOrder": [
+                  "d2d4",
+                  "g1f3"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.05529130000000009
+    },
+    {
+      "id": "opponent",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d7d5 d2d4"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
+          "actor": "b",
+          "player": "b",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 2,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d7d5 d2d4",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "b",
+                    "rawPerspective": "b",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d7d5",
+                      "d2d4"
+                    ],
+                    "states": [
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 2",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "d7d5"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.027834299999999985
+    },
+    {
+      "id": "black-history",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 5 multipv 1 score cp -23 lowerbound wdl 100 700 200 pv d7d5"
+            ]
+          }
+        ],
+        "history": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "moves": [
+            "d2d4"
+          ]
+        },
+        "wdlModel": "synthetic-no-probability-truth"
+      },
+      "options": {
+        "enabled": true,
+        "player": "w"
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+          "actor": "b",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "supplied-segment",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 5 multipv 1 score cp -23 lowerbound wdl 100 700 200 pv d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 5,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 23,
+                    "bound": "upper",
+                    "player": "w",
+                    "rawPerspective": "b",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": {
+                    "values": [
+                      200,
+                      700,
+                      100
+                    ],
+                    "player": "w",
+                    "model": "synthetic-no-probability-truth",
+                    "meaning": "reported-model-output"
+                  },
+                  "pv": {
+                    "moves": [
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "d7d5"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.013225500000000012
+    },
+    {
+      "id": "upper",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 8 multipv 1 score cp 0 upperbound pv c2c4"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true,
+        "player": "b"
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "b",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 8 multipv 1 score cp 0 upperbound pv c2c4",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 8,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 0,
+                    "bound": "lower",
+                    "player": "b",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "c2c4"
+                    ],
+                    "states": [
+                      {
+                        "move": "c2c4",
+                        "san": "c4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "c2c4"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0031023999999999887
+    },
+    {
+      "id": "mate",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 3 multipv 1 score mate 4 pv g1f3"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 3 multipv 1 score mate 4 pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 3,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "mate",
+                    "value": 4,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "g1f3"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0024919999999999617
+    },
+    {
+      "id": "mate-zero",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info score mate 0 nodes 0 time 0 nps 0"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 0,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info score mate 0 nodes 0 time 0 nps 0",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": 0,
+                    "nps": 0,
+                    "time": 0,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": {
+                    "unit": "mate",
+                    "value": 0,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": null
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0019979000000000724
+    },
+    {
+      "id": "partial",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 4 nodes 100",
+              "info nps 27182",
+              "info score cp -31"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 3,
+          "pvPlies": 0,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 4 nodes 100",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 4,
+                    "seldepth": null,
+                    "nodes": 100,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                },
+                {
+                  "raw": "info nps 27182",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": 27182,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                },
+                {
+                  "raw": "info score cp -31",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": -31,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": null
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0012320999999999459
+    },
+    {
+      "id": "opaque",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info string score cp 999 pv e2e5",
+              "info currmove d2d4 currmovenumber 1",
+              "bestmove d2d4",
+              "info stringify diagnostic"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 4,
+          "pvPlies": 0,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info string score cp 999 pv e2e5",
+                  "status": "opaque-string",
+                  "diagnostics": null,
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                },
+                {
+                  "raw": "info currmove d2d4 currmovenumber 1",
+                  "status": "unsupported",
+                  "diagnostics": null,
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                },
+                {
+                  "raw": "bestmove d2d4",
+                  "status": "unsupported",
+                  "diagnostics": null,
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                },
+                {
+                  "raw": "info stringify diagnostic",
+                  "status": "unsupported",
+                  "diagnostics": null,
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0015889999999999418
+    },
+    {
+      "id": "mixed-depth",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+              "info depth 7 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 2,
+          "pvPlies": 3,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info depth 7 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 7,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 2
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0061178999999999635
+    },
+    {
+      "id": "missing-rank",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 2
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.003289600000000064
+    },
+    {
+      "id": "duplicate-rank",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv g1f3"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 2,
+          "pvPlies": 3,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "conflicting-reports",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.006284400000000005
+    },
+    {
+      "id": "duplicate-root-move",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+              "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 g8f6"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 2,
+          "pvPlies": 4,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 g8f6",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 2
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "g8f6"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "g8f6",
+                        "san": "Nf6",
+                        "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "conflicting-reports",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.007767499999999927
+    },
+    {
+      "id": "separate-frames",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 2,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "first",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5"
+            ]
+          },
+          {
+            "id": "second",
+            "lines": [
+              "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 2,
+          "historyCoverage": "root-only",
+          "records": 2,
+          "pvPlies": 3,
+          "frames": [
+            {
+              "id": "first",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 1 score cp 37 nodes 901 nps 45000 time 20  pv d2d4 d7d5",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "d2d4",
+                      "d7d5"
+                    ],
+                    "states": [
+                      {
+                        "move": "d2d4",
+                        "san": "d4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      },
+                      {
+                        "move": "d7d5",
+                        "san": "d5",
+                        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+                        "turn": "w",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            },
+            {
+              "id": "second",
+              "rows": [
+                {
+                  "raw": "info depth 6 seldepth 9 multipv 2 score cp 37 nodes 901 nps 45000 time 20  pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 6,
+                    "seldepth": 9,
+                    "nodes": 901,
+                    "nps": 45000,
+                    "time": 20,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 2
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 37,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 2,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0062925000000000186
+    },
+    {
+      "id": "missing-fields",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info score cp 12 pv g1f3",
+              "info depth 5 multipv 1 pv c2c4",
+              "info"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 3,
+          "pvPlies": 2,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info score cp 12 pv g1f3",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 12,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g1f3"
+                    ],
+                    "states": [
+                      {
+                        "move": "g1f3",
+                        "san": "Nf3",
+                        "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info depth 5 multipv 1 pv c2c4",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 5,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": null,
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "c2c4"
+                    ],
+                    "states": [
+                      {
+                        "move": "c2c4",
+                        "san": "c4",
+                        "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                },
+                {
+                  "raw": "info",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": null
+                  },
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0034361999999998716
+    },
+    {
+      "id": "mate-endpoint",
+      "input": {
+        "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 1 multipv 1 score mate 1 pv g6g7"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 1 multipv 1 score mate 1 pv g6g7",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 1,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "mate",
+                    "value": 1,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "g6g7"
+                    ],
+                    "states": [
+                      {
+                        "move": "g6g7",
+                        "san": "Qg7#",
+                        "fen": "7k/6Q1/5K2/8/8/8/8/8 b - - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": true,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "g6g7"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.011047099999999773
+    },
+    {
+      "id": "ep",
+      "input": {
+        "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 2 multipv 1 score cp 17 pv e5d6"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 2 multipv 1 score cp 17 pv e5d6",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 2,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 17,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "e5d6"
+                    ],
+                    "states": [
+                      {
+                        "move": "e5d6",
+                        "san": "exd6",
+                        "fen": "4k3/8/3P4/8/8/8/8/4K3 b - - 0 2",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "e5d6"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.004652499999999691
+    },
+    {
+      "id": "promotion",
+      "input": {
+        "fen": "7k/P7/8/8/8/8/8/4K3 w - - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 1 multipv 1 score cp 3 pv a7a8n"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "7k/P7/8/8/8/8/8/4K3 w - - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 1 multipv 1 score cp 3 pv a7a8n",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 1,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 3,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "a7a8n"
+                    ],
+                    "states": [
+                      {
+                        "move": "a7a8n",
+                        "san": "a8=N",
+                        "fen": "N6k/8/8/8/8/8/8/4K3 b - - 0 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": true,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "a7a8n"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0036273999999998524
+    },
+    {
+      "id": "castle",
+      "input": {
+        "fen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info depth 1 multipv 1 score cp 2 pv e1c1"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 1,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info depth 1 multipv 1 score cp 2 pv e1c1",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": 1,
+                    "seldepth": null,
+                    "nodes": null,
+                    "nps": null,
+                    "time": null,
+                    "hashfull": null,
+                    "tbhits": null,
+                    "multipv": 1
+                  },
+                  "score": {
+                    "unit": "cp",
+                    "value": 2,
+                    "bound": "exact",
+                    "player": "w",
+                    "rawPerspective": "w",
+                    "meaning": "reported-search-score"
+                  },
+                  "wdl": null,
+                  "pv": {
+                    "moves": [
+                      "e1c1"
+                    ],
+                    "states": [
+                      {
+                        "move": "e1c1",
+                        "san": "O-O-O",
+                        "fen": "r3k2r/8/8/8/8/8/8/2KR3R b kq - 1 1",
+                        "turn": "b",
+                        "flags": {
+                          "mate": false,
+                          "stalemate": false,
+                          "insufficient": false,
+                          "fifty": false,
+                          "threefold": false,
+                          "automatic75": false,
+                          "automatic5": false
+                        }
+                      }
+                    ],
+                    "meaning": "legal-reported-continuation"
+                  }
+                }
+              ],
+              "menu": {
+                "status": "reported-menu",
+                "expectedRanks": 1,
+                "reportedOrder": [
+                  "e1c1"
+                ],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.01435649999999987
+    },
+    {
+      "id": "large-counters",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": [
+              "info nodes 9007199254740991 nps 9007199254740991 time 1 tbhits 0 hashfull 1000"
+            ]
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 1,
+          "pvPlies": 0,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [
+                {
+                  "raw": "info nodes 9007199254740991 nps 9007199254740991 time 1 tbhits 0 hashfull 1000",
+                  "status": "parsed",
+                  "diagnostics": {
+                    "depth": null,
+                    "seldepth": null,
+                    "nodes": 9007199254740991,
+                    "nps": 9007199254740991,
+                    "time": 1,
+                    "hashfull": 1000,
+                    "tbhits": 0,
+                    "multipv": null
+                  },
+                  "score": null,
+                  "wdl": null,
+                  "pv": null
+                }
+              ],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.00075
+    },
+    {
+      "id": "empty",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "source": "authored-E223",
+        "eventId": "synthetic-development",
+        "engine": {
+          "name": "Synthetic report source",
+          "version": "fixture-v1"
+        },
+        "multiPV": 1,
+        "scorePerspective": "root-side-to-move",
+        "frames": [
+          {
+            "id": "frame-a",
+            "lines": []
+          }
+        ]
+      },
+      "options": {
+        "enabled": true
+      },
+      "result": {
+        "schema": "E223-engine-diagnostic-support",
+        "coverageCredit": false,
+        "qualityClaim": false,
+        "authentication": "caller-report-only",
+        "limits": {
+          "maxRecords": 128,
+          "maxPvPlies": 4096
+        },
+        "status": "support-observations",
+        "view": {
+          "source": "authored-E223",
+          "eventId": "synthetic-development",
+          "engine": {
+            "name": "Synthetic report source",
+            "version": "fixture-v1"
+          },
+          "root": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "actor": "w",
+          "player": "w",
+          "multiPV": 1,
+          "historyCoverage": "root-only",
+          "records": 0,
+          "pvPlies": 0,
+          "frames": [
+            {
+              "id": "frame-a",
+              "rows": [],
+              "menu": {
+                "status": "incomplete",
+                "expectedRanks": 1,
+                "reportedOrder": [],
+                "optimalityClaim": false,
+                "frameAuthentication": "caller-framed"
+              }
+            }
+          ]
+        },
+        "references": [
+          {
+            "id": "C1011",
+            "label": "Principal variation",
+            "description": "A reported engine continuation, not an independently proven best line.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "label": "Chess engine",
+            "description": "The supplied name and version are caller reports, not authenticated executable identity.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "label": "Evaluation function",
+            "description": "An evaluator scores a position; search output does not expose its internal decomposition.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "label": "Centipawn",
+            "description": "Reported engine/model score units, not a literal material balance or universal probability.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "label": "Search depth",
+            "description": "Reported depth and selective depth are distinct from PV length and complete tree coverage.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "label": "Nodes",
+            "description": "Reported search counters; do not sum cumulative counts across rows or candidates.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "label": "Nodes per second",
+            "description": "Reported throughput, not an independent hardware benchmark or an exact nodes/time equation.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "label": "Principal variation",
+            "description": "The computer-chess context retains the same legal reported-line support.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "label": "Engine line",
+            "description": "A replayable reported continuation whose correctness as best play remains unproved.",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "label": "Multi-PV",
+            "description": "Caller-framed reported candidate ranks, not complete legal breadth or independent optimality.",
+            "qualityClaim": false
+          }
+        ],
+        "routes": [
+          {
+            "id": "C1011",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1012",
+            "status": "reported-support",
+            "evidencePath": "view",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1013",
+            "status": "reference-only",
+            "evidencePath": "references",
+            "qualityClaim": false
+          },
+          {
+            "id": "C1014",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1015",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1016",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1017",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1018",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1019",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          },
+          {
+            "id": "C1020",
+            "status": "unavailable",
+            "evidencePath": null,
+            "qualityClaim": false
+          }
+        ]
+      },
+      "seconds": 0.0012562000000002627
+    }
+  ],
+  "error": null,
+  "freshSearches": 0
+}
