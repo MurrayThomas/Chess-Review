@@ -1,0 +1,26 @@
+{
+  "schema": "E250-fixed-archive-v1",
+  "collectionSha256": "fa96d1ed2b9cbe4d939de116c76a304ca8ec2c1c6333eab01c94902c165dfef2",
+  "panels": [
+    {
+      "id": "h2-win",
+      "file": "h2-win.json.gz",
+      "sha256": "6bba165500fdd6d66a7a72109cffb341c7e64122499425996cb5fa11fb1b7d26"
+    },
+    {
+      "id": "h2-draw",
+      "file": "h2-draw.json.gz",
+      "sha256": "105dd4eab5b63ad3e522d2442623ab7f08b6c95cc7224b30c4818b6ad3f3674c"
+    },
+    {
+      "id": "reflection-win",
+      "file": "reflection-win.json.gz",
+      "sha256": "eb84540c8a19bbfaf2d20929243b94dc2f3f5df04939e8b7193f719c116e8efa"
+    },
+    {
+      "id": "reflection-draw",
+      "file": "reflection-draw.json.gz",
+      "sha256": "5adcb3d4eabf44b9eba63d5723f581ae4d041d617dd4a3ffee2b6aaa91ed7510"
+    }
+  ]
+}
