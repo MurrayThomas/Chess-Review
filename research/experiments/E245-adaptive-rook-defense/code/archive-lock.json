@@ -1,0 +1,69 @@
+{
+  "schema": "E245-fixed-archive-lock",
+  "collection": {
+    "file": "collection.json",
+    "sha256": "0789c2caf1010c3a79906baa398eb1994b14472a34796b39e90e558bb28e5bdc"
+  },
+  "panels": [
+    {
+      "id": "long-pilot-after-check",
+      "file": "long-pilot-after-check.json.gz",
+      "sha256": "dda7af0dd2b265bc63ac269d8bd39157d8757d8bac6255388d8fc0d860a50ae5"
+    },
+    {
+      "id": "long-pilot-after-e2e5",
+      "file": "long-pilot-after-e2e5.json.gz",
+      "sha256": "208bfd48e81fc0299995de060c4aabc72c8458e3c0e0db7f369797e85a0f6af8"
+    },
+    {
+      "id": "long-pilot-after-f5e4",
+      "file": "long-pilot-after-f5e4.json.gz",
+      "sha256": "ada8ab8689f18a6a32893bd24db418c4591d64c4ea5b6315b6479d17ca752cd6"
+    },
+    {
+      "id": "long-pilot-after-f5e6",
+      "file": "long-pilot-after-f5e6.json.gz",
+      "sha256": "2c80173acf83a58bcca098ac1cf4c59deaa6d0aa2b44372cac6a34c3c5a51b8a"
+    },
+    {
+      "id": "long-pilot-after-f5f4",
+      "file": "long-pilot-after-f5f4.json.gz",
+      "sha256": "a82b12c0ba2f91c7e76a2883dfd3e23f9031eba8d240bc2698281bba7bb76ca4"
+    },
+    {
+      "id": "long-pilot-after-f5g4",
+      "file": "long-pilot-after-f5g4.json.gz",
+      "sha256": "be8a5b7289ddb612dbb6b7342d36996f4d15647220e9612ffe8ce2004b982ad8"
+    },
+    {
+      "id": "long-reflection-after-check",
+      "file": "long-reflection-after-check.json.gz",
+      "sha256": "54fed30b83d46072c97697ab4c8637896026a5c0a02d92ac53fad31741aa5701"
+    },
+    {
+      "id": "long-reflection-after-e7e4",
+      "file": "long-reflection-after-e7e4.json.gz",
+      "sha256": "e0accf5a69c2cad4e24b4add139f857b66974bdb7c8b30678b71fa46004c6507"
+    },
+    {
+      "id": "long-reflection-after-f4e3",
+      "file": "long-reflection-after-f4e3.json.gz",
+      "sha256": "3ce0574c96ebbc8a05d1472039575c32474cdc946a422fed6207273d193e0c80"
+    },
+    {
+      "id": "long-reflection-after-f4e5",
+      "file": "long-reflection-after-f4e5.json.gz",
+      "sha256": "327e5bc81eac3102aedab658e419d5b97cbf2ea865963283199ada79cac20b81"
+    },
+    {
+      "id": "long-reflection-after-f4f5",
+      "file": "long-reflection-after-f4f5.json.gz",
+      "sha256": "d70b7d1ebbb7081c508e647975940e9b64ffc89dbd3286056673d2477b5de345"
+    },
+    {
+      "id": "long-reflection-after-f4g5",
+      "file": "long-reflection-after-f4g5.json.gz",
+      "sha256": "9065c9bdf2e639aa03880253cb064017d72f0ce29a0d8b549aab0fc19974d9e4"
+    }
+  ]
+}
