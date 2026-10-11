@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {spawnSync,execFileSync} from 'node:child_process';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+const dir='research/experiments/E255-both-wing-minor-comparison',out=dir+'/evidence/focused',guard=await openResearchData(['D001'],{purpose:'test'}),first=JSON.parse(await readFile(out+'/focused-failure.json','utf8'));
+assert.equal(first.exitCode,1);assert.match(first.stdout,/pass 8/);assert.match(first.stdout,/fail 1/);
+const testPath=dir+'/code/assay.test.mjs',old=execFileSync('git',['show',first.revision+':'+testPath],{encoding:'utf8',windowsHide:true}).replaceAll('\r\n','\n'),current=(await readFile(testPath,'utf8')).replaceAll('\r\n','\n');
+assert.equal(sha256(old),first.inputHashes[testPath]);
+const expected=old.replace("test('both-wing positive policies keep original minor and remove both original pawns at every terminal leaf'","test('both-wing selected policies keep original minor and remove both original pawns at every terminal leaf'").replace('if(n.branches)n.branches.forEach(b=>walk(b.child));',"if(n.branches)(n.kind==='choice'?[n.branches.at(-1)]:n.branches).forEach(b=>walk(b.child));");assert.equal(current.trimEnd(),expected.trimEnd(),'Only named test may change');
+const inputHashes=await bindings([...Object.keys(first.inputHashes),dir+'/code/repair-focused.mjs']);
+const changed=Object.keys(first.inputHashes).filter(p=>first.inputHashes[p]!==inputHashes[p]);assert.deepEqual(changed.sort(),[testPath,dir+'/code/record-evidence.mjs',dir+'/plan.md'].sort());
+const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),args=['--test','--test-name-pattern=both-wing selected policies',testPath],start=performance.now(),r=spawnSync(process.execPath,args,{encoding:'utf8',windowsHide:true,timeout:30000});
+const record={revision,inputHashes,receipt:guard.receipt,initialRevision:first.revision,initialFailureSha256:sha256(await readFile(out+'/focused-failure.json')),unchangedChecks:8,changedInputs:changed,onlyNamedTestChanged:true,command:[process.execPath,...args],seconds:(performance.now()-start)/1000,exitCode:r.status,signal:r.signal,processError:r.error?.message??null,stdout:r.stdout,stderr:r.stderr,freshQueries:0};
+await writeFile(out+'/focused-repair.json',JSON.stringify(record,null,2)+'\n',{flag:'wx'});console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);assert.match(r.stdout,/pass 1/);assert.match(r.stdout,/fail 0/);
