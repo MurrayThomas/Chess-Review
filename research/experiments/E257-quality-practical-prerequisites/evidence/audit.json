@@ -1,0 +1,386 @@
+{
+  "schema": "E257-prerequisite-audit-v1",
+  "revision": "7b4dc9f13c5199eaa040e2f42619ea425543d3be",
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/build-workflow.mjs": "b183222ce7ed519282356e20b248e8e23716061e2647d847e0896748f20cfb70",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E109-causal-piece-conversion/RESULT.md": "2caa66416fb23b3860371264cd38cf9862c060adfe43808f691019e825a27f07",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E156-piece-objective-effectiveness/RESULT.md": "b8b0c23f02f47d4d1b28d0e2af7a80f85789676f4c11d83d164184ed96a7a7d7",
+    "research/experiments/E186-minor-context-comparisons/PREREQUISITES.md": "9b90db7b17944c504e7389a4a64970d09b087084a3819cc4fab41aaf20f46a0a",
+    "research/experiments/E189-bounded-decision-support/PREREQUISITES.md": "f0653ebfcc15394fc58fd9a9d5d8434c527f731e1e29285ad7116a3ef3705c24",
+    "research/experiments/E189-bounded-decision-support/RESULT.md": "a9eaca9607ae6a88e1081d20c5c449ad4fb5e5ff4a2a70a345784bd93c959434",
+    "research/experiments/E192-outcome-goal-decisions/PREREQUISITES.md": "408f2f6dc809c47d1910812c51315ee444fee195ab5645a7c15806cf549fb726",
+    "research/experiments/E192-outcome-goal-decisions/RESULT.md": "c3270c86fca9078fa364e30bedf615dc1887a853f9f20abc7d18a0104657b122",
+    "research/experiments/E238-declared-worst-case-risk/RESULT.md": "237b15c494059c71cd59615ea99191757a22df9f130d540e20b17fc5d2793e23",
+    "research/experiments/E238-declared-worst-case-risk/build.json": "bf9b24238e1250a56ab2619c219029166e6233bdc3383712a7de01fd2ee131e3",
+    "research/experiments/E239-history-risk-uncertainty/RESULT.md": "53d55e5038a74398c196e687d09b4751063f2b85e405158f59033c6db1582798",
+    "research/experiments/E239-history-risk-uncertainty/build.json": "55ca04e883115d15660d4ded5330e634ea67d16e42ef0cac69b448f89ec31112",
+    "research/experiments/E240-covered-history-risk/RESULT.md": "d9eb7fba9e075993671df2406a36196e6e03fc9d97b9179cc8d7d25b3d68bb30",
+    "research/experiments/E243-attack-preparation-comparison/RESULT.md": "82af83209053456d815cb371b15c5b748f7d0cb1aa6d4ffc93740a47de8364c0",
+    "research/experiments/E243-attack-preparation-comparison/plan.md": "f1103598b10468379fe5f6595cfa9cc25886920f0c99a8caffed9396a80ef4e9",
+    "research/experiments/E253-strategic-evaluation-prerequisites/RESULT.md": "1d96dafb06f783b326797c9f844d0a0b8f1d1cbdaf5bca8a4e85a9901b63e2b4",
+    "research/experiments/E255-both-wing-minor-comparison/RESULT.md": "e3c6a1df7b4c8d28bdd99ad0c5af0314b33d764d30f1c60fdc4dcec9228cda2e",
+    "research/experiments/E256-wing-and-pawn-blockage/RESULT.md": "9a1e391c0b239ae228ef91042f5543794187677cb8ed64bd7d0353f7c113abe8",
+    "research/experiments/E257-quality-practical-prerequisites/code/audit.mjs": "7870ff4910c86e79794895cccd504a5b4c4a18d69a0175d588f8e1ccd56c071e",
+    "research/experiments/E257-quality-practical-prerequisites/plan.md": "ac3f3a61f535a4f372d28d213d462c2801f47d2e684ffe040b1e425d60d92395",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "research/workflow.mjs": "b63788bd01aef5f5b5f2bfcc387da403ed82c9d44575f7036a6155394ab27d20",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "receipt": {
+    "schema": "research-data-eligibility-v1",
+    "policyVersion": "public-data-v1",
+    "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "validatorSha256": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "originValidatorSha256": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "registrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+    "purpose": "inspect",
+    "manifestHashes": {
+      "D001": "a333bd2a96240f10a084b41f63931901e22fa804e50106606efc20617bd691cf"
+    },
+    "sourceEvidence": {
+      "lichess-standard-2026-summer": {
+        "license": "CC0-1.0",
+        "termsUrl": "https://database.lichess.org/",
+        "verifiedOn": "2026-10-05",
+        "evidenceSha256": "a227e286dce1e9e355101356507e57c4ad89ec39d65f9762f94ab76a6ffdd4ac"
+      }
+    },
+    "inputHashes": {
+      "tools/calibration/public/sources.json": "13e7e502f8dc39ddfb917d3966ae3d483238597b2fd2de38591a581e8365033a",
+      "tools/calibration/public/dataset.json.gz": "802f4fa8819408df565de0b3a0316ee24b5a302fa92291cba788a8ad5e9ac15f",
+      "tools/calibration/public/sf18-evidence.json.gz": "2771b2b8a7839e4d9f2ddbff73aa6e0dfbe017f3aa3a7b052584147ee21c968b",
+      "tools/calibration/public/sf18-rating-evidence.json.gz": "f41178347bc9569390b744f9e6fb2206882cf2307c762de8b8f8aab35c2a1e31",
+      "tools/calibration/public/sf19-rating-evidence.json.gz": "8ac253f86fa87a945c06e86f2b7c82d4f2b7e8c96ae9b990a6efadbac9f7d721",
+      "tools/calibration/public/expected-scores.json": "969664315be01fab6f719ce158926741c45ec59ef8e3accfe28f0dcc595b7df6",
+      "tools/calibration/public/validation.json": "865aa647f484f3932c42baa2bd15625bd7cdfd253f504aa6d64aba3e4eb07076",
+      "research/experiments/E003-sf19-archive-replay/evidence/sf19-quality.json.gz": "5cef8a6d20482a743351c8ca3a85da030fd95b3eb91a6395aeca0b8d7f7fe745",
+      "research/experiments/E001-evidence-audit/evidence/sf19-quality-archive.json": "3953a2a13f8e491e5c0dedbf40d38bb7d0d24ac4abe546278b8fb8360e1d3c2d",
+      "research/experiments/E003-sf19-archive-replay/evidence/sf19-choice-confirmation.json.gz": "5e9e1f61b48d39030e91dea0615aee4510ac9c29e3fcf3d2b7e3ad47b82efbae",
+      "research/experiments/E001-evidence-audit/evidence/sf19-choice-confirmation-archive.json": "a762d73fb732e107da84d7edae8991cc89227f3252b164d3008e64a7c1c6906b",
+      "research/experiments/E002-nonlinear-rating/evidence/results.json": "9219f67a34e1c1f6ba8252f1b5a46958b8afd7dba13b90c24d660b2370f64f18",
+      "research/experiments/E002-nonlinear-rating/evidence/predictions.json.gz": "a78f5b9f69f1a4ea21a8e17cbedb373e6b56cc432f36b9d1dbdb75d2cbebc8ac",
+      "tools/calibration/public/manifest.json": "e7d928e440f8a4b73bfa64c11e11f48320f9f3cc556c29a3bca72e1e5d15ff6a",
+      "research/experiments/E003-sf19-archive-replay/evidence/inputs.json": "e752fd0883e2db58b1121071dc59e879adcd8e982984198e58e9056f9ad84447",
+      "research/experiments/E004-practical-outcomes/evidence/results.json": "f2d89e9d9e07b45bceca955af522fca4d0ad39db100b0bece0e235403c93adea",
+      "research/experiments/E004-practical-outcomes/evidence/predictions.json.gz": "89bc0719cc00708a80d55b6c5c7a88d53d0f52e05d252eddda052b434d1c3e96",
+      "research/experiments/E005-category-review/evidence/cases.json": "b6974f3159c839f3764eed3d8da5dff406dece9bb2414c958e8484d81271c41f",
+      "research/experiments/E005-category-review/evidence/selection-key.json": "33e75aa79f26b07358d53f432535c862a85aa79a4e5f38101eff3ec8ff94b5c0",
+      "research/experiments/E005-category-review/evidence/run.json": "6e9042785eba0be3a842763f8e0b14de1590174d3ba21b1b09595ab703ffc817",
+      "research/experiments/E006-rating-uncertainty/evidence/results.json": "bf5380629014af3bf06db4324a93f347e9f858ebe27731c8a00f06146c68ea2e",
+      "research/experiments/E006-rating-uncertainty/evidence/predictions.json.gz": "10b4cd8fb5462eaa9ee6beff4ba62fc94dfe4f79f9fa5b23d69d5dfa4b97c14f",
+      "research/experiments/E006-rating-uncertainty/evidence/run.json": "c4b7ac8a82d4b6f3f165c1ce2c0191de5a00b0f3777c7b93e9edb7158056c9e8",
+      "research/experiments/E012-offer-evidence/evidence/policy.json": "a7365e813d97470d55056fda3baf5b3a8311b85bcc301ecc9c88403e5314a6b4",
+      "research/experiments/E012-offer-evidence/evidence/freeze-run.json": "0287e95d96658a7b3c190ac763469b4b165441bd5d261e05a1854eeae13b7d07",
+      "research/experiments/E012-offer-evidence/evidence/sf18-observations.json.gz": "02367574df6676276243cd1f60e23e5c2ec984eb70a49df24d2188aaea6be547",
+      "research/experiments/E012-offer-evidence/evidence/collection-run.json": "555eeff8f289050ea81ea140fb722515a3d3cfdb127fdd0044b23d4386c5108a",
+      "research/experiments/E012-offer-evidence/evidence/results.json": "d31ed066a4fdcea3e81a79320c0e06f358177d84f4c3332c42ada85b49a9db0d",
+      "research/experiments/E012-offer-evidence/evidence/run.json": "134203b7f0d839b05287454db0f45211037e36a0fb6f7eeaeeddf86f7ba10b15",
+      "research/experiments/E012-offer-evidence/evidence/verification.json": "9da4fbd2ee6aa54a1eb906de1d2f18d40066fb87de71a9d2c6c4032c3991beed",
+      "research/experiments/E012-offer-evidence/evidence/clean-replay.json": "6bd00b4aebde0cac726784c81bc7299bccd1e04e3b5450af5051e8edf53e0546",
+      "research/experiments/E012-offer-evidence/evidence/clean-archive.json": "0c9cab45a3767ee9ed7d69b9d4d3e811e01242a6ef79c08617ef902186b3d5af",
+      "research/experiments/E013-net-offer-pack/evidence/policy.json": "f9f60ba511e03a1826d442504315baa9d7dd0ac16511d34008c006f0cfee5d5d",
+      "research/experiments/E013-net-offer-pack/evidence/cases.json": "d6f0c63a657901d822bdb0920895576371457f134a82c3aed35ccce04fc8c521",
+      "research/experiments/E013-net-offer-pack/evidence/selection-key.json": "32dbeb26b0e078b431156344602d2115fb4ce9e263b3ca331170d330312948ea",
+      "research/experiments/E013-net-offer-pack/evidence/build-run.json": "c36523f4429231afd19da0a5a67147eb8b3568470b8b3ec63a2f3e91798f8831",
+      "research/experiments/E013-net-offer-pack/evidence/sf18-observations.json.gz": "b7ee839acb88813dce83d16eae6dd93ee2a6d1eca8557471dae947b29ced68ea",
+      "research/experiments/E013-net-offer-pack/evidence/collection-run.json": "b077265c7ab656bc6e002ed07f567f5347dcde781f35eb386300f4835986e47c",
+      "research/experiments/E013-net-offer-pack/evidence/results.json": "7a7357cc21d012cace4782f26a407110feb14e57674e37d55da51ae239348d5a",
+      "research/experiments/E013-net-offer-pack/evidence/run.json": "43c9cd128d206e51218f2229d7a71b0c6a4b1aafdc995fcc468a9643f7273692",
+      "research/experiments/E013-net-offer-pack/evidence/verification.json": "d89a486c70dd3685c08fe078ad7e91780a4c6907deb3b40ff20e6c09cc5ca970",
+      "research/experiments/E013-net-offer-pack/evidence/clean-replay.json": "2d6932ab2d1af6e3e1a8a17a747f1bd4d4d45ac4a2eb4633594fbaef01b8112a",
+      "research/experiments/E013-net-offer-pack/evidence/clean-archive.json": "fbc50686a4b22b96f53c24b8db3b777b16ac9bde6522d4817ea4367fab399c82",
+      "research/experiments/E014-root-pair-consistency/evidence/freeze-SF18.json": "d4dab90dbc0c03d33ebab7f88728c89730e1a2e5f1165dd93a550034b2a8a110",
+      "research/experiments/E014-root-pair-consistency/evidence/freeze-run-SF18.json": "7dc93a3d18af5668871e688aaf270fcc59b32eaef0e01b103ee804743de095f1",
+      "research/experiments/E014-root-pair-consistency/evidence/results-SF18.json": "a6f2a640274b6c02e571db210b8bb46989447c62739ed95c54fc9ab742e3b56c",
+      "research/experiments/E014-root-pair-consistency/evidence/run-SF18.json": "49d8e22c8a96dfd0f535af919316e36541762454d084ec0e161e06c041bcee10",
+      "research/experiments/E014-root-pair-consistency/evidence/verification-SF18.json": "91f7a74cec294c57ea444d53e043f3e6e6ee6b8f161b12b65d7b6960826a54b6",
+      "research/experiments/E014-root-pair-consistency/evidence/source-line-endings-SF18.json": "5c073480f6cfb10450c73fb5c9dac5ff03c90bff3d415944717961a0decacbb4",
+      "research/experiments/E014-root-pair-consistency/evidence/failed-clean-replay-SF18.json": "c579eadadc1bf36894816642da325544ccb66da65977587bd73322f6e588108d",
+      "research/experiments/E014-root-pair-consistency/evidence/clean-replay-SF18.json": "172fc46b1bfc875a5c97e4d258de4d09c860482ce8df12920cfdd82eaf7f90b5",
+      "research/experiments/E014-root-pair-consistency/evidence/clean-archive-SF18.json": "61f904ac8a64af5a762974f5e7246da834843a734aa52adda4a2f7ac1bc7b124",
+      "research/datasets/D001-public-baseline/locators.json.gz": "f42bd028f7fca5950ca206164405385f6324363f7d720242e1250b4b83736cf6",
+      "research/datasets/D001-public-baseline/reconstruction.json": "af54589497239c4f851d74a1a4b1fac296ec54a779efca9193629adac9a67307"
+    },
+    "datasets": {
+      "D001": {
+        "gameCount": 2000,
+        "archives": [
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-06.pgn.zst",
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-07.pgn.zst",
+          "https://database.lichess.org/standard/lichess_db_standard_rated_2026-08.pgn.zst"
+        ],
+        "provenanceStatus": "reconstruction-verified",
+        "limitations": [
+          "Archive-window/rating-quota convenience sample; not representative of the whole blitz population.",
+          "Only recorded fragment bytes are verified; no whole-archive checksum or publisher signature is claimed.",
+          "Provisional-rating status is unavailable; recorded ratings do not establish stable playing strength.",
+          "Engine observations are retained, not regenerated by dataset reconstruction.",
+          "Existing development/test exposure prevents new confirmation claims."
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "ids": [
+        "C0715",
+        "C0716"
+      ],
+      "family": "Good/bad bishop versus knight",
+      "missingTarget": "Declared independently justified piece-quality criteria tied to relevant endgame/strategic outcomes, preserving both opposite original scopes.",
+      "missingEvidence": "Validated quality rubric and appropriately controlled two-army/endgame evidence; independent usefulness/truth assessment and broader horizon/material coverage.",
+      "insufficientProxies": [
+        "E156 same-side equal-value named pawn capture",
+        "E109 finite own-pawn conversion",
+        "E256 short joint pawn capture or king-only double-pawn neutralization"
+      ],
+      "existingSupport": [
+        "E186 prerequisites",
+        "E109 bounded conversion",
+        "E156 bounded objective-relative distinction",
+        "E255/E256 failed causal attribution"
+      ],
+      "route": "Register quality criteria and independent evaluation target before a detector; retain limited finite policies with explicit objective names rather than generic good/bad labels.",
+      "status": "prerequisite-missing",
+      "readinessCredit": false,
+      "queue": [
+        {
+          "id": "C0715",
+          "name": "Good bishop versus bad knight",
+          "rank": 454,
+          "pendingIds": [
+            "C0715"
+          ],
+          "needsCodeIds": [
+            "C0715"
+          ]
+        },
+        {
+          "id": "C0716",
+          "name": "Good knight versus bad bishop",
+          "rank": 455,
+          "pendingIds": [
+            "C0716"
+          ],
+          "needsCodeIds": [
+            "C0716"
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "C0798",
+        "C0822",
+        "C0829"
+      ],
+      "family": "Practical chances, practical moves and problems",
+      "missingTarget": "Opponent/context/time-control/clock-conditioned response and practical usefulness, with explicit player population and decision objective.",
+      "missingEvidence": "Eligible traceable opponent response/context evidence, calibrated response model or independently assessed practical utility with untouched validation.",
+      "insufficientProxies": [
+        "legal branch counts as probabilities",
+        "objective forced mate/loss as fallible-player success rate",
+        "E238 maximum shortfall as expectation",
+        "E239 possible-history ambiguity as practical chance"
+      ],
+      "existingSupport": [
+        "E189 candidate/outcome partition",
+        "E192 objective safety and declared goal",
+        "E238 conditional utility contract",
+        "E239/E240 history-sensitive claims"
+      ],
+      "route": "Design/register response/usefulness estimand and eligible acquisition before model fitting; numerical goal stays paused, no implicit permission to resume it.",
+      "status": "prerequisite-missing",
+      "readinessCredit": false,
+      "queue": [
+        {
+          "id": "C0798",
+          "name": "Practical chances",
+          "rank": 469,
+          "pendingIds": [
+            "C0798"
+          ],
+          "needsCodeIds": [
+            "C0798"
+          ]
+        },
+        {
+          "id": "C0822",
+          "name": "Practical move",
+          "rank": 484,
+          "pendingIds": [
+            "C0822"
+          ],
+          "needsCodeIds": [
+            "C0822"
+          ]
+        },
+        {
+          "id": "C0829",
+          "name": "Creating practical problems",
+          "rank": 490,
+          "pendingIds": [
+            "C0829"
+          ],
+          "needsCodeIds": [
+            "C0829"
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "C0800"
+      ],
+      "family": "Subjective difficulty",
+      "missingTarget": "Explicit player/context population, task and human effort/error/difficulty target.",
+      "missingEvidence": "Independent difficulty/effort observations and prospective calibration/usefulness validation for that population.",
+      "insufficientProxies": [
+        "search nodes/time",
+        "legal alternatives",
+        "short proof length",
+        "a missed tactic treated as measured thought"
+      ],
+      "existingSupport": [
+        "E189 concrete decision stakes",
+        "E192 same-bound outcome alternatives"
+      ],
+      "route": "Specify player/task target and independent observation protocol; board-only runtime reports unavailable rather than inferred hidden difficulty.",
+      "status": "prerequisite-missing",
+      "readinessCredit": false,
+      "queue": [
+        {
+          "id": "C0800",
+          "name": "Subjective difficulty",
+          "rank": 471,
+          "pendingIds": [
+            "C0800"
+          ],
+          "needsCodeIds": [
+            "C0800"
+          ]
+        }
+      ]
+    },
+    {
+      "ids": [
+        "C0801",
+        "C0809",
+        "C0824",
+        "C0830"
+      ],
+      "family": "Complexity and complication/management",
+      "missingTarget": "Prospectively justified complexity/decision scale, relevant structural features and comparative value/management objective; preserve every original context.",
+      "missingEvidence": "Independent scale validation, controlled before/after or actual/alternative comparisons and declared utility/tradeoff showing useful complication or complexity management.",
+      "insufficientProxies": [
+        "raw branching/search work",
+        "piece count",
+        "unresolved finite search",
+        "worst-case material/outcome risk relabeled complexity"
+      ],
+      "existingSupport": [
+        "E189 legal choice partition",
+        "E192 practical-scope prerequisites",
+        "E238 declared nonprobabilistic risk"
+      ],
+      "route": "Validate scale and value/management contract before deriving recommendation; retain structural facts as facts and risk as risk.",
+      "status": "prerequisite-missing",
+      "readinessCredit": false,
+      "queue": [
+        {
+          "id": "C0801",
+          "name": "Complexity",
+          "rank": 472,
+          "pendingIds": [
+            "C0801"
+          ],
+          "needsCodeIds": [
+            "C0801"
+          ]
+        },
+        {
+          "id": "C0809",
+          "name": "When to complicate",
+          "rank": 478,
+          "pendingIds": [
+            "C0809"
+          ],
+          "needsCodeIds": [
+            "C0809"
+          ]
+        },
+        {
+          "id": "C0824",
+          "name": "Complicated move",
+          "rank": 486,
+          "pendingIds": [
+            "C0824"
+          ],
+          "needsCodeIds": [
+            "C0824"
+          ]
+        },
+        {
+          "id": "C0830",
+          "name": "Complexity management",
+          "rank": 491,
+          "pendingIds": [
+            "C0830"
+          ],
+          "needsCodeIds": [
+            "C0830"
+          ]
+        }
+      ]
+    }
+  ],
+  "originalOccurrences": 10,
+  "families": 4,
+  "newOccurrences": 0,
+  "readinessCredit": false,
+  "qualityClaim": false,
+  "priorUnmetIds": [
+    "C0572",
+    "C0573",
+    "C0576",
+    "C0981",
+    "C0577",
+    "C0976",
+    "C0599",
+    "C0601",
+    "C0712",
+    "C0713",
+    "C0714"
+  ],
+  "metadata": {
+    "acceptedExperiment": "E082",
+    "remainingEntries": 707,
+    "codeReadyEntries": 534,
+    "remainingWithoutReadyCode": 173,
+    "workingItems": 668
+  },
+  "next": {
+    "id": "C0854",
+    "name": "Premature attack",
+    "rank": 493,
+    "needsCodeIds": [
+      "C0854"
+    ],
+    "required": "Original attack/preparation/target identities and common successful objective, complete adaptive defenses, causal timing/value contrast. E243 fixed/illegal routes remain failed; no preparation claim from absence of immediate mate."
+  },
+  "chessEvidenceReplayed": false,
+  "gameContentsRead": false,
+  "newQueries": 0,
+  "newSearches": 0,
+  "newProbes": 0,
+  "seconds": 30.352945899999998
+}
