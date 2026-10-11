@@ -1,0 +1,5 @@
+{
+  "revision": "1f3557d73a4c6d0e714d8908426b106b9f244196",
+  "error": "TypeError: Cannot read properties of null (reading 'phase')\n    at census (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E260-original-occurrence-census/code/census.mjs:19:200)\n    at file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E260-original-occurrence-census/code/run.mjs:29:15",
+  "seconds": 32.5135948
+}

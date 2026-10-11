@@ -16,7 +16,7 @@ export function fingerprintDiff(expected,actual){
 }
 export function census({original,catalog,tracker,builds,supports,prerequisites}){
  const canonical=new Map();for(const row of tracker){assert(!canonical.has(row.id),'Duplicate tracker ID');canonical.set(row.id,row);}
- const indexed=new Map();for(const rec of catalog.records)for(const o of rec.occurrences){assert(!indexed.has(o.id),'Duplicate catalog ID');indexed.set(o.id,{...o,group:rec.id,phase:rec.proposedWork.phase,rank:rec.proposedWork.rank});}
+ const indexed=new Map();for(const rec of catalog.records)for(const o of rec.occurrences){assert(!indexed.has(o.id),'Duplicate catalog ID');indexed.set(o.id,{...o,group:rec.id,phase:rec.proposedWork?.phase??null,rank:rec.proposedWork?.rank??null});}
  const originalIds=new Set(original.map(o=>o.id));assert.equal(originalIds.size,original.length,'Duplicate original ID');
  assert.equal(indexed.size,original.length,'Catalog occurrence loss');assert.equal(canonical.size,original.length,'Tracker occurrence loss');
  const supportById=new Map();for(const s of supports){
@@ -39,3 +39,4 @@ export function census({original,catalog,tracker,builds,supports,prerequisites})
  const counts=Object.fromEntries(['accepted','provisional','support','prerequisite'].map(k=>[k,rows.filter(r=>r.disposition===k).length]));
  return {schema:'E260-occurrence-census-v1',wholeDefinitionCompletion:'not established by metadata',counts,rows};
 }
+

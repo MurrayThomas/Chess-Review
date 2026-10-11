@@ -6,7 +6,7 @@ import {coachBuildStatus} from '../../../build-workflow.mjs';
 import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
 import {census,originalRows,sourcePath,fingerprintDiff} from './census.mjs';
 import {prerequisites} from './prerequisites.mjs';
-const dir='research/experiments/E260-original-occurrence-census',out=dir+'/evidence';
+const dir='research/experiments/E260-original-occurrence-census',out=dir+'/evidence/corrected';
 const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim();
 const guard=await openResearchData(['D001'],{purpose:'inspect'});await mkdir(out,{recursive:true});
 const start=performance.now(),environment={node:process.version,platform:process.platform,arch:process.arch};
@@ -28,10 +28,11 @@ try{
  for(const p of Object.values(prerequisites))for(const ref of p.references)await readFile('research/experiments/'+ref+'/RESULT.md','utf8');
  const result=census({original,catalog,tracker,builds:build.builds,supports,prerequisites});
  assert.equal(result.rows.length,build.accepted.entries);assert.equal(result.counts.accepted,build.accepted.verifiedEntries);assert.equal(result.counts.provisional,build.codeReadyEntries);
- const sourceHashes=await bindings([dir+'/plan.md',dir+'/code/run.mjs',dir+'/code/census.test.mjs',originalFile,catalogFile,...supportFiles]);
+ const sourceHashes=await bindings([dir+'/plan.md',dir+'/AMENDMENT.md',dir+'/code/run.mjs',dir+'/code/census.test.mjs',originalFile,catalogFile,...supportFiles]);
  const report={...result,revision,receipt:guard.receipt,environment,accepted:build.accepted,supportContracts:supports,buildSummary:{codeReadyBatches:build.codeReadyBatches,staleBatches:build.staleBatches},sourceHashes,trackerHash:sha256(trackerText.replaceAll('\r\n','\n')),seconds:(performance.now()-start)/1000,queries:0,readinessCredit:false,semanticReplay:false};
  assert(report.seconds<=120,'Registered metadata time cap');
  const bytes=gzipSync(Buffer.from(JSON.stringify(report)+'\n'),{level:9});await writeFile(out+'/census.json.gz',bytes,{flag:'wx'});
  const summary={revision,counts:result.counts,occurrences:result.rows.length,workingGroups:catalog.records.length,duplicateGroups:catalog.records.filter(r=>r.occurrences.length>1).length,supports:supports.map(s=>({experiment:s.experiment,occurrences:s.supportedOccurrences.length,sourceIssues:s.sourceIssues})),...report.buildSummary,seconds:report.seconds,bytes:bytes.length,sourceBindings:Object.keys(sourceHashes).length,sha256:sha256(bytes),queries:0,readinessCredit:false,semanticReplay:false};
  await writeFile(out+'/summary.json',JSON.stringify(summary,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(summary,null,2));
 }catch(e){await writeFile(out+'/failed.json',JSON.stringify({revision,error:e.stack,seconds:(performance.now()-start)/1000},null,2)+'\n',{flag:'wx'});throw e;}
+
