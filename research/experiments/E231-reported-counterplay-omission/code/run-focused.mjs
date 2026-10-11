@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {access,mkdir,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {execFileSync,spawnSync} from 'node:child_process';
+import {saved} from '../../E192-outcome-goal-decisions/code/saved.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {cases} from './fixtures.mjs';
+import {inspectCounterplayOmission} from './omission.mjs';
+import {checkCounterplayOmission} from './check-result.mjs';
+const dir='research/experiments/E231-reported-counterplay-omission',guard=await openResearchData(['D001'],{purpose:'test'});await mkdir(dir+'/evidence',{recursive:true});try{await access(dir+'/evidence/started.json');throw Error('Already started; preserve evidence');}catch(e){if(e.code!=='ENOENT')throw e;}
+const revision=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).trim(),inputHashes=await bindings([dir+'/plan.md',dir+'/code/run-focused.mjs',dir+'/code/omission.test.mjs','research/concepts/catalog.json']);await writeFile(dir+'/evidence/started.json',JSON.stringify({revision,inputHashes,receipt:guard.receipt},null,2)+'\n',{flag:'wx'});
+const t=performance.now(),s=await saved(),admissionSeconds=(performance.now()-t)/1000,rows=[];let error=null;try{for(const c of cases){const row={...c,result:null,seconds:null};rows.push(row);const h=c.input.decision.history??{fen:c.input.decision.fen,moves:[]},p=s.find({...c.input.decision,history:h},1).panel,start=performance.now();row.result=inspectCounterplayOmission(c.input,{enabled:true},p);checkCounterplayOmission(c.input,{enabled:true},p,row.result);row.seconds=(performance.now()-start)/1000;assert.equal(row.result.status,c.expected);if(rows.length===1)assert(admissionSeconds+row.seconds<=5,'First source/contrast exceeds pilot bound');}}catch(e){error=e.stack;}
+const payload=gzipSync(JSON.stringify({revision,inputHashes,receipt:s.receipt,archives:s.hashes,admissionSeconds,rows,error,freshSearches:0}));await writeFile(dir+'/evidence/'+(error?'pilot-failure':'pilot')+'.json.gz',payload,{flag:'wx'});console.log(JSON.stringify({cases:rows.length,admissionSeconds,querySeconds:rows.reduce((n,r)=>n+(r.seconds??0),0),error,bytes:payload.length,sha256:sha256(payload)}));assert.equal(error,null);
+const start=performance.now(),r=spawnSync(process.execPath,['--test',dir+'/code/omission.test.mjs'],{encoding:'utf8',windowsHide:true,timeout:30000}),seconds=(performance.now()-start)/1000;await writeFile(dir+'/evidence/'+(r.status===0?'focused-checks':'focused-failure')+'.json',JSON.stringify({revision,inputHashes,receipt:guard.receipt,command:'node --test '+dir+'/code/omission.test.mjs',seconds,exitCode:r.status,signal:r.signal,error:r.error?.message??null,stdout:r.stdout,stderr:r.stderr,freshSearches:0},null,2)+'\n',{flag:'wx'});console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);console.log(JSON.stringify({seconds}));
