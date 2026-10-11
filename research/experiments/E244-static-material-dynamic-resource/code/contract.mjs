@@ -1,0 +1,9 @@
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+const obj=x=>x&&typeof x==='object'&&!Array.isArray(x),exact=(x,keys)=>obj(x)&&Object.keys(x).sort().join(',')===[...keys].sort().join(','),move=x=>typeof x==='string'&&/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(x);
+export function validate(input,options){
+ plain([input,options]);if(!exact(input,['fen','move',...(input?.history===undefined?[]:['history'])])||typeof input.fen!=='string'||input.fen.length>2048||!move(input.move))throw Error('Invalid material/activity input');
+ if(input.history!==undefined&&(!exact(input.history,['fen','moves'])||typeof input.history.fen!=='string'||!Array.isArray(input.history.moves)||input.history.moves.length>1000||!input.history.moves.every(move)))throw Error('Invalid history');
+ if(!obj(options)||Object.keys(options).some(k=>!['enabled','maxRecords'].includes(k)))throw Error('Invalid controls');
+ const enabled=options.enabled===undefined?false:options.enabled,maxRecords=options.maxRecords===undefined?256:options.maxRecords;if(typeof enabled!=='boolean'||!Number.isSafeInteger(maxRecords)||maxRecords<0||maxRecords>256)throw Error('Invalid limits');return{enabled,maxRecords};
+}
+export const empty=o=>({schema:'E244-static-material-dynamic-resource',id:'C0897',available:false,status:'disabled',limit:o.maxRecords,requiredRecords:0,usedRecords:0,context:null,witness:null,qualityClaim:false,mentalStateClaim:false});
