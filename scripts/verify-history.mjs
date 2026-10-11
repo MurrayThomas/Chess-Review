@@ -50,9 +50,10 @@ export function verifyHistoryBlob(name, content) {
   }
 }
 
-export function verifyHistory(refs = ['HEAD'], cwd = process.cwd()) {
-  const git = (args, input, binary = false) => execFileSync('git', args, {cwd, input,
-    encoding: binary ? undefined : 'utf8', maxBuffer: 256 * 1024 * 1024, windowsHide: true});
+export function verifyHistory(refs = ['HEAD'], cwd = process.cwd(), {batchBytes = 16 * 1024 * 1024} = {}) {
+  if (!Number.isSafeInteger(batchBytes) || batchBytes <= 0) throw Error('Invalid history batch byte limit');
+  const git = (args, input, binary = false, maxBuffer = 256 * 1024 * 1024) => execFileSync('git', args, {cwd, input,
+    encoding: binary ? undefined : 'utf8', maxBuffer, windowsHide: true});
   // Raw diffs retain every path associated with a blob, including renamed copies.
   const tokens = git(['log', '--root', '-m', '--raw', '-z', '--no-renames', '--no-abbrev', '--format=', ...refs, '--']).split('\0');
   const names = new Map();
@@ -74,21 +75,33 @@ export function verifyHistory(refs = ['HEAD'], cwd = process.cwd()) {
     const [oid, kind, size] = row.split(' ');
     return kind === 'commit' || kind === 'blob' && Number(size) <= 4 * 1024 * 1024 &&
       [...names.get(oid)].some(name => /\.(?:md|txt|json|js|mjs|cjs|html|css|yml|yaml|csv|svg)$/i.test(name));
-  }).map(row => row.split(' ')[0]);
-  const raw = git(['cat-file', '--batch'], selected.join('\n') + '\n', true);
-  let offset = 0, blobs = 0;
-  for (const oid of selected) {
-    const end = raw.indexOf(10, offset);
-    const [, kind, size] = raw.subarray(offset, end).toString().split(' ');
-    const bytes = raw.subarray(end + 1, end + 1 + Number(size));
-    offset = end + 2 + Number(size);
-    if (bytes.includes(0)) continue;
-    const content = bytes.toString('utf8');
-    if (kind === 'commit') verifyClaims(content.slice(content.indexOf('\n\n') + 2), 'commit ' + oid);
-    else {
-      for (const name of names.get(oid)) verifyHistoryBlob(name, content);
-      blobs++;
+  }).map(row => ({oid: row.split(' ')[0], bytes: Number(row.split(' ')[2]) + Buffer.byteLength(row) + 2}));
+  // Bound each cat-file response by its byte size, including headers and separators.
+  // All selected objects and every path alias are still checked as history grows.
+  let blobs = 0;
+  for (let start = 0; start < selected.length;) {
+    let end = start, responseBytes = 0;
+    do { responseBytes += selected[end++].bytes; }
+    while (end < selected.length && responseBytes + selected[end].bytes <= batchBytes);
+    const batch = selected.slice(start, end);
+    // A single object larger than the target gets its own correctly sized buffer.
+    const raw = git(['cat-file', '--batch'], batch.map(({oid}) => oid).join('\n') + '\n', true,
+      Math.max(batchBytes, responseBytes));
+    let offset = 0;
+    for (const {oid} of batch) {
+      const headerEnd = raw.indexOf(10, offset);
+      const [, kind, size] = raw.subarray(offset, headerEnd).toString().split(' ');
+      const bytes = raw.subarray(headerEnd + 1, headerEnd + 1 + Number(size));
+      offset = headerEnd + 2 + Number(size);
+      if (bytes.includes(0)) continue;
+      const content = bytes.toString('utf8');
+      if (kind === 'commit') verifyClaims(content.slice(content.indexOf('\n\n') + 2), 'commit ' + oid);
+      else {
+        for (const name of names.get(oid)) verifyHistoryBlob(name, content);
+        blobs++;
+      }
     }
+    start = end;
   }
   return blobs;
 }

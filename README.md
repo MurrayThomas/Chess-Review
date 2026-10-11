@@ -119,6 +119,13 @@ Firefox discloses the browsing activity and website content used for these reque
 Sharing a game copies an encoded, unencrypted PGN/metadata link to your clipboard;
 anyone you send it to can read that information. See [PRIVACY.md](PRIVACY.md).
 
+## Maintained-source checks
+
+The Maintained source workflow runs `npm run verify:source` and `npm run verify:history`
+before the test suites. The history check inspects reachable commits and historical text
+blobs in batches targeting 16 MiB, so growing research history does not overflow one
+combined subprocess output buffer. All existing content and path checks remain active.
+
 ## Release packages
 
 Run `npm ci`, `npm test`, `npm run verify:engines`, and `npm run build`.

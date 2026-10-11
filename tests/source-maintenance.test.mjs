@@ -101,3 +101,28 @@ test('retired designs cannot return through historical files or a current source
   assert.throws(() => verifyHistoryBlob('styles.css', '.board.cc-board {background:transparent}'), /Retired board-image styling/);
   assert.doesNotThrow(() => verifyDesign('content.js', 'const selectors = ["a.cc-button-component"];'));
 });
+
+test('history batches preserve byte boundaries, binary skips, and later blob and commit checks', async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'chess-review-history-batches-'));
+  t.after(() => rm(root, {recursive: true, force: true}));
+  const git = args => execFileSync('git', args, {cwd: root, encoding: 'utf8', windowsHide: true});
+  git(['init', '-q']); git(['config', 'user.name', 'Maintenance test']); git(['config', 'user.email', 'test@example.invalid']);
+  // Several batches plus one oversized UTF-8 object; lengths must be bytes, not characters.
+  for (let i = 0; i < 6; i++) await writeFile(path.join(root, `notes-${i}.md`), `${i}:` + 'é'.repeat(i === 0 ? 1500 : 400));
+  await writeFile(path.join(root, 'binary.txt'), Buffer.from([0, 255, 10]));
+  git(['add', '.']); git(['commit', '-qm', 'Maintain historical notes']);
+  const options = {batchBytes: 2048};
+  assert.equal(verifyHistory(['HEAD'], root, options), 6);
+  const cleanHead = git(['rev-parse', 'HEAD']).trim();
+  const claim = 'Accuracy within ' + '9' + '5% of Chess' + '.com';
+  await writeFile(path.join(root, 'notes-5.md'), claim);
+  git(['add', '.']); git(['commit', '-qm', 'Update historical notes']);
+  await writeFile(path.join(root, 'notes-5.md'), 'Current documentation.');
+  git(['add', '.']); git(['commit', '-qm', 'Maintain current notes']);
+  assert.throws(() => verifyHistory(['HEAD'], root, options), /numerical-agreement/);
+  // A diff also exposes its previous blob, even after the working tree was cleaned.
+  assert.throws(() => verifyHistory(['HEAD', '^HEAD~1'], root, options), /numerical-agreement/);
+  git(['switch', '-qc', 'commit-check', cleanHead]);
+  git(['commit', '--allow-empty', '-qm', claim]);
+  assert.throws(() => verifyHistory(['HEAD', '^HEAD~1'], root, options), /numerical-agreement/);
+});
