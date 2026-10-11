@@ -1,0 +1,18 @@
+import {isDeepStrictEqual} from 'node:util';
+import {Chess} from '../../../../lib/chess.js';
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+import {checkTwoResultPolicy} from '../../E235-two-result-policy/code/check-result.mjs';
+import {validate,empty} from './contract.mjs';
+const key=c=>c.fen().split(' ').slice(0,4).join(' ');
+export function inspectRisk(input,options={},sources){
+ const o=validate(input,options),r=empty(o);if(!o.enabled)return r;const exhaust=()=>({...r,status:'budget-unavailable',reason:'combined-logical-work-cap',work:o.maxWork+1});if(o.maxWork<2)return exhaust();
+ if(sources===undefined){r.status='unavailable';r.reason='source-prerequisite';return r;}plain(sources);if(!sources||Array.isArray(sources)||Object.keys(sources).sort().join(',')!=='actual,reference')throw Error('Invalid source pair');
+ for(const name of ['actual','reference'])checkTwoResultPolicy(input[name],{enabled:true},sources[name]);
+ const charge=2+sources.actual.work+sources.reference.work+(sources.actual.context?.leaves.length??0)+(sources.reference.context?.leaves.length??0);if(charge>o.maxWork)return exhaust();r.work=charge;
+ if(!input.model){r.status='unavailable';r.reason='declared-model-prerequisite';return r;}
+ const a=input.actual,b=input.reference,m=input.model;if(a.fen!==b.fen||!isDeepStrictEqual(a.history,b.history)||a.move===b.move)throw Error('Distinct policies must share exact root/history');
+ const ca=sources.actual.context,cb=sources.reference.context;if(!ca||!cb){r.status='unavailable';r.reason='policy-context-prerequisite';return r;}if(ca.before!==cb.before||ca.actor!==cb.actor||m.fen!==ca.before||m.actor!==ca.actor)throw Error('Declared model frame/actor mismatch');
+ if([ca,cb].some(c=>!c.leaves.length||c.leaves.some(x=>!['win','draw','loss'].includes(x.outcome)))){r.status='unavailable';r.reason='unresolved-policy';return r;}
+ const summaries={};for(const name of ['actual','reference']){const p=input[name],c=sources[name].context,board=new Chess(p.history.fen),counts=new Map([[key(board),1]]);for(const move of [...p.history.moves,p.move]){board.move(move);counts.set(key(board),(counts.get(key(board))??0)+1);}const addedDraw=!c.initialTerminal&&(!c.priorHistoryComplete||+board.fen().split(' ')[4]>=100||(counts.get(key(board))??0)>=3),loss=outcome=>Math.max(0,m.utility[m.target]-m.utility[outcome]);const leaves=c.leaves.map(l=>({defense:l.defense,outcome:l.outcome,basis:l.basis,leafFen:l.leafFen,shortfall:loss(l.outcome)})),allowance=addedDraw?{outcome:'draw',basis:'conservative-enemy-claim-or-unrecorded-repetition-allowance',shortfall:loss('draw')}:null,values=leaves.map(l=>l.shortfall);if(allowance)values.push(allowance.shortfall);const worst=Math.max(...values);summaries[name]={move:p.move,followup:p.followup,leaves,allowance,bestShortfall:Math.min(...values),worstShortfall:worst,withinLimit:worst<=m.allowed,adverseOutcomes:[...new Set([...leaves,...(allowance?[allowance]:[])].filter(x=>x.shortfall>0).map(x=>x.outcome))].sort()};}
+ r.claims={C0797:true,C0831:summaries.actual.withinLimit&&!summaries.reference.withinLimit&&summaries.actual.worstShortfall<summaries.reference.worstShortfall};r.status='proven';r.context={actor:ca.actor,before:ca.before,model:structuredClone(m),summaries,sourceResults:structuredClone(sources),scope:'Worst-case shortfall for exactly two declared complete finite policies, including conservative extra draw choices.',probabilityClaim:false,humanRiskToleranceClaim:false,globalOptimalityClaim:false,actualGameAdjudicationClaim:false,historyCondition:'Supplied roots/history are assumed ongoing; incomplete earlier history is explicit and nonterminal enemy turns conservatively admit extra draws.',freshSearches:0};return r;
+}
