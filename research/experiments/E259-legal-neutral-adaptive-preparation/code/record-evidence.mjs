@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,stat} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {admitSaved} from './admission.mjs';
+import {checkAdaptivePreparation} from './check-result.mjs';
+const dir='research/experiments/E259-legal-neutral-adaptive-preparation',out=dir+'/evidence/focused',guard=await openResearchData(['D001'],{purpose:'test'}),p=JSON.parse(gunzipSync(await readFile(out+'/pilot.json.gz'))),c=JSON.parse(await readFile(out+'/focused-checks.json','utf8'));
+assert.equal(p.error,null);assert.equal(p.rows.length,8);assert.equal(c.exitCode,0);assert.equal(c.signal,null);assert.equal(c.processError,null);assert.match(c.stdout,/pass 8/);assert.match(c.stdout,/fail 0/);assert.deepEqual(c.inputHashes,p.inputHashes);assert.deepEqual(p.inputHashes,await bindings(Object.keys(p.inputHashes)));assert.deepEqual(p.receipt,guard.receipt);
+const rows=await admitSaved();for(const [i,x]of rows.entries()){const r=p.rows[i];assert.equal(r.id,x.id);assert.deepEqual(r.input,x.input);checkAdaptivePreparation(r.input,{enabled:true},x.token,r.result);assert.equal(r.result.claims.C0854,false);assert.equal(r.result.view.preparedJointGoal,x.role==='neutral');}
+const collection=JSON.parse(gunzipSync(await readFile(dir+'/evidence/collection.json.gz'))),evidenceHashes={};let bytes=0;
+for(const f of ['started.json','partial.json.gz','collection.json.gz','focused/started.json','focused/pilot.json.gz','focused/focused-checks.json']){const path=dir+'/evidence/'+f;evidenceHashes[path]=sha256(await readFile(path));bytes+=(await stat(path)).size;}
+const record={revision:p.revision,collectionRevision:collection.revision,inputHashes:p.inputHashes,evidenceHashes,receipt:guard.receipt,pilotSeconds:p.seconds,focusedSeconds:c.seconds,collectionSeconds:collection.seconds,queries:8,ticks:collection.ticks,independentPolicies:8,independentComparisons:8,newOccurrences:0,readinessCredit:false,registeredGates:{neutralGoal:true,preparedMainGoal:false,immediateMainRefutation:true},freshFocusedQueries:0,engineSearches:0,tablebaseProbes:0,evidenceBytesBeforeProvenance:bytes,deferredChecks:['genuine successful adaptive same-target preparation or independently validated nonmating timing/value','combined full original-scope/history/terminal/priority/budget/cumulative and changed main-repeat-clean reproductions','complete earlier history, independent chess truth and human usefulness']};
+await writeFile(out+'/provenance.json',JSON.stringify(record,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({policies:12,comparisons:2,queries:8,ticks:collection.ticks,collectionSeconds:collection.seconds,pilotSeconds:p.seconds,focusedSeconds:c.seconds,sourceBindings:Object.keys(p.inputHashes).length,evidenceBytesBeforeProvenance:bytes,readinessCredit:false}));
