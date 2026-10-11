@@ -1,0 +1,50 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E251",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0569",
+      "scope": "Authenticated current-position static evaluation from exact bundled SF19 Lite/embedded NNUE using eval without any search: complete genuine standard-start history, exact raw process/options/command/frame/source binding, printed white and requested-player hundredths; in-check/terminal/missing-history/missing-source/budget contexts unavailable. Current evaluator estimate only, no universal strategic or human quality truth, factor attribution or advantage cutoffs."
+    }
+  ],
+  "inputHashes": {
+    "engine/stockfish-19-lite-single.js": "d3344124ab067fb0b90ee77873bb8e9fbf5fc01bc525fe714b0f942581e889e6",
+    "engine/stockfish-19-lite-single.wasm": "57ac2d72312aba346760e3f173f687a8c211208e97a87268436f7f0e10bb5387",
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E251-authenticated-static-evaluation/code/admission.mjs": "372383b32d67c76d961690140165d970deddbb5bfbf832781f32722fb7394591",
+    "research/experiments/E251-authenticated-static-evaluation/code/archive-lock.json": "46cda8b71bdd5cb85d089cbb23631f04877ac72f3489268f480cbbeb1ee20d2e",
+    "research/experiments/E251-authenticated-static-evaluation/code/check-result.mjs": "9767f03616b811c231188cf2305160ab37ae1263e1013048e69ab05644e83368",
+    "research/experiments/E251-authenticated-static-evaluation/code/collect.mjs": "92bd75c0664a23b64d8054b35e6ba99c1d4ae32260f6bc85acba51a364206208",
+    "research/experiments/E251-authenticated-static-evaluation/code/contract.mjs": "0acfb71836d9b2cfc83a2dbb4936a6123530890df948e52507ae4547fd431418",
+    "research/experiments/E251-authenticated-static-evaluation/code/fixtures.mjs": "cd7024be617d09806301b148d48c837888e89e85b49bce7ed8b9b435eb15fe5d",
+    "research/experiments/E251-authenticated-static-evaluation/code/record-build.mjs": "572f916d1ef3898dff7a0ef44d54a7dfac5078350c592abe8cc6b4c8d9e3912d",
+    "research/experiments/E251-authenticated-static-evaluation/code/run-focused.mjs": "c2a3fe9e5cccfa422959ccca4288f6e67dd8a9fb05bacd9e64ce013bd9b72d0a",
+    "research/experiments/E251-authenticated-static-evaluation/code/static.mjs": "88be48317d6b0867482dd4a8d3a1934bef5ebb2a1f4ef81f73ee988e5093220d",
+    "research/experiments/E251-authenticated-static-evaluation/code/static.test.mjs": "fed75ce8d2fd92564220f83849c54fc97ca541f65d00cd319a5f693ab4ef30d0",
+    "research/experiments/E251-authenticated-static-evaluation/plan.md": "bdf41d936d6d5deffa2cacaa8ca05eac2b483b97c378b81296872792093d182d",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace",
+    "tools/calibration/engine-host.cjs": "1c1c1e635cc1ff43fdff8a1be921292500f79d8bbe1cff5e039934e37837b326",
+    "tools/calibration/engine.mjs": "1aa663a87150db86af12b10c9fc3b3d572a2ad96dea1f6cbe92c9d99a5bc45c6",
+    "tools/calibration/io.mjs": "b0411dfb063459e4652ab8785c112951f5d883e3dee4fa35b559a854d9332095"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E251-authenticated-static-evaluation/code/static.test.mjs (8pass; 3.079seconds; zero fresh evals/searches)",
+    "six independently reconstructed saved results; 2.399seconds pilot",
+    "four genuine eval invocations, no go/search commands; two gated source controls",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "full C0569 strategic factor explanation, evaluator-independent validity and human usefulness",
+    "C0570 dynamic evaluation, advantage degree and calibration remain separate claims",
+    "combined original-occurrence/history/terminal/priority/budget integration, cumulative regression and changed main-repeat-clean reproduction"
+  ]
+}
