@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {readFile,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {saved,dir} from './saved.mjs';
+const a=await saved(),inputHashes=await bindings([dir+'/code/opponent.test.mjs',dir+'/code/run-focused.mjs']),revision=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).stdout.trim(),start=performance.now(),args=['--test',dir+'/code/opponent.test.mjs'];
+const run=spawnSync(process.execPath,args,{encoding:'utf8',windowsHide:true}),seconds=(performance.now()-start)/1000,passed=run.status===0;
+await writeFile(dir+'/evidence/focused-'+(passed?'checks':'failure')+'.json',JSON.stringify({command:'node '+args.join(' '),preregisteredRevision:revision,exitCode:run.status,seconds,node:process.version,datasetReceipt:a.receipt,inputHashes,archives:a.hashes,refs:a.rows.map(q=>({id:q.id,mode:q.mode,...q.ref})),freshQueries:0,freshPanels:0,stdout:run.stdout,stderr:run.stderr},null,2)+'\n');
+if(!passed)await writeFile(dir+'/evidence/failed-test-source.json.gz',gzipSync(JSON.stringify({path:dir+'/code/opponent.test.mjs',source:await readFile(dir+'/code/opponent.test.mjs','utf8')})+'\n'));
+console.log(run.stdout);console.error(run.stderr);assert.equal(run.status,0);console.log(JSON.stringify({seconds,perspectives:a.rows.length,freshQueries:0}));
