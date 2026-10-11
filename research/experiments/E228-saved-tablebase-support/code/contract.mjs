@@ -1,0 +1,8 @@
+import {plain} from '../../E183-recorded-initiative-turnover/code/plain.mjs';
+export const occurrenceIds=['C1022','C1023'],labels=['Endgame tablebase','Syzygy tablebases'];
+const object=(v,keys,required=keys)=>{if(!v||typeof v!=='object'||Array.isArray(v)||Object.keys(v).some(k=>!keys.includes(k))||required.some(k=>!Object.hasOwn(v,k)))throw Error('Invalid tablebase support fields');};
+const text=(v,max=200)=>{if(typeof v!=='string'||!v.trim()||v.length>max)throw Error('Invalid tablebase support text');};
+export function validate(input,options){plain([input,options]);object(input,['source','eventId','query']);text(input.source);text(input.eventId);object(input.query,['fen','history'],['fen']);text(input.query.fen);
+ if(input.query.history!==undefined){const h=input.query.history;object(h,['fen','moves']);text(h.fen);if(!Array.isArray(h.moves)||h.moves.length>1000||Object.keys(h.moves).length!==h.moves.length||Object.keys(h.moves).some((k,i)=>k!==String(i)))throw Error('Invalid dense tablebase history');for(const m of h.moves)if(typeof m!=='string'||!/^[a-h][1-8][a-h][1-8][qrbn]?$/.test(m))throw Error('Invalid tablebase history move');}
+ object(options,['enabled','player','maxRecords','maxHistoryPlies'],[]);if(options.enabled!==undefined&&typeof options.enabled!=='boolean'||options.player!==undefined&&!['w','b'].includes(options.player))throw Error('Invalid tablebase support option');const limits={maxRecords:options.maxRecords===undefined?256:options.maxRecords,maxHistoryPlies:options.maxHistoryPlies===undefined?256:options.maxHistoryPlies};for(const [n,max]of [[limits.maxRecords,256],[limits.maxHistoryPlies,1000]])if(!Number.isSafeInteger(n)||n<0||n>max)throw Error('Invalid tablebase support budget');return limits;
+}
