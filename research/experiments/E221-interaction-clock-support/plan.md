@@ -88,3 +88,19 @@ routes. Full clock-device/platform/PGN adapters, trusted external provenance,
 touch-move rulings, possible-mate termination adjudication, performance/mental
 quality labels, human usefulness, combined integration and production promotion
 remain open. No cumulative suite or historical experiment reruns.
+
+Post-pilot boundary hardening, before focused checks:31authored cases passed.
+Review identifies exact exhaustion of main time as flag-ambiguous, not merely
+strict underflow. If positive charged time reaches the entire before snapshot,
+or a non-delay turn starts with zero main time, withhold reconciliation even if
+an increment/stage credit later makes the after snapshot positive. Protected
+zero-charge delay intervals remain arithmetic-only facts, never flag rulings.
+Register an exact-before100/elapsed100/Fischer20/after20 control and a zero-before
+non-delay control. Preserve original pilot/source hashes; valid31saved outputs
+must independently replay unchanged after this conservative runtime/checker
+boundary fix. Audit original frozen3a1dd69 source hashes and list only this
+plan/runtime/checker amendment as current differences. No collection repeated.
+The independent checker also rejects getter/custom-prototype result objects
+before comparison and uses shared neutral strict FEN validation; timing/routing/
+termination/touch interpretations remain separately written. No old valid pilot
+input/output changes; shared Chess/schema/FEN semantics limit independence.

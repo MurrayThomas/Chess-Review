@@ -11,7 +11,7 @@ function clocks(input){
   const base={reported:structuredClone(t),status:'missing-control',calculated:null};if(!input.timeControl)return base;if(t.snapshot!=='after-press')return{...base,status:'snapshot-semantics-prerequisite'};
   const phases=input.timeControl[t.player];let phase=0,completed=0;while(phases[phase].moves!==null&&t.moveNumber>completed+phases[phase].moves){completed+=phases[phase].moves;phase++;}
   const p=phases[phase],chargeMs=p.mode==='delay'?Math.max(0,t.elapsedMs-p.bonusMs):t.elapsedMs,incrementMs=p.mode==='fischer'?p.bonusMs:0,stageCreditMs=p.moves!==null&&t.moveNumber===completed+p.moves?phases[phase+1].allotmentMs:0;
-  if(chargeMs>t.beforeMs)return{...base,status:'flag-or-clock-policy-prerequisite'};const expectedAfterMs=t.beforeMs-chargeMs+incrementMs+stageCreditMs+t.adjustmentMs;
+  if(chargeMs>0&&chargeMs>=t.beforeMs||t.beforeMs===0&&p.mode!=='delay')return{...base,status:'flag-or-clock-policy-prerequisite'};const expectedAfterMs=t.beforeMs-chargeMs+incrementMs+stageCreditMs+t.adjustmentMs;
   const calculated={phase,chargeMs,incrementMs,stageCreditMs,expectedAfterMs};return{...base,status:expectedAfterMs===t.afterMs?'reconciled':'inconsistent-snapshot',calculated};
  });return{status:turns.every(t=>t.status==='reconciled')?'reconciled':'mixed',turns};
 }
