@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {openResearchData,sha256} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+const dir='research/experiments/E219-minor-ending-outpost';
+export const artifactHashes=Object.freeze({'minor-outpost':'fb616b60036efdfb108a36806172eb132b21f04944172c7fdc363211dd9fc078','minor-outpost-black':'a517a405c032b38afd775fc849fe3bdfaa7f0771a9706b8e841e7121470bf102','no-support':'c4607daa728ae76f65a8505faa972cc60c6834d92163a0d77f4f53dc19bd1ceb','future-pawn-challenge':'bc040d70ae47bdc59c6302c34f64bf7dae55f5f69b9914fd05d5449f28b921c8','active-bishop-refutation':'a768fa455c692c1bce41678042cc267baaca6b0b7513ac25ef654d3d4e74bd06'});
+export async function saved(){const guard=await openResearchData(['D001'],{purpose:'test'}),rows=[];let inputHashes=null;for(const [id,hash]of Object.entries(artifactHashes)){const bytes=await readFile(dir+'/evidence/'+id+'-raw.json');assert.equal(sha256(bytes),hash);const row=JSON.parse(bytes);assert.equal(row.error,null);assert.deepEqual(row.receipt,guard.receipt);if(inputHashes)assert.deepEqual(row.inputHashes,inputHashes);else{inputHashes=row.inputHashes;assert.deepEqual(inputHashes,await bindings(Object.keys(inputHashes)));}const retained=JSON.parse(await readFile(dir+'/evidence/'+id+'-result.json','utf8'));assert.equal(retained.error,null);assert.ok(retained.seconds<=3);rows.push({...row,retained});}return{rows,receipt:guard.receipt};}

@@ -1,0 +1,2544 @@
+{
+  "result": {
+    "schema": "E219-minor-ending-outpost",
+    "id": "C0717",
+    "available": true,
+    "status": "proven",
+    "limit": 5000,
+    "nodes": 168,
+    "qualityClaim": false,
+    "witness": {
+      "before": "1k6/1n6/1p6/p7/P7/6p1/6P1/5K1B b - - 0 1",
+      "after": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2",
+      "actor": "b",
+      "ending": {
+        "actorKnight": "b7",
+        "enemyBishop": "h1"
+      },
+      "target": "a4",
+      "move": "b7c5",
+      "alternative": "b7d8",
+      "summaries": [
+        {
+          "move": "b7c5",
+          "passed": true,
+          "branches": [
+            {
+              "reply": "f1e1",
+              "live": true,
+              "successes": [
+                {
+                  "move": "c5a4",
+                  "minimumGain": 1
+                }
+              ]
+            },
+            {
+              "reply": "f1e2",
+              "live": true,
+              "successes": [
+                {
+                  "move": "c5a4",
+                  "minimumGain": 1
+                }
+              ]
+            },
+            {
+              "reply": "f1g1",
+              "live": true,
+              "successes": [
+                {
+                  "move": "c5a4",
+                  "minimumGain": 1
+                }
+              ]
+            }
+          ],
+          "refutations": []
+        },
+        {
+          "move": "b7d8",
+          "passed": false,
+          "branches": [
+            {
+              "reply": "f1e1",
+              "live": true,
+              "successes": []
+            },
+            {
+              "reply": "f1e2",
+              "live": true,
+              "successes": []
+            },
+            {
+              "reply": "f1g1",
+              "live": true,
+              "successes": []
+            }
+          ],
+          "refutations": [
+            "f1e1",
+            "f1e2",
+            "f1g1"
+          ]
+        }
+      ],
+      "improved": true,
+      "outpost": true,
+      "panel": {
+        "schema": "E174-complete-improvement-panel-v1",
+        "before": "1k6/1n6/1p6/p7/P7/6p1/6P1/5K1B b - - 0 1",
+        "history": {
+          "fen": "1k6/1n6/1p6/p7/P7/6p1/6P1/5K1B b - - 0 1",
+          "moves": []
+        },
+        "actor": "b",
+        "baseline": 1,
+        "legal": [
+          {
+            "move": "b6b5",
+            "san": "b5",
+            "from": "b6",
+            "to": "b5",
+            "piece": "p",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b7c5",
+            "san": "Nc5",
+            "from": "b7",
+            "to": "c5",
+            "piece": "n",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b7d6",
+            "san": "Nd6",
+            "from": "b7",
+            "to": "d6",
+            "piece": "n",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b7d8",
+            "san": "Nd8",
+            "from": "b7",
+            "to": "d8",
+            "piece": "n",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b8a7",
+            "san": "Ka7",
+            "from": "b8",
+            "to": "a7",
+            "piece": "k",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b8a8",
+            "san": "Ka8",
+            "from": "b8",
+            "to": "a8",
+            "piece": "k",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b8c7",
+            "san": "Kc7",
+            "from": "b8",
+            "to": "c7",
+            "piece": "k",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          },
+          {
+            "move": "b8c8",
+            "san": "Kc8",
+            "from": "b8",
+            "to": "c8",
+            "piece": "k",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null
+          }
+        ],
+        "pawns": [
+          {
+            "square": "a4",
+            "color": "w"
+          },
+          {
+            "square": "a5",
+            "color": "b"
+          },
+          {
+            "square": "b6",
+            "color": "b"
+          },
+          {
+            "square": "g2",
+            "color": "w"
+          },
+          {
+            "square": "g3",
+            "color": "b"
+          }
+        ],
+        "targets": [
+          "a4"
+        ],
+        "rootCaptures": [
+          []
+        ],
+        "variants": [
+          {
+            "move": "b7c5",
+            "san": "Nc5",
+            "from": "b7",
+            "to": "c5",
+            "piece": "n",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null,
+            "state": {
+              "fen": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2",
+              "balance": 1,
+              "flags": {
+                "mate": false,
+                "stalemate": false,
+                "insufficient": false,
+                "fifty": false,
+                "threefold": false
+              }
+            },
+            "checking": false,
+            "contacts": [
+              [
+                "c5"
+              ]
+            ],
+            "legal": [
+              {
+                "move": "f1e1",
+                "san": "Ke1",
+                "from": "f1",
+                "to": "e1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              },
+              {
+                "move": "f1e2",
+                "san": "Ke2",
+                "from": "f1",
+                "to": "e2",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              },
+              {
+                "move": "f1g1",
+                "san": "Kg1",
+                "from": "f1",
+                "to": "g1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              }
+            ],
+            "branches": [
+              {
+                "move": "f1e1",
+                "san": "Ke1",
+                "from": "f1",
+                "to": "e1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k6/8/1p6/p1n5/P7/6p1/6P1/4K2B b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4"
+                  },
+                  {
+                    "move": "c5a6",
+                    "san": "Na6",
+                    "from": "c5",
+                    "to": "a6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b3",
+                    "san": "Nb3",
+                    "from": "c5",
+                    "to": "b3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b7",
+                    "san": "Nb7",
+                    "from": "c5",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d3",
+                    "san": "Nd3+",
+                    "from": "c5",
+                    "to": "d3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d7",
+                    "san": "Nd7",
+                    "from": "c5",
+                    "to": "d7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e4",
+                    "san": "Ne4",
+                    "from": "c5",
+                    "to": "e4",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e6",
+                    "san": "Ne6",
+                    "from": "c5",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": [
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4",
+                    "target": 0,
+                    "state": {
+                      "fen": "1k6/8/1p6/p7/n7/6p1/6P1/4K2B w - - 0 3",
+                      "balance": 2,
+                      "flags": {
+                        "mate": false,
+                        "stalemate": false,
+                        "insufficient": false,
+                        "fifty": false,
+                        "threefold": false
+                      }
+                    },
+                    "legal": [
+                      {
+                        "move": "e1d1",
+                        "san": "Kd1",
+                        "from": "e1",
+                        "to": "d1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e1d2",
+                        "san": "Kd2",
+                        "from": "e1",
+                        "to": "d2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e1e2",
+                        "san": "Ke2",
+                        "from": "e1",
+                        "to": "e2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e1f1",
+                        "san": "Kf1",
+                        "from": "e1",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "move": "e1d1",
+                        "san": "Kd1",
+                        "from": "e1",
+                        "to": "d1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/3K3B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e1d2",
+                        "san": "Kd2",
+                        "from": "e1",
+                        "to": "d2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/3K2P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e1e2",
+                        "san": "Ke2",
+                        "from": "e1",
+                        "to": "e2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/4K1P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e1f1",
+                        "san": "Kf1",
+                        "from": "e1",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/5K1B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "move": "f1e2",
+                "san": "Ke2",
+                "from": "f1",
+                "to": "e2",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k6/8/1p6/p1n5/P7/6p1/4K1P1/7B b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4"
+                  },
+                  {
+                    "move": "c5a6",
+                    "san": "Na6",
+                    "from": "c5",
+                    "to": "a6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b3",
+                    "san": "Nb3",
+                    "from": "c5",
+                    "to": "b3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b7",
+                    "san": "Nb7",
+                    "from": "c5",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d3",
+                    "san": "Nd3",
+                    "from": "c5",
+                    "to": "d3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d7",
+                    "san": "Nd7",
+                    "from": "c5",
+                    "to": "d7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e4",
+                    "san": "Ne4",
+                    "from": "c5",
+                    "to": "e4",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e6",
+                    "san": "Ne6",
+                    "from": "c5",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": [
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4",
+                    "target": 0,
+                    "state": {
+                      "fen": "1k6/8/1p6/p7/n7/6p1/4K1P1/7B w - - 0 3",
+                      "balance": 2,
+                      "flags": {
+                        "mate": false,
+                        "stalemate": false,
+                        "insufficient": false,
+                        "fifty": false,
+                        "threefold": false
+                      }
+                    },
+                    "legal": [
+                      {
+                        "move": "e2d1",
+                        "san": "Kd1",
+                        "from": "e2",
+                        "to": "d1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2d2",
+                        "san": "Kd2",
+                        "from": "e2",
+                        "to": "d2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2d3",
+                        "san": "Kd3",
+                        "from": "e2",
+                        "to": "d3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2e1",
+                        "san": "Ke1",
+                        "from": "e2",
+                        "to": "e1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2e3",
+                        "san": "Ke3",
+                        "from": "e2",
+                        "to": "e3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2f1",
+                        "san": "Kf1",
+                        "from": "e2",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      },
+                      {
+                        "move": "e2f3",
+                        "san": "Kf3",
+                        "from": "e2",
+                        "to": "f3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "move": "e2d1",
+                        "san": "Kd1",
+                        "from": "e2",
+                        "to": "d1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/3K3B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2d2",
+                        "san": "Kd2",
+                        "from": "e2",
+                        "to": "d2",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/3K2P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2d3",
+                        "san": "Kd3",
+                        "from": "e2",
+                        "to": "d3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/3K2p1/6P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2e1",
+                        "san": "Ke1",
+                        "from": "e2",
+                        "to": "e1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/4K2B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2e3",
+                        "san": "Ke3",
+                        "from": "e2",
+                        "to": "e3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/4K1p1/6P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2f1",
+                        "san": "Kf1",
+                        "from": "e2",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/5K1B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      },
+                      {
+                        "move": "e2f3",
+                        "san": "Kf3",
+                        "from": "e2",
+                        "to": "f3",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/5Kp1/6P1/7B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "move": "f1g1",
+                "san": "Kg1",
+                "from": "f1",
+                "to": "g1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k6/8/1p6/p1n5/P7/6p1/6P1/6KB b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4"
+                  },
+                  {
+                    "move": "c5a6",
+                    "san": "Na6",
+                    "from": "c5",
+                    "to": "a6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b3",
+                    "san": "Nb3",
+                    "from": "c5",
+                    "to": "b3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5b7",
+                    "san": "Nb7",
+                    "from": "c5",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d3",
+                    "san": "Nd3",
+                    "from": "c5",
+                    "to": "d3",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5d7",
+                    "san": "Nd7",
+                    "from": "c5",
+                    "to": "d7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e4",
+                    "san": "Ne4",
+                    "from": "c5",
+                    "to": "e4",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "c5e6",
+                    "san": "Ne6",
+                    "from": "c5",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": [
+                  {
+                    "move": "c5a4",
+                    "san": "Nxa4",
+                    "from": "c5",
+                    "to": "a4",
+                    "piece": "n",
+                    "captured": "p",
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": "a4",
+                    "target": 0,
+                    "state": {
+                      "fen": "1k6/8/1p6/p7/n7/6p1/6P1/6KB w - - 0 3",
+                      "balance": 2,
+                      "flags": {
+                        "mate": false,
+                        "stalemate": false,
+                        "insufficient": false,
+                        "fifty": false,
+                        "threefold": false
+                      }
+                    },
+                    "legal": [
+                      {
+                        "move": "g1f1",
+                        "san": "Kf1",
+                        "from": "g1",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null
+                      }
+                    ],
+                    "counters": [
+                      {
+                        "move": "g1f1",
+                        "san": "Kf1",
+                        "from": "g1",
+                        "to": "f1",
+                        "piece": "k",
+                        "captured": null,
+                        "promotion": null,
+                        "enPassant": false,
+                        "victim": null,
+                        "state": {
+                          "fen": "1k6/8/1p6/p7/n7/6p1/6P1/5K1B b - - 1 3",
+                          "balance": 2,
+                          "flags": {
+                            "mate": false,
+                            "stalemate": false,
+                            "insufficient": false,
+                            "fifty": false,
+                            "threefold": false
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "move": "b7d8",
+            "san": "Nd8",
+            "from": "b7",
+            "to": "d8",
+            "piece": "n",
+            "captured": null,
+            "promotion": null,
+            "enPassant": false,
+            "victim": null,
+            "state": {
+              "fen": "1k1n4/8/1p6/p7/P7/6p1/6P1/5K1B w - - 1 2",
+              "balance": 1,
+              "flags": {
+                "mate": false,
+                "stalemate": false,
+                "insufficient": false,
+                "fifty": false,
+                "threefold": false
+              }
+            },
+            "checking": false,
+            "contacts": [
+              []
+            ],
+            "legal": [
+              {
+                "move": "f1e1",
+                "san": "Ke1",
+                "from": "f1",
+                "to": "e1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              },
+              {
+                "move": "f1e2",
+                "san": "Ke2",
+                "from": "f1",
+                "to": "e2",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              },
+              {
+                "move": "f1g1",
+                "san": "Kg1",
+                "from": "f1",
+                "to": "g1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null
+              }
+            ],
+            "branches": [
+              {
+                "move": "f1e1",
+                "san": "Ke1",
+                "from": "f1",
+                "to": "e1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k1n4/8/1p6/p7/P7/6p1/6P1/4K2B b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8b7",
+                    "san": "Nb7",
+                    "from": "d8",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8c6",
+                    "san": "Nc6",
+                    "from": "d8",
+                    "to": "c6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8e6",
+                    "san": "Ne6",
+                    "from": "d8",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8f7",
+                    "san": "Nf7",
+                    "from": "d8",
+                    "to": "f7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": []
+              },
+              {
+                "move": "f1e2",
+                "san": "Ke2",
+                "from": "f1",
+                "to": "e2",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k1n4/8/1p6/p7/P7/6p1/4K1P1/7B b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8b7",
+                    "san": "Nb7",
+                    "from": "d8",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8c6",
+                    "san": "Nc6",
+                    "from": "d8",
+                    "to": "c6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8e6",
+                    "san": "Ne6",
+                    "from": "d8",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8f7",
+                    "san": "Nf7",
+                    "from": "d8",
+                    "to": "f7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": []
+              },
+              {
+                "move": "f1g1",
+                "san": "Kg1",
+                "from": "f1",
+                "to": "g1",
+                "piece": "k",
+                "captured": null,
+                "promotion": null,
+                "enPassant": false,
+                "victim": null,
+                "state": {
+                  "fen": "1k1n4/8/1p6/p7/P7/6p1/6P1/6KB b - - 2 2",
+                  "balance": 1,
+                  "flags": {
+                    "mate": false,
+                    "stalemate": false,
+                    "insufficient": false,
+                    "fifty": false,
+                    "threefold": false
+                  }
+                },
+                "targets": [
+                  {
+                    "original": "a4",
+                    "square": "a4",
+                    "type": "p"
+                  }
+                ],
+                "legal": [
+                  {
+                    "move": "b6b5",
+                    "san": "b5",
+                    "from": "b6",
+                    "to": "b5",
+                    "piece": "p",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a7",
+                    "san": "Ka7",
+                    "from": "b8",
+                    "to": "a7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8a8",
+                    "san": "Ka8",
+                    "from": "b8",
+                    "to": "a8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8b7",
+                    "san": "Kb7",
+                    "from": "b8",
+                    "to": "b7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c7",
+                    "san": "Kc7",
+                    "from": "b8",
+                    "to": "c7",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "b8c8",
+                    "san": "Kc8",
+                    "from": "b8",
+                    "to": "c8",
+                    "piece": "k",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8b7",
+                    "san": "Nb7",
+                    "from": "d8",
+                    "to": "b7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8c6",
+                    "san": "Nc6",
+                    "from": "d8",
+                    "to": "c6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8e6",
+                    "san": "Ne6",
+                    "from": "d8",
+                    "to": "e6",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  },
+                  {
+                    "move": "d8f7",
+                    "san": "Nf7",
+                    "from": "d8",
+                    "to": "f7",
+                    "piece": "n",
+                    "captured": null,
+                    "promotion": null,
+                    "enPassant": false,
+                    "victim": null
+                  }
+                ],
+                "attempts": []
+              }
+            ]
+          }
+        ],
+        "claimContexts": [],
+        "nodes": 160,
+        "outpost": {
+          "nodes": 112,
+          "status": "proven",
+          "refutation": null,
+          "events": [
+            {
+              "id": "knight-outpost-proof",
+              "qualityClaim": false,
+              "text": "Outpost: Nc5 has pawn support; no current enemy pawn can reach a square attacking c5 before promoting.",
+              "evidence": {
+                "history": [],
+                "played": {
+                  "move": "b7c5",
+                  "san": "Nc5",
+                  "from": "b7",
+                  "to": "c5",
+                  "piece": "n",
+                  "color": "b",
+                  "captured": null,
+                  "promotion": null,
+                  "before": "1k6/1n6/1p6/p7/P7/6p1/6P1/5K1B b - - 0 1",
+                  "after": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2"
+                },
+                "relativeRank": 4,
+                "legalSupport": {
+                  "counterFen": "1k6/8/1p6/p1N5/P7/6p1/6P1/5K1B b - - 1 2",
+                  "captures": [
+                    {
+                      "move": "b6c5",
+                      "san": "bxc5",
+                      "from": "b6",
+                      "to": "c5",
+                      "piece": "p",
+                      "color": "b",
+                      "captured": "n",
+                      "promotion": null,
+                      "before": "1k6/8/1p6/p1N5/P7/6p1/6P1/5K1B b - - 1 2",
+                      "after": "1k6/8/8/p1p5/P7/6p1/6P1/5K1B w - - 0 3"
+                    }
+                  ]
+                },
+                "graphs": [
+                  {
+                    "pawn": {
+                      "square": "a4",
+                      "color": "w"
+                    },
+                    "nodes": [
+                      {
+                        "square": "a4",
+                        "attacks": [
+                          "b5"
+                        ]
+                      },
+                      {
+                        "square": "a5",
+                        "attacks": [
+                          "b6"
+                        ]
+                      },
+                      {
+                        "square": "a6",
+                        "attacks": [
+                          "b7"
+                        ]
+                      },
+                      {
+                        "square": "a7",
+                        "attacks": [
+                          "b8"
+                        ]
+                      },
+                      {
+                        "square": "b5",
+                        "attacks": [
+                          "a6",
+                          "c6"
+                        ]
+                      },
+                      {
+                        "square": "b6",
+                        "attacks": [
+                          "a7",
+                          "c7"
+                        ]
+                      },
+                      {
+                        "square": "b7",
+                        "attacks": [
+                          "a8",
+                          "c8"
+                        ]
+                      },
+                      {
+                        "square": "c6",
+                        "attacks": [
+                          "b7",
+                          "d7"
+                        ]
+                      },
+                      {
+                        "square": "c7",
+                        "attacks": [
+                          "b8",
+                          "d8"
+                        ]
+                      },
+                      {
+                        "square": "d7",
+                        "attacks": [
+                          "c8",
+                          "e8"
+                        ]
+                      }
+                    ],
+                    "edges": [
+                      {
+                        "from": "a4",
+                        "to": "a5",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "a4",
+                        "to": "b5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "a5",
+                        "to": "a6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "a5",
+                        "to": "b6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "a6",
+                        "to": "a7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "a6",
+                        "to": "b7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "b5",
+                        "to": "a6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "b5",
+                        "to": "b6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "b5",
+                        "to": "c6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "b6",
+                        "to": "a7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "b6",
+                        "to": "b7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "b6",
+                        "to": "c7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "c6",
+                        "to": "b7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "c6",
+                        "to": "c7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "c6",
+                        "to": "d7",
+                        "kind": "capture"
+                      }
+                    ]
+                  },
+                  {
+                    "pawn": {
+                      "square": "g2",
+                      "color": "w"
+                    },
+                    "nodes": [
+                      {
+                        "square": "b7",
+                        "attacks": [
+                          "a8",
+                          "c8"
+                        ]
+                      },
+                      {
+                        "square": "c6",
+                        "attacks": [
+                          "b7",
+                          "d7"
+                        ]
+                      },
+                      {
+                        "square": "c7",
+                        "attacks": [
+                          "b8",
+                          "d8"
+                        ]
+                      },
+                      {
+                        "square": "d5",
+                        "attacks": [
+                          "c6",
+                          "e6"
+                        ]
+                      },
+                      {
+                        "square": "d6",
+                        "attacks": [
+                          "c7",
+                          "e7"
+                        ]
+                      },
+                      {
+                        "square": "d7",
+                        "attacks": [
+                          "c8",
+                          "e8"
+                        ]
+                      },
+                      {
+                        "square": "e4",
+                        "attacks": [
+                          "d5",
+                          "f5"
+                        ]
+                      },
+                      {
+                        "square": "e5",
+                        "attacks": [
+                          "d6",
+                          "f6"
+                        ]
+                      },
+                      {
+                        "square": "e6",
+                        "attacks": [
+                          "d7",
+                          "f7"
+                        ]
+                      },
+                      {
+                        "square": "e7",
+                        "attacks": [
+                          "d8",
+                          "f8"
+                        ]
+                      },
+                      {
+                        "square": "f3",
+                        "attacks": [
+                          "e4",
+                          "g4"
+                        ]
+                      },
+                      {
+                        "square": "f4",
+                        "attacks": [
+                          "e5",
+                          "g5"
+                        ]
+                      },
+                      {
+                        "square": "f5",
+                        "attacks": [
+                          "e6",
+                          "g6"
+                        ]
+                      },
+                      {
+                        "square": "f6",
+                        "attacks": [
+                          "e7",
+                          "g7"
+                        ]
+                      },
+                      {
+                        "square": "f7",
+                        "attacks": [
+                          "e8",
+                          "g8"
+                        ]
+                      },
+                      {
+                        "square": "g2",
+                        "attacks": [
+                          "f3",
+                          "h3"
+                        ]
+                      },
+                      {
+                        "square": "g3",
+                        "attacks": [
+                          "f4",
+                          "h4"
+                        ]
+                      },
+                      {
+                        "square": "g4",
+                        "attacks": [
+                          "f5",
+                          "h5"
+                        ]
+                      },
+                      {
+                        "square": "g5",
+                        "attacks": [
+                          "f6",
+                          "h6"
+                        ]
+                      },
+                      {
+                        "square": "g6",
+                        "attacks": [
+                          "f7",
+                          "h7"
+                        ]
+                      },
+                      {
+                        "square": "g7",
+                        "attacks": [
+                          "f8",
+                          "h8"
+                        ]
+                      },
+                      {
+                        "square": "h3",
+                        "attacks": [
+                          "g4"
+                        ]
+                      },
+                      {
+                        "square": "h4",
+                        "attacks": [
+                          "g5"
+                        ]
+                      },
+                      {
+                        "square": "h5",
+                        "attacks": [
+                          "g6"
+                        ]
+                      },
+                      {
+                        "square": "h6",
+                        "attacks": [
+                          "g7"
+                        ]
+                      },
+                      {
+                        "square": "h7",
+                        "attacks": [
+                          "g8"
+                        ]
+                      }
+                    ],
+                    "edges": [
+                      {
+                        "from": "c6",
+                        "to": "b7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "c6",
+                        "to": "c7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "c6",
+                        "to": "d7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "d5",
+                        "to": "c6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "d5",
+                        "to": "d6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "d5",
+                        "to": "e6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "d6",
+                        "to": "c7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "d6",
+                        "to": "d7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "d6",
+                        "to": "e7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e4",
+                        "to": "d5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e4",
+                        "to": "e5",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "e4",
+                        "to": "f5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e5",
+                        "to": "d6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e5",
+                        "to": "e6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "e5",
+                        "to": "f6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e6",
+                        "to": "d7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "e6",
+                        "to": "e7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "e6",
+                        "to": "f7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f3",
+                        "to": "e4",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f3",
+                        "to": "f4",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "f3",
+                        "to": "g4",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f4",
+                        "to": "e5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f4",
+                        "to": "f5",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "f4",
+                        "to": "g5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f5",
+                        "to": "e6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f5",
+                        "to": "f6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "f5",
+                        "to": "g6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f6",
+                        "to": "e7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "f6",
+                        "to": "f7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "f6",
+                        "to": "g7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g2",
+                        "to": "f3",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g2",
+                        "to": "g3",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "g2",
+                        "to": "g4",
+                        "kind": "double"
+                      },
+                      {
+                        "from": "g2",
+                        "to": "h3",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g3",
+                        "to": "f4",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g3",
+                        "to": "g4",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "g3",
+                        "to": "h4",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g4",
+                        "to": "f5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g4",
+                        "to": "g5",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "g4",
+                        "to": "h5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g5",
+                        "to": "f6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g5",
+                        "to": "g6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "g5",
+                        "to": "h6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g6",
+                        "to": "f7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "g6",
+                        "to": "g7",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "g6",
+                        "to": "h7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "h3",
+                        "to": "g4",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "h3",
+                        "to": "h4",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "h4",
+                        "to": "g5",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "h4",
+                        "to": "h5",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "h5",
+                        "to": "g6",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "h5",
+                        "to": "h6",
+                        "kind": "step"
+                      },
+                      {
+                        "from": "h6",
+                        "to": "g7",
+                        "kind": "capture"
+                      },
+                      {
+                        "from": "h6",
+                        "to": "h7",
+                        "kind": "step"
+                      }
+                    ]
+                  }
+                ],
+                "replies": [
+                  {
+                    "move": "f1e2",
+                    "san": "Ke2",
+                    "from": "f1",
+                    "to": "e2",
+                    "piece": "k",
+                    "color": "w",
+                    "captured": null,
+                    "promotion": null,
+                    "before": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2",
+                    "after": "1k6/8/1p6/p1n5/P7/6p1/4K1P1/7B b - - 2 2",
+                    "knightPresent": true,
+                    "geometricSupport": [
+                      "b6"
+                    ],
+                    "attackingPawns": [],
+                    "check": false,
+                    "checkmate": false,
+                    "stalemate": false,
+                    "draw": false,
+                    "gameOver": false
+                  },
+                  {
+                    "move": "f1g1",
+                    "san": "Kg1",
+                    "from": "f1",
+                    "to": "g1",
+                    "piece": "k",
+                    "color": "w",
+                    "captured": null,
+                    "promotion": null,
+                    "before": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2",
+                    "after": "1k6/8/1p6/p1n5/P7/6p1/6P1/6KB b - - 2 2",
+                    "knightPresent": true,
+                    "geometricSupport": [
+                      "b6"
+                    ],
+                    "attackingPawns": [],
+                    "check": false,
+                    "checkmate": false,
+                    "stalemate": false,
+                    "draw": false,
+                    "gameOver": false
+                  },
+                  {
+                    "move": "f1e1",
+                    "san": "Ke1",
+                    "from": "f1",
+                    "to": "e1",
+                    "piece": "k",
+                    "color": "w",
+                    "captured": null,
+                    "promotion": null,
+                    "before": "1k6/8/1p6/p1n5/P7/6p1/6P1/5K1B w - - 1 2",
+                    "after": "1k6/8/1p6/p1n5/P7/6p1/6P1/4K2B b - - 2 2",
+                    "knightPresent": true,
+                    "geometricSupport": [
+                      "b6"
+                    ],
+                    "attackingPawns": [],
+                    "check": false,
+                    "checkmate": false,
+                    "stalemate": false,
+                    "draw": false,
+                    "gameOver": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "id": "minor-outpost-black",
+  "seconds": 0.029015099999999846,
+  "error": null,
+  "status": "proven",
+  "nodes": 168,
+  "improved": true,
+  "outpost": true
+}
