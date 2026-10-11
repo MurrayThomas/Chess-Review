@@ -1,0 +1,51 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E218",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0280",
+      "scope": "Persistent nonmaterial technical-draw compensation under a complete finite closed quiet-king policy: original unrecovered nominal deficit, active own rook, EVERY enemy nonking unit immobile and king confined, all original nonking units unchanged through EVERY legal defense until actor claim/earlier draw; both colors, not general strategic compensation or best-move quality."
+    },
+    {
+      "id": "C0519",
+      "scope": "Explicitly declared sustainable passive fortress waiting plan with complete legal defense closure, quiet nonchecking king policy and fixed original material/activity/cage invariants; actual actor threefold/fifty claim or earlier draw within recurrence bound, both colors/history/clock controls, no hidden intent or general strategic planning claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E218-passive-compensation-policy/code/check-result.mjs": "0ae32280cc38a7ee791817b2cdbeec9250e1446fee3732a1ebfbedc72796270c",
+    "research/experiments/E218-passive-compensation-policy/code/fixtures.mjs": "52878e27e12d56c84736a7cc2acfeac0895bb5b5f95d22bf9fad4308b9833f7a",
+    "research/experiments/E218-passive-compensation-policy/code/pilot.mjs": "f55496eab39431b6fdf88341702ef16f3a1444f5798b6eed6ff8ff47a214d546",
+    "research/experiments/E218-passive-compensation-policy/code/policy.mjs": "0b0541e779e88b3f349f74a11e0e4e08cea76fe9cf1f64558548f9f95ee84e28",
+    "research/experiments/E218-passive-compensation-policy/code/policy.test.mjs": "81a95f982c524009fba6ea66883a72eea5bdf64ac09b1181f2ec88fab0f5ab88",
+    "research/experiments/E218-passive-compensation-policy/code/record-build.mjs": "0936cfe2976de0aadf4ba6a810bc0be91e250c2dd55078c36824b264f1ceec98",
+    "research/experiments/E218-passive-compensation-policy/code/run-focused.mjs": "c626bd8f335fb9c4dced99ec2c3bd7984c22e9db996f1ea0d84dac5f88799681",
+    "research/experiments/E218-passive-compensation-policy/code/saved.mjs": "60a35a1c476bf6317fd4c7fd6184d7d177da9124784237aee3f85ca225885380",
+    "research/experiments/E218-passive-compensation-policy/plan.md": "f5aeb13485435468ffc188471cd29f3d36915d94d379a1d5668599d0034d4426",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E218-passive-compensation-policy/code/policy.test.mjs (16/16 pass; 2.586 seconds; zero searches)",
+    "six preregistered full-policy admissions independently checked: original0.023seconds, all under2seconds,4vertices/2actorstates,23nodes or17clock nodes",
+    "complete defender/identity/fixed-material/activity/recurrence histories and mutations; strict null controls, default-disabled, exact/short/zero atomic budgets, optional versus automatic claims",
+    "original six observation hashes/source revision audited; valid saved outputs independently replay unchanged after documented null-control hardening, no collection repeated",
+    "rook relocation exposes omitted king escapes; pawn-removal remains a resource, so pawn necessity NOT claimed",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "general strategic/long-term compensation and plan discovery/quality, branching positive policies and broader configurations/materials",
+    "C0908 positional pawn sacrifice remains separately uncredited; no pawn is offered in this policy",
+    "combined cumulative original-occurrence/regression/absence/priority/history/budget semantic integration and changed main/repeat/clean reproductions",
+    "eligible real-game precision, independent human usefulness and separate production promotion"
+  ]
+}

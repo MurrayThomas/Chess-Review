@@ -1,0 +1,379 @@
+{
+  "sourceAmendments": [
+    {
+      "file": "research/experiments/E218-passive-compensation-policy/code/check-result.mjs",
+      "original": "c03994c71598a68479e9b441d7e2c302ae8b7f3e502c2bb3c5ba4ecc452db3e1",
+      "current": "0ae32280cc38a7ee791817b2cdbeec9250e1446fee3732a1ebfbedc72796270c"
+    },
+    {
+      "file": "research/experiments/E218-passive-compensation-policy/code/policy.mjs",
+      "original": "4d69d24c98515446ec503ed0f84f28a1ab1300be028ee9d8bc8880ebd6b98152",
+      "current": "0b0541e779e88b3f349f74a11e0e4e08cea76fe9cf1f64558548f9f95ee84e28"
+    },
+    {
+      "file": "research/experiments/E218-passive-compensation-policy/plan.md",
+      "original": "8a80cf06ead4182436369471912b7b716dac524341d17a5685e8df349347f3cf",
+      "current": "f5aeb13485435468ffc188471cd29f3d36915d94d379a1d5668599d0034d4426"
+    }
+  ],
+  "controls": [
+    {
+      "id": "white-prior0-clock0-rook",
+      "input": {
+        "fen": "rb5k/p1p5/P1P2K2/6P1/6R1/8/8/8 w - - 0 1",
+        "history": {
+          "fen": "rb5k/p1p5/P1P2K2/6P1/6R1/8/8/8 w - - 0 1",
+          "moves": []
+        }
+      },
+      "options": {
+        "enabled": true,
+        "player": "w"
+      },
+      "certificate": {
+        "schema": "passive-fortress-policy-v1",
+        "actor": "w",
+        "root": "rb5k/p1p5/P1P2K2/6P1/6R1/8/8/8 w - -",
+        "states": [
+          {
+            "key": "rb5k/p1p5/P1P2K2/6P1/6R1/8/8/8 w - -",
+            "move": "f6f5",
+            "next": "rb5k/p1p5/P1P5/5KP1/6R1/8/8/8 b - -"
+          },
+          {
+            "key": "rb5k/p1p5/P1P5/5KP1/6R1/8/8/8 b - -",
+            "replies": [
+              {
+                "move": "h8h7",
+                "next": "rb6/p1p4k/P1P5/5KP1/6R1/8/8/8 w - -"
+              }
+            ]
+          },
+          {
+            "key": "rb6/p1p4k/P1P5/5KP1/6R1/8/8/8 w - -",
+            "move": "f5f6",
+            "next": "rb6/p1p4k/P1P2K2/6P1/6R1/8/8/8 b - -"
+          },
+          {
+            "key": "rb6/p1p4k/P1P2K2/6P1/6R1/8/8/8 b - -",
+            "replies": [
+              {
+                "move": "h7h8",
+                "next": "rb5k/p1p5/P1P2K2/6P1/6R1/8/8/8 w - -"
+              }
+            ]
+          }
+        ]
+      },
+      "error": "Incomplete defender inventory",
+      "result": null
+    },
+    {
+      "id": "white-prior0-clock0-pawn",
+      "input": {
+        "fen": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 0 1",
+        "history": {
+          "fen": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 0 1",
+          "moves": []
+        }
+      },
+      "options": {
+        "enabled": true,
+        "player": "w"
+      },
+      "certificate": {
+        "schema": "passive-fortress-policy-v1",
+        "actor": "w",
+        "root": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -",
+        "states": [
+          {
+            "key": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -",
+            "move": "f6f5",
+            "next": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -"
+          },
+          {
+            "key": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -",
+            "replies": [
+              {
+                "move": "h8h7",
+                "next": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -"
+              }
+            ]
+          },
+          {
+            "key": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -",
+            "move": "f5f6",
+            "next": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -"
+          },
+          {
+            "key": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -",
+            "replies": [
+              {
+                "move": "h7h8",
+                "next": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -"
+              }
+            ]
+          }
+        ]
+      },
+      "error": null,
+      "result": {
+        "schema": "E218-passive-compensation",
+        "claims": [
+          "C0280",
+          "C0519"
+        ],
+        "status": "proven",
+        "available": true,
+        "actor": "w",
+        "limit": 5000,
+        "nodes": 23,
+        "qualityClaim": false,
+        "witness": {
+          "actual": {
+            "fen": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 0 1",
+            "history": {
+              "fen": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 0 1",
+              "moves": []
+            }
+          },
+          "certificate": {
+            "schema": "passive-fortress-policy-v1",
+            "actor": "w",
+            "root": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -",
+            "states": [
+              {
+                "key": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -",
+                "move": "f6f5",
+                "next": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -"
+              },
+              {
+                "key": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -",
+                "replies": [
+                  {
+                    "move": "h8h7",
+                    "next": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -"
+                  }
+                ]
+              },
+              {
+                "key": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -",
+                "move": "f5f6",
+                "next": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -"
+              },
+              {
+                "key": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -",
+                "replies": [
+                  {
+                    "move": "h7h8",
+                    "next": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -"
+                  }
+                ]
+              }
+            ]
+          },
+          "material": {
+            "actorBalance": -3,
+            "unrecovered": true,
+            "fixedNonkingUnits": [
+              {
+                "square": "a6",
+                "type": "p",
+                "color": "w"
+              },
+              {
+                "square": "a7",
+                "type": "p",
+                "color": "b"
+              },
+              {
+                "square": "a8",
+                "type": "r",
+                "color": "b"
+              },
+              {
+                "square": "b8",
+                "type": "b",
+                "color": "b"
+              },
+              {
+                "square": "c6",
+                "type": "p",
+                "color": "w"
+              },
+              {
+                "square": "c7",
+                "type": "p",
+                "color": "b"
+              },
+              {
+                "square": "g6",
+                "type": "r",
+                "color": "w"
+              }
+            ]
+          },
+          "states": [
+            {
+              "key": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -",
+              "turn": "w",
+              "move": "f6f5",
+              "next": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -",
+              "rookMoves": [
+                "g6g1",
+                "g6g2",
+                "g6g3",
+                "g6g4",
+                "g6g5",
+                "g6g7"
+              ]
+            },
+            {
+              "key": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - -",
+              "turn": "b",
+              "replies": [
+                {
+                  "move": "h8h7",
+                  "next": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -"
+                }
+              ],
+              "immobileNonkingUnits": [
+                {
+                  "square": "a7",
+                  "type": "p",
+                  "color": "b"
+                },
+                {
+                  "square": "a8",
+                  "type": "r",
+                  "color": "b"
+                },
+                {
+                  "square": "b8",
+                  "type": "b",
+                  "color": "b"
+                },
+                {
+                  "square": "c7",
+                  "type": "p",
+                  "color": "b"
+                }
+              ]
+            },
+            {
+              "key": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -",
+              "turn": "b",
+              "replies": [
+                {
+                  "move": "h7h8",
+                  "next": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - -"
+                }
+              ],
+              "immobileNonkingUnits": [
+                {
+                  "square": "a7",
+                  "type": "p",
+                  "color": "b"
+                },
+                {
+                  "square": "a8",
+                  "type": "r",
+                  "color": "b"
+                },
+                {
+                  "square": "b8",
+                  "type": "b",
+                  "color": "b"
+                },
+                {
+                  "square": "c7",
+                  "type": "p",
+                  "color": "b"
+                }
+              ]
+            },
+            {
+              "key": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - -",
+              "turn": "w",
+              "move": "f5f6",
+              "next": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - -",
+              "rookMoves": [
+                "g6d6",
+                "g6e6",
+                "g6f6",
+                "g6g1",
+                "g6g2",
+                "g6g3",
+                "g6g4",
+                "g6g5",
+                "g6g8"
+              ]
+            }
+          ],
+          "recurrence": {
+            "actorStates": 2,
+            "maxFurtherPlies": 8,
+            "defenses": "every-legal-reply",
+            "goal": "actor-threefold-or-fifty-claim-or-earlier-draw",
+            "claim": "opportunity-not-automatically-awarded"
+          },
+          "sample": {
+            "kind": "one-deterministic-path-not-universal-enumeration",
+            "moves": [
+              {
+                "before": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 0 1",
+                "move": "f6f5",
+                "after": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - - 1 1",
+                "occurrences": 1
+              },
+              {
+                "before": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - - 1 1",
+                "move": "h8h7",
+                "after": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - - 2 2",
+                "occurrences": 1
+              },
+              {
+                "before": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - - 2 2",
+                "move": "f5f6",
+                "after": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - - 3 2",
+                "occurrences": 1
+              },
+              {
+                "before": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - - 3 2",
+                "move": "h7h8",
+                "after": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 4 3",
+                "occurrences": 2
+              },
+              {
+                "before": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 4 3",
+                "move": "f6f5",
+                "after": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - - 5 3",
+                "occurrences": 2
+              },
+              {
+                "before": "rb5k/p1p5/P1P3R1/5K2/8/8/8/8 b - - 5 3",
+                "move": "h8h7",
+                "after": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - - 6 4",
+                "occurrences": 2
+              },
+              {
+                "before": "rb6/p1p4k/P1P3R1/5K2/8/8/8/8 w - - 6 4",
+                "move": "f5f6",
+                "after": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - - 7 4",
+                "occurrences": 2
+              },
+              {
+                "before": "rb6/p1p4k/P1P2KR1/8/8/8/8/8 b - - 7 4",
+                "move": "h7h8",
+                "after": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 8 5",
+                "occurrences": 3
+              }
+            ],
+            "goal": "actor-threefold-claim",
+            "final": "rb5k/p1p5/P1P2KR1/8/8/8/8/8 w - - 8 5"
+          }
+        }
+      }
+    }
+  ]
+}
