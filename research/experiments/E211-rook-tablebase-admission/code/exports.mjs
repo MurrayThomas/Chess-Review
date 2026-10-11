@@ -1,0 +1,3 @@
+export const dataset='T002',originFormat='syzygy-krpvkr-wdl-v1';
+export const exports=Object.entries({KBvK:80,KNvK:80,KPvK:7824,KQRvK:4560,KQRvKR:279824,KQvK:272,KQvKR:20496,KRBvK:2832,KRBvKR:2035280,KRNvK:2320,KRNvKR:1491856,KRPvK:5136,KRPvKR:16378576,KRRvK:1936,KRRvKR:334224,KRvK:208,KRvKB:32912,KRvKN:100048,KRvKP:179408,KRvKR:12944}).map(([material,bytes])=>({name:material+'.rtbw',material,bytes,url:'https://tablebase.lichess.ovh/tables/standard/3-4-5-wdl/'+material+'.rtbw'}));
+export const dir='research/experiments/E211-rook-tablebase-admission',dataDir='research/datasets/T002-syzygy-rook-wdl',registryPath='research/datasets/tablebase-rook-approved-sources.json';

@@ -1,0 +1,28 @@
+{
+  "url": "https://tablebase.lichess.ovh/tables/standard/sha256",
+  "verifiedOn": "2026-10-11",
+  "retrievedAt": "2026-10-11T05:05:37.400Z",
+  "entries": {
+    "KBvK.rtbw": "bc0d8ab3560de9038460f0e8f61e3b7efd3e3d0327d19ae0387c0da7ddeb244d",
+    "KNvK.rtbw": "9d3518b12df3d2006441df758bce31e961346e70a11920aaad75c647003bb6e7",
+    "KPvK.rtbw": "02fd2bdcd92821c869458f019f63524def1c9e7a2862ca8d2b16dc7712b16183",
+    "KQRvK.rtbw": "b018ece9cc195618981b027268f9cca929a1ed4c0bdd739874b7846640ef479a",
+    "KQRvKR.rtbw": "13477ef681468dfb19d09ab8dbeb08d259f9db57a6e5e2c7cdb902880fc2166b",
+    "KQvK.rtbw": "517667dff787162dbb1ed9d5d6484d30ee854e686ee0675c08d99ecf045d2d50",
+    "KQvKR.rtbw": "8cdbe3c8e098037875de5854c656f8afeadb8327c85b5b7b1cac81719afd3e2c",
+    "KRBvK.rtbw": "9e6eced11a37cad71b4fc1a4f62a15e191e58883b51ce8c4c45f341051c6ae8e",
+    "KRBvKR.rtbw": "6343cff1ca9d4026aed57ede37ebd29004d11c9d8ec932351b04b4e8018ce8b9",
+    "KRNvK.rtbw": "4f96cab9fc0005f2679eacb92cec32edf9c932db7bb29b5dc7659be0012d6c35",
+    "KRNvKR.rtbw": "163432941d6f625c093c7291d2045453f712435e906e9d91d371105da96f97c4",
+    "KRPvK.rtbw": "6bc2aa9db5ee7fcc287e6c3b006ab6cfc2be4dff4ae7ca4a524a78520eea61db",
+    "KRPvKR.rtbw": "1100e6deaee14ca9a56b69441208462c02ef45b3f56daa3d75f687eb5cf12319",
+    "KRRvK.rtbw": "4c05ec32e6e43b690d235307de75432a3ceecdbc3d2659d8101ed15b48b8445d",
+    "KRRvKR.rtbw": "7897a69c7ad337adc93aa39c9d22dcf1a5e215908437b36d92db5e4bebf9217e",
+    "KRvK.rtbw": "386fbde73308e49a4207836922c68b30b664e83c5a37f7fa37305a15cd16f2f1",
+    "KRvKB.rtbw": "69b247cb390ffcd729cf5fe5c40f8a24803190bf67b108b8f05b8b08b26a6a72",
+    "KRvKN.rtbw": "a8cde902b010bf6c8763c97d19b5430b422e74db9cb8e9d5e67fa07373c13c5b",
+    "KRvKP.rtbw": "3968c2bfced3a5ecfbb54166ec13d4e7b70f3b03c495af4ae87cad2ec75a0749",
+    "KRvKR.rtbw": "797081b5b3fbac20c4baa5453d68bdae1425b63895f5c9a5ac5c68ea63a97712"
+  },
+  "scope": "Exact20 published checksum lines; no signature or retained whole-index snapshot claimed."
+}
