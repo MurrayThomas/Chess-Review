@@ -1,0 +1,61 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E217",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0092",
+      "scope": "Defensive positional rook-for-bishop sacrifice: EVERY legal acceptance leaves an unrecovered two-point deficit in nonterminal K+B versus K+R with authenticated WDL50 draw, and prescribed quiet king continuation preserves bishop/rook/deficit and nonlosing actor outcome through EVERY legal reply; both colors, no original-position best/necessary or general positional compensation claim."
+    },
+    {
+      "id": "C0907",
+      "scope": "Strategic exchange-sacrifice resource for a declared technical-draw goal with complete forced acceptance domain and quiet unrecovered-material continuation in K+B versus K+R; authenticated WDL50 zero-counter observations at actual FENs, both colors, no arbitrary-clock or long-term general exchange-quality claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
+    "research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs": "c3922383bbb583679f87b23034321ee7545afba0cd0c19c7038a32a4ff7ad034",
+    "research/experiments/E211-rook-tablebase-admission/code/collect-observed.mjs": "a7de9138d08bc3d3860f45598a150afdf11767c5edb1b635c376b58ee175b81b",
+    "research/experiments/E211-rook-tablebase-admission/code/collect.mjs": "b5a46b3f59f54e99f1ccfab207140582a5bffbe76c74539e58f70ca103b44177",
+    "research/experiments/E211-rook-tablebase-admission/code/context.mjs": "6da0974638c556cc6b5b0eb8fffbe735ad7c0fad6fb0e6e079e71b715b4e51ec",
+    "research/experiments/E211-rook-tablebase-admission/code/exports.mjs": "bf9aeb0370116265582f0ddd27abe17ba3b14c8789ffe46f289e6c41de193e09",
+    "research/experiments/E217-defensive-positional-exchange/code/admission.mjs": "110f6bec90ee1d97447eec7134cb7f40bcd7e8319781f10141a7f293ad6409cc",
+    "research/experiments/E217-defensive-positional-exchange/code/check-result.mjs": "ab20fc43f67e92d3777d87093f9e0c6c82c7a84299170be3cc4fe2687f9bce48",
+    "research/experiments/E217-defensive-positional-exchange/code/pilot.mjs": "45da0bfd3243853e35c3aff0df96414f3890cdcb547abd58dd87919524b9eb62",
+    "research/experiments/E217-defensive-positional-exchange/code/record-build.mjs": "694c599c1e54749b9830611a104f498837d0f9b3efd6751de1e8acd5b680cc38",
+    "research/experiments/E217-defensive-positional-exchange/code/resources.mjs": "f086ce7353c0fa3960be652f5984933ccae0bed4d6ef00756efb880e53b4c8c1",
+    "research/experiments/E217-defensive-positional-exchange/code/resources.test.mjs": "10667b91de9bf4461466e3488002f7f200c66732fbc24400c568c479d98d792f",
+    "research/experiments/E217-defensive-positional-exchange/code/run-focused.mjs": "dd7a7a7c7bf77fbfcb60e5d0acafa298b4c7c708192f84a33cd90eed77c524df",
+    "research/experiments/E217-defensive-positional-exchange/plan.md": "2e8dc09cf8fe90212d9626096c2ef12825f9926463fc5f9d2f07cc8846c0f693",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "research/tablebase-rook-data-policy.mjs": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E217-defensive-positional-exchange/code/resources.test.mjs (14/14 pass; 1.999 seconds; zero fresh probes)",
+    "eight guarded V2 panels104position observations, all registered gates pass, each under3seconds; full legal acceptance and quiet-defense coverage",
+    "two independent saved explanations; strict/history/default-disabled/atomic budgets, caller observation forgery, source/branch/material/outcome mutations, ordinary offer and immediate recovery negatives",
+    "exact fixed artifact/current dependency/preregistration and frozen Git observation hashes checked",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "general positional/strategic exchange sacrifice quality, alternate accepting/declining domains and other nonmaterial goals",
+    "C0280 persistent long-term compensation and C0908 positional pawn sacrifice remain uncredited prerequisites",
+    "initial six-piece outcome and best/necessary move comparison; arbitrary-clock/repetition/DTZ adjudication and independent retrograde truth",
+    "combined full regression/semantic/original-occurrence/interaction/priority/history/budget validation and changed main/repeat/clean reproductions",
+    "eligible real-game precision, independent fresh confirmation, human teaching usefulness and separate production promotion"
+  ]
+}

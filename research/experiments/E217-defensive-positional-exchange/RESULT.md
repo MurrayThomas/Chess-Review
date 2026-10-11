@@ -54,8 +54,9 @@ Before indexing, review found the test's exclusive example writer would prevent
 later combined-suite replay once its saved examples already existed. The writer
 was changed to verify existing examples and create only if missing. Initial
 successful checks are retained separately; the small source change justifies one
-fresh focused run, without repeating any tablebase collection. Final timing and
-source fingerprints are recorded in `evidence/focused-checks.json` and provenance.
+fresh focused run, without repeating any tablebase collection. Final14checks pass
+in1.999seconds with zero fresh probes;29source bindings and exact artifact hashes
+are recorded in `evidence/focused-checks.json` and provenance.
 Checks cover both colors, all acceptance/defense branches, strict/history/getter
 inputs, disabled behavior, atomic exact budgets, source/ledger/frame/outcome
 mutations, ordinary quiet rook moves and immediate bishop-recapture negatives.
