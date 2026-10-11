@@ -1,0 +1,144 @@
+{
+  "schema": "coach-prerequisite-v1",
+  "experiment": "E224",
+  "stage": "declared-competition-context-contract",
+  "coverageCredit": false,
+  "futureClaims": [
+    "C1047",
+    "C1048",
+    "C1049",
+    "C1050",
+    "C1051",
+    "C1052",
+    "C1053",
+    "C1054",
+    "C1055",
+    "C1056",
+    "C1057",
+    "C1058"
+  ],
+  "supportedOccurrences": [
+    {
+      "id": "C1047",
+      "name": "Tournament",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1048",
+      "name": "Round robin",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1049",
+      "name": "Swiss system",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1050",
+      "name": "Knockout",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1051",
+      "name": "Match",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1052",
+      "name": "Tiebreak",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "declared-tie-input-contract",
+      "scope": "Caller-declared ordered numeric values; missing required values leave affected players tied, no authoritative tie-break calculation."
+    },
+    {
+      "id": "C1053",
+      "name": "Tournament standings",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "declared-score-table",
+      "scope": "Exact declared units and transparent ranking groups, never official placement or knockout advancement."
+    },
+    {
+      "id": "C1054",
+      "name": "Title norms",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1055",
+      "name": "Candidate Master",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1056",
+      "name": "FIDE Master",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1057",
+      "name": "International Master",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    },
+    {
+      "id": "C1058",
+      "name": "Grandmaster",
+      "category": "41. Competitive and rating concepts",
+      "disposition": "reported-context-reference",
+      "scope": "Typed format/title/norm report and reference only; authenticity/qualification/approval remain unproved."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/REMOVAL-SUGGESTIONS.md": "a502f139c781cd5113b84106c0b894789f39405dde967d711fa1f59dc47f3b47",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E224-competition-context-support/code/check-result.mjs": "55a1d72289103c381e7a2d91e38e60f996b7c89d9c82ffd0f27d9e961e441658",
+    "research/experiments/E224-competition-context-support/code/contract.mjs": "0fe87963d98a143790ee8de2fbd7d1e0d75960e515f33ce5c49a90b0056c073b",
+    "research/experiments/E224-competition-context-support/code/fixtures.mjs": "df02bcfc627c8106e049cd13670eb4a553a3961b0843730d7099110fd25298f6",
+    "research/experiments/E224-competition-context-support/code/record-support.mjs": "fe3a46f0bd2a6e3f79ba52961ee1b6874d88084b3e49b0e821bd9e166f2b4834",
+    "research/experiments/E224-competition-context-support/code/run-focused.mjs": "3c699bc79884b4b2fd81a044e3302283fe2ea16454d6dcf5973439ffbb45165c",
+    "research/experiments/E224-competition-context-support/code/support.mjs": "201642da6daf722fbce537b0f9771cd08239e9de5067a87a14b4a9f83e9a4140",
+    "research/experiments/E224-competition-context-support/code/support.test.mjs": "a86d001f01ea79c738fae20a4ca0d93fb2ccfdd34f9f0c4f12cf3420a7c72172",
+    "research/experiments/E224-competition-context-support/plan.md": "d22228bcabb9edfa5f02aaf421a667738896a35eed7ce7385237c87fa822870f",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "implemented": "Default-disabled strict reported competition/title/norm context, exact declared-score award ledger and hierarchical supplied tie-value ranking groups; twelve original occurrences, no official placement/champion/title/norm or detector claim.",
+  "focusedChecks": [
+    "node --test research/experiments/E224-competition-context-support/code/support.test.mjs (12/12 pass; 1.513 seconds; no searches)",
+    "18authored observations independently replay unchanged",
+    "played/unplayed/bye/pending/cancelled, custom integer units and multi-game slots; hierarchical resolved/shared/missing ties; all declared formats and unassessed title/norm reports; strict references/duplicates/getters and exact-short-zero caps; source/award/rank/quality forgeries and clones",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "external event/player/report authenticity and real platform adapters",
+    "pairing/format verification, authoritative tie calculations/official placings and knockout/match advancement",
+    "title/norm qualification and awarding, independent practical usefulness and accessibility",
+    "combined original-occurrence/semantic/integration validation and separate production promotion"
+  ]
+}
