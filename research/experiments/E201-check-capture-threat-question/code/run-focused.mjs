@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {readFile,writeFile} from 'node:fs/promises';
+import {gzipSync} from 'node:zlib';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {saved,dir} from './saved.mjs';
+const a=await saved(),inputHashes=await bindings([dir+'/code/question.test.mjs',dir+'/code/run-focused.mjs']),revision=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).stdout.trim(),start=performance.now();
+const args=['--test',dir+'/code/question.test.mjs'],run=spawnSync(process.execPath,args,{encoding:'utf8',windowsHide:true}),seconds=(performance.now()-start)/1000,pass=run.status===0;
+await writeFile(dir+'/evidence/focused-'+(pass?'checks':'failure')+'.json',JSON.stringify({command:'node '+args.join(' '),preregisteredRevision:revision,exitCode:run.status,seconds,node:process.version,datasetReceipt:a.receipt,inputHashes,archives:a.hashes,refs:a.rows.map(r=>({id:r.id,...r.ref})),freshQueries:a.freshQueries,freshPanels:a.freshPanels,freshNodes:a.freshNodes,stdout:run.stdout,stderr:run.stderr},null,2)+'\n');
+if(!pass)await writeFile(dir+'/evidence/failed-test-source.json.gz',gzipSync(JSON.stringify({path:dir+'/code/question.test.mjs',source:await readFile(dir+'/code/question.test.mjs','utf8')})+'\n'));
+console.log(run.stdout);console.error(run.stderr);assert.equal(run.status,0);console.log(JSON.stringify({seconds,roles:a.rows.length,freshNodes:a.freshNodes}));
