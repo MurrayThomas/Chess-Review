@@ -1,0 +1,68 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E207",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C1077",
+      "scope": "Can one advantage be transformed into another? Distinct declared material and outcome measures: original positive nominal lead, actual checking original-unit offer, EVERY legal defense captures full offered value and drives original actor balance strictly negative, yet full same-H actor mate survives all defenses; legal same-unit quiet alternative fails that finite goal. Explicit original identity/all endpoint balances/policies/player relation. General transformations and temporary/lasting advantage definitions unresolved."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "package.json": "2e41edb6006876e10c1c02bd95e70a220323fbbd39cfadc4431e57cf7cacd38d",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/PROTOCOL.md": "54982914343c5a8de1c8ed848f718d89dd03026c398726fe274ed8e06da464d3",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E025-pawn-formations/code/formations.mjs": "e1d52eddcd92da7229213fa99e3bfd3bc6ebe1bcb5a4492aacee0c6bdd0a81cf",
+    "research/experiments/E025-pawn-formations/code/selection.mjs": "189e73c5fc6a7f2083cb70644baf1d980f86f32cac281a21a829ccd88c7e70fc",
+    "research/experiments/E026-pin-proofs/code/proofs.mjs": "4e2962a201f90858d7f0d5255d9d718e30449fdae51db2868c4c40e3bc5dade8",
+    "research/experiments/E027-defensive-resources/code/defense.mjs": "43e8d09fe3928793cdea30d00b33fb6538640a1b7903ee12f18c9e074195eeab",
+    "research/experiments/E028-mating-patterns/code/patterns.mjs": "5655557ef51dcda0688c98b3518408cbe6b509b0e255637257c4f0ea9c1e552e",
+    "research/experiments/E029-forced-mates/code/mates.mjs": "dabf4dac0f0e6cc54eb26783b4ade335a0b37d61ca851e9ded1448a825092228",
+    "research/experiments/E029-forced-mates/code/replay.mjs": "0b9856b7ee87c8b5d42252f4abd0905cc32e514104a6e8a4cbc32d749f63a57e",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E143-forcing-tempo-initiative/code/check-witness.mjs": "a5f79571dbcac1c2f1aff38d3285df1bedbd6babe89ff771d51fe8ddcd18f8d7",
+    "research/experiments/E143-forcing-tempo-initiative/code/panel.mjs": "b6c0d843db9e29b242584095af51f6410aff0551d1b66cd923a5cc1b5ef752db",
+    "research/experiments/E156-piece-objective-effectiveness/code/panel.mjs": "a24c3afdfdc15e49abd2317da640721a9c322073842dda0db56368e870f0f470",
+    "research/experiments/E165-comparative-sacrificial-attack/code/context.mjs": "203bb6b751be8402148b8179deaa854b0e89578c029a7cef5a6f0284e4fdef1b",
+    "research/experiments/E165-comparative-sacrificial-attack/code/derive.mjs": "196da7bb3c430c4d3bd618e50e68d023efe73e916c1fa325bbdafd6e39f3905e",
+    "research/experiments/E165-comparative-sacrificial-attack/code/fixtures.mjs": "fbb24cec1cbd6bc9d3fa06d871f36f3b990d944ed4b922ce8366497da76f94a5",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E207-material-to-mate-transformation/PREREQUISITES.md": "119a0c02f1accc83902982f7f218bf567336870dc5f7e4df0a97ba8426c5f690",
+    "research/experiments/E207-material-to-mate-transformation/code/check-result.mjs": "0ce65fa7bdbd7a586998fc24743a6ae3210c6d96bfa4fe4ebb45320e6cf55d9d",
+    "research/experiments/E207-material-to-mate-transformation/code/record-build.mjs": "bcc02c51e6cdf848c2075271f4d8e326b82c7cb18cdc63910a9158f6af86a1ad",
+    "research/experiments/E207-material-to-mate-transformation/code/run-focused.mjs": "e9b3110b2a2f79acb46b9049acf43a2ae61728daeb6f5290bdb1e9a45193e4dd",
+    "research/experiments/E207-material-to-mate-transformation/code/saved.mjs": "02819d5e2e0fbb1a2a6475b07e05348a12eb281db01f993fe241172cc7810a7a",
+    "research/experiments/E207-material-to-mate-transformation/code/transformation.mjs": "cc049794fcf7b26a2ba7b5954f78d3286a735c5dbc517aff3a2ceefa5eef89db",
+    "research/experiments/E207-material-to-mate-transformation/code/transformation.test.mjs": "6aff3051c5f0c1c5ee93af9104b349c1645028456a1a37f46486b5156798bc69",
+    "research/experiments/E207-material-to-mate-transformation/plan.md": "b028d20ccc3874aa5e5944908f195ee43d562972d735caf0166f06d78aa3ff30",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E207-material-to-mate-transformation/code/transformation.test.mjs (21/21 pass; 85.556 seconds;seven reused contexts/14player roles; one retained run)",
+    "both-color forced queen material+5 to-4 with certified mate; no-helper/H1 functional negatives and ordinary nonsacrificial mating attack withhold",
+    "current eligibility/historical receipt identity/exact raw output archive/full collector closure/plan bindings verified; zero fresh panels/search collection",
+    "independent material/identity/all-defense/policy/answer/ledger and source mutations; exact/short/zero atomic caps",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "C1074 durable weakness, C1075 temporary advantage expiry, C1076 conversion before actual disappearance: no ready claims",
+    "equal/down initial material and still-positive post-loss functional matrices; dedicated visited-source claims/threefold/genuine-prefix integration",
+    "combined original-occurrence/support/absence/priority/history/terminal/claim/budget matrices, full inherited replay and changed main/repeat/clean reproductions",
+    "general strategic transformation/compensation, eligible real-game precision, human utility and production promotion"
+  ]
+}
