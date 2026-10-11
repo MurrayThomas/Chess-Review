@@ -33,3 +33,9 @@ originalBudgetVerified:false. E174's independent exact node ledger remains used
 unchanged. Shared-source admission and selected-source/parent-replay limitations
 remain explicit. No new query/search, source rewrite or old budget weakening;
 the new adapter does not assert original E094 accounting passed independent replay.
+
+First focused invocation failed while parsing the test file: one extra closing
+bracket in the source-mutation array. No chess tests executed. Retain initial
+output and compressed original test source; remove only the extra bracket and
+rerun the focused file, justified by the failed parse. Runtime, checker, source
+proofs, fixtures, gates and budgets unchanged. No historical suite/recollection.
