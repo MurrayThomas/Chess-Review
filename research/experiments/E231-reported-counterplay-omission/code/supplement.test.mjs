@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {Chess} from '../../../../lib/chess.js';
+import {saved} from '../../E192-outcome-goal-decisions/code/saved.mjs';
+import {cases} from './fixtures.mjs';
+import {inspectCounterplayOmission as inspect} from './omission.mjs';
+import {checkCounterplayOmission as check} from './check-result.mjs';
+const s=await saved(),on={enabled:true};
+test('winning actual and losing alternative cannot claim omitted counterplay, both colors',()=>{for(const f of cases.filter(c=>c.expected==='proven')){const i=structuredClone(f.input),old=i.decision.move;i.decision.move=i.alternative;i.alternative=old;const c=new Chess(i.decision.fen);c.move(i.decision.move);i.report.fen=c.fen();const p=s.find(i.decision,1).panel,r=inspect(i,on,p);check(i,on,p,r);assert.equal(r.status,'not-established');assert.equal(r.witness,null);assert.equal(r.contexts.actual.witness.actual.role,'actor-mate');assert.equal(r.contexts.alternative.witness.actual.role,'opponent-mate');}});
+test('legal recorded prefix with wrong endpoint cannot borrow saved root evidence',()=>{const i=structuredClone(cases[0].input),p=s.find(i.decision,1).panel;i.decision.history.moves=['g5h5'];assert.throws(()=>inspect(i,on,p));});
