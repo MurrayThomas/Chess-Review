@@ -1,0 +1,79 @@
+{
+  "revision": "5fabe92119ba0e85a0f25e03bcb9ec904a0df365",
+  "meaning": "Authored controlled useful-weak-entry matrix; four exact activity reuses, twelve fresh activity proofs, eighty maintained outpost contracts; saved focused/affected/source evidence and preserved descriptive-count correction; no game data or fresh focused queries",
+  "totals": {
+    "contracts": 80,
+    "materialNodes": 5176,
+    "freshMaterialNodes": 3978,
+    "reusedMaterialNodes": 1198,
+    "postNodes": 2192,
+    "routeNodes": 670,
+    "routeEdges": 1210,
+    "supportCapturesInPositiveCertificates": 18,
+    "actualPostReplies": 100,
+    "usefulEntries": 2
+  },
+  "files": {
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/collection.json.gz": {
+      "bytes": 62019,
+      "sha256": "463a514714e4f127b8157b28cc36760dc3ca4ffcf49f1553841db4325e26ec3e"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/count-correction/correction.json": {
+      "bytes": 10208,
+      "sha256": "47eccc001b9c5f4a3ae711f9f14833d74b4352f2c9dbd9748f400755cf45014d"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/count-correction/original-build-provenance.json": {
+      "bytes": 30290,
+      "sha256": "18030a1da8711dbba16e4da783d65b655c2d9e5cb76ee56965177acef0aef4a2"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/count-correction/original-build.json": {
+      "bytes": 20101,
+      "sha256": "c03691f1df9e9ccd1c4e52500805919df7ffed49a9ceac068646c54f689492e4"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/affected-checks.json": {
+      "bytes": 12176,
+      "sha256": "e014c51287b74650861ff59955298aab52b0ac301a76e333c3b2c699cad304ce"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/build-provenance.json": {
+      "bytes": 41631,
+      "sha256": "0ac0e458fd61413c2e5c9b8c585e307dfd3110f49623000e3acfc02d86ce1507"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/build-status.json": {
+      "bytes": 378,
+      "sha256": "2bc050974ef82bdac8764e4fb83178a46246419803be4366f0d1076f4f05b5de"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/checks.json": {
+      "bytes": 14998,
+      "sha256": "585f8ead5428cd9d812fdc6005b04df93018b3933c0a3c7c5a5c1d8d49198ea1"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/pilot.json.gz": {
+      "bytes": 481966,
+      "sha256": "d4a1bf6198535239fd26d96653d7c151a0fa47c870ab9a4b2d28d1bfd1d16695"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/provenance.json": {
+      "bytes": 13840,
+      "sha256": "957f158bc2a9970ac4bb8a86494a91695b700778d067403b70cd8a46ca17c14f"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/source-checks.json": {
+      "bytes": 10211,
+      "sha256": "7c3518fc962e31238ce9e2385594272137b08a9b0cab7b0a06b4c52e87b19fc8"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/focused/started.json": {
+      "bytes": 12457,
+      "sha256": "01eada860648376decf8ecf9dff7a05a2bdf504d83aeac451e4845a5e5b0de5d"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/partial.json.gz": {
+      "bytes": 62011,
+      "sha256": "443d1fc6f302a0ba4b380053cc413c5f8f499731d82d4496f1267d6ce2c633f6"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/started.json": {
+      "bytes": 21488,
+      "sha256": "62c6f2d94fc815a80b21d2a8c094e94725e9a1816b999c7942172d7eba99617f"
+    },
+    "research/experiments/E266-two-army-useful-weak-squares/evidence/summary.json": {
+      "bytes": 5210,
+      "sha256": "f5aef23ea739f73db208a4cd29700a08f376f5434e57babd3a8bc15c6bb9e64f"
+    }
+  },
+  "totalBytes": 798984
+}
