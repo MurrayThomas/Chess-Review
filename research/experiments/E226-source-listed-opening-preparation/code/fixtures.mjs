@@ -1,0 +1,15 @@
+import {Chess} from '../../../../lib/chess.js';
+export const root=new Chess().fen(),on={enabled:true};
+export const path=(id,moves,role='main')=>({id,moves,role,source:'Authored synthetic book',eventId:'source-'+id});
+export const input=(moves=[],lines=[path('king',['e2e4','e7e5','g1f3']),path('queen',['d2d4','d7d5'],'side')])=>({source:'Synthetic query',eventId:'query-1',book:{id:'authored',version:'1',rootFen:root,lines},query:{rootFen:root,moves}});
+export const report=(id,kind='opening',extra={})=>({id,kind,owner:'Synthetic learner',source:'Declared plan',eventId:'plan-'+id,bookLineIds:['king'],note:'Reported source review only',...extra});
+const endpoint=moves=>{const c=new Chess();for(const m of moves)c.move(m);return c.fen();};
+export const engine=(fen=endpoint(['e2e4']))=>({fen,source:'Authored diagnostic',eventId:'engine-1',engine:{name:'Synthetic',version:'1'},multiPV:1,scorePerspective:'root-side-to-move',frames:[{id:'a',lines:['info depth 3 multipv 1 score cp 12 pv e7e5 g1f3']}]});
+const full=input(['e2e4']);full.repertoire={owner:'Synthetic learner',source:'Declared selection',eventId:'rep-1',lineIds:['queen','king']};full.preparations=[report('opening'),report('opponent','opponent',{opponent:'Synthetic opponent'}),report('computer','computer',{engine:engine()})];
+const transposition=input(['g1f3','g8f6','d2d4','d7d5'],[path('other-order',['d2d4','d7d5','g1f3','g8f6'])]);
+const cycles=Array.from({length:3},()=>['g1f3','g8f6','f3g1','f6g8']).flat();
+const mismatch=input([]);mismatch.query.rootFen=root.replace('0 1','1 1');
+const engineMismatch=structuredClone(full);engineMismatch.preparations[2].engine.fen=endpoint(['e2e4']).replace('0 1','0 2');
+const empty=input([],[]);empty.repertoire={owner:'Learner',source:'Empty selection',eventId:'empty',lineIds:[]};
+const withCaps=(id,v)=>({id,input:v,options:on});
+export const cases=[withCaps('full',full),withCaps('white',input(['e2e4','e7e5'])),withCaps('terminal-line',input(['e2e4','e7e5','g1f3'])),withCaps('departure',input(['e2e4','c7c5'])),withCaps('coverage-end',input(['e2e4','e7e5','g1f3','b8c6'])),withCaps('transposition',transposition),withCaps('root-mismatch',mismatch),withCaps('duplicate-path-roles',input(['e2e4'],[path('a',['e2e4','e7e5']),path('b',['e2e4','e7e5'],'side'),path('short',['e2e4'],'unspecified')])),withCaps('empty',empty),withCaps('claim-declined',input(cycles,[path('cycles',[...cycles,'e2e4'])])),withCaps('engine-mismatch',engineMismatch),withCaps('no-context-computer',{...input(),preparations:[report('computer','computer')]}),withCaps('castling',input(['e2e4','e7e5','g1f3','b8c6','f1c4','g8f6','e1g1'],[path('castle',['e2e4','e7e5','g1f3','b8c6','f1c4','g8f6','e1g1'])])),withCaps('ep',input(['e2e4','a7a6','e4e5','d7d5','e5d6'],[path('ep',['e2e4','a7a6','e4e5','d7d5','e5d6'])]))];
