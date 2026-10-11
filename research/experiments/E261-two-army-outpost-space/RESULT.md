@@ -26,8 +26,9 @@ or budgets adjusted after inspection. Every required legal/quiet inventory,
 failed actor prefix, enemy policy and identity/goal leaf retained physically.
 
 White's supported Nd5 entry survives in the a6 control; the actual Pc6 clamp
-prevents this quiet objective. Black's proposed Nh6–f5–h4 route fails because
-White can play exf5 at the intermediate square. The neutral starting on f5 can
+prevents this quiet objective. Black's proposed Nh6–f5–h4 route admits exf5 in the full legal inventory.
+The retained decisive policy is Na4/Nb6+, leaving no legal pawn-support capture
+in the final counterframe. The neutral starting on f5 can
 escape to h4 immediately; it does not establish safe access from h6. Other
 eligible Black maneuvers fail the bound, with complete actor alternatives and
 counterchoices in the archive. A first recorded enemy king move can be a
