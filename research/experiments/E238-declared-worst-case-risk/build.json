@@ -1,0 +1,55 @@
+{
+  "schema": "coach-build-v1",
+  "experiment": "E238",
+  "stage": "code-ready",
+  "claims": [
+    {
+      "id": "C0797",
+      "scope": "Declared nonprobabilistic worst-case shortfall under caller root/actor-qualified utility, target and loss limit, for exactly two complete finite policies. Every ordinary defense is admitted, unresolved leaves abstain, extra enemy draws conservatively cover incomplete earlier histories/claims; no probability, human tolerance or general strategic risk estimate."
+    },
+    {
+      "id": "C0831",
+      "scope": "Actual certified finite policy meets the declared worst-case loss limit and has strictly smaller worst loss than a distinct same-root/reference policy exceeding that limit. Assessment alone, reversal or a permissive limit does not establish management; no private intent, global optimality or practical chance claim."
+    }
+  ],
+  "inputHashes": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
+    "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+    "research/concepts/ACTIVE-QUEUE.md": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+    "research/concepts/BUILD-FIRST.md": "ffa487057ea319ea537fa5388d593c71bf1025397b6683d79c1aa1bb1d66283d",
+    "research/concepts/catalog.json": "e537ba4fff39501016db6dc015bab1d757d269b5ecafef633cdff4a3eb494477",
+    "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
+    "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
+    "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
+    "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E235-two-result-policy/code/check-result.mjs": "ec46c5cc6b49df43157950d3dcad1b89cc1d278cfecab49e1422f9af380c964e",
+    "research/experiments/E235-two-result-policy/code/contract.mjs": "f92d1390b74f480fddecc325da6e634156ffc8fb365b66080c468f808c77a51c",
+    "research/experiments/E235-two-result-policy/code/fixtures.mjs": "ddb22098b55a9bdf38bf1fc530321ecafb1a5a8b28faecbc343318a80c7dc721",
+    "research/experiments/E235-two-result-policy/code/policy.mjs": "2c3ff316d483fc5190c1d1f0a089035eef52b561b9ebbdbf51aa2a12a2f90680",
+    "research/experiments/E238-declared-worst-case-risk/code/check-result.mjs": "4508b6e4c6fc33fa5a04f65bf3aa11d34d144325d6df75c65c8680b4136f2310",
+    "research/experiments/E238-declared-worst-case-risk/code/contract.mjs": "d625cd143a167931c6b8b2c75380df485366088c2c63da1d21331e385a4b57b9",
+    "research/experiments/E238-declared-worst-case-risk/code/fixtures.mjs": "128e1b69ddff8209916a56a169c416ecb3369aab63dcc68203976de277abe906",
+    "research/experiments/E238-declared-worst-case-risk/code/record-build.mjs": "f2aa40fabf9d3e1c03802f000b467c09cdd9a850faf0dc8d5f5a6eb4b0bc805e",
+    "research/experiments/E238-declared-worst-case-risk/code/risk.mjs": "864cd72d117301320cef5b1d80d86c937b71578eb60412790c0b4efd206c2afb",
+    "research/experiments/E238-declared-worst-case-risk/code/risk.test.mjs": "5d0b20fda3b5070dfa47a26b59a897fe6121ec94dde29cf409da3f38b4538954",
+    "research/experiments/E238-declared-worst-case-risk/code/run-focused.mjs": "8941addf20b0231898ca592847223a010ea154ff3550f2ffb8c337ecf18b005f",
+    "research/experiments/E238-declared-worst-case-risk/plan.md": "49eeb8f86457e9a7e6050fd35b14987d43c3527c3391436dc37e7559950b4f0f",
+    "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
+    "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+    "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
+  },
+  "focusedChecks": [
+    "node --test research/experiments/E238-declared-worst-case-risk/code/risk.test.mjs (11 focused checks)",
+    "npm run verify:source",
+    "git diff --check"
+  ],
+  "deferredChecks": [
+    "combined original occurrence/absence/history/claim/terminal/priority/budget matrices, independent replay/integration",
+    "changed main/repeat/initially clean reproductions at combined freeze",
+    "broader adverse loss policies, adaptive strategies, calibrated practical probability, authenticated utility and full earlier history",
+    "independent chess truth, eligible real-game precision/human usefulness and separate production promotion"
+  ]
+}
