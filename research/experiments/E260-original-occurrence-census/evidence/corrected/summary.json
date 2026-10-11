@@ -1,0 +1,233 @@
+{
+  "revision": "4222fb42c42b41adf8006adca1a59cf3f7d003b2",
+  "counts": {
+    "accepted": 378,
+    "provisional": 534,
+    "support": 127,
+    "prerequisite": 46
+  },
+  "occurrences": 1085,
+  "workingGroups": 1019,
+  "duplicateGroups": 54,
+  "supports": [
+    {
+      "experiment": "E221",
+      "occurrences": 19,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E222",
+      "occurrences": 22,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E223",
+      "occurrences": 10,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E224",
+      "occurrences": 12,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E225",
+      "occurrences": 30,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E226",
+      "occurrences": 11,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E227",
+      "occurrences": 15,
+      "sourceIssues": [
+        {
+          "path": "analysis.js",
+          "reason": "missing"
+        },
+        {
+          "path": "lib/chess.js",
+          "reason": "missing"
+        },
+        {
+          "path": "lib/public-scoring.js",
+          "reason": "missing"
+        },
+        {
+          "path": "research/AGENTS.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/DATA_POLICY.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/PROTOCOL.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/concepts/ACTIVE-QUEUE.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/concepts/BUILD-FIRST.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/concepts/REMOVAL-SUGGESTIONS.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/concepts/catalog.json",
+          "reason": "missing"
+        },
+        {
+          "path": "research/d001-format.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/data-policy.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E020-coach-concepts/code/concepts.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E021-structural-concepts/code/explain.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E021-structural-concepts/code/features.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E022-move-tactics/code/tactics.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E023-broad-tactics/code/tactics.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E024-transitions/code/transitions.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E138-bounded-engine-panels/code/observations.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E210-sustainable-threat-policy/code/rules.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E223-engine-diagnostic-support/code/check-result.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E223-engine-diagnostic-support/code/contract.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E223-engine-diagnostic-support/code/parse.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E223-engine-diagnostic-support/code/support.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/amendment.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/check-result.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/contract.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/fixtures.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/record-support.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/run-amended-checks.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/run-focused.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/saved.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/support.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/code/support.test.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/plan.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/experiments/E227-evaluation-review-support/record-notes.md",
+          "reason": "missing"
+        },
+        {
+          "path": "research/fresh-format.mjs",
+          "reason": "missing"
+        },
+        {
+          "path": "tools/calibration/core.mjs",
+          "reason": "missing"
+        },
+        {
+          "reason": "closure-error",
+          "message": "ENOENT: no such file or directory, open 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\...'"
+        }
+      ]
+    },
+    {
+      "experiment": "E228",
+      "occurrences": 2,
+      "sourceIssues": []
+    },
+    {
+      "experiment": "E229",
+      "occurrences": 6,
+      "sourceIssues": []
+    }
+  ],
+  "codeReadyBatches": 157,
+  "staleBatches": 0,
+  "seconds": 39.22176279999999,
+  "bytes": 158199,
+  "sourceBindings": 25,
+  "sha256": "84f547234cb4c089de51d3524b4ace75e07a3c90a9907b4bd735bbe3713c6b6c",
+  "queries": 0,
+  "readinessCredit": false,
+  "semanticReplay": false
+}
