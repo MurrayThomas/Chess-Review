@@ -1,0 +1,63 @@
+{
+  "revision": "b6fef1324e7767f0d421397325bda3ceedd3518b",
+  "meaning": "Authored synthetic complete original-knight matrix and saved-output/focused/affected/source checks; no game data or fresh focused queries",
+  "totals": {
+    "quietRelocations": 64,
+    "panels": 1530,
+    "capturePolicies": 152,
+    "counterReplies": 1500,
+    "defenses": 1482,
+    "guaranteedPolicies": 8
+  },
+  "files": {
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/collection.json.gz": {
+      "bytes": 42250,
+      "sha256": "00372f3f9c52594b70640489c34096df730df4f6a09f7153c7a1f4e3d67a0935"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/affected-checks.json": {
+      "bytes": 11807,
+      "sha256": "99374eb6b645fa80f21b4ccd1867c96c7b9d739c751e40465d9dea6e410987c8"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/build-provenance.json": {
+      "bytes": 21085,
+      "sha256": "736552c338bbdfe71f9e48372be74a023ba91781768a32552ad34c1970044c9a"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/build-status.json": {
+      "bytes": 378,
+      "sha256": "f9362b40a105e1ed616c318ad35301e42b295aa06993bf5d3b3049dc88637e0b"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/checks.json": {
+      "bytes": 14638,
+      "sha256": "f10b188c4c93a09866d3edcf54c2cc2ac1a1916676b61549cccbd7b647321b98"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/pilot.json.gz": {
+      "bytes": 309334,
+      "sha256": "c2579e310953431ad61be9cac9bb06e61ddd601e98d50390956f4180edac4645"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/provenance.json": {
+      "bytes": 13599,
+      "sha256": "f78f4c36e493f18f880633412c75eca87a99f1a5dcbafc59016eb7b48116e486"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/source-checks.json": {
+      "bytes": 10210,
+      "sha256": "baaf8861cfa7787aa34012e3c86d1a419c5e799711618923e7e4f616f93962b9"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/focused/started.json": {
+      "bytes": 12185,
+      "sha256": "ab6195dde07d15d0b00f8d02a75bf9483651daa0e7019c1892a1549381b0d92c"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/partial.json.gz": {
+      "bytes": 42239,
+      "sha256": "829d8ea0da1f135e727608f0352df89239e7f6a0f881868ae7b88163e2bf0574"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/started.json": {
+      "bytes": 11551,
+      "sha256": "7a0ae0503cd572ebb467b862a82d25cab7cde34a1d7c5dfd5548112a0893543b"
+    },
+    "research/experiments/E265-two-army-useful-knight-activity/evidence/summary.json": {
+      "bytes": 4867,
+      "sha256": "9369815299e1629b7f97a9ea22875592672f46736dccfe001ca58d521313b8bb"
+    }
+  },
+  "totalBytes": 494143
+}

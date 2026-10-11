@@ -1,0 +1,21 @@
+{
+  "acceptedExperiment": "E082",
+  "accepted": 378,
+  "entries": 1085,
+  "provisional": 537,
+  "acceptedOrCandidate": 915,
+  "percent": 84.3,
+  "readyBatches": 160,
+  "staleBatches": 0,
+  "withoutReadyCode": 170,
+  "newBatch": [
+    {
+      "experiment": "E265",
+      "stage": "code-ready",
+      "pendingIds": [
+        "C0891"
+      ],
+      "changedInputs": []
+    }
+  ]
+}

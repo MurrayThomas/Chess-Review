@@ -1,0 +1,257 @@
+{
+  "revision": "218ce844df1702675e972926c056ce5153435938",
+  "rows": 16,
+  "ticks": 4900,
+  "seconds": 1.1848323999999997,
+  "bytes": 42250,
+  "error": null,
+  "incomplete": null,
+  "gates": true,
+  "outcomes": [
+    {
+      "id": "f3-a8-w-original",
+      "eligible": true,
+      "available": true,
+      "expected": true,
+      "successful": [
+        "f3d4",
+        "f3h4"
+      ],
+      "failed": [
+        "f3d2",
+        "f3e1",
+        "f3e5",
+        "f3g1",
+        "f3g5",
+        "f3h2"
+      ],
+      "guaranteedPolicies": 2,
+      "ticks": 405
+    },
+    {
+      "id": "f3-a8-w-reflected",
+      "eligible": true,
+      "available": true,
+      "expected": true,
+      "successful": [
+        "f6d5",
+        "f6h5"
+      ],
+      "failed": [
+        "f6d7",
+        "f6e4",
+        "f6e8",
+        "f6g4",
+        "f6g8",
+        "f6h7"
+      ],
+      "guaranteedPolicies": 2,
+      "ticks": 405
+    },
+    {
+      "id": "f3-a8-b-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "a8b6",
+        "a8c7"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 194
+    },
+    {
+      "id": "f3-a8-b-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "a1b3",
+        "a1c2"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 194
+    },
+    {
+      "id": "f3-g7-w-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "f3d2",
+        "f3d4",
+        "f3e1",
+        "f3e5",
+        "f3g1",
+        "f3g5",
+        "f3h2",
+        "f3h4"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 427
+    },
+    {
+      "id": "f3-g7-w-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "f6d5",
+        "f6d7",
+        "f6e4",
+        "f6e8",
+        "f6g4",
+        "f6g8",
+        "f6h5",
+        "f6h7"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 427
+    },
+    {
+      "id": "f3-g7-b-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "g7e6",
+        "g7e8",
+        "g7h5"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 657
+    },
+    {
+      "id": "f3-g7-b-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "g2e1",
+        "g2e3",
+        "g2h4"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 657
+    },
+    {
+      "id": "h2-a8-w-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "h2f1",
+        "h2f3",
+        "h2g4"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 131
+    },
+    {
+      "id": "h2-a8-w-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "h7f6",
+        "h7f8",
+        "h7g5"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 131
+    },
+    {
+      "id": "h2-a8-b-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "a8b6",
+        "a8c7"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 129
+    },
+    {
+      "id": "h2-a8-b-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "a1b3",
+        "a1c2"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 129
+    },
+    {
+      "id": "h2-g7-w-original",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "h2f1",
+        "h2f3",
+        "h2g4"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 131
+    },
+    {
+      "id": "h2-g7-w-reflected",
+      "eligible": true,
+      "available": false,
+      "expected": false,
+      "successful": [],
+      "failed": [
+        "h7f6",
+        "h7f8",
+        "h7g5"
+      ],
+      "guaranteedPolicies": 0,
+      "ticks": 131
+    },
+    {
+      "id": "h2-g7-b-original",
+      "eligible": true,
+      "available": true,
+      "expected": true,
+      "successful": [
+        "g7e6",
+        "g7h5"
+      ],
+      "failed": [
+        "g7e8"
+      ],
+      "guaranteedPolicies": 2,
+      "ticks": 376
+    },
+    {
+      "id": "h2-g7-b-reflected",
+      "eligible": true,
+      "available": true,
+      "expected": true,
+      "successful": [
+        "g2e3",
+        "g2h4"
+      ],
+      "failed": [
+        "g2e1"
+      ],
+      "guaranteedPolicies": 2,
+      "ticks": 376
+    }
+  ],
+  "sha256": "00372f3f9c52594b70640489c34096df730df4f6a09f7153c7a1f4e3d67a0935"
+}
