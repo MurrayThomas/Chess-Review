@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {writeFile} from 'node:fs/promises';
+import {openResearchData} from '../../../data-policy.mjs';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+const dir='research/experiments/E200-recorded-move-changes',access=await openResearchData(['D001'],{purpose:'test'});
+const inputHashes=await bindings([dir+'/code/changes.test.mjs',dir+'/code/run-focused.mjs']),revision=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).stdout.trim(),start=performance.now();
+const run=spawnSync(process.execPath,['--test',dir+'/code/changes.test.mjs'],{encoding:'utf8',windowsHide:true}),seconds=(performance.now()-start)/1000;
+const path=dir+'/evidence/focused-'+(run.status===0?'checks':'failure')+'.json';
+await writeFile(path,JSON.stringify({command:'node --test '+dir+'/code/changes.test.mjs',preregisteredRevision:revision,exitCode:run.status,seconds,node:process.version,datasetReceipt:access.receipt,inputHashes,authoredSyntheticCases:19,freshQueries:0,stdout:run.stdout,stderr:run.stderr},null,2)+'\n');
+console.log(run.stdout);console.error(run.stderr);assert.equal(run.status,0);console.log(JSON.stringify({seconds,sourceBindings:Object.keys(inputHashes).length}));
