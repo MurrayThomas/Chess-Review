@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {gunzipSync} from 'node:zlib';
+import {spawnSync} from 'node:child_process';
+import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
+import {saved,dir} from './saved.mjs';
+const a=await saved(),baseline=JSON.parse(gunzipSync(await readFile(dir+'/evidence/baseline-repair-sources.json.gz')));
+for(const file of ['controls.mjs','hypothetical.mjs','demands.mjs'])assert.equal(baseline[file],await readFile(dir+'/code/'+file,'utf8'));
+const old='nodes+=source.nodes;if(!source.witness)',fix="assert.notEqual(source.status,'exhausted','Inherited exhaustion must discard its source');";
+assert.equal(baseline['check-result.mjs'].replace(old,fix+old),await readFile(dir+'/code/check-result.mjs','utf8'));
+const tests=await readFile(dir+'/code/questions.test.mjs','utf8');assert.ok(tests.startsWith(baseline['questions.test.mjs']));assert.equal((tests.slice(baseline['questions.test.mjs'].length).match(/test\('/g)||[]).length,1);
+const pattern='atomic checker rejects retained exhausted parent proof',inputHashes=await bindings([dir+'/code/questions.test.mjs',dir+'/code/run-hardening.mjs']),revision=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8',windowsHide:true}).stdout.trim(),start=performance.now(),r=spawnSync(process.execPath,['--test','--test-name-pattern='+pattern,dir+'/code/questions.test.mjs'],{encoding:'utf8',windowsHide:true}),seconds=(performance.now()-start)/1000;
+await writeFile(dir+'/evidence/hardening-'+(r.status===0?'checks':'failure')+'.json',JSON.stringify({command:'node --test --test-name-pattern="'+pattern+'" '+dir+'/code/questions.test.mjs',preregisteredRevision:revision,exitCode:r.status,seconds,node:process.version,datasetReceipt:a.receipt,archives:a.archives,inputHashes,unchangedRuntimeControls:true,singleCheckerAssertion:true,addedChecks:1,freshDiagrams:0,freshFullTrees:0,stdout:r.stdout,stderr:r.stderr},null,2)+'\n');
+console.log(r.stdout);console.error(r.stderr);assert.equal(r.status,0);console.log(JSON.stringify({addedChecks:1,seconds,freshDiagrams:0,freshFullTrees:0}));
