@@ -1,0 +1,13 @@
+{
+  "stage": "before first chess smoke",
+  "failure": "Exact historical/current receipt comparison rejected policySha256 difference",
+  "revision": "16aba2edf90b2f3a53b8cf9f83a8c220f147a6ae",
+  "historicalPolicy": "9e6e2e256958657981c680d3678a07ebf28f94c99c809652453004cf161204b6",
+  "currentPolicy": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+  "historicalGitLF": "9e6e2e256958657981c680d3678a07ebf28f94c99c809652453004cf161204b6",
+  "historicalGitCRLF": "6d5cd8386b48962d173ac025c10833c6870a997e8b725e62670bc2a81c8c0735",
+  "otherReceiptDifferences": [
+    "policySha256"
+  ],
+  "initialLoaderSha256": "a1a45bf491a7f343f89f3bdbe20f1f5b6189b7248f9dec3b4fb8810b2afba0f0"
+}
