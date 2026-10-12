@@ -118,5 +118,27 @@
     "fullOriginAccepted": false,
     "acceptedCredit": 0,
     "next": "Source-review and preregister complete E082 rook-ending segment conditional on E081; all other origins and broader gates remain open"
+  },
+  "acceptedE082ReplayReuse": {
+    "qualification": "evidence/semantic-e082-saved-supplemented/qualification.json",
+    "historicalAcceptedStudy": true,
+    "smokeTests": 55,
+    "savedReplayTests": 269,
+    "rows": 246,
+    "resultReplays": 198,
+    "errorComparisons": 48,
+    "certificates": 136,
+    "legalEvasions": 278,
+    "newSourceInputs": 101,
+    "semanticClosureSources": 86,
+    "historicalOriginalInputs": 309,
+    "historicalSupplements": 3,
+    "retainedRawArtifacts": 20,
+    "inheritedFingerprints": 5456,
+    "parentSemanticReplayRequired": true,
+    "reusedE057ReplayRequired": true,
+    "provisionalOriginCredit": 0,
+    "acceptedCredit": 0,
+    "next": "Source-review authenticated E081 complete direct-attack replay reuse conditional on E080; all remaining origins and broader gates remain open"
   }
 }

@@ -4,6 +4,66 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — accepted E082 whole-result replay reused
+
+2026-10-12. Source review found an existing complete E082 replayer, independently
+inventorying64 squares, classifying exact material/pawn transitions and rebuilding
+all check evasions/full result/ledger/rollback. Reuse it unchanged instead of
+creating a duplicate adapter. Its E081 parent/priority and E057 reused side-proof
+validator remain explicit dependencies; shared Chess is disclosed. E082 is an
+already accepted historical study, NOT an additional one of the171 provisional/
+support origins. Its three accepted factual scopes and original acceptance stay
+unchanged; no new accepted/provisional-origin credit or ancestor truth claim.
+
+First55/55 representative/forgery/budget smoke at51e7cb9 passes12.924seconds.
+Initial saved admission at a1e443e fails38.654seconds before ANY row evaluation:
+new gate wrongly assumed the historical309-input manual manifest was a complete
+recursive import closure. All309 frozen Git inputs and preceding artifact/run
+checks passed, but three transitive loader/core files were absent from that vector.
+Dated supplement amendment separately authenticates exactly d001-format.mjs,
+fresh-format.mjs and calibration/core.mjs at historical2859af1 and current/full
+freeze. All three hashes match. Original309-vector stays unmodified;83 replay
+closure paths match it, the remaining3 have exact separate historical identities.
+The sole current vector difference remains exact ACTIVE-QUEUE metadata outside
+that86-source semantic closure. Additional differences or supplements fail.
+
+Repeat55/55 smoke at61e902f passes12.785seconds under changed new-gate bindings.
+Saved replay atc319ff6 passes269/269checks42.374seconds: ALL246 original rows,
+198saved whole-result replay attempts with198fresh E081 parent comparisons and
+48fresh expected-error evaluations/comparisons. Original130proven rows retain
+136certificates/278legal evasions; all disabled/exhausted/negative/not-live/
+not-applicable states and both-color fixtures remain. No positive recollection.
+Twelve shape/ordering/inheritance mutations,4receipt mutations,3supplement
+corruptions and4raw artifact mutations also reject. Smoke covers25whole-result
+forgeries,3exhaustive integer-budget cases,24representative/both-color cases
+including8promotion evasions, plus strict/default/history/foundation controls.
+
+All six original E082 canonical artifacts authenticate, including5145797-byte
+results SHA6c5f82b0847d3ef2d73b36d64acd43eaaf9f02ef8c0ec2ffb59a281da02d01fd.
+Historical main/repeat/initially-clean manifests match exact2859af1 source,
+309-vector/config/environment/metrics/receipts/output hashes and clean tree.
+All5456ordered inherited complete-result fingerprints and teaching-list hash
+match authenticated E081 evidence. Fingerprint preservation is inheritance
+integrity, not fresh ancestor semantic proof. Existing exact policy-addendum Git
+proof preserves both old/current receipt identities. Historical three-run evidence
+is retained distinctly from pending changed-source combined reproductions.
+
+semantic-e082-saved-supplemented/qualification.json binds101new-source inputs,
+86-source semantic closure,309historical inputs/3supplements, exact metadata
+exception, full/smoke/saved identities and ALL20raw artifacts from four attempts.
+All staged Git blobs byte-exact; failed admission retained. Qualified E083/E084/
+E085 source closures remain unchanged, as do all2658full frozen sources and1624
+canonical inputs. No timeouts/signals/runtime errors/generated files or source/
+canonical changes in passing runs. Source/diff checks pass; no unchanged full
+regression or19-minute historical collection was repeated.
+
+Accepted378/1085 (34.8%),539additional provisional,162ready/0stale,127support,
+41strategic prerequisites and all original1085/duplicate scopes remain unchanged.
+Next concrete step: source-review E081's existing complete direct-attack replayer
+and accepted source/evidence for authenticated reuse conditional on E080. Continue
+the remaining provisional/support origins and broad strategic/human/integration/
+exact reproduction gates. Overall goal remains active and unfinished.
+
 ## Latest semantic boundary — E085 complete move/mate-domain replay passes
 
 2026-10-12. E085 now has a separately qualified whole-result segment conditional
