@@ -4,12 +4,51 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E067 full smoke passed; historical qualification next
+## Latest semantic boundary — E067 historical waiting/reserve results qualified
+
+2026-10-12. Registration359f096/implementation6e8c540;126/126saved checks PASS
+in48.106seconds, within25–120forecast/600cap. ALL104rows:100complete saved results
+with fresh E066 parent outputs,92enabled independent full-tree/frame/history/
+negative-status/budget-ledger oracles,four ABSTRACT illegal-move classifications
+plus fresh /^Illegal move/ failures. Exact historical error messages unavailable.
+56whole-checker certificates (32waiting/24reserve),56separately ordered unchanged
+per-event metadata records and208completed independent query proofs replayed.
+14shape/inheritance/count/ordered-proof,4receipt and4raw rejection controls pass.
+
+Qualification retainedfcf3643 at evidence/semantic-e067-saved-initial/qualification.json.
+83new source inputs;204historical Git/current inputs and58semantic paths inside
+original/current/full freeze, no supplements or current metadata exceptions.
+Frozen c07dd413fa9a7e14a607086515caa6f267e041d6; main/repeat/initially-clean source,
+config, environment, metrics, receipts and physical outputs authenticated, all
+three original working trees empty. Nine canonical originals include the three
+old pilot files.3200ordered E066 fingerprints/teaching identity preserved; byte
+integrity does not establish ancestor semantics. Fixed E083 policy epoch only.
+
+Unchanged7/7pilot+corrected159/159smoke reused. Initial158/159smoke failure retained
+and authenticated against original d97cfea source epoch, corrected against e32e863
+and current77-input closure.20raw Git blobs byte-exact,320,386total bytes including
+139,952new saved-run bytes; no extra candidate/parent/own-count chess collection
+during qualification. Frozen2658sources/1624canonical and18prior qualified
+closures/1543source comparisons unchanged. Source/diff checks pass; all processes
+terminal and no live handle. No new accepted/provisional/support/origin credit.
+Status commands still378/1085accepted (328names/63studies),539provisional pending
+entries/162ready batches/0stale. Full goal remains active.
+
+E067 is qualified only for the bounded historical mechanics above, conditional
+on E066 parent semantics. Direct removed-pawn king-exposure/dead-frame controls,
+global inherited historically-terminal API refusal and E073 original eight/seven-
+edge discrepancy remain OPEN. Next: independent E066 first-queening race whole-
+result/tree/negative/continuation/history/work gate, beginning with a registered
+cheap pilot; preserve all parent/integration dependencies. All171origin combined
+API integration/exact changed-source three reproductions/broader original strategic
+meanings/real-game precision/human usefulness remain OPEN.
+
+## Prior preparation boundary — E067 full smoke passed; historical qualification next
 
 2026-10-12. Registration84d0e0e/implementationd97cfea; first159-test smoke
 retained1a0a2b1:158pass/1fail in36.690seconds,76source inputs/68,401raw bytes.
 The authored repetition control incorrectly expected the whole explanation API
- to refuse historically terminal input. E020 validates terminality from fresh FEN;
+to refuse historically terminal input. E020 validates terminality from fresh FEN;
 E067 reconstructs history and suppresses its own tags as ineligible. This exposes
 an OPEN inherited historical-terminal API refusal issue for combined integration.
 No frozen/shared implementation was changed to hide it.
@@ -18,7 +57,7 @@ Prospective correctioncec8a25/implementatione32e863 checks exact E067 suppressio
 versus fresh-FEN qualification. Corrected159/159 PASS in36.721seconds, within
 35–180forecast/300cap;77source inputs/67,903raw bytes, retainedcc46110.
 Evidence: evidence/semantic-e067-smoke-initial/ and
- evidence/semantic-e067-smoke-repetition-state-corrected/. All ten raw Git blobs
+evidence/semantic-e067-smoke-repetition-state-corrected/. All ten raw Git blobs
 byte-exact; failed vector checked at d97cfea, corrected vector at e32e863/current
 preparation sources. Both attempts retained, no timeout/source/canonical/generated
 changes. Processes terminal; no live handle. Unchanged7/7 pilot reused.
