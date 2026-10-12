@@ -4,7 +4,56 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E069 checking-invasion whole oracle passed
+## Latest semantic boundary — E069 complete checking-invasion results qualified
+
+2026-10-12. Registrationfe368a5/implementation96cb08a; static inspection found
+copied runner expected172rather than registered214tests, corrected331c1f9 before
+first dispatch. No decisive failed run or changed chess source; original commits
+preserved. Saved214/214checks in28.100seconds, within25–100forecast/600cap:
+ALL192saved rows,184complete results/fresh E068 comparisons,176enabled independent
+oracles,eight original ABSTRACT 'Illegal move; explanation refused.' classifications
+plus fresh /^Illegal move/ errors. Exact historic runtime messages unavailable.
+88whole-checker positive certificates (44rook/44queen), PLUS88ordered unchanged
+old per-event metadata comparisons. States88proven80ineligible8disabled8exhausted.
+14shape/inheritance/count/ordered-proof+4receipt+4raw rejection controls passed.
+
+New source-independent bounded-square ray oracle reconstructs history/actual/
+relative entry/direct side check/all legal replies/retained invader/terminals,
+status/node ledger/atomic exhaustion and whole v50/events/inherited fresh E068/
+priorities/comment/disabled identity. Reuses unchanged7/7pilot and230/230smoke;
+source closures andraw prerequisites authenticated before saved payload. Shared
+Chess/E020 validator/E068 parent+priority remain explicit dependencies, not
+independent rule truth/general safe or winning strategic invasion strength.
+No additional candidate/parent/own-count queries during qualification.
+
+Fixed6original artifacts authenticate;2891768-byte results SHA
+66a5d69986143bff0ea7534e6694dd80373d0a3233cc0d0ee45ab1fd3f334513.
+Frozen32068c472dbfd8c4662b5aaf881ec2fb4bebc668:209original Git inputs,
+59old checker/fixtures/E068 semantic paths match original/current/fullfreeze;
+NO supplements/current metadata differences. Main/repeat/initially-clean ALLempty.
+Three manifests match source/config/environment/metrics/receipts/physical outputs.
+Fixed-ownership policy epoch,3412ordered E068 fingerprints and teaching identity
+verify integrity, not ancestor semantics. Complete admission emitted before rows.
+15pilot/smoke/saved raw Git blobs byte-exact;16prior qualified source closures
+unchanged, E073 original eight/seven-edge documentary contradiction still open.
+
+[evidence/semantic-e069-saved-initial/qualification.json](evidence/semantic-e069-saved-initial/qualification.json)
+binds82new inputs/59old semantic paths/209historical inputs/15raw artifacts and
+all row counters/provenance distinctions. Frozen2658sources/1624canonical unchanged.
+Existing accepted subset reused,0new accepted/provisional/support/origin credit;
+no production/push/general strategic/human usefulness claim. Prior preparation
+boundary below remains historical, superseded only for saved-replay completion.
+
+Next: E068 checking rook swings after immediately preceding own rook lift,
+conditional on E067. Initial source audit: original per-event history/lift/direct
+file-ray/reply checker exists, no whole-result checker; implement independent
+complete eligibility/ledger/presence/inheritance/selection validation. Preserve
+its enabled-no-history single tick versus history replay+actual tick behavior,
+not E069's always-replayed actual contract. All171-origin combined API integration,
+changed-source three reproductions, broader strategic meanings and real-game/
+human usefulness remain open; full goal active.
+
+## Prior preparation boundary — E069 checking-invasion whole oracle passed
 
 2026-10-12. Previous goal turn made progress qualifying E070. Registration
 0e41c95/implementationb1bc506:7/7pilot in9.133seconds,73inputs/44,285raw bytes,
