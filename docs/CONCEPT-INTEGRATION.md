@@ -2,9 +2,11 @@
 
 The main Concepts panel has **All concepts** and **Coach reply** views. Both use
 one optional local worker and the same selected-move cache. All concepts shows
-matched findings, not the catalog. Evidence and scope expands the exact original
+matched findings from enabled groups, not the catalog. Evidence and scope expands the exact original
 explanation, research status, bounded observation and available supporting details.
-The Settings → Concepts inspector retains game-wide cost and abstention reports.
+Settings → Concepts uses the same compact rows and accordion sections as Visual
+and Engine. It contains cost-ordered group checkboxes, Fast/All presets, and
+collapsed selected-position diagnostics rather than a duplicate finding list.
 
 ## What is available
 
@@ -88,22 +90,44 @@ identity and never rewritten by the integration generator. Research files and
 frozen evidence are not modified. Browser assertions fail closed on unsupported
 certificate objects; checker data remain plain JSON.
 
-The runtime calls the existing E080 parent once and binds each new stage to the
+Each controlled pass calls the existing E080 parent once and binds each new stage to the
 completed parent for the identical full controlled input, including flags, budgets
 and declared goals. Different-control or different-position calls
 retain the original parent behavior. This avoids rerunning the entire cumulative
-chain for every stage. Each optional search uses a 4,000-node cap; proofs and
+chain for every stage. Enabled bounded searches retain a 4,000-node cap; cheap checkpoints use reduced budgets; proofs and
 prerequisite checks retain their source semantics. Later inspectors reuse complete
 panels where available. Summaries retain compact ownership and details, not trees.
+
+The default Fast profile enables attacks/lines/placement, pawn/board features,
+recorded routes/development tempo and immediate checks/mating warnings. Tactical
+proofs, pawn races/endgame policies, detailed positional comparisons and complete
+candidate/objective policies are opt-in. All keeps the complete P003 collection
+available with its existing bounds. Cost labels are relative work classes, not
+promised durations. Actual work varies with legal branching, material and history.
+Cheap baseline rules, structural and development observations remain available;
+checkboxes control the additional detector families and their expensive searches.
+Disabled groups are explicitly identified and are not treated as absent findings.
+
+Unvisited moves consume no detector work. The selected move starts immediately;
+navigation terminates unfinished work for the previous move, retaining its partial
+observations until it is revisited. Completed entries are reused. At the starting
+position and during practice, no selected concept job runs. The Fast profile runs
+one controlled baseline, publishes successor checks/mates and recorded changes,
+then runs only enabled stages. Heavy profiles retain a cheap first checkpoint
+before the detailed parent searches. Successor bounded panels are only collected
+when the complete-policy group is enabled. Player/color and view changes reuse
+results; the normalized group selection is part of the input/cache key.
 
 Fast stages publish at most every 125ms, and expensive stages renew the existing
 five-second inactivity watchdog. A stalled stage is terminated with prior validated
 findings retained and unfinished work explicitly unavailable. Such errors are not
-cached as successful absence. Selected navigation renders immediately and queued
-selected inputs retain existing priority. Disable/game replacement terminates the
+cached as successful absence. Selected navigation renders immediately and preempts unfinished work. Disable/game replacement terminates the
 worker; stale worker/key callbacks cannot update the new selection. Cache keys
-include exact history and source/profile identity; changing player or view reuses
+include exact history, enabled groups and source/profile identity; changing player or view reuses
 the same analysis. The UI thread does not import the detector collection.
 
 See [P003](../research/promotions/P003-concept-integration.md) for the adoption
 decision, checks, limitations and retained evidence links.
+
+See [P004](../research/promotions/P004-concept-performance.md) for the performance
+policy, before/after measurements and validation. Research acceptance is unchanged.
