@@ -104,5 +104,19 @@
     "fullOriginAccepted": false,
     "acceptedCredit": 0,
     "next": "E085 mandatory complete move/mate-domain adapter and saved replay"
+  },
+  "independentE085Segment": {
+    "qualification": "evidence/semantic-e085-saved-initial/qualification.json",
+    "smokeTests": 64,
+    "savedReplayTests": 35,
+    "rows": 19,
+    "sourceInputs": 91,
+    "retainedRawArtifacts": 20,
+    "parentSemanticReplayRequired": true,
+    "parentCommentOrderConditional": true,
+    "sharedChessDependency": true,
+    "fullOriginAccepted": false,
+    "acceptedCredit": 0,
+    "next": "Source-review and preregister complete E082 rook-ending segment conditional on E081; all other origins and broader gates remain open"
   }
 }

@@ -4,6 +4,58 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — E085 complete move/mate-domain replay passes
+
+2026-10-12. E085 now has a separately qualified whole-result segment conditional
+on E084 parent semantics and its internal winning-comment order. The new adapter
+rebuilds child boards from full histories, derives mandatory auxiliary domains,
+all ordered legal move/reply/mate records, exact one-ply proof/reuse, phase-specific
+evidence snapshots, complete events/comment competition and finite work ledger.
+It imports no E085 helper, E029 query, candidate priority or focused checker.
+Chess remains shared. Alternative and hypothetical boards retain the frozen
+prototype's fresh-FEN interpretation; these are not history-complete safety proofs.
+
+Initial64-check smoke at da9df6f retained63pass/1fail26.465seconds: a newly authored
+missing-king FEN throws in the parent before an E085 not-applicable result exists.
+Dated correction uses a valid position and foundation-rejected illegal move;
+corrected64/64 smoke at4426928 passes24.788seconds. Further prospective source
+review normalized the new adapter's history envelope to fen/moves, omitting caller
+metadata as the existing interface does. Extended repetition control and the same
+64/64 smoke atc8cfdad pass24.672seconds. All attempts remain retained.
+
+Controls include all19 original authored/color cases,33 domain/result forgeries,
+three exhaustive integer-budget cases, all promotion/capture-promotion choices,
+en passant, repetition-dependent actual terminal state, checked root, exact parent
+mate-proof reuse, disabled/strict controls, priority boundaries and foundation
+rejection. The original focused checker empirically accepts removal of BOTH
+beforeOpponent and alternatives; the complete adapter rejects this omission.
+
+Saved stage ated748d2 passes35/35checks12.748seconds: ALL19 original saved results,
+19 fresh E084 parent comparisons and19 actual replay attempts,12 report/provenance
+mutations and4 receipt-epoch mutations. No new E085 positive collection for this
+cohort. Fixed84246-byte compressed artifact SHA
+b63bdc0f43c20a6a27e4e99561297d20cda430320487c0c9ad83195e4affecae,
+2075892 decoded bytes, fixed11843-byte retention manifest, all85 original sources,
+fixture order/count and historical/current receipt ownership match. The existing
+exact Git policy-addendum proof preserves both policy identities.
+
+semantic-e085-saved-initial/qualification.json binds full regression, the latest
+64-check smoke,91 separately bound preparation inputs, saved replay and ALL20
+original raw artifacts from four attempts; all staged Git blobs byte-exact.
+Zero source/canonical changes, generated files, timeout, signal or runtime errors
+in passing runs. Original2658-source/1624-canonical freeze and qualified E083/E084
+source closures remain unchanged. Source/diff checks pass. No full rerun required.
+
+All nine E085 original bounded scopes remain provisional; deeper threats, useful
+calculation, psychological interpretations, all parent proofs and broader claims
+remain open. No accepted/tracker/full-origin credit. Accepted378/1085 (34.8%),
+539additional provisional,162 source-ready/0stale,127support and41 strategic
+prerequisites unchanged. Next: source-review and preregister E082's complete
+rook-ending segment, explicitly preserving its accepted historical scope and
+E081 parent requirement, before continuing the remaining171-origin replay.
+Overall goal remains active; integration, exact reproduction and human/strategic
+gates are unfinished.
+
 ## Latest semantic boundary — E084 complete ray-domain replay passes
 
 2026-10-12. This goal turn progresses from437d6d4's E083 segment to a separately

@@ -1,0 +1,239 @@
+# E085-row-audit {"index":0,"id":"missed-mate","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":1,"id":"missed-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":2,"id":"played-mate","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":3,"id":"played-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":4,"id":"quiet","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":5,"id":"quiet-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":6,"id":"old-retained-refuted","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":7,"id":"old-retained-refuted-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":8,"id":"retained-threat","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":9,"id":"retained-threat-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":10,"id":"old-prevented-refuted","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":11,"id":"old-prevented-refuted-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":12,"id":"prevented-threat","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":13,"id":"prevented-threat-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":14,"id":"capture","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":15,"id":"capture-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":16,"id":"underpromotion","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":17,"id":"underpromotion-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E085-row-audit {"index":18,"id":"ep","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: missed-mate
+ok 1 - saved whole row 0: missed-mate
+  ---
+  duration_ms: 74.0808
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: missed-mate-black
+ok 2 - saved whole row 1: missed-mate-black
+  ---
+  duration_ms: 42.87
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: played-mate
+ok 3 - saved whole row 2: played-mate
+  ---
+  duration_ms: 30.6755
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: played-mate-black
+ok 4 - saved whole row 3: played-mate-black
+  ---
+  duration_ms: 34.1693
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: quiet
+ok 5 - saved whole row 4: quiet
+  ---
+  duration_ms: 17.209
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: quiet-black
+ok 6 - saved whole row 5: quiet-black
+  ---
+  duration_ms: 20.8768
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: old-retained-refuted
+ok 7 - saved whole row 6: old-retained-refuted
+  ---
+  duration_ms: 36.7435
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: old-retained-refuted-black
+ok 8 - saved whole row 7: old-retained-refuted-black
+  ---
+  duration_ms: 25.9001
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: retained-threat
+ok 9 - saved whole row 8: retained-threat
+  ---
+  duration_ms: 189.0652
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: retained-threat-black
+ok 10 - saved whole row 9: retained-threat-black
+  ---
+  duration_ms: 175.7347
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: old-prevented-refuted
+ok 11 - saved whole row 10: old-prevented-refuted
+  ---
+  duration_ms: 25.7393
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: old-prevented-refuted-black
+ok 12 - saved whole row 11: old-prevented-refuted-black
+  ---
+  duration_ms: 29.8249
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: prevented-threat
+ok 13 - saved whole row 12: prevented-threat
+  ---
+  duration_ms: 199.3381
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: prevented-threat-black
+ok 14 - saved whole row 13: prevented-threat-black
+  ---
+  duration_ms: 172.9781
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: capture
+ok 15 - saved whole row 14: capture
+  ---
+  duration_ms: 28.4352
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: capture-black
+ok 16 - saved whole row 15: capture-black
+  ---
+  duration_ms: 26.4667
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: underpromotion
+ok 17 - saved whole row 16: underpromotion
+  ---
+  duration_ms: 53.0867
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: underpromotion-black
+ok 18 - saved whole row 17: underpromotion-black
+  ---
+  duration_ms: 54.4928
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: ep
+ok 19 - saved whole row 18: ep
+  ---
+  duration_ms: 12.6381
+  type: 'test'
+  ...
+# Subtest: saved admission rejects schema
+ok 20 - saved admission rejects schema
+  ---
+  duration_ms: 35.1777
+  type: 'test'
+  ...
+# Subtest: saved admission rejects role
+ok 21 - saved admission rejects role
+  ---
+  duration_ms: 34.1309
+  type: 'test'
+  ...
+# Subtest: saved admission rejects missing row
+ok 22 - saved admission rejects missing row
+  ---
+  duration_ms: 32.8388
+  type: 'test'
+  ...
+# Subtest: saved admission rejects duplicate row
+ok 23 - saved admission rejects duplicate row
+  ---
+  duration_ms: 34.7065
+  type: 'test'
+  ...
+# Subtest: saved admission rejects row order
+ok 24 - saved admission rejects row order
+  ---
+  duration_ms: 31.5981
+  type: 'test'
+  ...
+# Subtest: saved admission rejects fixture
+ok 25 - saved admission rejects fixture
+  ---
+  duration_ms: 33.7971
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source hash
+ok 26 - saved admission rejects source hash
+  ---
+  duration_ms: 38.9268
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source omitted
+ok 27 - saved admission rejects source omitted
+  ---
+  duration_ms: 30.4645
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source inserted
+ok 28 - saved admission rejects source inserted
+  ---
+  duration_ms: 30.0258
+  type: 'test'
+  ...
+# Subtest: saved admission rejects receipt
+ok 29 - saved admission rejects receipt
+  ---
+  duration_ms: 35.2224
+  type: 'test'
+  ...
+# Subtest: saved admission rejects result missing
+ok 30 - saved admission rejects result missing
+  ---
+  duration_ms: 34.8841
+  type: 'test'
+  ...
+# Subtest: saved admission rejects error invented
+ok 31 - saved admission rejects error invented
+  ---
+  duration_ms: 31.7549
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 32 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.3942
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 33 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.25
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 34 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.554
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 35 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.2461
+  type: 'test'
+  ...
+1..35
+# tests 35
+# suites 0
+# pass 35
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1684.5193
