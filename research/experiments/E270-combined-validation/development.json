@@ -186,5 +186,20 @@
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
     "next": "Source-review E079 complete central-king result/E039 support-proof reuse conditional on E078; all remaining origins and broader gates remain open"
+  },
+  "acceptedE079ReplayPreparation": {
+    "amendment": "AMENDMENT-e079-accepted-replay-reuse.md",
+    "pilot": "evidence/semantic-e079-pilot-initial/final.json",
+    "pilotTests": 7,
+    "pilotSeconds": 98.6974977,
+    "pilotPassed": true,
+    "pilotEstimateExceeded": true,
+    "smokePending": true,
+    "savedReplayPending": true,
+    "parentSemanticReplayRequired": true,
+    "reusedE039E037TreeCheckersRequired": true,
+    "provisionalOriginCredit": 0,
+    "acceptedCredit": 0,
+    "next": "Run unchanged174-test E079 smoke after admitted pilot; then gated160-test saved replay. All broader gates remain open."
   }
 }

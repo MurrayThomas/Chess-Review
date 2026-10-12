@@ -4,6 +4,34 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Current semantic work — E079 central-king replay pilot passed
+
+2026-10-12. Previous goal turn made progress: E080 whole-result reuse qualified.
+Source review now confirms existing E079 separate scalar attack/ray/inventory,
+complete result/center/support-event/priority/ledger replay, conditional on E078
+parent and E039/E037 support-route checkers. General king safety, whole-game wins
+and broad strategic/human meanings remain open; no new accepted/origin credit.
+
+Prospective amendment98a8f73 and implementation6fc6294 register/bind three stages:
+7-test120-second pilot,174-test900-second full original-case smoke,160-test
+900-second saved stage. The pilot passes7/7 in98.697seconds with no source/
+canonical changes, generated outputs, error/signal/timeout. It validates both
+colors, witness/whole-claim laundering, omitted defender reply, every integer
+basic wrapper budget and direct E039 rejection of incomplete success proof.
+Actual pilot exceeds10–60second estimate but stays under unchanged120second cap;
+no gate changed. Historical support-query work is costlier than earlier wrappers.
+Retain exact logs/source/receipt/PID/cost in evidence/semantic-e079-pilot-initial.
+
+Next start the unchanged174-check smoke against ALL138original cases,30forgeries,
+3integer-budget cases and3strict/history/coverage controls. Pilot cost suggests
+roughly300–750seconds instead of230–650; retain original900-second cap, no
+semantic/source/search changes. Saved stage remains gated; no E079 saved replay
+has yet run. All261historical inputs/72semantic sources,6canonical artifacts,
+5052inherited fingerprints and22certificates/40372replies/164744leaves must still
+pass their registered saved admission/replay gates. Full259-file12017-pass
+regression and preceding E080–E085 qualified closures are reused unchanged.
+All integration/reproduction/strategic/human gates remain open. Goal active.
+
 ## Latest semantic boundary — accepted E080 pawn-shield replay reused
 
 2026-10-12. E080's unchanged whole-result checker is authenticated for reuse

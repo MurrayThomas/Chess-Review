@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot complete positive support-centralization-unblocks-route
+ok 1 - pilot complete positive support-centralization-unblocks-route
+  ---
+  duration_ms: 5295.7222
+  type: 'test'
+  ...
+# Subtest: pilot complete positive support-centralization-unblocks-route-black
+ok 2 - pilot complete positive support-centralization-unblocks-route-black
+  ---
+  duration_ms: 5315.2108
+  type: 'test'
+  ...
+# Subtest: pilot rejects center witness omitted
+ok 3 - pilot rejects center witness omitted
+  ---
+  duration_ms: 8729.964
+  type: 'test'
+  ...
+# Subtest: pilot rejects whole claim omitted and laundered as negative
+ok 4 - pilot rejects whole claim omitted and laundered as negative
+  ---
+  duration_ms: 8634.701
+  type: 'test'
+  ...
+# Subtest: pilot rejects one after defender reply omitted
+ok 5 - pilot rejects one after defender reply omitted
+  ---
+  duration_ms: 10303.8787
+  type: 'test'
+  ...
+# Subtest: pilot every integer wrapper budget
+ok 6 - pilot every integer wrapper budget
+  ---
+  duration_ms: 50090.2911
+  type: 'test'
+  ...
+# Subtest: pilot independent support tree requires every defender reply
+ok 7 - pilot independent support tree requires every defender reply
+  ---
+  duration_ms: 3954.7326
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 92343.8954
