@@ -1,0 +1,394 @@
+TAP version 13
+# Subtest: authored whole result: missed-mate
+ok 1 - authored whole result: missed-mate
+  ---
+  duration_ms: 132.005
+  type: 'test'
+  ...
+# Subtest: authored whole result: missed-mate-black
+ok 2 - authored whole result: missed-mate-black
+  ---
+  duration_ms: 82.8742
+  type: 'test'
+  ...
+# Subtest: authored whole result: played-mate
+ok 3 - authored whole result: played-mate
+  ---
+  duration_ms: 72.3602
+  type: 'test'
+  ...
+# Subtest: authored whole result: played-mate-black
+ok 4 - authored whole result: played-mate-black
+  ---
+  duration_ms: 69.5091
+  type: 'test'
+  ...
+# Subtest: authored whole result: quiet
+ok 5 - authored whole result: quiet
+  ---
+  duration_ms: 19.1646
+  type: 'test'
+  ...
+# Subtest: authored whole result: quiet-black
+ok 6 - authored whole result: quiet-black
+  ---
+  duration_ms: 19.563
+  type: 'test'
+  ...
+# Subtest: authored whole result: old-retained-refuted
+ok 7 - authored whole result: old-retained-refuted
+  ---
+  duration_ms: 50.437
+  type: 'test'
+  ...
+# Subtest: authored whole result: old-retained-refuted-black
+ok 8 - authored whole result: old-retained-refuted-black
+  ---
+  duration_ms: 50.817
+  type: 'test'
+  ...
+# Subtest: authored whole result: retained-threat
+ok 9 - authored whole result: retained-threat
+  ---
+  duration_ms: 305.0579
+  type: 'test'
+  ...
+# Subtest: authored whole result: retained-threat-black
+ok 10 - authored whole result: retained-threat-black
+  ---
+  duration_ms: 283.5238
+  type: 'test'
+  ...
+# Subtest: authored whole result: old-prevented-refuted
+ok 11 - authored whole result: old-prevented-refuted
+  ---
+  duration_ms: 48.1637
+  type: 'test'
+  ...
+# Subtest: authored whole result: old-prevented-refuted-black
+ok 12 - authored whole result: old-prevented-refuted-black
+  ---
+  duration_ms: 57.8882
+  type: 'test'
+  ...
+# Subtest: authored whole result: prevented-threat
+ok 13 - authored whole result: prevented-threat
+  ---
+  duration_ms: 335.7474
+  type: 'test'
+  ...
+# Subtest: authored whole result: prevented-threat-black
+ok 14 - authored whole result: prevented-threat-black
+  ---
+  duration_ms: 360.083
+  type: 'test'
+  ...
+# Subtest: authored whole result: capture
+ok 15 - authored whole result: capture
+  ---
+  duration_ms: 56.2899
+  type: 'test'
+  ...
+# Subtest: authored whole result: capture-black
+ok 16 - authored whole result: capture-black
+  ---
+  duration_ms: 49.8891
+  type: 'test'
+  ...
+# Subtest: authored whole result: underpromotion
+ok 17 - authored whole result: underpromotion
+  ---
+  duration_ms: 103.2473
+  type: 'test'
+  ...
+# Subtest: authored whole result: underpromotion-black
+ok 18 - authored whole result: underpromotion-black
+  ---
+  duration_ms: 95.5272
+  type: 'test'
+  ...
+# Subtest: authored whole result: ep
+ok 19 - authored whole result: ep
+  ---
+  duration_ms: 22.7402
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects root omitted
+ok 20 - mandatory domain rejects root omitted
+  ---
+  duration_ms: 12.6748
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects root move omitted
+ok 21 - mandatory domain rejects root move omitted
+  ---
+  duration_ms: 8.2262
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects root move duplicated
+ok 22 - mandatory domain rejects root move duplicated
+  ---
+  duration_ms: 8.7588
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects root order
+ok 23 - mandatory domain rejects root order
+  ---
+  duration_ms: 8.783
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects move flags
+ok 24 - mandatory domain rejects move flags
+  ---
+  duration_ms: 27.3456
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects check flag
+ok 25 - mandatory domain rejects check flag
+  ---
+  duration_ms: 34.987
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects mate flag
+ok 26 - mandatory domain rejects mate flag
+  ---
+  duration_ms: 31.9371
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects draw flag
+ok 27 - mandatory domain rejects draw flag
+  ---
+  duration_ms: 7.301
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects terminal flag
+ok 28 - mandatory domain rejects terminal flag
+  ---
+  duration_ms: 6.2145
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects root mates omitted
+ok 29 - mandatory domain rejects root mates omitted
+  ---
+  duration_ms: 32.7923
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects actual omitted
+ok 30 - mandatory domain rejects actual omitted
+  ---
+  duration_ms: 7.9263
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects actual replies omitted
+ok 31 - mandatory domain rejects actual replies omitted
+  ---
+  duration_ms: 8.6384
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects actual mates omitted
+ok 32 - mandatory domain rejects actual mates omitted
+  ---
+  duration_ms: 378.9185
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects mandatory beforeOpponent omitted
+ok 33 - mandatory domain rejects mandatory beforeOpponent omitted
+  ---
+  duration_ms: 435.7407
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects all alternatives omitted
+ok 34 - mandatory domain rejects all alternatives omitted
+  ---
+  duration_ms: 1712.6838
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects one alternative omitted
+ok 35 - mandatory domain rejects one alternative omitted
+  ---
+  duration_ms: 888.5403
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects alternative duplicated
+ok 36 - mandatory domain rejects alternative duplicated
+  ---
+  duration_ms: 814.7639
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects alternative order
+ok 37 - mandatory domain rejects alternative order
+  ---
+  duration_ms: 3752.2001
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects mandatory missedProof omitted
+ok 38 - mandatory domain rejects mandatory missedProof omitted
+  ---
+  duration_ms: 32.6879
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects missed mate proof forged
+ok 39 - mandatory domain rejects missed mate proof forged
+  ---
+  duration_ms: 31.9428
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects proof reuse index forged
+ok 40 - mandatory domain rejects proof reuse index forged
+  ---
+  duration_ms: 32.6998
+  type: 'test'
+  ...
+# Subtest: mandatory domain rejects history invented
+ok 41 - mandatory domain rejects history invented
+  ---
+  duration_ms: 7.504
+  type: 'test'
+  ...
+# Subtest: whole result rejects all events omitted
+ok 42 - whole result rejects all events omitted
+  ---
+  duration_ms: 102.7097
+  type: 'test'
+  ...
+# Subtest: whole result rejects event omitted
+ok 43 - whole result rejects event omitted
+  ---
+  duration_ms: 224.5381
+  type: 'test'
+  ...
+# Subtest: whole result rejects event duplicated
+ok 44 - whole result rejects event duplicated
+  ---
+  duration_ms: 30.2499
+  type: 'test'
+  ...
+# Subtest: whole result rejects event order
+ok 45 - whole result rejects event order
+  ---
+  duration_ms: 21.1882
+  type: 'test'
+  ...
+# Subtest: whole result rejects event evidence
+ok 46 - whole result rejects event evidence
+  ---
+  duration_ms: 18.8096
+  type: 'test'
+  ...
+# Subtest: whole result rejects quality claim
+ok 47 - whole result rejects quality claim
+  ---
+  duration_ms: 19.2065
+  type: 'test'
+  ...
+# Subtest: whole result rejects comment
+ok 48 - whole result rejects comment
+  ---
+  duration_ms: 18.1757
+  type: 'test'
+  ...
+# Subtest: whole result rejects status
+ok 49 - whole result rejects status
+  ---
+  duration_ms: 19.3348
+  type: 'test'
+  ...
+# Subtest: whole result rejects nodes
+ok 50 - whole result rejects nodes
+  ---
+  duration_ms: 18.7067
+  type: 'test'
+  ...
+# Subtest: whole result rejects limit
+ok 51 - whole result rejects limit
+  ---
+  duration_ms: 18.9092
+  type: 'test'
+  ...
+# Subtest: whole result rejects inherited fields
+ok 52 - whole result rejects inherited fields
+  ---
+  duration_ms: 18.5289
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: quiet
+ok 53 - every integer budget boundary: quiet
+  ---
+  duration_ms: 236.8442
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: missed-mate
+ok 54 - every integer budget boundary: missed-mate
+  ---
+  duration_ms: 1922.1274
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: played-mate
+ok 55 - every integer budget boundary: played-mate
+  ---
+  duration_ms: 1260.6828
+  type: 'test'
+  ...
+# Subtest: all promotion choices including capture promotions
+ok 56 - all promotion choices including capture promotions
+  ---
+  duration_ms: 552.0661
+  type: 'test'
+  ...
+# Subtest: en passant complete records and cleared hypothetical ep
+ok 57 - en passant complete records and cleared hypothetical ep
+  ---
+  duration_ms: 3.7319
+  type: 'test'
+  ...
+# Subtest: history retained through actual repetition terminal
+ok 58 - history retained through actual repetition terminal
+  ---
+  duration_ms: 237.7969
+  type: 'test'
+  ...
+# Subtest: checked root has no hypothetical opponent frame
+ok 59 - checked root has no hypothetical opponent frame
+  ---
+  duration_ms: 28.595
+  type: 'test'
+  ...
+# Subtest: one-ply parent proof reused exactly without duplicate claim
+ok 60 - one-ply parent proof reused exactly without duplicate claim
+  ---
+  duration_ms: 90.4412
+  type: 'test'
+  ...
+# Subtest: default disabled and strict malformed controls
+ok 61 - default disabled and strict malformed controls
+  ---
+  duration_ms: 20.2964
+  type: 'test'
+  ...
+# Subtest: focused checker alone accepts missing auxiliary frames
+ok 62 - focused checker alone accepts missing auxiliary frames
+  ---
+  duration_ms: 1632.291
+  type: 'test'
+  ...
+# Subtest: priority bands agree at every E085 competition boundary
+ok 63 - priority bands agree at every E085 competition boundary
+  ---
+  duration_ms: 1.3875
+  type: 'test'
+  ...
+# Subtest: not-applicable foundation returns parent with zero new work
+ok 64 - not-applicable foundation returns parent with zero new work
+  ---
+  duration_ms: 4.4124
+  type: 'test'
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17258.502
