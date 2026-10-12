@@ -1,0 +1,1572 @@
+TAP version 13
+# Subtest: original whole result carlsbad-e-completes
+ok 1 - original whole result carlsbad-e-completes
+  ---
+  duration_ms: 72.0379
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-completes-black
+ok 2 - original whole result carlsbad-e-completes-black
+  ---
+  duration_ms: 37.1986
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-completes-mirror
+ok 3 - original whole result carlsbad-e-completes-mirror
+  ---
+  duration_ms: 23.0222
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-completes-mirror-black
+ok 4 - original whole result carlsbad-e-completes-mirror-black
+  ---
+  duration_ms: 23.3123
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-d-completes
+ok 5 - original whole result carlsbad-d-completes
+  ---
+  duration_ms: 40.0462
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-d-completes-black
+ok 6 - original whole result carlsbad-d-completes-black
+  ---
+  duration_ms: 33.5132
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-d-completes-mirror
+ok 7 - original whole result carlsbad-d-completes-mirror
+  ---
+  duration_ms: 22.015
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-d-completes-mirror-black
+ok 8 - original whole result carlsbad-d-completes-mirror-black
+  ---
+  duration_ms: 22.2753
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-capture-completes
+ok 9 - original whole result carlsbad-e-capture-completes
+  ---
+  duration_ms: 40.627
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-capture-completes-black
+ok 10 - original whole result carlsbad-e-capture-completes-black
+  ---
+  duration_ms: 42.3544
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-capture-completes-mirror
+ok 11 - original whole result carlsbad-e-capture-completes-mirror
+  ---
+  duration_ms: 24.6668
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-e-capture-completes-mirror-black
+ok 12 - original whole result carlsbad-e-capture-completes-mirror-black
+  ---
+  duration_ms: 24.0003
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-capture-completes
+ok 13 - original whole result carlsbad-flank-capture-completes
+  ---
+  duration_ms: 38.7267
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-capture-completes-black
+ok 14 - original whole result carlsbad-flank-capture-completes-black
+  ---
+  duration_ms: 38.4822
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-capture-completes-mirror
+ok 15 - original whole result carlsbad-flank-capture-completes-mirror
+  ---
+  duration_ms: 26.0271
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-capture-completes-mirror-black
+ok 16 - original whole result carlsbad-flank-capture-completes-mirror-black
+  ---
+  duration_ms: 25.8516
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-pawns-advanced
+ok 17 - original whole result carlsbad-flank-pawns-advanced
+  ---
+  duration_ms: 32.4387
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-pawns-advanced-black
+ok 18 - original whole result carlsbad-flank-pawns-advanced-black
+  ---
+  duration_ms: 30.6596
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-pawns-advanced-mirror
+ok 19 - original whole result carlsbad-flank-pawns-advanced-mirror
+  ---
+  duration_ms: 20.4511
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-pawns-advanced-mirror-black
+ok 20 - original whole result carlsbad-flank-pawns-advanced-mirror-black
+  ---
+  duration_ms: 20.1788
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-support-pinned
+ok 21 - original whole result carlsbad-own-support-pinned
+  ---
+  duration_ms: 56.6896
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-support-pinned-black
+ok 22 - original whole result carlsbad-own-support-pinned-black
+  ---
+  duration_ms: 52.8608
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-support-pinned-mirror
+ok 23 - original whole result carlsbad-own-support-pinned-mirror
+  ---
+  duration_ms: 49.67
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-support-pinned-mirror-black
+ok 24 - original whole result carlsbad-own-support-pinned-mirror-black
+  ---
+  duration_ms: 51.6907
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-support-pinned
+ok 25 - original whole result carlsbad-enemy-support-pinned
+  ---
+  duration_ms: 39.8474
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-support-pinned-black
+ok 26 - original whole result carlsbad-enemy-support-pinned-black
+  ---
+  duration_ms: 40.4347
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-support-pinned-mirror
+ok 27 - original whole result carlsbad-enemy-support-pinned-mirror
+  ---
+  duration_ms: 38.423
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-support-pinned-mirror-black
+ok 28 - original whole result carlsbad-enemy-support-pinned-mirror-black
+  ---
+  duration_ms: 37.8998
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-no-enemy-support
+ok 29 - original whole result carlsbad-no-enemy-support
+  ---
+  duration_ms: 19
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-no-enemy-support-black
+ok 30 - original whole result carlsbad-no-enemy-support-black
+  ---
+  duration_ms: 19.5738
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-no-enemy-support-mirror
+ok 31 - original whole result carlsbad-no-enemy-support-mirror
+  ---
+  duration_ms: 28.5548
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-no-enemy-support-mirror-black
+ok 32 - original whole result carlsbad-no-enemy-support-mirror-black
+  ---
+  duration_ms: 23.1617
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-ram
+ok 33 - original whole result carlsbad-wrong-ram
+  ---
+  duration_ms: 21.8295
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-ram-black
+ok 34 - original whole result carlsbad-wrong-ram-black
+  ---
+  duration_ms: 19.5775
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-ram-mirror
+ok 35 - original whole result carlsbad-wrong-ram-mirror
+  ---
+  duration_ms: 19.5963
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-ram-mirror-black
+ok 36 - original whole result carlsbad-wrong-ram-mirror-black
+  ---
+  duration_ms: 19.3567
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-c-file-pawn
+ok 37 - original whole result carlsbad-own-c-file-pawn
+  ---
+  duration_ms: 23.7828
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-c-file-pawn-black
+ok 38 - original whole result carlsbad-own-c-file-pawn-black
+  ---
+  duration_ms: 22.2916
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-c-file-pawn-mirror
+ok 39 - original whole result carlsbad-own-c-file-pawn-mirror
+  ---
+  duration_ms: 21.9417
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-own-c-file-pawn-mirror-black
+ok 40 - original whole result carlsbad-own-c-file-pawn-mirror-black
+  ---
+  duration_ms: 22.3432
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-e-file-pawn
+ok 41 - original whole result carlsbad-enemy-e-file-pawn
+  ---
+  duration_ms: 22.4617
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-e-file-pawn-black
+ok 42 - original whole result carlsbad-enemy-e-file-pawn-black
+  ---
+  duration_ms: 24.3364
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-e-file-pawn-mirror
+ok 43 - original whole result carlsbad-enemy-e-file-pawn-mirror
+  ---
+  duration_ms: 22.6907
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-e-file-pawn-mirror-black
+ok 44 - original whole result carlsbad-enemy-e-file-pawn-mirror-black
+  ---
+  duration_ms: 23.5268
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-doubled-flank
+ok 45 - original whole result carlsbad-doubled-flank
+  ---
+  duration_ms: 21.5375
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-doubled-flank-black
+ok 46 - original whole result carlsbad-doubled-flank-black
+  ---
+  duration_ms: 19.6585
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-doubled-flank-mirror
+ok 47 - original whole result carlsbad-doubled-flank-mirror
+  ---
+  duration_ms: 19.8493
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-doubled-flank-mirror-black
+ok 48 - original whole result carlsbad-doubled-flank-mirror-black
+  ---
+  duration_ms: 22.6219
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-too-far
+ok 49 - original whole result carlsbad-flank-too-far
+  ---
+  duration_ms: 20.8333
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-too-far-black
+ok 50 - original whole result carlsbad-flank-too-far-black
+  ---
+  duration_ms: 24.7368
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-too-far-mirror
+ok 51 - original whole result carlsbad-flank-too-far-mirror
+  ---
+  duration_ms: 25.1246
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-flank-too-far-mirror-black
+ok 52 - original whole result carlsbad-flank-too-far-mirror-black
+  ---
+  duration_ms: 22.2829
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-missing-flank
+ok 53 - original whole result carlsbad-missing-flank
+  ---
+  duration_ms: 21.0161
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-missing-flank-black
+ok 54 - original whole result carlsbad-missing-flank-black
+  ---
+  duration_ms: 19.5317
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-missing-flank-mirror
+ok 55 - original whole result carlsbad-missing-flank-mirror
+  ---
+  duration_ms: 18.8142
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-missing-flank-mirror-black
+ok 56 - original whole result carlsbad-missing-flank-mirror-black
+  ---
+  duration_ms: 19.7176
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-core-color
+ok 57 - original whole result carlsbad-wrong-core-color
+  ---
+  duration_ms: 23.0761
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-core-color-black
+ok 58 - original whole result carlsbad-wrong-core-color-black
+  ---
+  duration_ms: 23.5672
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-core-color-mirror
+ok 59 - original whole result carlsbad-wrong-core-color-mirror
+  ---
+  duration_ms: 23.4634
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-wrong-core-color-mirror-black
+ok 60 - original whole result carlsbad-wrong-core-color-mirror-black
+  ---
+  duration_ms: 24.7656
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-quiet
+ok 61 - original whole result carlsbad-preexisting-quiet
+  ---
+  duration_ms: 18.367
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-quiet-black
+ok 62 - original whole result carlsbad-preexisting-quiet-black
+  ---
+  duration_ms: 17.7537
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-quiet-mirror
+ok 63 - original whole result carlsbad-preexisting-quiet-mirror
+  ---
+  duration_ms: 21.4572
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-quiet-mirror-black
+ok 64 - original whole result carlsbad-preexisting-quiet-mirror-black
+  ---
+  duration_ms: 19.528
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-flank-move
+ok 65 - original whole result carlsbad-preexisting-flank-move
+  ---
+  duration_ms: 19.4936
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-flank-move-black
+ok 66 - original whole result carlsbad-preexisting-flank-move-black
+  ---
+  duration_ms: 19.5095
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-flank-move-mirror
+ok 67 - original whole result carlsbad-preexisting-flank-move-mirror
+  ---
+  duration_ms: 21.3318
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-preexisting-flank-move-mirror-black
+ok 68 - original whole result carlsbad-preexisting-flank-move-mirror-black
+  ---
+  duration_ms: 19.3112
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-central-capture-reply
+ok 69 - original whole result carlsbad-enemy-central-capture-reply
+  ---
+  duration_ms: 51.4309
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-central-capture-reply-black
+ok 70 - original whole result carlsbad-enemy-central-capture-reply-black
+  ---
+  duration_ms: 50.1327
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-central-capture-reply-mirror
+ok 71 - original whole result carlsbad-enemy-central-capture-reply-mirror
+  ---
+  duration_ms: 30.4649
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-central-capture-reply-mirror-black
+ok 72 - original whole result carlsbad-enemy-central-capture-reply-mirror-black
+  ---
+  duration_ms: 32.0818
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-piece-pawn-capture
+ok 73 - original whole result carlsbad-enemy-piece-pawn-capture
+  ---
+  duration_ms: 62.3416
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-piece-pawn-capture-black
+ok 74 - original whole result carlsbad-enemy-piece-pawn-capture-black
+  ---
+  duration_ms: 67.6416
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-piece-pawn-capture-mirror
+ok 75 - original whole result carlsbad-enemy-piece-pawn-capture-mirror
+  ---
+  duration_ms: 39.7048
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-enemy-piece-pawn-capture-mirror-black
+ok 76 - original whole result carlsbad-enemy-piece-pawn-capture-mirror-black
+  ---
+  duration_ms: 37.7516
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-terminal-mating-reply
+ok 77 - original whole result carlsbad-terminal-mating-reply
+  ---
+  duration_ms: 158.2463
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-terminal-mating-reply-black
+ok 78 - original whole result carlsbad-terminal-mating-reply-black
+  ---
+  duration_ms: 164.8825
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-terminal-mating-reply-mirror
+ok 79 - original whole result carlsbad-terminal-mating-reply-mirror
+  ---
+  duration_ms: 81.1674
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-terminal-mating-reply-mirror-black
+ok 80 - original whole result carlsbad-terminal-mating-reply-mirror-black
+  ---
+  duration_ms: 97.331
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-disabled
+ok 81 - original whole result carlsbad-disabled
+  ---
+  duration_ms: 20.8196
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-disabled-black
+ok 82 - original whole result carlsbad-disabled-black
+  ---
+  duration_ms: 21.4893
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-disabled-mirror
+ok 83 - original whole result carlsbad-disabled-mirror
+  ---
+  duration_ms: 20.2039
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-disabled-mirror-black
+ok 84 - original whole result carlsbad-disabled-mirror-black
+  ---
+  duration_ms: 21.3026
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-zero-budget
+ok 85 - original whole result carlsbad-zero-budget
+  ---
+  duration_ms: 20.5553
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-zero-budget-black
+ok 86 - original whole result carlsbad-zero-budget-black
+  ---
+  duration_ms: 19.9971
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-zero-budget-mirror
+ok 87 - original whole result carlsbad-zero-budget-mirror
+  ---
+  duration_ms: 32.856
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-zero-budget-mirror-black
+ok 88 - original whole result carlsbad-zero-budget-mirror-black
+  ---
+  duration_ms: 23.2428
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-illegal-pawn-jump
+ok 89 - original whole result carlsbad-illegal-pawn-jump
+  ---
+  duration_ms: 1.0265
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-illegal-pawn-jump-black
+ok 90 - original whole result carlsbad-illegal-pawn-jump-black
+  ---
+  duration_ms: 0.5264
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-illegal-pawn-jump-mirror
+ok 91 - original whole result carlsbad-illegal-pawn-jump-mirror
+  ---
+  duration_ms: 0.4722
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-illegal-pawn-jump-mirror-black
+ok 92 - original whole result carlsbad-illegal-pawn-jump-mirror-black
+  ---
+  duration_ms: 0.4616
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-e-completes
+ok 93 - original whole result hedgehog-e-completes
+  ---
+  duration_ms: 23.1179
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-e-completes-black
+ok 94 - original whole result hedgehog-e-completes-black
+  ---
+  duration_ms: 35.9212
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-e-completes-mirror
+ok 95 - original whole result hedgehog-e-completes-mirror
+  ---
+  duration_ms: 10.3301
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-e-completes-mirror-black
+ok 96 - original whole result hedgehog-e-completes-mirror-black
+  ---
+  duration_ms: 10.8106
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-completes
+ok 97 - original whole result hedgehog-a-completes
+  ---
+  duration_ms: 23.0786
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-completes-black
+ok 98 - original whole result hedgehog-a-completes-black
+  ---
+  duration_ms: 23.8167
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-completes-mirror
+ok 99 - original whole result hedgehog-a-completes-mirror
+  ---
+  duration_ms: 12.4003
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-completes-mirror-black
+ok 100 - original whole result hedgehog-a-completes-mirror-black
+  ---
+  duration_ms: 12.2939
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-b-completes
+ok 101 - original whole result hedgehog-b-completes
+  ---
+  duration_ms: 23.3348
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-b-completes-black
+ok 102 - original whole result hedgehog-b-completes-black
+  ---
+  duration_ms: 22.6446
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-b-completes-mirror
+ok 103 - original whole result hedgehog-b-completes-mirror
+  ---
+  duration_ms: 12.6755
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-b-completes-mirror-black
+ok 104 - original whole result hedgehog-b-completes-mirror-black
+  ---
+  duration_ms: 12.7817
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-d-completes
+ok 105 - original whole result hedgehog-d-completes
+  ---
+  duration_ms: 28.2477
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-d-completes-black
+ok 106 - original whole result hedgehog-d-completes-black
+  ---
+  duration_ms: 20.6313
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-d-completes-mirror
+ok 107 - original whole result hedgehog-d-completes-mirror
+  ---
+  duration_ms: 14.9579
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-d-completes-mirror-black
+ok 108 - original whole result hedgehog-d-completes-mirror-black
+  ---
+  duration_ms: 12.9285
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-capture-completes
+ok 109 - original whole result hedgehog-capture-completes
+  ---
+  duration_ms: 22.4814
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-capture-completes-black
+ok 110 - original whole result hedgehog-capture-completes-black
+  ---
+  duration_ms: 23.57
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-capture-completes-mirror
+ok 111 - original whole result hedgehog-capture-completes-mirror
+  ---
+  duration_ms: 12.0526
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-capture-completes-mirror-black
+ok 112 - original whole result hedgehog-capture-completes-mirror-black
+  ---
+  duration_ms: 11.7574
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-extra-control-captures
+ok 113 - original whole result hedgehog-extra-control-captures
+  ---
+  duration_ms: 29.0793
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-extra-control-captures-black
+ok 114 - original whole result hedgehog-extra-control-captures-black
+  ---
+  duration_ms: 26.3871
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-extra-control-captures-mirror
+ok 115 - original whole result hedgehog-extra-control-captures-mirror
+  ---
+  duration_ms: 12.2108
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-extra-control-captures-mirror-black
+ok 116 - original whole result hedgehog-extra-control-captures-mirror-black
+  ---
+  duration_ms: 12.8669
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-c-context
+ok 117 - original whole result hedgehog-no-c-context
+  ---
+  duration_ms: 9.8785
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-c-context-black
+ok 118 - original whole result hedgehog-no-c-context-black
+  ---
+  duration_ms: 11.34
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-c-context-mirror
+ok 119 - original whole result hedgehog-no-c-context-mirror
+  ---
+  duration_ms: 9.2836
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-c-context-mirror-black
+ok 120 - original whole result hedgehog-no-c-context-mirror-black
+  ---
+  duration_ms: 9.4542
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-e-context
+ok 121 - original whole result hedgehog-no-e-context
+  ---
+  duration_ms: 9.8329
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-e-context-black
+ok 122 - original whole result hedgehog-no-e-context-black
+  ---
+  duration_ms: 10.3102
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-e-context-mirror
+ok 123 - original whole result hedgehog-no-e-context-mirror
+  ---
+  duration_ms: 9.7179
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-no-e-context-mirror-black
+ok 124 - original whole result hedgehog-no-e-context-mirror-black
+  ---
+  duration_ms: 13.0553
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-own-c-file-pawn
+ok 125 - original whole result hedgehog-own-c-file-pawn
+  ---
+  duration_ms: 15.6855
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-own-c-file-pawn-black
+ok 126 - original whole result hedgehog-own-c-file-pawn-black
+  ---
+  duration_ms: 12.9399
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-own-c-file-pawn-mirror
+ok 127 - original whole result hedgehog-own-c-file-pawn-mirror
+  ---
+  duration_ms: 11.8062
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-own-c-file-pawn-mirror-black
+ok 128 - original whole result hedgehog-own-c-file-pawn-mirror-black
+  ---
+  duration_ms: 11.5293
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-enemy-d-file-pawn
+ok 129 - original whole result hedgehog-enemy-d-file-pawn
+  ---
+  duration_ms: 12.1382
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-enemy-d-file-pawn-black
+ok 130 - original whole result hedgehog-enemy-d-file-pawn-black
+  ---
+  duration_ms: 11.7744
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-enemy-d-file-pawn-mirror
+ok 131 - original whole result hedgehog-enemy-d-file-pawn-mirror
+  ---
+  duration_ms: 12.3146
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-enemy-d-file-pawn-mirror-black
+ok 132 - original whole result hedgehog-enemy-d-file-pawn-mirror-black
+  ---
+  duration_ms: 11.8809
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-rank
+ok 133 - original whole result hedgehog-wrong-rank
+  ---
+  duration_ms: 10.7076
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-rank-black
+ok 134 - original whole result hedgehog-wrong-rank-black
+  ---
+  duration_ms: 10.9436
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-rank-mirror
+ok 135 - original whole result hedgehog-wrong-rank-mirror
+  ---
+  duration_ms: 10.3432
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-rank-mirror-black
+ok 136 - original whole result hedgehog-wrong-rank-mirror-black
+  ---
+  duration_ms: 10.221
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-color
+ok 137 - original whole result hedgehog-wrong-color
+  ---
+  duration_ms: 11.0108
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-color-black
+ok 138 - original whole result hedgehog-wrong-color-black
+  ---
+  duration_ms: 11.2809
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-color-mirror
+ok 139 - original whole result hedgehog-wrong-color-mirror
+  ---
+  duration_ms: 11.7409
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-wrong-color-mirror-black
+ok 140 - original whole result hedgehog-wrong-color-mirror-black
+  ---
+  duration_ms: 10.5076
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-occupied-target
+ok 141 - original whole result hedgehog-occupied-target
+  ---
+  duration_ms: 21.0572
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-occupied-target-black
+ok 142 - original whole result hedgehog-occupied-target-black
+  ---
+  duration_ms: 20.1486
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-occupied-target-mirror
+ok 143 - original whole result hedgehog-occupied-target-mirror
+  ---
+  duration_ms: 19.5736
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-occupied-target-mirror-black
+ok 144 - original whole result hedgehog-occupied-target-mirror-black
+  ---
+  duration_ms: 20.3417
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-controller-pinned
+ok 145 - original whole result hedgehog-controller-pinned
+  ---
+  duration_ms: 30.2261
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-controller-pinned-black
+ok 146 - original whole result hedgehog-controller-pinned-black
+  ---
+  duration_ms: 40.4987
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-controller-pinned-mirror
+ok 147 - original whole result hedgehog-controller-pinned-mirror
+  ---
+  duration_ms: 29.4997
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-controller-pinned-mirror-black
+ok 148 - original whole result hedgehog-controller-pinned-mirror-black
+  ---
+  duration_ms: 41.1052
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-controller-pinned
+ok 149 - original whole result hedgehog-a-controller-pinned
+  ---
+  duration_ms: 23.6326
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-controller-pinned-black
+ok 150 - original whole result hedgehog-a-controller-pinned-black
+  ---
+  duration_ms: 23.9542
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-controller-pinned-mirror
+ok 151 - original whole result hedgehog-a-controller-pinned-mirror
+  ---
+  duration_ms: 19.518
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-a-controller-pinned-mirror-black
+ok 152 - original whole result hedgehog-a-controller-pinned-mirror-black
+  ---
+  duration_ms: 19.3931
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-promotion-replies
+ok 153 - original whole result hedgehog-promotion-replies
+  ---
+  duration_ms: 25.8878
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-promotion-replies-black
+ok 154 - original whole result hedgehog-promotion-replies-black
+  ---
+  duration_ms: 24.9785
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-promotion-replies-mirror
+ok 155 - original whole result hedgehog-promotion-replies-mirror
+  ---
+  duration_ms: 12.9236
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-promotion-replies-mirror-black
+ok 156 - original whole result hedgehog-promotion-replies-mirror-black
+  ---
+  duration_ms: 12.7706
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-terminal-promotion-replies
+ok 157 - original whole result hedgehog-terminal-promotion-replies
+  ---
+  duration_ms: 25.072
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-terminal-promotion-replies-black
+ok 158 - original whole result hedgehog-terminal-promotion-replies-black
+  ---
+  duration_ms: 23.6485
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-terminal-promotion-replies-mirror
+ok 159 - original whole result hedgehog-terminal-promotion-replies-mirror
+  ---
+  duration_ms: 13.0003
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-terminal-promotion-replies-mirror-black
+ok 160 - original whole result hedgehog-terminal-promotion-replies-mirror-black
+  ---
+  duration_ms: 11.4728
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-pawn-loss-reply
+ok 161 - original whole result hedgehog-pawn-loss-reply
+  ---
+  duration_ms: 35.9008
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-pawn-loss-reply-black
+ok 162 - original whole result hedgehog-pawn-loss-reply-black
+  ---
+  duration_ms: 39.4001
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-pawn-loss-reply-mirror
+ok 163 - original whole result hedgehog-pawn-loss-reply-mirror
+  ---
+  duration_ms: 17.0238
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-pawn-loss-reply-mirror-black
+ok 164 - original whole result hedgehog-pawn-loss-reply-mirror-black
+  ---
+  duration_ms: 18.2202
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-preexisting-unrelated
+ok 165 - original whole result hedgehog-preexisting-unrelated
+  ---
+  duration_ms: 9.0717
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-preexisting-unrelated-black
+ok 166 - original whole result hedgehog-preexisting-unrelated-black
+  ---
+  duration_ms: 8.9111
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-preexisting-unrelated-mirror
+ok 167 - original whole result hedgehog-preexisting-unrelated-mirror
+  ---
+  duration_ms: 9.2462
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-preexisting-unrelated-mirror-black
+ok 168 - original whole result hedgehog-preexisting-unrelated-mirror-black
+  ---
+  duration_ms: 9.0584
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-actual-mate
+ok 169 - original whole result hedgehog-actual-mate
+  ---
+  duration_ms: 23.3702
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-actual-mate-black
+ok 170 - original whole result hedgehog-actual-mate-black
+  ---
+  duration_ms: 19.9117
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-actual-mate-mirror
+ok 171 - original whole result hedgehog-actual-mate-mirror
+  ---
+  duration_ms: 21.7979
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-actual-mate-mirror-black
+ok 172 - original whole result hedgehog-actual-mate-mirror-black
+  ---
+  duration_ms: 20.5714
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-double-push-en-passant-negative
+ok 173 - original whole result hedgehog-double-push-en-passant-negative
+  ---
+  duration_ms: 19.8143
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-double-push-en-passant-negative-black
+ok 174 - original whole result hedgehog-double-push-en-passant-negative-black
+  ---
+  duration_ms: 23.1681
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-double-push-en-passant-negative-mirror
+ok 175 - original whole result hedgehog-double-push-en-passant-negative-mirror
+  ---
+  duration_ms: 18.2481
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-double-push-en-passant-negative-mirror-black
+ok 176 - original whole result hedgehog-double-push-en-passant-negative-mirror-black
+  ---
+  duration_ms: 20.7499
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-disabled
+ok 177 - original whole result hedgehog-disabled
+  ---
+  duration_ms: 11.72
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-disabled-black
+ok 178 - original whole result hedgehog-disabled-black
+  ---
+  duration_ms: 10.7751
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-disabled-mirror
+ok 179 - original whole result hedgehog-disabled-mirror
+  ---
+  duration_ms: 13.7733
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-disabled-mirror-black
+ok 180 - original whole result hedgehog-disabled-mirror-black
+  ---
+  duration_ms: 10.0665
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-zero-budget
+ok 181 - original whole result hedgehog-zero-budget
+  ---
+  duration_ms: 10.5915
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-zero-budget-black
+ok 182 - original whole result hedgehog-zero-budget-black
+  ---
+  duration_ms: 9.5652
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-zero-budget-mirror
+ok 183 - original whole result hedgehog-zero-budget-mirror
+  ---
+  duration_ms: 10.1086
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-zero-budget-mirror-black
+ok 184 - original whole result hedgehog-zero-budget-mirror-black
+  ---
+  duration_ms: 11.0667
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-illegal-pawn-jump
+ok 185 - original whole result hedgehog-illegal-pawn-jump
+  ---
+  duration_ms: 0.366
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-illegal-pawn-jump-black
+ok 186 - original whole result hedgehog-illegal-pawn-jump-black
+  ---
+  duration_ms: 0.3095
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-illegal-pawn-jump-mirror
+ok 187 - original whole result hedgehog-illegal-pawn-jump-mirror
+  ---
+  duration_ms: 0.3444
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-illegal-pawn-jump-mirror-black
+ok 188 - original whole result hedgehog-illegal-pawn-jump-mirror-black
+  ---
+  duration_ms: 0.2997
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-clock-reset
+ok 189 - original whole result carlsbad-clock-reset
+  ---
+  duration_ms: 32.9226
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-clock-reset-black
+ok 190 - original whole result carlsbad-clock-reset-black
+  ---
+  duration_ms: 32.823
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-clock-reset-mirror
+ok 191 - original whole result carlsbad-clock-reset-mirror
+  ---
+  duration_ms: 20.0922
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-clock-reset-mirror-black
+ok 192 - original whole result carlsbad-clock-reset-mirror-black
+  ---
+  duration_ms: 20.4548
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-clock-reset
+ok 193 - original whole result hedgehog-clock-reset
+  ---
+  duration_ms: 21.8127
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-clock-reset-black
+ok 194 - original whole result hedgehog-clock-reset-black
+  ---
+  duration_ms: 21.2391
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-clock-reset-mirror
+ok 195 - original whole result hedgehog-clock-reset-mirror
+  ---
+  duration_ms: 11.4338
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-clock-reset-mirror-black
+ok 196 - original whole result hedgehog-clock-reset-mirror-black
+  ---
+  duration_ms: 9.7612
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-legal-history
+ok 197 - original whole result carlsbad-legal-history
+  ---
+  duration_ms: 38.8319
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-legal-history-black
+ok 198 - original whole result carlsbad-legal-history-black
+  ---
+  duration_ms: 37.5063
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-legal-history-mirror
+ok 199 - original whole result carlsbad-legal-history-mirror
+  ---
+  duration_ms: 25.3795
+  type: 'test'
+  ...
+# Subtest: original whole result carlsbad-legal-history-mirror-black
+ok 200 - original whole result carlsbad-legal-history-mirror-black
+  ---
+  duration_ms: 28.284
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-legal-history
+ok 201 - original whole result hedgehog-legal-history
+  ---
+  duration_ms: 29.1539
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-legal-history-black
+ok 202 - original whole result hedgehog-legal-history-black
+  ---
+  duration_ms: 28.4427
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-legal-history-mirror
+ok 203 - original whole result hedgehog-legal-history-mirror
+  ---
+  duration_ms: 14.6025
+  type: 'test'
+  ...
+# Subtest: original whole result hedgehog-legal-history-mirror-black
+ok 204 - original whole result hedgehog-legal-history-mirror-black
+  ---
+  duration_ms: 15.3801
+  type: 'test'
+  ...
+# Subtest: complete structure rejects before inventory omitted
+ok 205 - complete structure rejects before inventory omitted
+  ---
+  duration_ms: 15.543
+  type: 'test'
+  ...
+# Subtest: complete structure rejects after inventory omitted
+ok 206 - complete structure rejects after inventory omitted
+  ---
+  duration_ms: 12.6971
+  type: 'test'
+  ...
+# Subtest: complete structure rejects own core forged
+ok 207 - complete structure rejects own core forged
+  ---
+  duration_ms: 11.9415
+  type: 'test'
+  ...
+# Subtest: complete structure rejects enemy core forged
+ok 208 - complete structure rejects enemy core forged
+  ---
+  duration_ms: 12.0273
+  type: 'test'
+  ...
+# Subtest: complete structure rejects control target omitted
+ok 209 - complete structure rejects control target omitted
+  ---
+  duration_ms: 7.582
+  type: 'test'
+  ...
+# Subtest: complete structure rejects before queenside count forged
+ok 210 - complete structure rejects before queenside count forged
+  ---
+  duration_ms: 11.9485
+  type: 'test'
+  ...
+# Subtest: complete structure rejects after queenside count forged
+ok 211 - complete structure rejects after queenside count forged
+  ---
+  duration_ms: 13.2966
+  type: 'test'
+  ...
+# Subtest: complete structure rejects after kingside count forged
+ok 212 - complete structure rejects after kingside count forged
+  ---
+  duration_ms: 12.7569
+  type: 'test'
+  ...
+# Subtest: complete structure rejects support frame omitted
+ok 213 - complete structure rejects support frame omitted
+  ---
+  duration_ms: 14.0616
+  type: 'test'
+  ...
+# Subtest: complete structure rejects support sources omitted
+ok 214 - complete structure rejects support sources omitted
+  ---
+  duration_ms: 12.9877
+  type: 'test'
+  ...
+# Subtest: complete structure rejects support side forged
+ok 215 - complete structure rejects support side forged
+  ---
+  duration_ms: 13.9381
+  type: 'test'
+  ...
+# Subtest: complete structure rejects support target forged
+ok 216 - complete structure rejects support target forged
+  ---
+  duration_ms: 12.974
+  type: 'test'
+  ...
+# Subtest: complete structure rejects replacement victim forged
+ok 217 - complete structure rejects replacement victim forged
+  ---
+  duration_ms: 13.0759
+  type: 'test'
+  ...
+# Subtest: complete structure rejects legal capture omitted
+ok 218 - complete structure rejects legal capture omitted
+  ---
+  duration_ms: 13.6872
+  type: 'test'
+  ...
+# Subtest: complete structure rejects legal capture invented
+ok 219 - complete structure rejects legal capture invented
+  ---
+  duration_ms: 13.6055
+  type: 'test'
+  ...
+# Subtest: complete structure rejects support counterfen forged
+ok 220 - complete structure rejects support counterfen forged
+  ---
+  duration_ms: 13.1066
+  type: 'test'
+  ...
+# Subtest: complete structure rejects complete history omitted
+ok 221 - complete structure rejects complete history omitted
+  ---
+  duration_ms: 10.3269
+  type: 'test'
+  ...
+# Subtest: complete structure rejects history move forged
+ok 222 - complete structure rejects history move forged
+  ---
+  duration_ms: 10.0531
+  type: 'test'
+  ...
+# Subtest: complete structure rejects played move forged
+ok 223 - complete structure rejects played move forged
+  ---
+  duration_ms: 12.3122
+  type: 'test'
+  ...
+# Subtest: complete structure rejects played piece forged
+ok 224 - complete structure rejects played piece forged
+  ---
+  duration_ms: 11.8947
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply domain incomplete
+ok 225 - complete structure rejects reply domain incomplete
+  ---
+  duration_ms: 17.5992
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply move forged
+ok 226 - complete structure rejects reply move forged
+  ---
+  duration_ms: 17.2442
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply inventory forged
+ok 227 - complete structure rejects reply inventory forged
+  ---
+  duration_ms: 16.7597
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply own surviving core forged
+ok 228 - complete structure rejects reply own surviving core forged
+  ---
+  duration_ms: 16.3441
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply enemy surviving core forged
+ok 229 - complete structure rejects reply enemy surviving core forged
+  ---
+  duration_ms: 16.401
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply shape forged
+ok 230 - complete structure rejects reply shape forged
+  ---
+  duration_ms: 16.4077
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply check forged
+ok 231 - complete structure rejects reply check forged
+  ---
+  duration_ms: 16.5486
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply mate forged
+ok 232 - complete structure rejects reply mate forged
+  ---
+  duration_ms: 17.7589
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply stalemate forged
+ok 233 - complete structure rejects reply stalemate forged
+  ---
+  duration_ms: 16.5234
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply draw forged
+ok 234 - complete structure rejects reply draw forged
+  ---
+  duration_ms: 16.4007
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply game over forged
+ok 235 - complete structure rejects reply game over forged
+  ---
+  duration_ms: 17.5262
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply queenside count forged
+ok 236 - complete structure rejects reply queenside count forged
+  ---
+  duration_ms: 19.6634
+  type: 'test'
+  ...
+# Subtest: complete structure rejects reply kingside count forged
+ok 237 - complete structure rejects reply kingside count forged
+  ---
+  duration_ms: 20.9729
+  type: 'test'
+  ...
+# Subtest: complete structure rejects own text forged
+ok 238 - complete structure rejects own text forged
+  ---
+  duration_ms: 16.9429
+  type: 'test'
+  ...
+# Subtest: complete structure rejects quality claim forged
+ok 239 - complete structure rejects quality claim forged
+  ---
+  duration_ms: 21.5859
+  type: 'test'
+  ...
+# Subtest: complete structure rejects schema forged
+ok 240 - complete structure rejects schema forged
+  ---
+  duration_ms: 23.9218
+  type: 'test'
+  ...
+# Subtest: complete structure rejects selected comment forged
+ok 241 - complete structure rejects selected comment forged
+  ---
+  duration_ms: 18.1247
+  type: 'test'
+  ...
+# Subtest: complete structure rejects inherited SAN forged
+ok 242 - complete structure rejects inherited SAN forged
+  ---
+  duration_ms: 16.6811
+  type: 'test'
+  ...
+# Subtest: complete structure rejects omitted proof laundered as ineligible
+ok 243 - complete structure rejects omitted proof laundered as ineligible
+  ---
+  duration_ms: 12.3741
+  type: 'test'
+  ...
+# Subtest: complete structure rejects own proof duplicated
+ok 244 - complete structure rejects own proof duplicated
+  ---
+  duration_ms: 13.2549
+  type: 'test'
+  ...
+# Subtest: complete structure rejects ledger forged
+ok 245 - complete structure rejects ledger forged
+  ---
+  duration_ms: 13.1892
+  type: 'test'
+  ...
+# Subtest: complete structure rejects limit forged
+ok 246 - complete structure rejects limit forged
+  ---
+  duration_ms: 12.4117
+  type: 'test'
+  ...
+# Subtest: complete structure rejects unsupported own field
+ok 247 - complete structure rejects unsupported own field
+  ---
+  duration_ms: 11.6265
+  type: 'test'
+  ...
+# Subtest: complete structure rejects unsupported evidence field
+ok 248 - complete structure rejects unsupported evidence field
+  ---
+  duration_ms: 11.2557
+  type: 'test'
+  ...
+# Subtest: every integer budget carlsbad-e-completes
+ok 249 - every integer budget carlsbad-e-completes
+  ---
+  duration_ms: 512.6178
+  type: 'test'
+  ...
+# Subtest: every integer budget hedgehog-e-completes
+ok 250 - every integer budget hedgehog-e-completes
+  ---
+  duration_ms: 332.3527
+  type: 'test'
+  ...
+# Subtest: every integer budget carlsbad-own-support-pinned
+ok 251 - every integer budget carlsbad-own-support-pinned
+  ---
+  duration_ms: 410.7983
+  type: 'test'
+  ...
+# Subtest: every integer budget hedgehog-legal-history
+ok 252 - every integer budget hedgehog-legal-history
+  ---
+  duration_ms: 506.0293
+  type: 'test'
+  ...
+# Subtest: strict and historical null default compatibility
+ok 253 - strict and historical null default compatibility
+  ---
+  duration_ms: 92.2094
+  type: 'test'
+  ...
+# Subtest: normalized full history
+ok 254 - normalized full history
+  ---
+  duration_ms: 24.8624
+  type: 'test'
+  ...
+# Subtest: all original states both kinds and legal negatives
+ok 255 - all original states both kinds and legal negatives
+  ---
+  duration_ms: 0.215
+  type: 'test'
+  ...
+# Subtest: six Hedgehog targets eight named edges extras and EP negative
+not ok 256 - six Hedgehog targets eight named edges extras and EP negative
+  ---
+  duration_ms: 19.054
+  type: 'test'
+  location: 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E270-combined-validation\\preparation\\e073-replay.test.mjs:64:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    7 !== 8
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 8
+  actual: 7
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e073-replay.test.mjs:64:258)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: independent negative ledger and atomic proof omission
+ok 257 - independent negative ledger and atomic proof omission
+  ---
+  duration_ms: 115.7652
+  type: 'test'
+  ...
+1..257
+# tests 257
+# suites 0
+# pass 256
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7628.4641
