@@ -1,0 +1,1336 @@
+TAP version 13
+# Subtest: original whole result stone-d-completes
+ok 1 - original whole result stone-d-completes
+  ---
+  duration_ms: 47.3991
+  type: 'test'
+  ...
+# Subtest: original whole result stone-d-completes-black
+ok 2 - original whole result stone-d-completes-black
+  ---
+  duration_ms: 15.7512
+  type: 'test'
+  ...
+# Subtest: original whole result stone-d-completes-mirror
+ok 3 - original whole result stone-d-completes-mirror
+  ---
+  duration_ms: 10.4944
+  type: 'test'
+  ...
+# Subtest: original whole result stone-d-completes-mirror-black
+ok 4 - original whole result stone-d-completes-mirror-black
+  ---
+  duration_ms: 10.0402
+  type: 'test'
+  ...
+# Subtest: original whole result stone-c-completes
+ok 5 - original whole result stone-c-completes
+  ---
+  duration_ms: 15.4941
+  type: 'test'
+  ...
+# Subtest: original whole result stone-c-completes-black
+ok 6 - original whole result stone-c-completes-black
+  ---
+  duration_ms: 13.8205
+  type: 'test'
+  ...
+# Subtest: original whole result stone-c-completes-mirror
+ok 7 - original whole result stone-c-completes-mirror
+  ---
+  duration_ms: 9.4756
+  type: 'test'
+  ...
+# Subtest: original whole result stone-c-completes-mirror-black
+ok 8 - original whole result stone-c-completes-mirror-black
+  ---
+  duration_ms: 13.6758
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-completes
+ok 9 - original whole result stone-e-completes
+  ---
+  duration_ms: 13.9739
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-completes-black
+ok 10 - original whole result stone-e-completes-black
+  ---
+  duration_ms: 14.0293
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-completes-mirror
+ok 11 - original whole result stone-e-completes-mirror
+  ---
+  duration_ms: 8.9735
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-completes-mirror-black
+ok 12 - original whole result stone-e-completes-mirror-black
+  ---
+  duration_ms: 9.6151
+  type: 'test'
+  ...
+# Subtest: original whole result stone-f-double-completes
+ok 13 - original whole result stone-f-double-completes
+  ---
+  duration_ms: 15.2689
+  type: 'test'
+  ...
+# Subtest: original whole result stone-f-double-completes-black
+ok 14 - original whole result stone-f-double-completes-black
+  ---
+  duration_ms: 14.1262
+  type: 'test'
+  ...
+# Subtest: original whole result stone-f-double-completes-mirror
+ok 15 - original whole result stone-f-double-completes-mirror
+  ---
+  duration_ms: 9.5008
+  type: 'test'
+  ...
+# Subtest: original whole result stone-f-double-completes-mirror-black
+ok 16 - original whole result stone-f-double-completes-mirror-black
+  ---
+  duration_ms: 9.3919
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capture-completes
+ok 17 - original whole result stone-capture-completes
+  ---
+  duration_ms: 16.212
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capture-completes-black
+ok 18 - original whole result stone-capture-completes-black
+  ---
+  duration_ms: 20.2061
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capture-completes-mirror
+ok 19 - original whole result stone-capture-completes-mirror
+  ---
+  duration_ms: 10.9827
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capture-completes-mirror-black
+ok 20 - original whole result stone-capture-completes-mirror-black
+  ---
+  duration_ms: 10.8968
+  type: 'test'
+  ...
+# Subtest: original whole result stone-supporter-pinned
+ok 21 - original whole result stone-supporter-pinned
+  ---
+  duration_ms: 22.0534
+  type: 'test'
+  ...
+# Subtest: original whole result stone-supporter-pinned-black
+ok 22 - original whole result stone-supporter-pinned-black
+  ---
+  duration_ms: 21.0727
+  type: 'test'
+  ...
+# Subtest: original whole result stone-supporter-pinned-mirror
+ok 23 - original whole result stone-supporter-pinned-mirror
+  ---
+  duration_ms: 19.6034
+  type: 'test'
+  ...
+# Subtest: original whole result stone-supporter-pinned-mirror-black
+ok 24 - original whole result stone-supporter-pinned-mirror-black
+  ---
+  duration_ms: 20.5117
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-supporter-pinned
+ok 25 - original whole result stone-e-supporter-pinned
+  ---
+  duration_ms: 21.2391
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-supporter-pinned-black
+ok 26 - original whole result stone-e-supporter-pinned-black
+  ---
+  duration_ms: 22.1518
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-supporter-pinned-mirror
+ok 27 - original whole result stone-e-supporter-pinned-mirror
+  ---
+  duration_ms: 20.3001
+  type: 'test'
+  ...
+# Subtest: original whole result stone-e-supporter-pinned-mirror-black
+ok 28 - original whole result stone-e-supporter-pinned-mirror-black
+  ---
+  duration_ms: 19.0585
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-c
+ok 29 - original whole result stone-missing-c
+  ---
+  duration_ms: 7.8229
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-c-black
+ok 30 - original whole result stone-missing-c-black
+  ---
+  duration_ms: 7.38
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-c-mirror
+ok 31 - original whole result stone-missing-c-mirror
+  ---
+  duration_ms: 7.9671
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-c-mirror-black
+ok 32 - original whole result stone-missing-c-mirror-black
+  ---
+  duration_ms: 7.8531
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-e
+ok 33 - original whole result stone-missing-e
+  ---
+  duration_ms: 7.6551
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-e-black
+ok 34 - original whole result stone-missing-e-black
+  ---
+  duration_ms: 7.8163
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-e-mirror
+ok 35 - original whole result stone-missing-e-mirror
+  ---
+  duration_ms: 8.0005
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-e-mirror-black
+ok 36 - original whole result stone-missing-e-mirror-black
+  ---
+  duration_ms: 7.7019
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-f
+ok 37 - original whole result stone-missing-f
+  ---
+  duration_ms: 7.9549
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-f-black
+ok 38 - original whole result stone-missing-f-black
+  ---
+  duration_ms: 7.4668
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-f-mirror
+ok 39 - original whole result stone-missing-f-mirror
+  ---
+  duration_ms: 7.8231
+  type: 'test'
+  ...
+# Subtest: original whole result stone-missing-f-mirror-black
+ok 40 - original whole result stone-missing-f-mirror-black
+  ---
+  duration_ms: 7.591
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-color
+ok 41 - original whole result stone-wrong-color
+  ---
+  duration_ms: 9.4214
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-color-black
+ok 42 - original whole result stone-wrong-color-black
+  ---
+  duration_ms: 9.942
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-color-mirror
+ok 43 - original whole result stone-wrong-color-mirror
+  ---
+  duration_ms: 9.2951
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-color-mirror-black
+ok 44 - original whole result stone-wrong-color-mirror-black
+  ---
+  duration_ms: 8.3837
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-rank
+ok 45 - original whole result stone-wrong-rank
+  ---
+  duration_ms: 8.7401
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-rank-black
+ok 46 - original whole result stone-wrong-rank-black
+  ---
+  duration_ms: 8.7746
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-rank-mirror
+ok 47 - original whole result stone-wrong-rank-mirror
+  ---
+  duration_ms: 8.9246
+  type: 'test'
+  ...
+# Subtest: original whole result stone-wrong-rank-mirror-black
+ok 48 - original whole result stone-wrong-rank-mirror-black
+  ---
+  duration_ms: 8.6435
+  type: 'test'
+  ...
+# Subtest: original whole result stone-quiet-unrelated
+ok 49 - original whole result stone-quiet-unrelated
+  ---
+  duration_ms: 7.7964
+  type: 'test'
+  ...
+# Subtest: original whole result stone-quiet-unrelated-black
+ok 50 - original whole result stone-quiet-unrelated-black
+  ---
+  duration_ms: 7.4029
+  type: 'test'
+  ...
+# Subtest: original whole result stone-quiet-unrelated-mirror
+ok 51 - original whole result stone-quiet-unrelated-mirror
+  ---
+  duration_ms: 7.5529
+  type: 'test'
+  ...
+# Subtest: original whole result stone-quiet-unrelated-mirror-black
+ok 52 - original whole result stone-quiet-unrelated-mirror-black
+  ---
+  duration_ms: 7.4674
+  type: 'test'
+  ...
+# Subtest: original whole result stone-preexisting-pawn-move
+ok 53 - original whole result stone-preexisting-pawn-move
+  ---
+  duration_ms: 8.0102
+  type: 'test'
+  ...
+# Subtest: original whole result stone-preexisting-pawn-move-black
+ok 54 - original whole result stone-preexisting-pawn-move-black
+  ---
+  duration_ms: 8.4547
+  type: 'test'
+  ...
+# Subtest: original whole result stone-preexisting-pawn-move-mirror
+ok 55 - original whole result stone-preexisting-pawn-move-mirror
+  ---
+  duration_ms: 8.329
+  type: 'test'
+  ...
+# Subtest: original whole result stone-preexisting-pawn-move-mirror-black
+ok 56 - original whole result stone-preexisting-pawn-move-mirror-black
+  ---
+  duration_ms: 7.9319
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capturable-pawn
+ok 57 - original whole result stone-capturable-pawn
+  ---
+  duration_ms: 18.5141
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capturable-pawn-black
+ok 58 - original whole result stone-capturable-pawn-black
+  ---
+  duration_ms: 17.2211
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capturable-pawn-mirror
+ok 59 - original whole result stone-capturable-pawn-mirror
+  ---
+  duration_ms: 11.4623
+  type: 'test'
+  ...
+# Subtest: original whole result stone-capturable-pawn-mirror-black
+ok 60 - original whole result stone-capturable-pawn-mirror-black
+  ---
+  duration_ms: 11.2765
+  type: 'test'
+  ...
+# Subtest: original whole result stone-promotion-replies
+ok 61 - original whole result stone-promotion-replies
+  ---
+  duration_ms: 17.5537
+  type: 'test'
+  ...
+# Subtest: original whole result stone-promotion-replies-black
+ok 62 - original whole result stone-promotion-replies-black
+  ---
+  duration_ms: 16.3527
+  type: 'test'
+  ...
+# Subtest: original whole result stone-promotion-replies-mirror
+ok 63 - original whole result stone-promotion-replies-mirror
+  ---
+  duration_ms: 10.6227
+  type: 'test'
+  ...
+# Subtest: original whole result stone-promotion-replies-mirror-black
+ok 64 - original whole result stone-promotion-replies-mirror-black
+  ---
+  duration_ms: 10.1044
+  type: 'test'
+  ...
+# Subtest: original whole result stone-terminal-promotion-replies
+ok 65 - original whole result stone-terminal-promotion-replies
+  ---
+  duration_ms: 19.395
+  type: 'test'
+  ...
+# Subtest: original whole result stone-terminal-promotion-replies-black
+ok 66 - original whole result stone-terminal-promotion-replies-black
+  ---
+  duration_ms: 19.5282
+  type: 'test'
+  ...
+# Subtest: original whole result stone-terminal-promotion-replies-mirror
+ok 67 - original whole result stone-terminal-promotion-replies-mirror
+  ---
+  duration_ms: 12.4362
+  type: 'test'
+  ...
+# Subtest: original whole result stone-terminal-promotion-replies-mirror-black
+ok 68 - original whole result stone-terminal-promotion-replies-mirror-black
+  ---
+  duration_ms: 11.3064
+  type: 'test'
+  ...
+# Subtest: original whole result stone-en-passant-reply
+ok 69 - original whole result stone-en-passant-reply
+  ---
+  duration_ms: 18.4735
+  type: 'test'
+  ...
+# Subtest: original whole result stone-en-passant-reply-black
+ok 70 - original whole result stone-en-passant-reply-black
+  ---
+  duration_ms: 17.2967
+  type: 'test'
+  ...
+# Subtest: original whole result stone-en-passant-reply-mirror
+ok 71 - original whole result stone-en-passant-reply-mirror
+  ---
+  duration_ms: 12.6586
+  type: 'test'
+  ...
+# Subtest: original whole result stone-en-passant-reply-mirror-black
+ok 72 - original whole result stone-en-passant-reply-mirror-black
+  ---
+  duration_ms: 11.6371
+  type: 'test'
+  ...
+# Subtest: original whole result stone-check-actual-counterframe-refused
+ok 73 - original whole result stone-check-actual-counterframe-refused
+  ---
+  duration_ms: 12.5435
+  type: 'test'
+  ...
+# Subtest: original whole result stone-check-actual-counterframe-refused-black
+ok 74 - original whole result stone-check-actual-counterframe-refused-black
+  ---
+  duration_ms: 11.6462
+  type: 'test'
+  ...
+# Subtest: original whole result stone-check-actual-counterframe-refused-mirror
+ok 75 - original whole result stone-check-actual-counterframe-refused-mirror
+  ---
+  duration_ms: 11.2294
+  type: 'test'
+  ...
+# Subtest: original whole result stone-check-actual-counterframe-refused-mirror-black
+ok 76 - original whole result stone-check-actual-counterframe-refused-mirror-black
+  ---
+  duration_ms: 11.1941
+  type: 'test'
+  ...
+# Subtest: original whole result stone-actual-stalemate
+ok 77 - original whole result stone-actual-stalemate
+  ---
+  duration_ms: 15.9588
+  type: 'test'
+  ...
+# Subtest: original whole result stone-actual-stalemate-black
+ok 78 - original whole result stone-actual-stalemate-black
+  ---
+  duration_ms: 14.9934
+  type: 'test'
+  ...
+# Subtest: original whole result stone-actual-stalemate-mirror
+ok 79 - original whole result stone-actual-stalemate-mirror
+  ---
+  duration_ms: 14.6595
+  type: 'test'
+  ...
+# Subtest: original whole result stone-actual-stalemate-mirror-black
+ok 80 - original whole result stone-actual-stalemate-mirror-black
+  ---
+  duration_ms: 14.3029
+  type: 'test'
+  ...
+# Subtest: original whole result stone-disabled
+ok 81 - original whole result stone-disabled
+  ---
+  duration_ms: 8.1833
+  type: 'test'
+  ...
+# Subtest: original whole result stone-disabled-black
+ok 82 - original whole result stone-disabled-black
+  ---
+  duration_ms: 8.101
+  type: 'test'
+  ...
+# Subtest: original whole result stone-disabled-mirror
+ok 83 - original whole result stone-disabled-mirror
+  ---
+  duration_ms: 8.0185
+  type: 'test'
+  ...
+# Subtest: original whole result stone-disabled-mirror-black
+ok 84 - original whole result stone-disabled-mirror-black
+  ---
+  duration_ms: 8.2487
+  type: 'test'
+  ...
+# Subtest: original whole result stone-zero-budget
+ok 85 - original whole result stone-zero-budget
+  ---
+  duration_ms: 8.5041
+  type: 'test'
+  ...
+# Subtest: original whole result stone-zero-budget-black
+ok 86 - original whole result stone-zero-budget-black
+  ---
+  duration_ms: 8.0403
+  type: 'test'
+  ...
+# Subtest: original whole result stone-zero-budget-mirror
+ok 87 - original whole result stone-zero-budget-mirror
+  ---
+  duration_ms: 8.293
+  type: 'test'
+  ...
+# Subtest: original whole result stone-zero-budget-mirror-black
+ok 88 - original whole result stone-zero-budget-mirror-black
+  ---
+  duration_ms: 7.9336
+  type: 'test'
+  ...
+# Subtest: original whole result stone-illegal-step
+ok 89 - original whole result stone-illegal-step
+  ---
+  duration_ms: 0.7753
+  type: 'test'
+  ...
+# Subtest: original whole result stone-illegal-step-black
+ok 90 - original whole result stone-illegal-step-black
+  ---
+  duration_ms: 0.3284
+  type: 'test'
+  ...
+# Subtest: original whole result stone-illegal-step-mirror
+ok 91 - original whole result stone-illegal-step-mirror
+  ---
+  duration_ms: 0.2857
+  type: 'test'
+  ...
+# Subtest: original whole result stone-illegal-step-mirror-black
+ok 92 - original whole result stone-illegal-step-mirror-black
+  ---
+  duration_ms: 0.2707
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-recorded-exchange
+ok 93 - original whole result maroczy-recorded-exchange
+  ---
+  duration_ms: 42.4161
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-recorded-exchange-black
+ok 94 - original whole result maroczy-recorded-exchange-black
+  ---
+  duration_ms: 52.5134
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-recorded-exchange-mirror
+ok 95 - original whole result maroczy-recorded-exchange-mirror
+  ---
+  duration_ms: 36.6353
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-recorded-exchange-mirror-black
+ok 96 - original whole result maroczy-recorded-exchange-mirror-black
+  ---
+  duration_ms: 33.9143
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-own-d-captures
+ok 97 - original whole result maroczy-own-d-captures
+  ---
+  duration_ms: 76.8019
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-own-d-captures-black
+ok 98 - original whole result maroczy-own-d-captures-black
+  ---
+  duration_ms: 84.0105
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-own-d-captures-mirror
+ok 99 - original whole result maroczy-own-d-captures-mirror
+  ---
+  duration_ms: 61.1064
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-own-d-captures-mirror-black
+ok 100 - original whole result maroczy-own-d-captures-mirror-black
+  ---
+  duration_ms: 60.8315
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-original-exchange-en-passant
+ok 101 - original whole result maroczy-original-exchange-en-passant
+  ---
+  duration_ms: 71.6458
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-original-exchange-en-passant-black
+ok 102 - original whole result maroczy-original-exchange-en-passant-black
+  ---
+  duration_ms: 68.5509
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-original-exchange-en-passant-mirror
+ok 103 - original whole result maroczy-original-exchange-en-passant-mirror
+  ---
+  duration_ms: 58.7991
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-original-exchange-en-passant-mirror-black
+ok 104 - original whole result maroczy-original-exchange-en-passant-mirror-black
+  ---
+  duration_ms: 63.4194
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-e-completes
+ok 105 - original whole result maroczy-e-completes
+  ---
+  duration_ms: 42.8277
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-e-completes-black
+ok 106 - original whole result maroczy-e-completes-black
+  ---
+  duration_ms: 40.362
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-e-completes-mirror
+ok 107 - original whole result maroczy-e-completes-mirror
+  ---
+  duration_ms: 33.8466
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-e-completes-mirror-black
+ok 108 - original whole result maroczy-e-completes-mirror-black
+  ---
+  duration_ms: 33.188
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-single-step
+ok 109 - original whole result maroczy-single-step
+  ---
+  duration_ms: 41.8498
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-single-step-black
+ok 110 - original whole result maroczy-single-step-black
+  ---
+  duration_ms: 40.5793
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-single-step-mirror
+ok 111 - original whole result maroczy-single-step-mirror
+  ---
+  duration_ms: 33.7743
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-single-step-mirror-black
+ok 112 - original whole result maroczy-single-step-mirror-black
+  ---
+  duration_ms: 34.4405
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-capture-completes
+ok 113 - original whole result maroczy-capture-completes
+  ---
+  duration_ms: 56.0134
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-capture-completes-black
+ok 114 - original whole result maroczy-capture-completes-black
+  ---
+  duration_ms: 53.6105
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-capture-completes-mirror
+ok 115 - original whole result maroczy-capture-completes-mirror
+  ---
+  duration_ms: 46.7194
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-capture-completes-mirror-black
+ok 116 - original whole result maroczy-capture-completes-mirror-black
+  ---
+  duration_ms: 47.9024
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-control-pinned
+ok 117 - original whole result maroczy-control-pinned
+  ---
+  duration_ms: 65.6717
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-control-pinned-black
+ok 118 - original whole result maroczy-control-pinned-black
+  ---
+  duration_ms: 66.5538
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-control-pinned-mirror
+ok 119 - original whole result maroczy-control-pinned-mirror
+  ---
+  duration_ms: 63.1281
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-control-pinned-mirror-black
+ok 120 - original whole result maroczy-control-pinned-mirror-black
+  ---
+  duration_ms: 69.0451
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-d-file-pawn
+ok 121 - original whole result maroczy-extra-d-file-pawn
+  ---
+  duration_ms: 35.1739
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-d-file-pawn-black
+ok 122 - original whole result maroczy-extra-d-file-pawn-black
+  ---
+  duration_ms: 34.8671
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-d-file-pawn-mirror
+ok 123 - original whole result maroczy-extra-d-file-pawn-mirror
+  ---
+  duration_ms: 34.6101
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-d-file-pawn-mirror-black
+ok 124 - original whole result maroczy-extra-d-file-pawn-mirror-black
+  ---
+  duration_ms: 36.6675
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-enemy-c-file-pawn
+ok 125 - original whole result maroczy-extra-enemy-c-file-pawn
+  ---
+  duration_ms: 39.3541
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-enemy-c-file-pawn-black
+ok 126 - original whole result maroczy-extra-enemy-c-file-pawn-black
+  ---
+  duration_ms: 36.7898
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-enemy-c-file-pawn-mirror
+ok 127 - original whole result maroczy-extra-enemy-c-file-pawn-mirror
+  ---
+  duration_ms: 36.1398
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-extra-enemy-c-file-pawn-mirror-black
+ok 128 - original whole result maroczy-extra-enemy-c-file-pawn-mirror-black
+  ---
+  duration_ms: 36.4137
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-d-pawn
+ok 129 - original whole result maroczy-wrong-root-d-pawn
+  ---
+  duration_ms: 34.9235
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-d-pawn-black
+ok 130 - original whole result maroczy-wrong-root-d-pawn-black
+  ---
+  duration_ms: 35.6774
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-d-pawn-mirror
+ok 131 - original whole result maroczy-wrong-root-d-pawn-mirror
+  ---
+  duration_ms: 36.6261
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-d-pawn-mirror-black
+ok 132 - original whole result maroczy-wrong-root-d-pawn-mirror-black
+  ---
+  duration_ms: 34.1094
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-c-pawn
+ok 133 - original whole result maroczy-wrong-root-c-pawn
+  ---
+  duration_ms: 32.841
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-c-pawn-black
+ok 134 - original whole result maroczy-wrong-root-c-pawn-black
+  ---
+  duration_ms: 33.2842
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-c-pawn-mirror
+ok 135 - original whole result maroczy-wrong-root-c-pawn-mirror
+  ---
+  duration_ms: 35.3186
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-wrong-root-c-pawn-mirror-black
+ok 136 - original whole result maroczy-wrong-root-c-pawn-mirror-black
+  ---
+  duration_ms: 32.9049
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-promotion-replies
+ok 137 - original whole result maroczy-promotion-replies
+  ---
+  duration_ms: 69.0803
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-promotion-replies-black
+ok 138 - original whole result maroczy-promotion-replies-black
+  ---
+  duration_ms: 50.7619
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-promotion-replies-mirror
+ok 139 - original whole result maroczy-promotion-replies-mirror
+  ---
+  duration_ms: 46.4559
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-promotion-replies-mirror-black
+ok 140 - original whole result maroczy-promotion-replies-mirror-black
+  ---
+  duration_ms: 43.454
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-terminal-promotion-replies
+ok 141 - original whole result maroczy-terminal-promotion-replies
+  ---
+  duration_ms: 65.5159
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-terminal-promotion-replies-black
+ok 142 - original whole result maroczy-terminal-promotion-replies-black
+  ---
+  duration_ms: 57.3874
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-terminal-promotion-replies-mirror
+ok 143 - original whole result maroczy-terminal-promotion-replies-mirror
+  ---
+  duration_ms: 50.2232
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-terminal-promotion-replies-mirror-black
+ok 144 - original whole result maroczy-terminal-promotion-replies-mirror-black
+  ---
+  duration_ms: 45.4633
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-pawn-loss-reply
+ok 145 - original whole result maroczy-pawn-loss-reply
+  ---
+  duration_ms: 49.4193
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-pawn-loss-reply-black
+ok 146 - original whole result maroczy-pawn-loss-reply-black
+  ---
+  duration_ms: 48.8946
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-pawn-loss-reply-mirror
+ok 147 - original whole result maroczy-pawn-loss-reply-mirror
+  ---
+  duration_ms: 42.0581
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-pawn-loss-reply-mirror-black
+ok 148 - original whole result maroczy-pawn-loss-reply-mirror-black
+  ---
+  duration_ms: 42.159
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-en-passant-reply
+ok 149 - original whole result maroczy-en-passant-reply
+  ---
+  duration_ms: 50.7534
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-en-passant-reply-black
+ok 150 - original whole result maroczy-en-passant-reply-black
+  ---
+  duration_ms: 51.182
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-en-passant-reply-mirror
+ok 151 - original whole result maroczy-en-passant-reply-mirror
+  ---
+  duration_ms: 42.5746
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-en-passant-reply-mirror-black
+ok 152 - original whole result maroczy-en-passant-reply-mirror-black
+  ---
+  duration_ms: 41.0595
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-delayed-recapture
+ok 153 - original whole result maroczy-delayed-recapture
+  ---
+  duration_ms: 47.7452
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-delayed-recapture-black
+ok 154 - original whole result maroczy-delayed-recapture-black
+  ---
+  duration_ms: 53.2772
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-delayed-recapture-mirror
+ok 155 - original whole result maroczy-delayed-recapture-mirror
+  ---
+  duration_ms: 45.5353
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-delayed-recapture-mirror-black
+ok 156 - original whole result maroczy-delayed-recapture-mirror-black
+  ---
+  duration_ms: 45.9096
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-no-history
+ok 157 - original whole result maroczy-no-history
+  ---
+  duration_ms: 12.5026
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-no-history-black
+ok 158 - original whole result maroczy-no-history-black
+  ---
+  duration_ms: 12.403
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-no-history-mirror
+ok 159 - original whole result maroczy-no-history-mirror
+  ---
+  duration_ms: 12.7561
+  type: 'test'
+  ...
+# Subtest: original whole result maroczy-no-history-mirror-black
+ok 160 - original whole result maroczy-no-history-mirror-black
+  ---
+  duration_ms: 12.1211
+  type: 'test'
+  ...
+# Subtest: original whole result stone-pawn-clock-reset
+ok 161 - original whole result stone-pawn-clock-reset
+  ---
+  duration_ms: 13.1621
+  type: 'test'
+  ...
+# Subtest: original whole result stone-pawn-clock-reset-black
+ok 162 - original whole result stone-pawn-clock-reset-black
+  ---
+  duration_ms: 13.3255
+  type: 'test'
+  ...
+# Subtest: original whole result stone-pawn-clock-reset-mirror
+ok 163 - original whole result stone-pawn-clock-reset-mirror
+  ---
+  duration_ms: 8.2621
+  type: 'test'
+  ...
+# Subtest: original whole result stone-pawn-clock-reset-mirror-black
+ok 164 - original whole result stone-pawn-clock-reset-mirror-black
+  ---
+  duration_ms: 9.0586
+  type: 'test'
+  ...
+# Subtest: original whole result stone-reversible-history
+ok 165 - original whole result stone-reversible-history
+  ---
+  duration_ms: 36.3132
+  type: 'test'
+  ...
+# Subtest: original whole result stone-reversible-history-black
+ok 166 - original whole result stone-reversible-history-black
+  ---
+  duration_ms: 36.781
+  type: 'test'
+  ...
+# Subtest: original whole result stone-reversible-history-mirror
+ok 167 - original whole result stone-reversible-history-mirror
+  ---
+  duration_ms: 30.337
+  type: 'test'
+  ...
+# Subtest: original whole result stone-reversible-history-mirror-black
+ok 168 - original whole result stone-reversible-history-mirror-black
+  ---
+  duration_ms: 28.0161
+  type: 'test'
+  ...
+# Subtest: complete formation rejects required cell omitted
+ok 169 - complete formation rejects required cell omitted
+  ---
+  duration_ms: 7.9807
+  type: 'test'
+  ...
+# Subtest: complete formation rejects cell order forged
+ok 170 - complete formation rejects cell order forged
+  ---
+  duration_ms: 5.2177
+  type: 'test'
+  ...
+# Subtest: complete formation rejects named source omitted
+ok 171 - complete formation rejects named source omitted
+  ---
+  duration_ms: 6.2118
+  type: 'test'
+  ...
+# Subtest: complete formation rejects named source forged
+ok 172 - complete formation rejects named source forged
+  ---
+  duration_ms: 6.0563
+  type: 'test'
+  ...
+# Subtest: complete formation rejects common-control cell forged
+ok 173 - complete formation rejects common-control cell forged
+  ---
+  duration_ms: 19.2941
+  type: 'test'
+  ...
+# Subtest: complete formation rejects formation identity forged
+ok 174 - complete formation rejects formation identity forged
+  ---
+  duration_ms: 7.4763
+  type: 'test'
+  ...
+# Subtest: complete formation rejects invented historical exchange
+ok 175 - complete formation rejects invented historical exchange
+  ---
+  duration_ms: 6.9967
+  type: 'test'
+  ...
+# Subtest: complete formation rejects replacement victim color forged
+ok 176 - complete formation rejects replacement victim color forged
+  ---
+  duration_ms: 6.1335
+  type: 'test'
+  ...
+# Subtest: complete formation rejects support frame domain omitted
+ok 177 - complete formation rejects support frame domain omitted
+  ---
+  duration_ms: 8.2832
+  type: 'test'
+  ...
+# Subtest: complete formation rejects replacement victim type forged
+ok 178 - complete formation rejects replacement victim type forged
+  ---
+  duration_ms: 10.3982
+  type: 'test'
+  ...
+# Subtest: complete formation rejects invented support frame
+ok 179 - complete formation rejects invented support frame
+  ---
+  duration_ms: 6.4801
+  type: 'test'
+  ...
+# Subtest: complete formation rejects support sources omitted
+ok 180 - complete formation rejects support sources omitted
+  ---
+  duration_ms: 6.0159
+  type: 'test'
+  ...
+# Subtest: complete formation rejects capture actor forged
+ok 181 - complete formation rejects capture actor forged
+  ---
+  duration_ms: 6.1358
+  type: 'test'
+  ...
+# Subtest: complete formation rejects support target forged
+ok 182 - complete formation rejects support target forged
+  ---
+  duration_ms: 5.8862
+  type: 'test'
+  ...
+# Subtest: complete formation rejects support capture result forged
+ok 183 - complete formation rejects support capture result forged
+  ---
+  duration_ms: 6.0056
+  type: 'test'
+  ...
+# Subtest: complete formation rejects legal capture omitted
+ok 184 - complete formation rejects legal capture omitted
+  ---
+  duration_ms: 5.9873
+  type: 'test'
+  ...
+# Subtest: complete formation rejects legal capture invented
+ok 185 - complete formation rejects legal capture invented
+  ---
+  duration_ms: 5.8794
+  type: 'test'
+  ...
+# Subtest: complete formation rejects support counterfen forged
+ok 186 - complete formation rejects support counterfen forged
+  ---
+  duration_ms: 6.0042
+  type: 'test'
+  ...
+# Subtest: complete formation rejects exchange order forged
+ok 187 - complete formation rejects exchange order forged
+  ---
+  duration_ms: 18.9055
+  type: 'test'
+  ...
+# Subtest: complete formation rejects exchange first ply forged
+ok 188 - complete formation rejects exchange first ply forged
+  ---
+  duration_ms: 18.4221
+  type: 'test'
+  ...
+# Subtest: complete formation rejects exchange recapture delayed
+ok 189 - complete formation rejects exchange recapture delayed
+  ---
+  duration_ms: 18.6039
+  type: 'test'
+  ...
+# Subtest: complete formation rejects exchange pawn identity forged
+ok 190 - complete formation rejects exchange pawn identity forged
+  ---
+  duration_ms: 18.492
+  type: 'test'
+  ...
+# Subtest: complete formation rejects exchange recapture origin forged
+ok 191 - complete formation rejects exchange recapture origin forged
+  ---
+  duration_ms: 19.4105
+  type: 'test'
+  ...
+# Subtest: complete formation rejects complete history omitted
+ok 192 - complete formation rejects complete history omitted
+  ---
+  duration_ms: 18.6036
+  type: 'test'
+  ...
+# Subtest: complete formation rejects history move forged
+ok 193 - complete formation rejects history move forged
+  ---
+  duration_ms: 19.191
+  type: 'test'
+  ...
+# Subtest: complete formation rejects played move forged
+ok 194 - complete formation rejects played move forged
+  ---
+  duration_ms: 5.0699
+  type: 'test'
+  ...
+# Subtest: complete formation rejects played piece forged
+ok 195 - complete formation rejects played piece forged
+  ---
+  duration_ms: 5.142
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply domain incomplete
+ok 196 - complete formation rejects reply domain incomplete
+  ---
+  duration_ms: 6.5366
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply move forged
+ok 197 - complete formation rejects reply move forged
+  ---
+  duration_ms: 6.9905
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply draw forged
+ok 198 - complete formation rejects reply draw forged
+  ---
+  duration_ms: 6.5972
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply surviving cells forged
+ok 199 - complete formation rejects reply surviving cells forged
+  ---
+  duration_ms: 6.5987
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply mate forged
+ok 200 - complete formation rejects reply mate forged
+  ---
+  duration_ms: 6.6051
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply check forged
+ok 201 - complete formation rejects reply check forged
+  ---
+  duration_ms: 6.7391
+  type: 'test'
+  ...
+# Subtest: complete formation rejects reply terminal forged
+ok 202 - complete formation rejects reply terminal forged
+  ---
+  duration_ms: 6.6862
+  type: 'test'
+  ...
+# Subtest: complete formation rejects own text forged
+ok 203 - complete formation rejects own text forged
+  ---
+  duration_ms: 6.5205
+  type: 'test'
+  ...
+# Subtest: complete formation rejects quality claim forged
+ok 204 - complete formation rejects quality claim forged
+  ---
+  duration_ms: 4.8752
+  type: 'test'
+  ...
+# Subtest: complete formation rejects schema forged
+ok 205 - complete formation rejects schema forged
+  ---
+  duration_ms: 7.7943
+  type: 'test'
+  ...
+# Subtest: complete formation rejects selected comment forged
+ok 206 - complete formation rejects selected comment forged
+  ---
+  duration_ms: 7.8202
+  type: 'test'
+  ...
+# Subtest: complete formation rejects inherited SAN forged
+ok 207 - complete formation rejects inherited SAN forged
+  ---
+  duration_ms: 7.1292
+  type: 'test'
+  ...
+# Subtest: complete formation rejects omitted proof laundered as ineligible
+ok 208 - complete formation rejects omitted proof laundered as ineligible
+  ---
+  duration_ms: 5.2016
+  type: 'test'
+  ...
+# Subtest: complete formation rejects own proof duplicated
+ok 209 - complete formation rejects own proof duplicated
+  ---
+  duration_ms: 5.0317
+  type: 'test'
+  ...
+# Subtest: complete formation rejects ledger forged
+ok 210 - complete formation rejects ledger forged
+  ---
+  duration_ms: 5.9547
+  type: 'test'
+  ...
+# Subtest: complete formation rejects limit forged
+ok 211 - complete formation rejects limit forged
+  ---
+  duration_ms: 4.7861
+  type: 'test'
+  ...
+# Subtest: complete formation rejects unsupported own field
+ok 212 - complete formation rejects unsupported own field
+  ---
+  duration_ms: 4.8567
+  type: 'test'
+  ...
+# Subtest: every integer budget stone-d-completes
+ok 213 - every integer budget stone-d-completes
+  ---
+  duration_ms: 137.0851
+  type: 'test'
+  ...
+# Subtest: every integer budget maroczy-original-exchange-en-passant
+ok 214 - every integer budget maroczy-original-exchange-en-passant
+  ---
+  duration_ms: 1633.7532
+  type: 'test'
+  ...
+# Subtest: every integer budget stone-supporter-pinned
+ok 215 - every integer budget stone-supporter-pinned
+  ---
+  duration_ms: 175.2068
+  type: 'test'
+  ...
+# Subtest: every integer budget stone-reversible-history
+ok 216 - every integer budget stone-reversible-history
+  ---
+  duration_ms: 673.5265
+  type: 'test'
+  ...
+# Subtest: strict and historical null default compatibility
+ok 217 - strict and historical null default compatibility
+  ---
+  duration_ms: 35.2599
+  type: 'test'
+  ...
+# Subtest: normalized full reversible history
+ok 218 - normalized full reversible history
+  ---
+  duration_ms: 33.997
+  type: 'test'
+  ...
+# Subtest: all original states both kinds and legal negatives
+ok 219 - all original states both kinds and legal negatives
+  ---
+  duration_ms: 0.1369
+  type: 'test'
+  ...
+# Subtest: exact three Stonewall and two Maroczy named control edges
+ok 220 - exact three Stonewall and two Maroczy named control edges
+  ---
+  duration_ms: 100.3802
+  type: 'test'
+  ...
+# Subtest: EP exchange and replies negative ledger and atomic proof omission
+ok 221 - EP exchange and replies negative ledger and atomic proof omission
+  ---
+  duration_ms: 338.9963
+  type: 'test'
+  ...
+1..221
+# tests 221
+# suites 0
+# pass 221
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7926.2507
