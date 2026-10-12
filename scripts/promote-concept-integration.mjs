@@ -138,7 +138,7 @@ for (const folder of folders.filter(folder => /^E\d{3}-/.test(folder) && +folder
 const profile = (await read('lib/concepts/profile.js')).replace(/export const CONCEPT_VERSION = [^;]+;/, 'export const CONCEPT_VERSION = "E177-P003-v1";');
 await writeFile(path.join(root, 'lib/concepts/profile.js'), profile);
 const runtime = {};
-for (const file of ['lib/concepts/analyze.js','lib/concepts/assert.js','lib/concepts/profile.js','lib/concepts/runtime.js','lib/concepts/stage.js','lib/concepts/controls.js','lib/concepts/worker.js','lib/concepts/session.js']) runtime[file] = sha(await read(file));
+for (const file of ['lib/concepts/analyze.js','lib/concepts/assert.js','lib/concepts/profile.js','lib/concepts/runtime.js','lib/concepts/stage.js','lib/concepts/controls.js','lib/concepts/catalog.js','lib/concepts/registry.js','lib/concepts/fast-consequences.js','lib/concepts/worker.js','lib/concepts/session.js']) runtime[file] = sha(await read(file));
 const provenance = {schema: 'concept-integration-v1', decision: 'P003',
   researchAcceptance: 'Unchanged E082; provisional scopes are implementation availability only.',
   trackerPath, trackerSha256: sha(tracker), verified, sources: records, runtime, entries, supplementalScopes, inventory};

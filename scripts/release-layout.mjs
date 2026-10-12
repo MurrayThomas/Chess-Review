@@ -149,10 +149,19 @@ try {
   assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).reused})"),true);
   await sleep(150);
   assert.match(await evaluate(review,"document.querySelector('.concepts-panel').textContent"),/Temporarily removed/);
-  await evaluate(review,"[...document.querySelectorAll('.set-section')].find(s=>s.textContent.includes('Temporarily removed')).querySelector('button').click()");
+  await evaluate(review,"document.querySelector('#conceptsExcluded').open = !document.querySelector('#conceptsExcluded').open");
   await capture('concepts-retired');
-  await evaluate(review,"[...document.querySelectorAll('.set-section')].find(s=>s.textContent.includes('Temporarily removed')).querySelector('button').click()");
+  await evaluate(review,"document.querySelector('#conceptsExcluded').open = false");
   await capture('concepts-wide');
+  await evaluate(review,"document.querySelector('[data-concept-detail=\"group:features\"]').open=true");
+  await waitFor(review,"!!document.querySelector('#concept-item-direct-attack')",'Expanded individual controls');
+  await capture('concepts-individual');
+  await evaluate(review,"document.querySelector('#concept-item-direct-attack').click()");
+  await waitFor(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput()))?.status==='complete'})",'Individual toggle',100);
+  assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).findings.some(f=>f.event==='direct-attack')})"),false);
+  await evaluate(review,"document.querySelector('#conceptsReset').click()");
+  assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).reused})"),true);
+  await evaluate(review,"document.querySelector('[data-concept-detail=\"group:features\"]').open=false");
   await evaluate(review,"document.querySelector('[aria-label=\"Settings\"]').click()");
   const assertConceptAlignment=async()=>{
     const b=await evaluate(review,"(()=>{const rect=key=>document.querySelector('[data-mod=\"'+key+'\"]').getBoundingClientRect();const r=rect('review'),e=rect('engine'),c=rect('concepts');return {top:c.top-r.top,bottom:c.bottom-e.bottom,gap:c.left-e.right}})()");
@@ -253,6 +262,34 @@ try {
     const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},tacticalTab.sessionId);await fs.writeFile(path.join(out,'coach-tactical-'+fixture.color+'.png'),Buffer.from(shot.data,'base64'));
     results.push({label:'coach-tactical-'+fixture.color,...metrics});
     await call('Target.closeTarget',{targetId:tacticalTab.targetId});
+  }
+  // The requested game segment runs through the packaged worker and real UI.
+  for(const fixture of [
+    {id:'fork-story',fen:'rn3rk1/2q2ppp/2p1pn2/p1N5/1pQP4/4P3/PPP3PP/3RK1NR b K - 4 16',moves:'16... Nd5 17. e4 Nb6',plies:[1,2,3],patterns:[/knight on d5.*Nxe3.*queen on c4.*rook on d1/,/pawn on e4.*still able to jump to e3/,/chooses Nb6 instead of the available Ne3/]},
+    {id:'pawn-capture',fen:'4rrk1/7p/2p3p1/p1PnNp2/1p1P4/8/PP4PP/3R1RK1 w - - 0 29',moves:'29. Nxc6',plies:[1],patterns:[/knight on c6 takes.*pawn on c6.*every immediate reply/]},
+  ]){
+    const payload={pgn:'[White "Audit White"]\n[Black "Audit Black"]\n[SetUp "1"]\n[FEN "'+fixture.fen+'"]\n\n'+fixture.moves+' *',meta:{gameId:fixture.id,myName:'Audit White',flip:true},source:'pgn'};
+    await setStorage(audit,{['job:'+fixture.id]:payload});
+    const tab=await create(`chrome-extension://${loaded.id}/analysis.html#${fixture.id}`);await ready(tab);
+    await evaluate(tab,"document.querySelector('#coachEnable')?.click()");
+    await evaluate(tab,"document.querySelector('#concept-view-reply').click()");
+    for(const [index,ply] of fixture.plies.entries()){
+      await evaluate(tab,`import('./analysis.js').then(m=>m.go(${ply}))`);
+      await waitFor(tab,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput()))?.status==='complete'})",fixture.id,200);
+      await sleep(150);assert.match(await evaluate(tab,"document.querySelector('.coach-insight > p').textContent"),fixture.patterns[index]);
+    }
+    const cost=await evaluate(tab,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)");
+    await evaluate(tab,"document.querySelector('#concept-view-all').click()");
+    assert.equal(await evaluate(tab,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),cost);
+    await evaluate(tab,"document.querySelector('#concept-view-reply').click()");
+    const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},tab.sessionId);await fs.writeFile(path.join(out,fixture.id+'.png'),Buffer.from(shot.data,'base64'));
+    if(fixture.id==='fork-story'){
+      await evaluate(tab,"import('./analysis.js').then(m=>{m.S.meSide='b';m.S.playerKnown=true;m.go(2);m.go(3)})");
+      assert.match(await evaluate(tab,"document.querySelector('.coach-insight > p').textContent"),/You choose Nb6.*opponent’s queen on c4/);
+      assert.equal(await evaluate(tab,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),cost);
+    }
+    const metrics=await evaluate(tab,"import('./analysis.js').then(m=>m._conceptSession.metrics())");assert.deepEqual(metrics.errors,[]);results.push({label:fixture.id,...metrics});
+    await call('Target.closeTarget',{targetId:tab.targetId});
   }
   const popup=await create(`chrome-extension://${loaded.id}/popup.html`);
   await waitFor(popup,"!!document.querySelector('#manual')",'Popup');

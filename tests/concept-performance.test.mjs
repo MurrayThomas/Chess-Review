@@ -106,7 +106,7 @@ test('Fast retirement decisions remove filler but preserve warnings and the full
  const options=integrationInput(input);assert.equal(options.foundationTags,false);assert.equal(options.inventoryTags,false);
  const r=run(input);assert.ok(!r.findings.some(f=>events.some(e=>e.event===f.event)));
 });
-test('Concept settings explain the Fast removal decisions without adding controls or research claims',t=>{
+test('Concept settings keep excluded findings discoverable without changing research claims',t=>{
  const a=app(t);loadGame(a,'1. e4');a.call('buildUI');a.call('toggleSettings');a.dom.window.document.querySelectorAll('.set-tab')[2].click();
  const panel=a.dom.window.document.querySelector('.concepts-panel');
  assert.ok(panel.textContent.includes('Temporarily removed / not calculated'));

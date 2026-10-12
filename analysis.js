@@ -14,7 +14,7 @@ import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { ConceptSession, conceptKey } from "./lib/concepts/session.js";
-import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS } from "./lib/concepts/controls.js";
+import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS, CONCEPT_ITEMS, normalizeDisabledConcepts } from "./lib/concepts/controls.js";
 import { coachInsights, coachReply } from "./lib/coach-insights.js";
 
 /* ---------------- Opening book ----------------
@@ -263,6 +263,7 @@ function engineWorkerCount(requested = null, positions = Infinity,
 const DEFAULT_SETTINGS = {
   conceptsEnabled: false,
   conceptGroups: DEFAULT_CONCEPT_GROUPS,
+  disabledConcepts: [],
   conceptsView: "all",
   categoryNames: {},
   theme: "dark", accent: "#7fb45f", accentCustom: "#9b72d0", density: "compact",
@@ -3891,7 +3892,7 @@ function renderCoachPanel() {
         el("p", {}, finding.text), details));
     }
     body.append(list);
-    if (entry?.disabled) body.append(el("p", {class:"coach-status"}, "Fast or custom profile · Some concept groups are off. Change them in Settings → Concepts."));
+    if (entry?.disabled) body.append(el("p", {class:"coach-status"}, "Fast or custom profile · Some groups or individual concepts are off. Change them in Settings → Concepts."));
     const diagnostics = [...(entry?.errors || []), ...(entry?.unavailable || []), ...(entry?.issues || [])];
     if (diagnostics.length) body.append(el("p", {class: "coach-status"}, "Some searches or inputs were unavailable. Showing supported findings; details are in Settings → Concepts."));
     body.append(el("p", {class: "coach-status"}, view === "reply" ? "Selected from the same position findings. Conditions and proof horizons still apply." : `${insights.length} findings · Supported matches from enabled concepts for this move. Provisional implementation does not mean research acceptance.`));
@@ -4741,7 +4742,7 @@ function renderSettings() {
   if (focusedFont) UI.settings.querySelector(`[data-font="${focusedFont}"]`)?.focus({ preventScroll: true });
   if (focusedLabelStyle) UI.settings.querySelector(`[data-label-style="${focusedLabelStyle}"]`)?.focus({ preventScroll: true });
   if (focusedSection) [...UI.settings.querySelectorAll(".set-sect-head")].find(head => head.querySelector("span")?.textContent === focusedSection)?.focus({ preventScroll: true });
-  for (const detail of UI.settings.querySelectorAll(".concepts-panel details")) detail.open = openConceptDetails.has(detail.dataset.conceptDetail);
+  for (const detail of UI.settings.querySelectorAll(".concepts-panel details")) { detail.open = openConceptDetails.has(detail.dataset.conceptDetail); if(detail.open) detail._populateConceptItems?.(); }
   if (focusedConceptToggle) UI.settings.querySelector("#" + focusedConceptToggle)?.focus({preventScroll: true});
   positionSettings();
 }
@@ -4765,7 +4766,8 @@ function conceptMoveInput(positions, ply) {
   if (ply < 1 || !positions[ply]?.from || !positions[ply]?.to) return null;
   const history = searchHistory(positions, ply - 1), move = positions[ply];
   return {fen: positions[ply - 1].fen, move: move.from + move.to + (move.promotion || ""),
-    history: {fen: history.initialFen, moves: history.moves}, conceptGroups: normalizeConceptGroups(S.settings.conceptGroups)};
+    history: {fen: history.initialFen, moves: history.moves}, conceptGroups: normalizeConceptGroups(S.settings.conceptGroups),
+    ...(normalizeDisabledConcepts(S.settings.disabledConcepts).length ? {disabledConcepts:normalizeDisabledConcepts(S.settings.disabledConcepts)} : {})};
 }
 function selectedConceptInput() {
   if (S.practice) return null;
@@ -4786,7 +4788,7 @@ function refreshConcepts() {
       renderCoachPanel();
     }, 100);
   }});
-  const selection = JSON.stringify(normalizeConceptGroups(S.settings.conceptGroups));
+  const selection = JSON.stringify([normalizeConceptGroups(S.settings.conceptGroups), normalizeDisabledConcepts(S.settings.disabledConcepts)]);
   if (_conceptPositions !== S.positions || _conceptEnabled !== enabled || _conceptSelection !== selection) {
     const changedGame = _conceptPositions !== S.positions;
     _conceptPositions = S.positions; _conceptEnabled = enabled; _conceptSelection = selection;
@@ -4816,8 +4818,18 @@ function setConceptGroup(id, enabled) {
   const groups = normalizeConceptGroups(S.settings.conceptGroups);
   setConceptGroups(enabled ? [...groups,id] : groups.filter(value=>value!==id));
 }
+function setConceptItem(id, enabled) {
+  const disabled = normalizeDisabledConcepts(S.settings.disabledConcepts);
+  S.settings.disabledConcepts = normalizeDisabledConcepts(enabled ? disabled.filter(value=>value!==id) : [...disabled,id]);
+  setConceptGroups(S.settings.conceptGroups);
+}
+function resetConceptDefaults() {
+  S.settings.disabledConcepts = [];
+  setConceptGroups(DEFAULT_CONCEPT_GROUPS);
+  renderSettings();
+}
 function conceptSettings() {
-  const enabled = S.settings.conceptsEnabled === true, groups = normalizeConceptGroups(S.settings.conceptGroups);
+  const enabled = S.settings.conceptsEnabled === true, groups = normalizeConceptGroups(S.settings.conceptGroups), disabled = normalizeDisabledConcepts(S.settings.disabledConcepts);
   const note = text => el("div", {class: "set-row hint"}, el("span", {class: "set-note"}, text));
   const checkbox = el("input", {type: "checkbox", id: "conceptsEnabled", checked: enabled,
     onchange: event => setConceptEnabled(event.target.checked)});
@@ -4826,16 +4838,38 @@ function conceptSettings() {
     note("Analyzes the selected move locally. Navigation cancels unfinished work for other moves; completed results are reused."));
   if (S.setOpen["Concept groups"] == null) S.setOpen["Concept groups"] = true;
   panel.append(section("Concept groups",
-    note("Ordered from lighter to heavier work. Times vary with the position. Rule validation and meaningful move findings remain active."),
+    note("Ordered from lighter to heavier work. Times vary with the position. Legal validation, checks, captures and terminal outcomes stay on."),
     el("div", {class: "set-row"}, el("span", {class: "set-lbl"}, "Preset"),
       el("div", {class: "set-seg"}, ...[["Fast",DEFAULT_CONCEPT_GROUPS],["All",CONCEPT_GROUPS.map(g=>g.id)]].map(([label,ids])=>
         el("button", {class: JSON.stringify(groups)===JSON.stringify(ids)?"on":"", onclick:()=>setConceptGroups(ids)}, label)))),
-    ...CONCEPT_GROUPS.map(group=>el("label", {class: "set-row concept-group-row"},
-      el("span", {class: "concept-group-copy"}, el("span", {class: "set-lbl"}, group.name),
-        el("span", {class: "concept-cost"}, group.cost), el("span", {class: "set-note"}, group.description)),
-      el("input", {type:"checkbox", id:"concept-group-"+group.id, checked:groups.includes(group.id), onchange:event=>
-        setConceptGroup(group.id,event.target.checked)})))));
-  panel.append(section("Temporarily removed / not calculated",
+    el("div", {class:"set-row"}, el("button", {id:"conceptsReset",class:"concept-reset",onclick:resetConceptDefaults}, "Reset to default")),
+    note("Reset restores the Fast groups and their individual defaults. It keeps the analysis switch and your chosen view."),
+    ...CONCEPT_GROUPS.map(group=>{
+      const removed=new Set(FAST_CONCEPT_REMOVALS.flatMap(item=>item.events));
+      const items=CONCEPT_ITEMS.filter(item=>item.group===group.id&&!removed.has(item.id));
+      const costOrder={Fast:0,'Fast–moderate':1,Moderate:2,Slow:3,'Very slow':4};
+      items.sort((a,b)=>(costOrder[a.cost]??4)-(costOrder[b.cost]??4)||a.name.localeCompare(b.name));
+      const detail = el("details", {class:"concept-group", "data-concept-detail":"group:"+group.id},
+        el("summary", {class:"set-row concept-group-row"},
+          el("span", {class:"concept-group-copy"}, el("span", {class:"set-lbl"}, group.name),
+            el("span", {class:"concept-cost"},group.cost+' · '+items.filter(item=>!disabled.includes(item.id)).length+'/'+items.length+' selected')),
+          el("input", {type:"checkbox",id:"concept-group-"+group.id, "aria-label":"Enable "+group.name,
+            checked:groups.includes(group.id), onclick:event=>event.stopPropagation(), onchange:event=>setConceptGroup(group.id,event.target.checked)})),
+        note(group.description),
+        note("Individual choices apply when this group is on. Shared scans may still serve other enabled concepts."));
+      const populate = () => {
+        if(detail.querySelector(".concept-item-row"))return;
+        detail.append(...items.map(item=>el("label", {class:"set-row concept-item-row"},
+          el("span", {class:"concept-group-copy"},el("span",{class:"set-lbl"},item.name),el("span",{class:"concept-cost"},item.cost)),
+          el("input", {type:"checkbox",id:"concept-item-"+item.id,checked:!disabled.includes(item.id),disabled:!groups.includes(group.id),onchange:event=>setConceptItem(item.id,event.target.checked)}))));
+      };
+      detail._populateConceptItems = populate;
+      detail.ontoggle = () => {if(detail.open)populate();};
+      return detail;
+    })));
+  panel.prepend(el("details", {class:"concept-excluded", "data-concept-detail":"excluded", id:"conceptsExcluded"},
+    el("summary", {}, "Excluded concepts · "+FAST_CONCEPT_REMOVALS.length+" groups"),
+    el("strong", {class:"set-lbl"}, "Temporarily removed / not calculated"),
     note("Applies to Fast and its lighter selections. These are teaching decisions, not changes to research acceptance. Enabling a heavier group restores the full inspector."),
     ...FAST_CONCEPT_REMOVALS.map(item=>el("div", {class:"set-row"}, el("span", {class:"concept-group-copy"},
       el("span", {class:"set-lbl"}, item.name), el("span", {class:"concept-cost"}, item.status), el("span", {class:"set-note"}, item.reason))))));

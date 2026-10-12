@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {Chess} from '../lib/chess.js';
-import {DEFAULT_CONCEPT_GROUPS} from '../lib/concepts/controls.js';
+import {DEFAULT_CONCEPT_GROUPS,CONCEPT_GROUPS} from '../lib/concepts/controls.js';
 import {startConceptRun,runConceptStage,DETECTORS,supplementalConcepts,conceptRunSummary} from '../lib/concepts/runtime.js';
 import {coachReply} from '../lib/coach-insights.js';
 import {app,loadGame,branch} from './helpers/app.mjs';
@@ -106,7 +106,7 @@ test('A proven losing capture outweighs an interesting response threat created b
 
 test('Presentation certificates never reinterpret another detector’s similarly named details',async()=>{
  const {summarizeConcepts}=await import('../lib/concepts/analyze.js');
- const input=row('e4').input,result={events:[{id:'required-king-continuation',text:'A bounded king route.',integrationStudy:'E102',evidence:{actor:'w',detail:{restricted:'pawnOnly',selected:{policy:1},pressure:'unrelated'}}}]};
+ const input={...row('e4').input,conceptGroups:CONCEPT_GROUPS.map(g=>g.id)},result={events:[{id:'required-king-continuation',text:'A bounded king route.',integrationStudy:'E102',evidence:{actor:'w',detail:{restricted:'pawnOnly',selected:{policy:1},pressure:'unrelated'}}}]};
  const summary=summarizeConcepts(result,input,provenance.verified,true,provenance.entries);
  assert.equal(summary.findings.length,1);assert.equal(summary.findings[0].context.evidence.restricted,undefined);
  assert.equal(summary.findings[0].context.evidence.pawnTargets,undefined);assert.equal(summary.findings[0].context.evidence.pressure,undefined);
