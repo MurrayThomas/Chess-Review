@@ -313,3 +313,41 @@ path-case-review.json is retained as a PARTIAL13-source runner-only diagnostic:
 its inspection omitted the separately seeded dynamic test module, so its removed
 list must not be mistaken for missing implementation or the actual full closure.
 No frozen source/evidence change, candidate execution or semantic qualification.
+
+## Complete fixed E083 saved replay prepared — 2026-10-12
+
+Previous goal turn progressed through b366f54's concrete gated control code.
+Current continuation again verifies original cumulative runner live (no restart),
+then prepares the complete saved-report stage outside its unchanged freeze.
+Prospective AMENDMENT-e083-saved-admission.md pins original154796-byte report
+4c707a81... from original RESULT/frozen archive metadata, all33cases,83source
+bindings,4expected errors and21witnesses BEFORE raw payload inspection.
+
+preparation/e083-saved-report.mjs requires exact full terminal PASS and65control
+PASS with original log/start/source/receipt identity before reading/parsing the
+fixed report. Raw SHA/length, complete fixture/order/source/receipt contract and
+immutable returned snapshot are checked; no alternate artifact/hash/producer
+injection. Any historical/current receipt difference fails for explicit diagnosis.
+Decoded shape helper is neutral and never substitutes for fixed ownership.
+
+preparation/e083-saved-replay.test.mjs prepares46tests: ALL33saved rows/error
+contracts,12full-domain/provenance/report mutations (both raw-byte and decoded
+checks) and immutable-snapshot control. Successful rows reuse original E083
+results and independently replay its segment;29fresh finite E082 parent comparisons
+and4parent/4E083 error evaluations are planned/disclosed, not independent E082
+semantics or zero-query. Per-row finally audits record actual completed attempts,
+including failures; a timeout cannot masquerade as all planned work executed.
+The600-second single-process driver retains logs/process/environment/source/input
+hashes and rechecks original/new sources/canonical inputs after execution. Full
+pass additionally needs46test passes and33successful ordered audits with exact
+registered evaluation counts. Shared Chess truth and parent replay remain open.
+
+Syntax checks and maintained-source/diff verification pass. Separate
+preparation-e083/saved-source-review.json binds86sources/3newmodules and actual
+ESM parser; ALL2658active frozen source hashes match. ZERO saved payload loads,
+candidate executions or semantic replays; all new code remains UNQUALIFIED and
+outside the running regression. Current full run advances beyond E211 to E222;
+last sampled11205passes/zero not-ok is interim. Next: original full terminal
+record, then65controls on committed source, then full fixed saved replay. Preserve
+any concrete failures before amendments/fixes. No accepted credit; every171origin,
+full original scope, integration/reproduction/strategic/human gate stays required.
