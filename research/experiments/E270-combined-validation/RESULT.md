@@ -4,7 +4,75 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E073 actual Carlsbad/Hedgehog outcomes validated; original edge-count discrepancy retained
+## Latest semantic boundary — E072 complete Stonewall/Maroczy outcomes validated
+
+2026-10-12. Separate independent whole-result oracle closes event-only gap:
+scalar original d/c pawn survival and immediate opposite-nonpawn recapture,
+actual pawn/live/new-cell guards, fixed Stonewall/Maroczy cells, forbidden d/c
+files/empty common target, all legal replacement capture domains, full history/
+reply tick ledger. Complete own ID set AND negative/exhausted statuses/nodes
+derived; omitted proof cannot be laundered as ineligible. Every positive also
+unchanged independent old checker for exact history/exchange/moves/counterframes/
+all reply presence/terminal flags/text, with exact own-event/evidence keys.
+Whole v53 result/fresh E071 inherited fields/events/order/101.008-101.009 priority/
+comment/disabled identity verify. Shared E020 legalPosition/Chess/parent priority
+remain dependencies; no independent rules engine or strategic truth claim.
+
+Registration3607924/implementationf826687: pilot7/7 in7.447seconds;
+221/221smoke atb84bb01 in15.083seconds;190/190saved atd8815d2 in29.337seconds.
+Caps120/180/600seconds hold; saved slightly below30second forecast lower bound,
+no cost/cap overrun. ALL168originals+44forgeries of cells/sources/replacement/
+capture domains/original exchange identities/order/plies/history/actual/replies/
+presence/draw/check/mate/terminal/full schema/comment/inherited SAN/quality/
+ledger/omitted-proof laundering;4all-integer budgets Stonewall/Maroczy EP/
+support-negative/reversible Stonewall history;5strict-default/normalized-history/
+coverage/exact named-edge/EP+negative-ledger+atomic controls. Both colors,
+horizontal mirrors, every original completer/capture-completion/original identity/
+immediate versus delayed recapture/no history/preexisting/missing/extra forbidden
+file/pinned/check/actual terminal/promotion/clock/reversible history case retained.
+Exact3Stonewall edges c3→d4,e3→d4,e3→f4 and2Maroczy c4/e4→d5 independently listed
+and color reversed; original EP exchange and actual reply EP validated. Budget
+validates even disabled; null flag→disabled/null budget→default compatibility
+explicit. Event-only checker accepts corrupt comment/SAN, full checker rejects.
+
+Saved ALL168rows:164complete/fresh E071 comparisons,160enabled independent
+outcome-oracle calls,42whole-checker positive replays plus42fresh ordered
+metadata comparisons. States42proven/106ineligible/8no-legal-support-control/
+4disabled/4exhausted;22Stonewall20Maroczy certificates.4invalid attempts retained
+as original ABSTRACT 'Illegal move; explanation refused.' plus fresh /^Illegal
+move/ errors, not exact historical runtime-message evidence.14shape/inheritance/
+count+4receipt+4raw rejection checks. No additional candidate/parent/own-count
+collection in qualification. Support/current legal hypothetical control does
+not establish unbreakable wall, safe center, permanent restriction/space/strength,
+losing or illegal enemy pawn breaks, attack success or instructional usefulness.
+
+Fixed6canonical originals authenticate including3388389-byte results SHA
+8f4518e585125465b3007dc1aad8639580fa4515db2689b03bb7d596d664ac8e.
+Frozen8e40489a55d15a51c3529a5036c1a67cbdba11c4:222original Git inputs,
+62original checker/fixtures/E071 semantic paths inside original/current/fullfreeze,
+NO supplements or current metadata differences; all3original main/repeat/
+initially-clean trees empty. Exact source/config/environment/metrics/receipt/
+outputs match. Fixed-ownership policy epoch and3860ordered E071 fingerprints/
+teaching identity authenticate; integrity is not independent ancestor semantics.
+Admission audit emitted before rows.
+
+[evidence/semantic-e072-saved-initial/qualification.json](evidence/semantic-e072-saved-initial/qualification.json)
+binds79new inputs/62semantic sources/222historical inputs,15raw artifacts byte
+exact in staged Git, complete oracle/proof/parent counts and original abstract-
+error limitation. Prior E073–E085qualified closures and2658frozen sources/
+1624canonical artifacts unchanged. Explicitly preserves E073's original Hedgehog
+eight-edge wording contradiction: actual geometry has seven; qualification
+checks that prior unsatisfied-original-claim flag remains false. No passing
+stage source/canonical mutation/generated output/errors/signals/timeouts.
+Source/diff checks pass; unchanged full regression/inherited collections not
+rerun. No active process remains. Accepted378/1085,539additional provisional
+scopes,162ready/0stale,127support/41strategic prerequisites unchanged, no new
+accepted/origin credit. Next E071 octopus/terminal-guard independent whole-result
+gate conditional on E070. All171origins, original documentary discrepancy/broad
+meanings, combined API integration, exact changed-source main/repeat/initially-
+clean reproduction and strategic/human usefulness remain open. Goal unfinished.
+
+## Previous semantic boundary — E073 actual Carlsbad/Hedgehog outcomes validated; original edge-count discrepancy retained
 
 2026-10-12. Separate whole-result oracle closes event-only gap: independent
 64square pawn scan/per-file exactly-one tests/relative flank ranks, fixed cores,
