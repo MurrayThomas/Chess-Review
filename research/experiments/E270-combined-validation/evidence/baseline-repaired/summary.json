@@ -1,0 +1,25 @@
+{
+  "revision": "bced17c6f7c0a0c0b71ce3d6827d3009f4316058",
+  "counts": {
+    "accepted": 378,
+    "provisional": 539,
+    "support": 127,
+    "prerequisite": 41
+  },
+  "tests": 259,
+  "sourceBindings": 2658,
+  "canonicalEvidenceFiles": 1624,
+  "canonicalEvidenceBytes": 252122055,
+  "supports": 9,
+  "duplicateGroups": 54,
+  "buildSummary": {
+    "ready": 162,
+    "stale": 0
+  },
+  "seconds": 18.3131845,
+  "freezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+  "censusSha256": "15aa48f47854f5602f2ff30777e8778db21460bec6ab3274a1a484022dca8367",
+  "semanticReplay": false,
+  "readinessCredit": false,
+  "wholeOriginalScopeComplete": false
+}
