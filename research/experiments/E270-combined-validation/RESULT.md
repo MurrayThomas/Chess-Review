@@ -4,7 +4,52 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E064 full independent pawn-wall smoke passed
+## Latest semantic boundary — E064 historical pawn-wall results qualified
+
+2026-10-12. Registrationab16779/implementation6c9d327:162/162saved PASS in29.150
+seconds, within25–120forecast/600cap. ALL140rows:136complete saved results with
+fresh E063 parent outputs/132enabled independent full-history/file-rank wall/
+complete legal domains/fresh own-turn/all actual replies/pawn identities/negative
+absence/work oracles/four ABSTRACT illegal classifications plus fresh /^Illegal
+move/ failures. Exact historical runtime messages unavailable.48whole-checker
+certificates plus48separately ordered unchanged original metadata records.
+308replies/2608pawn-identity references/eight history plies; after whole validation,
+140before pawn moves/216rams/four castling replies/16checking replies/four other-
+piece captures tallied from validated saved records. Prior physical reply and
+refutation checks reused from unchanged smoke, no extra chess collection.
+14shape/inheritance/count/ordered-proof,4receipt and4raw rejection controls pass.
+No failures/timeouts/source/canonical/generated changes. Processes terminal;
+no live handle. Source verification anddiff checks pass.
+
+Retained6f2546c at evidence/semantic-e064-saved-initial/qualification.json.
+79new source inputs/189historical Git/current inputs/54semantic paths within
+original/current/full freeze; no supplements/current metadata exceptions. Six
+canonical artifacts; frozen9c9336e508bc355d2f021a3a1a53df46d2a58b3b.
+All three original reproduction revisions/input/output/config/environment/metrics/
+receipts andphysical bytes authenticated. Main andinitially-clean statuses empty;
+repeat EXACT '?? research/experiments/E064-blocked-position/evidence/' sole
+historical untracked entry preserved, not represented as clean.2800ordered E063
+fingerprints/teaching identity preserved; integrity does not establish ancestor
+semantics. Fixed E083 policy epoch only. Unchanged7/7pilot+195/195smoke reused.
+
+15raw Git blobs byte-exact,323,008total bytes/206,168new saved-run bytes.
+Frozen2658sources/1624canonical and21prior E065–E085closures/1787source comparisons
+unchanged. No accepted/provisional/support/origin credit. E064 historical bounded
+mechanics qualified conditionally on E063 semantic replay. Finite pawn immobility
+is not permanent blockade/fortress/draw/advantage/nonpawn safety/usefulness.
+Fresh original reply frames agree with full-history oracle within the actual
+irreversible pawn-advance scope; no broader fresh-FEN history claim.
+
+Next: register independent E063 whole-result history-confirmed pawn-storm castle/
+chronology/distinct pawn geometry/distance/all-reply terminal andpawn-presence/
+EP/negative/ledger pilot, then full smoke andhistorical qualification. E066 direct
+queen-capture continuation, E067 removed-pawn direct king/dead controls/global
+historical-terminal API refusal and E073 eight/seven-edge discrepancy stay OPEN.
+All171origin combined API integration/exact changed-source three reproductions/
+broader original strategy/real-game precision/human usefulness remain OPEN;
+full research goal active.
+
+## Prior preparation boundary — E064 full independent pawn-wall smoke passed
 
 2026-10-12. Registered8aea76b/implemented3a97dc1:7/7pilot in9.234seconds,
 faster than10–90forecast/within180cap;69source inputs/43,549raw bytes,
