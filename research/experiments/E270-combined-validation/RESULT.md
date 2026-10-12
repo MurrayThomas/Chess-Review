@@ -4,7 +4,57 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E068 complete rook-swing oracle passed
+## Latest semantic boundary — E068 complete rook-swing results qualified
+
+2026-10-12. Registrationa1723bf/implementation8c05641:130/130saved checks
+in26.970seconds, within25–100forecast/600cap. ALL108rows/104complete results
+andfresh E067 parents/100enabled independent history/lift/file-ray/reply/eligibility/
+ledger/whole-result oracles/four ABSTRACT 'Illegal move; explanation refused.'
+classifications plus fresh /^Illegal move/ errors. Exact historic runtime strings
+unavailable.44whole-checker certificates PLUS44ordered unchanged per-event
+metadata comparisons; states44proven52ineligible4disabled4exhausted.
+14shape/inheritance/count/ordered-proof+4receipt+4raw rejection controls passed.
+
+Reuse unchanged7/7pilot and146/146smoke, source vectors/raw/receipts/caps verified
+before saved payload/chess imports. Full history/latest own noncapturing rook lift/
+same rook/intervening reply/actual sideways transfer/direct king-file checking ray/
+all legal replies and retained-rook/terminal flags, status/node exhaustion,
+v49/full events/inherited E067/priorities/selected comment/disabled identity compare.
+Single-tick absent history versus double-tick supplied empty history preserved.
+Original checker additionally replays every certificate. Shared Chess/E020 validator/
+E067 parent+priority remain dependencies, not independent rules/general winning or
+safe rook-swing strategy/human benefit. No extra candidate/parent/own-count query
+in qualification; original candidates/frozen sources/evidence unchanged.
+
+Fixed6canonical artifacts authenticate;2653514-byte results SHA
+69156c9a1adfd77f0254aaf460e09c0b3351debf2e9e13cc31129122ccfd4eb5.
+Frozen da60cbd3e5178f989c6d67683b4b281b49665457:205original Git inputs,
+58old checker/fixture/E067 semantic paths match original/current/fullfreeze;
+NO supplements/current metadata differences. Main/repeat/initially-clean ALLempty.
+Three manifests match source/config/environment/metrics/receipts/physical outputs.
+Fixed-ownership policy epoch and3304ordered E067 inherited fingerprints/teaching
+identity verify integrity, not ancestor semantics. Complete admission precedes rows.
+15pilot/smoke/saved raw Git blobs byte-exact;17prior qualified source closures
+unchanged; E073 original eight/seven-edge documentary discrepancy remains open.
+
+[evidence/semantic-e068-saved-initial/qualification.json](evidence/semantic-e068-saved-initial/qualification.json)
+binds81new inputs/58old semantic paths/205historical inputs/15raw artifacts and
+all actual row counters/provenance. Frozen2658sources/1624canonical unchanged.
+Existing accepted subset reused;0accepted/provisional/support/origin credit.
+No failed decisive runs in this segment. Prior preparation boundary below remains
+historical, superseded only as to saved qualification completion.
+
+Next: E067 waiting moves/used reserve pawn tempi conditional on E066. Initial
+source audit: old positive checker validates before no-mate1, pass+actual full
+mate-in-two and stripped-pawn frames through E029 independent replayQuery; no
+whole-result negative/ledger/inheritance/presence checker. New oracle must preserve
+all failure statuses and atomic clearing even exhaustion during optional reserve
+proof, actual full-history versus hypothetical fresh-frame semantics, complete
+all-defense mate trees and exact work. No substitution of quiet-move intent or
+strategic zugzwang. All171-origin API integration, changed-source three reproductions,
+broader original strategy and real-game/human usefulness remain open; goal active.
+
+## Prior preparation boundary — E068 complete rook-swing oracle passed
 
 2026-10-12. Previous goal turn made progress qualifying E069; no live process.
 Registrationa33e274/implementation8a67482:7/7pilot in8.211seconds,

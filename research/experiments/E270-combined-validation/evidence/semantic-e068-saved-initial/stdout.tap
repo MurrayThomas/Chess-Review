@@ -1,0 +1,899 @@
+# E068-admission-audit {"schema":"E270-E068-saved-admission-v1","historicalSourceRevision":"da60cbd3e5178f989c6d67683b4b281b49665457","historicalInputsVerified":205,"historicalInputVectorSha256":"fdb8e1de7c555d217fa12b1b6450cfede13feb3667d4fe5c49ae007adfdb540f","semanticSourceCount":58,"semanticClosureSha256":"0907d2848d7d7135d85e8e4ce568a32c8b431e1d947482201cd99e92d31dbeb8","canonical":[{"file":"research/experiments/E068-rook-swings/evidence/clean-run.json","bytes":42496,"sha256":"cdca50aba7802643274dcddf1e8f4702280aa7cbacd928b7f933ed3fd0951222"},{"file":"research/experiments/E068-rook-swings/evidence/concept-status.md","bytes":111849,"sha256":"a7b3fbb516131eb1e7500ef7d9bc98550076d775cfb7439ba04856574a316a37"},{"file":"research/experiments/E068-rook-swings/evidence/demo.html","bytes":782717,"sha256":"5aa9221f075a578cc5451f0c112b8d4bb461dae9dbb7b7bbd102e30b8702d74e"},{"file":"research/experiments/E068-rook-swings/evidence/repeat-run.json","bytes":42498,"sha256":"14cc20b0de5b6e4d64f38dbc444dee3baef13b7e0995834cfb3a70bc1f7453bc"},{"file":"research/experiments/E068-rook-swings/evidence/results.json","bytes":2653514,"sha256":"69156c9a1adfd77f0254aaf460e09c0b3351debf2e9e13cc31129122ccfd4eb5"},{"file":"research/experiments/E068-rook-swings/evidence/run.json","bytes":42473,"sha256":"9256c6e7ff11439d09ef0fe40b6979d9645a2a72797e77d3f383a792692345b4"}],"currentMetadataDifferences":[],"inheritedFingerprints":{"count":3304,"orderedSha256":"5bad66a1bc0ec161d2ce12ba46852eb1912b2bca539e0a876a0c884a64296257"},"teachingListSha256":"a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd","policyEpochSha256":"8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0","receiptSha256":"d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81","summary":{"rows":108,"results":104,"errors":4,"certificates":44,"states":{"proven":44,"ineligible":52,"disabled":4,"exhausted":4},"byKind":{"rook-swing":44},"ownEventReplays":44}}
+# E068-row-audit {"index":0,"id":"kingside","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":1,"id":"kingside-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":2,"id":"kingside-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":3,"id":"kingside-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":4,"id":"fourth-rank","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":5,"id":"fourth-rank-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":6,"id":"fourth-rank-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":7,"id":"fourth-rank-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":8,"id":"second-rank-origin","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":9,"id":"second-rank-origin-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":10,"id":"second-rank-origin-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":11,"id":"second-rank-origin-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":12,"id":"long-transfer","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":13,"id":"long-transfer-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":14,"id":"long-transfer-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":15,"id":"long-transfer-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":16,"id":"swing-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":17,"id":"swing-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":18,"id":"swing-capture-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":19,"id":"swing-capture-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":20,"id":"rook-capturable","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":21,"id":"rook-capturable-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":22,"id":"rook-capturable-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":23,"id":"rook-capturable-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":24,"id":"newly-hanging-rook","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":25,"id":"newly-hanging-rook-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":26,"id":"newly-hanging-rook-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":27,"id":"newly-hanging-rook-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":28,"id":"enemy-interpose","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":29,"id":"enemy-interpose-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":30,"id":"enemy-interpose-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":31,"id":"enemy-interpose-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":32,"id":"queenside","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":33,"id":"queenside-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":34,"id":"queenside-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":35,"id":"queenside-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":36,"id":"no-check","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":37,"id":"no-check-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":38,"id":"no-check-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":39,"id":"no-check-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":40,"id":"short-transfer","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":41,"id":"short-transfer-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":42,"id":"short-transfer-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":43,"id":"short-transfer-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":44,"id":"vertical-actual","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":45,"id":"vertical-actual-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":46,"id":"vertical-actual-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":47,"id":"vertical-actual-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":48,"id":"too-high-lift","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":49,"id":"too-high-lift-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":50,"id":"too-high-lift-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":51,"id":"too-high-lift-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":52,"id":"one-rank-lift","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":53,"id":"one-rank-lift-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":54,"id":"one-rank-lift-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":55,"id":"one-rank-lift-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":56,"id":"non-home-origin","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":57,"id":"non-home-origin-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":58,"id":"non-home-origin-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":59,"id":"non-home-origin-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":60,"id":"capturing-lift","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":61,"id":"capturing-lift-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":62,"id":"capturing-lift-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":63,"id":"capturing-lift-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":64,"id":"blocked-check-ray","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":65,"id":"blocked-check-ray-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":66,"id":"blocked-check-ray-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":67,"id":"blocked-check-ray-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":68,"id":"other-rook","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":69,"id":"other-rook-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":70,"id":"other-rook-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":71,"id":"other-rook-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":72,"id":"different-latest-own-move","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":73,"id":"different-latest-own-move-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":74,"id":"different-latest-own-move-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":75,"id":"different-latest-own-move-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":76,"id":"disabled","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":77,"id":"disabled-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":78,"id":"disabled-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":79,"id":"disabled-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":80,"id":"zero-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":81,"id":"zero-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":82,"id":"zero-budget-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":83,"id":"zero-budget-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":84,"id":"illegal-rook-diagonal","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":85,"id":"illegal-rook-diagonal-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":86,"id":"illegal-rook-diagonal-mirror","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":87,"id":"illegal-rook-diagonal-mirror-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":88,"id":"swing-blocks-check","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":89,"id":"swing-blocks-check-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":90,"id":"swing-blocks-check-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":91,"id":"swing-blocks-check-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":92,"id":"discovered-only-check","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":93,"id":"discovered-only-check-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":94,"id":"discovered-only-check-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":95,"id":"discovered-only-check-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":96,"id":"missing-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":97,"id":"missing-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":98,"id":"missing-history-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":99,"id":"missing-history-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":100,"id":"clock-terminal-actual","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":101,"id":"clock-terminal-actual-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":102,"id":"clock-terminal-actual-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":103,"id":"clock-terminal-actual-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E068-row-audit {"index":104,"id":"clock-terminal-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":105,"id":"clock-terminal-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":106,"id":"clock-terminal-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E068-row-audit {"index":107,"id":"clock-terminal-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: kingside
+ok 1 - saved whole row 0: kingside
+  ---
+  duration_ms: 63.6716
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: kingside-black
+ok 2 - saved whole row 1: kingside-black
+  ---
+  duration_ms: 37.3891
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: kingside-mirror
+ok 3 - saved whole row 2: kingside-mirror
+  ---
+  duration_ms: 35.3117
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: kingside-mirror-black
+ok 4 - saved whole row 3: kingside-mirror-black
+  ---
+  duration_ms: 37.8604
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: fourth-rank
+ok 5 - saved whole row 4: fourth-rank
+  ---
+  duration_ms: 39.4496
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: fourth-rank-black
+ok 6 - saved whole row 5: fourth-rank-black
+  ---
+  duration_ms: 35.2355
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: fourth-rank-mirror
+ok 7 - saved whole row 6: fourth-rank-mirror
+  ---
+  duration_ms: 48.4058
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: fourth-rank-mirror-black
+ok 8 - saved whole row 7: fourth-rank-mirror-black
+  ---
+  duration_ms: 40.404
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: second-rank-origin
+ok 9 - saved whole row 8: second-rank-origin
+  ---
+  duration_ms: 40.3513
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: second-rank-origin-black
+ok 10 - saved whole row 9: second-rank-origin-black
+  ---
+  duration_ms: 34.2923
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: second-rank-origin-mirror
+ok 11 - saved whole row 10: second-rank-origin-mirror
+  ---
+  duration_ms: 34.5189
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: second-rank-origin-mirror-black
+ok 12 - saved whole row 11: second-rank-origin-mirror-black
+  ---
+  duration_ms: 37.9161
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: long-transfer
+ok 13 - saved whole row 12: long-transfer
+  ---
+  duration_ms: 32.237
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: long-transfer-black
+ok 14 - saved whole row 13: long-transfer-black
+  ---
+  duration_ms: 34.5802
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: long-transfer-mirror
+ok 15 - saved whole row 14: long-transfer-mirror
+  ---
+  duration_ms: 35.9149
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: long-transfer-mirror-black
+ok 16 - saved whole row 15: long-transfer-mirror-black
+  ---
+  duration_ms: 32.8247
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: swing-capture
+ok 17 - saved whole row 16: swing-capture
+  ---
+  duration_ms: 38.8714
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: swing-capture-black
+ok 18 - saved whole row 17: swing-capture-black
+  ---
+  duration_ms: 39.4827
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: swing-capture-mirror
+ok 19 - saved whole row 18: swing-capture-mirror
+  ---
+  duration_ms: 37.8702
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: swing-capture-mirror-black
+ok 20 - saved whole row 19: swing-capture-mirror-black
+  ---
+  duration_ms: 39.9274
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: rook-capturable
+ok 21 - saved whole row 20: rook-capturable
+  ---
+  duration_ms: 50.2869
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: rook-capturable-black
+ok 22 - saved whole row 21: rook-capturable-black
+  ---
+  duration_ms: 48.7875
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: rook-capturable-mirror
+ok 23 - saved whole row 22: rook-capturable-mirror
+  ---
+  duration_ms: 48.4711
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: rook-capturable-mirror-black
+ok 24 - saved whole row 23: rook-capturable-mirror-black
+  ---
+  duration_ms: 51.0324
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: newly-hanging-rook
+ok 25 - saved whole row 24: newly-hanging-rook
+  ---
+  duration_ms: 48.1996
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: newly-hanging-rook-black
+ok 26 - saved whole row 25: newly-hanging-rook-black
+  ---
+  duration_ms: 47.568
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: newly-hanging-rook-mirror
+ok 27 - saved whole row 26: newly-hanging-rook-mirror
+  ---
+  duration_ms: 51.2734
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: newly-hanging-rook-mirror-black
+ok 28 - saved whole row 27: newly-hanging-rook-mirror-black
+  ---
+  duration_ms: 45.1687
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: enemy-interpose
+ok 29 - saved whole row 28: enemy-interpose
+  ---
+  duration_ms: 61.5628
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: enemy-interpose-black
+ok 30 - saved whole row 29: enemy-interpose-black
+  ---
+  duration_ms: 60.0787
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: enemy-interpose-mirror
+ok 31 - saved whole row 30: enemy-interpose-mirror
+  ---
+  duration_ms: 60.7981
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: enemy-interpose-mirror-black
+ok 32 - saved whole row 31: enemy-interpose-mirror-black
+  ---
+  duration_ms: 55.8843
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: queenside
+ok 33 - saved whole row 32: queenside
+  ---
+  duration_ms: 39.1525
+  type: 'test'
+  ...
+# Subtest: saved whole row 33: queenside-black
+ok 34 - saved whole row 33: queenside-black
+  ---
+  duration_ms: 36.9064
+  type: 'test'
+  ...
+# Subtest: saved whole row 34: queenside-mirror
+ok 35 - saved whole row 34: queenside-mirror
+  ---
+  duration_ms: 39.469
+  type: 'test'
+  ...
+# Subtest: saved whole row 35: queenside-mirror-black
+ok 36 - saved whole row 35: queenside-mirror-black
+  ---
+  duration_ms: 37.9303
+  type: 'test'
+  ...
+# Subtest: saved whole row 36: no-check
+ok 37 - saved whole row 36: no-check
+  ---
+  duration_ms: 30.974
+  type: 'test'
+  ...
+# Subtest: saved whole row 37: no-check-black
+ok 38 - saved whole row 37: no-check-black
+  ---
+  duration_ms: 32.2739
+  type: 'test'
+  ...
+# Subtest: saved whole row 38: no-check-mirror
+ok 39 - saved whole row 38: no-check-mirror
+  ---
+  duration_ms: 31.7585
+  type: 'test'
+  ...
+# Subtest: saved whole row 39: no-check-mirror-black
+ok 40 - saved whole row 39: no-check-mirror-black
+  ---
+  duration_ms: 33.1835
+  type: 'test'
+  ...
+# Subtest: saved whole row 40: short-transfer
+ok 41 - saved whole row 40: short-transfer
+  ---
+  duration_ms: 31.814
+  type: 'test'
+  ...
+# Subtest: saved whole row 41: short-transfer-black
+ok 42 - saved whole row 41: short-transfer-black
+  ---
+  duration_ms: 30.9294
+  type: 'test'
+  ...
+# Subtest: saved whole row 42: short-transfer-mirror
+ok 43 - saved whole row 42: short-transfer-mirror
+  ---
+  duration_ms: 28.441
+  type: 'test'
+  ...
+# Subtest: saved whole row 43: short-transfer-mirror-black
+ok 44 - saved whole row 43: short-transfer-mirror-black
+  ---
+  duration_ms: 30.7282
+  type: 'test'
+  ...
+# Subtest: saved whole row 44: vertical-actual
+ok 45 - saved whole row 44: vertical-actual
+  ---
+  duration_ms: 32.3301
+  type: 'test'
+  ...
+# Subtest: saved whole row 45: vertical-actual-black
+ok 46 - saved whole row 45: vertical-actual-black
+  ---
+  duration_ms: 32.071
+  type: 'test'
+  ...
+# Subtest: saved whole row 46: vertical-actual-mirror
+ok 47 - saved whole row 46: vertical-actual-mirror
+  ---
+  duration_ms: 31.7994
+  type: 'test'
+  ...
+# Subtest: saved whole row 47: vertical-actual-mirror-black
+ok 48 - saved whole row 47: vertical-actual-mirror-black
+  ---
+  duration_ms: 32.5732
+  type: 'test'
+  ...
+# Subtest: saved whole row 48: too-high-lift
+ok 49 - saved whole row 48: too-high-lift
+  ---
+  duration_ms: 40.5535
+  type: 'test'
+  ...
+# Subtest: saved whole row 49: too-high-lift-black
+ok 50 - saved whole row 49: too-high-lift-black
+  ---
+  duration_ms: 35.3924
+  type: 'test'
+  ...
+# Subtest: saved whole row 50: too-high-lift-mirror
+ok 51 - saved whole row 50: too-high-lift-mirror
+  ---
+  duration_ms: 37.5279
+  type: 'test'
+  ...
+# Subtest: saved whole row 51: too-high-lift-mirror-black
+ok 52 - saved whole row 51: too-high-lift-mirror-black
+  ---
+  duration_ms: 38.9835
+  type: 'test'
+  ...
+# Subtest: saved whole row 52: one-rank-lift
+ok 53 - saved whole row 52: one-rank-lift
+  ---
+  duration_ms: 30.6952
+  type: 'test'
+  ...
+# Subtest: saved whole row 53: one-rank-lift-black
+ok 54 - saved whole row 53: one-rank-lift-black
+  ---
+  duration_ms: 31.5407
+  type: 'test'
+  ...
+# Subtest: saved whole row 54: one-rank-lift-mirror
+ok 55 - saved whole row 54: one-rank-lift-mirror
+  ---
+  duration_ms: 31.4448
+  type: 'test'
+  ...
+# Subtest: saved whole row 55: one-rank-lift-mirror-black
+ok 56 - saved whole row 55: one-rank-lift-mirror-black
+  ---
+  duration_ms: 32.6492
+  type: 'test'
+  ...
+# Subtest: saved whole row 56: non-home-origin
+ok 57 - saved whole row 56: non-home-origin
+  ---
+  duration_ms: 32.3628
+  type: 'test'
+  ...
+# Subtest: saved whole row 57: non-home-origin-black
+ok 58 - saved whole row 57: non-home-origin-black
+  ---
+  duration_ms: 32.1491
+  type: 'test'
+  ...
+# Subtest: saved whole row 58: non-home-origin-mirror
+ok 59 - saved whole row 58: non-home-origin-mirror
+  ---
+  duration_ms: 31.7055
+  type: 'test'
+  ...
+# Subtest: saved whole row 59: non-home-origin-mirror-black
+ok 60 - saved whole row 59: non-home-origin-mirror-black
+  ---
+  duration_ms: 33.4764
+  type: 'test'
+  ...
+# Subtest: saved whole row 60: capturing-lift
+ok 61 - saved whole row 60: capturing-lift
+  ---
+  duration_ms: 27.226
+  type: 'test'
+  ...
+# Subtest: saved whole row 61: capturing-lift-black
+ok 62 - saved whole row 61: capturing-lift-black
+  ---
+  duration_ms: 24.9273
+  type: 'test'
+  ...
+# Subtest: saved whole row 62: capturing-lift-mirror
+ok 63 - saved whole row 62: capturing-lift-mirror
+  ---
+  duration_ms: 25.2729
+  type: 'test'
+  ...
+# Subtest: saved whole row 63: capturing-lift-mirror-black
+ok 64 - saved whole row 63: capturing-lift-mirror-black
+  ---
+  duration_ms: 24.8227
+  type: 'test'
+  ...
+# Subtest: saved whole row 64: blocked-check-ray
+ok 65 - saved whole row 64: blocked-check-ray
+  ---
+  duration_ms: 31.2879
+  type: 'test'
+  ...
+# Subtest: saved whole row 65: blocked-check-ray-black
+ok 66 - saved whole row 65: blocked-check-ray-black
+  ---
+  duration_ms: 29.9421
+  type: 'test'
+  ...
+# Subtest: saved whole row 66: blocked-check-ray-mirror
+ok 67 - saved whole row 66: blocked-check-ray-mirror
+  ---
+  duration_ms: 29.3611
+  type: 'test'
+  ...
+# Subtest: saved whole row 67: blocked-check-ray-mirror-black
+ok 68 - saved whole row 67: blocked-check-ray-mirror-black
+  ---
+  duration_ms: 27.9293
+  type: 'test'
+  ...
+# Subtest: saved whole row 68: other-rook
+ok 69 - saved whole row 68: other-rook
+  ---
+  duration_ms: 78.3177
+  type: 'test'
+  ...
+# Subtest: saved whole row 69: other-rook-black
+ok 70 - saved whole row 69: other-rook-black
+  ---
+  duration_ms: 70.173
+  type: 'test'
+  ...
+# Subtest: saved whole row 70: other-rook-mirror
+ok 71 - saved whole row 70: other-rook-mirror
+  ---
+  duration_ms: 73.9499
+  type: 'test'
+  ...
+# Subtest: saved whole row 71: other-rook-mirror-black
+ok 72 - saved whole row 71: other-rook-mirror-black
+  ---
+  duration_ms: 73.8185
+  type: 'test'
+  ...
+# Subtest: saved whole row 72: different-latest-own-move
+ok 73 - saved whole row 72: different-latest-own-move
+  ---
+  duration_ms: 48.8167
+  type: 'test'
+  ...
+# Subtest: saved whole row 73: different-latest-own-move-black
+ok 74 - saved whole row 73: different-latest-own-move-black
+  ---
+  duration_ms: 48.4633
+  type: 'test'
+  ...
+# Subtest: saved whole row 74: different-latest-own-move-mirror
+ok 75 - saved whole row 74: different-latest-own-move-mirror
+  ---
+  duration_ms: 48.9525
+  type: 'test'
+  ...
+# Subtest: saved whole row 75: different-latest-own-move-mirror-black
+ok 76 - saved whole row 75: different-latest-own-move-mirror-black
+  ---
+  duration_ms: 50.2538
+  type: 'test'
+  ...
+# Subtest: saved whole row 76: disabled
+ok 77 - saved whole row 76: disabled
+  ---
+  duration_ms: 31.9589
+  type: 'test'
+  ...
+# Subtest: saved whole row 77: disabled-black
+ok 78 - saved whole row 77: disabled-black
+  ---
+  duration_ms: 29.3649
+  type: 'test'
+  ...
+# Subtest: saved whole row 78: disabled-mirror
+ok 79 - saved whole row 78: disabled-mirror
+  ---
+  duration_ms: 29.7898
+  type: 'test'
+  ...
+# Subtest: saved whole row 79: disabled-mirror-black
+ok 80 - saved whole row 79: disabled-mirror-black
+  ---
+  duration_ms: 30.4814
+  type: 'test'
+  ...
+# Subtest: saved whole row 80: zero-budget
+ok 81 - saved whole row 80: zero-budget
+  ---
+  duration_ms: 29.6354
+  type: 'test'
+  ...
+# Subtest: saved whole row 81: zero-budget-black
+ok 82 - saved whole row 81: zero-budget-black
+  ---
+  duration_ms: 29.9229
+  type: 'test'
+  ...
+# Subtest: saved whole row 82: zero-budget-mirror
+ok 83 - saved whole row 82: zero-budget-mirror
+  ---
+  duration_ms: 30.8931
+  type: 'test'
+  ...
+# Subtest: saved whole row 83: zero-budget-mirror-black
+ok 84 - saved whole row 83: zero-budget-mirror-black
+  ---
+  duration_ms: 31.5311
+  type: 'test'
+  ...
+# Subtest: saved whole row 84: illegal-rook-diagonal
+ok 85 - saved whole row 84: illegal-rook-diagonal
+  ---
+  duration_ms: 3.8935
+  type: 'test'
+  ...
+# Subtest: saved whole row 85: illegal-rook-diagonal-black
+ok 86 - saved whole row 85: illegal-rook-diagonal-black
+  ---
+  duration_ms: 3.4967
+  type: 'test'
+  ...
+# Subtest: saved whole row 86: illegal-rook-diagonal-mirror
+ok 87 - saved whole row 86: illegal-rook-diagonal-mirror
+  ---
+  duration_ms: 3.5063
+  type: 'test'
+  ...
+# Subtest: saved whole row 87: illegal-rook-diagonal-mirror-black
+ok 88 - saved whole row 87: illegal-rook-diagonal-mirror-black
+  ---
+  duration_ms: 3.1092
+  type: 'test'
+  ...
+# Subtest: saved whole row 88: swing-blocks-check
+ok 89 - saved whole row 88: swing-blocks-check
+  ---
+  duration_ms: 57.3343
+  type: 'test'
+  ...
+# Subtest: saved whole row 89: swing-blocks-check-black
+ok 90 - saved whole row 89: swing-blocks-check-black
+  ---
+  duration_ms: 51.3073
+  type: 'test'
+  ...
+# Subtest: saved whole row 90: swing-blocks-check-mirror
+ok 91 - saved whole row 90: swing-blocks-check-mirror
+  ---
+  duration_ms: 60.3914
+  type: 'test'
+  ...
+# Subtest: saved whole row 91: swing-blocks-check-mirror-black
+ok 92 - saved whole row 91: swing-blocks-check-mirror-black
+  ---
+  duration_ms: 82.9768
+  type: 'test'
+  ...
+# Subtest: saved whole row 92: discovered-only-check
+ok 93 - saved whole row 92: discovered-only-check
+  ---
+  duration_ms: 54.1428
+  type: 'test'
+  ...
+# Subtest: saved whole row 93: discovered-only-check-black
+ok 94 - saved whole row 93: discovered-only-check-black
+  ---
+  duration_ms: 54.1403
+  type: 'test'
+  ...
+# Subtest: saved whole row 94: discovered-only-check-mirror
+ok 95 - saved whole row 94: discovered-only-check-mirror
+  ---
+  duration_ms: 55.8877
+  type: 'test'
+  ...
+# Subtest: saved whole row 95: discovered-only-check-mirror-black
+ok 96 - saved whole row 95: discovered-only-check-mirror-black
+  ---
+  duration_ms: 48.7354
+  type: 'test'
+  ...
+# Subtest: saved whole row 96: missing-history
+ok 97 - saved whole row 96: missing-history
+  ---
+  duration_ms: 14.1837
+  type: 'test'
+  ...
+# Subtest: saved whole row 97: missing-history-black
+ok 98 - saved whole row 97: missing-history-black
+  ---
+  duration_ms: 13.4709
+  type: 'test'
+  ...
+# Subtest: saved whole row 98: missing-history-mirror
+ok 99 - saved whole row 98: missing-history-mirror
+  ---
+  duration_ms: 13.4761
+  type: 'test'
+  ...
+# Subtest: saved whole row 99: missing-history-mirror-black
+ok 100 - saved whole row 99: missing-history-mirror-black
+  ---
+  duration_ms: 15.6803
+  type: 'test'
+  ...
+# Subtest: saved whole row 100: clock-terminal-actual
+ok 101 - saved whole row 100: clock-terminal-actual
+  ---
+  duration_ms: 26.5213
+  type: 'test'
+  ...
+# Subtest: saved whole row 101: clock-terminal-actual-black
+ok 102 - saved whole row 101: clock-terminal-actual-black
+  ---
+  duration_ms: 24.4031
+  type: 'test'
+  ...
+# Subtest: saved whole row 102: clock-terminal-actual-mirror
+ok 103 - saved whole row 102: clock-terminal-actual-mirror
+  ---
+  duration_ms: 25.0039
+  type: 'test'
+  ...
+# Subtest: saved whole row 103: clock-terminal-actual-mirror-black
+ok 104 - saved whole row 103: clock-terminal-actual-mirror-black
+  ---
+  duration_ms: 26.6008
+  type: 'test'
+  ...
+# Subtest: saved whole row 104: clock-terminal-replies
+ok 105 - saved whole row 104: clock-terminal-replies
+  ---
+  duration_ms: 36.6413
+  type: 'test'
+  ...
+# Subtest: saved whole row 105: clock-terminal-replies-black
+ok 106 - saved whole row 105: clock-terminal-replies-black
+  ---
+  duration_ms: 37.3596
+  type: 'test'
+  ...
+# Subtest: saved whole row 106: clock-terminal-replies-mirror
+ok 107 - saved whole row 106: clock-terminal-replies-mirror
+  ---
+  duration_ms: 36.9457
+  type: 'test'
+  ...
+# Subtest: saved whole row 107: clock-terminal-replies-mirror-black
+ok 108 - saved whole row 107: clock-terminal-replies-mirror-black
+  ---
+  duration_ms: 38.2894
+  type: 'test'
+  ...
+# Subtest: saved shape rejects schema
+ok 109 - saved shape rejects schema
+  ---
+  duration_ms: 24.9043
+  type: 'test'
+  ...
+# Subtest: saved shape rejects source
+ok 110 - saved shape rejects source
+  ---
+  duration_ms: 20.8465
+  type: 'test'
+  ...
+# Subtest: saved shape rejects missing row
+ok 111 - saved shape rejects missing row
+  ---
+  duration_ms: 21.8322
+  type: 'test'
+  ...
+# Subtest: saved shape rejects duplicate row
+ok 112 - saved shape rejects duplicate row
+  ---
+  duration_ms: 21.0594
+  type: 'test'
+  ...
+# Subtest: saved shape rejects row order
+ok 113 - saved shape rejects row order
+  ---
+  duration_ms: 30.8912
+  type: 'test'
+  ...
+# Subtest: saved shape rejects fixture
+ok 114 - saved shape rejects fixture
+  ---
+  duration_ms: 25.1346
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result missing
+ok 115 - saved shape rejects result missing
+  ---
+  duration_ms: 26.2607
+  type: 'test'
+  ...
+# Subtest: saved shape rejects error inserted
+ok 116 - saved shape rejects error inserted
+  ---
+  duration_ms: 25.1879
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline missing
+ok 117 - saved shape rejects baseline missing
+  ---
+  duration_ms: 20.916
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline fingerprint
+ok 118 - saved shape rejects baseline fingerprint
+  ---
+  duration_ms: 33.9371
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result count
+ok 119 - saved shape rejects result count
+  ---
+  duration_ms: 22.3613
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record order
+ok 120 - saved shape rejects own record order
+  ---
+  duration_ms: 28.7542
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record missing
+ok 121 - saved shape rejects own record missing
+  ---
+  duration_ms: 24.1267
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own kind forged
+ok 122 - saved shape rejects own kind forged
+  ---
+  duration_ms: 22.7898
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 123 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.4355
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 124 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.3636
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 125 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.6567
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 126 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.2297
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects bytes
+ok 127 - raw artifact rejects bytes
+  ---
+  duration_ms: 36.0603
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects content
+ok 128 - raw artifact rejects content
+  ---
+  duration_ms: 14.0203
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects append
+ok 129 - raw artifact rejects append
+  ---
+  duration_ms: 8.9739
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects namespace
+ok 130 - raw artifact rejects namespace
+  ---
+  duration_ms: 11.5893
+  type: 'test'
+  ...
+1..130
+# tests 130
+# suites 0
+# pass 130
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4528.9127
