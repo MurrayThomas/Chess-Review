@@ -4,7 +4,51 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E064 historical pawn-wall results qualified
+## Latest preparation boundary — E063 independent pawn-storm smoke passed
+
+2026-10-12. Pilot registered3474ffb/implemented5a63ec7:7/7PASS in11.972seconds,
+within10–90forecast/180cap;66source inputs/42,895raw bytes, retained8f72d88.
+Full smoke registeredba995da/implementedffeafee:155/155PASS in49.469seconds,
+within15–120forecast/300cap;70source inputs/65,852raw bytes, retainedc0f4059.
+Evidence: evidence/semantic-e063-pilot-initial/ and
+ evidence/semantic-e063-smoke-initial/. Ten raw Git blobs byte-exact,108,747bytes.
+No failures/timeouts/source/canonical/generated changes. Processes terminal;
+no live handle. Source/diff checks pass.22prior E064–E085qualified closures/
+1866source comparisons unchanged at pilot boundary; smoke source+freeze guards
+unchanged. Frozen2658sources/1624canonical unchanged;259-file12017-test PASS
+reused. No full/inherited recollection or accepted/provisional/support/origin
+credit, production change or push. Full research goal active.
+
+New separate whole oracle imports no E063 candidate/helpers. Full-history
+reconstruction/indexed chronological castle/prior-own selection/standard castle
+flank/current king/distinct current pawns/advancement/distance/connection and
+ALL full-history actual legal replies checked, plus mandatory presence/absence,
+v44/101.05 inherited order/comment/text/quality/exact ledger/atomic clearing.
+E062 fresh output+priority, Chess/E020 legality and original positive checker
+remain explicit dependencies. Pilot old per-event ledger-forgery bypass rejected
+by whole check; both flanks/colors physical off-destination EP controls passed.
+Full100original color-paired rows:96complete results/four abstract illegal errors,
+88complete/4disabled/4exhausted states,32certificates,668replies/1320positive pawn
+presence references/100history plies. Physical ALL-positive reply reconstruction
+confirms16pawn-loss replies/14terminal replies/fourEP captures, without equating
+terminal to mate.40distinct whole-result corruptions rejected; seven exhaustive
+integer0..needed+1 budget groups span history/geometry/replies and atomic absence.
+Strict/null/disabled options, castle/flank/colors/double/staggered/capture,
+earlier-history EP expiry, all recorded negative/actual-promotion/mate/illegal,
+immutability/parent priority/urgent pawn-loss+mate comments passed.
+
+Actual irreversible pawn advance resets clock and earlier pawn placement becomes
+inaccessible; this scoped comparison does not assert generic fresh-FEN history
+safety. Recorded pawn storm does not claim intent/safety/advantage/success.
+Next: prospectively register original E063 saved source/receipt/reproduction/
+canonical/ordered metadata/inherited fingerprint authentication and whole replay;
+no saved E063 payload evaluated by these new stages. E062 ancestor semantics,
+E066 direct queen-capture continuation, E067 removed-pawn direct controls/global
+historical-terminal API refusal and E073 eight/seven-edge discrepancy stay OPEN.
+All171origin combined API integration/exact changed-source three reproductions/
+broader original strategy/real-game precision/human usefulness remain OPEN.
+
+## Prior semantic boundary — E064 historical pawn-wall results qualified
 
 2026-10-12. Registrationab16779/implementation6c9d327:162/162saved PASS in29.150
 seconds, within25–120forecast/600cap. ALL140rows:136complete saved results with
