@@ -1,0 +1,1150 @@
+TAP version 13
+# Subtest: original supported-fifth
+ok 1 - original supported-fifth
+  ---
+  duration_ms: 71.5362
+  type: 'test'
+  ...
+# Subtest: original supported-fifth-black
+ok 2 - original supported-fifth-black
+  ---
+  duration_ms: 30.1304
+  type: 'test'
+  ...
+# Subtest: original supported-fifth-mirror
+ok 3 - original supported-fifth-mirror
+  ---
+  duration_ms: 29.5128
+  type: 'test'
+  ...
+# Subtest: original supported-fifth-mirror-black
+ok 4 - original supported-fifth-mirror-black
+  ---
+  duration_ms: 28.2085
+  type: 'test'
+  ...
+# Subtest: original two-supporters
+ok 5 - original two-supporters
+  ---
+  duration_ms: 16.896
+  type: 'test'
+  ...
+# Subtest: original two-supporters-black
+ok 6 - original two-supporters-black
+  ---
+  duration_ms: 25.2998
+  type: 'test'
+  ...
+# Subtest: original two-supporters-mirror
+ok 7 - original two-supporters-mirror
+  ---
+  duration_ms: 15.5185
+  type: 'test'
+  ...
+# Subtest: original two-supporters-mirror-black
+ok 8 - original two-supporters-mirror-black
+  ---
+  duration_ms: 13.9533
+  type: 'test'
+  ...
+# Subtest: original no-enemy-pawns
+ok 9 - original no-enemy-pawns
+  ---
+  duration_ms: 20.9552
+  type: 'test'
+  ...
+# Subtest: original no-enemy-pawns-black
+ok 10 - original no-enemy-pawns-black
+  ---
+  duration_ms: 46.4203
+  type: 'test'
+  ...
+# Subtest: original no-enemy-pawns-mirror
+ok 11 - original no-enemy-pawns-mirror
+  ---
+  duration_ms: 24.3185
+  type: 'test'
+  ...
+# Subtest: original no-enemy-pawns-mirror-black
+ok 12 - original no-enemy-pawns-mirror-black
+  ---
+  duration_ms: 25.7436
+  type: 'test'
+  ...
+# Subtest: original capture-entry
+ok 13 - original capture-entry
+  ---
+  duration_ms: 40.9897
+  type: 'test'
+  ...
+# Subtest: original capture-entry-black
+ok 14 - original capture-entry-black
+  ---
+  duration_ms: 38.3585
+  type: 'test'
+  ...
+# Subtest: original capture-entry-mirror
+ok 15 - original capture-entry-mirror
+  ---
+  duration_ms: 29.9907
+  type: 'test'
+  ...
+# Subtest: original capture-entry-mirror-black
+ok 16 - original capture-entry-mirror-black
+  ---
+  duration_ms: 31.8191
+  type: 'test'
+  ...
+# Subtest: original capture-challenging-pawn
+ok 17 - original capture-challenging-pawn
+  ---
+  duration_ms: 29.5725
+  type: 'test'
+  ...
+# Subtest: original capture-challenging-pawn-black
+ok 18 - original capture-challenging-pawn-black
+  ---
+  duration_ms: 28.0937
+  type: 'test'
+  ...
+# Subtest: original capture-challenging-pawn-mirror
+ok 19 - original capture-challenging-pawn-mirror
+  ---
+  duration_ms: 26.8244
+  type: 'test'
+  ...
+# Subtest: original capture-challenging-pawn-mirror-black
+ok 20 - original capture-challenging-pawn-mirror-black
+  ---
+  duration_ms: 30.1204
+  type: 'test'
+  ...
+# Subtest: original remote-pawns
+ok 21 - original remote-pawns
+  ---
+  duration_ms: 17.4047
+  type: 'test'
+  ...
+# Subtest: original remote-pawns-black
+ok 22 - original remote-pawns-black
+  ---
+  duration_ms: 15.9695
+  type: 'test'
+  ...
+# Subtest: original remote-pawns-mirror
+ok 23 - original remote-pawns-mirror
+  ---
+  duration_ms: 14.9333
+  type: 'test'
+  ...
+# Subtest: original remote-pawns-mirror-black
+ok 24 - original remote-pawns-mirror-black
+  ---
+  duration_ms: 15.9185
+  type: 'test'
+  ...
+# Subtest: original enemy-right-capture-shift
+ok 25 - original enemy-right-capture-shift
+  ---
+  duration_ms: 11.2955
+  type: 'test'
+  ...
+# Subtest: original enemy-right-capture-shift-black
+ok 26 - original enemy-right-capture-shift-black
+  ---
+  duration_ms: 11.0783
+  type: 'test'
+  ...
+# Subtest: original enemy-right-capture-shift-mirror
+ok 27 - original enemy-right-capture-shift-mirror
+  ---
+  duration_ms: 11.7924
+  type: 'test'
+  ...
+# Subtest: original enemy-right-capture-shift-mirror-black
+ok 28 - original enemy-right-capture-shift-mirror-black
+  ---
+  duration_ms: 11.3051
+  type: 'test'
+  ...
+# Subtest: original passed-enemy-pawn
+ok 29 - original passed-enemy-pawn
+  ---
+  duration_ms: 25.4982
+  type: 'test'
+  ...
+# Subtest: original passed-enemy-pawn-black
+ok 30 - original passed-enemy-pawn-black
+  ---
+  duration_ms: 23.7335
+  type: 'test'
+  ...
+# Subtest: original passed-enemy-pawn-mirror
+ok 31 - original passed-enemy-pawn-mirror
+  ---
+  duration_ms: 23.7871
+  type: 'test'
+  ...
+# Subtest: original passed-enemy-pawn-mirror-black
+ok 32 - original passed-enemy-pawn-mirror-black
+  ---
+  duration_ms: 23.5919
+  type: 'test'
+  ...
+# Subtest: original enemy-knight-capture
+ok 33 - original enemy-knight-capture
+  ---
+  duration_ms: 40.3495
+  type: 'test'
+  ...
+# Subtest: original enemy-knight-capture-black
+ok 34 - original enemy-knight-capture-black
+  ---
+  duration_ms: 40.873
+  type: 'test'
+  ...
+# Subtest: original enemy-knight-capture-mirror
+ok 35 - original enemy-knight-capture-mirror
+  ---
+  duration_ms: 39.2964
+  type: 'test'
+  ...
+# Subtest: original enemy-knight-capture-mirror-black
+ok 36 - original enemy-knight-capture-mirror-black
+  ---
+  duration_ms: 41.6358
+  type: 'test'
+  ...
+# Subtest: original support-can-be-captured
+ok 37 - original support-can-be-captured
+  ---
+  duration_ms: 64.6395
+  type: 'test'
+  ...
+# Subtest: original support-can-be-captured-black
+ok 38 - original support-can-be-captured-black
+  ---
+  duration_ms: 68.0694
+  type: 'test'
+  ...
+# Subtest: original support-can-be-captured-mirror
+ok 39 - original support-can-be-captured-mirror
+  ---
+  duration_ms: 72.1548
+  type: 'test'
+  ...
+# Subtest: original support-can-be-captured-mirror-black
+ok 40 - original support-can-be-captured-mirror-black
+  ---
+  duration_ms: 70.6749
+  type: 'test'
+  ...
+# Subtest: original relative-pawn-pin
+ok 41 - original relative-pawn-pin
+  ---
+  duration_ms: 45.1724
+  type: 'test'
+  ...
+# Subtest: original relative-pawn-pin-black
+ok 42 - original relative-pawn-pin-black
+  ---
+  duration_ms: 46.1849
+  type: 'test'
+  ...
+# Subtest: original relative-pawn-pin-mirror
+ok 43 - original relative-pawn-pin-mirror
+  ---
+  duration_ms: 39.6604
+  type: 'test'
+  ...
+# Subtest: original relative-pawn-pin-mirror-black
+ok 44 - original relative-pawn-pin-mirror-black
+  ---
+  duration_ms: 44.985
+  type: 'test'
+  ...
+# Subtest: original advanced-sixth
+ok 45 - original advanced-sixth
+  ---
+  duration_ms: 31.6464
+  type: 'test'
+  ...
+# Subtest: original advanced-sixth-black
+ok 46 - original advanced-sixth-black
+  ---
+  duration_ms: 32.7197
+  type: 'test'
+  ...
+# Subtest: original advanced-sixth-mirror
+ok 47 - original advanced-sixth-mirror
+  ---
+  duration_ms: 32.1153
+  type: 'test'
+  ...
+# Subtest: original advanced-sixth-mirror-black
+ok 48 - original advanced-sixth-mirror-black
+  ---
+  duration_ms: 33.0028
+  type: 'test'
+  ...
+# Subtest: original advanced-blockades-pawn
+ok 49 - original advanced-blockades-pawn
+  ---
+  duration_ms: 16.6547
+  type: 'test'
+  ...
+# Subtest: original advanced-blockades-pawn-black
+ok 50 - original advanced-blockades-pawn-black
+  ---
+  duration_ms: 15.8463
+  type: 'test'
+  ...
+# Subtest: original advanced-blockades-pawn-mirror
+ok 51 - original advanced-blockades-pawn-mirror
+  ---
+  duration_ms: 14.9922
+  type: 'test'
+  ...
+# Subtest: original advanced-blockades-pawn-mirror-black
+ok 52 - original advanced-blockades-pawn-mirror-black
+  ---
+  duration_ms: 15.0441
+  type: 'test'
+  ...
+# Subtest: original advanced-two-supporters
+ok 53 - original advanced-two-supporters
+  ---
+  duration_ms: 15.0297
+  type: 'test'
+  ...
+# Subtest: original advanced-two-supporters-black
+ok 54 - original advanced-two-supporters-black
+  ---
+  duration_ms: 15.002
+  type: 'test'
+  ...
+# Subtest: original advanced-two-supporters-mirror
+ok 55 - original advanced-two-supporters-mirror
+  ---
+  duration_ms: 15.4287
+  type: 'test'
+  ...
+# Subtest: original advanced-two-supporters-mirror-black
+ok 56 - original advanced-two-supporters-mirror-black
+  ---
+  duration_ms: 16.567
+  type: 'test'
+  ...
+# Subtest: original advanced-right-file
+ok 57 - original advanced-right-file
+  ---
+  duration_ms: 31.3469
+  type: 'test'
+  ...
+# Subtest: original advanced-right-file-black
+ok 58 - original advanced-right-file-black
+  ---
+  duration_ms: 27.7184
+  type: 'test'
+  ...
+# Subtest: original advanced-right-file-mirror
+ok 59 - original advanced-right-file-mirror
+  ---
+  duration_ms: 30.6793
+  type: 'test'
+  ...
+# Subtest: original advanced-right-file-mirror-black
+ok 60 - original advanced-right-file-mirror-black
+  ---
+  duration_ms: 30.0931
+  type: 'test'
+  ...
+# Subtest: original fourth-with-promotion-replies
+ok 61 - original fourth-with-promotion-replies
+  ---
+  duration_ms: 53.9076
+  type: 'test'
+  ...
+# Subtest: original fourth-with-promotion-replies-black
+ok 62 - original fourth-with-promotion-replies-black
+  ---
+  duration_ms: 34.8871
+  type: 'test'
+  ...
+# Subtest: original fourth-with-promotion-replies-mirror
+ok 63 - original fourth-with-promotion-replies-mirror
+  ---
+  duration_ms: 35.95
+  type: 'test'
+  ...
+# Subtest: original fourth-with-promotion-replies-mirror-black
+ok 64 - original fourth-with-promotion-replies-mirror-black
+  ---
+  duration_ms: 34.1342
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-currently-attacks
+ok 65 - original enemy-pawn-currently-attacks
+  ---
+  duration_ms: 24.2586
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-currently-attacks-black
+ok 66 - original enemy-pawn-currently-attacks-black
+  ---
+  duration_ms: 24.2617
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-currently-attacks-mirror
+ok 67 - original enemy-pawn-currently-attacks-mirror
+  ---
+  duration_ms: 23.2265
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-currently-attacks-mirror-black
+ok 68 - original enemy-pawn-currently-attacks-mirror-black
+  ---
+  duration_ms: 24.8469
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-advance
+ok 69 - original enemy-pawn-can-advance
+  ---
+  duration_ms: 12.6885
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-advance-black
+ok 70 - original enemy-pawn-can-advance-black
+  ---
+  duration_ms: 13.0636
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-advance-mirror
+ok 71 - original enemy-pawn-can-advance-mirror
+  ---
+  duration_ms: 12.57
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-advance-mirror-black
+ok 72 - original enemy-pawn-can-advance-mirror-black
+  ---
+  duration_ms: 13.0297
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-shift-file
+ok 73 - original enemy-pawn-can-shift-file
+  ---
+  duration_ms: 11.1722
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-shift-file-black
+ok 74 - original enemy-pawn-can-shift-file-black
+  ---
+  duration_ms: 11.2073
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-shift-file-mirror
+ok 75 - original enemy-pawn-can-shift-file-mirror
+  ---
+  duration_ms: 11.3815
+  type: 'test'
+  ...
+# Subtest: original enemy-pawn-can-shift-file-mirror-black
+ok 76 - original enemy-pawn-can-shift-file-mirror-black
+  ---
+  duration_ms: 11.4607
+  type: 'test'
+  ...
+# Subtest: original blocked-pawn-still-theoretically-reachable
+ok 77 - original blocked-pawn-still-theoretically-reachable
+  ---
+  duration_ms: 16.7144
+  type: 'test'
+  ...
+# Subtest: original blocked-pawn-still-theoretically-reachable-black
+ok 78 - original blocked-pawn-still-theoretically-reachable-black
+  ---
+  duration_ms: 16.2486
+  type: 'test'
+  ...
+# Subtest: original blocked-pawn-still-theoretically-reachable-mirror
+ok 79 - original blocked-pawn-still-theoretically-reachable-mirror
+  ---
+  duration_ms: 16.3823
+  type: 'test'
+  ...
+# Subtest: original blocked-pawn-still-theoretically-reachable-mirror-black
+ok 80 - original blocked-pawn-still-theoretically-reachable-mirror-black
+  ---
+  duration_ms: 17.0618
+  type: 'test'
+  ...
+# Subtest: original legal-capture-file-chain
+ok 81 - original legal-capture-file-chain
+  ---
+  duration_ms: 33.3409
+  type: 'test'
+  ...
+# Subtest: original legal-capture-file-chain-black
+ok 82 - original legal-capture-file-chain-black
+  ---
+  duration_ms: 34.2597
+  type: 'test'
+  ...
+# Subtest: original legal-capture-file-chain-mirror
+ok 83 - original legal-capture-file-chain-mirror
+  ---
+  duration_ms: 32.8329
+  type: 'test'
+  ...
+# Subtest: original legal-capture-file-chain-mirror-black
+ok 84 - original legal-capture-file-chain-mirror-black
+  ---
+  duration_ms: 36.1132
+  type: 'test'
+  ...
+# Subtest: original farther-file-capture-chain
+ok 85 - original farther-file-capture-chain
+  ---
+  duration_ms: 19.0272
+  type: 'test'
+  ...
+# Subtest: original farther-file-capture-chain-black
+ok 86 - original farther-file-capture-chain-black
+  ---
+  duration_ms: 19.1161
+  type: 'test'
+  ...
+# Subtest: original farther-file-capture-chain-mirror
+ok 87 - original farther-file-capture-chain-mirror
+  ---
+  duration_ms: 21.9141
+  type: 'test'
+  ...
+# Subtest: original farther-file-capture-chain-mirror-black
+ok 88 - original farther-file-capture-chain-mirror-black
+  ---
+  duration_ms: 20.695
+  type: 'test'
+  ...
+# Subtest: original advanced-current-pawn-attack
+ok 89 - original advanced-current-pawn-attack
+  ---
+  duration_ms: 18.0007
+  type: 'test'
+  ...
+# Subtest: original advanced-current-pawn-attack-black
+ok 90 - original advanced-current-pawn-attack-black
+  ---
+  duration_ms: 20.0729
+  type: 'test'
+  ...
+# Subtest: original advanced-current-pawn-attack-mirror
+ok 91 - original advanced-current-pawn-attack-mirror
+  ---
+  duration_ms: 17.6575
+  type: 'test'
+  ...
+# Subtest: original advanced-current-pawn-attack-mirror-black
+ok 92 - original advanced-current-pawn-attack-mirror-black
+  ---
+  duration_ms: 18.9914
+  type: 'test'
+  ...
+# Subtest: original no-pawn-support
+ok 93 - original no-pawn-support
+  ---
+  duration_ms: 20.7012
+  type: 'test'
+  ...
+# Subtest: original no-pawn-support-black
+ok 94 - original no-pawn-support-black
+  ---
+  duration_ms: 20.8828
+  type: 'test'
+  ...
+# Subtest: original no-pawn-support-mirror
+ok 95 - original no-pawn-support-mirror
+  ---
+  duration_ms: 18.4062
+  type: 'test'
+  ...
+# Subtest: original no-pawn-support-mirror-black
+ok 96 - original no-pawn-support-mirror-black
+  ---
+  duration_ms: 19.6718
+  type: 'test'
+  ...
+# Subtest: original absolute-pawn-pin
+ok 97 - original absolute-pawn-pin
+  ---
+  duration_ms: 43.0996
+  type: 'test'
+  ...
+# Subtest: original absolute-pawn-pin-black
+ok 98 - original absolute-pawn-pin-black
+  ---
+  duration_ms: 49.1328
+  type: 'test'
+  ...
+# Subtest: original absolute-pawn-pin-mirror
+ok 99 - original absolute-pawn-pin-mirror
+  ---
+  duration_ms: 48.6992
+  type: 'test'
+  ...
+# Subtest: original absolute-pawn-pin-mirror-black
+ok 100 - original absolute-pawn-pin-mirror-black
+  ---
+  duration_ms: 55.9178
+  type: 'test'
+  ...
+# Subtest: original too-shallow
+ok 101 - original too-shallow
+  ---
+  duration_ms: 16.7152
+  type: 'test'
+  ...
+# Subtest: original too-shallow-black
+ok 102 - original too-shallow-black
+  ---
+  duration_ms: 15.8012
+  type: 'test'
+  ...
+# Subtest: original too-shallow-mirror
+ok 103 - original too-shallow-mirror
+  ---
+  duration_ms: 16.1265
+  type: 'test'
+  ...
+# Subtest: original too-shallow-mirror-black
+ok 104 - original too-shallow-mirror-black
+  ---
+  duration_ms: 15.9115
+  type: 'test'
+  ...
+# Subtest: original advanced-f6
+ok 105 - original advanced-f6
+  ---
+  duration_ms: 27.641
+  type: 'test'
+  ...
+# Subtest: original advanced-f6-black
+ok 106 - original advanced-f6-black
+  ---
+  duration_ms: 26.0549
+  type: 'test'
+  ...
+# Subtest: original advanced-f6-mirror
+ok 107 - original advanced-f6-mirror
+  ---
+  duration_ms: 28.4477
+  type: 'test'
+  ...
+# Subtest: original advanced-f6-mirror-black
+ok 108 - original advanced-f6-mirror-black
+  ---
+  duration_ms: 25.9802
+  type: 'test'
+  ...
+# Subtest: original rank-seven-excluded
+ok 109 - original rank-seven-excluded
+  ---
+  duration_ms: 20.477
+  type: 'test'
+  ...
+# Subtest: original rank-seven-excluded-black
+ok 110 - original rank-seven-excluded-black
+  ---
+  duration_ms: 20.9414
+  type: 'test'
+  ...
+# Subtest: original rank-seven-excluded-mirror
+ok 111 - original rank-seven-excluded-mirror
+  ---
+  duration_ms: 20.2155
+  type: 'test'
+  ...
+# Subtest: original rank-seven-excluded-mirror-black
+ok 112 - original rank-seven-excluded-mirror-black
+  ---
+  duration_ms: 19.7651
+  type: 'test'
+  ...
+# Subtest: original bishop-not-knight
+ok 113 - original bishop-not-knight
+  ---
+  duration_ms: 28.1125
+  type: 'test'
+  ...
+# Subtest: original bishop-not-knight-black
+ok 114 - original bishop-not-knight-black
+  ---
+  duration_ms: 28.8321
+  type: 'test'
+  ...
+# Subtest: original bishop-not-knight-mirror
+ok 115 - original bishop-not-knight-mirror
+  ---
+  duration_ms: 49.8424
+  type: 'test'
+  ...
+# Subtest: original bishop-not-knight-mirror-black
+ok 116 - original bishop-not-knight-mirror-black
+  ---
+  duration_ms: 27.9216
+  type: 'test'
+  ...
+# Subtest: original actual-knight-mate
+ok 117 - original actual-knight-mate
+  ---
+  duration_ms: 7.9977
+  type: 'test'
+  ...
+# Subtest: original actual-knight-mate-black
+ok 118 - original actual-knight-mate-black
+  ---
+  duration_ms: 7.176
+  type: 'test'
+  ...
+# Subtest: original actual-knight-mate-mirror
+ok 119 - original actual-knight-mate-mirror
+  ---
+  duration_ms: 6.5934
+  type: 'test'
+  ...
+# Subtest: original actual-knight-mate-mirror-black
+ok 120 - original actual-knight-mate-mirror-black
+  ---
+  duration_ms: 6.5097
+  type: 'test'
+  ...
+# Subtest: original disabled
+ok 121 - original disabled
+  ---
+  duration_ms: 21.0278
+  type: 'test'
+  ...
+# Subtest: original disabled-black
+ok 122 - original disabled-black
+  ---
+  duration_ms: 18.6621
+  type: 'test'
+  ...
+# Subtest: original disabled-mirror
+ok 123 - original disabled-mirror
+  ---
+  duration_ms: 20.1088
+  type: 'test'
+  ...
+# Subtest: original disabled-mirror-black
+ok 124 - original disabled-mirror-black
+  ---
+  duration_ms: 19.7532
+  type: 'test'
+  ...
+# Subtest: original zero-budget
+ok 125 - original zero-budget
+  ---
+  duration_ms: 20.1396
+  type: 'test'
+  ...
+# Subtest: original zero-budget-black
+ok 126 - original zero-budget-black
+  ---
+  duration_ms: 20.1937
+  type: 'test'
+  ...
+# Subtest: original zero-budget-mirror
+ok 127 - original zero-budget-mirror
+  ---
+  duration_ms: 19.5133
+  type: 'test'
+  ...
+# Subtest: original zero-budget-mirror-black
+ok 128 - original zero-budget-mirror-black
+  ---
+  duration_ms: 20.5803
+  type: 'test'
+  ...
+# Subtest: original illegal-knight-step
+ok 129 - original illegal-knight-step
+  ---
+  duration_ms: 1.3875
+  type: 'test'
+  ...
+# Subtest: original illegal-knight-step-black
+ok 130 - original illegal-knight-step-black
+  ---
+  duration_ms: 0.8908
+  type: 'test'
+  ...
+# Subtest: original illegal-knight-step-mirror
+ok 131 - original illegal-knight-step-mirror
+  ---
+  duration_ms: 0.8325
+  type: 'test'
+  ...
+# Subtest: original illegal-knight-step-mirror-black
+ok 132 - original illegal-knight-step-mirror-black
+  ---
+  duration_ms: 0.8567
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal
+ok 133 - original actual-clock-terminal
+  ---
+  duration_ms: 13.8082
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-black
+ok 134 - original actual-clock-terminal-black
+  ---
+  duration_ms: 13.5366
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-mirror
+ok 135 - original actual-clock-terminal-mirror
+  ---
+  duration_ms: 13.4374
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-mirror-black
+ok 136 - original actual-clock-terminal-mirror-black
+  ---
+  duration_ms: 13.8406
+  type: 'test'
+  ...
+# Subtest: original clock-terminal-replies
+ok 137 - original clock-terminal-replies
+  ---
+  duration_ms: 28.047
+  type: 'test'
+  ...
+# Subtest: original clock-terminal-replies-black
+ok 138 - original clock-terminal-replies-black
+  ---
+  duration_ms: 27.4687
+  type: 'test'
+  ...
+# Subtest: original clock-terminal-replies-mirror
+ok 139 - original clock-terminal-replies-mirror
+  ---
+  duration_ms: 27.0266
+  type: 'test'
+  ...
+# Subtest: original clock-terminal-replies-mirror-black
+ok 140 - original clock-terminal-replies-mirror-black
+  ---
+  duration_ms: 27.3058
+  type: 'test'
+  ...
+# Subtest: original history-repetition-reply
+ok 141 - original history-repetition-reply
+  ---
+  duration_ms: 101.6689
+  type: 'test'
+  ...
+# Subtest: original history-repetition-reply-black
+ok 142 - original history-repetition-reply-black
+  ---
+  duration_ms: 102.3098
+  type: 'test'
+  ...
+# Subtest: original history-repetition-reply-mirror
+ok 143 - original history-repetition-reply-mirror
+  ---
+  duration_ms: 99.3565
+  type: 'test'
+  ...
+# Subtest: original history-repetition-reply-mirror-black
+ok 144 - original history-repetition-reply-mirror-black
+  ---
+  duration_ms: 99.802
+  type: 'test'
+  ...
+# Subtest: original advanced-check-evasion
+ok 145 - original advanced-check-evasion
+  ---
+  duration_ms: 84.8651
+  type: 'test'
+  ...
+# Subtest: original advanced-check-evasion-black
+ok 146 - original advanced-check-evasion-black
+  ---
+  duration_ms: 82.559
+  type: 'test'
+  ...
+# Subtest: original advanced-check-evasion-mirror
+ok 147 - original advanced-check-evasion-mirror
+  ---
+  duration_ms: 86.6491
+  type: 'test'
+  ...
+# Subtest: original advanced-check-evasion-mirror-black
+ok 148 - original advanced-check-evasion-mirror-black
+  ---
+  duration_ms: 84.0332
+  type: 'test'
+  ...
+# Subtest: forgery history omitted
+ok 149 - forgery history omitted
+  ---
+  duration_ms: 155.0055
+  type: 'test'
+  ...
+# Subtest: forgery played move forged
+ok 150 - forgery played move forged
+  ---
+  duration_ms: 40.9501
+  type: 'test'
+  ...
+# Subtest: forgery relative rank forged
+ok 151 - forgery relative rank forged
+  ---
+  duration_ms: 41.7482
+  type: 'test'
+  ...
+# Subtest: forgery counterframe forged
+ok 152 - forgery counterframe forged
+  ---
+  duration_ms: 38.7799
+  type: 'test'
+  ...
+# Subtest: forgery legal supporter omitted
+ok 153 - forgery legal supporter omitted
+  ---
+  duration_ms: 41.9573
+  type: 'test'
+  ...
+# Subtest: forgery legal supporter invented
+ok 154 - forgery legal supporter invented
+  ---
+  duration_ms: 39.6081
+  type: 'test'
+  ...
+# Subtest: forgery pawn graph omitted
+ok 155 - forgery pawn graph omitted
+  ---
+  duration_ms: 46.4656
+  type: 'test'
+  ...
+# Subtest: forgery pawn node omitted
+ok 156 - forgery pawn node omitted
+  ---
+  duration_ms: 40.92
+  type: 'test'
+  ...
+# Subtest: forgery pawn edge omitted
+ok 157 - forgery pawn edge omitted
+  ---
+  duration_ms: 39.9424
+  type: 'test'
+  ...
+# Subtest: forgery pawn attacks forged
+ok 158 - forgery pawn attacks forged
+  ---
+  duration_ms: 41.5801
+  type: 'test'
+  ...
+# Subtest: forgery reply omitted
+ok 159 - forgery reply omitted
+  ---
+  duration_ms: 41.8949
+  type: 'test'
+  ...
+# Subtest: forgery reply order forged
+ok 160 - forgery reply order forged
+  ---
+  duration_ms: 38.5415
+  type: 'test'
+  ...
+# Subtest: forgery knight presence forged
+ok 161 - forgery knight presence forged
+  ---
+  duration_ms: 41.2118
+  type: 'test'
+  ...
+# Subtest: forgery geometric support forged
+ok 162 - forgery geometric support forged
+  ---
+  duration_ms: 41.2516
+  type: 'test'
+  ...
+# Subtest: forgery attacking pawn invented
+ok 163 - forgery attacking pawn invented
+  ---
+  duration_ms: 38.7276
+  type: 'test'
+  ...
+# Subtest: forgery reply terminal forged
+ok 164 - forgery reply terminal forged
+  ---
+  duration_ms: 149.7074
+  type: 'test'
+  ...
+# Subtest: forgery reply promotion forged
+ok 165 - forgery reply promotion forged
+  ---
+  duration_ms: 41.693
+  type: 'test'
+  ...
+# Subtest: forgery reply SAN forged
+ok 166 - forgery reply SAN forged
+  ---
+  duration_ms: 38.7916
+  type: 'test'
+  ...
+# Subtest: forgery proof text forged
+ok 167 - forgery proof text forged
+  ---
+  duration_ms: 46.322
+  type: 'test'
+  ...
+# Subtest: forgery quality claim forged
+ok 168 - forgery quality claim forged
+  ---
+  duration_ms: 40.3626
+  type: 'test'
+  ...
+# Subtest: forgery schema forged
+ok 169 - forgery schema forged
+  ---
+  duration_ms: 41.4138
+  type: 'test'
+  ...
+# Subtest: forgery node ledger forged
+ok 170 - forgery node ledger forged
+  ---
+  duration_ms: 39.6446
+  type: 'test'
+  ...
+# Subtest: forgery limit forged
+ok 171 - forgery limit forged
+  ---
+  duration_ms: 41.5526
+  type: 'test'
+  ...
+# Subtest: forgery selected comment forged
+ok 172 - forgery selected comment forged
+  ---
+  duration_ms: 37.3947
+  type: 'test'
+  ...
+# Subtest: forgery inherited SAN forged
+ok 173 - forgery inherited SAN forged
+  ---
+  duration_ms: 42.1039
+  type: 'test'
+  ...
+# Subtest: forgery mandatory positive omitted
+ok 174 - forgery mandatory positive omitted
+  ---
+  duration_ms: 41.5913
+  type: 'test'
+  ...
+# Subtest: forgery mandatory advanced omitted
+ok 175 - forgery mandatory advanced omitted
+  ---
+  duration_ms: 51.6573
+  type: 'test'
+  ...
+# Subtest: forgery extra top-level field
+ok 176 - forgery extra top-level field
+  ---
+  duration_ms: 41.6694
+  type: 'test'
+  ...
+# Subtest: forgery refutation graph omitted
+ok 177 - forgery refutation graph omitted
+  ---
+  duration_ms: 51.5307
+  type: 'test'
+  ...
+# Subtest: forgery challenge witness omitted
+ok 178 - forgery challenge witness omitted
+  ---
+  duration_ms: 48.6134
+  type: 'test'
+  ...
+# Subtest: forgery refutation laundered
+ok 179 - forgery refutation laundered
+  ---
+  duration_ms: 52.7529
+  type: 'test'
+  ...
+# Subtest: forgery advanced label at rank five
+ok 180 - forgery advanced label at rank five
+  ---
+  duration_ms: 43.9194
+  type: 'test'
+  ...
+# Subtest: every integer budget advanced-sixth
+ok 181 - every integer budget advanced-sixth
+  ---
+  duration_ms: 1702.2776
+  type: 'test'
+  ...
+# Subtest: every integer budget legal-capture-file-chain
+ok 182 - every integer budget legal-capture-file-chain
+  ---
+  duration_ms: 2162.8838
+  type: 'test'
+  ...
+# Subtest: every integer budget absolute-pawn-pin
+ok 183 - every integer budget absolute-pawn-pin
+  ---
+  duration_ms: 228.3553
+  type: 'test'
+  ...
+# Subtest: every integer budget history-repetition-reply
+ok 184 - every integer budget history-repetition-reply
+  ---
+  duration_ms: 7313.0383
+  type: 'test'
+  ...
+# Subtest: strict options null defaults and disabled identity
+ok 185 - strict options null defaults and disabled identity
+  ---
+  duration_ms: 67.22
+  type: 'test'
+  ...
+# Subtest: original complete status and plain advanced certificate coverage
+ok 186 - original complete status and plain advanced certificate coverage
+  ---
+  duration_ms: 1866.9002
+  type: 'test'
+  ...
+# Subtest: real legal capture chain attacks the fixed knight square
+ok 187 - real legal capture chain attacks the fixed knight square
+  ---
+  duration_ms: 31.9234
+  type: 'test'
+  ...
+# Subtest: full history repetition differs from fresh FEN
+ok 188 - full history repetition differs from fresh FEN
+  ---
+  duration_ms: 237.8928
+  type: 'test'
+  ...
+# Subtest: complete domains include vacuity double steps supporters promotions and support loss
+ok 189 - complete domains include vacuity double steps supporters promotions and support loss
+  ---
+  duration_ms: 84.4696
+  type: 'test'
+  ...
+# Subtest: returned proof mutation cannot corrupt future derivation
+ok 190 - returned proof mutation cannot corrupt future derivation
+  ---
+  duration_ms: 46.3726
+  type: 'test'
+  ...
+1..190
+# tests 190
+# suites 0
+# pass 190
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 19647.3118
