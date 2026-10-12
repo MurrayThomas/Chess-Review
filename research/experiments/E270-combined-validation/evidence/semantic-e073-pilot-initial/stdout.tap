@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive carlsbad-e-completes
+ok 1 - pilot whole positive carlsbad-e-completes
+  ---
+  duration_ms: 71.2537
+  type: 'test'
+  ...
+# Subtest: pilot whole positive carlsbad-e-completes-black
+ok 2 - pilot whole positive carlsbad-e-completes-black
+  ---
+  duration_ms: 35.2826
+  type: 'test'
+  ...
+# Subtest: pilot whole positive hedgehog-e-completes
+ok 3 - pilot whole positive hedgehog-e-completes
+  ---
+  duration_ms: 21.6504
+  type: 'test'
+  ...
+# Subtest: pilot whole positive hedgehog-e-completes-black
+ok 4 - pilot whole positive hedgehog-e-completes-black
+  ---
+  duration_ms: 19.8651
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only comment gap
+ok 5 - pilot closes own-event-only comment gap
+  ---
+  duration_ms: 61.8642
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only inherited field gap
+ok 6 - pilot closes own-event-only inherited field gap
+  ---
+  duration_ms: 55.18
+  type: 'test'
+  ...
+# Subtest: pilot every integer Carlsbad budget
+ok 7 - pilot every integer Carlsbad budget
+  ---
+  duration_ms: 529.9346
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 807.5826
