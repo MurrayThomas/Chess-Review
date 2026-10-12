@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {Chess} from '../lib/chess.js';
-import {CONCEPT_GROUPS,DEFAULT_CONCEPT_GROUPS,normalizeConceptGroups,studyEnabled} from '../lib/concepts/controls.js';
+import {CONCEPT_GROUPS,DEFAULT_CONCEPT_GROUPS,normalizeConceptGroups,studyEnabled,FAST_CONCEPT_REMOVALS,curateFastFindings} from '../lib/concepts/controls.js';
 import {FLAGS} from '../lib/concepts/profile.js';
 import {startConceptRun,runConceptStage,supplementalConcepts,conceptRunSummary,DETECTORS,integrationInput} from '../lib/concepts/runtime.js';
 import {ConceptSession,conceptKey} from '../lib/concepts/session.js';
@@ -31,7 +31,7 @@ test('fast pipeline returns supported changes without running disabled expensive
  assert.ok(r.stages.every(s=>studyEnabled(input,s.detector)));
  assert.ok(!r.stages.some(s=>s.detector==='E143'||s.detector==='E100'||s.detector==='E201-panel'));
  const off=run({...input,conceptGroups:[]});assert.deepEqual(off.stages,[]);assert.deepEqual(off.errors,[]);assert.equal(off.change,undefined);
- assert.ok(!off.findings.some(f=>f.study));assert.ok(off.findings.some(f=>f.name==='Pawn phalanx'));
+ assert.ok(!off.findings.some(f=>f.study));assert.ok(!off.findings.some(f=>f.event==='legal-input'||f.event==='pawn-phalanx'));
 });
 
 test('fast successor mate warnings retain ownership for both player colors',()=>{
@@ -95,3 +95,23 @@ test('a queued completion yield and stale watchdog cannot clear or fail a later 
  oldWatch();assert.equal(s.active,second);assert.deepEqual(s.entries.get(second).errors,[]);
  s.cancelSelected();s.entries.delete(first);s.cache.delete(first);const again=s.include(input,true);oldWatch();assert.equal(s.active,again);assert.deepEqual(s.entries.get(again).errors,[]);s.stop();
 });
+
+test('Fast retirement decisions remove filler but preserve warnings and the full inspector',()=>{
+ const events=FAST_CONCEPT_REMOVALS.flatMap(r=>r.events).map(event=>({event}));
+ const attacked={event:'undefended-unit-observation',context:{evidence:{target:{attackers:['f3']}}}};
+ const unguarded={event:'undefended-unit-observation',context:{evidence:{target:{attackers:[]}}}};
+ const meaningful=[{event:'current-mate-in-one'},{event:'pawn-chain'},attacked];
+ assert.deepEqual(curateFastFindings([...events,...meaningful,unguarded],input),meaningful);
+ assert.equal(curateFastFindings(events,{...input,conceptGroups:[...DEFAULT_CONCEPT_GROUPS,'tactics']}),events);
+ const options=integrationInput(input);assert.equal(options.foundationTags,false);assert.equal(options.inventoryTags,false);
+ const r=run(input);assert.ok(!r.findings.some(f=>events.some(e=>e.event===f.event)));
+});
+test('Concept settings explain the Fast removal decisions without adding controls or research claims',t=>{
+ const a=app(t);loadGame(a,'1. e4');a.call('buildUI');a.call('toggleSettings');a.dom.window.document.querySelectorAll('.set-tab')[2].click();
+ const panel=a.dom.window.document.querySelector('.concepts-panel');
+ assert.ok(panel.textContent.includes('Temporarily removed / not calculated'));
+ for(const item of FAST_CONCEPT_REMOVALS)assert.ok(panel.textContent.includes(item.name)&&panel.textContent.includes(item.reason));
+ assert.match(panel.textContent,/not changes to research acceptance/);
+ assert.equal(panel.querySelectorAll('input').length,9);
+});
+

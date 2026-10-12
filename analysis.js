@@ -14,7 +14,7 @@ import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { ConceptSession, conceptKey } from "./lib/concepts/session.js";
-import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups } from "./lib/concepts/controls.js";
+import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS } from "./lib/concepts/controls.js";
 import { coachInsights, coachReply } from "./lib/coach-insights.js";
 
 /* ---------------- Opening book ----------------
@@ -4826,7 +4826,7 @@ function conceptSettings() {
     note("Analyzes the selected move locally. Navigation cancels unfinished work for other moves; completed results are reused."));
   if (S.setOpen["Concept groups"] == null) S.setOpen["Concept groups"] = true;
   panel.append(section("Concept groups",
-    note("Ordered from lighter to heavier work. Times vary with the position. Move rules and basic structural facts are always retained."),
+    note("Ordered from lighter to heavier work. Times vary with the position. Rule validation and meaningful move findings remain active."),
     el("div", {class: "set-row"}, el("span", {class: "set-lbl"}, "Preset"),
       el("div", {class: "set-seg"}, ...[["Fast",DEFAULT_CONCEPT_GROUPS],["All",CONCEPT_GROUPS.map(g=>g.id)]].map(([label,ids])=>
         el("button", {class: JSON.stringify(groups)===JSON.stringify(ids)?"on":"", onclick:()=>setConceptGroups(ids)}, label)))),
@@ -4835,6 +4835,10 @@ function conceptSettings() {
         el("span", {class: "concept-cost"}, group.cost), el("span", {class: "set-note"}, group.description)),
       el("input", {type:"checkbox", id:"concept-group-"+group.id, checked:groups.includes(group.id), onchange:event=>
         setConceptGroup(group.id,event.target.checked)})))));
+  panel.append(section("Temporarily removed / not calculated",
+    note("Applies to Fast and its lighter selections. These are teaching decisions, not changes to research acceptance. Enabling a heavier group restores the full inspector."),
+    ...FAST_CONCEPT_REMOVALS.map(item=>el("div", {class:"set-row"}, el("span", {class:"concept-group-copy"},
+      el("span", {class:"set-lbl"}, item.name), el("span", {class:"concept-cost"}, item.status), el("span", {class:"set-note"}, item.reason))))));
   const input = selectedConceptInput(), entry = input && _conceptSession?.entries.get(conceptKey(input));
   const metrics = _conceptSession?.metrics(_conceptGameKeys) || {timeMs:0,processed:0,total:0,found:0,reused:0};
   panel.append(section("Analysis status",
