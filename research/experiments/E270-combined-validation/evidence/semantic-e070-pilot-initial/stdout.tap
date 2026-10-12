@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot complete result supported-fifth
+ok 1 - pilot complete result supported-fifth
+  ---
+  duration_ms: 70.6157
+  type: 'test'
+  ...
+# Subtest: pilot complete result supported-fifth-black
+ok 2 - pilot complete result supported-fifth-black
+  ---
+  duration_ms: 33.4848
+  type: 'test'
+  ...
+# Subtest: pilot complete result blocked-pawn-still-theoretically-reachable
+ok 3 - pilot complete result blocked-pawn-still-theoretically-reachable
+  ---
+  duration_ms: 23.2954
+  type: 'test'
+  ...
+# Subtest: pilot complete result legal-capture-file-chain
+ok 4 - pilot complete result legal-capture-file-chain
+  ---
+  duration_ms: 38.2281
+  type: 'test'
+  ...
+# Subtest: pilot old proof checkers permit whole-result omissions that new checker rejects
+ok 5 - pilot old proof checkers permit whole-result omissions that new checker rejects
+  ---
+  duration_ms: 107.249
+  type: 'test'
+  ...
+# Subtest: pilot every integer budget advanced-sixth
+ok 6 - pilot every integer budget advanced-sixth
+  ---
+  duration_ms: 1658.5044
+  type: 'test'
+  ...
+# Subtest: pilot every integer budget legal-capture-file-chain
+ok 7 - pilot every integer budget legal-capture-file-chain
+  ---
+  duration_ms: 2184.2851
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4130.4328
