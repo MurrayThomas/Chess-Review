@@ -232,3 +232,33 @@ remain explicit. No blocked or complete goal status is justified while this
 concrete source-repair/validation work is available.
 Boundary manifest covers17files/505807bytes plus2625-source/1623-archive baseline references;38own diagnostic/guard source bindings match. Final source verification/diff checks pass.
 Exact-byte retention follow-up: scoped .gitattributes preserves TAP/text subprocess streams across checkout platforms; all17original evidence Git blobs match physical hashes. retention.json binds attributes and the unchanged original manifest; no test/query replay or original evidence rewrite.
+
+## E083 whole-result adapter prepared; execution still gated
+
+2026-10-12. Prospective AMENDMENT-semantic-replay-preparation.md changes only
+preparation timing: an independent E083 segment adapter is implemented now,
+outside the active cumulative freeze. Its decisive execution still requires the
+same full run's terminal PASS. E084/E085 follow; all171origins and every broader
+strategic/support/human scope remain required.
+
+preparation/e083-whole-result.mjs imports only Chess, assert and the data guard;
+no candidate, parent detector, helper or focused checker. It reconstructs complete
+contact domains by enemy-square enumeration, explicit geometric prior attacks,
+legal hypothetical captures, full phase-specific witnesses, history exchanges,
+pawn inventories and ordered events. It derives budget cost from complete domains
+and asserts whole-result equality including atomic rollback and inherited fields.
+Comment comparison uses the source-reviewed inherited priority boundary at39;
+correctness of the E082 winner is explicitly conditional on separate parent
+semantic replay. Shared Chess is not an independent chess-library truth oracle.
+Historical geometric-before contact scope is preserved; the prospective unpinning
+hypothesis remains UNEXECUTED and cannot yet justify a detector or scope change.
+
+Syntax parsing and maintained-source verification pass. Source-only review
+(evidence/preparation-e083/source-review.json) binds7adapter/amendment/dependency
+sources, verifies only3direct imports, and confirms ALL2658active frozen sources
+unchanged. ZERO candidate executions or saved semantic replays in this preparation;
+new adapter is NOT semantically qualified or covered by the live regression.
+Next after full PASS: bind exact saved E083 canonical/source/receipt epoch and
+new controls, run preregistered positive smoke and compound-omission mutations,
+then every saved row/error contract and complete representative budget boundaries.
+Retain failures before repairs. No accepted/new concept credit.
