@@ -4,7 +4,84 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E074 complete French/Scheveningen outcomes validated
+## Latest semantic boundary — E073 actual Carlsbad/Hedgehog outcomes validated; original edge-count discrepancy retained
+
+2026-10-12. Separate whole-result oracle closes event-only gap: independent
+64square pawn scan/per-file exactly-one tests/relative flank ranks, fixed cores,
+Hedgehog forbidden files/six empty targets, full scalar history/actual pawn/live/
+new-shape guards, all legal replacement-pawn capture domains and exact tick
+ledger. Derives complete positive IDs and negative/exhausted statuses/nodes;
+omitted proof cannot be laundered as ineligible. Every positive also unchanged
+independent old checker for inventories/counts/core/history/moves/all replies/
+terminal flags/text, with exact own event/evidence key sets. Whole v54 result,
+fresh E072/inherited fields/order/101.010-101.011 priority/comment/disabled
+identity verify. Shared E020 legalPosition/Chess/parent priority remain explicit
+dependencies, not an independent rules engine or proof of strategic strength.
+
+Registration57334cb/implementationf355e26: initial pilot7/7 in7.895seconds,
+initial smoke256/257 in14.855seconds FAILED an authored assertion inherited from
+original PLAN's 'six-frame/eight-edge proof'. Actual named pawns a3/b3/d3/e3
+have SEVEN edges: a3→b4, b3→a4/c4, d3→c4/e4, e3→d4/f4. Detector and old independent
+checker correctly derive seven across six targets. Preserve original plan and
+failed run; do not invent an eighth named edge from extra unnamed captures or
+claim literal original eight-edge requirement satisfied. Prospective5e03975,
+source correction97c1c2d replace only new authored assertion with exact independent
+seven-edge set equality for both colors. Qualification explicitly records
+originalEightNamedEdgesClaimSatisfied:false; original documentary contradiction
+remains a limitation of historical contract compliance, not erased by passing
+new controls. No detector/old checker/oracle semantics changed by correction.
+
+Latest edge-corrected pilot7/7 in8.024seconds;257/257smoke at19d1246 in14.957seconds;
+226/226saved ate6291f7 in32.390seconds, unchanged120/180/600second caps. Smoke
+finishes just below15second forecast lower bound, no cap/cost overrun. ALL204
+original cases+44forgeries of complete inventories/counts/core/targets/support/
+capture domains/history/actual/replies/shape/check/mate/stalemate/draw/gameOver/
+whole schema/comment/inherited SAN/quality/ledger/omitted proof laundering,
+4all-integer budgets Carlsbad/Hedgehog/support-negative/positive history,
+5strict-default/normalized-history/coverage/seven-edge geometry+extra legal
+captures+EP-negative/negative-ledger+atomic controls. Both colors/horizontal
+mirror negatives, all exact-file/rank/wrong-color/extra/missing/pinned/occupied/
+preexisting/capture-completion/actual terminal/clock/history/promotion/capture/
+EP cases retained. Budget validates even disabled; historical null flag→disabled/
+null budget→default compatibility explicit. Old event-only accepts corrupt
+comment/SAN while new whole checker rejects both.
+
+Saved ALL204rows:196complete/fresh E072 comparisons,188enabled independent
+outcome-oracle calls,42whole-checker positive replays plus42fresh ordered
+individual proof metadata comparisons. States42proven/130ineligible/
+8no-legal-support-control/8disabled/8exhausted;20Carlsbad22Hedgehog certificates.
+8invalid attempts retained as original ABSTRACT 'Illegal move; explanation
+refused.' plus fresh /^Illegal move/ failures, not exact historical runtime
+messages.14shape/inheritance/count+4receipt+4raw rejection controls. No extra
+candidate/parent/own-count collection in qualification. Current support/counts/
+control do not prove opening/exchange history, successful minority attack/break,
+permanent weakness/closure, space/strength/safety/winning counterplay or usefulness.
+
+Fixed6canonical originals authenticate including3748297-byte results SHA
+8725f92c6bb4159f23c628578c96768b0727cd54a3f72bb0c86da37519d81f6f.
+Frozen093dacb4ee1b2e919d03b7603949624dd2c19ba9:227original Git inputs,
+63original checker/fixtures/E072 semantic paths within original/current/fullfreeze,
+NO supplements or current metadata differences. Main/initially-clean empty;
+repeat EXACTLY `?? research/experiments/E073-carlsbad-hedgehog/evidence/`, not
+initially clean. Source/config/environment/metrics/receipts/outputs match.
+Fixed-ownership policy epoch and4028ordered E072 fingerprints/teaching identity
+authenticate; integrity is not fresh ancestor semantics. Admission before rows.
+
+[evidence/semantic-e073-saved-edge-corrected/qualification.json](evidence/semantic-e073-saved-edge-corrected/qualification.json)
+binds81new inputs/63semantic sources/227historical inputs,15latest+10earlier
+raw artifacts byte exact in staged Git, complete counters and original abstract-
+error/eight-edge limitations. Prior E074–E085qualified closures and2658full frozen
+sources/1624canonical inputs unchanged. Latest stages have no source/canonical
+changes/generated outputs/errors/signals/timeouts. Source/diff checks pass;
+unchanged full regression/inherited collections not repeated. No active process
+remains. Accepted378/1085,539additional provisional scopes,162ready/0stale,
+127support/41strategic prerequisites unchanged; no new accepted/origin credit.
+Next E072 named pawn formations independent whole-result gate conditional on E071.
+All171origins, original documentary discrepancy/broad meanings, combined API
+integration, exact changed-source main/repeat/initially-clean reproduction and
+strategic/human usefulness stay open. Goal active and unfinished.
+
+## Previous semantic boundary — E074 complete French/Scheveningen outcomes validated
 
 2026-10-12. New independent whole-result oracle closes original event-only gap:
 reconstructs scalar original c/d pawn survival/immediate exchange, actual pawn
