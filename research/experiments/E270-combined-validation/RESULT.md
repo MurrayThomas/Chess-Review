@@ -4,7 +4,65 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E077 complete connected-passer/open-line result validated
+## Latest semantic boundary — E076 complete pawn/army inventory result validated
+
+2026-10-12. New whole-result adapter wraps the unchanged independent FEN,
+complete pawn/piece inventories, eight-file/eight-rank maps, full army signatures,
+bishop colors, front blockers, legal EP victim exclusion and corrected abcd/efgh
+wing derivation. Adds exact fresh E075 parent/disabled identity, v57 schema,
+all inherited fields/event order,4.2 own/E075 priority and selected comment.
+Original own checker, parent priority and shared Chess remain dependencies.
+Full inventories do not establish positional strength, bishop superiority, safe
+passers, successful majority advance, strategic imbalance or human usefulness.
+Original scopes and null flag/default limit compatibility preserved; no credit.
+
+Latest count-corrected pilot7/7 in8.994seconds, smoke183/183 in13.155seconds,
+saved148/148 in32.296seconds, under unchanged120/180/600second caps. ALL126
+original cases plus48forgeries,4all-integer budgets and5strict/default/history/
+coverage/count/EP-wing controls. Both colors, all5fact kinds and army comparison
+roles, promotions/EP/pins/checks/blockers, actual repetition, complete legal EP
+versus pinned exclusion, central d-to-e transfer and atomic budgets retained.
+Saved:118whole-result replays/118fresh E075 parents,8fresh exact errors,
+140fresh ordered individual proof metadata comparisons,14shape/inheritance/count,
+4receipt and4raw rejection checks. States88proven/10negative/8not-live/
+2disabled/2exhausted/8not-applicable. Certificates66skeleton/22passed-count/
+28flank/10bishop-armies/14rook-minor. Additional116enabled independent own
+count audits across118results skip2disabled: legacy reported140 equals emitted140,
+including zero under exhaustion. E076 had no legacy derivable-count discrepancy.
+
+Fixed6canonical originals authenticate; results4252924bytes SHA
+361a0ead4dcf2158e24c45564d8416250e82dc3816ba00be1d7f0f8d54f2c685.
+Frozen94da8a7331b8690f55d0d4c0d26230aea92a5e22:245original Git inputs,
+64semantic paths inside original/current/fullfreeze, no supplements. Main/clean
+were empty; repeat exactly `?? research/experiments/E076-pawn-army-inventories/evidence/`.
+Source/config/environment/metrics/receipts/output identities authenticated.
+Exact ACTIVE-QUEUE metadata exception outside closure and policy epoch retained.
+4554ordered inherited fingerprints and teaching-list identity match E075;
+integrity is not independent ancestor semantics. Admission emitted before rows.
+
+Preserved two authored predicate mistakes: saved initial dispatch failed before
+payload because smoke admission expected126 instead of registered180seconds;
+cap-corrected saved child passed148 but final runner rejected245verified inputs
+against an incorrect85. Prospective corrections, fresh source-bound pilot/smoke/
+saved epochs and complete failures retained, never relabeled. Additional
+qualification failed only its extra check of the manually authored dispatch note
+CRLF468bytes versus Git LF467bytes; prospective exact-path normalized-text remedy
+preserves both byte hashes. All40raw process artifacts across8attempts stay exact.
+No detector/checker/test semantics changed by these remedies.
+
+[evidence/semantic-e076-saved-count-corrected/qualification.json](evidence/semantic-e076-saved-count-corrected/qualification.json)
+binds84new inputs,64semantic sources,245historical inputs,15latest raw artifacts,
+25earlier raw artifacts plus authored dispatch note and scoped retention amendment.
+Prior E077–E085qualified closures and2658frozen sources/1624canonical artifacts
+unchanged. Source/diff checks pass; no unchanged full regression or inherited
+collection repeated. No active process remains. Accepted378/1085,539additional
+provisional scopes,162ready/0stale,127support/41strategic prerequisites unchanged.
+Next E075 board/legal-input/nominal-material whole-result semantic gate,
+conditional on E074. All171origins, broader original meanings, combined API
+integration, exact changed-source main/repeat/initially-clean reproduction and
+strategic/human gates remain open. Goal active and unfinished.
+
+## Previous semantic boundary — E077 complete connected-passer/open-line result validated
 
 2026-10-12. New preparation adapter authenticates E077's complete result around
 its unchanged independent FEN/pawn/front-blocker/legal-EP/file/rank derivation.
