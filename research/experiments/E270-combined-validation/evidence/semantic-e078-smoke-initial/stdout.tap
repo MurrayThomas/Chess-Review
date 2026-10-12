@@ -1,0 +1,1450 @@
+TAP version 13
+# Subtest: original whole result outside-chain
+ok 1 - original whole result outside-chain
+  ---
+  duration_ms: 58.0382
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-black
+ok 2 - original whole result outside-chain-black
+  ---
+  duration_ms: 18.4965
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-capture
+ok 3 - original whole result outside-chain-capture
+  ---
+  duration_ms: 19.6962
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-capture-black
+ok 4 - original whole result outside-chain-capture-black
+  ---
+  duration_ms: 16.4935
+  type: 'test'
+  ...
+# Subtest: original whole result outside-branched-chain
+ok 5 - original whole result outside-branched-chain
+  ---
+  duration_ms: 16.3673
+  type: 'test'
+  ...
+# Subtest: original whole result outside-branched-chain-black
+ok 6 - original whole result outside-branched-chain-black
+  ---
+  duration_ms: 15.3381
+  type: 'test'
+  ...
+# Subtest: original whole result outside-separate-chains
+ok 7 - original whole result outside-separate-chains
+  ---
+  duration_ms: 15.6059
+  type: 'test'
+  ...
+# Subtest: original whole result outside-separate-chains-black
+ok 8 - original whole result outside-separate-chains-black
+  ---
+  duration_ms: 18.875
+  type: 'test'
+  ...
+# Subtest: original whole result outside-still-not-beyond
+ok 9 - original whole result outside-still-not-beyond
+  ---
+  duration_ms: 12.3209
+  type: 'test'
+  ...
+# Subtest: original whole result outside-still-not-beyond-black
+ok 10 - original whole result outside-still-not-beyond-black
+  ---
+  duration_ms: 11.2264
+  type: 'test'
+  ...
+# Subtest: original whole result outside-nonchain-pawn
+ok 11 - original whole result outside-nonchain-pawn
+  ---
+  duration_ms: 10.7824
+  type: 'test'
+  ...
+# Subtest: original whole result outside-nonchain-pawn-black
+ok 12 - original whole result outside-nonchain-pawn-black
+  ---
+  duration_ms: 11.1081
+  type: 'test'
+  ...
+# Subtest: original whole result outside-enemy-pawns
+ok 13 - original whole result outside-enemy-pawns
+  ---
+  duration_ms: 18.7694
+  type: 'test'
+  ...
+# Subtest: original whole result outside-enemy-pawns-black
+ok 14 - original whole result outside-enemy-pawns-black
+  ---
+  duration_ms: 17.3346
+  type: 'test'
+  ...
+# Subtest: original whole result outside-other-first-blocker
+ok 15 - original whole result outside-other-first-blocker
+  ---
+  duration_ms: 20.1489
+  type: 'test'
+  ...
+# Subtest: original whole result outside-other-first-blocker-black
+ok 16 - original whole result outside-other-first-blocker-black
+  ---
+  duration_ms: 18.5098
+  type: 'test'
+  ...
+# Subtest: original whole result outside-no-root-restriction
+ok 17 - original whole result outside-no-root-restriction
+  ---
+  duration_ms: 13.9552
+  type: 'test'
+  ...
+# Subtest: original whole result outside-no-root-restriction-black
+ok 18 - original whole result outside-no-root-restriction-black
+  ---
+  duration_ms: 16.1794
+  type: 'test'
+  ...
+# Subtest: original whole result outside-wrong-bishop-color
+ok 19 - original whole result outside-wrong-bishop-color
+  ---
+  duration_ms: 13.6168
+  type: 'test'
+  ...
+# Subtest: original whole result outside-wrong-bishop-color-black
+ok 20 - original whole result outside-wrong-bishop-color-black
+  ---
+  duration_ms: 14.1206
+  type: 'test'
+  ...
+# Subtest: original whole result outside-beyond-but-backward-chain
+ok 21 - original whole result outside-beyond-but-backward-chain
+  ---
+  duration_ms: 10.2663
+  type: 'test'
+  ...
+# Subtest: original whole result outside-beyond-but-backward-chain-black
+ok 22 - original whole result outside-beyond-but-backward-chain-black
+  ---
+  duration_ms: 10.4813
+  type: 'test'
+  ...
+# Subtest: original whole result outside-unchanged-bishop
+ok 23 - original whole result outside-unchanged-bishop
+  ---
+  duration_ms: 11.4788
+  type: 'test'
+  ...
+# Subtest: original whole result outside-unchanged-bishop-black
+ok 24 - original whole result outside-unchanged-bishop-black
+  ---
+  duration_ms: 11.8033
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-pawn-move
+ok 25 - original whole result outside-chain-pawn-move
+  ---
+  duration_ms: 13.8099
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-pawn-move-black
+ok 26 - original whole result outside-chain-pawn-move-black
+  ---
+  duration_ms: 13.3331
+  type: 'test'
+  ...
+# Subtest: original whole result behind-chain
+ok 27 - original whole result behind-chain
+  ---
+  duration_ms: 17.3267
+  type: 'test'
+  ...
+# Subtest: original whole result behind-chain-black
+ok 28 - original whole result behind-chain-black
+  ---
+  duration_ms: 12.3452
+  type: 'test'
+  ...
+# Subtest: original whole result behind-branched-chain
+ok 29 - original whole result behind-branched-chain
+  ---
+  duration_ms: 14.8077
+  type: 'test'
+  ...
+# Subtest: original whole result behind-branched-chain-black
+ok 30 - original whole result behind-branched-chain-black
+  ---
+  duration_ms: 15.8226
+  type: 'test'
+  ...
+# Subtest: original whole result behind-already
+ok 31 - original whole result behind-already
+  ---
+  duration_ms: 11.3957
+  type: 'test'
+  ...
+# Subtest: original whole result behind-already-black
+ok 32 - original whole result behind-already-black
+  ---
+  duration_ms: 10.9882
+  type: 'test'
+  ...
+# Subtest: original whole result behind-nonrestrictive
+ok 33 - original whole result behind-nonrestrictive
+  ---
+  duration_ms: 15.146
+  type: 'test'
+  ...
+# Subtest: original whole result behind-nonrestrictive-black
+ok 34 - original whole result behind-nonrestrictive-black
+  ---
+  duration_ms: 14.2915
+  type: 'test'
+  ...
+# Subtest: original whole result qr-file
+ok 35 - original whole result qr-file
+  ---
+  duration_ms: 89.0939
+  type: 'test'
+  ...
+# Subtest: original whole result qr-file-black
+ok 36 - original whole result qr-file-black
+  ---
+  duration_ms: 81.7499
+  type: 'test'
+  ...
+# Subtest: original whole result qr-rank
+ok 37 - original whole result qr-rank
+  ---
+  duration_ms: 89.7483
+  type: 'test'
+  ...
+# Subtest: original whole result qr-rank-black
+ok 38 - original whole result qr-rank-black
+  ---
+  duration_ms: 97.1486
+  type: 'test'
+  ...
+# Subtest: original whole result qb-rising
+ok 39 - original whole result qb-rising
+  ---
+  duration_ms: 27.0879
+  type: 'test'
+  ...
+# Subtest: original whole result qb-rising-black
+ok 40 - original whole result qb-rising-black
+  ---
+  duration_ms: 27.2384
+  type: 'test'
+  ...
+# Subtest: original whole result qb-falling
+ok 41 - original whole result qb-falling
+  ---
+  duration_ms: 63.5117
+  type: 'test'
+  ...
+# Subtest: original whole result qb-falling-black
+ok 42 - original whole result qb-falling-black
+  ---
+  duration_ms: 43.4056
+  type: 'test'
+  ...
+# Subtest: original whole result qq-file
+ok 43 - original whole result qq-file
+  ---
+  duration_ms: 168.8932
+  type: 'test'
+  ...
+# Subtest: original whole result qq-file-black
+ok 44 - original whole result qq-file-black
+  ---
+  duration_ms: 169.1948
+  type: 'test'
+  ...
+# Subtest: original whole result qq-rising
+ok 45 - original whole result qq-rising
+  ---
+  duration_ms: 144.368
+  type: 'test'
+  ...
+# Subtest: original whole result qq-rising-black
+ok 46 - original whole result qq-rising-black
+  ---
+  duration_ms: 129.3395
+  type: 'test'
+  ...
+# Subtest: original whole result qq-falling
+ok 47 - original whole result qq-falling
+  ---
+  duration_ms: 70.9876
+  type: 'test'
+  ...
+# Subtest: original whole result qq-falling-black
+ok 48 - original whole result qq-falling-black
+  ---
+  duration_ms: 66.0165
+  type: 'test'
+  ...
+# Subtest: original whole result rr-file
+ok 49 - original whole result rr-file
+  ---
+  duration_ms: 55.3143
+  type: 'test'
+  ...
+# Subtest: original whole result rr-file-black
+ok 50 - original whole result rr-file-black
+  ---
+  duration_ms: 55.3572
+  type: 'test'
+  ...
+# Subtest: original whole result bb-rising
+ok 51 - original whole result bb-rising
+  ---
+  duration_ms: 17.2279
+  type: 'test'
+  ...
+# Subtest: original whole result bb-rising-black
+ok 52 - original whole result bb-rising-black
+  ---
+  duration_ms: 16.9167
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-middle
+ok 53 - original whole result triple-queen-middle
+  ---
+  duration_ms: 56.9397
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-middle-black
+ok 54 - original whole result triple-queen-middle-black
+  ---
+  duration_ms: 56.6628
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-front
+ok 55 - original whole result triple-queen-front
+  ---
+  duration_ms: 53.2323
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-front-black
+ok 56 - original whole result triple-queen-front-black
+  ---
+  duration_ms: 55.7318
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-rear
+ok 57 - original whole result triple-queen-rear
+  ---
+  duration_ms: 51.8411
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queen-rear-black
+ok 58 - original whole result triple-queen-rear-black
+  ---
+  duration_ms: 49.2142
+  type: 'test'
+  ...
+# Subtest: original whole result four-sliders
+ok 59 - original whole result four-sliders
+  ---
+  duration_ms: 63.0119
+  type: 'test'
+  ...
+# Subtest: original whole result four-sliders-black
+ok 60 - original whole result four-sliders-black
+  ---
+  duration_ms: 62.649
+  type: 'test'
+  ...
+# Subtest: original whole result capture-compatible-blocker
+ok 61 - original whole result capture-compatible-blocker
+  ---
+  duration_ms: 54.5591
+  type: 'test'
+  ...
+# Subtest: original whole result capture-compatible-blocker-black
+ok 62 - original whole result capture-compatible-blocker-black
+  ---
+  duration_ms: 54.2768
+  type: 'test'
+  ...
+# Subtest: original whole result move-noncompatible-blocker
+ok 63 - original whole result move-noncompatible-blocker
+  ---
+  duration_ms: 48.538
+  type: 'test'
+  ...
+# Subtest: original whole result move-noncompatible-blocker-black
+ok 64 - original whole result move-noncompatible-blocker-black
+  ---
+  duration_ms: 48.0033
+  type: 'test'
+  ...
+# Subtest: original whole result battery-knight-blocker
+ok 65 - original whole result battery-knight-blocker
+  ---
+  duration_ms: 43.8391
+  type: 'test'
+  ...
+# Subtest: original whole result battery-knight-blocker-black
+ok 66 - original whole result battery-knight-blocker-black
+  ---
+  duration_ms: 42.7224
+  type: 'test'
+  ...
+# Subtest: original whole result battery-pawn-blocker
+ok 67 - original whole result battery-pawn-blocker
+  ---
+  duration_ms: 33.7543
+  type: 'test'
+  ...
+# Subtest: original whole result battery-pawn-blocker-black
+ok 68 - original whole result battery-pawn-blocker-black
+  ---
+  duration_ms: 34.4208
+  type: 'test'
+  ...
+# Subtest: original whole result battery-bishop-orth-blocker
+ok 69 - original whole result battery-bishop-orth-blocker
+  ---
+  duration_ms: 47.3559
+  type: 'test'
+  ...
+# Subtest: original whole result battery-bishop-orth-blocker-black
+ok 70 - original whole result battery-bishop-orth-blocker-black
+  ---
+  duration_ms: 47.4243
+  type: 'test'
+  ...
+# Subtest: original whole result battery-king-blocker
+ok 71 - original whole result battery-king-blocker
+  ---
+  duration_ms: 62.1262
+  type: 'test'
+  ...
+# Subtest: original whole result battery-king-blocker-black
+ok 72 - original whole result battery-king-blocker-black
+  ---
+  duration_ms: 57.3513
+  type: 'test'
+  ...
+# Subtest: original whole result battery-enemy-rook-blocker
+ok 73 - original whole result battery-enemy-rook-blocker
+  ---
+  duration_ms: 193.1112
+  type: 'test'
+  ...
+# Subtest: original whole result battery-enemy-rook-blocker-black
+ok 74 - original whole result battery-enemy-rook-blocker-black
+  ---
+  duration_ms: 100.164
+  type: 'test'
+  ...
+# Subtest: original whole result battery-enemy-endpoint
+ok 75 - original whole result battery-enemy-endpoint
+  ---
+  duration_ms: 182.3189
+  type: 'test'
+  ...
+# Subtest: original whole result battery-enemy-endpoint-black
+ok 76 - original whole result battery-enemy-endpoint-black
+  ---
+  duration_ms: 111.2203
+  type: 'test'
+  ...
+# Subtest: original whole result battery-singleton
+ok 77 - original whole result battery-singleton
+  ---
+  duration_ms: 58.5592
+  type: 'test'
+  ...
+# Subtest: original whole result battery-singleton-black
+ok 78 - original whole result battery-singleton-black
+  ---
+  duration_ms: 59.8117
+  type: 'test'
+  ...
+# Subtest: original whole result battery-rook-bishop-incompatible
+ok 79 - original whole result battery-rook-bishop-incompatible
+  ---
+  duration_ms: 58.9658
+  type: 'test'
+  ...
+# Subtest: original whole result battery-rook-bishop-incompatible-black
+ok 80 - original whole result battery-rook-bishop-incompatible-black
+  ---
+  duration_ms: 57.3347
+  type: 'test'
+  ...
+# Subtest: original whole result battery-existing-advance
+ok 81 - original whole result battery-existing-advance
+  ---
+  duration_ms: 29.1454
+  type: 'test'
+  ...
+# Subtest: original whole result battery-existing-advance-black
+ok 82 - original whole result battery-existing-advance-black
+  ---
+  duration_ms: 29.955
+  type: 'test'
+  ...
+# Subtest: original whole result battery-existing-quiet
+ok 83 - original whole result battery-existing-quiet
+  ---
+  duration_ms: 28.6143
+  type: 'test'
+  ...
+# Subtest: original whole result battery-existing-quiet-black
+ok 84 - original whole result battery-existing-quiet-black
+  ---
+  duration_ms: 28.5546
+  type: 'test'
+  ...
+# Subtest: original whole result battery-queen-with-enemy-bound
+ok 85 - original whole result battery-queen-with-enemy-bound
+  ---
+  duration_ms: 128.1366
+  type: 'test'
+  ...
+# Subtest: original whole result battery-queen-with-enemy-bound-black
+ok 86 - original whole result battery-queen-with-enemy-bound-black
+  ---
+  duration_ms: 76.1853
+  type: 'test'
+  ...
+# Subtest: original whole result battery-diagonal-own-rook-blocker
+ok 87 - original whole result battery-diagonal-own-rook-blocker
+  ---
+  duration_ms: 41.4072
+  type: 'test'
+  ...
+# Subtest: original whole result battery-diagonal-own-rook-blocker-black
+ok 88 - original whole result battery-diagonal-own-rook-blocker-black
+  ---
+  duration_ms: 40.941
+  type: 'test'
+  ...
+# Subtest: original whole result disabled-profile
+ok 89 - original whole result disabled-profile
+  ---
+  duration_ms: 13.9969
+  type: 'test'
+  ...
+# Subtest: original whole result disabled-profile-black
+ok 90 - original whole result disabled-profile-black
+  ---
+  duration_ms: 17.731
+  type: 'test'
+  ...
+# Subtest: original whole result zero-budget
+ok 91 - original whole result zero-budget
+  ---
+  duration_ms: 14.258
+  type: 'test'
+  ...
+# Subtest: original whole result zero-budget-black
+ok 92 - original whole result zero-budget-black
+  ---
+  duration_ms: 13.6616
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-rejected
+ok 93 - original whole result foundation-rejected
+  ---
+  duration_ms: 1.7194
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-rejected-black
+ok 94 - original whole result foundation-rejected-black
+  ---
+  duration_ms: 0.9407
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-exhausted
+ok 95 - original whole result foundation-exhausted
+  ---
+  duration_ms: 13.1827
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-exhausted-black
+ok 96 - original whole result foundation-exhausted-black
+  ---
+  duration_ms: 13.1361
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-terminal-root
+ok 97 - original whole result foundation-terminal-root
+  ---
+  duration_ms: 0.3943
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-terminal-root-black
+ok 98 - original whole result foundation-terminal-root-black
+  ---
+  duration_ms: 0.4807
+  type: 'test'
+  ...
+# Subtest: original whole result actual-mate
+ok 99 - original whole result actual-mate
+  ---
+  duration_ms: 43.7304
+  type: 'test'
+  ...
+# Subtest: original whole result actual-mate-black
+ok 100 - original whole result actual-mate-black
+  ---
+  duration_ms: 40.1759
+  type: 'test'
+  ...
+# Subtest: original whole result actual-stalemate
+ok 101 - original whole result actual-stalemate
+  ---
+  duration_ms: 45.5052
+  type: 'test'
+  ...
+# Subtest: original whole result actual-stalemate-black
+ok 102 - original whole result actual-stalemate-black
+  ---
+  duration_ms: 47.0464
+  type: 'test'
+  ...
+# Subtest: original whole result dead-promotion
+ok 103 - original whole result dead-promotion
+  ---
+  duration_ms: 9.9034
+  type: 'test'
+  ...
+# Subtest: original whole result dead-promotion-black
+ok 104 - original whole result dead-promotion-black
+  ---
+  duration_ms: 9.8155
+  type: 'test'
+  ...
+# Subtest: original whole result ep-removes-two-blockers
+ok 105 - original whole result ep-removes-two-blockers
+  ---
+  duration_ms: 33.4671
+  type: 'test'
+  ...
+# Subtest: original whole result ep-removes-two-blockers-black
+ok 106 - original whole result ep-removes-two-blockers-black
+  ---
+  duration_ms: 32.0217
+  type: 'test'
+  ...
+# Subtest: original whole result valid-history
+ok 107 - original whole result valid-history
+  ---
+  duration_ms: 34.205
+  type: 'test'
+  ...
+# Subtest: original whole result valid-history-black
+ok 108 - original whole result valid-history-black
+  ---
+  duration_ms: 34.5954
+  type: 'test'
+  ...
+# Subtest: original whole result repetition-root
+ok 109 - original whole result repetition-root
+  ---
+  duration_ms: 75.1517
+  type: 'test'
+  ...
+# Subtest: original whole result repetition-root-black
+ok 110 - original whole result repetition-root-black
+  ---
+  duration_ms: 74.4457
+  type: 'test'
+  ...
+# Subtest: original whole result clock-root
+ok 111 - original whole result clock-root
+  ---
+  duration_ms: 0.8345
+  type: 'test'
+  ...
+# Subtest: original whole result clock-root-black
+ok 112 - original whole result clock-root-black
+  ---
+  duration_ms: 0.3693
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-clock-root
+ok 113 - original whole result foundation-clock-root
+  ---
+  duration_ms: 0.412
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-clock-root-black
+ok 114 - original whole result foundation-clock-root-black
+  ---
+  duration_ms: 0.38
+  type: 'test'
+  ...
+# Subtest: original whole result bad-flag
+ok 115 - original whole result bad-flag
+  ---
+  duration_ms: 0.0724
+  type: 'test'
+  ...
+# Subtest: original whole result bad-flag-black
+ok 116 - original whole result bad-flag-black
+  ---
+  duration_ms: 0.058
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-negative
+ok 117 - original whole result bad-budget-negative
+  ---
+  duration_ms: 0.0611
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-negative-black
+ok 118 - original whole result bad-budget-negative-black
+  ---
+  duration_ms: 0.0542
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-fraction
+ok 119 - original whole result bad-budget-fraction
+  ---
+  duration_ms: 0.0526
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-fraction-black
+ok 120 - original whole result bad-budget-fraction-black
+  ---
+  duration_ms: 0.0513
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-large
+ok 121 - original whole result bad-budget-large
+  ---
+  duration_ms: 0.0634
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-large-black
+ok 122 - original whole result bad-budget-large-black
+  ---
+  duration_ms: 0.0558
+  type: 'test'
+  ...
+# Subtest: original whole result history-mismatch
+ok 123 - original whole result history-mismatch
+  ---
+  duration_ms: 0.5128
+  type: 'test'
+  ...
+# Subtest: original whole result history-mismatch-black
+ok 124 - original whole result history-mismatch-black
+  ---
+  duration_ms: 0.6135
+  type: 'test'
+  ...
+# Subtest: original whole result behind-two-blockers-already
+ok 125 - original whole result behind-two-blockers-already
+  ---
+  duration_ms: 11.2707
+  type: 'test'
+  ...
+# Subtest: original whole result behind-two-blockers-already-black
+ok 126 - original whole result behind-two-blockers-already-black
+  ---
+  duration_ms: 11.6499
+  type: 'test'
+  ...
+# Subtest: original whole result rr-rank
+ok 127 - original whole result rr-rank
+  ---
+  duration_ms: 60.2001
+  type: 'test'
+  ...
+# Subtest: original whole result rr-rank-black
+ok 128 - original whole result rr-rank-black
+  ---
+  duration_ms: 68.2054
+  type: 'test'
+  ...
+# Subtest: original whole result qq-rank
+ok 129 - original whole result qq-rank
+  ---
+  duration_ms: 162.9026
+  type: 'test'
+  ...
+# Subtest: original whole result qq-rank-black
+ok 130 - original whole result qq-rank-black
+  ---
+  duration_ms: 163.1943
+  type: 'test'
+  ...
+# Subtest: original whole result bb-falling
+ok 131 - original whole result bb-falling
+  ---
+  duration_ms: 22.8433
+  type: 'test'
+  ...
+# Subtest: original whole result bb-falling-black
+ok 132 - original whole result bb-falling-black
+  ---
+  duration_ms: 21.5974
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queens
+ok 133 - original whole result triple-queens
+  ---
+  duration_ms: 73.9489
+  type: 'test'
+  ...
+# Subtest: original whole result triple-queens-black
+ok 134 - original whole result triple-queens-black
+  ---
+  duration_ms: 73.0842
+  type: 'test'
+  ...
+# Subtest: original whole result four-bishops
+ok 135 - original whole result four-bishops
+  ---
+  duration_ms: 24.6533
+  type: 'test'
+  ...
+# Subtest: original whole result four-bishops-black
+ok 136 - original whole result four-bishops-black
+  ---
+  duration_ms: 24.871
+  type: 'test'
+  ...
+# Subtest: original whole result merge-maximal-groups
+ok 137 - original whole result merge-maximal-groups
+  ---
+  duration_ms: 87.7904
+  type: 'test'
+  ...
+# Subtest: original whole result merge-maximal-groups-black
+ok 138 - original whole result merge-maximal-groups-black
+  ---
+  duration_ms: 85.3215
+  type: 'test'
+  ...
+# Subtest: original whole result split-triple-to-pair
+ok 139 - original whole result split-triple-to-pair
+  ---
+  duration_ms: 54.9127
+  type: 'test'
+  ...
+# Subtest: original whole result split-triple-to-pair-black
+ok 140 - original whole result split-triple-to-pair-black
+  ---
+  duration_ms: 55.993
+  type: 'test'
+  ...
+# Subtest: original whole result split-pair-to-singletons
+ok 141 - original whole result split-pair-to-singletons
+  ---
+  duration_ms: 31.1231
+  type: 'test'
+  ...
+# Subtest: original whole result split-pair-to-singletons-black
+ok 142 - original whole result split-pair-to-singletons-black
+  ---
+  duration_ms: 30.8177
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-q
+ok 143 - original whole result promotion-q
+  ---
+  duration_ms: 73.0941
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-q-black
+ok 144 - original whole result promotion-q-black
+  ---
+  duration_ms: 72.4216
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-q
+ok 145 - original whole result capture-promotion-q
+  ---
+  duration_ms: 77.8754
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-q-black
+ok 146 - original whole result capture-promotion-q-black
+  ---
+  duration_ms: 81.0289
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-r
+ok 147 - original whole result promotion-r
+  ---
+  duration_ms: 29.6884
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-r-black
+ok 148 - original whole result promotion-r-black
+  ---
+  duration_ms: 31.1323
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-r
+ok 149 - original whole result capture-promotion-r
+  ---
+  duration_ms: 37.3621
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-r-black
+ok 150 - original whole result capture-promotion-r-black
+  ---
+  duration_ms: 40.6158
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-b
+ok 151 - original whole result promotion-b
+  ---
+  duration_ms: 19.8132
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-b-black
+ok 152 - original whole result promotion-b-black
+  ---
+  duration_ms: 20.1623
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-b
+ok 153 - original whole result capture-promotion-b
+  ---
+  duration_ms: 24.1135
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-b-black
+ok 154 - original whole result capture-promotion-b-black
+  ---
+  duration_ms: 25.088
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-n
+ok 155 - original whole result promotion-n
+  ---
+  duration_ms: 67.4107
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-n-black
+ok 156 - original whole result promotion-n-black
+  ---
+  duration_ms: 57.9593
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-n
+ok 157 - original whole result capture-promotion-n
+  ---
+  duration_ms: 60.3658
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-n-black
+ok 158 - original whole result capture-promotion-n-black
+  ---
+  duration_ms: 55.7571
+  type: 'test'
+  ...
+# Subtest: original whole result bb-falling-existing
+ok 159 - original whole result bb-falling-existing
+  ---
+  duration_ms: 16.8883
+  type: 'test'
+  ...
+# Subtest: original whole result bb-falling-existing-black
+ok 160 - original whole result bb-falling-existing-black
+  ---
+  duration_ms: 16.5605
+  type: 'test'
+  ...
+# Subtest: original whole result malformed-fen
+ok 161 - original whole result malformed-fen
+  ---
+  duration_ms: 0.2688
+  type: 'test'
+  ...
+# Subtest: original whole result malformed-fen-black
+ok 162 - original whole result malformed-fen-black
+  ---
+  duration_ms: 0.1419
+  type: 'test'
+  ...
+# Subtest: original whole result malformed-uci
+ok 163 - original whole result malformed-uci
+  ---
+  duration_ms: 0.1533
+  type: 'test'
+  ...
+# Subtest: original whole result malformed-uci-black
+ok 164 - original whole result malformed-uci-black
+  ---
+  duration_ms: 0.1365
+  type: 'test'
+  ...
+# Subtest: original whole result ordinary-illegal
+ok 165 - original whole result ordinary-illegal
+  ---
+  duration_ms: 0.3598
+  type: 'test'
+  ...
+# Subtest: original whole result ordinary-illegal-black
+ok 166 - original whole result ordinary-illegal-black
+  ---
+  duration_ms: 0.4406
+  type: 'test'
+  ...
+# Subtest: original whole result default-dead-root
+ok 167 - original whole result default-dead-root
+  ---
+  duration_ms: 0.312
+  type: 'test'
+  ...
+# Subtest: original whole result default-dead-root-black
+ok 168 - original whole result default-dead-root-black
+  ---
+  duration_ms: 0.2518
+  type: 'test'
+  ...
+# Subtest: original whole result actual-dead-capture
+ok 169 - original whole result actual-dead-capture
+  ---
+  duration_ms: 13.3063
+  type: 'test'
+  ...
+# Subtest: original whole result actual-dead-capture-black
+ok 170 - original whole result actual-dead-capture-black
+  ---
+  duration_ms: 12.8681
+  type: 'test'
+  ...
+# Subtest: original whole result combined-profiles
+ok 171 - original whole result combined-profiles
+  ---
+  duration_ms: 125.4893
+  type: 'test'
+  ...
+# Subtest: original whole result combined-profiles-black
+ok 172 - original whole result combined-profiles-black
+  ---
+  duration_ms: 135.829
+  type: 'test'
+  ...
+# Subtest: original whole result root-mate
+ok 173 - original whole result root-mate
+  ---
+  duration_ms: 0.2497
+  type: 'test'
+  ...
+# Subtest: original whole result root-mate-black
+ok 174 - original whole result root-mate-black
+  ---
+  duration_ms: 0.1733
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-root-mate
+ok 175 - original whole result foundation-root-mate
+  ---
+  duration_ms: 0.2069
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-root-mate-black
+ok 176 - original whole result foundation-root-mate-black
+  ---
+  duration_ms: 0.1761
+  type: 'test'
+  ...
+# Subtest: original whole result root-stalemate
+ok 177 - original whole result root-stalemate
+  ---
+  duration_ms: 0.1588
+  type: 'test'
+  ...
+# Subtest: original whole result root-stalemate-black
+ok 178 - original whole result root-stalemate-black
+  ---
+  duration_ms: 0.1519
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-root-stalemate
+ok 179 - original whole result foundation-root-stalemate
+  ---
+  duration_ms: 0.185
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-root-stalemate-black
+ok 180 - original whole result foundation-root-stalemate-black
+  ---
+  duration_ms: 0.1709
+  type: 'test'
+  ...
+# Subtest: original whole result two-new-batteries
+ok 181 - original whole result two-new-batteries
+  ---
+  duration_ms: 71.1896
+  type: 'test'
+  ...
+# Subtest: original whole result two-new-batteries-black
+ok 182 - original whole result two-new-batteries-black
+  ---
+  duration_ms: 71.2656
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-reversed-file
+ok 183 - original whole result outside-chain-reversed-file
+  ---
+  duration_ms: 12.8165
+  type: 'test'
+  ...
+# Subtest: original whole result outside-chain-reversed-file-black
+ok 184 - original whole result outside-chain-reversed-file-black
+  ---
+  duration_ms: 12.5941
+  type: 'test'
+  ...
+# Subtest: original whole result outside-capture-reversed-file
+ok 185 - original whole result outside-capture-reversed-file
+  ---
+  duration_ms: 14.4276
+  type: 'test'
+  ...
+# Subtest: original whole result outside-capture-reversed-file-black
+ok 186 - original whole result outside-capture-reversed-file-black
+  ---
+  duration_ms: 14.2184
+  type: 'test'
+  ...
+# Subtest: original whole result outside-branch-reversed-file
+ok 187 - original whole result outside-branch-reversed-file
+  ---
+  duration_ms: 13.9719
+  type: 'test'
+  ...
+# Subtest: original whole result outside-branch-reversed-file-black
+ok 188 - original whole result outside-branch-reversed-file-black
+  ---
+  duration_ms: 13.8715
+  type: 'test'
+  ...
+# Subtest: original whole result behind-chain-reversed-file
+ok 189 - original whole result behind-chain-reversed-file
+  ---
+  duration_ms: 12.7878
+  type: 'test'
+  ...
+# Subtest: original whole result behind-chain-reversed-file-black
+ok 190 - original whole result behind-chain-reversed-file-black
+  ---
+  duration_ms: 12.4291
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-qq-display
+ok 191 - original whole result quiet-qq-display
+  ---
+  duration_ms: 58.3762
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-qq-display-black
+ok 192 - original whole result quiet-qq-display-black
+  ---
+  duration_ms: 56.9658
+  type: 'test'
+  ...
+# Subtest: complete frame rejects component member omitted
+ok 193 - complete frame rejects component member omitted
+  ---
+  duration_ms: 11.8335
+  type: 'test'
+  ...
+# Subtest: complete frame rejects component edge omitted
+ok 194 - complete frame rejects component edge omitted
+  ---
+  duration_ms: 8.2027
+  type: 'test'
+  ...
+# Subtest: complete frame rejects component bases omitted
+ok 195 - complete frame rejects component bases omitted
+  ---
+  duration_ms: 7.6288
+  type: 'test'
+  ...
+# Subtest: complete frame rejects component heads omitted
+ok 196 - complete frame rejects component heads omitted
+  ---
+  duration_ms: 7.8296
+  type: 'test'
+  ...
+# Subtest: complete frame rejects component terminals omitted
+ok 197 - complete frame rejects component terminals omitted
+  ---
+  duration_ms: 7.6241
+  type: 'test'
+  ...
+# Subtest: complete frame rejects prior restriction omitted
+ok 198 - complete frame rejects prior restriction omitted
+  ---
+  duration_ms: 7.6023
+  type: 'test'
+  ...
+# Subtest: complete frame rejects after restriction invented
+ok 199 - complete frame rejects after restriction invented
+  ---
+  duration_ms: 7.6414
+  type: 'test'
+  ...
+# Subtest: complete frame rejects bishop ray domain omitted
+ok 200 - complete frame rejects bishop ray domain omitted
+  ---
+  duration_ms: 7.9591
+  type: 'test'
+  ...
+# Subtest: complete frame rejects first blocker omitted
+ok 201 - complete frame rejects first blocker omitted
+  ---
+  duration_ms: 7.8312
+  type: 'test'
+  ...
+# Subtest: complete frame rejects before inventory omitted
+ok 202 - complete frame rejects before inventory omitted
+  ---
+  duration_ms: 8.3911
+  type: 'test'
+  ...
+# Subtest: complete frame rejects maximal group member omitted
+ok 203 - complete frame rejects maximal group member omitted
+  ---
+  duration_ms: 27.8244
+  type: 'test'
+  ...
+# Subtest: complete frame rejects compatible middle slider made a gap
+ok 204 - complete frame rejects compatible middle slider made a gap
+  ---
+  duration_ms: 27.6108
+  type: 'test'
+  ...
+# Subtest: complete frame rejects group boundary invented
+ok 205 - complete frame rejects group boundary invented
+  ---
+  duration_ms: 27.9371
+  type: 'test'
+  ...
+# Subtest: complete frame rejects whole line cells omitted
+ok 206 - complete frame rejects whole line cells omitted
+  ---
+  duration_ms: 28.1159
+  type: 'test'
+  ...
+# Subtest: complete frame rejects family list omitted
+ok 207 - complete frame rejects family list omitted
+  ---
+  duration_ms: 27.8358
+  type: 'test'
+  ...
+# Subtest: complete frame rejects queen subset forged
+ok 208 - complete frame rejects queen subset forged
+  ---
+  duration_ms: 27.5302
+  type: 'test'
+  ...
+# Subtest: complete frame rejects identity mapping forged
+ok 209 - complete frame rejects identity mapping forged
+  ---
+  duration_ms: 28.8401
+  type: 'test'
+  ...
+# Subtest: complete frame rejects before complete battery domain omitted
+ok 210 - complete frame rejects before complete battery domain omitted
+  ---
+  duration_ms: 29.0048
+  type: 'test'
+  ...
+# Subtest: complete frame rejects after complete battery domain omitted
+ok 211 - complete frame rejects after complete battery domain omitted
+  ---
+  duration_ms: 32.944
+  type: 'test'
+  ...
+# Subtest: complete frame rejects orientation forged
+ok 212 - complete frame rejects orientation forged
+  ---
+  duration_ms: 27.7443
+  type: 'test'
+  ...
+# Subtest: complete frame rejects after inventory color forged
+ok 213 - complete frame rejects after inventory color forged
+  ---
+  duration_ms: 7.7168
+  type: 'test'
+  ...
+# Subtest: complete frame rejects actor forged
+ok 214 - complete frame rejects actor forged
+  ---
+  duration_ms: 7.4629
+  type: 'test'
+  ...
+# Subtest: complete frame rejects history forged
+ok 215 - complete frame rejects history forged
+  ---
+  duration_ms: 7.6284
+  type: 'test'
+  ...
+# Subtest: complete frame rejects root legal domain omitted
+ok 216 - complete frame rejects root legal domain omitted
+  ---
+  duration_ms: 8.0687
+  type: 'test'
+  ...
+# Subtest: complete frame rejects played identity forged
+ok 217 - complete frame rejects played identity forged
+  ---
+  duration_ms: 7.4314
+  type: 'test'
+  ...
+# Subtest: complete frame rejects played flags forged
+ok 218 - complete frame rejects played flags forged
+  ---
+  duration_ms: 7.4035
+  type: 'test'
+  ...
+# Subtest: complete frame rejects before board forged
+ok 219 - complete frame rejects before board forged
+  ---
+  duration_ms: 7.4501
+  type: 'test'
+  ...
+# Subtest: complete frame rejects after board forged
+ok 220 - complete frame rejects after board forged
+  ---
+  duration_ms: 7.7494
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete claim omitted and laundered
+ok 221 - complete frame rejects complete claim omitted and laundered
+  ---
+  duration_ms: 7.1793
+  type: 'test'
+  ...
+# Subtest: complete frame rejects own event duplicated
+ok 222 - complete frame rejects own event duplicated
+  ---
+  duration_ms: 10.2864
+  type: 'test'
+  ...
+# Subtest: complete frame rejects quality claim forged
+ok 223 - complete frame rejects quality claim forged
+  ---
+  duration_ms: 7.3653
+  type: 'test'
+  ...
+# Subtest: complete frame rejects teaching text forged
+ok 224 - complete frame rejects teaching text forged
+  ---
+  duration_ms: 8.6211
+  type: 'test'
+  ...
+# Subtest: complete frame rejects schema forged
+ok 225 - complete frame rejects schema forged
+  ---
+  duration_ms: 7.5171
+  type: 'test'
+  ...
+# Subtest: complete frame rejects selected comment forged
+ok 226 - complete frame rejects selected comment forged
+  ---
+  duration_ms: 7.7378
+  type: 'test'
+  ...
+# Subtest: complete frame rejects inherited SAN forged
+ok 227 - complete frame rejects inherited SAN forged
+  ---
+  duration_ms: 7.8551
+  type: 'test'
+  ...
+# Subtest: complete frame rejects inherited event omitted
+ok 228 - complete frame rejects inherited event omitted
+  ---
+  duration_ms: 7.6599
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete own event order reversed
+ok 229 - complete frame rejects complete own event order reversed
+  ---
+  duration_ms: 33.9353
+  type: 'test'
+  ...
+# Subtest: complete frame rejects node count forged
+ok 230 - complete frame rejects node count forged
+  ---
+  duration_ms: 7.0748
+  type: 'test'
+  ...
+# Subtest: complete frame rejects budget limit forged
+ok 231 - complete frame rejects budget limit forged
+  ---
+  duration_ms: 6.8455
+  type: 'test'
+  ...
+# Subtest: complete frame rejects status forged
+ok 232 - complete frame rejects status forged
+  ---
+  duration_ms: 6.9071
+  type: 'test'
+  ...
+# Subtest: every integer budget outside-branched-chain
+ok 233 - every integer budget outside-branched-chain
+  ---
+  duration_ms: 1461.5825
+  type: 'test'
+  ...
+# Subtest: every integer budget behind-branched-chain
+ok 234 - every integer budget behind-branched-chain
+  ---
+  duration_ms: 1505.236
+  type: 'test'
+  ...
+# Subtest: every integer budget two-new-batteries
+ok 235 - every integer budget two-new-batteries
+  ---
+  duration_ms: 6159.7551
+  type: 'test'
+  ...
+# Subtest: every integer budget authored-positive-history
+ok 236 - every integer budget authored-positive-history
+  ---
+  duration_ms: 4245.8311
+  type: 'test'
+  ...
+# Subtest: implemented strict and historical null/default compatibility
+ok 237 - implemented strict and historical null/default compatibility
+  ---
+  duration_ms: 47.14
+  type: 'test'
+  ...
+# Subtest: normalized positive history and actual repetition terminal
+ok 238 - normalized positive history and actual repetition terminal
+  ---
+  duration_ms: 237.3214
+  type: 'test'
+  ...
+# Subtest: all original states families blocker directions and certificate kinds
+ok 239 - all original states families blocker directions and certificate kinds
+  ---
+  duration_ms: 0.1896
+  type: 'test'
+  ...
+# Subtest: legacy derived count retained separately from atomic emitted count
+ok 240 - legacy derived count retained separately from atomic emitted count
+  ---
+  duration_ms: 13.7407
+  type: 'test'
+  ...
+1..240
+# tests 240
+# suites 0
+# pass 240
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21588.3115
