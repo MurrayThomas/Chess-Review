@@ -36,7 +36,7 @@ function reconstruct(input,parent){
  const c=board(input);let cost=1+(input.history?.moves.length||0);if(c.isGameOver())return finish('not-live',cost);
  const before=c.fen(),actor=c.turn(),rootCheck=c.isCheck(),first=scan(c);cost+=first.cost;
  const actual=c.move(input.move);cost++;const after=c.fen();assert.equal(after,parent.after);const next=scan(c);cost+=next.cost;
- const witness={experiment:'E085',actor,history:input.history?copy(input.history):null,before,after,played:played(actual),root:first.value,actual:next.value,beforeOpponent:null,alternatives:[],missedProof:null},extra=[];
+ const witness={experiment:'E085',actor,history:input.history?{fen:input.history.fen,moves:copy(input.history.moves)}:null,before,after,played:played(actual),root:first.value,actual:next.value,beforeOpponent:null,alternatives:[],missedProof:null},extra=[];
  // Evidence deliberately snapshots properties by phase, while retaining the
  // shared alternatives array used by the frozen contract's shallow snapshots.
  const add=(id,text,details={})=>{cost++;assert.ok(text.split(/\s+/).length<=24);extra.push({id,text,qualityClaim:false,evidence:{...witness,...details}});};

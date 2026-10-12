@@ -21,7 +21,7 @@ export function checkE085Shape(report,fixtures,hashes,receipt){
 export function checkE085Bytes(raw){assert.equal(raw.length,savedE085.bytes);assert.equal(sha256(raw),savedE085.sha256);return true;}
 export async function e085SourceInputs(){
  const d='research/experiments/E270-combined-validation';
- return bindings([d+'/preparation/run-e085.mjs',d+'/preparation/e085-replay.test.mjs',d+'/AMENDMENT-e085-whole-domain-replay.md',d+'/AMENDMENT-e085-foundation-control.md',
+ return bindings([d+'/preparation/run-e085.mjs',d+'/preparation/e085-replay.test.mjs',d+'/AMENDMENT-e085-whole-domain-replay.md',d+'/AMENDMENT-e085-foundation-control.md',d+'/AMENDMENT-e085-history-envelope.md',
   'research/experiments/E085-immediate-mate-review/PLAN.md','package.json','package-lock.json']);
 }
 export async function admitE085Smoke(attempt,admission){
