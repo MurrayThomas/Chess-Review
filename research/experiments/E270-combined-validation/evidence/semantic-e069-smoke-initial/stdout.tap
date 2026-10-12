@@ -1,0 +1,1390 @@
+TAP version 13
+# Subtest: original rook-seventh
+ok 1 - original rook-seventh
+  ---
+  duration_ms: 62.8724
+  type: 'test'
+  ...
+# Subtest: original rook-seventh-black
+ok 2 - original rook-seventh-black
+  ---
+  duration_ms: 34.7343
+  type: 'test'
+  ...
+# Subtest: original rook-seventh-mirror
+ok 3 - original rook-seventh-mirror
+  ---
+  duration_ms: 35.4118
+  type: 'test'
+  ...
+# Subtest: original rook-seventh-mirror-black
+ok 4 - original rook-seventh-mirror-black
+  ---
+  duration_ms: 34.8765
+  type: 'test'
+  ...
+# Subtest: original rook-eighth
+ok 5 - original rook-eighth
+  ---
+  duration_ms: 28.409
+  type: 'test'
+  ...
+# Subtest: original rook-eighth-black
+ok 6 - original rook-eighth-black
+  ---
+  duration_ms: 26.7444
+  type: 'test'
+  ...
+# Subtest: original rook-eighth-mirror
+ok 7 - original rook-eighth-mirror
+  ---
+  duration_ms: 26.7039
+  type: 'test'
+  ...
+# Subtest: original rook-eighth-mirror-black
+ok 8 - original rook-eighth-mirror-black
+  ---
+  duration_ms: 29.1769
+  type: 'test'
+  ...
+# Subtest: original rook-home-rank
+ok 9 - original rook-home-rank
+  ---
+  duration_ms: 33.5375
+  type: 'test'
+  ...
+# Subtest: original rook-home-rank-black
+ok 10 - original rook-home-rank-black
+  ---
+  duration_ms: 31.5275
+  type: 'test'
+  ...
+# Subtest: original rook-home-rank-mirror
+ok 11 - original rook-home-rank-mirror
+  ---
+  duration_ms: 30.4182
+  type: 'test'
+  ...
+# Subtest: original rook-home-rank-mirror-black
+ok 12 - original rook-home-rank-mirror-black
+  ---
+  duration_ms: 32.5903
+  type: 'test'
+  ...
+# Subtest: original rook-fourth-rank
+ok 13 - original rook-fourth-rank
+  ---
+  duration_ms: 36.557
+  type: 'test'
+  ...
+# Subtest: original rook-fourth-rank-black
+ok 14 - original rook-fourth-rank-black
+  ---
+  duration_ms: 36.7981
+  type: 'test'
+  ...
+# Subtest: original rook-fourth-rank-mirror
+ok 15 - original rook-fourth-rank-mirror
+  ---
+  duration_ms: 36.8217
+  type: 'test'
+  ...
+# Subtest: original rook-fourth-rank-mirror-black
+ok 16 - original rook-fourth-rank-mirror-black
+  ---
+  duration_ms: 37.8157
+  type: 'test'
+  ...
+# Subtest: original rook-capture-entry
+ok 17 - original rook-capture-entry
+  ---
+  duration_ms: 38.7637
+  type: 'test'
+  ...
+# Subtest: original rook-capture-entry-black
+ok 18 - original rook-capture-entry-black
+  ---
+  duration_ms: 41.3221
+  type: 'test'
+  ...
+# Subtest: original rook-capture-entry-mirror
+ok 19 - original rook-capture-entry-mirror
+  ---
+  duration_ms: 35.5436
+  type: 'test'
+  ...
+# Subtest: original rook-capture-entry-mirror-black
+ok 20 - original rook-capture-entry-mirror-black
+  ---
+  duration_ms: 35.3574
+  type: 'test'
+  ...
+# Subtest: original rook-bishop-captures-invader
+ok 21 - original rook-bishop-captures-invader
+  ---
+  duration_ms: 54.0206
+  type: 'test'
+  ...
+# Subtest: original rook-bishop-captures-invader-black
+ok 22 - original rook-bishop-captures-invader-black
+  ---
+  duration_ms: 60.601
+  type: 'test'
+  ...
+# Subtest: original rook-bishop-captures-invader-mirror
+ok 23 - original rook-bishop-captures-invader-mirror
+  ---
+  duration_ms: 53.5344
+  type: 'test'
+  ...
+# Subtest: original rook-bishop-captures-invader-mirror-black
+ok 24 - original rook-bishop-captures-invader-mirror-black
+  ---
+  duration_ms: 62.8515
+  type: 'test'
+  ...
+# Subtest: original rook-king-captures-invader
+ok 25 - original rook-king-captures-invader
+  ---
+  duration_ms: 37.7143
+  type: 'test'
+  ...
+# Subtest: original rook-king-captures-invader-black
+ok 26 - original rook-king-captures-invader-black
+  ---
+  duration_ms: 43.9491
+  type: 'test'
+  ...
+# Subtest: original rook-king-captures-invader-mirror
+ok 27 - original rook-king-captures-invader-mirror
+  ---
+  duration_ms: 35.8863
+  type: 'test'
+  ...
+# Subtest: original rook-king-captures-invader-mirror-black
+ok 28 - original rook-king-captures-invader-mirror-black
+  ---
+  duration_ms: 38.0985
+  type: 'test'
+  ...
+# Subtest: original rook-enemy-interposes
+ok 29 - original rook-enemy-interposes
+  ---
+  duration_ms: 57.3813
+  type: 'test'
+  ...
+# Subtest: original rook-enemy-interposes-black
+ok 30 - original rook-enemy-interposes-black
+  ---
+  duration_ms: 61.1842
+  type: 'test'
+  ...
+# Subtest: original rook-enemy-interposes-mirror
+ok 31 - original rook-enemy-interposes-mirror
+  ---
+  duration_ms: 58.3121
+  type: 'test'
+  ...
+# Subtest: original rook-enemy-interposes-mirror-black
+ok 32 - original rook-enemy-interposes-mirror-black
+  ---
+  duration_ms: 59.1178
+  type: 'test'
+  ...
+# Subtest: original rook-actual-checkmate
+ok 33 - original rook-actual-checkmate
+  ---
+  duration_ms: 40.5341
+  type: 'test'
+  ...
+# Subtest: original rook-actual-checkmate-black
+ok 34 - original rook-actual-checkmate-black
+  ---
+  duration_ms: 40.9959
+  type: 'test'
+  ...
+# Subtest: original rook-actual-checkmate-mirror
+ok 35 - original rook-actual-checkmate-mirror
+  ---
+  duration_ms: 35.9769
+  type: 'test'
+  ...
+# Subtest: original rook-actual-checkmate-mirror-black
+ok 36 - original rook-actual-checkmate-mirror-black
+  ---
+  duration_ms: 38.9345
+  type: 'test'
+  ...
+# Subtest: original rook-discovered-only-check
+ok 37 - original rook-discovered-only-check
+  ---
+  duration_ms: 54.4738
+  type: 'test'
+  ...
+# Subtest: original rook-discovered-only-check-black
+ok 38 - original rook-discovered-only-check-black
+  ---
+  duration_ms: 51.4456
+  type: 'test'
+  ...
+# Subtest: original rook-discovered-only-check-mirror
+ok 39 - original rook-discovered-only-check-mirror
+  ---
+  duration_ms: 52.9868
+  type: 'test'
+  ...
+# Subtest: original rook-discovered-only-check-mirror-black
+ok 40 - original rook-discovered-only-check-mirror-black
+  ---
+  duration_ms: 52.202
+  type: 'test'
+  ...
+# Subtest: original rook-not-deep-enough
+ok 41 - original rook-not-deep-enough
+  ---
+  duration_ms: 28.7976
+  type: 'test'
+  ...
+# Subtest: original rook-not-deep-enough-black
+ok 42 - original rook-not-deep-enough-black
+  ---
+  duration_ms: 28.6911
+  type: 'test'
+  ...
+# Subtest: original rook-not-deep-enough-mirror
+ok 43 - original rook-not-deep-enough-mirror
+  ---
+  duration_ms: 28.1191
+  type: 'test'
+  ...
+# Subtest: original rook-not-deep-enough-mirror-black
+ok 44 - original rook-not-deep-enough-mirror-black
+  ---
+  duration_ms: 29.8182
+  type: 'test'
+  ...
+# Subtest: original rook-already-in-enemy-half
+ok 45 - original rook-already-in-enemy-half
+  ---
+  duration_ms: 30.5602
+  type: 'test'
+  ...
+# Subtest: original rook-already-in-enemy-half-black
+ok 46 - original rook-already-in-enemy-half-black
+  ---
+  duration_ms: 30.4552
+  type: 'test'
+  ...
+# Subtest: original rook-already-in-enemy-half-mirror
+ok 47 - original rook-already-in-enemy-half-mirror
+  ---
+  duration_ms: 30.4386
+  type: 'test'
+  ...
+# Subtest: original rook-already-in-enemy-half-mirror-black
+ok 48 - original rook-already-in-enemy-half-mirror-black
+  ---
+  duration_ms: 30.7537
+  type: 'test'
+  ...
+# Subtest: original rook-horizontal-no-entry
+ok 49 - original rook-horizontal-no-entry
+  ---
+  duration_ms: 27.3263
+  type: 'test'
+  ...
+# Subtest: original rook-horizontal-no-entry-black
+ok 50 - original rook-horizontal-no-entry-black
+  ---
+  duration_ms: 27.5214
+  type: 'test'
+  ...
+# Subtest: original rook-horizontal-no-entry-mirror
+ok 51 - original rook-horizontal-no-entry-mirror
+  ---
+  duration_ms: 26.9178
+  type: 'test'
+  ...
+# Subtest: original rook-horizontal-no-entry-mirror-black
+ok 52 - original rook-horizontal-no-entry-mirror-black
+  ---
+  duration_ms: 26.7372
+  type: 'test'
+  ...
+# Subtest: original rook-no-check
+ok 53 - original rook-no-check
+  ---
+  duration_ms: 23.9771
+  type: 'test'
+  ...
+# Subtest: original rook-no-check-black
+ok 54 - original rook-no-check-black
+  ---
+  duration_ms: 22.9634
+  type: 'test'
+  ...
+# Subtest: original rook-no-check-mirror
+ok 55 - original rook-no-check-mirror
+  ---
+  duration_ms: 25.8397
+  type: 'test'
+  ...
+# Subtest: original rook-no-check-mirror-black
+ok 56 - original rook-no-check-mirror-black
+  ---
+  duration_ms: 24.7903
+  type: 'test'
+  ...
+# Subtest: original rook-blocked-ray
+ok 57 - original rook-blocked-ray
+  ---
+  duration_ms: 32.2094
+  type: 'test'
+  ...
+# Subtest: original rook-blocked-ray-black
+ok 58 - original rook-blocked-ray-black
+  ---
+  duration_ms: 28.1081
+  type: 'test'
+  ...
+# Subtest: original rook-blocked-ray-mirror
+ok 59 - original rook-blocked-ray-mirror
+  ---
+  duration_ms: 29.4828
+  type: 'test'
+  ...
+# Subtest: original rook-blocked-ray-mirror-black
+ok 60 - original rook-blocked-ray-mirror-black
+  ---
+  duration_ms: 31.1471
+  type: 'test'
+  ...
+# Subtest: original rook-vertical-king-check
+ok 61 - original rook-vertical-king-check
+  ---
+  duration_ms: 27.0988
+  type: 'test'
+  ...
+# Subtest: original rook-vertical-king-check-black
+ok 62 - original rook-vertical-king-check-black
+  ---
+  duration_ms: 24.7363
+  type: 'test'
+  ...
+# Subtest: original rook-vertical-king-check-mirror
+ok 63 - original rook-vertical-king-check-mirror
+  ---
+  duration_ms: 25.5427
+  type: 'test'
+  ...
+# Subtest: original rook-vertical-king-check-mirror-black
+ok 64 - original rook-vertical-king-check-mirror-black
+  ---
+  duration_ms: 26.208
+  type: 'test'
+  ...
+# Subtest: original rook-disabled
+ok 65 - original rook-disabled
+  ---
+  duration_ms: 28.2346
+  type: 'test'
+  ...
+# Subtest: original rook-disabled-black
+ok 66 - original rook-disabled-black
+  ---
+  duration_ms: 26.7525
+  type: 'test'
+  ...
+# Subtest: original rook-disabled-mirror
+ok 67 - original rook-disabled-mirror
+  ---
+  duration_ms: 27.5827
+  type: 'test'
+  ...
+# Subtest: original rook-disabled-mirror-black
+ok 68 - original rook-disabled-mirror-black
+  ---
+  duration_ms: 28.7593
+  type: 'test'
+  ...
+# Subtest: original rook-zero-budget
+ok 69 - original rook-zero-budget
+  ---
+  duration_ms: 28.9583
+  type: 'test'
+  ...
+# Subtest: original rook-zero-budget-black
+ok 70 - original rook-zero-budget-black
+  ---
+  duration_ms: 27.9899
+  type: 'test'
+  ...
+# Subtest: original rook-zero-budget-mirror
+ok 71 - original rook-zero-budget-mirror
+  ---
+  duration_ms: 26.5636
+  type: 'test'
+  ...
+# Subtest: original rook-zero-budget-mirror-black
+ok 72 - original rook-zero-budget-mirror-black
+  ---
+  duration_ms: 29.1124
+  type: 'test'
+  ...
+# Subtest: original rook-illegal-jump
+ok 73 - original rook-illegal-jump
+  ---
+  duration_ms: 1.3071
+  type: 'test'
+  ...
+# Subtest: original rook-illegal-jump-black
+ok 74 - original rook-illegal-jump-black
+  ---
+  duration_ms: 0.8363
+  type: 'test'
+  ...
+# Subtest: original rook-illegal-jump-mirror
+ok 75 - original rook-illegal-jump-mirror
+  ---
+  duration_ms: 0.7833
+  type: 'test'
+  ...
+# Subtest: original rook-illegal-jump-mirror-black
+ok 76 - original rook-illegal-jump-mirror-black
+  ---
+  duration_ms: 0.7775
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-actual
+ok 77 - original rook-terminal-actual
+  ---
+  duration_ms: 20.0012
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-actual-black
+ok 78 - original rook-terminal-actual-black
+  ---
+  duration_ms: 19.8628
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-actual-mirror
+ok 79 - original rook-terminal-actual-mirror
+  ---
+  duration_ms: 19.1468
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-actual-mirror-black
+ok 80 - original rook-terminal-actual-mirror-black
+  ---
+  duration_ms: 20.6039
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-replies
+ok 81 - original rook-terminal-replies
+  ---
+  duration_ms: 30.9845
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-replies-black
+ok 82 - original rook-terminal-replies-black
+  ---
+  duration_ms: 31.136
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-replies-mirror
+ok 83 - original rook-terminal-replies-mirror
+  ---
+  duration_ms: 34.2793
+  type: 'test'
+  ...
+# Subtest: original rook-terminal-replies-mirror-black
+ok 84 - original rook-terminal-replies-mirror-black
+  ---
+  duration_ms: 32.9984
+  type: 'test'
+  ...
+# Subtest: original rook-repetition-reply
+ok 85 - original rook-repetition-reply
+  ---
+  duration_ms: 120.6332
+  type: 'test'
+  ...
+# Subtest: original rook-repetition-reply-black
+ok 86 - original rook-repetition-reply-black
+  ---
+  duration_ms: 118.6004
+  type: 'test'
+  ...
+# Subtest: original rook-repetition-reply-mirror
+ok 87 - original rook-repetition-reply-mirror
+  ---
+  duration_ms: 118.8435
+  type: 'test'
+  ...
+# Subtest: original rook-repetition-reply-mirror-black
+ok 88 - original rook-repetition-reply-mirror-black
+  ---
+  duration_ms: 115.6505
+  type: 'test'
+  ...
+# Subtest: original queen-seventh
+ok 89 - original queen-seventh
+  ---
+  duration_ms: 53.0359
+  type: 'test'
+  ...
+# Subtest: original queen-seventh-black
+ok 90 - original queen-seventh-black
+  ---
+  duration_ms: 52.7235
+  type: 'test'
+  ...
+# Subtest: original queen-seventh-mirror
+ok 91 - original queen-seventh-mirror
+  ---
+  duration_ms: 52.405
+  type: 'test'
+  ...
+# Subtest: original queen-seventh-mirror-black
+ok 92 - original queen-seventh-mirror-black
+  ---
+  duration_ms: 54.3419
+  type: 'test'
+  ...
+# Subtest: original queen-eighth
+ok 93 - original queen-eighth
+  ---
+  duration_ms: 45.208
+  type: 'test'
+  ...
+# Subtest: original queen-eighth-black
+ok 94 - original queen-eighth-black
+  ---
+  duration_ms: 44.8445
+  type: 'test'
+  ...
+# Subtest: original queen-eighth-mirror
+ok 95 - original queen-eighth-mirror
+  ---
+  duration_ms: 42.3802
+  type: 'test'
+  ...
+# Subtest: original queen-eighth-mirror-black
+ok 96 - original queen-eighth-mirror-black
+  ---
+  duration_ms: 47.2582
+  type: 'test'
+  ...
+# Subtest: original queen-home-rank
+ok 97 - original queen-home-rank
+  ---
+  duration_ms: 50.1764
+  type: 'test'
+  ...
+# Subtest: original queen-home-rank-black
+ok 98 - original queen-home-rank-black
+  ---
+  duration_ms: 48.6614
+  type: 'test'
+  ...
+# Subtest: original queen-home-rank-mirror
+ok 99 - original queen-home-rank-mirror
+  ---
+  duration_ms: 44.1412
+  type: 'test'
+  ...
+# Subtest: original queen-home-rank-mirror-black
+ok 100 - original queen-home-rank-mirror-black
+  ---
+  duration_ms: 48.7828
+  type: 'test'
+  ...
+# Subtest: original queen-fourth-rank
+ok 101 - original queen-fourth-rank
+  ---
+  duration_ms: 54.8525
+  type: 'test'
+  ...
+# Subtest: original queen-fourth-rank-black
+ok 102 - original queen-fourth-rank-black
+  ---
+  duration_ms: 57.2167
+  type: 'test'
+  ...
+# Subtest: original queen-fourth-rank-mirror
+ok 103 - original queen-fourth-rank-mirror
+  ---
+  duration_ms: 55.3849
+  type: 'test'
+  ...
+# Subtest: original queen-fourth-rank-mirror-black
+ok 104 - original queen-fourth-rank-mirror-black
+  ---
+  duration_ms: 61.6078
+  type: 'test'
+  ...
+# Subtest: original queen-capture-entry
+ok 105 - original queen-capture-entry
+  ---
+  duration_ms: 58.2988
+  type: 'test'
+  ...
+# Subtest: original queen-capture-entry-black
+ok 106 - original queen-capture-entry-black
+  ---
+  duration_ms: 58.1908
+  type: 'test'
+  ...
+# Subtest: original queen-capture-entry-mirror
+ok 107 - original queen-capture-entry-mirror
+  ---
+  duration_ms: 57.7063
+  type: 'test'
+  ...
+# Subtest: original queen-capture-entry-mirror-black
+ok 108 - original queen-capture-entry-mirror-black
+  ---
+  duration_ms: 59.9101
+  type: 'test'
+  ...
+# Subtest: original queen-bishop-captures-invader
+ok 109 - original queen-bishop-captures-invader
+  ---
+  duration_ms: 108.1742
+  type: 'test'
+  ...
+# Subtest: original queen-bishop-captures-invader-black
+ok 110 - original queen-bishop-captures-invader-black
+  ---
+  duration_ms: 86.8378
+  type: 'test'
+  ...
+# Subtest: original queen-bishop-captures-invader-mirror
+ok 111 - original queen-bishop-captures-invader-mirror
+  ---
+  duration_ms: 114.8604
+  type: 'test'
+  ...
+# Subtest: original queen-bishop-captures-invader-mirror-black
+ok 112 - original queen-bishop-captures-invader-mirror-black
+  ---
+  duration_ms: 87.2237
+  type: 'test'
+  ...
+# Subtest: original queen-king-captures-invader
+ok 113 - original queen-king-captures-invader
+  ---
+  duration_ms: 55.235
+  type: 'test'
+  ...
+# Subtest: original queen-king-captures-invader-black
+ok 114 - original queen-king-captures-invader-black
+  ---
+  duration_ms: 56.7046
+  type: 'test'
+  ...
+# Subtest: original queen-king-captures-invader-mirror
+ok 115 - original queen-king-captures-invader-mirror
+  ---
+  duration_ms: 53.8834
+  type: 'test'
+  ...
+# Subtest: original queen-king-captures-invader-mirror-black
+ok 116 - original queen-king-captures-invader-mirror-black
+  ---
+  duration_ms: 57.942
+  type: 'test'
+  ...
+# Subtest: original queen-enemy-interposes
+ok 117 - original queen-enemy-interposes
+  ---
+  duration_ms: 106.9622
+  type: 'test'
+  ...
+# Subtest: original queen-enemy-interposes-black
+ok 118 - original queen-enemy-interposes-black
+  ---
+  duration_ms: 90.7004
+  type: 'test'
+  ...
+# Subtest: original queen-enemy-interposes-mirror
+ok 119 - original queen-enemy-interposes-mirror
+  ---
+  duration_ms: 111.0779
+  type: 'test'
+  ...
+# Subtest: original queen-enemy-interposes-mirror-black
+ok 120 - original queen-enemy-interposes-mirror-black
+  ---
+  duration_ms: 91.6386
+  type: 'test'
+  ...
+# Subtest: original queen-actual-checkmate
+ok 121 - original queen-actual-checkmate
+  ---
+  duration_ms: 51.7912
+  type: 'test'
+  ...
+# Subtest: original queen-actual-checkmate-black
+ok 122 - original queen-actual-checkmate-black
+  ---
+  duration_ms: 53.2909
+  type: 'test'
+  ...
+# Subtest: original queen-actual-checkmate-mirror
+ok 123 - original queen-actual-checkmate-mirror
+  ---
+  duration_ms: 51.7103
+  type: 'test'
+  ...
+# Subtest: original queen-actual-checkmate-mirror-black
+ok 124 - original queen-actual-checkmate-mirror-black
+  ---
+  duration_ms: 54.2274
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-only-check
+ok 125 - original queen-diagonal-only-check
+  ---
+  duration_ms: 47.4396
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-only-check-black
+ok 126 - original queen-diagonal-only-check-black
+  ---
+  duration_ms: 46.2703
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-only-check-mirror
+ok 127 - original queen-diagonal-only-check-mirror
+  ---
+  duration_ms: 47.2566
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-only-check-mirror-black
+ok 128 - original queen-diagonal-only-check-mirror-black
+  ---
+  duration_ms: 50.2413
+  type: 'test'
+  ...
+# Subtest: original queen-not-deep-enough
+ok 129 - original queen-not-deep-enough
+  ---
+  duration_ms: 46.066
+  type: 'test'
+  ...
+# Subtest: original queen-not-deep-enough-black
+ok 130 - original queen-not-deep-enough-black
+  ---
+  duration_ms: 45.183
+  type: 'test'
+  ...
+# Subtest: original queen-not-deep-enough-mirror
+ok 131 - original queen-not-deep-enough-mirror
+  ---
+  duration_ms: 43.8812
+  type: 'test'
+  ...
+# Subtest: original queen-not-deep-enough-mirror-black
+ok 132 - original queen-not-deep-enough-mirror-black
+  ---
+  duration_ms: 45.5173
+  type: 'test'
+  ...
+# Subtest: original queen-already-in-enemy-half
+ok 133 - original queen-already-in-enemy-half
+  ---
+  duration_ms: 45.9208
+  type: 'test'
+  ...
+# Subtest: original queen-already-in-enemy-half-black
+ok 134 - original queen-already-in-enemy-half-black
+  ---
+  duration_ms: 46.8592
+  type: 'test'
+  ...
+# Subtest: original queen-already-in-enemy-half-mirror
+ok 135 - original queen-already-in-enemy-half-mirror
+  ---
+  duration_ms: 47.4755
+  type: 'test'
+  ...
+# Subtest: original queen-already-in-enemy-half-mirror-black
+ok 136 - original queen-already-in-enemy-half-mirror-black
+  ---
+  duration_ms: 48.0482
+  type: 'test'
+  ...
+# Subtest: original queen-horizontal-no-entry
+ok 137 - original queen-horizontal-no-entry
+  ---
+  duration_ms: 50.9744
+  type: 'test'
+  ...
+# Subtest: original queen-horizontal-no-entry-black
+ok 138 - original queen-horizontal-no-entry-black
+  ---
+  duration_ms: 50.777
+  type: 'test'
+  ...
+# Subtest: original queen-horizontal-no-entry-mirror
+ok 139 - original queen-horizontal-no-entry-mirror
+  ---
+  duration_ms: 49.3018
+  type: 'test'
+  ...
+# Subtest: original queen-horizontal-no-entry-mirror-black
+ok 140 - original queen-horizontal-no-entry-mirror-black
+  ---
+  duration_ms: 48.2035
+  type: 'test'
+  ...
+# Subtest: original queen-no-check
+ok 141 - original queen-no-check
+  ---
+  duration_ms: 41.7373
+  type: 'test'
+  ...
+# Subtest: original queen-no-check-black
+ok 142 - original queen-no-check-black
+  ---
+  duration_ms: 41.0481
+  type: 'test'
+  ...
+# Subtest: original queen-no-check-mirror
+ok 143 - original queen-no-check-mirror
+  ---
+  duration_ms: 40.8465
+  type: 'test'
+  ...
+# Subtest: original queen-no-check-mirror-black
+ok 144 - original queen-no-check-mirror-black
+  ---
+  duration_ms: 40.8852
+  type: 'test'
+  ...
+# Subtest: original queen-blocked-ray
+ok 145 - original queen-blocked-ray
+  ---
+  duration_ms: 46.0759
+  type: 'test'
+  ...
+# Subtest: original queen-blocked-ray-black
+ok 146 - original queen-blocked-ray-black
+  ---
+  duration_ms: 45.5124
+  type: 'test'
+  ...
+# Subtest: original queen-blocked-ray-mirror
+ok 147 - original queen-blocked-ray-mirror
+  ---
+  duration_ms: 46.3615
+  type: 'test'
+  ...
+# Subtest: original queen-blocked-ray-mirror-black
+ok 148 - original queen-blocked-ray-mirror-black
+  ---
+  duration_ms: 47.5419
+  type: 'test'
+  ...
+# Subtest: original queen-vertical-king-check
+ok 149 - original queen-vertical-king-check
+  ---
+  duration_ms: 42.2164
+  type: 'test'
+  ...
+# Subtest: original queen-vertical-king-check-black
+ok 150 - original queen-vertical-king-check-black
+  ---
+  duration_ms: 42.769
+  type: 'test'
+  ...
+# Subtest: original queen-vertical-king-check-mirror
+ok 151 - original queen-vertical-king-check-mirror
+  ---
+  duration_ms: 39.8603
+  type: 'test'
+  ...
+# Subtest: original queen-vertical-king-check-mirror-black
+ok 152 - original queen-vertical-king-check-mirror-black
+  ---
+  duration_ms: 40.2675
+  type: 'test'
+  ...
+# Subtest: original queen-disabled
+ok 153 - original queen-disabled
+  ---
+  duration_ms: 42.7478
+  type: 'test'
+  ...
+# Subtest: original queen-disabled-black
+ok 154 - original queen-disabled-black
+  ---
+  duration_ms: 45.7878
+  type: 'test'
+  ...
+# Subtest: original queen-disabled-mirror
+ok 155 - original queen-disabled-mirror
+  ---
+  duration_ms: 45.0998
+  type: 'test'
+  ...
+# Subtest: original queen-disabled-mirror-black
+ok 156 - original queen-disabled-mirror-black
+  ---
+  duration_ms: 47.023
+  type: 'test'
+  ...
+# Subtest: original queen-zero-budget
+ok 157 - original queen-zero-budget
+  ---
+  duration_ms: 45.285
+  type: 'test'
+  ...
+# Subtest: original queen-zero-budget-black
+ok 158 - original queen-zero-budget-black
+  ---
+  duration_ms: 44.6123
+  type: 'test'
+  ...
+# Subtest: original queen-zero-budget-mirror
+ok 159 - original queen-zero-budget-mirror
+  ---
+  duration_ms: 44.6412
+  type: 'test'
+  ...
+# Subtest: original queen-zero-budget-mirror-black
+ok 160 - original queen-zero-budget-mirror-black
+  ---
+  duration_ms: 43.9798
+  type: 'test'
+  ...
+# Subtest: original queen-illegal-jump
+ok 161 - original queen-illegal-jump
+  ---
+  duration_ms: 1.7997
+  type: 'test'
+  ...
+# Subtest: original queen-illegal-jump-black
+ok 162 - original queen-illegal-jump-black
+  ---
+  duration_ms: 1.751
+  type: 'test'
+  ...
+# Subtest: original queen-illegal-jump-mirror
+ok 163 - original queen-illegal-jump-mirror
+  ---
+  duration_ms: 1.6866
+  type: 'test'
+  ...
+# Subtest: original queen-illegal-jump-mirror-black
+ok 164 - original queen-illegal-jump-mirror-black
+  ---
+  duration_ms: 1.7032
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-actual
+ok 165 - original queen-terminal-actual
+  ---
+  duration_ms: 31.3083
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-actual-black
+ok 166 - original queen-terminal-actual-black
+  ---
+  duration_ms: 33.3756
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-actual-mirror
+ok 167 - original queen-terminal-actual-mirror
+  ---
+  duration_ms: 33.5855
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-actual-mirror-black
+ok 168 - original queen-terminal-actual-mirror-black
+  ---
+  duration_ms: 34.0878
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-replies
+ok 169 - original queen-terminal-replies
+  ---
+  duration_ms: 51.7858
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-replies-black
+ok 170 - original queen-terminal-replies-black
+  ---
+  duration_ms: 48.8846
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-replies-mirror
+ok 171 - original queen-terminal-replies-mirror
+  ---
+  duration_ms: 50.744
+  type: 'test'
+  ...
+# Subtest: original queen-terminal-replies-mirror-black
+ok 172 - original queen-terminal-replies-mirror-black
+  ---
+  duration_ms: 52.4935
+  type: 'test'
+  ...
+# Subtest: original queen-repetition-reply
+ok 173 - original queen-repetition-reply
+  ---
+  duration_ms: 191.1589
+  type: 'test'
+  ...
+# Subtest: original queen-repetition-reply-black
+ok 174 - original queen-repetition-reply-black
+  ---
+  duration_ms: 194.8825
+  type: 'test'
+  ...
+# Subtest: original queen-repetition-reply-mirror
+ok 175 - original queen-repetition-reply-mirror
+  ---
+  duration_ms: 191.969
+  type: 'test'
+  ...
+# Subtest: original queen-repetition-reply-mirror-black
+ok 176 - original queen-repetition-reply-mirror-black
+  ---
+  duration_ms: 189.6062
+  type: 'test'
+  ...
+# Subtest: original bishop-not-rook
+ok 177 - original bishop-not-rook
+  ---
+  duration_ms: 21.5084
+  type: 'test'
+  ...
+# Subtest: original bishop-not-rook-black
+ok 178 - original bishop-not-rook-black
+  ---
+  duration_ms: 22.4225
+  type: 'test'
+  ...
+# Subtest: original bishop-not-rook-mirror
+ok 179 - original bishop-not-rook-mirror
+  ---
+  duration_ms: 22.6511
+  type: 'test'
+  ...
+# Subtest: original bishop-not-rook-mirror-black
+ok 180 - original bishop-not-rook-mirror-black
+  ---
+  duration_ms: 23.0848
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-entry
+ok 181 - original queen-diagonal-entry
+  ---
+  duration_ms: 47.419
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-entry-black
+ok 182 - original queen-diagonal-entry-black
+  ---
+  duration_ms: 48.4254
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-entry-mirror
+ok 183 - original queen-diagonal-entry-mirror
+  ---
+  duration_ms: 47.518
+  type: 'test'
+  ...
+# Subtest: original queen-diagonal-entry-mirror-black
+ok 184 - original queen-diagonal-entry-mirror-black
+  ---
+  duration_ms: 49.646
+  type: 'test'
+  ...
+# Subtest: original rook-check-evasion
+ok 185 - original rook-check-evasion
+  ---
+  duration_ms: 38.5825
+  type: 'test'
+  ...
+# Subtest: original rook-check-evasion-black
+ok 186 - original rook-check-evasion-black
+  ---
+  duration_ms: 42.8595
+  type: 'test'
+  ...
+# Subtest: original rook-check-evasion-mirror
+ok 187 - original rook-check-evasion-mirror
+  ---
+  duration_ms: 36.969
+  type: 'test'
+  ...
+# Subtest: original rook-check-evasion-mirror-black
+ok 188 - original rook-check-evasion-mirror-black
+  ---
+  duration_ms: 75.9218
+  type: 'test'
+  ...
+# Subtest: original queen-check-evasion
+ok 189 - original queen-check-evasion
+  ---
+  duration_ms: 57.9128
+  type: 'test'
+  ...
+# Subtest: original queen-check-evasion-black
+ok 190 - original queen-check-evasion-black
+  ---
+  duration_ms: 50.1353
+  type: 'test'
+  ...
+# Subtest: original queen-check-evasion-mirror
+ok 191 - original queen-check-evasion-mirror
+  ---
+  duration_ms: 63.186
+  type: 'test'
+  ...
+# Subtest: original queen-check-evasion-mirror-black
+ok 192 - original queen-check-evasion-mirror-black
+  ---
+  duration_ms: 58.1442
+  type: 'test'
+  ...
+# Subtest: forgery actual identity
+ok 193 - forgery actual identity
+  ---
+  duration_ms: 24.953
+  type: 'test'
+  ...
+# Subtest: forgery history missing
+ok 194 - forgery history missing
+  ---
+  duration_ms: 60.2986
+  type: 'test'
+  ...
+# Subtest: forgery entry origin rank
+ok 195 - forgery entry origin rank
+  ---
+  duration_ms: 17.2444
+  type: 'test'
+  ...
+# Subtest: forgery entry final rank
+ok 196 - forgery entry final rank
+  ---
+  duration_ms: 17.212
+  type: 'test'
+  ...
+# Subtest: forgery invader square
+ok 197 - forgery invader square
+  ---
+  duration_ms: 17.153
+  type: 'test'
+  ...
+# Subtest: forgery king square
+ok 198 - forgery king square
+  ---
+  duration_ms: 16.974
+  type: 'test'
+  ...
+# Subtest: forgery ray incomplete
+ok 199 - forgery ray incomplete
+  ---
+  duration_ms: 17.0866
+  type: 'test'
+  ...
+# Subtest: forgery ray order
+ok 200 - forgery ray order
+  ---
+  duration_ms: 16.9606
+  type: 'test'
+  ...
+# Subtest: forgery reply missing
+ok 201 - forgery reply missing
+  ---
+  duration_ms: 16.88
+  type: 'test'
+  ...
+# Subtest: forgery reply order
+ok 202 - forgery reply order
+  ---
+  duration_ms: 17.076
+  type: 'test'
+  ...
+# Subtest: forgery reply actual
+ok 203 - forgery reply actual
+  ---
+  duration_ms: 16.9301
+  type: 'test'
+  ...
+# Subtest: forgery reply SAN
+ok 204 - forgery reply SAN
+  ---
+  duration_ms: 17.5767
+  type: 'test'
+  ...
+# Subtest: forgery reply invader
+ok 205 - forgery reply invader
+  ---
+  duration_ms: 16.9934
+  type: 'test'
+  ...
+# Subtest: forgery reply check
+ok 206 - forgery reply check
+  ---
+  duration_ms: 16.944
+  type: 'test'
+  ...
+# Subtest: forgery reply checkmate
+ok 207 - forgery reply checkmate
+  ---
+  duration_ms: 16.7809
+  type: 'test'
+  ...
+# Subtest: forgery reply stalemate
+ok 208 - forgery reply stalemate
+  ---
+  duration_ms: 17.0341
+  type: 'test'
+  ...
+# Subtest: forgery reply draw
+ok 209 - forgery reply draw
+  ---
+  duration_ms: 59.7966
+  type: 'test'
+  ...
+# Subtest: forgery reply terminal
+ok 210 - forgery reply terminal
+  ---
+  duration_ms: 59.1654
+  type: 'test'
+  ...
+# Subtest: forgery text
+ok 211 - forgery text
+  ---
+  duration_ms: 16.784
+  type: 'test'
+  ...
+# Subtest: forgery quality claim
+ok 212 - forgery quality claim
+  ---
+  duration_ms: 16.7095
+  type: 'test'
+  ...
+# Subtest: forgery piece label
+ok 213 - forgery piece label
+  ---
+  duration_ms: 18.1666
+  type: 'test'
+  ...
+# Subtest: forgery schema
+ok 214 - forgery schema
+  ---
+  duration_ms: 16.8385
+  type: 'test'
+  ...
+# Subtest: forgery node ledger
+ok 215 - forgery node ledger
+  ---
+  duration_ms: 15.4387
+  type: 'test'
+  ...
+# Subtest: forgery limit
+ok 216 - forgery limit
+  ---
+  duration_ms: 16.8209
+  type: 'test'
+  ...
+# Subtest: forgery mandatory event omitted
+ok 217 - forgery mandatory event omitted
+  ---
+  duration_ms: 16.9471
+  type: 'test'
+  ...
+# Subtest: forgery negative laundered
+ok 218 - forgery negative laundered
+  ---
+  duration_ms: 15.6314
+  type: 'test'
+  ...
+# Subtest: forgery inherited field and selected comment
+ok 219 - forgery inherited field and selected comment
+  ---
+  duration_ms: 15.7745
+  type: 'test'
+  ...
+# Subtest: forgery extra result field
+ok 220 - forgery extra result field
+  ---
+  duration_ms: 16.4877
+  type: 'test'
+  ...
+# Subtest: every integer budget rook-seventh
+ok 221 - every integer budget rook-seventh
+  ---
+  duration_ms: 241.9146
+  type: 'test'
+  ...
+# Subtest: every integer budget queen-eighth
+ok 222 - every integer budget queen-eighth
+  ---
+  duration_ms: 250.169
+  type: 'test'
+  ...
+# Subtest: every integer budget rook-repetition-reply
+ok 223 - every integer budget rook-repetition-reply
+  ---
+  duration_ms: 1583.836
+  type: 'test'
+  ...
+# Subtest: every integer budget rook-blocked-ray
+ok 224 - every integer budget rook-blocked-ray
+  ---
+  duration_ms: 116.1018
+  type: 'test'
+  ...
+# Subtest: strict null and disabled compatibility
+ok 225 - strict null and disabled compatibility
+  ---
+  duration_ms: 160.5134
+  type: 'test'
+  ...
+# Subtest: all original statuses and both piece labels
+ok 226 - all original statuses and both piece labels
+  ---
+  duration_ms: 0.1749
+  type: 'test'
+  ...
+# Subtest: full history repetition differs from fresh FEN for each unit and color
+ok 227 - full history repetition differs from fresh FEN for each unit and color
+  ---
+  duration_ms: 1204.7992
+  type: 'test'
+  ...
+# Subtest: complete captures interpositions check evasions and terminals retained
+ok 228 - complete captures interpositions check evasions and terminals retained
+  ---
+  duration_ms: 0.4797
+  type: 'test'
+  ...
+# Subtest: returned proof mutation leaves next calls unchanged
+ok 229 - returned proof mutation leaves next calls unchanged
+  ---
+  duration_ms: 48.9927
+  type: 'test'
+  ...
+# Subtest: parent priorities and inherited event order preserved
+ok 230 - parent priorities and inherited event order preserved
+  ---
+  duration_ms: 102.2905
+  type: 'test'
+  ...
+1..230
+# tests 230
+# suites 0
+# pass 230
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 13390.3594
