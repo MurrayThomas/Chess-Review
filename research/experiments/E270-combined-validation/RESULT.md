@@ -4,7 +4,55 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E069 complete checking-invasion results qualified
+## Latest preparation boundary — E068 complete rook-swing oracle passed
+
+2026-10-12. Previous goal turn made progress qualifying E069; no live process.
+Registrationa33e274/implementation8a67482:7/7pilot in8.211seconds,
+72source inputs/43,862raw bytes, retained12923bc. Smoke implementationef5ce2c:
+146/146tests in19.201seconds,75inputs/63,962raw bytes, retainedcf966ba.
+Both within registered forecasts/180second caps/soft storage targets. Ten raw
+process Git blobs byte-exact; no failures/timeouts/source or canonical changes/
+generated outputs. Original candidate/checker/frozen evidence unchanged.
+
+Separate whole oracle scans64squares for enemy king and selects strict between-
+rank file-ray squares using bounds, ordered from rook to king. Reconstructs
+full history/immediately previous own noncapturing lift/same rook/lift index/
+intervening enemy/actual lateral entry/direct file check/all legal replies,
+rook presence/captures/check/mate/stalemate/draw/terminal flags. Exact status/
+node ledger/atomic exhaustion/full v49/inherited fresh E067/order/101.003priority/
+comment/disabled identity. Every certificate additionally unchanged old checker.
+Shared Chess/E020 validation and E067 parent/priority dependencies explicit.
+No general rook-swing safety/strength/intent/best play or human benefit claim.
+
+Pilot kingside/queenside bothcolors/whole-result ledger+omitted-tag rejection,
+every integer normal and absent-history budget. Smoke ALL108original cases,
+28forgery tests,4every-integer sweeps normal/capturable/clock-terminal-reply/
+absent-history,6strict-null-disabled/history freshness+absent-vs-empty ledger/
+check-evasion-capture-interposition-terminal/status+label/immutable-return/parent-
+priority+inherited-comment-extra-field controls. Four original illegal cases.
+Enabled no history uses one tick; supplied empty history uses two actual-replay
+ticks; neither proves swing. Stale lift, other rook, captured lift, short/lateral/
+vertical/wrong-rank/discovered-only/blocked/actual-terminal negatives preserved.
+Selected urgent inherited warning outranks hanging-rook swing proof.
+
+Frozen2658sources/1624canonical unchanged;17prior qualified source closures verify
+1462hash comparisons. E073 original eight/seven-edge documentary contradiction
+open. This is preparation, NOT E068 historical saved-result qualification;
+0accepted/provisional/support/origin credit. No unchanged full/inherited collection.
+Guarded shape metadata:108saved rows/3304baseline fingerprints,205historical
+inputs/58semantic checker/fixture/E067 sources, frozen revision
+ da60cbd3e5178f989c6d67683b4b281b49665457;main/repeat/initially-clean ALLempty.
+Original results2653514bytes SHA69156c9a1adfd77f0254aaf460e09c0b3351debf2e9e13cc31129122ccfd4eb5.
+Metadata integrity is not saved chess semantic replay, not yet run here.
+
+Next: preregister ALL108saved-result/ordered proof metadata replay, exact original
+Git inputs/three manifests/physical outputs/receipts/fixed policy epoch/3304inherited
+fingerprints/teaching identity and rejection controls; authenticate unchanged
+pilot/smoke first. Qualify E068 conditional on E067, then E067. All171-origin
+combined API integration, changed-source three reproductions, broader strategy
+and real-game/human usefulness remain open; full goal active.
+
+## Prior semantic boundary — E069 complete checking-invasion results qualified
 
 2026-10-12. Registrationfe368a5/implementation96cb08a; static inspection found
 copied runner expected172rather than registered214tests, corrected331c1f9 before
