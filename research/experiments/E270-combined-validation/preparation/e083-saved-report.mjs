@@ -31,10 +31,10 @@ export async function admitE083Controls(attempt, regression) {
   for (const key of ['sourceChanges', 'canonicalChanges', 'generated']) assert.deepEqual(result[key], []);
   const testFile = directory + '/preparation/e083-controls.test.mjs';
   const expected = await bindings([directory + '/preparation/run-e083-controls.mjs', testFile,
-    directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md',
+    directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-explicit-tap.md',
     'research/experiments/E083-contact-exchange-changes/PLAN.md', 'package.json', 'package-lock.json']);
   assert.deepEqual(result.inputHashes, expected, 'Control-stage source identity differs');
-  assert.deepEqual(result.command, [process.execPath, '--import', pathToFileURL(path.resolve(directory + '/code/output-preload.mjs')).href, testFile]);
+  assert.deepEqual(result.command, [process.execPath, '--test-reporter=tap', '--import', pathToFileURL(path.resolve(directory + '/code/output-preload.mjs')).href, testFile]);
   const tapRaw = await readFile(prefix + 'stdout.tap'), stderrRaw = await readFile(prefix + 'stderr.txt');
   assert.equal(sha256(tapRaw), result.stdoutSha256); assert.equal(sha256(stderrRaw), result.stderrSha256);
   const tap = tapRaw.toString('utf8');

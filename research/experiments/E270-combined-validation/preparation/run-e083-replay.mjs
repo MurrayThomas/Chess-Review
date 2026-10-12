@@ -16,7 +16,7 @@ const admission = await admitTerminalRegression();
 const controls = await admitE083Controls(controlAttempt, admission);
 const self = directory + '/preparation/run-e083-replay.mjs';
 const testFile = directory + '/preparation/e083-saved-replay.test.mjs';
-const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-saved-admission.md',
+const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-explicit-tap.md', directory + '/AMENDMENT-e083-saved-admission.md',
   'research/experiments/E083-contact-exchange-changes/PLAN.md', 'package.json', 'package-lock.json']);
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8', windowsHide: true}).trim();
 const out = directory + '/evidence/semantic-e083-replay-' + attempt;
@@ -24,7 +24,7 @@ const runRoot = path.resolve('research/runs/E270/semantic-e083-replay-' + attemp
 const preload = pathToFileURL(path.resolve(directory + '/code/output-preload.mjs')).href;
 // Direct execution lets node:test emit its TAP in this one process. There is no
 // test-runner worker tree left behind if the whole-process cap expires.
-const args = ['--import', preload, testFile];
+const args = ['--test-reporter=tap', '--import', preload, testFile];
 const started = {schema: 'E270-semantic-e083-replay-v1', revision, admission: {
   receipt: admission.receipt, freezeSha256: admission.freezeSha256, terminalSha256: admission.terminalSha256,
   regressionRevision: admission.revision}, inputHashes, command: [process.execPath, ...args],

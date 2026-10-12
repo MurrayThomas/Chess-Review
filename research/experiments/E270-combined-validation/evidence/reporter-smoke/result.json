@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--test-reporter=tap",
+    "--input-type=module",
+    "-e",
+    "import test from 'node:test';test('explicit TAP no-chess smoke',()=>{});"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "TAP version 13\n# Subtest: explicit TAP no-chess smoke\nok 1 - explicit TAP no-chess smoke\n  ---\n  duration_ms: 0.736\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 9.0302\n",
+  "stderr": "",
+  "node": "v24.14.1",
+  "candidateExecutions": 0,
+  "savedEvidenceLoads": 0
+}

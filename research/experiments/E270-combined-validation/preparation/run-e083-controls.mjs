@@ -14,7 +14,7 @@ assert.match(attempt || '', /^[a-z0-9][a-z0-9-]{0,63}$/, 'Supply a unique attemp
 const admission = await admitTerminalRegression();
 const self = directory + '/preparation/run-e083-controls.mjs';
 const testFile = directory + '/preparation/e083-controls.test.mjs';
-const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md',
+const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-explicit-tap.md',
   'research/experiments/E083-contact-exchange-changes/PLAN.md', 'package.json', 'package-lock.json']);
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8', windowsHide: true}).trim();
 const out = directory + '/evidence/semantic-e083-controls-' + attempt;
@@ -22,7 +22,7 @@ const runRoot = path.resolve('research/runs/E270/semantic-e083-controls-' + atte
 const preload = pathToFileURL(path.resolve(directory + '/code/output-preload.mjs')).href;
 // Direct execution lets node:test emit its TAP in this one process. There is no
 // test-runner worker tree left behind if the whole-process cap expires.
-const args = ['--import', preload, testFile];
+const args = ['--test-reporter=tap', '--import', preload, testFile];
 const started = {schema: 'E270-semantic-e083-controls-v1', revision, admission: {
   receipt: admission.receipt, freezeSha256: admission.freezeSha256, terminalSha256: admission.terminalSha256,
   regressionRevision: admission.revision}, inputHashes, command: [process.execPath, ...args],
