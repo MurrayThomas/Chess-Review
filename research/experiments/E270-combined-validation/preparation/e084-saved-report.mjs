@@ -20,7 +20,7 @@ export function checkE084Shape(report,fixtures,hashes,receipt){
 export function checkE084Bytes(raw){assert.equal(raw.length,savedE084.bytes);assert.equal(sha256(raw),savedE084.sha256);return true;}
 export async function e084SourceInputs(){
  const d='research/experiments/E270-combined-validation';
- return bindings([d+'/preparation/run-e084.mjs',d+'/preparation/e084-replay.test.mjs',d+'/AMENDMENT-e084-whole-domain-replay.md',
+ return bindings([d+'/preparation/run-e084.mjs',d+'/preparation/e084-replay.test.mjs',d+'/AMENDMENT-e084-whole-domain-replay.md',d+'/AMENDMENT-e084-multislider-control.md',
   'research/experiments/E084-legal-line-clearance/PLAN.md','package.json','package-lock.json']);
 }
 export async function admitE084Smoke(attempt,admission){
