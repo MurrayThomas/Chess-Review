@@ -95,6 +95,39 @@ terminal/priority/budget integration, exact changed-source main/repeat/initially
 clean reproduction, independent chess/strategic/human usefulness and broad
 original meanings open. No new concept or accepted credit; goal remains active.
 
+## Separate preparation for the next semantic gate
+
+While the cumulative process remains live, source-only AST preparation is added
+OUTSIDE its existing freeze/test inputs. No bound source/config/test/canonical
+input is edited. All2658active source hashes match before/after both metadata
+collections. No candidate module, game, tablebase or engine is executed/loaded.
+These additions do not turn the live regression into a broader-source test run.
+
+Complete171frozen origin records (162candidate builds,9support) yield1556owned
+modules,1514export declarations including286arrow/function-expression exports,
+13861direct imported test call sites and105syntactic explainMove import edges.
+Four syntactic leaves: E139,E177,FRIEND-01,FRIEND-02. E177 alone cannot be assumed
+to cover every branch or standalone inspector. Declaration/import/call-site
+metadata are not evidence of execution, semantic coverage or checker independence.
+
+Initial topology at82b6a11 pins the CommonJS resolver entry while ESM is actually
+used; preserve it as an UNQUALIFIED diagnostic. Dated amendment and source12d9b4a
+bind the actual installed ESM parser module/package/lockfile; self-contained
+parser AST has zero static imports. Corrected archive SHA
+8f203594f21d42ec4fb77c585723eeca850413f8c3275b3d76addc0613560a97,
+276542bytes,4.483seconds. All original claims/scopes/modules/exports/chain edges
+are identical across collections; computed-call handling corrected with zero
+changed current labels. Verification evidence/topology-corrected/verification.json.
+
+Inventory preserves558candidate scope rows plus127support rows. Candidate543unique
+IDs include4already accepted IDs with additional prototype scopes, leaving539
+additional provisional IDs; this is the SAME existing source census, no credit.
+Next semantic work must select explicit actual API and saved-proof checker
+adapters per origin, retain all negative/absence/priority/history/terminal/budget
+cases and duplicate scopes, and establish checker independence beyond naming.
+Do not infer missing implementation from a function-name heuristic or a replay
+filename. Cumulative run still pending; all later gates/full meanings stay open.
+
 ## Operational census and source freeze
 
 Planbef0891, initial guard67723a1, corrected guard5b1c60b, census/runner83088cc.

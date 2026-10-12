@@ -71,5 +71,14 @@
     "runnerPid": 6976,
     "tests": 259,
     "terminalResult": false
+  },
+  "postRegressionPreparation": {
+    "file": "evidence/topology-corrected/verification.json",
+    "sourceOnly": true,
+    "origins": 171,
+    "ownedModules": 1556,
+    "semanticReplay": false,
+    "withinActiveFreeze": false,
+    "activeFrozenSourcesUnchanged": true
   }
 }
