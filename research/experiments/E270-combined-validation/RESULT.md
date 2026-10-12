@@ -4,7 +4,49 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E065 full independent triangulation smoke passed
+## Latest semantic boundary — E065 historical king-triangulation results qualified
+
+2026-10-12. Registrationf601a2d/implementationa2e9981:142/142saved PASS in29.574
+seconds, within25–120forecast/600cap. ALL120rows:116complete saved results with
+fresh E064 parent outputs/112enabled independent history/last-five chronology/
+identity/signed geometry/restored rule fields/all-reply terminal/work/mandatory
+presence+absence oracles/four ABSTRACT illegal classifications plus fresh
+/^Illegal move/ failures. Exact historical runtime errors unavailable.
+40whole-checker certificates plus40separately ordered unchanged original metadata
+records;464replies/464leaves/192history plies. After whole validation, saved records
+retain20terminal replies/eight captures. Physical reason checks (four repetitions/
+12clock draws/four mates) reused from unchanged full smoke, not recollected.
+14shape/inheritance/count/ordered-proof,4receipt and4raw rejection controls pass.
+No failures/timeouts/source/canonical/generated changes. Processes terminal;
+no live handle. Maintained source/diff checks pass.
+
+Retained0a072a9 at evidence/semantic-e065-saved-initial/qualification.json.
+80new source inputs/193historical Git/current inputs/55semantic paths within
+original/current/full freeze; no supplements/current metadata exceptions. Six
+canonical artifacts; frozen32b38a1a34514175f08d6536a1c0f6de8ccade25.
+All three original reproduction revisions/input/output/config/environment/metrics/
+receipts and physical output bytes authenticated. Main andinitially-clean statuses
+empty; repeat EXACT '?? research/experiments/E065-king-triangulation/evidence/'
+preserved as sole historical untracked entry, not represented as clean.
+2940ordered E064 fingerprints/teaching identity preserved; integrity is not ancestor
+semantics. Fixed E083 policy epoch only. Unchanged7/7pilot+175/175smoke reused.
+
+15raw Git blobs byte-exact,278,047total bytes/164,360new saved-run bytes.
+No extra chess collection during qualification. Frozen2658sources/1624canonical
+and20prior E066–E085closures/1707source comparisons unchanged. No accepted,
+provisional/support/origin credit. E065 historical bounded mechanics qualified
+conditionally on E064 semantic replay. Actual recorded changed-turn triangle does
+not establish forcing, zugzwang/opposition/advantage or real-game usefulness.
+
+Next: preregister independent E064 whole-result completed-pawn-wall/finite legal
+mobility/history/counterfactual/all-reply material/negative/ledger pilot, then
+complete smoke andhistorical qualification. E066 direct queen-capture continuation,
+E067 removed-pawn direct king/dead controls/global historical-terminal API refusal
+and E073 original eight/seven-edge discrepancy remain OPEN. All171origin combined
+API integration/exact changed-source three reproductions/broader original strategy/
+real-game precision/human usefulness remain OPEN; full research goal active.
+
+## Prior preparation boundary — E065 full independent triangulation smoke passed
 
 2026-10-12. Registered0f4d069/implementedf986f58:7/7pilot in10.038seconds,
 within8–60forecast/180cap;70source inputs/43,888raw bytes, retained93d126e.
