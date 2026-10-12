@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {openResearchData} from '../../../data-policy.mjs';
+import {Chess} from '../../../../lib/chess.js';
+import {legalPosition} from '../../E020-coach-concepts/code/concepts.mjs';
+import {explainMove as parent,priority as inheritedPriority} from '../../E069-checking-invasions/code/invasion.mjs';
+import {replay,replayRefutation} from '../../E070-knight-outposts/code/replay.mjs';
+export const outpostIds=Object.freeze(['knight-outpost-proof','advanced-knight-outpost']);
+const notation=m=>m.from+m.to+(m.promotion||'');
+function record(c,value){const before=c.fen(),m=c.move(value);return{move:notation(m),san:m.san,from:m.from,to:m.to,piece:m.piece,color:m.color,captured:m.captured||null,promotion:m.promotion||null,before,after:c.fen()};}
+const squares=Array.from({length:64},(_,i)=>'abcdefgh'[i%8]+(1+Math.floor(i/8)));
+function attacks(square,color){const x='abcdefgh'.indexOf(square[0]),y=Number(square[1])+(color==='w'?1:-1);return squares.filter(s=>Number(s[1])===y&&Math.abs('abcdefgh'.indexOf(s[0])-x)===1).sort();}
+function pawns(c,color){return squares.filter(s=>c.get(s)?.type==='p'&&c.get(s)?.color===color).sort().map(square=>({square,color}));}
+function flags(c,square,color){return{knightPresent:c.get(square)?.type==='n'&&c.get(square)?.color===color,geometricSupport:pawns(c,color).filter(p=>attacks(p.square,p.color).includes(square)).map(p=>p.square),attackingPawns:pawns(c,color==='w'?'b':'w').filter(p=>attacks(p.square,p.color).includes(square)).map(p=>p.square),check:c.isCheck(),checkmate:c.isCheckmate(),stalemate:c.isStalemate(),draw:c.isDraw(),gameOver:c.isGameOver()};}
+// Independent closed rank/file reachability: every unit diagonal changes file by
+// at most one; straight steps permit every smaller displacement. Starting doubles
+// add edges, but no reachable nodes beyond that unit-step envelope. No occupancy.
+function graph(pawn){const originX='abcdefgh'.indexOf(pawn.square[0]),originY=Number(pawn.square[1]),dir=pawn.color==='w'?1:-1,nodes=squares.filter(s=>{const y=Number(s[1]),distance=(y-originY)*dir;return y>=2&&y<=7&&distance>=0&&Math.abs('abcdefgh'.indexOf(s[0])-originX)<=distance;}).map(square=>({square,attacks:attacks(square,pawn.color)})).sort((a,b)=>a.square.localeCompare(b.square)),edges=[];
+ for(const from of nodes)for(const to of nodes){const dx=Math.abs(to.square.charCodeAt(0)-from.square.charCodeAt(0)),dy=(Number(to.square[1])-Number(from.square[1]))*dir;if(dy===1&&dx<=1)edges.push({from:from.square,to:to.square,kind:dx?'capture':'step'});else if(dy===2&&dx===0&&Number(from.square[1])===(pawn.color==='w'?2:7))edges.push({from:from.square,to:to.square,kind:'double'});}
+ edges.sort((a,b)=>(a.from+a.to+a.kind).localeCompare(b.from+b.to+b.kind));return{pawn:{...pawn},nodes,edges};}
+function derive(input,limit){let nodes=0,status='ineligible',evidence=null,refutation=null;const stop=Symbol('budget'),tick=(count=1)=>{if(nodes+count>limit){nodes=limit+1;throw stop;}nodes+=count;};try{tick();const c=new Chess(input.history?.fen||input.fen),history=[];for(const value of input.history?.moves||[]){tick();history.push(record(c,value));}const played=record(c,input.move);tick();const relativeRank=played.color==='w'?Number(played.to[1]):9-Number(played.to[1]);
+ if(played.piece==='n'&&relativeRank>=4&&relativeRank<=6&&!c.isGameOver()){tick();const replaced=new Chess(c.fen());replaced.remove(played.to);replaced.put({type:'n',color:played.color==='w'?'b':'w'},played.to);const fields=replaced.fen().split(' ');fields[1]=played.color;fields[3]='-';let frame;try{frame=legalPosition(fields.join(' '));if(frame.isGameOver())frame=null;}catch{frame=null;}let legalSupport=null;
+ if(frame){const counterFen=frame.fen(),captures=[];for(const m of frame.moves({verbose:true}).filter(m=>m.piece==='p'&&m.to===played.to&&m.captured==='n')){tick();captures.push(record(frame,notation(m)));frame.undo();}if(captures.length)legalSupport={counterFen,captures};}
+ if(!legalSupport)status='no-legal-support';else{const graphs=pawns(c,played.color==='w'?'b':'w').map(p=>{const g=graph(p);tick(g.nodes.length+g.edges.length);return g;}),witnesses=graphs.flatMap(g=>g.nodes.filter(n=>n.attacks.includes(played.to)).map(n=>({pawn:g.pawn.square,attackingSquare:n.square})));
+ if(witnesses.length){status='pawn-challenge-refuted';refutation={graphs,witnesses};}else{const replies=[];for(const m of c.moves({verbose:true})){tick();replies.push({...record(c,notation(m)),...flags(c,played.to,played.color)});c.undo();}status='proven';evidence={history,played,relativeRank,legalSupport,graphs,replies};}
+ }
+ }
+ }catch(error){if(error!==stop)throw error;status='exhausted';evidence=null;refutation=null;}return{nodes,status,evidence,refutation};}
+export async function openE070Replay(){const {receipt}=await openResearchData(['D001'],{purpose:'test'});return{receipt,check(input,actual){const enabled=input.outpostTags??false,limit=input.maxOutpostNodes??50000;if(typeof enabled!=='boolean')throw Error('outpostTags must be boolean');if(!Number.isInteger(limit)||limit<0||limit>50000)throw Error('maxOutpostNodes must be an integer from 0 to 50000');const base=parent(input);assert(!base.events.some(e=>outpostIds.includes(e.id)));
+ if(!enabled){assert.deepEqual(actual,base);return{state:'disabled',certificates:0,parentEvaluations:1,oracleEvaluations:0,ownProofReplays:0,refutationProofReplays:0,exactResult:true,parentSemanticReplayRequired:true};}
+ const d=derive(input,limit),own=[];if(d.status==='proven')for(const id of outpostIds){if(id==='advanced-knight-outpost'&&d.evidence.relativeRank!==6)continue;const name=id==='advanced-knight-outpost'?'Advanced outpost':'Outpost';own.push({id,qualityClaim:false,text:`${name}: ${d.evidence.played.san} has pawn support; no current enemy pawn can reach a square attacking ${d.evidence.played.to} before promoting.`,evidence:d.evidence});}
+ const events=[...base.events,...own],priority=e=>e.id==='advanced-knight-outpost'?101.007:e.id==='knight-outpost-proof'?101.006:inheritedPriority(e),comment=[...events].sort((a,b)=>priority(b)-priority(a))[0]?.text||null;
+ assert.deepEqual(actual,{...base,schema:'coach-concepts-v51',events,comment,outpostAnalysis:{limit,nodes:d.nodes,status:d.status,refutation:d.refutation}});assert(!comment||comment.split(/\s+/).length<=24);for(const e of own)replay(input,e);if(d.status==='pawn-challenge-refuted')replayRefutation(input,actual);
+ return{state:d.status,certificates:own.length,parentEvaluations:1,oracleEvaluations:1,ownProofReplays:own.length,refutationProofReplays:d.status==='pawn-challenge-refuted'?1:0,exactResult:true,parentSemanticReplayRequired:true};}};}
