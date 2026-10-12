@@ -4,7 +4,56 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E066 historical first-queening race results qualified
+## Latest preparation boundary — E065 full independent triangulation smoke passed
+
+2026-10-12. Registered0f4d069/implementedf986f58:7/7pilot in10.038seconds,
+within8–60forecast/180cap;70source inputs/43,888raw bytes, retained93d126e.
+Full smoke registered9b9d3f6/implementedf7d88a1:175/175PASS in31.421seconds,
+within15–120forecast/300cap;74source inputs/69,799raw bytes, retained9deb114.
+Evidence: evidence/semantic-e065-pilot-initial/ and
+evidence/semantic-e065-smoke-initial/. Ten raw Git blobs byte-exact. No failures/
+timeouts/source/canonical/generated changes. Processes terminal; no live handle.
+Source/diff checks pass.20prior qualified E066–E085closures/1707source comparisons
+andfrozen2658sources/1624canonical unchanged. No accepted/provisional/support/origin
+credit or production change. Full research goal remains active.
+
+Separate independent whole oracle imports no E065 candidate/helper. Reconstructs
+full history/actual/last-five segment and same king/enemy-unit identity/chronology,
+noncollinear distinct vertices with independent signed shoelace geometry, restored
+placement/rights/EP and changed turn/clocks, full-history reply move/undo terminal
+flags and complete ordered domains. Requires mandatory tag presence/absence,
+exact text/quality/evidence/v46/status/work ledger/inherited E064/order/priority
+101.015/comment/disabled identity. Old positive checker additionally validates
+every certificate; it alone permits a forged whole ledger or omitted tag.
+Initial tick always; history ticks ONLY with at leastfour history plies; eligible
+reply enumeration tick and one per reply, no actual tick. Ineligible status is
+complete; exhaustion clears own tags. Strict/null options validate even disabled.
+Shared Chess/E020 legality/E064 output+priority remain explicit dependencies.
+
+Pilot king/rook return bothcolors, ledger+mandatory presence gaps, full-history
+repetition versus fresh FEN, exhaustive small king-return integer budgets passed.
+Smoke covers ALL120originals (116whole results/112enabled oracles/four illegal
+refusals),40frame/geometry/history/rule/reply/absence/ledger forgeries,seven exhaustive
+small-fixture budget groups0..full-needed+1 andeight strict/inheritance/selection/
+terminal/route/rights/EP controls.108complete/4disabled/4exhausted results.
+40certificates:20enemy kings/four rooks/four knights/four bishops/eight queens;
+464replies/464leaves/192history plies. Physical full-history reply checks retain
+20terminal replies:four repetitions/12clock draws/four mates, plus eight captures.
+The four repetition replies are nonterminal from a fresh FEN; complete history
+is required. Both signed triangle orientations, actual terminal clock/repetition
+suppression, standard rights/EP loss and urgent mate warning selection passed.
+
+No E065 historical saved payload qualification yet; next preregister original
+source/three-reproduction/saved/ordered metadata/receipt/2940E064fingerprint/
+teaching qualification, conditional on E064 semantic replay. Restored placement
+and passed turn do not establish forcing, zugzwang/opposition/advantage/usefulness.
+E066 direct positive queen-capture continuation coverage, E067 removed-pawn direct
+king/dead controls/global historical-terminal API refusal and E073 eight/seven-edge
+discrepancy remain OPEN. All171origin combined API integration, exact changed-source
+three reproductions/broader original strategy/real-game precision/human usefulness
+remain OPEN.
+
+## Prior semantic boundary — E066 historical first-queening race results qualified
 
 2026-10-12. Registrationf5c3790/implementation4b7ee85:162/162saved PASS in33.690
 seconds, within25–120forecast/600cap. ALL140rows:136complete results with fresh
