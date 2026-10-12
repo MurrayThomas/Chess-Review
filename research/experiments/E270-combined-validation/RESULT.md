@@ -4,6 +4,21 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Authoritative live observation — 2026-10-12
+
+Previous goal turn progressed through58af3ef's complete fixed saved-replay code.
+This continuation is a VERIFIED WAIT: actual OS runner6976/test20036 remain live,
+advancing from E230 through E245 to E249 audit.test.mjs (child15388 at last poll).
+The sampled complete TAP stream has11538passing top-level tests, zero not-ok;
+no terminal final.json exists. These are interim observations, not a full pass.
+Prepared E083 source review finds no reason to weaken its full-PASS/65control
+execution gate. No new candidate execution, saved-payload inspection, source or
+canonical-input mutation, restart, acceptance credit or goal completion.
+Next remains the SAME original cumulative process's terminal record, followed
+on qualified PASS by the committed E083 controls and complete saved replay.
+Growing stdout/stderr remain uncommitted until terminal retention. All remaining
+171origin/full-original-scope/integration/reproduction/strategic/human gates stay
+open. Existing local main/history and unrelated worktrees are preserved.
 ## Latest development boundary — 2026-10-12
 
 The complete original producer closure has now been traced and repaired, with
