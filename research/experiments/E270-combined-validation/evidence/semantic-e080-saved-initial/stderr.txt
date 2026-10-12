@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '?? research/experiments/E080-pawn-shield-defense/evidence/'
+- ''
+
+    at openE080Saved (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e080-saved-report.mjs:47:182)
+    at async file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e080-replay.test.mjs:58:174 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '?? research/experiments/E080-pawn-shield-defense/evidence/',
+  expected: '',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.14.1
