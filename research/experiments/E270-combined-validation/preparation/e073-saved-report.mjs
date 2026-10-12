@@ -32,7 +32,7 @@ export function checkE073Shape(report,fixtures,manifest,inherited){
  assert.equal(summary.results,196);assert.equal(summary.errors,8);assert.equal(summary.certificates,42);assert.deepEqual(states,{proven:42,ineligible:130,'no-legal-support-control':8,disabled:8,exhausted:8});assert.deepEqual(byKind,{'carlsbad-structure':20,'hedgehog-structure':22});
  const ownRecords=report.replays.filter(r=>ownIds.includes(r.kind)),expected=report.results.flatMap(r=>r.result?r.result.events.filter(e=>ownIds.includes(e.id)).map(e=>[r.fixture.id,e.id]):[]);assert.equal(ownRecords.length,42);assert.deepEqual(ownRecords.map(r=>[r.fixture,r.kind]),expected);assert.equal(manifest.metrics.newFixtureCases,204);summary.byKind=byKind;summary.ownEventReplays=42;return summary;
 }
-export async function e073SourceInputs(){const d='research/experiments/E270-combined-validation/';return bindings([d+'preparation/run-e073.mjs',d+'preparation/e073-replay.test.mjs',d+'AMENDMENT-e073-complete-result-replay.md',root+'PLAN.md','research/concepts/ACTIVE-QUEUE.md','package.json','package-lock.json']);}
+export async function e073SourceInputs(){const d='research/experiments/E270-combined-validation/';return bindings([d+'preparation/run-e073.mjs',d+'preparation/e073-replay.test.mjs',d+'AMENDMENT-e073-complete-result-replay.md',d+'AMENDMENT-e073-hedgehog-edge-count.md',root+'PLAN.md','research/concepts/ACTIVE-QUEUE.md','package.json','package-lock.json']);}
 export async function admitE073Smoke(attempt,admission){return admitE073Controls(attempt,'smoke',admission);}
 export async function admitE073Pilot(attempt,admission){return admitE073Controls(attempt,'pilot',admission);}
 async function admitE073Controls(attempt,phase,admission){
