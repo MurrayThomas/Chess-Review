@@ -1,0 +1,12 @@
+import {writeFile} from 'node:fs/promises';
+import {spawnSync} from 'node:child_process';
+import {coachBuildStatus} from '../../../build-workflow.mjs';
+import {openResearchData} from '../../../data-policy.mjs';
+const dir='research/experiments/E268-sustained-two-front-allocation/evidence';
+const receipt=(await openResearchData(['D001'],{purpose:'test'})).receipt;
+const s=await coachBuildStatus();const {builds,...status}=s;
+await writeFile(dir+'/coverage.json',JSON.stringify({receipt,...status},null,2)+'\n',{flag:'wx'});
+const r=spawnSync(process.execPath,['scripts/verify-source.mjs'],{encoding:'utf8',windowsHide:true});
+await writeFile(dir+'/source-check.json',JSON.stringify({command:'node scripts/verify-source.mjs',exitCode:r.status,stdout:r.stdout,stderr:r.stderr},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify({codeReady:s.codeReadyEntries,combined:s.acceptedOrCodeReadyEntries,readyBatches:s.codeReadyBatches,stale:s.staleBatches,remaining:s.remainingWithoutReadyCode,sourceExit:r.status}));
+if(r.status!==0)process.exitCode=1;

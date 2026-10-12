@@ -1,0 +1,6 @@
+{
+  "command": "node scripts/verify-source.mjs",
+  "exitCode": 0,
+  "stdout": "Maintained source and numerical model verified.\n",
+  "stderr": ""
+}

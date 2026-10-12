@@ -1,0 +1,325 @@
+{
+  "revision": "82d8a27f7853544d374ed58cd0b39d1fc12da909",
+  "rows": 34,
+  "ticks": 30260,
+  "seconds": 56.6347106,
+  "bytes": 555271,
+  "error": null,
+  "incomplete": null,
+  "calibration": {
+    "references": 2,
+    "reusedPanels": 2,
+    "oneDefensePositives": 2,
+    "exclusiveCapacities": 4
+  },
+  "gates": false,
+  "outcomes": [
+    {
+      "id": "b1-h8-f1h1-01-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 783,
+      "captures": 88,
+      "counters": 536,
+      "capacities": 0
+    },
+    {
+      "id": "b1-h8-f1h1-01-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 956,
+      "captures": 79,
+      "counters": 708,
+      "capacities": 0
+    },
+    {
+      "id": "b1-h8-f1h1-0-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 270,
+      "captures": 27,
+      "counters": 180,
+      "capacities": 0
+    },
+    {
+      "id": "b1-h8-f1h1-0-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 605,
+      "captures": 53,
+      "counters": 443,
+      "capacities": 0
+    },
+    {
+      "id": "b1-h8-f1h1-1-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 356,
+      "captures": 81,
+      "counters": 153,
+      "capacities": 0
+    },
+    {
+      "id": "b1-h8-f1h1-1-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 357,
+      "captures": 81,
+      "counters": 152,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-01-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 892,
+      "captures": 78,
+      "counters": 667,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-01-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 1390,
+      "captures": 118,
+      "counters": 1057,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-0-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 275,
+      "captures": 25,
+      "counters": 190,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-0-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 675,
+      "captures": 52,
+      "counters": 516,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-1-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 451,
+      "captures": 33,
+      "counters": 346,
+      "capacities": 0
+    },
+    {
+      "id": "b1-e8-f1h1-1-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 555,
+      "captures": 40,
+      "counters": 434,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-01-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 2776,
+      "captures": 336,
+      "counters": 1934,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-01-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 2546,
+      "captures": 294,
+      "counters": 1817,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-0-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 345,
+      "captures": 32,
+      "counters": 220,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-0-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 697,
+      "captures": 58,
+      "counters": 490,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-1-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 570,
+      "captures": 131,
+      "counters": 246,
+      "capacities": 0
+    },
+    {
+      "id": "b2-h8-f1h1-1-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 543,
+      "captures": 124,
+      "counters": 231,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-01-all-original",
+      "win": true,
+      "expected": true,
+      "nodes": 3658,
+      "captures": 282,
+      "counters": 2636,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-01-all-reflected",
+      "win": true,
+      "expected": true,
+      "nodes": 3016,
+      "captures": 243,
+      "counters": 2072,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-0-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 354,
+      "captures": 30,
+      "counters": 236,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-0-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 773,
+      "captures": 57,
+      "counters": 571,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-1-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 981,
+      "captures": 72,
+      "counters": 780,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-1-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 1077,
+      "captures": 76,
+      "counters": 864,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-01-all-original",
+      "win": false,
+      "expected": true,
+      "nodes": 393,
+      "captures": 34,
+      "counters": 267,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-01-all-reflected",
+      "win": false,
+      "expected": true,
+      "nodes": 1406,
+      "captures": 100,
+      "counters": 1096,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-0-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 387,
+      "captures": 32,
+      "counters": 263,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-0-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 1400,
+      "captures": 98,
+      "counters": 1092,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-1-all-original",
+      "win": false,
+      "expected": false,
+      "nodes": 114,
+      "captures": 4,
+      "counters": 32,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1g1-1-all-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 147,
+      "captures": 6,
+      "counters": 58,
+      "capacities": 0
+    },
+    {
+      "id": "b2-e8-f1h1-0-d4c6-original",
+      "win": false,
+      "expected": false,
+      "nodes": 213,
+      "captures": 27,
+      "counters": 93,
+      "capacities": 18
+    },
+    {
+      "id": "b2-e8-f1h1-0-d4c6-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 498,
+      "captures": 44,
+      "counters": 344,
+      "capacities": 18
+    },
+    {
+      "id": "b2-e8-f1h1-1-d4f5-original",
+      "win": false,
+      "expected": false,
+      "nodes": 411,
+      "captures": 22,
+      "counters": 304,
+      "capacities": 21
+    },
+    {
+      "id": "b2-e8-f1h1-1-d4f5-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 390,
+      "captures": 22,
+      "counters": 283,
+      "capacities": 21
+    }
+  ],
+  "sha256": "fabc40c28d1ffd047bbb197c9b91a07584166691ef388a3d702e1a34a4fdce60"
+}
