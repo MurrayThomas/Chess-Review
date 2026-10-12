@@ -4,28 +4,54 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Current semantic work — E079 complete controls passed; saved replay live
+## Latest semantic boundary — accepted E079 central-king replay reused
 
-2026-10-12. Pilot7/7 passes98.697seconds at6fc6294; unchanged complete controls
-174/174 pass669.012seconds at e7967bb, retained0da1faf. ALL138original cases,
-30forgeries,3exhaustive integer-wrapper budgets and3strict/history/coverage
-controls pass. Includes22proven witnesses, all four center squares/both colors,
-8genuine core-to-core transitions, every original negative/error/terminal/refusal,
-source-proof/event/frame omissions and actual repetition. No source/canonical
-mutations, generated output, errors/signals/timeouts. Initial pilot estimate
-exceeded; revised300–750second smoke estimate and unchanged900second cap hold.
+2026-10-12. E079's unchanged whole-result replay is authenticated conditional on
+E078 parent/priority and independent E039/E037 support-route tree checkers. It
+separately reconstructs scalar inventory/attack rays, actual history/move, bare
+K+P versus K and d4/e4/d5/e5 transition, exact center/support event/text/selection,
+whole result and atomic ledger. Source support proves failed pawn-only safe-queen
+route before and success after, with complete required defender replies and
+promotion responses. Shared Chess remains a dependency. Finite route benefit
+is not general king safety/enduring activity/best-move/whole-game victory.
+Historical accepted E079 contributes zero new accepted/provisional-origin credit.
 
-Saved stage is live at0da1faf: runner14872, child13108, exec session56391,
-OS start2026-10-12T04:55:58Z, original900second cap. Completed admission audit
-is in its raw stdout before any rows:261original Git inputs/72semantic sources,
-all6canonical originals, frozen98523f67 main/repeat/initially-clean trees all
-empty, matching config/environment/metrics/receipts/output, sole exact current
-ACTIVE-QUEUE metadata difference outside closure, policy epoch and5052inherited
-fingerprints authenticated. At2026-10-12T04:57:36Z,33rows are reported passed
-and original process is confirmed live. This is NOT terminal qualification.
-Next poll SAME session56391, retain all terminal artifacts and qualify ALL138
-rows/84saved replays/54exact errors plus22corruption controls if160checks pass.
-No new accepted/origin credit; E078/E039/E037 and shared Chess dependencies remain.
+Prospective98a8f73/implementation6fc6294: pilot7/7 passes98.697seconds, above
+10–60second forecast but below unchanged120second cap. Complete smoke at e7967bb
+passes174/174 in669.012seconds: ALL138original cases,30complete-frame/source-proof/
+event forgeries,3exhaustive integer-wrapper budgets and3strict/history/coverage
+controls. All four center squares/both colors,8genuine core-to-core transitions,
+negative/error/terminal/refusal and actual repetition cases retained. Revised
+300–750second forecast holds under unchanged900second cap; no scientific failure
+or source/search/budget relaxation. Original parents are freshly recomputed in
+each replay; smoke results reused only as mutation inputs, not cached replay.
+
+Saved stage at0da1faf passes160/160checks271.477seconds: ALL138original rows,
+84saved whole-result attempts/84fresh E078 parent comparisons and54fresh exact
+error evaluations/comparisons, plus14shape/inheritance/metrics,4receipt and4raw
+artifact rejection controls. All22certificates/40372defender replies/164744leaves
+replay. Original states22proven/30negative/2disabled/2unavailable/6exhausted/
+12not-applicable/10not-live preserved. No saved positive recollection.
+
+Six canonical originals including6111692-byte results SHA0ef76918397f4a5aa406659
+574ed759f0a0ef346c0aad7e01708613ebf6790c8 authenticate. Main/repeat/initially-clean
+all have empty trees at frozen98523f67924e515cda124d9d15b015824b7a41e3; all261
+original Git inputs, source/config/environment/metrics/receipts/output hashes
+verify. All72semantic closure paths are in original vector/current/fullfreeze,
+NO supplements. Sole exact ACTIVE-QUEUE metadata difference stays outside that
+closure. Exact policy-addendum proof preserves both receipt identities. Completed
+admission audit was emitted before ANY rows and independently qualified against
+bound source, vector/closure/canonical/policy/inheritance digests. All5052ordered
+inherited fingerprints and teaching-list identity match E078 evidence; integrity
+does not establish fresh ancestor semantic truth.
+
+[evidence/semantic-e079-saved-initial/qualification.json](evidence/semantic-e079-saved-initial/qualification.json)
+binds90new inputs,72semantic dependencies,261historical inputs and all15raw
+artifacts across pilot/smoke/saved, with byte-exact staged Git retention. Prior
+qualified E080–E085 source closures and2658full frozen sources/1624canonical
+archives remain unchanged. Passing stages have no source/canonical mutations,
+generated output, errors/signals/timeouts. Source/diff checks pass; unchanged
+full regression and old cumulative collections not repeated.
 
 Source audit for the NEXT E078 dependency found its separate scalar FEN/pawn
 graph/ray/maximal-battery derivation reconstructs own complete facts, but
@@ -37,7 +63,12 @@ prospectively registered new full-result adapter is required before reuse,
 conditional on E077; this is a source finding, not an executed E078 experiment
 or a new acceptance claim. Required liberation/strategic scope remains partial.
 
-All integration/reproduction/strategic/human gates remain open. Goal active.
+Accepted378/1085,539additional provisional scopes,162ready/0stale,127support/
+41strategic prerequisites unchanged. Next source-review/preregister E078 full
+result adapter and authenticated saved replay conditional on E077; preserve old
+own-fact checker and historical certificate-count semantics explicitly.
+All remaining origins, integration/reproduction/strategic/human gates and broad
+original meanings remain open. Goal active and unfinished.
 
 ## Latest semantic boundary — accepted E080 pawn-shield replay reused
 

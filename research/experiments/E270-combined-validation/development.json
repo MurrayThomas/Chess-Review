@@ -195,12 +195,12 @@
     "pilotPassed": true,
     "pilotEstimateExceeded": true,
     "smokePending": false,
-    "savedReplayPending": true,
+    "savedReplayPending": false,
     "parentSemanticReplayRequired": true,
     "reusedE039E037TreeCheckersRequired": true,
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
-    "next": "Poll SAME live E079 saved session56391; qualify complete160-test terminal and all raw artifacts. E078 source audit requires a new complete-result adapter after this boundary.",
+    "next": "Qualified E079 reuse; preregister E078 complete-result adapter conditional on E077, preserving original checker/count semantics. All broader gates open.",
     "smokeProcess": {
       "runnerPid": 7108,
       "childPid": 14996,
@@ -215,9 +215,34 @@
       "runnerPid": 14872,
       "childPid": 13108,
       "execSession": 56391,
-      "startedAt": "2026-10-12T04:55:58Z",
-      "terminal": false
+      "terminal": true,
+      "passed": true
     },
     "historicalAdmissionAuditEmitted": true
+  },
+  "acceptedE079ReplayReuse": {
+    "qualification": "evidence/semantic-e079-saved-initial/qualification.json",
+    "historicalAcceptedStudy": true,
+    "pilotTests": 7,
+    "smokeTests": 174,
+    "savedReplayTests": 160,
+    "rows": 138,
+    "resultReplays": 84,
+    "errorComparisons": 54,
+    "certificates": 22,
+    "proofReplies": 40372,
+    "proofLeaves": 164744,
+    "newSourceInputs": 90,
+    "semanticClosureSources": 72,
+    "historicalOriginalInputs": 261,
+    "historicalSupplements": 0,
+    "retainedRawArtifacts": 15,
+    "inheritedFingerprints": 5052,
+    "parentSemanticReplayRequired": true,
+    "reusedE039SupportCheckerRequired": true,
+    "reusedE037RouteCheckerRequired": true,
+    "provisionalOriginCredit": 0,
+    "acceptedCredit": 0,
+    "next": "E078 complete-result adapter and authenticated saved replay conditional on E077; every remaining origin and broader gate stays open."
   }
 }
