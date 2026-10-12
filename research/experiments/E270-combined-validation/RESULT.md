@@ -411,3 +411,32 @@ assumption was wrong; no chess/assertion/budget failure is hidden by this diagno
 Next: dated reporter-only amendment, explicit TAP flag in direct one-process
 execution and command admission, cheap no-chess reporter smoke, separate retry.
 Full12017-test pass remains valid; these prepared runners are outside its freeze.
+
+## Qualified E083 controls; saved admission policy-epoch failure
+
+Explicit TAP smoke passes with no Chess/saved payload. Full65control retry at
+72a5384 qualifies14.627seconds,65pass/0fail/cancelled/skipped/todo, no timeout,
+source/canonical changes or generated files. Fixed admission independently checks
+all86control sources, exact command/start/receipt/full-terminal identity and logs.
+Control final SHA dbfd6353cc68b58cee7ad1108651b97ec0089c2c8d5ccad51db8377db653c048.
+Initial default-reporter failure remains preserved; no failed attempt overwrite.
+
+Complete saved replay attempt at2ad58b2 stops after authenticating the fixed E083
+bytes/source/fixture domain but BEFORE any row tests or candidate evaluation:
+Historical versus current receipt differs. Wrapper/child1,8.206seconds, empty TAP,
+all four completed-evaluation counters0; source/canonical hashes unchanged.
+Evidence/semantic-e083-replay-initial retains complete stderr/start/process/final.
+No saved semantic replay or qualified original-scope credit from this attempt.
+
+Compact diagnosis: ONLY policySha256 differs. Original9e6e2e256958657981c680d3678a07ebf28f94c99c809652453004cf161204b6
+is exact Git DATA_POLICY.md at43fdad510b5ccf8ab8e590b841559159d0c41438.
+Currentb9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f
+is exact Git/current bytes atea1e96e256485a1b01bef65bec1f5bb52099c624.
+This is NOT line-ending normalization: current CRLF variantd3128ba4... differs.
+Git diff is solely the nine-line computed-tablebase addendum, explicitly stating
+existing game registry/validator/origins/archived receipt meanings unchanged and
+requiring historical fingerprints to remain. All other receipt fields deep-equal,
+including complete source permission/artifact/input provenance. Current guards
+still revalidate all original permissions. Next: fixed-artifact dated policy-epoch
+amendment with exact Git proof, unchanged-field equality and historical/current
+identity separation; never arbitrary old policy override or tablebase admission.
