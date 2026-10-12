@@ -84,5 +84,15 @@
     "semanticReplay": false,
     "withinActiveFreeze": false,
     "activeFrozenSourcesUnchanged": true
+  },
+  "independentE083Segment": {
+    "qualification": "evidence/semantic-e083-replay-policy-epoch/qualification.json",
+    "controlTests": 65,
+    "savedReplayTests": 50,
+    "rows": 33,
+    "parentSemanticReplayRequired": true,
+    "fullOriginAccepted": false,
+    "acceptedCredit": 0,
+    "next": "E084/E085 independent complete-domain adapters and saved replay"
   }
 }

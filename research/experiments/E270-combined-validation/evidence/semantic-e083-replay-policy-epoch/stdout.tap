@@ -1,0 +1,343 @@
+# E083-row-audit {"index":0,"id":"queen-double","expectedError":true,"parentEvaluations":0,"parentErrorEvaluations":1,"candidateErrorEvaluations":1,"savedReplayAttempts":0,"passed":true}
+# E083-row-audit {"index":1,"id":"queen-double-black","expectedError":true,"parentEvaluations":0,"parentErrorEvaluations":1,"candidateErrorEvaluations":1,"savedReplayAttempts":0,"passed":true}
+# E083-row-audit {"index":2,"id":"knight-double","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":3,"id":"knight-double-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":4,"id":"regional-double","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":5,"id":"regional-double-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":6,"id":"f-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":7,"id":"f-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":8,"id":"h-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":9,"id":"h-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":10,"id":"g-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":11,"id":"g-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":12,"id":"central-contact","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":13,"id":"central-contact-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":14,"id":"pinned-contact","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":15,"id":"pinned-contact-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":16,"id":"unchanged-contact","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":17,"id":"unchanged-contact-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":18,"id":"ordinary-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":19,"id":"ordinary-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":20,"id":"queenside-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":21,"id":"queenside-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":22,"id":"kingside-pawn","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":23,"id":"kingside-pawn-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":24,"id":"promotion","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":25,"id":"promotion-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":26,"id":"unchanged-pawns","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":27,"id":"unchanged-pawns-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":28,"id":"queen-exchange","expectedError":true,"parentEvaluations":0,"parentErrorEvaluations":1,"candidateErrorEvaluations":1,"savedReplayAttempts":0,"passed":true}
+# E083-row-audit {"index":29,"id":"queen-exchange-black","expectedError":true,"parentEvaluations":0,"parentErrorEvaluations":1,"candidateErrorEvaluations":1,"savedReplayAttempts":0,"passed":true}
+# E083-row-audit {"index":30,"id":"queen-recapture","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":31,"id":"queen-recapture-black","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+# E083-row-audit {"index":32,"id":"ep","expectedError":false,"parentEvaluations":1,"parentErrorEvaluations":0,"candidateErrorEvaluations":0,"savedReplayAttempts":1,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: queen-double
+ok 1 - saved whole row 0: queen-double
+  ---
+  duration_ms: 17.3873
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: queen-double-black
+ok 2 - saved whole row 1: queen-double-black
+  ---
+  duration_ms: 1.0621
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: knight-double
+ok 3 - saved whole row 2: knight-double
+  ---
+  duration_ms: 54.3711
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: knight-double-black
+ok 4 - saved whole row 3: knight-double-black
+  ---
+  duration_ms: 42.1447
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: regional-double
+ok 5 - saved whole row 4: regional-double
+  ---
+  duration_ms: 67.623
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: regional-double-black
+ok 6 - saved whole row 5: regional-double-black
+  ---
+  duration_ms: 37.4544
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: f-pawn
+ok 7 - saved whole row 6: f-pawn
+  ---
+  duration_ms: 16.259
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: f-pawn-black
+ok 8 - saved whole row 7: f-pawn-black
+  ---
+  duration_ms: 15.5658
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: h-pawn
+ok 9 - saved whole row 8: h-pawn
+  ---
+  duration_ms: 16.8589
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: h-pawn-black
+ok 10 - saved whole row 9: h-pawn-black
+  ---
+  duration_ms: 15.5452
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: g-pawn
+ok 11 - saved whole row 10: g-pawn
+  ---
+  duration_ms: 16.9593
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: g-pawn-black
+ok 12 - saved whole row 11: g-pawn-black
+  ---
+  duration_ms: 15.308
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: central-contact
+ok 13 - saved whole row 12: central-contact
+  ---
+  duration_ms: 36.166
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: central-contact-black
+ok 14 - saved whole row 13: central-contact-black
+  ---
+  duration_ms: 21.9621
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: pinned-contact
+ok 15 - saved whole row 14: pinned-contact
+  ---
+  duration_ms: 79.5499
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: pinned-contact-black
+ok 16 - saved whole row 15: pinned-contact-black
+  ---
+  duration_ms: 108.8126
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: unchanged-contact
+ok 17 - saved whole row 16: unchanged-contact
+  ---
+  duration_ms: 16.2906
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: unchanged-contact-black
+ok 18 - saved whole row 17: unchanged-contact-black
+  ---
+  duration_ms: 16.3687
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: ordinary-pawn
+ok 19 - saved whole row 18: ordinary-pawn
+  ---
+  duration_ms: 7.1748
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: ordinary-pawn-black
+ok 20 - saved whole row 19: ordinary-pawn-black
+  ---
+  duration_ms: 6.0087
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: queenside-pawn
+ok 21 - saved whole row 20: queenside-pawn
+  ---
+  duration_ms: 6.0028
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: queenside-pawn-black
+ok 22 - saved whole row 21: queenside-pawn-black
+  ---
+  duration_ms: 5.0445
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: kingside-pawn
+ok 23 - saved whole row 22: kingside-pawn
+  ---
+  duration_ms: 4.9667
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: kingside-pawn-black
+ok 24 - saved whole row 23: kingside-pawn-black
+  ---
+  duration_ms: 5.2231
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: promotion
+ok 25 - saved whole row 24: promotion
+  ---
+  duration_ms: 41.4171
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: promotion-black
+ok 26 - saved whole row 25: promotion-black
+  ---
+  duration_ms: 43.02
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: unchanged-pawns
+ok 27 - saved whole row 26: unchanged-pawns
+  ---
+  duration_ms: 15.3047
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: unchanged-pawns-black
+ok 28 - saved whole row 27: unchanged-pawns-black
+  ---
+  duration_ms: 16.0548
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: queen-exchange
+ok 29 - saved whole row 28: queen-exchange
+  ---
+  duration_ms: 2.7627
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: queen-exchange-black
+ok 30 - saved whole row 29: queen-exchange-black
+  ---
+  duration_ms: 2.5725
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: queen-recapture
+ok 31 - saved whole row 30: queen-recapture
+  ---
+  duration_ms: 26.4332
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: queen-recapture-black
+ok 32 - saved whole row 31: queen-recapture-black
+  ---
+  duration_ms: 23.0822
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: ep
+ok 33 - saved whole row 32: ep
+  ---
+  duration_ms: 8.8868
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: schema
+ok 34 - saved admission rejection: schema
+  ---
+  duration_ms: 6.2533
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: role
+ok 35 - saved admission rejection: role
+  ---
+  duration_ms: 4.0939
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: row missing
+ok 36 - saved admission rejection: row missing
+  ---
+  duration_ms: 3.8678
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: row duplicated
+ok 37 - saved admission rejection: row duplicated
+  ---
+  duration_ms: 3.7709
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: row order
+ok 38 - saved admission rejection: row order
+  ---
+  duration_ms: 5.7173
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: fixture changed
+ok 39 - saved admission rejection: fixture changed
+  ---
+  duration_ms: 4.0712
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: source hash changed
+ok 40 - saved admission rejection: source hash changed
+  ---
+  duration_ms: 4.2418
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: source omitted
+ok 41 - saved admission rejection: source omitted
+  ---
+  duration_ms: 4.1281
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: source inserted
+ok 42 - saved admission rejection: source inserted
+  ---
+  duration_ms: 4.0809
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: receipt forged
+ok 43 - saved admission rejection: receipt forged
+  ---
+  duration_ms: 4.4125
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: error erased
+ok 44 - saved admission rejection: error erased
+  ---
+  duration_ms: 3.7093
+  type: 'test'
+  ...
+# Subtest: saved admission rejection: result erased
+ok 45 - saved admission rejection: result erased
+  ---
+  duration_ms: 3.9464
+  type: 'test'
+  ...
+# Subtest: retained input and fixed-report snapshot are immutable
+ok 46 - retained input and fixed-report snapshot are immutable
+  ---
+  duration_ms: 0.2537
+  type: 'test'
+  ...
+# Subtest: receipt-epoch rejection: wrong old policy
+ok 47 - receipt-epoch rejection: wrong old policy
+  ---
+  duration_ms: 0.3181
+  type: 'test'
+  ...
+# Subtest: receipt-epoch rejection: missing old policy
+ok 48 - receipt-epoch rejection: missing old policy
+  ---
+  duration_ms: 0.2383
+  type: 'test'
+  ...
+# Subtest: receipt-epoch rejection: changed non-policy field
+ok 49 - receipt-epoch rejection: changed non-policy field
+  ---
+  duration_ms: 0.5134
+  type: 'test'
+  ...
+# Subtest: receipt-epoch rejection: wrong current policy
+ok 50 - receipt-epoch rejection: wrong current policy
+  ---
+  duration_ms: 0.2266
+  type: 'test'
+  ...
+1..50
+# tests 50
+# suites 0
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 888.4707

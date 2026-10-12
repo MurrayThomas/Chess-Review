@@ -4,6 +4,46 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — E083 segment replay passes
+
+2026-10-12. Qualified full regression stays12017/12017. New E083 controls65/65
+and complete saved segment replay50/50 now pass on separately bound committed
+preparation source; original failed reporter and receipt attempts stay retained.
+Semantic-e083-replay-policy-epoch/qualification.json binds exact full/control/
+saved identities, all33rows/29successful results/4expected errors/21witnesses,
+all10control+replay original artifact Git blobs raw-byte exact, and unchanged
+frozen/new source and canonical hashes. Replay8.269seconds, no timeout/signal/
+error/mutations/generated files. Actual audits29saved replay attempts,29fresh
+E082 comparisons,4parent-error and4E083-error evaluations; no positive E083
+candidate recollection, engine/tablebase/network query or zero-query claim.
+
+Fixed policy repair authenticates exact Git old/current document hashes and
+byte-identical original game body after removing ONLY the explicit tablebase
+addendum. Current guard still checks actual current permissions. Both receipts
+remain distinct and original canonical bytes untouched. All other receipt fields
+match; four extra old/current-policy/validator forgeries reject. Original failed
+receipt equality is not rewritten as a success. Control source closure unchanged,
+so65qualified controls and full regression are reused by exact hashes.
+
+Empirical findings: focused E083 witness checker accepts complete omitted contact
+and exchange frames; the independent whole-result adapter rejects both. Pinned
+Qe2 control independently confirms Qxg2 illegal before Qxe4 and legal afterward,
+while the historical geometric-before exclusion emits no new E083 contact. The
+unpinned matched control has the capture legal both before/after. Current narrow
+interpretation is transparently verified, NOT a resolution of ambiguous original
+'new legal contact' wording or broad useful double-attack/strategic claims.
+
+The adapter independently reconstructs E083 presence/absence, complete witness
+snapshots/ordered events/accounting/rollback; inherited equality and parent winner
+remain CONDITIONAL on separate E082 semantic evidence. Shared Chess is disclosed.
+Do not mark E083 origin/all meanings fully accepted, update378accepted tracker or
+claim complete171-origin replay. Broader concepts/integration/exact main-repeat-
+initially-clean reproductions/independent strategic/human usefulness remain open.
+Next concrete batch: independently enumerate E084's complete slider-target/ray
+witness domain and E085's mandatory full move/mate domains, register bounded
+adapters and replay complete saved artifacts. Preserve all frozen current sources;
+new adapters live outside full freeze and need their own actual controls/replay.
+No new accepted credit or overall-goal completion.
 ## Qualified full cumulative terminal result — 2026-10-12
 
 The SAME original run atbced17c has finished successfully: ALL259frozen files,
