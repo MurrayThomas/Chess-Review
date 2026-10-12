@@ -24,17 +24,49 @@
     },
     "research/experiments/E245-adaptive-rook-defense/code/admission.mjs": {
       "before": "129ebbbf21ecc64a8e7d7e2b90fe72954d2be95dba387efcabab8d7955f261c6",
-      "after": "8b6c7f6b2d8f1723f3a1d08d58d4e9394c638c8b570c811b1c78332d7d3f761f"
+      "after": "60ff47387b46249859c6d85db215bf813318b7841cea6d39dbf048b1ebed9016"
     },
     "research/experiments/E250-active-king-positional-contrast/code/admission.mjs": {
       "before": "db914c3d392bb98f5915080f35a121c8ef9d5f7a4b406d012bd230d3206bcc08",
-      "after": "e5ad4dda20848ded136dd0e54179adf3184dc2d0679f250aa731468e5b2c8e5c"
+      "after": "1f8d5965fcddee70a3b0233f1b50fde7d785c7c819d72c928e38bc8775b4bc36"
+    },
+    "research/experiments/E211-rook-tablebase-admission/code/saved.mjs": {
+      "before": "e8684e52ce344fc7aa930813a964edf98a685b89bf90157463c5da702f2e6efa",
+      "after": "5b7e4aa75542a6ad73375465f9dd36bafaea69b4d091507d059c04194e4316d9"
+    },
+    "research/experiments/E211-rook-tablebase-admission/code/execution.test.mjs": {
+      "before": "f753bf9311e4498a101f04160c7b087e3a40642a3647a213871eeaa067b297b6",
+      "after": "9e82c3a0c614e967cc9e8e2f339b60c208a7f166825d114733852d9cd9e518aa"
+    },
+    "research/experiments/E211-rook-tablebase-admission/code/panels.test.mjs": {
+      "before": "0b28fbbb4f41dbd61255a5a77717fb9e3e5710784a02cd33e7be595192654245",
+      "after": "32607dafadc8a5f332f9668435a1ac396c796099fc742736a90c07c19410db6b"
+    },
+    "research/experiments/E228-saved-tablebase-support/code/admission.mjs": {
+      "before": "b778bb6c49daf346133de213b7f7f808c58ea8c78c9b3b02a12d91cf0465e3f0",
+      "after": "722ed85085fcc9c15ee71694e68bb1ede230669c78737bf7669953ac86f616f8"
+    },
+    "research/experiments/E249-material-matched-positional-win/code/parents.mjs": {
+      "before": "41a093aa1097db83aad45ecc5ea5ffc155f24f02c13fd26d08f2cc5e77fbf4e1",
+      "after": "f3f649e189807eb4f7db3f9910c73d8168307025b8836b9d2bdf993e85faba2f"
+    },
+    "research/experiments/E249-material-matched-positional-win/code/admission.mjs": {
+      "before": "ca2a6a6ce2d5a59ee57429e6c0d9692b0067c4d4c16691c02183a3328c194721",
+      "after": "6805fa9996bf1ef6527e603a627bace5f4e0d622d95c012210752e6fbc68ea15"
+    },
+    "research/experiments/E228-saved-tablebase-support/code/support.test.mjs": {
+      "before": "cd376931ac653f482e995936b23c4e5501fbd31927e0262cdd33ca8e262890f0",
+      "after": "83ee7155f6d13d56f038803923c7a25d59e7d55209eeda4d4ae4a31134558ea9"
+    },
+    "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs": {
+      "before": "67d9c6e6b2b7aa164287052f928413285fd9074841f8e5b00c5ed0db445cea31",
+      "after": "a0452f236c89793115a2c54afe12270317479f802d41c1f8e0e95937bf2b6b9c"
     }
   },
   "additions": {
     "research/experiments/E270-combined-validation/code/source-epochs.mjs": null,
     "research/experiments/E270-combined-validation/code/source-epochs.json": null,
-    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "19fd683e5b3a1538b9384d3003489aedd81d8107a07bc3ba2be8d0a58c6f1e24"
+    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "4109ea2e73119f451df050177c9615c62c00ffb3768868662cbffa803a4d99f0"
   },
   "note": "Null hashes only for this trusted registry and its verifying implementation; both are explicitly pinned by the repaired build closure. No old original dependency gets a null exception."
 }

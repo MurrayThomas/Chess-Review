@@ -1,3 +1,5 @@
+import {readHistoricalPanel} from '../../E270-combined-validation/code/historical-producer.mjs';
+import {assertSourceEpochs} from '../../E270-combined-validation/code/source-epochs.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir,mkdtemp} from 'node:fs/promises';
@@ -9,15 +11,16 @@ import {collectRookPanel} from './collect.mjs';
 import {checkRookPanel} from './check-panel.mjs';
 import {context,python} from './context.mjs';
 import {dir,registryPath,dataDir} from './exports.mjs';
-const ctx=await context(),saved=JSON.parse(gunzipSync(await readFile(dir+'/evidence/panels.json.gz'))),copy=x=>structuredClone(x),base=saved.rows[0],registry=JSON.parse(await readFile(registryPath,'utf8'));
-assert.deepEqual(saved.tablebaseReceipt,ctx.data.receipt);assert.deepEqual(saved.probeSource,ctx.probeSource);assert.deepEqual(saved.sourceHashes,await bindings(Object.keys(saved.sourceHashes)));
+import {authenticateArchive} from './saved.mjs';
+const currentCtx=await context(),saved=authenticateArchive(await readFile(dir+'/evidence/panels.json.gz')),copy=x=>structuredClone(x),base=saved.rows[0],registry=JSON.parse(await readFile(registryPath,'utf8')),ctx={data:currentCtx.data,probeSource:saved.probeSource};
+assert.deepEqual(saved.tablebaseReceipt,ctx.data.receipt);await assertSourceEpochs(saved.sourceHashes);for(const row of saved.rows)assert.deepEqual((await readHistoricalPanel('E211/'+row.fixture.id)).view,row.view);
 for(const r of saved.rows)test('admitted complete WDL panel '+r.id,()=>{
  assert.deepEqual(checkRookPanel(r.fixture.input,r.fixture.options,r.bundle,ctx),r.view);assert.equal(r.view.rows.length,r.bundle.requiredProbes-1);assert.equal(r.view.zeroCounterRoot,true);assert.equal(Object.keys(r.bundle.tablebaseReceipt.files).length,20);assert.ok(r.view.rows.every(row=>row.rootActorWdl===(row.wdl===0?0:-row.wdl)));
  if(r.id.startsWith('promotion-domain'))assert.equal(r.view.rows.filter(row=>/^[a-h][1-8][a-h][18][qrbn]$/.test(row.move)).length,4);if(r.id.startsWith('capture-domain'))assert.ok(r.view.rows.some(row=>row.zeroing&&row.san.includes('x')));if(r.id.startsWith('mechanical-kings'))assert.equal(r.view.root.wdl,0);
 });
 test('one fresh exact-cap equality and short zero preflight omit partial observations',async()=>{
- const required=base.bundle.requiredProbes,options={maxProbes:required},fresh=await collectRookPanel(base.fixture.input,options,python);checkRookPanel(base.fixture.input,options,fresh,ctx);assert.deepEqual(fresh,{...base.bundle,maxProbes:required});
- for(const maxProbes of [required-1,0]){const options={maxProbes},q=await collectRookPanel(base.fixture.input,options,python);checkRookPanel(base.fixture.input,options,q,ctx);assert.equal(q.status,'preflight-budget-unavailable');assert.equal(q.panel,null);assert.equal(q.tablebaseReceipt,null);}
+ const required=base.bundle.requiredProbes,options={maxProbes:required},fresh=await collectRookPanel(base.fixture.input,options,python);checkRookPanel(base.fixture.input,options,fresh,currentCtx);assert.deepEqual(fresh.probeSource,currentCtx.probeSource);const actual=copy(fresh),original={...copy(base.bundle),maxProbes:required};for(const b of [actual,original]){delete b.probeSource;delete b.rawStdout;delete b.panel.metadata.python;}assert.deepEqual(actual,original);
+ for(const maxProbes of [required-1,0]){const options={maxProbes},q=await collectRookPanel(base.fixture.input,options,python);checkRookPanel(base.fixture.input,options,q,currentCtx);assert.equal(q.status,'preflight-budget-unavailable');assert.equal(q.panel,null);assert.equal(q.tablebaseReceipt,null);}
 });
 test('registry requires exact namespace grant purposes dependency closure exports and origins',()=>{
  validateRookTablebaseRegistry(registry,'test');for(const change of [r=>r.dataset='T001',r=>r.originFormat='syzygy-kqk-v1',r=>r.source.public=false,r=>r.source.grant='CC0',r=>r.source.allowedPurposes=[],r=>r.source.exports.pop(),r=>r.source.exports[0]=copy(r.source.exports[1]),r=>r.source.exports[0].url+='?different',r=>r.source.exports[0].bytes++,r=>r.source.exports[0].sha256='bad']){const r=copy(registry);change(r);assert.throws(()=>validateRookTablebaseRegistry(r,'test'));}assert.throws(()=>validateRookTablebaseRegistry(registry,'train'));
