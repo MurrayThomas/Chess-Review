@@ -1,0 +1,1403 @@
+# E077-admission-audit {"schema":"E270-E077-saved-admission-v1","historicalSourceRevision":"1299d3486a320ebc9cbbe94247fa82e198b25a62","historicalInputsVerified":249,"historicalInputVectorSha256":"821838ffb7092142ecc79f7a5a61a514f7e829cf3929ebd7d2e76649c826b81b","semanticSourceCount":65,"semanticClosureSha256":"0f5c8f559fc88ad3bc0ce5349026da0e6167c59c98d2c066bc4a17ee62fac35a","canonical":[{"file":"research/experiments/E077-connected-passers-open-lines/evidence/clean-run.json","bytes":49885,"sha256":"a1ebe46b3f086fa97c8e189a4ddc02ace8e83500b15f8a8e7b5042af886b8ee3"},{"file":"research/experiments/E077-connected-passers-open-lines/evidence/concept-status.md","bytes":118002,"sha256":"d75b030bd0a016e93d23fc489128398fd935ec17ff18ffd16e6ee5df8d9ab2fa"},{"file":"research/experiments/E077-connected-passers-open-lines/evidence/demo.html","bytes":737078,"sha256":"84fe6442a0117ce417c2cceb0b99cf797c28ee00512da3b87001c7d9454027b5"},{"file":"research/experiments/E077-connected-passers-open-lines/evidence/repeat-run.json","bytes":49887,"sha256":"4db9f49aae06daef079b2dcc91fc584a66249fc4c976f6cf95bc4e2dbfaa6807"},{"file":"research/experiments/E077-connected-passers-open-lines/evidence/results.json","bytes":4096670,"sha256":"2c79239f308c5cfd585ef88163e65ff8f45d2c90c380ea5c06a5f5dfd7f98737"},{"file":"research/experiments/E077-connected-passers-open-lines/evidence/run.json","bytes":49862,"sha256":"4a7cd0979e3cda785e7588dc0387a578f38d750cd090133f7d03788e788e0143"}],"currentMetadataDifferences":[{"file":"research/concepts/ACTIVE-QUEUE.md","historical":"a9b2728280be600efec56fa011476bc153dfd19bac00ff6aa550a0aa73f6d784","current":"695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1","inSemanticClosure":false}],"inheritedFingerprints":{"count":4680,"orderedSha256":"222fd1baaeca46504a93dbd078caa6baf65d281869039a7ec6a19e225ee0b6e6"},"teachingListSha256":"a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd","policyEpochSha256":"8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0","receiptSha256":"d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81","summary":{"rows":180,"results":156,"errors":24,"certificates":88,"states":{"proven":80,"no-new-fact":50,"not-live":10,"disabled":2,"exhausted":2,"not-applicable":12},"byKind":{"connected-passer-proof":22,"open-pawn-file-proof":28,"open-rank-proof":38},"ownEventReplays":88}}
+# E077-row-audit {"index":0,"id":"connected-new-same-rank","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":1,"id":"connected-new-same-rank-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":2,"id":"connected-new-diagonal","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":3,"id":"connected-new-diagonal-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":4,"id":"connected-advance","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":5,"id":"connected-advance-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":6,"id":"connected-chain-three","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":7,"id":"connected-chain-three-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":8,"id":"connected-unchanged-king","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":9,"id":"connected-unchanged-king-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":10,"id":"connected-nonadjacent","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":11,"id":"connected-nonadjacent-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":12,"id":"connected-rank-gap","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":13,"id":"connected-rank-gap-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":14,"id":"connected-front-same-file","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":15,"id":"connected-front-same-file-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":16,"id":"connected-front-adjacent","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":17,"id":"connected-front-adjacent-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":18,"id":"connected-front-same-rank","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":19,"id":"connected-front-same-rank-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":20,"id":"connected-front-behind","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":21,"id":"connected-front-behind-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":22,"id":"connected-own-blockade","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":23,"id":"connected-own-blockade-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":24,"id":"connected-extra-knight","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":25,"id":"connected-extra-knight-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":26,"id":"connected-extra-enemy-rook","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":27,"id":"connected-extra-enemy-rook-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":28,"id":"connected-empty-enemy","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":29,"id":"connected-empty-enemy-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":30,"id":"connected-ep-vulnerable","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":31,"id":"connected-ep-vulnerable-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":32,"id":"connected-ep-pinned-extra-rook","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":33,"id":"connected-ep-pinned-extra-rook-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":34,"id":"connected-capture-new","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":35,"id":"connected-capture-new-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":36,"id":"connected-capture-advance","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":37,"id":"connected-capture-advance-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":38,"id":"open-file-pawn-transfer","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":39,"id":"open-file-pawn-transfer-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":40,"id":"open-file-pawn-remains","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":41,"id":"open-file-pawn-remains-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":42,"id":"open-file-enemy-remains","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":43,"id":"open-file-enemy-remains-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":44,"id":"open-file-bishop-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":45,"id":"open-file-bishop-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":46,"id":"open-file-remaining-rook","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":47,"id":"open-file-remaining-rook-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":48,"id":"open-file-already-open","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":49,"id":"open-file-already-open-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":50,"id":"open-file-no-transfer","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":51,"id":"open-file-no-transfer-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":52,"id":"rank-rook-four","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":53,"id":"rank-rook-four-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":54,"id":"rank-queen-four","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":55,"id":"rank-queen-four-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":56,"id":"rank-own-pawn-blocker","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":57,"id":"rank-own-pawn-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":58,"id":"rank-enemy-pawn-blocker","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":59,"id":"rank-enemy-pawn-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":60,"id":"rank-own-piece-blocker","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":61,"id":"rank-own-piece-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":62,"id":"rank-enemy-piece-blocker","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":63,"id":"rank-enemy-piece-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":64,"id":"rank-capture-blocker","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":65,"id":"rank-capture-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":66,"id":"rank-vertical","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":67,"id":"rank-vertical-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":68,"id":"rank-queen-diagonal","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":69,"id":"rank-queen-diagonal-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":70,"id":"rank-restricted-check-evasion","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":71,"id":"rank-restricted-check-evasion-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":72,"id":"rank-absolute-pin","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":73,"id":"rank-absolute-pin-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":74,"id":"actual-check","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":75,"id":"actual-check-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":76,"id":"actual-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":77,"id":"actual-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":78,"id":"actual-stalemate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":79,"id":"actual-stalemate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":80,"id":"dead-promotion","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":81,"id":"dead-promotion-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":82,"id":"disabled-profile","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":83,"id":"disabled-profile-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":84,"id":"zero-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":85,"id":"zero-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":86,"id":"foundation-rejected","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":87,"id":"foundation-rejected-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":88,"id":"foundation-exhausted","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":89,"id":"foundation-exhausted-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":90,"id":"foundation-terminal-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":91,"id":"foundation-terminal-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":92,"id":"promotion-q","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":93,"id":"promotion-q-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":94,"id":"capture-promotion-q","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":95,"id":"capture-promotion-q-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":96,"id":"promotion-r","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":97,"id":"promotion-r-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":98,"id":"capture-promotion-r","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":99,"id":"capture-promotion-r-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":100,"id":"promotion-b","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":101,"id":"promotion-b-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":102,"id":"capture-promotion-b","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":103,"id":"capture-promotion-b-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":104,"id":"promotion-n","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":105,"id":"promotion-n-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":106,"id":"capture-promotion-n","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":107,"id":"capture-promotion-n-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":108,"id":"rank-r-1","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":109,"id":"rank-r-1-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":110,"id":"rank-q-1","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":111,"id":"rank-q-1-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":112,"id":"rank-r-2","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":113,"id":"rank-r-2-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":114,"id":"rank-q-2","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":115,"id":"rank-q-2-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":116,"id":"rank-r-3","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":117,"id":"rank-r-3-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":118,"id":"rank-q-3","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":119,"id":"rank-q-3-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":120,"id":"rank-r-4","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":121,"id":"rank-r-4-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":122,"id":"rank-q-4","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":123,"id":"rank-q-4-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":124,"id":"rank-r-5","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":125,"id":"rank-r-5-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":126,"id":"rank-q-5","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":127,"id":"rank-q-5-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":128,"id":"rank-r-6","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":129,"id":"rank-r-6-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":130,"id":"rank-q-6","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":131,"id":"rank-q-6-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":132,"id":"rank-r-7","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":133,"id":"rank-r-7-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":134,"id":"rank-q-7","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":135,"id":"rank-q-7-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":136,"id":"rank-r-8","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":137,"id":"rank-r-8-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":138,"id":"rank-q-8","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":139,"id":"rank-q-8-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"passed":true}
+# E077-row-audit {"index":140,"id":"ep-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":141,"id":"ep-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"passed":true}
+# E077-row-audit {"index":142,"id":"valid-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":143,"id":"valid-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":144,"id":"repetition-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":145,"id":"repetition-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":146,"id":"clock-root","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":147,"id":"clock-root-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":148,"id":"foundation-clock-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":149,"id":"foundation-clock-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":150,"id":"bad-flag","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":151,"id":"bad-flag-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":152,"id":"bad-budget-negative","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":153,"id":"bad-budget-negative-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":154,"id":"bad-budget-fraction","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":155,"id":"bad-budget-fraction-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":156,"id":"bad-budget-large","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":157,"id":"bad-budget-large-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":158,"id":"history-mismatch","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":159,"id":"history-mismatch-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":160,"id":"malformed-fen","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":161,"id":"malformed-fen-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":162,"id":"malformed-uci","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":163,"id":"malformed-uci-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":164,"id":"ordinary-illegal","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":165,"id":"ordinary-illegal-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":166,"id":"default-dead-root","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":167,"id":"default-dead-root-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":168,"id":"actual-dead-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":169,"id":"actual-dead-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":170,"id":"castle","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":171,"id":"castle-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":172,"id":"root-mate","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":173,"id":"root-mate-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":174,"id":"foundation-root-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":175,"id":"foundation-root-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":176,"id":"root-stalemate","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":177,"id":"root-stalemate-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":178,"id":"foundation-root-stalemate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+# E077-row-audit {"index":179,"id":"foundation-root-stalemate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: connected-new-same-rank
+ok 1 - saved whole row 0: connected-new-same-rank
+  ---
+  duration_ms: 52.5635
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: connected-new-same-rank-black
+ok 2 - saved whole row 1: connected-new-same-rank-black
+  ---
+  duration_ms: 9.6211
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: connected-new-diagonal
+ok 3 - saved whole row 2: connected-new-diagonal
+  ---
+  duration_ms: 9.9208
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: connected-new-diagonal-black
+ok 4 - saved whole row 3: connected-new-diagonal-black
+  ---
+  duration_ms: 7.1601
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: connected-advance
+ok 5 - saved whole row 4: connected-advance
+  ---
+  duration_ms: 6.8043
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: connected-advance-black
+ok 6 - saved whole row 5: connected-advance-black
+  ---
+  duration_ms: 9
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: connected-chain-three
+ok 7 - saved whole row 6: connected-chain-three
+  ---
+  duration_ms: 8.9067
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: connected-chain-three-black
+ok 8 - saved whole row 7: connected-chain-three-black
+  ---
+  duration_ms: 8.1696
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: connected-unchanged-king
+ok 9 - saved whole row 8: connected-unchanged-king
+  ---
+  duration_ms: 5.4665
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: connected-unchanged-king-black
+ok 10 - saved whole row 9: connected-unchanged-king-black
+  ---
+  duration_ms: 4.7517
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: connected-nonadjacent
+ok 11 - saved whole row 10: connected-nonadjacent
+  ---
+  duration_ms: 5.6375
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: connected-nonadjacent-black
+ok 12 - saved whole row 11: connected-nonadjacent-black
+  ---
+  duration_ms: 5.996
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: connected-rank-gap
+ok 13 - saved whole row 12: connected-rank-gap
+  ---
+  duration_ms: 5.0241
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: connected-rank-gap-black
+ok 14 - saved whole row 13: connected-rank-gap-black
+  ---
+  duration_ms: 5.1569
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: connected-front-same-file
+ok 15 - saved whole row 14: connected-front-same-file
+  ---
+  duration_ms: 6.5996
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: connected-front-same-file-black
+ok 16 - saved whole row 15: connected-front-same-file-black
+  ---
+  duration_ms: 5.2191
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: connected-front-adjacent
+ok 17 - saved whole row 16: connected-front-adjacent
+  ---
+  duration_ms: 5.0152
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: connected-front-adjacent-black
+ok 18 - saved whole row 17: connected-front-adjacent-black
+  ---
+  duration_ms: 5.0938
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: connected-front-same-rank
+ok 19 - saved whole row 18: connected-front-same-rank
+  ---
+  duration_ms: 6.1744
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: connected-front-same-rank-black
+ok 20 - saved whole row 19: connected-front-same-rank-black
+  ---
+  duration_ms: 5.9536
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: connected-front-behind
+ok 21 - saved whole row 20: connected-front-behind
+  ---
+  duration_ms: 6.0228
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: connected-front-behind-black
+ok 22 - saved whole row 21: connected-front-behind-black
+  ---
+  duration_ms: 6.4123
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: connected-own-blockade
+ok 23 - saved whole row 22: connected-own-blockade
+  ---
+  duration_ms: 5.9289
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: connected-own-blockade-black
+ok 24 - saved whole row 23: connected-own-blockade-black
+  ---
+  duration_ms: 5.6032
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: connected-extra-knight
+ok 25 - saved whole row 24: connected-extra-knight
+  ---
+  duration_ms: 6.8132
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: connected-extra-knight-black
+ok 26 - saved whole row 25: connected-extra-knight-black
+  ---
+  duration_ms: 8.0636
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: connected-extra-enemy-rook
+ok 27 - saved whole row 26: connected-extra-enemy-rook
+  ---
+  duration_ms: 13.5113
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: connected-extra-enemy-rook-black
+ok 28 - saved whole row 27: connected-extra-enemy-rook-black
+  ---
+  duration_ms: 13.1093
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: connected-empty-enemy
+ok 29 - saved whole row 28: connected-empty-enemy
+  ---
+  duration_ms: 8.3764
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: connected-empty-enemy-black
+ok 30 - saved whole row 29: connected-empty-enemy-black
+  ---
+  duration_ms: 8.6927
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: connected-ep-vulnerable
+ok 31 - saved whole row 30: connected-ep-vulnerable
+  ---
+  duration_ms: 8.5046
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: connected-ep-vulnerable-black
+ok 32 - saved whole row 31: connected-ep-vulnerable-black
+  ---
+  duration_ms: 8.2386
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: connected-ep-pinned-extra-rook
+ok 33 - saved whole row 32: connected-ep-pinned-extra-rook
+  ---
+  duration_ms: 13.0746
+  type: 'test'
+  ...
+# Subtest: saved whole row 33: connected-ep-pinned-extra-rook-black
+ok 34 - saved whole row 33: connected-ep-pinned-extra-rook-black
+  ---
+  duration_ms: 10.9989
+  type: 'test'
+  ...
+# Subtest: saved whole row 34: connected-capture-new
+ok 35 - saved whole row 34: connected-capture-new
+  ---
+  duration_ms: 7.4905
+  type: 'test'
+  ...
+# Subtest: saved whole row 35: connected-capture-new-black
+ok 36 - saved whole row 35: connected-capture-new-black
+  ---
+  duration_ms: 6.7962
+  type: 'test'
+  ...
+# Subtest: saved whole row 36: connected-capture-advance
+ok 37 - saved whole row 36: connected-capture-advance
+  ---
+  duration_ms: 6.7232
+  type: 'test'
+  ...
+# Subtest: saved whole row 37: connected-capture-advance-black
+ok 38 - saved whole row 37: connected-capture-advance-black
+  ---
+  duration_ms: 5.9825
+  type: 'test'
+  ...
+# Subtest: saved whole row 38: open-file-pawn-transfer
+ok 39 - saved whole row 38: open-file-pawn-transfer
+  ---
+  duration_ms: 10.9033
+  type: 'test'
+  ...
+# Subtest: saved whole row 39: open-file-pawn-transfer-black
+ok 40 - saved whole row 39: open-file-pawn-transfer-black
+  ---
+  duration_ms: 9.6121
+  type: 'test'
+  ...
+# Subtest: saved whole row 40: open-file-pawn-remains
+ok 41 - saved whole row 40: open-file-pawn-remains
+  ---
+  duration_ms: 5.6777
+  type: 'test'
+  ...
+# Subtest: saved whole row 41: open-file-pawn-remains-black
+ok 42 - saved whole row 41: open-file-pawn-remains-black
+  ---
+  duration_ms: 5.5543
+  type: 'test'
+  ...
+# Subtest: saved whole row 42: open-file-enemy-remains
+ok 43 - saved whole row 42: open-file-enemy-remains
+  ---
+  duration_ms: 10.5608
+  type: 'test'
+  ...
+# Subtest: saved whole row 43: open-file-enemy-remains-black
+ok 44 - saved whole row 43: open-file-enemy-remains-black
+  ---
+  duration_ms: 8.4231
+  type: 'test'
+  ...
+# Subtest: saved whole row 44: open-file-bishop-capture
+ok 45 - saved whole row 44: open-file-bishop-capture
+  ---
+  duration_ms: 14.6912
+  type: 'test'
+  ...
+# Subtest: saved whole row 45: open-file-bishop-capture-black
+ok 46 - saved whole row 45: open-file-bishop-capture-black
+  ---
+  duration_ms: 14.9206
+  type: 'test'
+  ...
+# Subtest: saved whole row 46: open-file-remaining-rook
+ok 47 - saved whole row 46: open-file-remaining-rook
+  ---
+  duration_ms: 8.6291
+  type: 'test'
+  ...
+# Subtest: saved whole row 47: open-file-remaining-rook-black
+ok 48 - saved whole row 47: open-file-remaining-rook-black
+  ---
+  duration_ms: 8.1692
+  type: 'test'
+  ...
+# Subtest: saved whole row 48: open-file-already-open
+ok 49 - saved whole row 48: open-file-already-open
+  ---
+  duration_ms: 19.4196
+  type: 'test'
+  ...
+# Subtest: saved whole row 49: open-file-already-open-black
+ok 50 - saved whole row 49: open-file-already-open-black
+  ---
+  duration_ms: 18.0798
+  type: 'test'
+  ...
+# Subtest: saved whole row 50: open-file-no-transfer
+ok 51 - saved whole row 50: open-file-no-transfer
+  ---
+  duration_ms: 6.4137
+  type: 'test'
+  ...
+# Subtest: saved whole row 51: open-file-no-transfer-black
+ok 52 - saved whole row 51: open-file-no-transfer-black
+  ---
+  duration_ms: 7.757
+  type: 'test'
+  ...
+# Subtest: saved whole row 52: rank-rook-four
+ok 53 - saved whole row 52: rank-rook-four
+  ---
+  duration_ms: 25.836
+  type: 'test'
+  ...
+# Subtest: saved whole row 53: rank-rook-four-black
+ok 54 - saved whole row 53: rank-rook-four-black
+  ---
+  duration_ms: 28.7597
+  type: 'test'
+  ...
+# Subtest: saved whole row 54: rank-queen-four
+ok 55 - saved whole row 54: rank-queen-four
+  ---
+  duration_ms: 51.7103
+  type: 'test'
+  ...
+# Subtest: saved whole row 55: rank-queen-four-black
+ok 56 - saved whole row 55: rank-queen-four-black
+  ---
+  duration_ms: 52.1571
+  type: 'test'
+  ...
+# Subtest: saved whole row 56: rank-own-pawn-blocker
+ok 57 - saved whole row 56: rank-own-pawn-blocker
+  ---
+  duration_ms: 8.0065
+  type: 'test'
+  ...
+# Subtest: saved whole row 57: rank-own-pawn-blocker-black
+ok 58 - saved whole row 57: rank-own-pawn-blocker-black
+  ---
+  duration_ms: 7.2286
+  type: 'test'
+  ...
+# Subtest: saved whole row 58: rank-enemy-pawn-blocker
+ok 59 - saved whole row 58: rank-enemy-pawn-blocker
+  ---
+  duration_ms: 32.3259
+  type: 'test'
+  ...
+# Subtest: saved whole row 59: rank-enemy-pawn-blocker-black
+ok 60 - saved whole row 59: rank-enemy-pawn-blocker-black
+  ---
+  duration_ms: 34.0413
+  type: 'test'
+  ...
+# Subtest: saved whole row 60: rank-own-piece-blocker
+ok 61 - saved whole row 60: rank-own-piece-blocker
+  ---
+  duration_ms: 10.9014
+  type: 'test'
+  ...
+# Subtest: saved whole row 61: rank-own-piece-blocker-black
+ok 62 - saved whole row 61: rank-own-piece-blocker-black
+  ---
+  duration_ms: 10.1277
+  type: 'test'
+  ...
+# Subtest: saved whole row 62: rank-enemy-piece-blocker
+ok 63 - saved whole row 62: rank-enemy-piece-blocker
+  ---
+  duration_ms: 63.5395
+  type: 'test'
+  ...
+# Subtest: saved whole row 63: rank-enemy-piece-blocker-black
+ok 64 - saved whole row 63: rank-enemy-piece-blocker-black
+  ---
+  duration_ms: 25.9048
+  type: 'test'
+  ...
+# Subtest: saved whole row 64: rank-capture-blocker
+ok 65 - saved whole row 64: rank-capture-blocker
+  ---
+  duration_ms: 20.6727
+  type: 'test'
+  ...
+# Subtest: saved whole row 65: rank-capture-blocker-black
+ok 66 - saved whole row 65: rank-capture-blocker-black
+  ---
+  duration_ms: 17.8335
+  type: 'test'
+  ...
+# Subtest: saved whole row 66: rank-vertical
+ok 67 - saved whole row 66: rank-vertical
+  ---
+  duration_ms: 20.0738
+  type: 'test'
+  ...
+# Subtest: saved whole row 67: rank-vertical-black
+ok 68 - saved whole row 67: rank-vertical-black
+  ---
+  duration_ms: 20.8502
+  type: 'test'
+  ...
+# Subtest: saved whole row 68: rank-queen-diagonal
+ok 69 - saved whole row 68: rank-queen-diagonal
+  ---
+  duration_ms: 41.1696
+  type: 'test'
+  ...
+# Subtest: saved whole row 69: rank-queen-diagonal-black
+ok 70 - saved whole row 69: rank-queen-diagonal-black
+  ---
+  duration_ms: 42.3126
+  type: 'test'
+  ...
+# Subtest: saved whole row 70: rank-restricted-check-evasion
+ok 71 - saved whole row 70: rank-restricted-check-evasion
+  ---
+  duration_ms: 22.1921
+  type: 'test'
+  ...
+# Subtest: saved whole row 71: rank-restricted-check-evasion-black
+ok 72 - saved whole row 71: rank-restricted-check-evasion-black
+  ---
+  duration_ms: 31.6909
+  type: 'test'
+  ...
+# Subtest: saved whole row 72: rank-absolute-pin
+ok 73 - saved whole row 72: rank-absolute-pin
+  ---
+  duration_ms: 30.9807
+  type: 'test'
+  ...
+# Subtest: saved whole row 73: rank-absolute-pin-black
+ok 74 - saved whole row 73: rank-absolute-pin-black
+  ---
+  duration_ms: 42.6765
+  type: 'test'
+  ...
+# Subtest: saved whole row 74: actual-check
+ok 75 - saved whole row 74: actual-check
+  ---
+  duration_ms: 25.7988
+  type: 'test'
+  ...
+# Subtest: saved whole row 75: actual-check-black
+ok 76 - saved whole row 75: actual-check-black
+  ---
+  duration_ms: 25.8922
+  type: 'test'
+  ...
+# Subtest: saved whole row 76: actual-mate
+ok 77 - saved whole row 76: actual-mate
+  ---
+  duration_ms: 18.8062
+  type: 'test'
+  ...
+# Subtest: saved whole row 77: actual-mate-black
+ok 78 - saved whole row 77: actual-mate-black
+  ---
+  duration_ms: 18.2788
+  type: 'test'
+  ...
+# Subtest: saved whole row 78: actual-stalemate
+ok 79 - saved whole row 78: actual-stalemate
+  ---
+  duration_ms: 22.9583
+  type: 'test'
+  ...
+# Subtest: saved whole row 79: actual-stalemate-black
+ok 80 - saved whole row 79: actual-stalemate-black
+  ---
+  duration_ms: 21.9773
+  type: 'test'
+  ...
+# Subtest: saved whole row 80: dead-promotion
+ok 81 - saved whole row 80: dead-promotion
+  ---
+  duration_ms: 5.9473
+  type: 'test'
+  ...
+# Subtest: saved whole row 81: dead-promotion-black
+ok 82 - saved whole row 81: dead-promotion-black
+  ---
+  duration_ms: 5.5134
+  type: 'test'
+  ...
+# Subtest: saved whole row 82: disabled-profile
+ok 83 - saved whole row 82: disabled-profile
+  ---
+  duration_ms: 6.9298
+  type: 'test'
+  ...
+# Subtest: saved whole row 83: disabled-profile-black
+ok 84 - saved whole row 83: disabled-profile-black
+  ---
+  duration_ms: 6.0405
+  type: 'test'
+  ...
+# Subtest: saved whole row 84: zero-budget
+ok 85 - saved whole row 84: zero-budget
+  ---
+  duration_ms: 6.5986
+  type: 'test'
+  ...
+# Subtest: saved whole row 85: zero-budget-black
+ok 86 - saved whole row 85: zero-budget-black
+  ---
+  duration_ms: 7.1353
+  type: 'test'
+  ...
+# Subtest: saved whole row 86: foundation-rejected
+ok 87 - saved whole row 86: foundation-rejected
+  ---
+  duration_ms: 1.8064
+  type: 'test'
+  ...
+# Subtest: saved whole row 87: foundation-rejected-black
+ok 88 - saved whole row 87: foundation-rejected-black
+  ---
+  duration_ms: 0.9761
+  type: 'test'
+  ...
+# Subtest: saved whole row 88: foundation-exhausted
+ok 89 - saved whole row 88: foundation-exhausted
+  ---
+  duration_ms: 8.4322
+  type: 'test'
+  ...
+# Subtest: saved whole row 89: foundation-exhausted-black
+ok 90 - saved whole row 89: foundation-exhausted-black
+  ---
+  duration_ms: 7.7085
+  type: 'test'
+  ...
+# Subtest: saved whole row 90: foundation-terminal-root
+ok 91 - saved whole row 90: foundation-terminal-root
+  ---
+  duration_ms: 0.6555
+  type: 'test'
+  ...
+# Subtest: saved whole row 91: foundation-terminal-root-black
+ok 92 - saved whole row 91: foundation-terminal-root-black
+  ---
+  duration_ms: 0.5654
+  type: 'test'
+  ...
+# Subtest: saved whole row 92: promotion-q
+ok 93 - saved whole row 92: promotion-q
+  ---
+  duration_ms: 15.5977
+  type: 'test'
+  ...
+# Subtest: saved whole row 93: promotion-q-black
+ok 94 - saved whole row 93: promotion-q-black
+  ---
+  duration_ms: 14.8007
+  type: 'test'
+  ...
+# Subtest: saved whole row 94: capture-promotion-q
+ok 95 - saved whole row 94: capture-promotion-q
+  ---
+  duration_ms: 19.4747
+  type: 'test'
+  ...
+# Subtest: saved whole row 95: capture-promotion-q-black
+ok 96 - saved whole row 95: capture-promotion-q-black
+  ---
+  duration_ms: 21.4795
+  type: 'test'
+  ...
+# Subtest: saved whole row 96: promotion-r
+ok 97 - saved whole row 96: promotion-r
+  ---
+  duration_ms: 12.0152
+  type: 'test'
+  ...
+# Subtest: saved whole row 97: promotion-r-black
+ok 98 - saved whole row 97: promotion-r-black
+  ---
+  duration_ms: 12.6894
+  type: 'test'
+  ...
+# Subtest: saved whole row 98: capture-promotion-r
+ok 99 - saved whole row 98: capture-promotion-r
+  ---
+  duration_ms: 17.8192
+  type: 'test'
+  ...
+# Subtest: saved whole row 99: capture-promotion-r-black
+ok 100 - saved whole row 99: capture-promotion-r-black
+  ---
+  duration_ms: 19.4335
+  type: 'test'
+  ...
+# Subtest: saved whole row 100: promotion-b
+ok 101 - saved whole row 100: promotion-b
+  ---
+  duration_ms: 11.6963
+  type: 'test'
+  ...
+# Subtest: saved whole row 101: promotion-b-black
+ok 102 - saved whole row 101: promotion-b-black
+  ---
+  duration_ms: 10.9814
+  type: 'test'
+  ...
+# Subtest: saved whole row 102: capture-promotion-b
+ok 103 - saved whole row 102: capture-promotion-b
+  ---
+  duration_ms: 14.7734
+  type: 'test'
+  ...
+# Subtest: saved whole row 103: capture-promotion-b-black
+ok 104 - saved whole row 103: capture-promotion-b-black
+  ---
+  duration_ms: 15.9363
+  type: 'test'
+  ...
+# Subtest: saved whole row 104: promotion-n
+ok 105 - saved whole row 104: promotion-n
+  ---
+  duration_ms: 9.6297
+  type: 'test'
+  ...
+# Subtest: saved whole row 105: promotion-n-black
+ok 106 - saved whole row 105: promotion-n-black
+  ---
+  duration_ms: 9.4639
+  type: 'test'
+  ...
+# Subtest: saved whole row 106: capture-promotion-n
+ok 107 - saved whole row 106: capture-promotion-n
+  ---
+  duration_ms: 14.3133
+  type: 'test'
+  ...
+# Subtest: saved whole row 107: capture-promotion-n-black
+ok 108 - saved whole row 107: capture-promotion-n-black
+  ---
+  duration_ms: 14.5659
+  type: 'test'
+  ...
+# Subtest: saved whole row 108: rank-r-1
+ok 109 - saved whole row 108: rank-r-1
+  ---
+  duration_ms: 33.5547
+  type: 'test'
+  ...
+# Subtest: saved whole row 109: rank-r-1-black
+ok 110 - saved whole row 109: rank-r-1-black
+  ---
+  duration_ms: 33.1337
+  type: 'test'
+  ...
+# Subtest: saved whole row 110: rank-q-1
+ok 111 - saved whole row 110: rank-q-1
+  ---
+  duration_ms: 50.068
+  type: 'test'
+  ...
+# Subtest: saved whole row 111: rank-q-1-black
+ok 112 - saved whole row 111: rank-q-1-black
+  ---
+  duration_ms: 52.6431
+  type: 'test'
+  ...
+# Subtest: saved whole row 112: rank-r-2
+ok 113 - saved whole row 112: rank-r-2
+  ---
+  duration_ms: 25.2135
+  type: 'test'
+  ...
+# Subtest: saved whole row 113: rank-r-2-black
+ok 114 - saved whole row 113: rank-r-2-black
+  ---
+  duration_ms: 24.453
+  type: 'test'
+  ...
+# Subtest: saved whole row 114: rank-q-2
+ok 115 - saved whole row 114: rank-q-2
+  ---
+  duration_ms: 43.2882
+  type: 'test'
+  ...
+# Subtest: saved whole row 115: rank-q-2-black
+ok 116 - saved whole row 115: rank-q-2-black
+  ---
+  duration_ms: 42.6735
+  type: 'test'
+  ...
+# Subtest: saved whole row 116: rank-r-3
+ok 117 - saved whole row 116: rank-r-3
+  ---
+  duration_ms: 26.7302
+  type: 'test'
+  ...
+# Subtest: saved whole row 117: rank-r-3-black
+ok 118 - saved whole row 117: rank-r-3-black
+  ---
+  duration_ms: 29.0385
+  type: 'test'
+  ...
+# Subtest: saved whole row 118: rank-q-3
+ok 119 - saved whole row 118: rank-q-3
+  ---
+  duration_ms: 50.6574
+  type: 'test'
+  ...
+# Subtest: saved whole row 119: rank-q-3-black
+ok 120 - saved whole row 119: rank-q-3-black
+  ---
+  duration_ms: 51.635
+  type: 'test'
+  ...
+# Subtest: saved whole row 120: rank-r-4
+ok 121 - saved whole row 120: rank-r-4
+  ---
+  duration_ms: 26.5117
+  type: 'test'
+  ...
+# Subtest: saved whole row 121: rank-r-4-black
+ok 122 - saved whole row 121: rank-r-4-black
+  ---
+  duration_ms: 27.6721
+  type: 'test'
+  ...
+# Subtest: saved whole row 122: rank-q-4
+ok 123 - saved whole row 122: rank-q-4
+  ---
+  duration_ms: 55.7932
+  type: 'test'
+  ...
+# Subtest: saved whole row 123: rank-q-4-black
+ok 124 - saved whole row 123: rank-q-4-black
+  ---
+  duration_ms: 58.0896
+  type: 'test'
+  ...
+# Subtest: saved whole row 124: rank-r-5
+ok 125 - saved whole row 124: rank-r-5
+  ---
+  duration_ms: 29.0961
+  type: 'test'
+  ...
+# Subtest: saved whole row 125: rank-r-5-black
+ok 126 - saved whole row 125: rank-r-5-black
+  ---
+  duration_ms: 29.0875
+  type: 'test'
+  ...
+# Subtest: saved whole row 126: rank-q-5
+ok 127 - saved whole row 126: rank-q-5
+  ---
+  duration_ms: 54.1858
+  type: 'test'
+  ...
+# Subtest: saved whole row 127: rank-q-5-black
+ok 128 - saved whole row 127: rank-q-5-black
+  ---
+  duration_ms: 55.6654
+  type: 'test'
+  ...
+# Subtest: saved whole row 128: rank-r-6
+ok 129 - saved whole row 128: rank-r-6
+  ---
+  duration_ms: 32.4529
+  type: 'test'
+  ...
+# Subtest: saved whole row 129: rank-r-6-black
+ok 130 - saved whole row 129: rank-r-6-black
+  ---
+  duration_ms: 31.9241
+  type: 'test'
+  ...
+# Subtest: saved whole row 130: rank-q-6
+ok 131 - saved whole row 130: rank-q-6
+  ---
+  duration_ms: 51.9106
+  type: 'test'
+  ...
+# Subtest: saved whole row 131: rank-q-6-black
+ok 132 - saved whole row 131: rank-q-6-black
+  ---
+  duration_ms: 54.7127
+  type: 'test'
+  ...
+# Subtest: saved whole row 132: rank-r-7
+ok 133 - saved whole row 132: rank-r-7
+  ---
+  duration_ms: 26.0063
+  type: 'test'
+  ...
+# Subtest: saved whole row 133: rank-r-7-black
+ok 134 - saved whole row 133: rank-r-7-black
+  ---
+  duration_ms: 25.2839
+  type: 'test'
+  ...
+# Subtest: saved whole row 134: rank-q-7
+ok 135 - saved whole row 134: rank-q-7
+  ---
+  duration_ms: 41.5606
+  type: 'test'
+  ...
+# Subtest: saved whole row 135: rank-q-7-black
+ok 136 - saved whole row 135: rank-q-7-black
+  ---
+  duration_ms: 45.9028
+  type: 'test'
+  ...
+# Subtest: saved whole row 136: rank-r-8
+ok 137 - saved whole row 136: rank-r-8
+  ---
+  duration_ms: 30.6117
+  type: 'test'
+  ...
+# Subtest: saved whole row 137: rank-r-8-black
+ok 138 - saved whole row 137: rank-r-8-black
+  ---
+  duration_ms: 33.8906
+  type: 'test'
+  ...
+# Subtest: saved whole row 138: rank-q-8
+ok 139 - saved whole row 138: rank-q-8
+  ---
+  duration_ms: 51.1382
+  type: 'test'
+  ...
+# Subtest: saved whole row 139: rank-q-8-black
+ok 140 - saved whole row 139: rank-q-8-black
+  ---
+  duration_ms: 57.0958
+  type: 'test'
+  ...
+# Subtest: saved whole row 140: ep-capture
+ok 141 - saved whole row 140: ep-capture
+  ---
+  duration_ms: 7.1591
+  type: 'test'
+  ...
+# Subtest: saved whole row 141: ep-capture-black
+ok 142 - saved whole row 141: ep-capture-black
+  ---
+  duration_ms: 6.7852
+  type: 'test'
+  ...
+# Subtest: saved whole row 142: valid-history
+ok 143 - saved whole row 142: valid-history
+  ---
+  duration_ms: 17.1572
+  type: 'test'
+  ...
+# Subtest: saved whole row 143: valid-history-black
+ok 144 - saved whole row 143: valid-history-black
+  ---
+  duration_ms: 17.1371
+  type: 'test'
+  ...
+# Subtest: saved whole row 144: repetition-root
+ok 145 - saved whole row 144: repetition-root
+  ---
+  duration_ms: 37.7271
+  type: 'test'
+  ...
+# Subtest: saved whole row 145: repetition-root-black
+ok 146 - saved whole row 145: repetition-root-black
+  ---
+  duration_ms: 35.4021
+  type: 'test'
+  ...
+# Subtest: saved whole row 146: clock-root
+ok 147 - saved whole row 146: clock-root
+  ---
+  duration_ms: 0.8507
+  type: 'test'
+  ...
+# Subtest: saved whole row 147: clock-root-black
+ok 148 - saved whole row 147: clock-root-black
+  ---
+  duration_ms: 0.3451
+  type: 'test'
+  ...
+# Subtest: saved whole row 148: foundation-clock-root
+ok 149 - saved whole row 148: foundation-clock-root
+  ---
+  duration_ms: 0.5755
+  type: 'test'
+  ...
+# Subtest: saved whole row 149: foundation-clock-root-black
+ok 150 - saved whole row 149: foundation-clock-root-black
+  ---
+  duration_ms: 0.5545
+  type: 'test'
+  ...
+# Subtest: saved whole row 150: bad-flag
+ok 151 - saved whole row 150: bad-flag
+  ---
+  duration_ms: 0.0995
+  type: 'test'
+  ...
+# Subtest: saved whole row 151: bad-flag-black
+ok 152 - saved whole row 151: bad-flag-black
+  ---
+  duration_ms: 0.0858
+  type: 'test'
+  ...
+# Subtest: saved whole row 152: bad-budget-negative
+ok 153 - saved whole row 152: bad-budget-negative
+  ---
+  duration_ms: 0.0979
+  type: 'test'
+  ...
+# Subtest: saved whole row 153: bad-budget-negative-black
+ok 154 - saved whole row 153: bad-budget-negative-black
+  ---
+  duration_ms: 0.0701
+  type: 'test'
+  ...
+# Subtest: saved whole row 154: bad-budget-fraction
+ok 155 - saved whole row 154: bad-budget-fraction
+  ---
+  duration_ms: 0.0926
+  type: 'test'
+  ...
+# Subtest: saved whole row 155: bad-budget-fraction-black
+ok 156 - saved whole row 155: bad-budget-fraction-black
+  ---
+  duration_ms: 0.1473
+  type: 'test'
+  ...
+# Subtest: saved whole row 156: bad-budget-large
+ok 157 - saved whole row 156: bad-budget-large
+  ---
+  duration_ms: 0.1345
+  type: 'test'
+  ...
+# Subtest: saved whole row 157: bad-budget-large-black
+ok 158 - saved whole row 157: bad-budget-large-black
+  ---
+  duration_ms: 0.09
+  type: 'test'
+  ...
+# Subtest: saved whole row 158: history-mismatch
+ok 159 - saved whole row 158: history-mismatch
+  ---
+  duration_ms: 0.5288
+  type: 'test'
+  ...
+# Subtest: saved whole row 159: history-mismatch-black
+ok 160 - saved whole row 159: history-mismatch-black
+  ---
+  duration_ms: 0.4818
+  type: 'test'
+  ...
+# Subtest: saved whole row 160: malformed-fen
+ok 161 - saved whole row 160: malformed-fen
+  ---
+  duration_ms: 0.2166
+  type: 'test'
+  ...
+# Subtest: saved whole row 161: malformed-fen-black
+ok 162 - saved whole row 161: malformed-fen-black
+  ---
+  duration_ms: 0.1396
+  type: 'test'
+  ...
+# Subtest: saved whole row 162: malformed-uci
+ok 163 - saved whole row 162: malformed-uci
+  ---
+  duration_ms: 0.1741
+  type: 'test'
+  ...
+# Subtest: saved whole row 163: malformed-uci-black
+ok 164 - saved whole row 163: malformed-uci-black
+  ---
+  duration_ms: 0.1571
+  type: 'test'
+  ...
+# Subtest: saved whole row 164: ordinary-illegal
+ok 165 - saved whole row 164: ordinary-illegal
+  ---
+  duration_ms: 0.3478
+  type: 'test'
+  ...
+# Subtest: saved whole row 165: ordinary-illegal-black
+ok 166 - saved whole row 165: ordinary-illegal-black
+  ---
+  duration_ms: 0.4185
+  type: 'test'
+  ...
+# Subtest: saved whole row 166: default-dead-root
+ok 167 - saved whole row 166: default-dead-root
+  ---
+  duration_ms: 0.2632
+  type: 'test'
+  ...
+# Subtest: saved whole row 167: default-dead-root-black
+ok 168 - saved whole row 167: default-dead-root-black
+  ---
+  duration_ms: 0.2506
+  type: 'test'
+  ...
+# Subtest: saved whole row 168: actual-dead-capture
+ok 169 - saved whole row 168: actual-dead-capture
+  ---
+  duration_ms: 6.9513
+  type: 'test'
+  ...
+# Subtest: saved whole row 169: actual-dead-capture-black
+ok 170 - saved whole row 169: actual-dead-capture-black
+  ---
+  duration_ms: 6.3698
+  type: 'test'
+  ...
+# Subtest: saved whole row 170: castle
+ok 171 - saved whole row 170: castle
+  ---
+  duration_ms: 15.0471
+  type: 'test'
+  ...
+# Subtest: saved whole row 171: castle-black
+ok 172 - saved whole row 171: castle-black
+  ---
+  duration_ms: 13.969
+  type: 'test'
+  ...
+# Subtest: saved whole row 172: root-mate
+ok 173 - saved whole row 172: root-mate
+  ---
+  duration_ms: 0.2313
+  type: 'test'
+  ...
+# Subtest: saved whole row 173: root-mate-black
+ok 174 - saved whole row 173: root-mate-black
+  ---
+  duration_ms: 0.1695
+  type: 'test'
+  ...
+# Subtest: saved whole row 174: foundation-root-mate
+ok 175 - saved whole row 174: foundation-root-mate
+  ---
+  duration_ms: 0.4148
+  type: 'test'
+  ...
+# Subtest: saved whole row 175: foundation-root-mate-black
+ok 176 - saved whole row 175: foundation-root-mate-black
+  ---
+  duration_ms: 0.373
+  type: 'test'
+  ...
+# Subtest: saved whole row 176: root-stalemate
+ok 177 - saved whole row 176: root-stalemate
+  ---
+  duration_ms: 0.17
+  type: 'test'
+  ...
+# Subtest: saved whole row 177: root-stalemate-black
+ok 178 - saved whole row 177: root-stalemate-black
+  ---
+  duration_ms: 0.1662
+  type: 'test'
+  ...
+# Subtest: saved whole row 178: foundation-root-stalemate
+ok 179 - saved whole row 178: foundation-root-stalemate
+  ---
+  duration_ms: 0.3801
+  type: 'test'
+  ...
+# Subtest: saved whole row 179: foundation-root-stalemate-black
+ok 180 - saved whole row 179: foundation-root-stalemate-black
+  ---
+  duration_ms: 0.3769
+  type: 'test'
+  ...
+# Subtest: saved shape rejects schema
+ok 181 - saved shape rejects schema
+  ---
+  duration_ms: 44.174
+  type: 'test'
+  ...
+# Subtest: saved shape rejects source
+ok 182 - saved shape rejects source
+  ---
+  duration_ms: 46.7478
+  type: 'test'
+  ...
+# Subtest: saved shape rejects missing row
+ok 183 - saved shape rejects missing row
+  ---
+  duration_ms: 38.9863
+  type: 'test'
+  ...
+# Subtest: saved shape rejects duplicate row
+ok 184 - saved shape rejects duplicate row
+  ---
+  duration_ms: 41.2114
+  type: 'test'
+  ...
+# Subtest: saved shape rejects row order
+ok 185 - saved shape rejects row order
+  ---
+  duration_ms: 53.55
+  type: 'test'
+  ...
+# Subtest: saved shape rejects fixture
+ok 186 - saved shape rejects fixture
+  ---
+  duration_ms: 42.3266
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result missing
+ok 187 - saved shape rejects result missing
+  ---
+  duration_ms: 47.8269
+  type: 'test'
+  ...
+# Subtest: saved shape rejects error inserted
+ok 188 - saved shape rejects error inserted
+  ---
+  duration_ms: 43.1731
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline missing
+ok 189 - saved shape rejects baseline missing
+  ---
+  duration_ms: 39.8377
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline fingerprint
+ok 190 - saved shape rejects baseline fingerprint
+  ---
+  duration_ms: 63.9417
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result count
+ok 191 - saved shape rejects result count
+  ---
+  duration_ms: 49.7349
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record order
+ok 192 - saved shape rejects own record order
+  ---
+  duration_ms: 45.6638
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record missing
+ok 193 - saved shape rejects own record missing
+  ---
+  duration_ms: 45.8883
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own kind forged
+ok 194 - saved shape rejects own kind forged
+  ---
+  duration_ms: 44.8776
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 195 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.4419
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 196 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.2652
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 197 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.7063
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 198 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.2399
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects bytes
+ok 199 - raw artifact rejects bytes
+  ---
+  duration_ms: 64.8283
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects content
+ok 200 - raw artifact rejects content
+  ---
+  duration_ms: 23.9167
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects append
+ok 201 - raw artifact rejects append
+  ---
+  duration_ms: 12.0365
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects namespace
+ok 202 - raw artifact rejects namespace
+  ---
+  duration_ms: 14.9616
+  type: 'test'
+  ...
+1..202
+# tests 202
+# suites 0
+# pass 202
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3787.8891

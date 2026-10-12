@@ -4,6 +4,71 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — E077 complete connected-passer/open-line result validated
+
+2026-10-12. New preparation adapter authenticates E077's complete result around
+its unchanged independent FEN/pawn/front-blocker/legal-EP/file/rank derivation.
+Adds exact fresh E076 parent/disabled identity, every inherited field/event order,
+v58schema,4.1own/E076 inherited priority and stable selected comment. Pilot proves
+old own-only checker accepts corrupt comment/SAN while new adapter rejects both.
+Original own checker, parent/priority and shared Chess remain dependencies.
+Finite connected pawn-ending pairs, pawn-free files and current legal horizontal
+alternatives do not establish mutual protection, unobstructed slider lines,
+promotion/win/lasting activity or usefulness. C0201, wedge/complete shield and
+full strategic/human obligations remain open. No new accepted/origin credit.
+
+Prospective189f900/implementation9ef4f0b: pilot7/7 passes7.385seconds; complete
+smoke at ec1df86 passes232/232 in16.800seconds. ALL180original cases,44pair/support/
+map/classification/EP-victim/file/remnant/7-alternative/rank-cell/actor/history/
+actual-move/whole-frame/schema/inheritance/selection/quality/ledger forgeries,
+4all-integer budgets (three-pawn pair/rank/EP/history),4strict-default/history/
+original-coverage/count controls. All8rank numbers/all7legal destinations, both
+colors, zero/one directed support (never reciprocal), original promotion/capture-
+promotion, EP pin/check/refusal/terminal and actual repetition cases preserved.
+Implemented null flag→disabled/null limit→default compatibility stays explicit;
+original strict-input ambiguity not silently resolved with E079's newer contract.
+
+Saved at2a6cf3c passes202/202checks32.192seconds: ALL180original rows,156saved
+whole-result attempts/156fresh E076 comparisons,24fresh exact original errors,
+88fresh ordered individual replay metadata comparisons,14shape/inheritance/count,
+4receipt and4raw rejection controls. Retains80proven/50negative/10not-live/
+2disabled/2exhausted/12not-applicable and22connected/28file/38rank certificates.
+No saved positive recollection. Source legacy derivable count is distinct from
+actual emitted count; authored positive zero-budget and all-integer controls
+prove atomic output0. Qualification additionally retains154enabled independent
+own-checker count audits across156successful rows (2disabled skipped), with
+original emitted88/legacy-derived88; no historical count rewrite or extra
+candidate/parent collection. Extra pure own-replay calls explicitly registered.
+
+Six fixed originals authenticate including4096670-byte results SHA2c79239f308c5cfd
+585ef88163e65ff8f45d2c90c380ea5c06a5f5dfd7f98737. Main/repeat/initially-clean at
+frozen1299d3486a320ebc9cbbe94247fa82e198b25a62 all empty;249original Git inputs,
+source/config/environment/metrics/receipts/outputs verify. All65original semantic
+checker/fixtures/E076-parent paths inside original/current/fullfreeze, NO
+supplements. Sole exact ACTIVE-QUEUE exception outside closure and exact policy
+epoch preserve old identities. All4680ordered inherited fingerprints/teaching
+list match E076; integrity is not fresh ancestor semantic proof. Completed
+admission audit emitted before rows, qualified against bound source and digests.
+
+[evidence/semantic-e077-saved-initial/qualification.json](evidence/semantic-e077-saved-initial/qualification.json)
+binds83new inputs,65original semantic sources,249historical inputs, all15raw
+pilot/smoke/saved artifacts with byte-exact staged Git retention and distinct
+count audit. Prior qualified E078–E085closures and2658full frozen sources/
+1624canonical inputs unchanged. No passing-stage source/canonical mutations,
+generated output, errors/signals/timeouts; forecasts/caps hold. Source/diff checks
+pass; unchanged full regression/old inherited collections not rerun.
+
+Accepted378/1085,539additional provisional scopes,162ready/0stale,127support/
+41strategic prerequisites unchanged. Next E076 complete pawn/paired-army inventory
+whole-result adapter and authenticated saved replay conditional on E075. Source
+audit confirms own-only whole-result gap, but E076 already returns EMITTED own
+certificate count on exhaustion; do not copy E077's derivable-count issue.
+Preserve E076's dated abcd/efgh flank amendment and complete legal EP exclusion,
+all comparative positional-strength/strategic imbalance obligations.
+Every remaining origin, original broad meaning, combined API integration, exact
+changed-source main/repeat/clean reproduction and strategic/human gate stays
+open. Goal active and unfinished.
+
 ## Latest semantic boundary — E078 complete bishop-chain/battery result validated
 
 2026-10-12. New preparation adapter closes original E078 own-checker gaps without
