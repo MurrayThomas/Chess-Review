@@ -36,7 +36,7 @@ try {
     // zooms. Exercise the responsive fallback here; release-layout.mjs checks
     // the real tab/window zoom fit separately.
     await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeResponsive=()=>{_zoomTabId=null;UI.canvas.classList.remove("desktop-layout");applyLayout();};\nglobalThis.__smokePreferences=()=>({settings:structuredClone(S.settings),layoutMode:S.layoutMode});\n');
-    await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeConcepts=()=>({enabled:S.settings.conceptsEnabled,worker:!!_conceptSession?.worker,metrics:_conceptSession?.metrics(),selectedFindings:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.findings.length});\nglobalThis.__smokeCoachGo=idx=>go(idx);\n');
+    await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeConcepts=()=>({enabled:S.settings.conceptsEnabled,worker:!!_conceptSession?.worker,metrics:_conceptSession?.metrics(),selectedStatus:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.status,selectedFindings:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.findings.length});\nglobalThis.__smokeCoachGo=idx=>go(idx);\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onInstalled.addListener(() => browserAPI.tabs.create({url:browserAPI.runtime.getURL("smoke.html")}));\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onMessage.addListener((message,sender,reply)=>{if(message.type!=="smokeReleaseReset")return;resetSettingsForRelease({reason:"update",previousVersion:"0.2.0"}).then(()=>reply({ok:true}),error=>reply({error:error.message}));return true;});\n');
     await fs.writeFile(path.join(sourceDir,'smoke.html'),'<!doctype html><script type="module" src="smoke-client.js"></script>');
@@ -89,9 +89,13 @@ try {
       if(doc.querySelector('#conceptsEnabled').checked||frame.contentWindow.__smokeConcepts().worker)throw Error('Disabled concepts started work');
       doc.querySelector('#conceptsEnabled').click();
       if(!frame.contentWindow.__smokeConcepts().enabled)throw Error('Native concept toggle reverted');
-      // Firefox's measured 22-position worker run exceeds 40s on this host.
-      // This is a smoke-test wait limit; detector and per-job budgets stay unchanged.
-      for(let i=0;i<4000&&frame.contentWindow.__smokeConcepts().metrics.processed!==22;i++)await wait(100);
+      const conceptStarted = performance.now();
+      for(let ply=1;ply<=22;ply++) {
+        frame.contentWindow.__smokeCoachGo(ply);
+        for(let i=0;i<200&&frame.contentWindow.__smokeConcepts().selectedStatus!=='complete';i++)await wait(50);
+        if(frame.contentWindow.__smokeConcepts().selectedStatus!=='complete')throw Error('Selected concept response timed out at '+ply);
+      }
+      const conceptWallMs = performance.now()-conceptStarted;
       const concepts=frame.contentWindow.__smokeConcepts();
       if(concepts.metrics.processed!==22||!concepts.metrics.found||concepts.metrics.errors.length){await report({step:'concept-diagnostics',metrics:concepts.metrics});throw Error('Concept worker failed: '+JSON.stringify(concepts));}
         if(!doc.querySelector('#conceptsMount .coach-insights-panel')||!doc.querySelector('#engineMount .engine-body'))throw Error('Concepts and Engine must have independent panels');
@@ -115,7 +119,7 @@ try {
         doc.querySelector('#conceptsEnabled').click();
         if(frame.contentWindow.__smokeConcepts().worker)throw Error('Disabled concept worker remained active');
         await report({step:'coach',key,allMatches:coachCount,moveReplacement:true});
-      await report({step:'concepts',key,metrics:concepts.metrics});
+      await report({step:'concepts',key,conceptWallMs,metrics:concepts.metrics});
       // The panel rebuilds; reacquire its current buttons.
       [...doc.querySelectorAll('.set-tab')].find(tab=>tab.textContent==='Engine').click();
     }

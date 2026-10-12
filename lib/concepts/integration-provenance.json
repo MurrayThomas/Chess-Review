@@ -3699,11 +3699,14 @@
     }
   },
   "runtime": {
-    "lib/concepts/analyze.js": "53831ffb580f0b04093986b56188e3d72c15c4e78dc5c1952ba03ddb677add6a",
+    "lib/concepts/analyze.js": "6bb9e49f88476f964589f0e34a4dd3d968dde0a2f21552e43cb4e8c710511095",
     "lib/concepts/assert.js": "426fb5effa21971e833827b8477e8a96f1eeec50e8b353064805f58b802d2a16",
     "lib/concepts/profile.js": "d9d6803d96779f6d7f36d2df660048c743c6f74637c1e006184b0e72be3e3bcb",
-    "lib/concepts/runtime.js": "d240263460b4ebb865cf83c5f8cddc7d9c47a6900cb9747d643ea19df90206fd",
-    "lib/concepts/stage.js": "bf20f8ef4f86e921ef29e610bf7b967db7d7170f393ab30a06e2ce5d8afe9b0c"
+    "lib/concepts/runtime.js": "5e9a9b6ae54a0fff8c498ff4f7d50724631ae53ab65be26c7e06e4bfeab762da",
+    "lib/concepts/stage.js": "bf20f8ef4f86e921ef29e610bf7b967db7d7170f393ab30a06e2ce5d8afe9b0c",
+    "lib/concepts/controls.js": "375a9fbdc7917003234c3cf8eb0432a92994268317c16aba3811264efe92b8de",
+    "lib/concepts/worker.js": "c2ec968077af792de773477872c933a4986237e2ac720baecc3de875d43aba28",
+    "lib/concepts/session.js": "be074dc2bec814707fb284ee58b63f450760e27c460d3dff9c7720a826653a29"
   },
   "entries": [
     {

@@ -14,6 +14,7 @@ import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { ConceptSession, conceptKey } from "./lib/concepts/session.js";
+import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups } from "./lib/concepts/controls.js";
 import { coachInsights, coachReply } from "./lib/coach-insights.js";
 
 /* ---------------- Opening book ----------------
@@ -261,6 +262,7 @@ function engineWorkerCount(requested = null, positions = Infinity,
 
 const DEFAULT_SETTINGS = {
   conceptsEnabled: false,
+  conceptGroups: DEFAULT_CONCEPT_GROUPS,
   conceptsView: "all",
   categoryNames: {},
   theme: "dark", accent: "#7fb45f", accentCustom: "#9b72d0", density: "compact",
@@ -3889,9 +3891,10 @@ function renderCoachPanel() {
         el("p", {}, finding.text), details));
     }
     body.append(list);
+    if (entry?.disabled) body.append(el("p", {class:"coach-status"}, "Fast or custom profile · Some concept groups are off. Change them in Settings → Concepts."));
     const diagnostics = [...(entry?.errors || []), ...(entry?.unavailable || []), ...(entry?.issues || [])];
     if (diagnostics.length) body.append(el("p", {class: "coach-status"}, "Some searches or inputs were unavailable. Showing supported findings; details are in Settings → Concepts."));
-    body.append(el("p", {class: "coach-status"}, view === "reply" ? "Selected from the same position findings. Conditions and proof horizons still apply." : `${insights.length} findings · All supported matches for this move. Provisional implementation does not mean research acceptance.`));
+    body.append(el("p", {class: "coach-status"}, view === "reply" ? "Selected from the same position findings. Conditions and proof horizons still apply." : `${insights.length} findings · Supported matches from enabled concepts for this move. Provisional implementation does not mean research acceptance.`));
   }
   const switcher = el("div", {class:"concept-view-switch", role:"group", "aria-label":"Concept view"},
     ...[["all","All concepts"],["reply","Coach reply"]].map(([value,label])=>el("button", {type:"button", id:"concept-view-"+value, "aria-pressed":view===value?"true":"false", onclick:()=>{S.settings.conceptsView=value;browserAPI.storage.local.set({settings:S.settings});renderCoachPanel();}},label)));
@@ -4723,7 +4726,7 @@ function renderSettings() {
   const focusedLabelStyle = UI.settings.contains(document.activeElement) && document.activeElement.closest(".badge-label-option")?.getAttribute("data-label-style");
   const focusedSection = UI.settings.contains(document.activeElement) && document.activeElement.closest(".set-sect-head")?.querySelector("span")?.textContent;
   const openConceptDetails = new Set([...UI.settings.querySelectorAll(".concepts-panel details[open]")].map(node => node.dataset.conceptDetail));
-  const focusedConceptToggle = UI.settings.contains(document.activeElement) && document.activeElement.id === "conceptsEnabled";
+  const focusedConceptToggle = UI.settings.contains(document.activeElement) && document.activeElement.id?.startsWith("concept") ? document.activeElement.id : null;
   const tabs = el("div", { class: "set-tabs" },
     el("button", { class: "set-tab" + (S.settingsTab === "visual" ? " on" : ""), onclick: () => { S.settingsTab = "visual"; renderSettings(); } }, "Visual"),
     el("button", { class: "set-tab" + (S.settingsTab === "engine" ? " on" : ""), onclick: () => { S.settingsTab = "engine"; renderSettings(); } }, "Engine"),
@@ -4739,7 +4742,7 @@ function renderSettings() {
   if (focusedLabelStyle) UI.settings.querySelector(`[data-label-style="${focusedLabelStyle}"]`)?.focus({ preventScroll: true });
   if (focusedSection) [...UI.settings.querySelectorAll(".set-sect-head")].find(head => head.querySelector("span")?.textContent === focusedSection)?.focus({ preventScroll: true });
   for (const detail of UI.settings.querySelectorAll(".concepts-panel details")) detail.open = openConceptDetails.has(detail.dataset.conceptDetail);
-  if (focusedConceptToggle) UI.settings.querySelector("#conceptsEnabled")?.focus({preventScroll: true});
+  if (focusedConceptToggle) UI.settings.querySelector("#" + focusedConceptToggle)?.focus({preventScroll: true});
   positionSettings();
 }
 function positionSettings() {
@@ -4757,12 +4760,12 @@ function toggleSettings() {
 
 /* ---------------- Optional, isolated concept analysis ---------------- */
 let _conceptSession = null, _conceptPositions = null, _conceptEnabled = false, _conceptRenderTimer = null;
-let _conceptGameKeys = [];
+let _conceptGameKeys = [], _conceptSelection = null;
 function conceptMoveInput(positions, ply) {
   if (ply < 1 || !positions[ply]?.from || !positions[ply]?.to) return null;
   const history = searchHistory(positions, ply - 1), move = positions[ply];
   return {fen: positions[ply - 1].fen, move: move.from + move.to + (move.promotion || ""),
-    history: {fen: history.initialFen, moves: history.moves}};
+    history: {fen: history.initialFen, moves: history.moves}, conceptGroups: normalizeConceptGroups(S.settings.conceptGroups)};
 }
 function selectedConceptInput() {
   if (S.practice) return null;
@@ -4775,7 +4778,7 @@ function selectedConceptInput() {
 function refreshConcepts() {
   const enabled = S.settings.conceptsEnabled === true;
   if (!enabled && !_conceptSession) return;
-  if (!_conceptSession) _conceptSession = new ConceptSession({setTimer: (fn, ms) => setTimeout(fn, ms), clearTimer: id => clearTimeout(id), changed: () => {
+  if (!_conceptSession) _conceptSession = new ConceptSession({demandOnly: true, setTimer: (fn, ms) => setTimeout(fn, ms), clearTimer: id => clearTimeout(id), changed: () => {
     if (_conceptRenderTimer) return;
     _conceptRenderTimer = setTimeout(() => {
       _conceptRenderTimer = null;
@@ -4783,64 +4786,66 @@ function refreshConcepts() {
       renderCoachPanel();
     }, 100);
   }});
-  if (_conceptPositions !== S.positions || _conceptEnabled !== enabled) {
+  const selection = JSON.stringify(normalizeConceptGroups(S.settings.conceptGroups));
+  if (_conceptPositions !== S.positions || _conceptEnabled !== enabled || _conceptSelection !== selection) {
     const changedGame = _conceptPositions !== S.positions;
-    _conceptPositions = S.positions; _conceptEnabled = enabled;
+    _conceptPositions = S.positions; _conceptEnabled = enabled; _conceptSelection = selection;
     // No history building or worker creation while the checkbox is off.
     const inputs = enabled ? S.positions.slice(1).map((_p, i) => conceptMoveInput(S.positions, i + 1)).filter(Boolean) : [];
     if (enabled || changedGame) _conceptGameKeys = inputs.map(conceptKey);
     _conceptSession.configure(inputs, enabled);
   }
-  if (enabled) { const selected = selectedConceptInput(); if (selected) _conceptSession.include(selected, true); }
+  if (enabled) { const selected = selectedConceptInput(); if (selected) _conceptSession.include(selected, true); else _conceptSession.cancelSelected(); }
 }
 function setConceptEnabled(enabled) {
   S.settings.conceptsEnabled = enabled;
   browserAPI.storage.local.set({settings: S.settings});
   refreshConcepts();
 }
+function setConceptGroups(groups) {
+  S.settings.conceptGroups = normalizeConceptGroups(groups);
+  browserAPI.storage.local.set({settings: S.settings});
+  refreshConcepts();
+  renderCoachPanel();
+  if (!_conceptRenderTimer) _conceptRenderTimer = setTimeout(() => {
+    _conceptRenderTimer = null;
+    if (UI.settings && !UI.settings.hidden && S.settingsTab === 'concepts') renderSettings();
+  }, 100);
+}
+function setConceptGroup(id, enabled) {
+  const groups = normalizeConceptGroups(S.settings.conceptGroups);
+  setConceptGroups(enabled ? [...groups,id] : groups.filter(value=>value!==id));
+}
 function conceptSettings() {
-  const enabled = S.settings.conceptsEnabled === true;
-  const checkbox = el("input", {type: "checkbox", id: "conceptsEnabled", checked: enabled, onchange: event => {
-    // Let checkbox/label activation finish before the scheduled panel refresh.
-    // Replacing this input during change can make a native label activate it twice.
-    setConceptEnabled(event.target.checked);
-  }});
+  const enabled = S.settings.conceptsEnabled === true, groups = normalizeConceptGroups(S.settings.conceptGroups);
+  const note = text => el("div", {class: "set-row hint"}, el("span", {class: "set-note"}, text));
+  const checkbox = el("input", {type: "checkbox", id: "conceptsEnabled", checked: enabled,
+    onchange: event => setConceptEnabled(event.target.checked)});
   const panel = el("div", {class: "concepts-panel"},
-    el("label", {class: "concepts-toggle"}, checkbox, "Enable concept analysis"),
-    el("p", {class: "concepts-note"}, "Accepted mechanics and provisional implementations. Exact scopes and missing prerequisites remain explicit."));
-  if (!enabled) {
-    panel.append(el("p", {}, "Disabled — concept analysis is stopped. Enable to process this game."));
-  }
+    el("label", {class: "set-row concept-group-row"}, el("span", {class: "set-lbl"}, "Concept analysis"), checkbox),
+    note("Analyzes the selected move locally. Navigation cancels unfinished work for other moves; completed results are reused."));
+  if (S.setOpen["Concept groups"] == null) S.setOpen["Concept groups"] = true;
+  panel.append(section("Concept groups",
+    note("Ordered from lighter to heavier work. Times vary with the position. Move rules and basic structural facts are always retained."),
+    el("div", {class: "set-row"}, el("span", {class: "set-lbl"}, "Preset"),
+      el("div", {class: "set-seg"}, ...[["Fast",DEFAULT_CONCEPT_GROUPS],["All",CONCEPT_GROUPS.map(g=>g.id)]].map(([label,ids])=>
+        el("button", {class: JSON.stringify(groups)===JSON.stringify(ids)?"on":"", onclick:()=>setConceptGroups(ids)}, label)))),
+    ...CONCEPT_GROUPS.map(group=>el("label", {class: "set-row concept-group-row"},
+      el("span", {class: "concept-group-copy"}, el("span", {class: "set-lbl"}, group.name),
+        el("span", {class: "concept-cost"}, group.cost), el("span", {class: "set-note"}, group.description)),
+      el("input", {type:"checkbox", id:"concept-group-"+group.id, checked:groups.includes(group.id), onchange:event=>
+        setConceptGroup(group.id,event.target.checked)})))));
   const input = selectedConceptInput(), entry = input && _conceptSession?.entries.get(conceptKey(input));
-  if (enabled) panel.append(el("h3", {}, "Selected move"));
-  if (!enabled) { /* Keep debug metrics visible while the analysis is stopped. */ }
-  else if (!input) panel.append(el("p", {}, S.practice ? "Practice inputs unavailable for concept analysis." : "Select a played move. The initial position has no played-move context."));
-  else if (!entry || entry.status !== "complete" && !entry.findings.length) panel.append(el("p", {}, "Concept analysis pending…"));
-  else {
-    if (entry.status !== "complete") panel.append(el("p", {class: "concepts-note"}, "Observations ready; bounded proof searches are running…"));
-    if (!entry.findings.length) panel.append(el("p", {}, "No supported finding within the available inputs and budgets."));
-    const list = el("ul", {class: "concepts-findings"});
-    for (const finding of entry.findings) list.append(el("li", {},
-      el("strong", {}, finding.name), el("p", {}, finding.text),
-      el("span", {class: "concepts-kind"}, finding.kind),
-      el("details", {"data-concept-detail": JSON.stringify([finding.event, finding.name, finding.text])}, el("summary", {}, "Evidence scope"), ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)))));
-    panel.append(list);
-  }
-  const metrics = _conceptSession?.metrics(_conceptGameKeys) || {timeMs: 0, processed: 0, total: 0, found: 0, reused: 0, errors: [], unavailable: [], issues: []};
-  panel.append(el("h3", {}, "Game debug metrics"),
-    el("p", {id: "conceptMetrics"}, `Total concept-analysis time: ${(metrics.timeMs / 1000).toFixed(2)} s · Positions processed: ${metrics.processed}/${metrics.total} · Concepts found: ${metrics.found} · Reused positions: ${metrics.reused}`),
-    el("p", {class: "concepts-note"}, "Time sums per-position concept work, including reused work. Counts include every finding at each move. Variations are shown above and excluded from game totals."));
-  const atPlies = field => _conceptGameKeys.flatMap((key, index) => (_conceptSession?.entries.get(key)?.[field] || []).map(message => `Ply ${index + 1}: ${message}`));
-  const reports = [["Errors", atPlies("errors")], ["Unavailable inputs", atPlies("unavailable")], ["Exhausted budgets", atPlies("issues")]];
-  for (const [label, messages] of reports) {
-    const unique = [...new Set(messages)];
-    const detail = el("details", {"data-concept-detail": "debug:" + label}, el("summary", {}, `${label}: ${messages.length}`));
-    for (const message of unique) detail.append(el("p", {}, message));
-    panel.append(detail);
-  }
-  if (enabled && entry && !_conceptGameKeys.includes(conceptKey(input))) {
-    for (const message of [...entry.errors, ...entry.unavailable, ...entry.issues]) panel.append(el("p", {}, "Selected variation: " + message));
-  }
+  const metrics = _conceptSession?.metrics(_conceptGameKeys) || {timeMs:0,processed:0,total:0,found:0,reused:0};
+  panel.append(section("Analysis status",
+    note(!enabled ? "Analysis is stopped." : !input ? "Select a played move." : entry?.status === "complete" ? "Selected move ready. See its findings and Coach reply in the Concepts panel." : "Selected move pending; supported observations appear as they become ready."),
+    el("p", {id:"conceptMetrics",class:"set-note"},
+      `Concept work: ${(metrics.timeMs/1000).toFixed(2)} s · Positions processed: ${metrics.processed}/${metrics.total} · Findings: ${metrics.found} · Reused: ${metrics.reused}`),
+    note("Only visited positions are processed. Time includes reused work. Accepted and provisional scopes remain separate in finding details."),
+    ...[["Errors","errors"],["Unavailable inputs","unavailable"],["Exhausted budgets","issues"]].map(([label,field])=>{
+      const messages = [...new Set(entry?.[field] || [])];
+      return el("details", {"data-concept-detail":"debug:"+label}, el("summary", {}, label+": "+messages.length), ...messages.map(message=>el("p",{},message)));
+    })));
   return panel;
 }
 

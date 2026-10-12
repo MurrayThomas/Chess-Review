@@ -127,15 +127,27 @@ try {
   const navigationMs=await evaluate(review,"import('./analysis.js').then(m=>{const t=performance.now();m.go(3);document.querySelector('#concept-view-reply').click();document.querySelector('#concept-view-all').click();return performance.now()-t})");
   assert.ok(navigationMs<500,'Navigation and switching stalled the UI: '+navigationMs);
   await evaluate(review,"globalThis.__conceptTicks={last:performance.now(),max:0};globalThis.__conceptTickTimer=setInterval(()=>{const now=performance.now();__conceptTicks.max=Math.max(__conceptTicks.max,now-__conceptTicks.last);__conceptTicks.last=now;},25)");
-  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===4)",'Concept worker',1200);
+  // Visit each move explicitly: unvisited moves must not consume proof-search work.
+  const conceptStarted = Date.now();
+  for (const ply of [1,2,3,4]) {
+    await evaluate(review,`import('./analysis.js').then(m=>m.go(${ply}))`);
+    await waitFor(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput()))?.status==='complete'})",'Selected concept worker',100);
+  }
+  const conceptWallMs = Date.now()-conceptStarted;
   const maxTickGapMs=await evaluate(review,"clearInterval(__conceptTickTimer);__conceptTicks.max");
   assert.ok(maxTickGapMs<1500,'Concept analysis froze the event loop: '+maxTickGapMs);
   const conceptMetrics=await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics())");
   assert.equal(conceptMetrics.total,4);assert.ok(conceptMetrics.found>0);assert.deepEqual(conceptMetrics.errors,[]);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>JSON.stringify([m.S.evals,m.S.classif]))"),scoreBefore);
   await evaluate(review,"import('./analysis.js').then(m=>m.go(3))");await sleep(150);
-  await waitFor(review,"document.querySelector('.concepts-findings')?.textContent.includes('Development')",'Selected concept redraw');
-  assert.match(await evaluate(review,"document.querySelector('.concepts-findings').textContent"),/Development/);
+  await waitFor(review,"document.querySelector('.coach-insights-body')?.textContent.includes('Development')",'Selected concept redraw');
+  assert.match(await evaluate(review,"document.querySelector('.coach-insights-body').textContent"),/Development/);
+  await evaluate(review,"document.querySelector('#concept-group-pawns').click()");
+  await waitFor(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput()))?.status==='complete'})",'Filtered concepts',100);
+  assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).stages.some(s=>s.detector==='E090')})"),false);
+  await evaluate(review,"document.querySelector('#concept-group-pawns').click()");
+  assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).reused})"),true);
+  await sleep(150);
   await capture('concepts-wide');
   await evaluate(review,"document.querySelector('[aria-label=\"Settings\"]').click()");
   const assertConceptAlignment=async()=>{
@@ -193,11 +205,13 @@ try {
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().reused)"),4);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),timeBefore);
   await evaluate(review,"import('./analysis.js').then(m=>m.applyGame({pgn:'1. d4 d5 *',meta:{gameId:'concept-switch'},source:'pgn'}))");
-  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===2)",'Switched concept game',600);
+  await waitFor(review,"import('./analysis.js').then(m=>!m.S.analyzing)",'Switched game engine',600);
+  await evaluate(review,"import('./analysis.js').then(m=>m.go(1))");
+  await waitFor(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput()))?.status==='complete'})",'Switched concept game',100);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().total)"),2);
   await evaluate(review,"document.querySelector('#conceptsEnabled').click()");
   await evaluate(review,"document.querySelector('[aria-label=\"Settings\"]').click()");
-  results.push({label:'concept-worker',...conceptMetrics,navigationMs,maxTickGapMs});
+  results.push({label:'concept-worker',...conceptMetrics,conceptWallMs,navigationMs,maxTickGapMs});
   // Actual imported identity, deliberately opposite board orientation. Inspect a
   // meaningful reply in both colors rather than only an empty opening position.
   for (const fixture of [

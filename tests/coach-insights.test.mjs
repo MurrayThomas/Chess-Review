@@ -81,7 +81,9 @@ test('Coach follows the selected move, discards stale messages, keeps all matche
   assert.match(document.querySelector('.coach-position').textContent, /Your Nf3/);
   a.call('toggleSettings');
   document.querySelectorAll('.set-tab')[2].click();
-  assert.match(document.querySelector('.concepts-findings').textContent, /Only this move inventory/);
+  assert.equal(document.querySelector('.concepts-findings'),null);
+  assert.match(document.querySelector('.concepts-panel').textContent,/Concept groups/);
+  assert.match(document.querySelector('.coach-insights-body').textContent,/Only this move inventory/);
   assert.deepEqual([...document.querySelectorAll('.coach-insight')].map(n => n.dataset.concept), ['fork', 'development', 'material-inventory']);
   const body = document.querySelector('.coach-insights-body'); body.scrollTop = 55;
   document.querySelector('.coach-insight details').open = true;
