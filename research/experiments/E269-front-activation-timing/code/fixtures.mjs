@@ -1,0 +1,2 @@
+import {fixtures as old} from '../../E268-sustained-two-front-allocation/code/fixtures.mjs';
+export const fixtures=[[0,1],[0],[1]].flatMap(active=>[false,true].map(reflected=>{const source=old.find(f=>f.context==='b2-e8'&&f.placement==='f1h1'&&f.reflected===reflected&&JSON.stringify(f.input.active)===JSON.stringify(active)&&f.input.firstReply===null);return {id:'b2-e8-f1f2-'+active.join('')+'-'+(reflected?'reflected':'original'),reflected,role:'delayed-rank-control',expected:false,input:{...structuredClone(source.input),move:reflected?'f8f7':'f1f2'}};}));
