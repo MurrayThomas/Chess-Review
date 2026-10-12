@@ -1,0 +1,29 @@
+{
+  "revision": "fc4ad37957d9b1a5750a34bfa2cab65bf33380b5",
+  "rows": 3,
+  "error": null,
+  "seconds": 4.9661425999999995,
+  "positions": 50,
+  "allNonPythonPanelsEqual": true,
+  "allViewsEqual": true,
+  "sha256": "32c2e29cf5dec9d742e72c9a003b23e9c7f00aae04ed0e9e4eff7e191a2c808a",
+  "bytes": 18264,
+  "producerEpochs": [
+    {
+      "id": "long-pilot",
+      "historical": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "current": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    },
+    {
+      "id": "short-pilot",
+      "historical": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "current": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    },
+    {
+      "id": "long-reflection",
+      "historical": "10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1",
+      "current": "d41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c"
+    }
+  ],
+  "acceptedCredit": 0
+}

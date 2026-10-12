@@ -1,0 +1,300 @@
+TAP version 13
+# Subtest: conversion history resource and distinct live/terminal gates 0
+ok 1 - conversion history resource and distinct live/terminal gates 0
+  ---
+  duration_ms: 84.8859
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 1
+ok 2 - conversion history resource and distinct live/terminal gates 1
+  ---
+  duration_ms: 61.7811
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 2
+ok 3 - conversion history resource and distinct live/terminal gates 2
+  ---
+  duration_ms: 66.2968
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 3
+ok 4 - conversion history resource and distinct live/terminal gates 3
+  ---
+  duration_ms: 88.4656
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 4
+ok 5 - conversion history resource and distinct live/terminal gates 4
+  ---
+  duration_ms: 78.5562
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 5
+ok 6 - conversion history resource and distinct live/terminal gates 5
+  ---
+  duration_ms: 97.1893
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 6
+ok 7 - conversion history resource and distinct live/terminal gates 6
+  ---
+  duration_ms: 165.2799
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 7
+ok 8 - conversion history resource and distinct live/terminal gates 7
+  ---
+  duration_ms: 172.9801
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 0
+ok 9 - hunt unique earlier reply vs current defensive policy 0
+  ---
+  duration_ms: 10204.9926
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 1
+ok 10 - hunt unique earlier reply vs current defensive policy 1
+  ---
+  duration_ms: 10488.5145
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 2
+ok 11 - hunt unique earlier reply vs current defensive policy 2
+  ---
+  duration_ms: 9700.1736
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 3
+ok 12 - hunt unique earlier reply vs current defensive policy 3
+  ---
+  duration_ms: 9185.6164
+  type: 'test'
+  ...
+# Subtest: strict source, options, flags, horizons, caps and history
+ok 13 - strict source, options, flags, horizons, caps and history
+  ---
+  duration_ms: 6.5834
+  type: 'test'
+  ...
+# Subtest: source snapshots unchanged by explicit evaluator
+ok 14 - source snapshots unchanged by explicit evaluator
+  ---
+  duration_ms: 6.5313
+  type: 'test'
+  ...
+# Subtest: inspector missing current continuation abstains instead of assuming loss
+ok 15 - inspector missing current continuation abstains instead of assuming loss
+  ---
+  duration_ms: 7.7663
+  type: 'test'
+  ...
+# Subtest: fresh/cached exact, one-short and zero budgets agree atomically
+ok 16 - fresh/cached exact, one-short and zero budgets agree atomically
+  ---
+  duration_ms: 521.5847
+  type: 'test'
+  ...
+# Subtest: missing, old short horizon and old exhausted source do not produce claims
+ok 17 - missing, old short horizon and old exhausted source do not produce claims
+  ---
+  duration_ms: 22.4598
+  type: 'test'
+  ...
+# Subtest: genuine irreversible history prefix and selected source start
+ok 18 - genuine irreversible history prefix and selected source start
+  ---
+  duration_ms: 262.4683
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects tree
+ok 19 - changed supplied current graph rejects tree
+  ---
+  duration_ms: 9.0612
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects history
+ok 20 - changed supplied current graph rejects history
+  ---
+  duration_ms: 7.2197
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects claim
+ok 21 - changed supplied current graph rejects claim
+  ---
+  duration_ms: 56.1696
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects horizon
+ok 22 - changed supplied current graph rejects horizon
+  ---
+  duration_ms: 5.8073
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects root
+ok 23 - changed original conversion proof rejects root
+  ---
+  duration_ms: 30.8536
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects span
+ok 24 - changed original conversion proof rejects span
+  ---
+  duration_ms: 29.4455
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects trace
+ok 25 - changed original conversion proof rejects trace
+  ---
+  duration_ms: 29.7154
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects claim
+ok 26 - changed original conversion proof rejects claim
+  ---
+  duration_ms: 27.5615
+  type: 'test'
+  ...
+# Subtest: changed prior hunt inventory and source budget reject
+ok 27 - changed prior hunt inventory and source budget reject
+  ---
+  duration_ms: 4980.9965
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects bound
+ok 28 - independent changed decision rejects bound
+  ---
+  duration_ms: 109.919
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects frame
+ok 29 - independent changed decision rejects frame
+  ---
+  duration_ms: 108.9543
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects history
+ok 30 - independent changed decision rejects history
+  ---
+  duration_ms: 109.2624
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects terminal
+ok 31 - independent changed decision rejects terminal
+  ---
+  duration_ms: 126.2211
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects defenses
+ok 32 - independent changed decision rejects defenses
+  ---
+  duration_ms: 149.9789
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects ledger
+ok 33 - independent changed decision rejects ledger
+  ---
+  duration_ms: 112.9953
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects nodes
+ok 34 - independent changed decision rejects nodes
+  ---
+  duration_ms: 124.5988
+  type: 'test'
+  ...
+# Subtest: admission cache refuses custom serialization hiding changed source
+ok 35 - admission cache refuses custom serialization hiding changed source
+  ---
+  duration_ms: 5.4877
+  type: 'test'
+  ...
+# Subtest: longer earlier policy remains covered when actual mate finishes sooner
+ok 36 - longer earlier policy remains covered when actual mate finishes sooner
+  ---
+  duration_ms: 3030.7107
+  type: 'test'
+  ...
+# node:internal/modules/run_main:107
+#     triggerUncaughtException(
+#     ^
+# AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+# + actual - expected
+#   {
+#     argv: [
+#       'research/experiments/E211-rook-tablebase-admission/code/probe.py'
+#     ],
+#     executable: 'C:/Users/thoma/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',
+# +   executableSha256: '10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1',
+# -   executableSha256: 'd41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c',
+#     modules: {
+#       'chess/__init__.py': '1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b',
+#       'chess/syzygy.py': 'e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754',
+#       COPYING: '8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903'
+#     },
+#     program: 'research/experiments/E211-rook-tablebase-admission/code/probe.py',
+#     programSha256: '3465337fefd49f33890654e6891f4353727c829336caabc655caf14b0186f7a6',
+# +   vendorLockSha256: 'd3f029517e9a714971b7fb635795caba8d527ce8e93b4411d39e6d2cd433f409'
+# -   vendorLockSha256: '5f42ae46ba513c760237b78dbd2935cf8b719b6a2d63f0be2caaa3fea7237837'
+#   }
+#     at checkRookPanel (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs:14:177)
+#     at checkObservedRookPanel (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs:9:12)
+#     at admitSaved (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E212-rook-side-defense/code/admission.mjs:21:257)
+#     at async file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E212-rook-side-defense/code/resources.test.mjs:8:62 {
+#   generatedMessage: true,
+#   code: 'ERR_ASSERTION',
+#   actual: {
+#     program: 'research/experiments/E211-rook-tablebase-admission/code/probe.py',
+#     programSha256: '3465337fefd49f33890654e6891f4353727c829336caabc655caf14b0186f7a6',
+#     vendorLockSha256: 'd3f029517e9a714971b7fb635795caba8d527ce8e93b4411d39e6d2cd433f409',
+#     modules: {
+#       'chess/__init__.py': '1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b',
+#       'chess/syzygy.py': 'e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754',
+#       COPYING: '8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903'
+#     },
+#     executable: 'C:/Users/thoma/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',
+#     executableSha256: '10d845f50a2af64e3500bb2fcb348b5bc98a75d8ddada63e45ba1da6a1fc79d1',
+#     argv: [
+#       'research/experiments/E211-rook-tablebase-admission/code/probe.py'
+#     ]
+#   },
+#   expected: {
+#     program: 'research/experiments/E211-rook-tablebase-admission/code/probe.py',
+#     programSha256: '3465337fefd49f33890654e6891f4353727c829336caabc655caf14b0186f7a6',
+#     vendorLockSha256: '5f42ae46ba513c760237b78dbd2935cf8b719b6a2d63f0be2caaa3fea7237837',
+#     modules: {
+#       'chess/__init__.py': '1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b',
+#       'chess/syzygy.py': 'e10e74b0b8174e85428945a975dfc2d67f521c6c5d941e998bdfca26f9ebf754',
+#       COPYING: '8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903'
+#     },
+#     executable: 'C:/Users/thoma/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',
+#     executableSha256: 'd41bad46673f64e0d02f23797f53f90ccf60f27d6eda8d86dd2d4bbeae5a858c',
+#     argv: [
+#       'research/experiments/E211-rook-tablebase-admission/code/probe.py'
+#     ]
+#   },
+#   operator: 'deepStrictEqual',
+#   diff: 'simple'
+# }
+# Node.js v24.14.1
+# Subtest: research\\experiments\\E212-rook-side-defense\\code\\resources.test.mjs
+not ok 2 - research\\experiments\\E212-rook-side-defense\\code\\resources.test.mjs
+  ---
+  duration_ms: 2230.1797
+  type: 'test'
+  location: 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E212-rook-side-defense\\code\\resources.test.mjs:1:1'
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  signal: ~
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 36
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57569.4342
