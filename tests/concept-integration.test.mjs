@@ -11,6 +11,7 @@ import browserAssert,{isDeepStrictEqual} from '../lib/concepts/assert.js';
 import {ConceptSession,conceptKey} from '../lib/concepts/session.js';
 import {app,loadGame,branch} from './helpers/app.mjs';
 const p=JSON.parse(await fs.readFile(new URL('../lib/concepts/integration-provenance.json',import.meta.url)));
+import {stagedParent,withConceptParent} from '../lib/concepts/stage.js';
 import {INTEGRATION_FINGERPRINT} from '../lib/concepts/integration-profile.js';
 const hash=text=>createHash('sha256').update(text).digest('hex');
 const normal=text=>text.replaceAll('\r\n','\n');
@@ -155,4 +156,16 @@ test('share links preserve orientation without manufacturing an unknown player i
  const decode=()=>JSON.parse(Buffer.from(decodeURIComponent(copied.split('#gambit=')[1]),'base64').toString());
  assert.equal(decode().meta.flip,true);assert.equal(decode().meta.myName,'');
  S.playerKnown=true;a.call('shareGame');await Promise.resolve();assert.equal(decode().meta.myName,'Alice');
+});
+
+test('staged parent reuse requires matching flags, budgets and declared goals, and clears after failure',()=>{
+ const input={...inputFor([],'e2e4'),directAttackTags:true,maxNodes:4000},base={after:'completed'},original=i=>({controls:i});
+ withConceptParent(base,()=>{
+  assert.equal(stagedParent(original,structuredClone(input)),base);
+  for(const altered of [{...input,maxNodes:1},{...input,directAttackTags:false},{...input,objectiveTarget:'e5'},{...input,move:'d2d4'}]){
+   assert.deepEqual(stagedParent(original,altered),{controls:altered});
+  }
+ },input);
+ assert.throws(()=>withConceptParent(base,()=>{throw Error('failed stage');},input));
+ assert.deepEqual(stagedParent(original,input),{controls:input});
 });

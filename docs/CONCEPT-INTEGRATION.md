@@ -89,7 +89,8 @@ frozen evidence are not modified. Browser assertions fail closed on unsupported
 certificate objects; checker data remain plain JSON.
 
 The runtime calls the existing E080 parent once and binds each new stage to the
-completed parent for that exact FEN/move/history. Genuine different-endpoint calls
+completed parent for the identical full controlled input, including flags, budgets
+and declared goals. Different-control or different-position calls
 retain the original parent behavior. This avoids rerunning the entire cumulative
 chain for every stage. Each optional search uses a 4,000-node cap; proofs and
 prerequisite checks retain their source semantics. Later inspectors reuse complete

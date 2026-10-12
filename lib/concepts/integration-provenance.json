@@ -3703,7 +3703,7 @@
     "lib/concepts/assert.js": "426fb5effa21971e833827b8477e8a96f1eeec50e8b353064805f58b802d2a16",
     "lib/concepts/profile.js": "d9d6803d96779f6d7f36d2df660048c743c6f74637c1e006184b0e72be3e3bcb",
     "lib/concepts/runtime.js": "d240263460b4ebb865cf83c5f8cddc7d9c47a6900cb9747d643ea19df90206fd",
-    "lib/concepts/stage.js": "fd0cdaf68542af9c1624552af635fc4c64ab68e780c6bea86baf77b3776a835d"
+    "lib/concepts/stage.js": "bf20f8ef4f86e921ef29e610bf7b967db7d7170f393ab30a06e2ce5d8afe9b0c"
   },
   "entries": [
     {
