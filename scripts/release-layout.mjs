@@ -48,8 +48,8 @@ try {
       if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));
     } finally {await call('Runtime.releaseObject',{objectId:result.objectId},tab.sessionId);}
   };
-  const waitFor=async(tab,expression,label)=>{
-    for(let i=0;i<100;i++){
+  const waitFor=async(tab,expression,label,attempts=100)=>{
+    for(let i=0;i<attempts;i++){
       if(await evaluate(tab,expression))return;
       await sleep(100);
     }
@@ -124,7 +124,12 @@ try {
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession===null)"),true);
   await evaluate(review,"document.querySelector('#conceptsEnabled').click()");
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m.S.settings.conceptsEnabled)"),true);
-  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===4)",'Concept worker');
+  const navigationMs=await evaluate(review,"import('./analysis.js').then(m=>{const t=performance.now();m.go(3);document.querySelector('#concept-view-reply').click();document.querySelector('#concept-view-all').click();return performance.now()-t})");
+  assert.ok(navigationMs<500,'Navigation and switching stalled the UI: '+navigationMs);
+  await evaluate(review,"globalThis.__conceptTicks={last:performance.now(),max:0};globalThis.__conceptTickTimer=setInterval(()=>{const now=performance.now();__conceptTicks.max=Math.max(__conceptTicks.max,now-__conceptTicks.last);__conceptTicks.last=now;},25)");
+  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===4)",'Concept worker',1200);
+  const maxTickGapMs=await evaluate(review,"clearInterval(__conceptTickTimer);__conceptTicks.max");
+  assert.ok(maxTickGapMs<1500,'Concept analysis froze the event loop: '+maxTickGapMs);
   const conceptMetrics=await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics())");
   assert.equal(conceptMetrics.total,4);assert.ok(conceptMetrics.found>0);assert.deepEqual(conceptMetrics.errors,[]);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>JSON.stringify([m.S.evals,m.S.classif]))"),scoreBefore);
@@ -140,15 +145,25 @@ try {
   await assertConceptAlignment();
   const selectedFindingCount=await evaluate(review,"(async()=>{const m=await import('./analysis.js'), {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).findings.length})()");
   assert.equal(await evaluate(review,"document.querySelectorAll('.coach-insight').length"),selectedFindingCount);
+  await evaluate(review,"import('./analysis.js').then(m=>{m.S.playerKnown=true;m.go(3)})");
   assert.match(await evaluate(review,"document.querySelector('.coach-position').textContent"),/Playing White.*Your Nf3/);
   await capture('coach-wide');
   await evaluate(review,"import('./analysis.js').then(m=>{m.S.settings.engineLines=4;m.renderEngine(null)})");
+  // Both main-panel views share the same completed cache and worker cost.
+  const switchCost=await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)");
+  await evaluate(review,"document.querySelector('#concept-view-reply').click()");
+  assert.equal(await evaluate(review,"document.querySelector('#concept-view-reply').getAttribute('aria-pressed')"),'true');
+  assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
+  assert.ok(await evaluate(review,"document.querySelectorAll('.coach-insight').length<=2"));
+  await capture('coach-reply-wide');
+  await evaluate(review,"document.querySelector('#concept-view-all').click()");
+  assert.equal(await evaluate(review,"document.querySelectorAll('.coach-insight').length"),selectedFindingCount);
   await assertConceptAlignment(); await capture('concepts-engine-four-lines');
   await evaluate(review,"import('./analysis.js').then(m=>{m.S.settings.engineLines=2;m.S.qbreakExpanded=true;m.renderStats();m.renderEngineCurrent()})");
   await assertConceptAlignment(); await capture('concepts-accuracy-expanded');
   await evaluate(review,"import('./analysis.js').then(m=>{m.S.qbreakExpanded=false;m.renderStats()})");
   await assertConceptAlignment();
-  await evaluate(review,"import('./analysis.js').then(m=>{m.S.meSide='b';m.go(2);m.go(3)})");
+  await evaluate(review,"import('./analysis.js').then(m=>{m.S.meSide='b';m.S.playerKnown=true;m.go(2);m.go(3)})");
   assert.match(await evaluate(review,"document.querySelector('.coach-position').textContent"),/Playing Black.*Opponent’s Nf3/);
   await capture('coach-black');
   for(const width of [390,320]) {
@@ -178,11 +193,35 @@ try {
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().reused)"),4);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),timeBefore);
   await evaluate(review,"import('./analysis.js').then(m=>m.applyGame({pgn:'1. d4 d5 *',meta:{gameId:'concept-switch'},source:'pgn'}))");
-  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===2)",'Switched concept game');
+  await waitFor(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===2)",'Switched concept game',600);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().total)"),2);
   await evaluate(review,"document.querySelector('#conceptsEnabled').click()");
   await evaluate(review,"document.querySelector('[aria-label=\"Settings\"]').click()");
-  results.push({label:'concept-worker',...conceptMetrics});
+  results.push({label:'concept-worker',...conceptMetrics,navigationMs,maxTickGapMs});
+  // Actual imported identity, deliberately opposite board orientation. Inspect a
+  // meaningful reply in both colors rather than only an empty opening position.
+  for (const fixture of [
+    {color:'w',fen:'7k/p7/5KQ1/8/8/8/8/8 b - - 0 1',move:'1... a6',name:'Audit White'},
+    {color:'b',fen:'8/8/8/8/8/5kq1/P7/7K w - - 0 1',move:'1. a3',name:'Audit Black'},
+  ]) {
+    const tactical={pgn:'[White "Audit White"]\n[Black "Audit Black"]\n[SetUp "1"]\n[FEN "'+fixture.fen+'"]\n\n'+fixture.move+' *',meta:{gameId:'coach-'+fixture.color,myName:fixture.name,flip:fixture.color==='w'},source:'pgn'};
+    await setStorage(audit,{'job:coach-tactic':tactical});
+    const tacticalTab=await create(`chrome-extension://${loaded.id}/analysis.html#coach-tactic`);
+    await ready(tacticalTab);
+    await evaluate(tacticalTab,"import('./analysis.js').then(m=>m.go(1))");
+    await evaluate(tacticalTab,"document.querySelector('#coachEnable')?.click()");
+    await waitFor(tacticalTab,"import('./analysis.js').then(m=>m._conceptSession.metrics().processed===1)",'Tactical concept worker',600);
+    await evaluate(tacticalTab,"document.querySelector('#concept-view-reply').click()");
+    assert.match(await evaluate(tacticalTab,"document.querySelector('.coach-insight > p').textContent"),/You can now play .* for mate in one/);
+    assert.match(await evaluate(tacticalTab,"document.querySelector('.coach-position').textContent"),fixture.color==='w'?/Playing White.*Opponent’s/:/Playing Black.*Opponent’s/);
+    assert.equal(await evaluate(tacticalTab,"import('./analysis.js').then(m=>m.S.flipped)"),fixture.color==='w');
+    const metrics=await evaluate(tacticalTab,"import('./analysis.js').then(m=>m._conceptSession.metrics())");assert.deepEqual(metrics.errors,[]);
+    if(fixture.color==='b'){await call('Emulation.setDeviceMetricsOverride',{width:320,height:844,deviceScaleFactor:1,mobile:false},tacticalTab.sessionId);await sleep(500);await evaluate(tacticalTab,"document.querySelector('.coach-insights-panel').scrollIntoView({block:'center'})");}
+    assert.equal(await evaluate(tacticalTab,"document.querySelectorAll('.coach-insight').length"),1);
+    const shot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},tacticalTab.sessionId);await fs.writeFile(path.join(out,'coach-tactical-'+fixture.color+'.png'),Buffer.from(shot.data,'base64'));
+    results.push({label:'coach-tactical-'+fixture.color,...metrics});
+    await call('Target.closeTarget',{targetId:tacticalTab.targetId});
+  }
   const popup=await create(`chrome-extension://${loaded.id}/popup.html`);
   await waitFor(popup,"!!document.querySelector('#manual')",'Popup');
   await call('Emulation.setDeviceMetricsOverride',{width:318,height:600,deviceScaleFactor:1,mobile:false},popup.sessionId);

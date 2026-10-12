@@ -14,7 +14,7 @@ import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { ConceptSession, conceptKey } from "./lib/concepts/session.js";
-import { coachInsights } from "./lib/coach-insights.js";
+import { coachInsights, coachReply } from "./lib/coach-insights.js";
 
 /* ---------------- Opening book ----------------
  * Offline lookup table built from lichess-org/chess-openings (bundled in data/book.json).
@@ -261,6 +261,7 @@ function engineWorkerCount(requested = null, positions = Infinity,
 
 const DEFAULT_SETTINGS = {
   conceptsEnabled: false,
+  conceptsView: "all",
   categoryNames: {},
   theme: "dark", accent: "#7fb45f", accentCustom: "#9b72d0", density: "compact",
   evalView: "both", mlStyle: "rows", badgeStyle: "icon", badgeScale: 1,
@@ -458,10 +459,9 @@ function shareGame(ev) {
   // Capture the button now — native event.currentTarget is null by the time the clipboard promise resolves.
   const btn = ev?.currentTarget;
   try {
-    // Bake the resolved perspective into the export so the game reopens the right way up even on a
-    // PC whose stored handle doesn't match either player — the username stays the safety net, the
-    // flip is the certainty. (flip = is the user Black / sitting after a board flip.)
-    const meta = { ...S.meta, flip: S.flipped, myName: (S.players?.[S.meSide]?.name) || S.username || "" };
+    // Preserve board orientation and only an identified playing side. A flipped
+    // anonymous import must remain anonymous when reopened through a share link.
+    const meta = { ...S.meta, flip: S.flipped, myName: S.playerKnown === false ? "" : (S.players?.[S.meSide]?.name) || S.username || "" };
     const data = encodeURIComponent(b64encode(JSON.stringify({ pgn: S.pgn, meta })));
     const carrier = ((S.meta && S.meta.url) ? S.meta.url : "https://www.chess.com/").split("#")[0];
     const url = carrier + "#gambit=" + data;
@@ -823,7 +823,7 @@ function deriveOpening(h) {
 }
 function derivePlayers(h, meta, username) {
   const res = h.Result || meta.result || "";
-  const me = (username || "").toLowerCase();
+  const me = (meta.myName || username || "").toLowerCase();
   // country = flag basename ("US", "GB_ENG") resolved from the chess.com country id the page
   // scraped, or null when we have no flag for it → the avatar falls back to the username initial.
   // countryName labels the flag's hover tooltip.
@@ -831,7 +831,8 @@ function derivePlayers(h, meta, username) {
   const b = { name: h.Black || meta.black?.user || "Black", rating: h.BlackElo || "", result: res, country: flagCodeForCountryId(meta.black?.countryId), countryName: countryNameForId(meta.black?.countryId) };
   let meSide = "w";
   if (me && b.name.toLowerCase() === me && w.name.toLowerCase() !== me) meSide = "b";
-  return { players: { w, b }, meSide };
+  const playerKnown = !!me && (w.name.toLowerCase() === me) !== (b.name.toLowerCase() === me);
+  return { players: { w, b }, meSide, playerKnown };
 }
 
 /* ---------------- Math ---------------- */
@@ -3847,7 +3848,9 @@ function renderCoachPanel() {
   const selected = activePos(), hasMove = !S.practice && !!selected.from && !!selected.to;
   const input = S.settings.conceptsEnabled === true ? selectedConceptInput() : null;
   const key = input ? conceptKey(input) : S.practice ? "practice" : hasMove ? selected.fen : "start";
-  const signature = JSON.stringify([key, S.meSide, S.settings.conceptsEnabled]);
+  const view = S.settings.conceptsView === "reply" ? "reply" : "all";
+  const player = S.playerKnown === false ? null : S.meSide;
+  const signature = JSON.stringify([key, player, view, S.settings.conceptsEnabled]);
   const same = signature === _coachPositionKey, oldBody = mount.querySelector(".coach-insights-body");
   const scroll = same ? oldBody?.scrollTop || 0 : 0;
   const open = new Set(same ? [...mount.querySelectorAll("details[open]")].map(d => d.dataset.insight) : []);
@@ -3857,7 +3860,7 @@ function renderCoachPanel() {
   const entry = input && _conceptSession?.entries.get(key);
   const body = el("div", {class: "panel-body coach-insights-body", "aria-labelledby": "conceptsHeading"});
   body.append(el("p", {class: "coach-position", "aria-live": "polite"},
-    `${S.meSide === "w" ? "Playing White" : "Playing Black"} · ${hasMove ? (S.analysisMode ? "Variation · " : "") + (mover === S.meSide ? "Your " : "Opponent’s ") + selected.san : S.practice ? "Practice" : "Starting position"}`));
+    `${!player ? "Player identity unavailable" : player === "w" ? "Playing White" : "Playing Black"} · ${hasMove ? (S.analysisMode ? "Variation · " : "") + (!player ? (mover === "w" ? "White’s " : "Black’s ") : mover === player ? "Your " : "Opponent’s ") + selected.san : S.practice ? "Practice" : "Starting position"}`));
   if (hasMove && !S.analysisMode && S.classif[S.idx]) {
     body.append(el("p", {class: "coach-move-quality"}, `Move assessment: ${categoryName(S.classif[S.idx])}`));
   }
@@ -3867,15 +3870,20 @@ function renderCoachPanel() {
     el("button", {class: "engine-bestwalk", id: "coachEnable", onclick: () => setConceptEnabled(true)}, "Enable position insights"));
   else if (!input) body.append(el("p", {}, "Select a move to see what changed and what the resulting position contains."));
   else {
-    const insights = coachInsights(entry?.findings || [], {mover, player: S.meSide});
+    const reply = coachReply(entry?.findings || [], {mover, player, change:entry?.change});
+    const insights = view === "reply" ? reply.items : coachInsights(entry?.findings || [], {mover, player});
+    if (view === "reply" && !player) body.append(el("p", {class:"coach-status"}, "The playing side could not be identified. All concepts remains available with neutral move labels."));
     if (!entry || entry.status !== "complete") body.append(el("p", {class: "coach-status"}, insights.length ? "Observations ready; checking further continuations…" : "Checking this position…"));
-    if (entry?.status === "complete" && !insights.length) body.append(el("p", {}, "No supported insight within the available inputs and search limits."));
+    if (entry?.status === "complete" && !insights.length) body.append(el("p", {}, view === "reply" ? "No meaningful supported coach insight for this move." : "No supported finding within the available inputs and search limits."));
     const list = el("ol", {class: "coach-insights-list"});
     for (const finding of insights) {
       const id = JSON.stringify([finding.event, finding.name, finding.sourceText]);
       const details = el("details", {"data-insight": id, open: open.has(id)}, el("summary", {}, "Evidence and scope"),
         el("p", {}, finding.kind), el("p", {}, "Detector explanation: " + finding.sourceText),
-        ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)));
+        ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)),
+        ...(finding.details ? [el("pre", {class:"concept-evidence-data"}, JSON.stringify(finding.details,null,2))] : []),
+        ...(finding.supporting || []).map(f => el("p", {}, f.name + ": " + f.sourceText)),
+        ...(finding.studyScopes?.length ? [el("p", {}, "Candidate study scopes (not acceptance or a per-event claim):"), ...finding.studyScopes.map(scope=>el("p", {},scope.id+": "+scope.scope))] : []));
       list.append(el("li", {class: "coach-insight", "data-concept": finding.name},
         el("strong", {}, finding.name), el("span", {class: "coach-perspective"}, finding.perspective),
         el("p", {}, finding.text), details));
@@ -3883,10 +3891,12 @@ function renderCoachPanel() {
     body.append(list);
     const diagnostics = [...(entry?.errors || []), ...(entry?.unavailable || []), ...(entry?.issues || [])];
     if (diagnostics.length) body.append(el("p", {class: "coach-status"}, "Some searches or inputs were unavailable. Showing supported findings; details are in Settings → Concepts."));
-    body.append(el("p", {class: "coach-status"}, `${insights.length} insights · All matches shown, ordered by likely relevance. Structure observations alone do not establish an advantage.`));
+    body.append(el("p", {class: "coach-status"}, view === "reply" ? "Selected from the same position findings. Conditions and proof horizons still apply." : `${insights.length} findings · All supported matches for this move. Provisional implementation does not mean research acceptance.`));
   }
+  const switcher = el("div", {class:"concept-view-switch", role:"group", "aria-label":"Concept view"},
+    ...[["all","All concepts"],["reply","Coach reply"]].map(([value,label])=>el("button", {type:"button", id:"concept-view-"+value, "aria-pressed":view===value?"true":"false", onclick:()=>{S.settings.conceptsView=value;browserAPI.storage.local.set({settings:S.settings});renderCoachPanel();}},label)));
   mount.replaceChildren(el("div", {class: "panel coach-insights-panel"},
-    el("div", {class: "panel-head"}, el("h3", {id: "conceptsHeading"}, "Concepts")), body));
+    el("div", {class: "panel-head"}, el("h3", {id: "conceptsHeading"}, "Concepts")), switcher, body));
   body.scrollTop = scroll;
   if (focused) document.getElementById(focused)?.focus({preventScroll: true});
   alignConceptPanel();
@@ -4797,7 +4807,7 @@ function conceptSettings() {
   }});
   const panel = el("div", {class: "concepts-panel"},
     el("label", {class: "concepts-toggle"}, checkbox, "Enable concept analysis"),
-    el("p", {class: "concepts-note"}, "E080 verified mechanics. Observations and bounded proofs; broader strategic benefits are unproven."));
+    el("p", {class: "concepts-note"}, "Accepted mechanics and provisional implementations. Exact scopes and missing prerequisites remain explicit."));
   if (!enabled) {
     panel.append(el("p", {}, "Disabled — concept analysis is stopped. Enable to process this game."));
   }
@@ -4813,7 +4823,7 @@ function conceptSettings() {
     for (const finding of entry.findings) list.append(el("li", {},
       el("strong", {}, finding.name), el("p", {}, finding.text),
       el("span", {class: "concepts-kind"}, finding.kind),
-      el("details", {"data-concept-detail": JSON.stringify([finding.event, finding.name, finding.text])}, el("summary", {}, "Verified scope"), ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)))));
+      el("details", {"data-concept-detail": JSON.stringify([finding.event, finding.name, finding.text])}, el("summary", {}, "Evidence scope"), ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)))));
     panel.append(list);
   }
   const metrics = _conceptSession?.metrics(_conceptGameKeys) || {timeMs: 0, processed: 0, total: 0, found: 0, reused: 0, errors: [], unavailable: [], issues: []};
@@ -5858,11 +5868,11 @@ async function applyGame(payload) {
   S.analysisError = null;
   S.openingHeader = deriveOpening(S.headers);
   S.opening = S.openingHeader;
-  const { players, meSide } = derivePlayers(S.headers, S.meta, S.username);
+  const { players, meSide, playerKnown } = derivePlayers(S.headers, S.meta, S.username);
   S.players = players;
   const flip = S.meta && S.meta.flip;
   const side = flip === true ? "b" : flip === false ? "w" : meSide;
-  S.meSide = side; S.flipped = side === "b"; S.idx = 0;
+  S.meSide = meSide; S.playerKnown = playerKnown; S.flipped = side === "b"; S.idx = 0;
 
   // Restore saved game analysis or start fresh
   let saved = payload.analysis;

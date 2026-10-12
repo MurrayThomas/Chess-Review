@@ -91,7 +91,7 @@ try {
       if(!frame.contentWindow.__smokeConcepts().enabled)throw Error('Native concept toggle reverted');
       // Firefox's measured 22-position worker run exceeds 40s on this host.
       // This is a smoke-test wait limit; detector and per-job budgets stay unchanged.
-      for(let i=0;i<1000&&frame.contentWindow.__smokeConcepts().metrics.processed!==22;i++)await wait(100);
+      for(let i=0;i<4000&&frame.contentWindow.__smokeConcepts().metrics.processed!==22;i++)await wait(100);
       const concepts=frame.contentWindow.__smokeConcepts();
       if(concepts.metrics.processed!==22||!concepts.metrics.found||concepts.metrics.errors.length){await report({step:'concept-diagnostics',metrics:concepts.metrics});throw Error('Concept worker failed: '+JSON.stringify(concepts));}
         if(!doc.querySelector('#conceptsMount .coach-insights-panel')||!doc.querySelector('#engineMount .engine-body'))throw Error('Concepts and Engine must have independent panels');
@@ -100,6 +100,12 @@ try {
         if(coachCount!==frame.contentWindow.__smokeConcepts().selectedFindings||!coachCount)throw Error('Coach omitted matched findings');
         const coachPanel=doc.querySelector('.coach-insights-panel'),coachBox=coachPanel.closest('.mod'),coachBody=coachPanel.querySelector('.coach-insights-body');
         if(coachPanel.getBoundingClientRect().height>coachBox.getBoundingClientRect().height+1||coachBody.clientHeight<100)throw Error('Coach contents escape their panel');
+        const viewCost=frame.contentWindow.__smokeConcepts().metrics.timeMs;
+        doc.querySelector('#concept-view-reply').click();
+        if(doc.querySelector('#concept-view-reply').getAttribute('aria-pressed')!=='true'||doc.querySelectorAll('.coach-insight').length>2)throw Error('Coach reply switch failed');
+        if(frame.contentWindow.__smokeConcepts().metrics.timeMs!==viewCost)throw Error('View switch repeated analysis');
+        doc.querySelector('#concept-view-all').click();
+        if(doc.querySelectorAll('.coach-insight').length!==coachCount)throw Error('All concepts did not restore findings');
         const positionBefore=doc.querySelector('.coach-position').textContent;
         frame.contentWindow.__smokeCoachGo(4);await wait(150);
         if(doc.querySelector('.coach-position').textContent===positionBefore)throw Error('Coach retained previous move');
@@ -244,7 +250,7 @@ try {
     } else {
       firefoxRunner=await cmd.run({sourceDir,artifactsDir:artifacts,firefox:process.env.FIREFOX_PATH || 'C:\\Program Files\\Mozilla Firefox\\firefox.exe',target:['firefox-desktop'],args:['-headless'],noReload:true,noInput:true,startUrl:['about:blank']});
     }
-    for(let i=0;i<1500&&!reports.has(release.browser);i++)await sleep(100);
+    for(let i=0;i<6000&&!reports.has(release.browser);i++)await sleep(100);
     if(!reports.get(release.browser)?.ok)throw Error(JSON.stringify(reports.get(release.browser)||{error:'Browser smoke timed out',browser:release.browser}));
     if(release.browser==='chrome'){ws.close();chromeProcess.kill();chromeProcess=null;}else{await firefoxRunner.exit();firefoxRunner=null;}
   }

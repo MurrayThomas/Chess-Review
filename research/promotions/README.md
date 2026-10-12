@@ -17,3 +17,5 @@ and existing coach comments are unchanged.
 in a standalone Concepts panel with stable relevance ordering and both-side wording.
 Every match and its exact scope remains inspectable; ordering is a presentation
 heuristic, with no new benefit or effectiveness claim.
+
+[P003: Expanded local Concepts integration and concise player reply](P003-concept-integration.md) integrates accepted E081/E082 and usable provisional observations, preserves unavailable-input boundaries, and adds two views sharing the existing optional analysis. Research acceptance and implementation availability remain separate.

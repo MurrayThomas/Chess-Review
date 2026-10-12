@@ -48,7 +48,8 @@ test('accepted overload retains actual defender ownership without copying search
   const result = analyzeConcepts({fen: '7k/1n1r4/8/3n4/8/5B2/8/KR6 w - - 0 1', move: 'f3d5'}, verified);
   assert.deepEqual(result.errors, []);
   const f = result.findings.find(f => f.event === 'overloaded-defender');
-  assert.ok(f); assert.deepEqual(f.context, {mover: 'w', defender: {color: 'b', type: 'r', square: 'd7'}});
+  assert.ok(f); assert.equal(f.context.mover,'w'); assert.equal(f.context.actor,'w'); assert.deepEqual(f.context.defender, {color:'b',type:'r',square:'d7'});
+  assert.ok(!JSON.stringify(f.context).includes('tree'));
   assert.equal(f.context.branches, undefined);
   assert.match(coachInsights([f], {mover: 'w', player: 'b'})[0].text, /^Your rook on d7 is overloaded: if /);
 });

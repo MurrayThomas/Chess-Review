@@ -17,6 +17,7 @@ async function visit(file) {
     await visit(path.posix.normalize(path.posix.join(path.posix.dirname(file), m[1])));
   }
 }
+if (process.argv.includes('--integration')) { await import('./promote-concept-integration.mjs'); } else {
 await visit(entry);
 await mkdir(path.join(root, destination), {recursive: true});
 for (const [file, {source}] of sources) {
@@ -44,3 +45,4 @@ await writeFile(path.join(root, 'lib/concepts/profile.js'),
   + `export const FLAGS = ${JSON.stringify(flags)};\nexport const BUDGETS = ${JSON.stringify(budgets)};\n`
   + 'export const CONCEPT_VERSION = "E080-P002-v1";\n');
 console.log(`Promoted ${sources.size} modules; ${verified.length} verified occurrence scopes.`);
+}
