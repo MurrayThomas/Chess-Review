@@ -1,0 +1,941 @@
+# E063-smoke-summary {"originalRows":100,"errors":4,"certificates":32,"states":{"complete":88,"disabled":4,"exhausted":4},"metrics":{"replies":668,"leaves":1320,"historyPlies":100}}
+TAP version 13
+# Subtest: original whole connected-advances
+ok 1 - original whole connected-advances
+  ---
+  duration_ms: 126.8862
+  type: 'test'
+  ...
+# Subtest: original whole connected-advances-black
+ok 2 - original whole connected-advances-black
+  ---
+  duration_ms: 96.1811
+  type: 'test'
+  ...
+# Subtest: original whole connected-advances-queenside
+ok 3 - original whole connected-advances-queenside
+  ---
+  duration_ms: 52.095
+  type: 'test'
+  ...
+# Subtest: original whole connected-advances-queenside-black
+ok 4 - original whole connected-advances-queenside-black
+  ---
+  duration_ms: 47.7413
+  type: 'test'
+  ...
+# Subtest: original whole double-advances
+ok 5 - original whole double-advances
+  ---
+  duration_ms: 103.8762
+  type: 'test'
+  ...
+# Subtest: original whole double-advances-black
+ok 6 - original whole double-advances-black
+  ---
+  duration_ms: 92.1742
+  type: 'test'
+  ...
+# Subtest: original whole double-advances-queenside
+ok 7 - original whole double-advances-queenside
+  ---
+  duration_ms: 56.0731
+  type: 'test'
+  ...
+# Subtest: original whole double-advances-queenside-black
+ok 8 - original whole double-advances-queenside-black
+  ---
+  duration_ms: 61.208
+  type: 'test'
+  ...
+# Subtest: original whole staggered-connection
+ok 9 - original whole staggered-connection
+  ---
+  duration_ms: 93.4396
+  type: 'test'
+  ...
+# Subtest: original whole staggered-connection-black
+ok 10 - original whole staggered-connection-black
+  ---
+  duration_ms: 88.6833
+  type: 'test'
+  ...
+# Subtest: original whole staggered-connection-queenside
+ok 11 - original whole staggered-connection-queenside
+  ---
+  duration_ms: 39.9239
+  type: 'test'
+  ...
+# Subtest: original whole staggered-connection-queenside-black
+ok 12 - original whole staggered-connection-queenside-black
+  ---
+  duration_ms: 39.6628
+  type: 'test'
+  ...
+# Subtest: original whole capture-advances
+ok 13 - original whole capture-advances
+  ---
+  duration_ms: 62.8031
+  type: 'test'
+  ...
+# Subtest: original whole capture-advances-black
+ok 14 - original whole capture-advances-black
+  ---
+  duration_ms: 65.2484
+  type: 'test'
+  ...
+# Subtest: original whole capture-advances-queenside
+ok 15 - original whole capture-advances-queenside
+  ---
+  duration_ms: 56.413
+  type: 'test'
+  ...
+# Subtest: original whole capture-advances-queenside-black
+ok 16 - original whole capture-advances-queenside-black
+  ---
+  duration_ms: 57.8762
+  type: 'test'
+  ...
+# Subtest: original whole same-pawn-repeated
+ok 17 - original whole same-pawn-repeated
+  ---
+  duration_ms: 76.0425
+  type: 'test'
+  ...
+# Subtest: original whole same-pawn-repeated-black
+ok 18 - original whole same-pawn-repeated-black
+  ---
+  duration_ms: 73.0119
+  type: 'test'
+  ...
+# Subtest: original whole same-pawn-repeated-queenside
+ok 19 - original whole same-pawn-repeated-queenside
+  ---
+  duration_ms: 38.2984
+  type: 'test'
+  ...
+# Subtest: original whole same-pawn-repeated-queenside-black
+ok 20 - original whole same-pawn-repeated-queenside-black
+  ---
+  duration_ms: 38.1347
+  type: 'test'
+  ...
+# Subtest: original whole too-early
+ok 21 - original whole too-early
+  ---
+  duration_ms: 82.0458
+  type: 'test'
+  ...
+# Subtest: original whole too-early-black
+ok 22 - original whole too-early-black
+  ---
+  duration_ms: 89.9527
+  type: 'test'
+  ...
+# Subtest: original whole too-early-queenside
+ok 23 - original whole too-early-queenside
+  ---
+  duration_ms: 47.4795
+  type: 'test'
+  ...
+# Subtest: original whole too-early-queenside-black
+ok 24 - original whole too-early-queenside-black
+  ---
+  duration_ms: 47.3652
+  type: 'test'
+  ...
+# Subtest: original whole wrong-flank
+ok 25 - original whole wrong-flank
+  ---
+  duration_ms: 46.0749
+  type: 'test'
+  ...
+# Subtest: original whole wrong-flank-black
+ok 26 - original whole wrong-flank-black
+  ---
+  duration_ms: 45.5391
+  type: 'test'
+  ...
+# Subtest: original whole wrong-flank-queenside
+ok 27 - original whole wrong-flank-queenside
+  ---
+  duration_ms: 39.4536
+  type: 'test'
+  ...
+# Subtest: original whole wrong-flank-queenside-black
+ok 28 - original whole wrong-flank-queenside-black
+  ---
+  duration_ms: 39.9368
+  type: 'test'
+  ...
+# Subtest: original whole separated-files
+ok 29 - original whole separated-files
+  ---
+  duration_ms: 75.0815
+  type: 'test'
+  ...
+# Subtest: original whole separated-files-black
+ok 30 - original whole separated-files-black
+  ---
+  duration_ms: 79.3453
+  type: 'test'
+  ...
+# Subtest: original whole separated-files-queenside
+ok 31 - original whole separated-files-queenside
+  ---
+  duration_ms: 37.1777
+  type: 'test'
+  ...
+# Subtest: original whole separated-files-queenside-black
+ok 32 - original whole separated-files-queenside-black
+  ---
+  duration_ms: 37.6048
+  type: 'test'
+  ...
+# Subtest: original whole separated-ranks
+ok 33 - original whole separated-ranks
+  ---
+  duration_ms: 75.0816
+  type: 'test'
+  ...
+# Subtest: original whole separated-ranks-black
+ok 34 - original whole separated-ranks-black
+  ---
+  duration_ms: 66.3584
+  type: 'test'
+  ...
+# Subtest: original whole separated-ranks-queenside
+ok 35 - original whole separated-ranks-queenside
+  ---
+  duration_ms: 43.2123
+  type: 'test'
+  ...
+# Subtest: original whole separated-ranks-queenside-black
+ok 36 - original whole separated-ranks-queenside-black
+  ---
+  duration_ms: 42.1833
+  type: 'test'
+  ...
+# Subtest: original whole missing-history
+ok 37 - original whole missing-history
+  ---
+  duration_ms: 17.9094
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-black
+ok 38 - original whole missing-history-black
+  ---
+  duration_ms: 17.7535
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-queenside
+ok 39 - original whole missing-history-queenside
+  ---
+  duration_ms: 18.8496
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-queenside-black
+ok 40 - original whole missing-history-queenside-black
+  ---
+  duration_ms: 17.6421
+  type: 'test'
+  ...
+# Subtest: original whole history-without-castle
+ok 41 - original whole history-without-castle
+  ---
+  duration_ms: 30.0017
+  type: 'test'
+  ...
+# Subtest: original whole history-without-castle-black
+ok 42 - original whole history-without-castle-black
+  ---
+  duration_ms: 29.1827
+  type: 'test'
+  ...
+# Subtest: original whole history-without-castle-queenside
+ok 43 - original whole history-without-castle-queenside
+  ---
+  duration_ms: 29.5396
+  type: 'test'
+  ...
+# Subtest: original whole history-without-castle-queenside-black
+ok 44 - original whole history-without-castle-queenside-black
+  ---
+  duration_ms: 29.7151
+  type: 'test'
+  ...
+# Subtest: original whole advance-before-castle
+ok 45 - original whole advance-before-castle
+  ---
+  duration_ms: 47.7069
+  type: 'test'
+  ...
+# Subtest: original whole advance-before-castle-black
+ok 46 - original whole advance-before-castle-black
+  ---
+  duration_ms: 44.897
+  type: 'test'
+  ...
+# Subtest: original whole advance-before-castle-queenside
+ok 47 - original whole advance-before-castle-queenside
+  ---
+  duration_ms: 27.9659
+  type: 'test'
+  ...
+# Subtest: original whole advance-before-castle-queenside-black
+ok 48 - original whole advance-before-castle-queenside-black
+  ---
+  duration_ms: 27.9609
+  type: 'test'
+  ...
+# Subtest: original whole king-moved
+ok 49 - original whole king-moved
+  ---
+  duration_ms: 79.3217
+  type: 'test'
+  ...
+# Subtest: original whole king-moved-black
+ok 50 - original whole king-moved-black
+  ---
+  duration_ms: 81.6828
+  type: 'test'
+  ...
+# Subtest: original whole king-moved-queenside
+ok 51 - original whole king-moved-queenside
+  ---
+  duration_ms: 39.8494
+  type: 'test'
+  ...
+# Subtest: original whole king-moved-queenside-black
+ok 52 - original whole king-moved-queenside-black
+  ---
+  duration_ms: 39.1663
+  type: 'test'
+  ...
+# Subtest: original whole prior-pawn-captured
+ok 53 - original whole prior-pawn-captured
+  ---
+  duration_ms: 182.1253
+  type: 'test'
+  ...
+# Subtest: original whole prior-pawn-captured-black
+ok 54 - original whole prior-pawn-captured-black
+  ---
+  duration_ms: 165.7909
+  type: 'test'
+  ...
+# Subtest: original whole prior-pawn-captured-queenside
+ok 55 - original whole prior-pawn-captured-queenside
+  ---
+  duration_ms: 77.3159
+  type: 'test'
+  ...
+# Subtest: original whole prior-pawn-captured-queenside-black
+ok 56 - original whole prior-pawn-captured-queenside-black
+  ---
+  duration_ms: 83.6925
+  type: 'test'
+  ...
+# Subtest: original whole prior-move-not-pawn
+ok 57 - original whole prior-move-not-pawn
+  ---
+  duration_ms: 52.4337
+  type: 'test'
+  ...
+# Subtest: original whole prior-move-not-pawn-black
+ok 58 - original whole prior-move-not-pawn-black
+  ---
+  duration_ms: 44.4435
+  type: 'test'
+  ...
+# Subtest: original whole prior-move-not-pawn-queenside
+ok 59 - original whole prior-move-not-pawn-queenside
+  ---
+  duration_ms: 44.7125
+  type: 'test'
+  ...
+# Subtest: original whole prior-move-not-pawn-queenside-black
+ok 60 - original whole prior-move-not-pawn-queenside-black
+  ---
+  duration_ms: 57.03
+  type: 'test'
+  ...
+# Subtest: original whole actual-not-pawn
+ok 61 - original whole actual-not-pawn
+  ---
+  duration_ms: 51.5265
+  type: 'test'
+  ...
+# Subtest: original whole actual-not-pawn-black
+ok 62 - original whole actual-not-pawn-black
+  ---
+  duration_ms: 47.3137
+  type: 'test'
+  ...
+# Subtest: original whole actual-not-pawn-queenside
+ok 63 - original whole actual-not-pawn-queenside
+  ---
+  duration_ms: 49.8167
+  type: 'test'
+  ...
+# Subtest: original whole actual-not-pawn-queenside-black
+ok 64 - original whole actual-not-pawn-queenside-black
+  ---
+  duration_ms: 47.661
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-can-be-taken
+ok 65 - original whole actual-pawn-can-be-taken
+  ---
+  duration_ms: 190.9961
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-can-be-taken-black
+ok 66 - original whole actual-pawn-can-be-taken-black
+  ---
+  duration_ms: 92.9735
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-can-be-taken-queenside
+ok 67 - original whole actual-pawn-can-be-taken-queenside
+  ---
+  duration_ms: 155.0122
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-can-be-taken-queenside-black
+ok 68 - original whole actual-pawn-can-be-taken-queenside-black
+  ---
+  duration_ms: 93.0396
+  type: 'test'
+  ...
+# Subtest: original whole terminal-reply
+ok 69 - original whole terminal-reply
+  ---
+  duration_ms: 182.6808
+  type: 'test'
+  ...
+# Subtest: original whole terminal-reply-black
+ok 70 - original whole terminal-reply-black
+  ---
+  duration_ms: 185.8611
+  type: 'test'
+  ...
+# Subtest: original whole terminal-reply-queenside
+ok 71 - original whole terminal-reply-queenside
+  ---
+  duration_ms: 198.9898
+  type: 'test'
+  ...
+# Subtest: original whole terminal-reply-queenside-black
+ok 72 - original whole terminal-reply-queenside-black
+  ---
+  duration_ms: 196.3015
+  type: 'test'
+  ...
+# Subtest: original whole ep-right-history
+ok 73 - original whole ep-right-history
+  ---
+  duration_ms: 42.3011
+  type: 'test'
+  ...
+# Subtest: original whole ep-right-history-black
+ok 74 - original whole ep-right-history-black
+  ---
+  duration_ms: 42.8584
+  type: 'test'
+  ...
+# Subtest: original whole ep-right-history-queenside
+ok 75 - original whole ep-right-history-queenside
+  ---
+  duration_ms: 55.9507
+  type: 'test'
+  ...
+# Subtest: original whole ep-right-history-queenside-black
+ok 76 - original whole ep-right-history-queenside-black
+  ---
+  duration_ms: 57.3938
+  type: 'test'
+  ...
+# Subtest: original whole actual-ep-capture
+ok 77 - original whole actual-ep-capture
+  ---
+  duration_ms: 55.5166
+  type: 'test'
+  ...
+# Subtest: original whole actual-ep-capture-black
+ok 78 - original whole actual-ep-capture-black
+  ---
+  duration_ms: 56.2807
+  type: 'test'
+  ...
+# Subtest: original whole actual-ep-capture-queenside
+ok 79 - original whole actual-ep-capture-queenside
+  ---
+  duration_ms: 73.2263
+  type: 'test'
+  ...
+# Subtest: original whole actual-ep-capture-queenside-black
+ok 80 - original whole actual-ep-capture-queenside-black
+  ---
+  duration_ms: 74.8785
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion
+ok 81 - original whole actual-promotion
+  ---
+  duration_ms: 82.0241
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-black
+ok 82 - original whole actual-promotion-black
+  ---
+  duration_ms: 120.8017
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-queenside
+ok 83 - original whole actual-promotion-queenside
+  ---
+  duration_ms: 228.9972
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-queenside-black
+ok 84 - original whole actual-promotion-queenside-black
+  ---
+  duration_ms: 228.6304
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate
+ok 85 - original whole actual-mate
+  ---
+  duration_ms: 20.4199
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-black
+ok 86 - original whole actual-mate-black
+  ---
+  duration_ms: 21.0627
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-queenside
+ok 87 - original whole actual-mate-queenside
+  ---
+  duration_ms: 24.9346
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-queenside-black
+ok 88 - original whole actual-mate-queenside-black
+  ---
+  duration_ms: 26.9711
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual
+ok 89 - original whole illegal-actual
+  ---
+  duration_ms: 4.4811
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-black
+ok 90 - original whole illegal-actual-black
+  ---
+  duration_ms: 4.0534
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-queenside
+ok 91 - original whole illegal-actual-queenside
+  ---
+  duration_ms: 1.4274
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-queenside-black
+ok 92 - original whole illegal-actual-queenside-black
+  ---
+  duration_ms: 1.4123
+  type: 'test'
+  ...
+# Subtest: original whole disabled
+ok 93 - original whole disabled
+  ---
+  duration_ms: 75.3614
+  type: 'test'
+  ...
+# Subtest: original whole disabled-black
+ok 94 - original whole disabled-black
+  ---
+  duration_ms: 74.7429
+  type: 'test'
+  ...
+# Subtest: original whole disabled-queenside
+ok 95 - original whole disabled-queenside
+  ---
+  duration_ms: 35.5338
+  type: 'test'
+  ...
+# Subtest: original whole disabled-queenside-black
+ok 96 - original whole disabled-queenside-black
+  ---
+  duration_ms: 36.2776
+  type: 'test'
+  ...
+# Subtest: original whole zero-budget
+ok 97 - original whole zero-budget
+  ---
+  duration_ms: 78.4123
+  type: 'test'
+  ...
+# Subtest: original whole zero-budget-black
+ok 98 - original whole zero-budget-black
+  ---
+  duration_ms: 74.2315
+  type: 'test'
+  ...
+# Subtest: original whole zero-budget-queenside
+ok 99 - original whole zero-budget-queenside
+  ---
+  duration_ms: 35.4903
+  type: 'test'
+  ...
+# Subtest: original whole zero-budget-queenside-black
+ok 100 - original whole zero-budget-queenside-black
+  ---
+  duration_ms: 35.9767
+  type: 'test'
+  ...
+# Subtest: forgery before
+ok 101 - forgery before
+  ---
+  duration_ms: 51.0817
+  type: 'test'
+  ...
+# Subtest: forgery after
+ok 102 - forgery after
+  ---
+  duration_ms: 49.3597
+  type: 'test'
+  ...
+# Subtest: forgery history domain
+ok 103 - forgery history domain
+  ---
+  duration_ms: 50.6238
+  type: 'test'
+  ...
+# Subtest: forgery history order
+ok 104 - forgery history order
+  ---
+  duration_ms: 47.91
+  type: 'test'
+  ...
+# Subtest: forgery history record
+ok 105 - forgery history record
+  ---
+  duration_ms: 50.251
+  type: 'test'
+  ...
+# Subtest: forgery castle index
+ok 106 - forgery castle index
+  ---
+  duration_ms: 49.2992
+  type: 'test'
+  ...
+# Subtest: forgery prior index
+ok 107 - forgery prior index
+  ---
+  duration_ms: 49.2881
+  type: 'test'
+  ...
+# Subtest: forgery castle origin
+ok 108 - forgery castle origin
+  ---
+  duration_ms: 49.6493
+  type: 'test'
+  ...
+# Subtest: forgery castle destination
+ok 109 - forgery castle destination
+  ---
+  duration_ms: 49.5274
+  type: 'test'
+  ...
+# Subtest: forgery castle SAN
+ok 110 - forgery castle SAN
+  ---
+  duration_ms: 50.2335
+  type: 'test'
+  ...
+# Subtest: forgery prior advance
+ok 111 - forgery prior advance
+  ---
+  duration_ms: 49.737
+  type: 'test'
+  ...
+# Subtest: forgery actual record
+ok 112 - forgery actual record
+  ---
+  duration_ms: 49.465
+  type: 'test'
+  ...
+# Subtest: forgery king square
+ok 113 - forgery king square
+  ---
+  duration_ms: 49.4026
+  type: 'test'
+  ...
+# Subtest: forgery king color
+ok 114 - forgery king color
+  ---
+  duration_ms: 48.8633
+  type: 'test'
+  ...
+# Subtest: forgery side
+ok 115 - forgery side
+  ---
+  duration_ms: 49.1839
+  type: 'test'
+  ...
+# Subtest: forgery pawn domain
+ok 116 - forgery pawn domain
+  ---
+  duration_ms: 49.3176
+  type: 'test'
+  ...
+# Subtest: forgery pawn order
+ok 117 - forgery pawn order
+  ---
+  duration_ms: 48.4071
+  type: 'test'
+  ...
+# Subtest: forgery pawn identity
+ok 118 - forgery pawn identity
+  ---
+  duration_ms: 49.2769
+  type: 'test'
+  ...
+# Subtest: forgery file connection
+ok 119 - forgery file connection
+  ---
+  duration_ms: 49.2421
+  type: 'test'
+  ...
+# Subtest: forgery rank connection
+ok 120 - forgery rank connection
+  ---
+  duration_ms: 48.9018
+  type: 'test'
+  ...
+# Subtest: forgery distance domain
+ok 121 - forgery distance domain
+  ---
+  duration_ms: 49.9943
+  type: 'test'
+  ...
+# Subtest: forgery distance value
+ok 122 - forgery distance value
+  ---
+  duration_ms: 49.2859
+  type: 'test'
+  ...
+# Subtest: forgery reply domain
+ok 123 - forgery reply domain
+  ---
+  duration_ms: 49.6463
+  type: 'test'
+  ...
+# Subtest: forgery reply order
+ok 124 - forgery reply order
+  ---
+  duration_ms: 50.7509
+  type: 'test'
+  ...
+# Subtest: forgery reply record
+ok 125 - forgery reply record
+  ---
+  duration_ms: 48.4553
+  type: 'test'
+  ...
+# Subtest: forgery reply terminal
+ok 126 - forgery reply terminal
+  ---
+  duration_ms: 47.3653
+  type: 'test'
+  ...
+# Subtest: forgery reply pawn presence
+ok 127 - forgery reply pawn presence
+  ---
+  duration_ms: 50.5197
+  type: 'test'
+  ...
+# Subtest: forgery reply frame
+ok 128 - forgery reply frame
+  ---
+  duration_ms: 49.6836
+  type: 'test'
+  ...
+# Subtest: forgery text
+ok 129 - forgery text
+  ---
+  duration_ms: 47.8935
+  type: 'test'
+  ...
+# Subtest: forgery quality
+ok 130 - forgery quality
+  ---
+  duration_ms: 48.3945
+  type: 'test'
+  ...
+# Subtest: forgery mandatory tag
+ok 131 - forgery mandatory tag
+  ---
+  duration_ms: 51.8989
+  type: 'test'
+  ...
+# Subtest: forgery ledger
+ok 132 - forgery ledger
+  ---
+  duration_ms: 46.8783
+  type: 'test'
+  ...
+# Subtest: forgery status
+ok 133 - forgery status
+  ---
+  duration_ms: 48.9663
+  type: 'test'
+  ...
+# Subtest: forgery limit
+ok 134 - forgery limit
+  ---
+  duration_ms: 49.5451
+  type: 'test'
+  ...
+# Subtest: forgery schema
+ok 135 - forgery schema
+  ---
+  duration_ms: 46.772
+  type: 'test'
+  ...
+# Subtest: forgery comment
+ok 136 - forgery comment
+  ---
+  duration_ms: 50.6123
+  type: 'test'
+  ...
+# Subtest: forgery inherited SAN
+ok 137 - forgery inherited SAN
+  ---
+  duration_ms: 49.2439
+  type: 'test'
+  ...
+# Subtest: forgery extra field
+ok 138 - forgery extra field
+  ---
+  duration_ms: 49.8872
+  type: 'test'
+  ...
+# Subtest: forgery unsolicited negative tag
+ok 139 - forgery unsolicited negative tag
+  ---
+  duration_ms: 25.0019
+  type: 'test'
+  ...
+# Subtest: forgery incomplete exhausted tag
+ok 140 - forgery incomplete exhausted tag
+  ---
+  duration_ms: 39.9672
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget connected-advances
+ok 141 - exhaustive domain budget connected-advances
+  ---
+  duration_ms: 3738.4697
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget double-advances
+ok 142 - exhaustive domain budget double-advances
+  ---
+  duration_ms: 4005.3846
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget capture-advances
+ok 143 - exhaustive domain budget capture-advances
+  ---
+  duration_ms: 2307.0581
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget actual-ep-capture
+ok 144 - exhaustive domain budget actual-ep-capture
+  ---
+  duration_ms: 2276.8005
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget terminal-reply
+ok 145 - exhaustive domain budget terminal-reply
+  ---
+  duration_ms: 12893.7782
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget missing-history
+ok 146 - exhaustive domain budget missing-history
+  ---
+  duration_ms: 69.6319
+  type: 'test'
+  ...
+# Subtest: exhaustive domain budget wrong-flank
+ok 147 - exhaustive domain budget wrong-flank
+  ---
+  duration_ms: 537.0071
+  type: 'test'
+  ...
+# Subtest: strict null default disabled options
+ok 148 - strict null default disabled options
+  ---
+  duration_ms: 436.2455
+  type: 'test'
+  ...
+# Subtest: original counts and positive replay metadata
+ok 149 - original counts and positive replay metadata
+  ---
+  duration_ms: 0.8256
+  type: 'test'
+  ...
+# Subtest: standard castle both flanks colors chronological connected double staggered capture advances
+ok 150 - standard castle both flanks colors chronological connected double staggered capture advances
+  ---
+  duration_ms: 1071.8323
+  type: 'test'
+  ...
+# Subtest: physical full-history ALL positive reply terminal pawn loss and EP flags
+ok 151 - physical full-history ALL positive reply terminal pawn loss and EP flags
+  ---
+  duration_ms: 157.9049
+  type: 'test'
+  ...
+# Subtest: earlier history EP expires through castle and actual irreversible advance
+ok 152 - earlier history EP expires through castle and actual irreversible advance
+  ---
+  duration_ms: 296.606
+  type: 'test'
+  ...
+# Subtest: all negative identity rank flank chronology history and king exclusions
+ok 153 - all negative identity rank flank chronology history and king exclusions
+  ---
+  duration_ms: 2469.7195
+  type: 'test'
+  ...
+# Subtest: actual promotion mate illegal exclusions both flanks colors
+ok 154 - actual promotion mate illegal exclusions both flanks colors
+  ---
+  duration_ms: 772.5293
+  type: 'test'
+  ...
+# Subtest: immutability inherited priority storm and urgent pawn-loss mate selection
+ok 155 - immutability inherited priority storm and urgent pawn-loss mate selection
+  ---
+  duration_ms: 610.3645
+  type: 'test'
+  ...
+1..155
+# tests 155
+# suites 0
+# pass 155
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 40340.4356
