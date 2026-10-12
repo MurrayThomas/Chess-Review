@@ -303,3 +303,13 @@ Next: retain terminal full result; on PASS run the exact preregistered controls
 command on committed preparation source, then authenticate/replay every saved
 E083 row. All171origin/full original-scope and later integration/reproduction/
 independent strategic/human gates remain open; accepted credit stays zero.
+
+Source-only portability correction (2026-10-12): the new control driver used a
+Windows-resolvable lowercase plan.md alias; Git tracks E083/PLAN.md. Correct only
+that new seed spelling. Initial85-source review remains immutable. Separate
+path-case-full-review.json verifies all85actual driver/test closure paths match
+tracked spelling; only driver bytes and the PLAN path key change, plan hash equal.
+path-case-review.json is retained as a PARTIAL13-source runner-only diagnostic:
+its inspection omitted the separately seeded dynamic test module, so its removed
+list must not be mistaken for missing implementation or the actual full closure.
+No frozen source/evidence change, candidate execution or semantic qualification.

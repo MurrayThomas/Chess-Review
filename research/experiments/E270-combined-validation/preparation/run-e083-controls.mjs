@@ -15,7 +15,7 @@ const admission = await admitTerminalRegression();
 const self = directory + '/preparation/run-e083-controls.mjs';
 const testFile = directory + '/preparation/e083-controls.test.mjs';
 const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md',
-  'research/experiments/E083-contact-exchange-changes/plan.md', 'package.json', 'package-lock.json']);
+  'research/experiments/E083-contact-exchange-changes/PLAN.md', 'package.json', 'package-lock.json']);
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8', windowsHide: true}).trim();
 const out = directory + '/evidence/semantic-e083-controls-' + attempt;
 const runRoot = path.resolve('research/runs/E270/semantic-e083-controls-' + attempt);
