@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot connected-advances white
+ok 1 - pilot connected-advances white
+  ---
+  duration_ms: 132.6773
+  type: 'test'
+  ...
+# Subtest: pilot connected-advances black
+ok 2 - pilot connected-advances black
+  ---
+  duration_ms: 114.7103
+  type: 'test'
+  ...
+# Subtest: pilot connected-advances-queenside white
+ok 3 - pilot connected-advances-queenside white
+  ---
+  duration_ms: 54.5938
+  type: 'test'
+  ...
+# Subtest: pilot connected-advances-queenside black
+ok 4 - pilot connected-advances-queenside black
+  ---
+  duration_ms: 52.0137
+  type: 'test'
+  ...
+# Subtest: old per-event checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+ok 5 - old per-event checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+  ---
+  duration_ms: 173.9469
+  type: 'test'
+  ...
+# Subtest: en-passant off-destination storm pawn removal both castle flanks and colors
+ok 6 - en-passant off-destination storm pawn removal both castle flanks and colors
+  ---
+  duration_ms: 453.796
+  type: 'test'
+  ...
+# Subtest: exhaustive connected storm integer budgets preserve history geometry and atomic reply clearing
+ok 7 - exhaustive connected storm integer budgets preserve history geometry and atomic reply clearing
+  ---
+  duration_ms: 2178.2003
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3172.6387
