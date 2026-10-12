@@ -4,29 +4,28 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Current semantic work — E079 central-king replay pilot passed
+## Current semantic work — E079 complete controls passed; saved replay live
 
-2026-10-12. Previous goal turn made progress: E080 whole-result reuse qualified.
-Source review now confirms existing E079 separate scalar attack/ray/inventory,
-complete result/center/support-event/priority/ledger replay, conditional on E078
-parent and E039/E037 support-route checkers. General king safety, whole-game wins
-and broad strategic/human meanings remain open; no new accepted/origin credit.
+2026-10-12. Pilot7/7 passes98.697seconds at6fc6294; unchanged complete controls
+174/174 pass669.012seconds at e7967bb, retained0da1faf. ALL138original cases,
+30forgeries,3exhaustive integer-wrapper budgets and3strict/history/coverage
+controls pass. Includes22proven witnesses, all four center squares/both colors,
+8genuine core-to-core transitions, every original negative/error/terminal/refusal,
+source-proof/event/frame omissions and actual repetition. No source/canonical
+mutations, generated output, errors/signals/timeouts. Initial pilot estimate
+exceeded; revised300–750second smoke estimate and unchanged900second cap hold.
 
-Prospective amendment98a8f73 and implementation6fc6294 register/bind three stages:
-7-test120-second pilot,174-test900-second full original-case smoke,160-test
-900-second saved stage. The pilot passes7/7 in98.697seconds with no source/
-canonical changes, generated outputs, error/signal/timeout. It validates both
-colors, witness/whole-claim laundering, omitted defender reply, every integer
-basic wrapper budget and direct E039 rejection of incomplete success proof.
-Actual pilot exceeds10–60second estimate but stays under unchanged120second cap;
-no gate changed. Historical support-query work is costlier than earlier wrappers.
-Retain exact logs/source/receipt/PID/cost in evidence/semantic-e079-pilot-initial.
-
-The unchanged174-check smoke is live in its original process: runner7108,
-child14996, exec session42133, started2026-10-12T04:44:28Z. A live OS/process
-inspection and same-handle poll confirm continuing CPU work at about4minutes;
-no terminal result yet. Do not restart it. Next poll this SAME handle, qualify
-its terminal result and retain raw artifacts before gated saved replay.
+Saved stage is live at0da1faf: runner14872, child13108, exec session56391,
+OS start2026-10-12T04:55:58Z, original900second cap. Completed admission audit
+is in its raw stdout before any rows:261original Git inputs/72semantic sources,
+all6canonical originals, frozen98523f67 main/repeat/initially-clean trees all
+empty, matching config/environment/metrics/receipts/output, sole exact current
+ACTIVE-QUEUE metadata difference outside closure, policy epoch and5052inherited
+fingerprints authenticated. At2026-10-12T04:57:36Z,33rows are reported passed
+and original process is confirmed live. This is NOT terminal qualification.
+Next poll SAME session56391, retain all terminal artifacts and qualify ALL138
+rows/84saved replays/54exact errors plus22corruption controls if160checks pass.
+No new accepted/origin credit; E078/E039/E037 and shared Chess dependencies remain.
 
 Source audit for the NEXT E078 dependency found its separate scalar FEN/pawn
 graph/ray/maximal-battery derivation reconstructs own complete facts, but
@@ -38,14 +37,6 @@ prospectively registered new full-result adapter is required before reuse,
 conditional on E077; this is a source finding, not an executed E078 experiment
 or a new acceptance claim. Required liberation/strategic scope remains partial.
 
-Registered current work remains the unchanged174-check smoke against ALL138original cases,30forgeries,
-3integer-budget cases and3strict/history/coverage controls. Pilot cost suggests
-roughly300–750seconds instead of230–650; retain original900-second cap, no
-semantic/source/search changes. Saved stage remains gated; no E079 saved replay
-has yet run. All261historical inputs/72semantic sources,6canonical artifacts,
-5052inherited fingerprints and22certificates/40372replies/164744leaves must still
-pass their registered saved admission/replay gates. Full259-file12017-pass
-regression and preceding E080–E085 qualified closures are reused unchanged.
 All integration/reproduction/strategic/human gates remain open. Goal active.
 
 ## Latest semantic boundary — accepted E080 pawn-shield replay reused

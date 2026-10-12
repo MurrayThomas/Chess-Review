@@ -194,19 +194,30 @@
     "pilotSeconds": 98.6974977,
     "pilotPassed": true,
     "pilotEstimateExceeded": true,
-    "smokePending": true,
+    "smokePending": false,
     "savedReplayPending": true,
     "parentSemanticReplayRequired": true,
     "reusedE039E037TreeCheckersRequired": true,
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
-    "next": "Poll SAME live E079 smoke session42133; preserve terminal artifacts then gated160-test saved replay. E078 source audit requires a new complete-result adapter after this boundary.",
+    "next": "Poll SAME live E079 saved session56391; qualify complete160-test terminal and all raw artifacts. E078 source audit requires a new complete-result adapter after this boundary.",
     "smokeProcess": {
       "runnerPid": 7108,
       "childPid": 14996,
       "execSession": 42133,
-      "startedAt": "2026-10-12T04:44:28Z",
+      "terminal": true,
+      "passed": true
+    },
+    "smokePassed": true,
+    "smokeTests": 174,
+    "smokeSeconds": 669.0116844,
+    "savedProcess": {
+      "runnerPid": 14872,
+      "childPid": 13108,
+      "execSession": 56391,
+      "startedAt": "2026-10-12T04:55:58Z",
       "terminal": false
-    }
+    },
+    "historicalAdmissionAuditEmitted": true
   }
 }
