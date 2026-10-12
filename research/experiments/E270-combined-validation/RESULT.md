@@ -4,7 +4,53 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E071 complete octopus trees and terminal guard validated
+## Latest preparation boundary — E070 complete outpost oracle pilot and smoke passed
+
+2026-10-12. Registration924d60b/implementation767ad56:7/7pilot in11.313seconds,
+74source inputs/44,904raw bytes, retainedf38cbfd. Separate smoke registration7657a84/
+implementation552c1cb:190/190tests in27.118seconds,78inputs/72,752raw bytes,
+retained1a33910. Both under180second caps and prospective forecasts/soft storage
+estimates. Five artifacts each staged Git-byte-exact; no errors, timeouts,
+source/canonical changes or generated outputs. No process remains live.
+
+New separate whole oracle enumerates all enemy pawn routes by rank/file distance,
+not detector BFS: complete pre-promotion nodes, attacks, straight/capture/double
+edges and every challenge witness. Reconstructs full history/actual/relative rank,
+legal live pawn-support replacement counterframe and every support capture,
+all replies/knight presence/support/attacking pawns/terminals; exact eligibility,
+status/node ledger/refutation/atomic exhaustion. Full v51/inherited fresh E069/
+mandatory plain and advanced events/order/priorities/comment/disabled identity.
+Original checker additionally replays every emitted proof and challenge refutation.
+Shared Chess/E020 validator and E069 inheritance remain explicit dependencies.
+
+Pilot demonstrates original per-proof checkers accept omitted advanced tags and
+forged whole-result node counts; new checker rejects. Smoke ALL148original both-
+color/reflection cases (four illegal),32forgeries,4every-integer sweeps positive/
+refutation/no-legal-support/history,6strict-null-disabled/status/legal-capture-chain/
+history-vs-FEN/complete-domain/immutable-result controls. Captured-support loss,
+knight capture, promotion, vacuous enemy-pawn set, pinned supporters and remote
+blocked-but-theoretically-reaching pawns remain explicit. Fullhistory repetition
+is terminal where fresh FEN is not. Original candidate/checkers/frozen evidence
+unchanged. No general outpost strength, permanent safety or human usefulness claim.
+
+Before/after frozen gate verifies2658sources/1624canonical inputs; separate actual
+15prior-segment final input vectors verify1296hash comparisons. E073 original
+seven/eight-edge documentary discrepancy stays open. This is preparation,
+NOT E070 saved-evidence qualification; no accepted/provisional/support credit.
+Guarded metadata-only probe identifies148saved rows/3604ordered E069 fingerprints,
+213historical input paths per original manifest,3543443-byte results SHA
+ eaa1320fe913e059ea4cd49e2833a345d5031175e095c67d5116abe40e4b909e.
+No original saved payload has been semantically checked by this new segment yet.
+
+Next: preregister and implement complete historical E070 saved-result admission,
+ALL148row replay/ordered positive and32refutation metadata, exact original Git
+inputs/main-repeat-initially-clean states/physical outputs/receipts/policy epoch/
+3604inherited fingerprints/teaching identity, shape/receipt/raw rejection controls,
+and authenticate both new pilot/smoke source closures before rows. Reuse unchanged
+observations. Parent E069 semantics and all171-origin integration, changed-source
+three reproductions, broader strategy and human usefulness remain open.
+
+## Prior semantic boundary — E071 complete octopus trees and terminal guard validated
 
 2026-10-12. New independent whole oracle scans64squares for knight geometry and
 FEN inventory for literal P1 N3 B3 R5 Q9 K0 material; reconstructs full actual
