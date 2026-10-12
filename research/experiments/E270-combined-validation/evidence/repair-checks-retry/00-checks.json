@@ -1,0 +1,19 @@
+{
+  "revision": "8d50524bb1d750ae3d07625bda171f5e3c7864f0",
+  "file": "research/experiments/E270-combined-validation/code/producer-repair.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E270-combined-validation/code/producer-repair.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ all23fixed original panels admit exactly unchanged historical views with strict current concordance (22638.6171ms)\n✔ original and current executable identities stay distinct; old panel still fails strict-live checker (6.1941ms)\n✔ arbitrary bundle/path/hash/context overrides and unknown IDs reject (1.131ms)\n✔ changed current producer cannot pass structural or concordance admission (15.116ms)\n✔ forged historical metadata must still agree with authentic original frame (2.2863ms)\n✔ reserialized changed original WDL fails full successor concordance (24.0979ms)\n✔ reserialized changed current WDL fails full successor concordance (26.2052ms)\n✔ omitted successor/failed execution reject; successful stderr is retained per original contract (53.2168ms)\n✔ returned evidence is isolated from admitted original/current records (1964.3901ms)\n✔ source epochs permit only seven exact before/after transitions (1.4434ms)\n✔ unregistered changed or newly imported source rejects (0.7219ms)\n✔ complete historical closure admits explicit epochs, never an arbitrary expected source (1915.4497ms)\nℹ tests 12\nℹ suites 0\nℹ pass 12\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52964.7302\n",
+  "stderr": "",
+  "seconds": 53.0712226
+}

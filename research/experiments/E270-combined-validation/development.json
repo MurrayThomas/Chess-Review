@@ -3,7 +3,28 @@
   "experiment": "E270",
   "fullRegressionLaunched": false,
   "acceptedCredit": 0,
-  "currentExecutionGate": "pilot-failed",
-  "development": [{"experiment":"E212","reason":"Fixed authenticated historical producer differs from current E211 strict runtime context","evidence":"evidence/pilot/final.json","repairPrerequisite":"Separate archived and live producer roles; preserve exact ownership, original/current hashes and current strict execution","finiteCompatibilityEvidence":"evidence/producer-epochs/observations.json.gz","dependentBehavior":"Trace direct semantic consumers and all source closures before qualifying affected builds"}],
-  "sourceAvailabilityIsRuntimeAcceptance": false
+  "currentExecutionGate": "complete-producer-repair-dependent-tests-running",
+  "development": [
+    {
+      "experiment": "E212",
+      "reason": "Fixed authenticated historical producer differs from current E211 strict runtime context",
+      "evidence": "evidence/pilot/final.json",
+      "repairPrerequisite": "Separate archived and live producer roles; preserve exact ownership, original/current hashes and current strict execution",
+      "finiteCompatibilityEvidence": "evidence/producer-epochs/observations.json.gz",
+      "dependentBehavior": "Trace direct semantic consumers and all source closures before qualifying affected builds"
+    }
+  ],
+  "sourceAvailabilityIsRuntimeAcceptance": false,
+  "completeConcordance": {
+    "file": "evidence/complete-producer-repair/observations.json.gz",
+    "sha256": "8c675efe8219a4db3bea13182d77bac4d7a0f7fe308aec9a11b075c2b7bb39cf",
+    "panels": 48,
+    "positions": 757,
+    "independentTruth": false
+  },
+  "dependentChecks": "evidence/complete-repair-checks/started.json",
+  "supplementalStudy": "E220",
+  "sourceTransitions": 15,
+  "affectedRecords": 13,
+  "recordsReconciled": false
 }

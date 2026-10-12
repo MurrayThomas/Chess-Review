@@ -1,8 +1,55 @@
-# E270 — Combined-validation baseline; producer repair in progress
+# E270 — Combined validation; complete producer repair under test
 
 2026-10-12. **Validation in progress, not accepted or code-ready.** No build.json,
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
+
+## Latest development boundary — 2026-10-12
+
+The complete original producer closure has now been traced and repaired, with
+current strict E211 collector/context/checkers unchanged. Exact48-panel fresh
+concordance completed at583fbbf:757positions,24reused/24new observations,
+82.871seconds,300333compressed bytes, no errors; every non-Python panel field and
+complete historical semantic view agrees. SHA
+8c675efe8219a4db3bea13182d77bac4d7a0f7fe308aec9a11b075c2b7bb39cf.
+This proves only finite same-library concordance, not independent tablebase truth.
+Original V1 records retain their unavailable execution/stderr limitations.
+
+The original23-panel concordance d1954a55... also completed:362positions,
+3reused/20new,30.900seconds. The initial repair test run retained11pass/1fail:
+the test incorrectly required successful stderr to be empty. Dated amendment
+preserves the original contract permitting retained successful warnings. Retry
+retains12adversarial passes, then the original E211 execution test fails comparing
+authentic old/current Python metadata. Neither failed run was overwritten.
+
+Prospective complete-producer, saved-consumer-context and affected-record-trace
+amendments preserve all original plans/archives and pin15exact source transitions.
+Fixed private archive admission now covers8E211,23E212–E217,12E245,1stopped E249,
+4E250 panels. Legacy core comparison never fabricates observed process metadata.
+Current and historical executable identities remain distinct and separately
+checked. E249's original greater-than-three-second cost failure remains failed.
+Saved E249/E250 contexts honestly report original producers; current strict
+execution rejects those old records. Only exact authenticated verifier Git bytes
+at583fbbf cross the collection's own helper/registry source epoch.
+
+Implementation b9f6be9 is frozen for a16-file serial affected-study run. Its first
+file passes all15adversarial checks in130.693seconds, including all48original
+views, strict wrong-epoch and forged metadata rejection, complete domain/outcome
+mutations, stderr retention, immutable caller snapshots, legacy limitations,
+cost failure and original-context versus strict-current consumer checks. Earlier
+14-check development smoke also passed110.144seconds. Remaining dependent tests
+are RUNNING, not claimed passing. An additional unchanged E220 equality file is
+registered for a separate serial supplement before record reconciliation.
+
+All13affected records (10builds,3supports E211/E214/E228) must be qualified by
+passing study tests, exact source bindings and unchanged canonical archives
+before any update. Preserve original record bytes; no scope/accepted credit.
+Active records currently remain source-stale pending this gate. Baseline's earlier
+zero-stale count below describes the ORIGINAL freeze only. Full cumulative
+regression has NOT launched. New source freeze, successful new pilot, all259
+maintained files, independent semantic/integration/reproduction/strategic/human
+gates remain. Concrete next step: finish the frozen16-file run, then E220
+supplement, reconcile qualified records and take the new source freeze/pilot.
 
 ## Operational census and source freeze
 
@@ -36,8 +83,8 @@ Eleven historical test writeFile destinations are redirected by an explicit
 Node preload into an isolated research/runs output tree. Canonical reads stay
 unchanged; unknown source/evidence/dataset/git writes reject. Mutation-test copies
 in research/runs remain permitted. Original options/bytes preserved; wx targets
-are fresh, overwrite targets retain original archives. Original tests are NOT
-edited or excluded. The guard is output configuration, not an OS security sandbox.
+are fresh, overwrite targets retain original archives. Initial guard tests were not edited or excluded; later producer-role changes
+are explicitly preregistered above. The guard is output configuration, not an OS security sandbox.
 
 First guard test2pass/1fail: Windows Node --import rejected a bare absolute C:
 path before loading the guard. Original child diagnostic retained with a candid
@@ -84,7 +131,7 @@ they do not override this concrete failed execution gate. Downstream affected
 behavior must be traced/tested, not assumed green from source matching. No new
 accepted/readiness credit or full-suite pass is claimed.
 
-## Concrete resume and remaining combined gates
+## Original first-pilot resume record and remaining combined gates
 
 Implement separate historical-versus-live producer admission: fixed original
 archive ownership, immutable original producer record, current program/module/

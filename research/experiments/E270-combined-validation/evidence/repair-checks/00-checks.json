@@ -1,0 +1,19 @@
+{
+  "revision": "08546cd01d78f47ce2a9f8c0b887198e0b1cd8d6",
+  "file": "research/experiments/E270-combined-validation/code/producer-repair.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E270-combined-validation/code/producer-repair.test.mjs"
+  ],
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ all23fixed original panels admit exactly unchanged historical views with strict current concordance (23554.0508ms)\n✔ original and current executable identities stay distinct; old panel still fails strict-live checker (6.3603ms)\n✔ arbitrary bundle/path/hash/context overrides and unknown IDs reject (1.0904ms)\n✔ changed current producer cannot pass structural or concordance admission (14.7277ms)\n✔ forged historical metadata must still agree with authentic original frame (2.9395ms)\n✔ reserialized changed original WDL fails full successor concordance (26.6944ms)\n✔ reserialized changed current WDL fails full successor concordance (25.9038ms)\n✖ same WDL with omitted successor/domain/execution still rejects (55.9857ms)\n✔ returned evidence is isolated from admitted original/current records (1959.5978ms)\n✔ source epochs permit only seven exact before/after transitions (1.4994ms)\n✔ unregistered changed or newly imported source rejects (0.7469ms)\n✔ complete historical closure admits explicit epochs, never an arbitrary expected source (1807.4997ms)\nℹ tests 12\nℹ suites 0\nℹ pass 11\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 54540.1192\n\n✖ failing tests:\n\ntest at research\\experiments\\E270-combined-validation\\code\\producer-repair.test.mjs:10:1\n✖ same WDL with omitted successor/domain/execution still rejects (55.9857ms)\n  AssertionError [ERR_ASSERTION]: Missing expected exception.\n      at TestContext.<anonymous> (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/producer-repair.test.mjs:10:262)\n      at Test.runInAsyncScope (node:async_hooks:228:14)\n      at Test.run (node:internal/test_runner/test:1118:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)\n      at Test.postRun (node:internal/test_runner/test:1247:19)\n      at Test.run (node:internal/test_runner/test:1175:12)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {\n    generatedMessage: false,\n    code: 'ERR_ASSERTION',\n    actual: undefined,\n    expected: undefined,\n    operator: 'throws',\n    diff: 'simple'\n  }\n",
+  "stderr": "",
+  "seconds": 54.638189399999995
+}
