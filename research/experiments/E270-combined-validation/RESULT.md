@@ -4,7 +4,68 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E063 historical pawn-storm results qualified
+## Latest preparation boundary — E062 independent causal pawn-space smoke qualified
+
+2026-10-12. Pilot registered030bcb2/implementeda006a64:7/7PASS in11.873seconds,
+within10–90forecast/180cap;67source inputs/43,526raw bytes, retained2269695.
+Full163-test smoke registered373e718/implemented79a6a0d. Initial child0/163pass/
+zero other TAP outcomes in28.942seconds, but stagePassedFALSE because copied
+runner count155 differed from registered163. Retainff861b3 at
+ evidence/semantic-e062-smoke-initial/ (71inputs/68,206bytes). No chess assertion
+failure; wrong runner expectation missed before dispatch. No timeout/source/
+canonical/generated changes. Prospective correctionb442ef1/implementationdf5b9c1
+only corrects expected163 andbinds correction amendment; tests/oracle/candidate/
+fixtures/caps unchanged. Automatic approval-review usage failure briefly prevented
+executing correction; subsequent same authorization succeeded, no bypass.
+Full retry163/163PASS in33.880seconds, within15–120forecast/300cap;72inputs/
+68,543bytes retained8697909 at evidence/semantic-e062-smoke-count-corrected/.
+Both source epochs authenticated: initial71inputs against recorded
+79a6a0d2d433372ed6c0f85beea72623de7a5229 Git; corrected72current inputs against
+df5b9c1d87929e307b81854279724a2dd5af5dca. Initial failed stage remains failed.
+
+Separate whole oracle imports no E062 candidate/helpers. Independent file/rank
+pawn geometry, full-history actual/legal before+removed-only-mover hypothetical
+frames, ALL legal move scans before king filtering, complete ordered king sets
+including castling, causal denied intersection andALL actual full-history replies.
+Mandatory presence/absence/text/quality/v43/101.1 inherited order/comment/strict
+null options/disabled identity/exact work/atomic exhaustion checked. BOTH
+hypothetical attempts charged even if first invalid; alllegalmoves scanned count,
+not just king records. Explicit E061 output+priority/Chess/E020 legality/original
+positive checker dependencies remain. Pilot old per-event ledger forgery rejected
+by whole check, physical standardcastle king/queenside bothcolors restoration,
+actual EP anddirect illegal own-king exposure/before-turn/dead causal cases pass.
+
+Full108original color-paired rows:104whole/fourabstract illegal errors;
+96complete/4disabled/4exhausted states/48certificates/560replies/1000king-move
+references/56denied squares/eighthistory plies/eightcastle references. Physical
+ALLpositive full-history reply reconstruction confirms12pawn captures/eightterminal
+replies andexact remaining controls; complete king domains andcausal restoration
+physically verified.40whole corruptions rejected; seven exhaustive integer
+0..needed+1groups span hypothetical attempts/alllegal scans/replies/atomic absence.
+Direct original illegal/dead/pinned counterparts/colors, fullhistory+EP/strict
+counter tamper/actual promotion-mate-illegal/recorded negatives/immutability/
+parentpriority/urgentpawn-loss+mate selection checks pass.
+
+15raw Git blobs byte-exact,180,275bytes including initialfailed attempt.
+23prior E063–E085qualified closures/1942source comparisons unchanged. Frozen
+2658sources/1624canonical unchanged;259-file12017-test PASS reused. Source/diff
+checks pass; allprocesses terminal/no live handle. No accepted/provisional/support/
+origin credit or production/push. Pawn restriction does not establish general
+space/advantage/permanence/other-unit safe occupation/human usefulness; actual
+irreversible pawn-move scope does not imply generic fresh-FEN history safety.
+
+Next: register E062 historical whole-result/source/receipt/reproduction/canonical/
+ordered metadata/inherited fingerprint qualification. Guarded original metadata:
+frozenff182a35b80dc4fe0e6fec565cb49133b79a6518,181historical inputs/52semantic,
+sixcanonical artifacts/108newrows/2592inherited E061 fingerprints. Main+initially-
+clean empty; repeat exact own-evidence sole untracked entry. New E062 saved
+payload replay remains unperformed. E061 parent semantics, E066direct queen-
+capture continuation, E067direct removed-pawn controls/global terminal API gap,
+E073eight/seven-edge contradiction andall171origin combined integration/exact
+changed-source three reproductions/broader strategy/precision/human usefulness
+remain OPEN; full research goal active.
+
+## Prior semantic boundary — E063 historical pawn-storm results qualified
 
 2026-10-12. Registration0aabae1/implementation103460d:122/122saved PASS in26.862
 seconds, within25–120forecast/600cap. ALL100rows:96complete saved results with
