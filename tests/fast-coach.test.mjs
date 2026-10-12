@@ -123,3 +123,12 @@ test('Removing pawn support is a real risk or opportunity even when the attack i
   }
  }
 });
+
+test('Combined coaching keeps provisional change evidence separate from accepted development',()=>{
+ const r=row('Nc6'),f=r.result.findings.find(f=>f.event==='minor-development');assert.equal(f.researchStatus,'accepted');
+ const answer=reply(r).items[0];assert.equal(answer.researchStatus,'provisional');assert.match(answer.kind,/Coach synthesis/);
+ assert.ok(answer.scopes.some(s=>s.occurrence==='E200 (provisional)'));
+ assert.ok(f.scopes.every(s=>answer.scopes.some(a=>a.occurrence===s.occurrence&&a.scope===s.scope)));
+ assert.ok(answer.supporting.some(s=>s.event==='recorded-move-changes'&&s.sourceText.includes('e5')));
+ assert.equal(f.researchStatus,'accepted');assert.ok(!f.scopes.some(s=>s.occurrence==='E200 (provisional)'));
+});
