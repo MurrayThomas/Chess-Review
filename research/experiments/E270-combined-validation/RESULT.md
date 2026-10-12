@@ -63,17 +63,37 @@ match the original freeze. Build status returns162provisional ready batches,
 zero SOURCE-stale; accepted378/1085, additional provisional539, support127,
 strategic prerequisites41 remain unchanged. No acceptance or new concept credit.
 
-The repaired freeze will bind all15current configuration files (all dated
-amendments, plan, root/scoped retention attributes, both fixed artifact manifests
-and registry), complete source/test closures and the consumed fixed concordance
-proof as a canonical test input. Expect1624archives: all1623original plus that
-proof. Syntax/configuration/source smoke checks pass; ALL live retry source
-bindings stayed unchanged during this preparation. Original baseline immutable.
+The repaired freeze atbced17c completed18.313seconds:2658source/configuration
+bindings,ALL259maintained coach test files,1624canonical test inputs/252122055bytes,
+9support contracts and54duplicate groups. It binds all15repair configuration
+files and the fixed consumed concordance proof in addition to all1623original
+archives. Freeze SHA2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b;
+census SHA15aa48f47854f5602f2ff30777e8778db21460bec6ab3274a1a484022dca8367.
+Counts378accepted/539provisional/127support/41strategic prerequisites unchanged.
+Original baseline immutable. Every27terminal repair-artifact and13updated-record
+Git blob matches its recorded physical hash; process snapshot is separate metadata.
 
-Next: commit qualified boundary, create the repaired source freeze, then a NEW
-pilot. Full cumulative regression has NOT launched; it requires that pilot to
-pass. All259maintained coach files and later independent semantic/integration/
-reproduction/strategic/human gates remain; full original meanings stay open.
+NEW repaired pilot passes44/44tests120.448seconds, no hard timeout, source changes
+or canonical input changes. Both original E181 and repaired E212 files run on
+this exact freeze. Complete logs/four generated output-audit artifacts retained;
+all9pilot input/output/log Git blobs match their raw hashes. Qualification verifies
+actual freeze SHA/revision/mode, success, no timeout/signal/errors and full source/
+canonical preservation. Pilot commit1fa5245; no failed attempt was overwritten.
+
+The full cumulative run is now LAUNCHED and RUNNING, not passing or accepted.
+ALL259files, concurrency1, original600second per-test and14400second whole limits,
+complete TAP/stderr logs, same isolated output guard and frozen canonical/source
+before/after hashes. Evidence/full-repaired/started.json and process.json identify
+runner PID6976, test PID20036; command is code/run-tests-repaired.mjs full,
+source revisionbced17c, freeze SHA above. Actual OS process was verified live.
+Never restart because an observation wait expires. Preserve this source freeze.
+
+Next: observe the same live cumulative process to its terminal evidence. Diagnose
+and retain any failure before source changes/new retry. Even a full pass leaves
+independent saved semantic replay, combined API occurrence/absence/history/
+terminal/priority/budget integration, exact changed-source main/repeat/initially
+clean reproduction, independent chess/strategic/human usefulness and broad
+original meanings open. No new concept or accepted credit; goal remains active.
 
 ## Operational census and source freeze
 

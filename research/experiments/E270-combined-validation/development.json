@@ -1,19 +1,10 @@
 {
   "schema": "combined-development-v1",
   "experiment": "E270",
-  "fullRegressionLaunched": false,
+  "fullRegressionLaunched": true,
   "acceptedCredit": 0,
-  "currentExecutionGate": "affected-qualification-passed-awaiting-repaired-freeze-pilot",
-  "development": [
-    {
-      "experiment": "E212",
-      "reason": "Fixed authenticated historical producer differs from current E211 strict runtime context",
-      "evidence": "evidence/pilot/final.json",
-      "repairPrerequisite": "Separate archived and live producer roles; preserve exact ownership, original/current hashes and current strict execution",
-      "finiteCompatibilityEvidence": "evidence/producer-epochs/observations.json.gz",
-      "dependentBehavior": "Trace direct semantic consumers and all source closures before qualifying affected builds"
-    }
-  ],
+  "currentExecutionGate": "full-cumulative-running",
+  "development": [],
   "sourceAvailabilityIsRuntimeAcceptance": false,
   "completeConcordance": {
     "file": "evidence/complete-producer-repair/observations.json.gz",
@@ -22,7 +13,7 @@
     "positions": 757,
     "independentTruth": false
   },
-  "dependentChecks": "evidence/complete-repair-retry/started.json",
+  "dependentChecks": "evidence/complete-repair-retry/summary.json",
   "supplementalStudy": "E220 included in complete retry",
   "sourceTransitions": 15,
   "affectedRecords": 13,
@@ -48,5 +39,37 @@
     "codeReadyBatches": 162,
     "staleBatches": 0,
     "semanticAcceptance": false
+  },
+  "originalDevelopmentTrigger": [
+    {
+      "experiment": "E212",
+      "reason": "Fixed authenticated historical producer differs from current E211 strict runtime context",
+      "evidence": "evidence/pilot/final.json",
+      "repairPrerequisite": "Separate archived and live producer roles; preserve exact ownership, original/current hashes and current strict execution",
+      "finiteCompatibilityEvidence": "evidence/producer-epochs/observations.json.gz",
+      "dependentBehavior": "Trace direct semantic consumers and all source closures before qualifying affected builds"
+    }
+  ],
+  "repairedFreeze": {
+    "file": "evidence/baseline-repaired/freeze.json.gz",
+    "sha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+    "sourceBindings": 2658,
+    "tests": 259,
+    "canonicalEvidenceFiles": 1624
+  },
+  "pilot": {
+    "file": "evidence/pilot-repaired/qualification.json",
+    "passed": 44,
+    "failed": 0,
+    "seconds": 120.44806529999998,
+    "freezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b"
+  },
+  "full": {
+    "file": "evidence/full-repaired/started.json",
+    "process": "evidence/full-repaired/process.json",
+    "pid": 20036,
+    "runnerPid": 6976,
+    "tests": 259,
+    "terminalResult": false
   }
 }
