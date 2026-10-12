@@ -1,0 +1,400 @@
+TAP version 13
+# Subtest: authored positive/error control: queen-double
+ok 1 - authored positive/error control: queen-double
+  ---
+  duration_ms: 16.1012
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queen-double-black
+ok 2 - authored positive/error control: queen-double-black
+  ---
+  duration_ms: 0.879
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: knight-double
+ok 3 - authored positive/error control: knight-double
+  ---
+  duration_ms: 105.3999
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: knight-double-black
+ok 4 - authored positive/error control: knight-double-black
+  ---
+  duration_ms: 82.4436
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: regional-double
+ok 5 - authored positive/error control: regional-double
+  ---
+  duration_ms: 136.0316
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: regional-double-black
+ok 6 - authored positive/error control: regional-double-black
+  ---
+  duration_ms: 71.4862
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: f-pawn
+ok 7 - authored positive/error control: f-pawn
+  ---
+  duration_ms: 32.1248
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: f-pawn-black
+ok 8 - authored positive/error control: f-pawn-black
+  ---
+  duration_ms: 32.203
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: h-pawn
+ok 9 - authored positive/error control: h-pawn
+  ---
+  duration_ms: 37.5187
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: h-pawn-black
+ok 10 - authored positive/error control: h-pawn-black
+  ---
+  duration_ms: 30.7275
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: g-pawn
+ok 11 - authored positive/error control: g-pawn
+  ---
+  duration_ms: 31.0466
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: g-pawn-black
+ok 12 - authored positive/error control: g-pawn-black
+  ---
+  duration_ms: 28.0678
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: central-contact
+ok 13 - authored positive/error control: central-contact
+  ---
+  duration_ms: 62.55
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: central-contact-black
+ok 14 - authored positive/error control: central-contact-black
+  ---
+  duration_ms: 46.1493
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: pinned-contact
+ok 15 - authored positive/error control: pinned-contact
+  ---
+  duration_ms: 153.0677
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: pinned-contact-black
+ok 16 - authored positive/error control: pinned-contact-black
+  ---
+  duration_ms: 210.976
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: unchanged-contact
+ok 17 - authored positive/error control: unchanged-contact
+  ---
+  duration_ms: 29.8039
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: unchanged-contact-black
+ok 18 - authored positive/error control: unchanged-contact-black
+  ---
+  duration_ms: 28.357
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: ordinary-pawn
+ok 19 - authored positive/error control: ordinary-pawn
+  ---
+  duration_ms: 11.0812
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: ordinary-pawn-black
+ok 20 - authored positive/error control: ordinary-pawn-black
+  ---
+  duration_ms: 11.0002
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queenside-pawn
+ok 21 - authored positive/error control: queenside-pawn
+  ---
+  duration_ms: 12.4161
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queenside-pawn-black
+ok 22 - authored positive/error control: queenside-pawn-black
+  ---
+  duration_ms: 11.7411
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: kingside-pawn
+ok 23 - authored positive/error control: kingside-pawn
+  ---
+  duration_ms: 9.7842
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: kingside-pawn-black
+ok 24 - authored positive/error control: kingside-pawn-black
+  ---
+  duration_ms: 10.1602
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: promotion
+ok 25 - authored positive/error control: promotion
+  ---
+  duration_ms: 104.935
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: promotion-black
+ok 26 - authored positive/error control: promotion-black
+  ---
+  duration_ms: 78.5243
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: unchanged-pawns
+ok 27 - authored positive/error control: unchanged-pawns
+  ---
+  duration_ms: 30.6463
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: unchanged-pawns-black
+ok 28 - authored positive/error control: unchanged-pawns-black
+  ---
+  duration_ms: 29.0824
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queen-exchange
+ok 29 - authored positive/error control: queen-exchange
+  ---
+  duration_ms: 2.7513
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queen-exchange-black
+ok 30 - authored positive/error control: queen-exchange-black
+  ---
+  duration_ms: 2.6136
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queen-recapture
+ok 31 - authored positive/error control: queen-recapture
+  ---
+  duration_ms: 51.953
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: queen-recapture-black
+ok 32 - authored positive/error control: queen-recapture-black
+  ---
+  duration_ms: 45.4202
+  type: 'test'
+  ...
+# Subtest: authored positive/error control: ep
+ok 33 - authored positive/error control: ep
+  ---
+  duration_ms: 15.9692
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: contact frame and all contact claims omitted
+ok 34 - whole-result rejection: contact frame and all contact claims omitted
+  ---
+  duration_ms: 151.8438
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: exchange frame and all exchange claims omitted
+ok 35 - whole-result rejection: exchange frame and all exchange claims omitted
+  ---
+  duration_ms: 74.3043
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: required hypothetical actor frame omitted
+ok 36 - whole-result rejection: required hypothetical actor frame omitted
+  ---
+  duration_ms: 133.9939
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: required exchange frame omitted
+ok 37 - whole-result rejection: required exchange frame omitted
+  ---
+  duration_ms: 54.8245
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: entire event omitted
+ok 38 - whole-result rejection: entire event omitted
+  ---
+  duration_ms: 131.6295
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: entire event duplicated
+ok 39 - whole-result rejection: entire event duplicated
+  ---
+  duration_ms: 139.1138
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: events reordered
+ok 40 - whole-result rejection: events reordered
+  ---
+  duration_ms: 132.7222
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: target type forged
+ok 41 - whole-result rejection: target type forged
+  ---
+  duration_ms: 131.6439
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: actor forged
+ok 42 - whole-result rejection: actor forged
+  ---
+  duration_ms: 134.3354
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: move capture forged
+ok 43 - whole-result rejection: move capture forged
+  ---
+  duration_ms: 130.0743
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: move promotion forged
+ok 44 - whole-result rejection: move promotion forged
+  ---
+  duration_ms: 136.3167
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: unregistered move flags inserted
+ok 45 - whole-result rejection: unregistered move flags inserted
+  ---
+  duration_ms: 131.2718
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: inventory omitted
+ok 46 - whole-result rejection: inventory omitted
+  ---
+  duration_ms: 135.9733
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: history omitted
+ok 47 - whole-result rejection: history omitted
+  ---
+  duration_ms: 53.8442
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: before position forged
+ok 48 - whole-result rejection: before position forged
+  ---
+  duration_ms: 134.9656
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: after position forged
+ok 49 - whole-result rejection: after position forged
+  ---
+  duration_ms: 134.2981
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: region label forged
+ok 50 - whole-result rejection: region label forged
+  ---
+  duration_ms: 135.6091
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: complex label forged
+ok 51 - whole-result rejection: complex label forged
+  ---
+  duration_ms: 145.9755
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: comment forged
+ok 52 - whole-result rejection: comment forged
+  ---
+  duration_ms: 130.4175
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: quality assertion forged
+ok 53 - whole-result rejection: quality assertion forged
+  ---
+  duration_ms: 131.1763
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: spurious claim on negative
+ok 54 - whole-result rejection: spurious claim on negative
+  ---
+  duration_ms: 33.9028
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: status forged
+ok 55 - whole-result rejection: status forged
+  ---
+  duration_ms: 136.022
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: nodes forged
+ok 56 - whole-result rejection: nodes forged
+  ---
+  duration_ms: 138.2192
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: limit forged
+ok 57 - whole-result rejection: limit forged
+  ---
+  duration_ms: 131.9591
+  type: 'test'
+  ...
+# Subtest: whole-result rejection: inherited result forged
+ok 58 - whole-result rejection: inherited result forged
+  ---
+  duration_ms: 132.2876
+  type: 'test'
+  ...
+# Subtest: every budget boundary: regional-double
+ok 59 - every budget boundary: regional-double
+  ---
+  duration_ms: 1670.9174
+  type: 'test'
+  ...
+# Subtest: every budget boundary: queen-recapture
+ok 60 - every budget boundary: queen-recapture
+  ---
+  duration_ms: 281.681
+  type: 'test'
+  ...
+# Subtest: every budget boundary: ordinary-pawn
+ok 61 - every budget boundary: ordinary-pawn
+  ---
+  duration_ms: 77.7035
+  type: 'test'
+  ...
+# Subtest: focused-checker omissions remain distinct from whole-result verification
+ok 62 - focused-checker omissions remain distinct from whole-result verification
+  ---
+  duration_ms: 184.9545
+  type: 'test'
+  ...
+# Subtest: default/disabled and malformed controls
+ok 63 - default/disabled and malformed controls
+  ---
+  duration_ms: 255.6971
+  type: 'test'
+  ...
+# Subtest: terminal root/result; full equality and suppression
+ok 64 - terminal root/result; full equality and suppression
+  ---
+  duration_ms: 34.1879
+  type: 'test'
+  ...
+# Subtest: prospective unpinning distinction: geometric-before versus legal-before
+ok 65 - prospective unpinning distinction: geometric-before versus legal-before
+  ---
+  duration_ms: 227.476
+  type: 'test'
+  ...
+1..65
+# tests 65
+# suites 0
+# pass 65
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7381.107
