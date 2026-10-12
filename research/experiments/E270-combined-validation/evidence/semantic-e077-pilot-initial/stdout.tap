@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive connected-new-diagonal
+ok 1 - pilot whole positive connected-new-diagonal
+  ---
+  duration_ms: 50.4156
+  type: 'test'
+  ...
+# Subtest: pilot whole positive connected-new-diagonal-black
+ok 2 - pilot whole positive connected-new-diagonal-black
+  ---
+  duration_ms: 13.4301
+  type: 'test'
+  ...
+# Subtest: pilot whole positive rank-rook-four
+ok 3 - pilot whole positive rank-rook-four
+  ---
+  duration_ms: 50.2402
+  type: 'test'
+  ...
+# Subtest: pilot whole positive rank-rook-four-black
+ok 4 - pilot whole positive rank-rook-four-black
+  ---
+  duration_ms: 46.6225
+  type: 'test'
+  ...
+# Subtest: pilot closes old checker comment gap
+ok 5 - pilot closes old checker comment gap
+  ---
+  duration_ms: 32.7181
+  type: 'test'
+  ...
+# Subtest: pilot closes old checker inherited field gap
+ok 6 - pilot closes old checker inherited field gap
+  ---
+  duration_ms: 17.454
+  type: 'test'
+  ...
+# Subtest: pilot every integer simultaneous-pair budget
+ok 7 - pilot every integer simultaneous-pair budget
+  ---
+  duration_ms: 71.7345
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 302.3005
