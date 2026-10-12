@@ -262,3 +262,44 @@ Next after full PASS: bind exact saved E083 canonical/source/receipt epoch and
 new controls, run preregistered positive smoke and compound-omission mutations,
 then every saved row/error contract and complete representative budget boundaries.
 Retain failures before repairs. No accepted/new concept credit.
+
+## E083 controls and terminal admission prepared — 2026-10-12
+
+Previous goal turn made concrete source progress (21b4e5b), not semantic
+acceptance. This continuation verifies the SAME runner6976/test20036 live and
+continues separate source-only preparation. No restart, frozen edits or rerun.
+
+The new preparation/semantic-gate.mjs admits only the exact full259-file terminal
+PASS, matching original start identity/freeze/revision, zero exit/error/signal/
+timeout, complete TAP/stderr hashes and unchanged canonical/source hashes. New
+controls dynamically import candidate/Chess ONLY after that gate. The bounded
+driver retains complete logs, process/command/environment/source bindings and
+before/after source/canonical hashes; unexpected generated files fail the stage.
+Direct one-process node:test execution avoids an orphan test-worker tree at the
+registered120-second cap. This driver is not itself executed/qualified yet.
+
+preparation/e083-controls.test.mjs prepares65checks:33original authored/color or
+error controls,25named whole-result forgeries,3complete representative budget
+boundary tests and4focused-omission/default/terminal/unpinning controls. Source
+review corrects terminal-root expectation before execution: E020 rejects an
+illegal/terminal root before E083 can return; terminal RESULTS remain suppressed.
+The two original checker omission hypotheses and pinned-versus-unpinned contact
+interpretation stay unexecuted until the full gate. No claimed empirical bypass.
+
+Dated AMENDMENT-e083-guarded-session.md precedes a guarded session factory: open
+unmodified D001 loader once per authenticated finite batch, preserve stateless
+per-call entrypoint, expose no caller-injected receipt. This removes repeated
+whole-registry validation per pure authored-case check; no permission/hash check,
+scientific success, data source or120/600-second limit is weakened or cached.
+
+All4prepared modules pass syntax parsing; maintained-source and diff checks pass.
+evidence/preparation-e083/controls-source-review.json binds85source inputs and
+actual ESM parser hash; all2658active frozen sources remain unchanged. Original
+source-review.json is preserved as the earlier unexecuted21b4e5b preparation.
+New code is outside active freeze, ZERO candidate executions/saved replays and
+NOT semantically qualified. Full process remains live, last observed E211 with
+11097passing top-level tests and no not-ok entries (interim, not a full pass).
+Next: retain terminal full result; on PASS run the exact preregistered controls
+command on committed preparation source, then authenticate/replay every saved
+E083 row. All171origin/full original-scope and later integration/reproduction/
+independent strategic/human gates remain open; accepted credit stays zero.

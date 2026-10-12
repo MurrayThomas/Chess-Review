@@ -166,10 +166,18 @@ function reconstruct(input, parent) {
  * Caller must bind/authenticate the canonical artifact and source epoch first.
  * This is not a complete coach acceptance entrypoint or a fresh candidate run.
  */
-export async function checkSavedE083(input, actual, parentResult) {
+export async function openE083Replay() {
   const {receipt} = await openResearchData(['D001'], {purpose: 'test'});
-  const expected = reconstruct(input, parentResult);
-  assert.deepEqual(actual, expected, 'E083 whole result differs from independent segment reconstruction');
-  return {segment: 'E083', exactResult: true, inheritedComparisonOnly: true,
-    parentSemanticReplayRequired: true, sharedChessDependency: true, acceptedCredit: 0, receipt};
+  return {
+    receipt: clone(receipt),
+    check(input, actual, parentResult) {
+      const expected = reconstruct(input, parentResult);
+      assert.deepEqual(actual, expected, 'E083 whole result differs from independent segment reconstruction');
+      return {segment: 'E083', exactResult: true, inheritedComparisonOnly: true,
+        parentSemanticReplayRequired: true, sharedChessDependency: true, acceptedCredit: 0, receipt: clone(receipt)};
+    }
+  };
+}
+export async function checkSavedE083(input, actual, parentResult) {
+  return (await openE083Replay()).check(input, actual, parentResult);
 }
