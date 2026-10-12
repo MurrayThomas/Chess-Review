@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive outside-branched-chain
+ok 1 - pilot whole positive outside-branched-chain
+  ---
+  duration_ms: 75.955
+  type: 'test'
+  ...
+# Subtest: pilot whole positive outside-branched-chain-black
+ok 2 - pilot whole positive outside-branched-chain-black
+  ---
+  duration_ms: 17.4184
+  type: 'test'
+  ...
+# Subtest: pilot whole positive triple-queen-middle
+ok 3 - pilot whole positive triple-queen-middle
+  ---
+  duration_ms: 57.4591
+  type: 'test'
+  ...
+# Subtest: pilot whole positive triple-queen-middle-black
+ok 4 - pilot whole positive triple-queen-middle-black
+  ---
+  duration_ms: 49.3486
+  type: 'test'
+  ...
+# Subtest: pilot closes old checker comment gap
+ok 5 - pilot closes old checker comment gap
+  ---
+  duration_ms: 26.1882
+  type: 'test'
+  ...
+# Subtest: pilot closes old checker inherited field gap
+ok 6 - pilot closes old checker inherited field gap
+  ---
+  duration_ms: 21.9831
+  type: 'test'
+  ...
+# Subtest: pilot every integer two-event budget
+ok 7 - pilot every integer two-event budget
+  ---
+  duration_ms: 5442.1607
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5706.1678
