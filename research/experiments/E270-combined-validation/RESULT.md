@@ -4,7 +4,54 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E070 complete outpost results qualified
+## Latest preparation boundary — E069 checking-invasion whole oracle passed
+
+2026-10-12. Previous goal turn made progress qualifying E070. Registration
+0e41c95/implementationb1bc506:7/7pilot in9.133seconds,73inputs/44,285raw bytes,
+retainedbbd70a8. Faster than10–60forecast; no cap violation (180seconds).
+Smoke implementation8b1ed1b:230/230tests in20.843seconds,76inputs/77,405raw bytes,
+retainedeb63997, within15–80forecast/180cap. Ten raw process artifacts Git-byte-
+exact. No failures, timeouts, source/canonical changes or generated outputs;
+all processes terminal, no live handle. Original candidate/checker/evidence intact.
+
+New separate whole oracle scans64squares for enemy king and selects strict
+intervening squares by file bounds, ordered from invader to king; no detector
+walking helper. Reconstructs full actual history, relative entry ranks, direct
+horizontal checking ray, all legal replies/retained invader/check/mate/stalemate/
+draw/terminal flags. Exact eligibility/status/node ledger/atomic exhaustion,
+fresh E068 inheritance/v50/events/order/101.004rook101.005queen/selected comment/
+disabled identity; every own certificate also unchanged original checker.
+Shared Chess/E020 rules/validator and E068 priority remain dependencies, not
+independent rules or general safe/winning/strategic invasion truth.
+
+Pilot rook/queen bothcolors, old per-event checker whole-result ledger/omitted-tag
+gaps, every integer budget for historical rook and eighth-rank queen. Smoke
+ALL192original both-color/reflection cases,28forgeries,4every-integer sweeps
+rook/queen/history/negative,6strict-null-disabled/status/history-vs-FEN/capture-
+interposition-check-evasion-terminal/immutable-return/parent-priority controls.
+Eight original illegal cases; rook/queen plain entries, captures, capturable
+invaders, discovered/diagonal/vertical/blocked/no-check/non-entry negatives,
+terminal actual/replies and full-history repetition preserved. Fullhistory can
+be terminal where fresh FEN is not. Node count and mandatory tag laundering reject.
+
+Frozen2658sources/1624canonical unchanged;16prior qualified input closures verify
+1380source comparisons. Original E073 eight/seven-edge documentary contradiction
+stays open. No accepted/provisional/support/origin credit; this is PREPARATION,
+not E069 historical saved-result qualification. No extra inherited/full suite
+collection. Guarded metadata probe found192saved rows/3412baseline fingerprints,
+209historical inputs,59semantic checker/fixture/E068 sources, frozen revision
+32068c472dbfd8c4662b5aaf881ec2fb4bebc668; main/repeat/initially-clean all empty.
+Original results2891768bytes SHA66a5d69986143bff0ea7534e6694dd80373d0a3233cc0d0ee45ab1fd3f334513.
+Metadata identity is not saved chess semantics, which have not run in this segment.
+
+Next: preregister complete ALL192saved-result/ordered own metadata replay plus
+exact historical Git inputs/three manifests/physical outputs/receipts/fixed policy
+epoch/3412inherited fingerprints/teaching gates and rejection controls; authenticate
+unchanged pilot/smoke first. Then qualify E069 conditional on E068. All171-origin
+combined integration, changed-source three reproductions, broader strategic
+meanings and real-game/human usefulness remain open; full goal active.
+
+## Prior semantic boundary — E070 complete outpost results qualified
 
 2026-10-12. Historical E070 reuse now independently validates ALL148saved rows:
 144complete results and fresh E069 parents,140enabled independent rank/file-DAG
