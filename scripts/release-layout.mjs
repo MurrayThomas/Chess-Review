@@ -177,6 +177,10 @@ try {
   assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/opponent’s knight on c6.*defends the pawn on e5/);
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
   await capture('coach-defense-wide');
+  await evaluate(review,"document.querySelector('.coach-insight details').open=true");
+  assert.match(await evaluate(review,"document.querySelector('.coach-insight details').textContent"),/Coach synthesis.*E200 \(provisional\)/s);
+  await capture('coach-defense-evidence');
+  await evaluate(review,"document.querySelector('.coach-insight details').open=false");
   await evaluate(review,"import('./analysis.js').then(m=>m.go(3))");
   await evaluate(review,"document.querySelector('#concept-view-all').click()");
   assert.equal(await evaluate(review,"document.querySelectorAll('.coach-insight').length"),selectedFindingCount);

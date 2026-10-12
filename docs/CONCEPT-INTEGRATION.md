@@ -104,7 +104,7 @@ proofs, pawn races/endgame policies, detailed positional comparisons and complet
 candidate/objective policies are opt-in. All keeps the complete P003 collection
 available with its existing bounds. Cost labels are relative work classes, not
 promised durations. Actual work varies with legal branching, material and history.
-Cheap baseline rules, structural and development observations remain available;
+Rule validation, meaningful structural and development observations remain available;
 checkboxes control the additional detector families and their expensive searches.
 Disabled groups are explicitly identified and are not treated as absent findings.
 
@@ -131,3 +131,38 @@ decision, checks, limitations and retained evidence links.
 
 See [P004](../research/promotions/P004-concept-performance.md) for the performance
 policy, before/after measurements and validation. Research acceptance is unchanged.
+
+## Fast teaching policy (P005)
+
+Fast and lighter selections now skip the routine foundation and inventory tags.
+Legal-move validation remains mandatory, but legal movement, square coordinates,
+raw material totals and pawn-square inventories are not teaching findings.
+Settings → Concepts lists the temporary removals and distinguishes skipped work
+from omitted summaries whose shared scans still support mate warnings or changes
+in defenders. Unattacked undefended units and duplicate square-color/line labels
+are omitted. Enabling a heavier group restores the full P003 inspector.
+
+The Fast reply uses the same cached findings, compact named certificates and the
+selected before/after board. It performs no proof search. Actual outcomes and mate
+warnings lead; proven material losses outrank offensive response threats. A new
+attack is weighted by its concrete targets, their value, missing defense and
+multiple contacts. New defense of an already attacked unit, line clearance, rook
+coordination, pawn tension and newly changed structure can produce quiet lessons.
+Category rank alone does not choose the reply.
+
+Exact target matches let a short pawn-capture certificate strengthen an attack.
+Other independently witnessed effects of the same selected move can form a second
+sentence, with their original explanations available in supporting evidence.
+Aliases add no repeated prose. Unchanged structural observations cannot become
+new threats. A separate urgent issue can produce a second item; ordinary replies
+remain one coherent paragraph. Empty and unknown-player states remain explicit.
+
+Piece names and ownership come from the actual board, with player identity from
+S.meSide. A turn-flipped capture proof describes this exact diagram: the opponent
+moves next and can change it, even if the capture remains legal. The reply never
+claims that legal availability alone preserves the earlier material proof.
+Short material calculations do not establish best moves, a lasting advantage or
+a winning continuation. Accepted scopes and provisional study status are unchanged.
+
+See [P005](../research/promotions/P005-fast-coach-curation.md) for decisions,
+validation and limitations.

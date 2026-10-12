@@ -19,3 +19,7 @@ Every match and its exact scope remains inspectable; ordering is a presentation
 heuristic, with no new benefit or effectiveness claim.
 
 [P003: Expanded local Concepts integration and concise player reply](P003-concept-integration.md) integrates accepted E081/E082 and usable provisional observations, preserves unavailable-input boundaries, and adds two views sharing the existing optional analysis. Research acceptance and implementation availability remain separate.
+
+[P004: Selected-move performance and cost controls](P004-concept-performance.md) records the Fast/default profile, demand-driven execution and optional cost groups.
+
+[P005: Fast curation and move-story coaching](P005-fast-coach-curation.md) removes routine outputs from Fast, records those teaching decisions in settings, and prioritizes concrete player-aware consequences from shared findings. Research acceptance remains separate.
