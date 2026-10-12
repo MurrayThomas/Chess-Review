@@ -1,0 +1,965 @@
+# E067-smoke-summary {"originalRows":104,"errors":4,"certificates":56,"completedIndependentQueriesReplayed":208,"states":{"immediate-mate-available":12,"pass-refuted":20,"ineligible":16,"disabled":8,"exhausted":8,"proven":32,"actual-refuted":4},"removedPawnKingExposureCoverage":false,"removedPawnDeadFrameCoverage":false}
+TAP version 13
+# Subtest: original immediate-mate-already-available
+ok 1 - original immediate-mate-already-available
+  ---
+  duration_ms: 109.5459
+  type: 'test'
+  ...
+# Subtest: original immediate-mate-already-available-black
+ok 2 - original immediate-mate-already-available-black
+  ---
+  duration_ms: 72.7271
+  type: 'test'
+  ...
+# Subtest: original immediate-mate-already-available-mirror
+ok 3 - original immediate-mate-already-available-mirror
+  ---
+  duration_ms: 70.9434
+  type: 'test'
+  ...
+# Subtest: original immediate-mate-already-available-mirror-black
+ok 4 - original immediate-mate-already-available-mirror-black
+  ---
+  duration_ms: 73.9408
+  type: 'test'
+  ...
+# Subtest: original new-net-created-not-existing
+ok 5 - original new-net-created-not-existing
+  ---
+  duration_ms: 165.48
+  type: 'test'
+  ...
+# Subtest: original new-net-created-not-existing-black
+ok 6 - original new-net-created-not-existing-black
+  ---
+  duration_ms: 173.5165
+  type: 'test'
+  ...
+# Subtest: original new-net-created-not-existing-mirror
+ok 7 - original new-net-created-not-existing-mirror
+  ---
+  duration_ms: 161.8918
+  type: 'test'
+  ...
+# Subtest: original new-net-created-not-existing-mirror-black
+ok 8 - original new-net-created-not-existing-mirror-black
+  ---
+  duration_ms: 177.9017
+  type: 'test'
+  ...
+# Subtest: original quiet-no-mating-opportunity
+ok 9 - original quiet-no-mating-opportunity
+  ---
+  duration_ms: 21.4194
+  type: 'test'
+  ...
+# Subtest: original quiet-no-mating-opportunity-black
+ok 10 - original quiet-no-mating-opportunity-black
+  ---
+  duration_ms: 21.2645
+  type: 'test'
+  ...
+# Subtest: original quiet-no-mating-opportunity-mirror
+ok 11 - original quiet-no-mating-opportunity-mirror
+  ---
+  duration_ms: 19.1508
+  type: 'test'
+  ...
+# Subtest: original quiet-no-mating-opportunity-mirror-black
+ok 12 - original quiet-no-mating-opportunity-mirror-black
+  ---
+  duration_ms: 19.8045
+  type: 'test'
+  ...
+# Subtest: original actual-check-not-waiting
+ok 13 - original actual-check-not-waiting
+  ---
+  duration_ms: 63.2116
+  type: 'test'
+  ...
+# Subtest: original actual-check-not-waiting-black
+ok 14 - original actual-check-not-waiting-black
+  ---
+  duration_ms: 64.6029
+  type: 'test'
+  ...
+# Subtest: original actual-check-not-waiting-mirror
+ok 15 - original actual-check-not-waiting-mirror
+  ---
+  duration_ms: 56.8513
+  type: 'test'
+  ...
+# Subtest: original actual-check-not-waiting-mirror-black
+ok 16 - original actual-check-not-waiting-mirror-black
+  ---
+  duration_ms: 61.7727
+  type: 'test'
+  ...
+# Subtest: original actual-capture-not-waiting
+ok 17 - original actual-capture-not-waiting
+  ---
+  duration_ms: 67.0571
+  type: 'test'
+  ...
+# Subtest: original actual-capture-not-waiting-black
+ok 18 - original actual-capture-not-waiting-black
+  ---
+  duration_ms: 67.4577
+  type: 'test'
+  ...
+# Subtest: original actual-capture-not-waiting-mirror
+ok 19 - original actual-capture-not-waiting-mirror
+  ---
+  duration_ms: 62.0665
+  type: 'test'
+  ...
+# Subtest: original actual-capture-not-waiting-mirror-black
+ok 20 - original actual-capture-not-waiting-mirror-black
+  ---
+  duration_ms: 65.5625
+  type: 'test'
+  ...
+# Subtest: original disabled-profile
+ok 21 - original disabled-profile
+  ---
+  duration_ms: 13.945
+  type: 'test'
+  ...
+# Subtest: original disabled-profile-black
+ok 22 - original disabled-profile-black
+  ---
+  duration_ms: 13.4375
+  type: 'test'
+  ...
+# Subtest: original disabled-profile-mirror
+ok 23 - original disabled-profile-mirror
+  ---
+  duration_ms: 13.1009
+  type: 'test'
+  ...
+# Subtest: original disabled-profile-mirror-black
+ok 24 - original disabled-profile-mirror-black
+  ---
+  duration_ms: 11.9989
+  type: 'test'
+  ...
+# Subtest: original zero-budget
+ok 25 - original zero-budget
+  ---
+  duration_ms: 12.121
+  type: 'test'
+  ...
+# Subtest: original zero-budget-black
+ok 26 - original zero-budget-black
+  ---
+  duration_ms: 13.0963
+  type: 'test'
+  ...
+# Subtest: original zero-budget-mirror
+ok 27 - original zero-budget-mirror
+  ---
+  duration_ms: 13.1731
+  type: 'test'
+  ...
+# Subtest: original zero-budget-mirror-black
+ok 28 - original zero-budget-mirror-black
+  ---
+  duration_ms: 11.7047
+  type: 'test'
+  ...
+# Subtest: original actual-promotion
+ok 29 - original actual-promotion
+  ---
+  duration_ms: 19.5521
+  type: 'test'
+  ...
+# Subtest: original actual-promotion-black
+ok 30 - original actual-promotion-black
+  ---
+  duration_ms: 21.6018
+  type: 'test'
+  ...
+# Subtest: original actual-promotion-mirror
+ok 31 - original actual-promotion-mirror
+  ---
+  duration_ms: 19.1885
+  type: 'test'
+  ...
+# Subtest: original actual-promotion-mirror-black
+ok 32 - original actual-promotion-mirror-black
+  ---
+  duration_ms: 20.121
+  type: 'test'
+  ...
+# Subtest: original reserve-single
+ok 33 - original reserve-single
+  ---
+  duration_ms: 327.9753
+  type: 'test'
+  ...
+# Subtest: original reserve-single-black
+ok 34 - original reserve-single-black
+  ---
+  duration_ms: 340.794
+  type: 'test'
+  ...
+# Subtest: original reserve-single-mirror
+ok 35 - original reserve-single-mirror
+  ---
+  duration_ms: 296.338
+  type: 'test'
+  ...
+# Subtest: original reserve-single-mirror-black
+ok 36 - original reserve-single-mirror-black
+  ---
+  duration_ms: 345.5453
+  type: 'test'
+  ...
+# Subtest: original reserve-double
+ok 37 - original reserve-double
+  ---
+  duration_ms: 339.322
+  type: 'test'
+  ...
+# Subtest: original reserve-double-black
+ok 38 - original reserve-double-black
+  ---
+  duration_ms: 341.758
+  type: 'test'
+  ...
+# Subtest: original reserve-double-mirror
+ok 39 - original reserve-double-mirror
+  ---
+  duration_ms: 292.9815
+  type: 'test'
+  ...
+# Subtest: original reserve-double-mirror-black
+ok 40 - original reserve-double-mirror-black
+  ---
+  duration_ms: 322.275
+  type: 'test'
+  ...
+# Subtest: original reserve-other-file
+ok 41 - original reserve-other-file
+  ---
+  duration_ms: 319.9366
+  type: 'test'
+  ...
+# Subtest: original reserve-other-file-black
+ok 42 - original reserve-other-file-black
+  ---
+  duration_ms: 344.4332
+  type: 'test'
+  ...
+# Subtest: original reserve-other-file-mirror
+ok 43 - original reserve-other-file-mirror
+  ---
+  duration_ms: 300.3843
+  type: 'test'
+  ...
+# Subtest: original reserve-other-file-mirror-black
+ok 44 - original reserve-other-file-mirror-black
+  ---
+  duration_ms: 335.6353
+  type: 'test'
+  ...
+# Subtest: original reserve-later-rank
+ok 45 - original reserve-later-rank
+  ---
+  duration_ms: 312.2202
+  type: 'test'
+  ...
+# Subtest: original reserve-later-rank-black
+ok 46 - original reserve-later-rank-black
+  ---
+  duration_ms: 290.9164
+  type: 'test'
+  ...
+# Subtest: original reserve-later-rank-mirror
+ok 47 - original reserve-later-rank-mirror
+  ---
+  duration_ms: 275.8309
+  type: 'test'
+  ...
+# Subtest: original reserve-later-rank-mirror-black
+ok 48 - original reserve-later-rank-mirror-black
+  ---
+  duration_ms: 322.4656
+  type: 'test'
+  ...
+# Subtest: original knight-wait
+ok 49 - original knight-wait
+  ---
+  duration_ms: 191.1829
+  type: 'test'
+  ...
+# Subtest: original knight-wait-black
+ok 50 - original knight-wait-black
+  ---
+  duration_ms: 228.0164
+  type: 'test'
+  ...
+# Subtest: original knight-wait-mirror
+ok 51 - original knight-wait-mirror
+  ---
+  duration_ms: 190.3831
+  type: 'test'
+  ...
+# Subtest: original knight-wait-mirror-black
+ok 52 - original knight-wait-mirror-black
+  ---
+  duration_ms: 220.3616
+  type: 'test'
+  ...
+# Subtest: original bishop-wait
+ok 53 - original bishop-wait
+  ---
+  duration_ms: 242.6008
+  type: 'test'
+  ...
+# Subtest: original bishop-wait-black
+ok 54 - original bishop-wait-black
+  ---
+  duration_ms: 272.2533
+  type: 'test'
+  ...
+# Subtest: original bishop-wait-mirror
+ok 55 - original bishop-wait-mirror
+  ---
+  duration_ms: 206.1365
+  type: 'test'
+  ...
+# Subtest: original bishop-wait-mirror-black
+ok 56 - original bishop-wait-mirror-black
+  ---
+  duration_ms: 250.169
+  type: 'test'
+  ...
+# Subtest: original bishop-assisted-reserve
+ok 57 - original bishop-assisted-reserve
+  ---
+  duration_ms: 272.2085
+  type: 'test'
+  ...
+# Subtest: original bishop-assisted-reserve-black
+ok 58 - original bishop-assisted-reserve-black
+  ---
+  duration_ms: 317.2841
+  type: 'test'
+  ...
+# Subtest: original bishop-assisted-reserve-mirror
+ok 59 - original bishop-assisted-reserve-mirror
+  ---
+  duration_ms: 273.3481
+  type: 'test'
+  ...
+# Subtest: original bishop-assisted-reserve-mirror-black
+ok 60 - original bishop-assisted-reserve-mirror-black
+  ---
+  duration_ms: 311.227
+  type: 'test'
+  ...
+# Subtest: original queen-hfile-reserve
+ok 61 - original queen-hfile-reserve
+  ---
+  duration_ms: 283.272
+  type: 'test'
+  ...
+# Subtest: original queen-hfile-reserve-black
+ok 62 - original queen-hfile-reserve-black
+  ---
+  duration_ms: 290.0836
+  type: 'test'
+  ...
+# Subtest: original queen-hfile-reserve-mirror
+ok 63 - original queen-hfile-reserve-mirror
+  ---
+  duration_ms: 274.9458
+  type: 'test'
+  ...
+# Subtest: original queen-hfile-reserve-mirror-black
+ok 64 - original queen-hfile-reserve-mirror-black
+  ---
+  duration_ms: 289.0166
+  type: 'test'
+  ...
+# Subtest: original integral-queen-move
+ok 65 - original integral-queen-move
+  ---
+  duration_ms: 259.7843
+  type: 'test'
+  ...
+# Subtest: original integral-queen-move-black
+ok 66 - original integral-queen-move-black
+  ---
+  duration_ms: 261.9385
+  type: 'test'
+  ...
+# Subtest: original integral-queen-move-mirror
+ok 67 - original integral-queen-move-mirror
+  ---
+  duration_ms: 248.6801
+  type: 'test'
+  ...
+# Subtest: original integral-queen-move-mirror-black
+ok 68 - original integral-queen-move-mirror-black
+  ---
+  duration_ms: 260.825
+  type: 'test'
+  ...
+# Subtest: original wrong-helper
+ok 69 - original wrong-helper
+  ---
+  duration_ms: 98.1413
+  type: 'test'
+  ...
+# Subtest: original wrong-helper-black
+ok 70 - original wrong-helper-black
+  ---
+  duration_ms: 76.0712
+  type: 'test'
+  ...
+# Subtest: original wrong-helper-mirror
+ok 71 - original wrong-helper-mirror
+  ---
+  duration_ms: 74.5197
+  type: 'test'
+  ...
+# Subtest: original wrong-helper-mirror-black
+ok 72 - original wrong-helper-mirror-black
+  ---
+  duration_ms: 74.8865
+  type: 'test'
+  ...
+# Subtest: original missing-helper
+ok 73 - original missing-helper
+  ---
+  duration_ms: 85.3258
+  type: 'test'
+  ...
+# Subtest: original missing-helper-black
+ok 74 - original missing-helper-black
+  ---
+  duration_ms: 90.9314
+  type: 'test'
+  ...
+# Subtest: original missing-helper-mirror
+ok 75 - original missing-helper-mirror
+  ---
+  duration_ms: 86.0403
+  type: 'test'
+  ...
+# Subtest: original missing-helper-mirror-black
+ok 76 - original missing-helper-mirror-black
+  ---
+  duration_ms: 86.517
+  type: 'test'
+  ...
+# Subtest: original enemy-can-defend
+ok 77 - original enemy-can-defend
+  ---
+  duration_ms: 57.7297
+  type: 'test'
+  ...
+# Subtest: original enemy-can-defend-black
+ok 78 - original enemy-can-defend-black
+  ---
+  duration_ms: 63.1066
+  type: 'test'
+  ...
+# Subtest: original enemy-can-defend-mirror
+ok 79 - original enemy-can-defend-mirror
+  ---
+  duration_ms: 58.926
+  type: 'test'
+  ...
+# Subtest: original enemy-can-defend-mirror-black
+ok 80 - original enemy-can-defend-mirror-black
+  ---
+  duration_ms: 59.8738
+  type: 'test'
+  ...
+# Subtest: original enemy-can-promote
+ok 81 - original enemy-can-promote
+  ---
+  duration_ms: 82.939
+  type: 'test'
+  ...
+# Subtest: original enemy-can-promote-black
+ok 82 - original enemy-can-promote-black
+  ---
+  duration_ms: 79.6872
+  type: 'test'
+  ...
+# Subtest: original enemy-can-promote-mirror
+ok 83 - original enemy-can-promote-mirror
+  ---
+  duration_ms: 87.6864
+  type: 'test'
+  ...
+# Subtest: original enemy-can-promote-mirror-black
+ok 84 - original enemy-can-promote-mirror-black
+  ---
+  duration_ms: 87.7756
+  type: 'test'
+  ...
+# Subtest: original zero-positive-budget
+ok 85 - original zero-positive-budget
+  ---
+  duration_ms: 34.3857
+  type: 'test'
+  ...
+# Subtest: original zero-positive-budget-black
+ok 86 - original zero-positive-budget-black
+  ---
+  duration_ms: 30.2869
+  type: 'test'
+  ...
+# Subtest: original zero-positive-budget-mirror
+ok 87 - original zero-positive-budget-mirror
+  ---
+  duration_ms: 42.2777
+  type: 'test'
+  ...
+# Subtest: original zero-positive-budget-mirror-black
+ok 88 - original zero-positive-budget-mirror-black
+  ---
+  duration_ms: 27.9167
+  type: 'test'
+  ...
+# Subtest: original disabled-positive-profile
+ok 89 - original disabled-positive-profile
+  ---
+  duration_ms: 37.5468
+  type: 'test'
+  ...
+# Subtest: original disabled-positive-profile-black
+ok 90 - original disabled-positive-profile-black
+  ---
+  duration_ms: 30.7666
+  type: 'test'
+  ...
+# Subtest: original disabled-positive-profile-mirror
+ok 91 - original disabled-positive-profile-mirror
+  ---
+  duration_ms: 39.7679
+  type: 'test'
+  ...
+# Subtest: original disabled-positive-profile-mirror-black
+ok 92 - original disabled-positive-profile-mirror-black
+  ---
+  duration_ms: 28.8614
+  type: 'test'
+  ...
+# Subtest: original illegal-positive-step
+ok 93 - original illegal-positive-step
+  ---
+  duration_ms: 2.2292
+  type: 'test'
+  ...
+# Subtest: original illegal-positive-step-black
+ok 94 - original illegal-positive-step-black
+  ---
+  duration_ms: 2.0071
+  type: 'test'
+  ...
+# Subtest: original illegal-positive-step-mirror
+ok 95 - original illegal-positive-step-mirror
+  ---
+  duration_ms: 1.8215
+  type: 'test'
+  ...
+# Subtest: original illegal-positive-step-mirror-black
+ok 96 - original illegal-positive-step-mirror-black
+  ---
+  duration_ms: 1.7126
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal
+ok 97 - original actual-clock-terminal
+  ---
+  duration_ms: 24.6039
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-black
+ok 98 - original actual-clock-terminal-black
+  ---
+  duration_ms: 26.1496
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-mirror
+ok 99 - original actual-clock-terminal-mirror
+  ---
+  duration_ms: 38.7114
+  type: 'test'
+  ...
+# Subtest: original actual-clock-terminal-mirror-black
+ok 100 - original actual-clock-terminal-mirror-black
+  ---
+  duration_ms: 25.3676
+  type: 'test'
+  ...
+# Subtest: original history-reserve
+ok 101 - original history-reserve
+  ---
+  duration_ms: 97.1804
+  type: 'test'
+  ...
+# Subtest: original history-reserve-black
+ok 102 - original history-reserve-black
+  ---
+  duration_ms: 99.5942
+  type: 'test'
+  ...
+# Subtest: original history-reserve-mirror
+ok 103 - original history-reserve-mirror
+  ---
+  duration_ms: 96.5598
+  type: 'test'
+  ...
+# Subtest: original history-reserve-mirror-black
+ok 104 - original history-reserve-mirror-black
+  ---
+  duration_ms: 97.3996
+  type: 'test'
+  ...
+# Subtest: forgery before frame
+ok 105 - forgery before frame
+  ---
+  duration_ms: 160.9229
+  type: 'test'
+  ...
+# Subtest: forgery after frame
+ok 106 - forgery after frame
+  ---
+  duration_ms: 154.5746
+  type: 'test'
+  ...
+# Subtest: forgery pass frame
+ok 107 - forgery pass frame
+  ---
+  duration_ms: 153.93
+  type: 'test'
+  ...
+# Subtest: forgery history inserted
+ok 108 - forgery history inserted
+  ---
+  duration_ms: 155.3211
+  type: 'test'
+  ...
+# Subtest: forgery actual identity
+ok 109 - forgery actual identity
+  ---
+  duration_ms: 155.2099
+  type: 'test'
+  ...
+# Subtest: forgery before root
+ok 110 - forgery before root
+  ---
+  duration_ms: 152.3403
+  type: 'test'
+  ...
+# Subtest: forgery before winner
+ok 111 - forgery before winner
+  ---
+  duration_ms: 155.2819
+  type: 'test'
+  ...
+# Subtest: forgery before plies
+ok 112 - forgery before plies
+  ---
+  duration_ms: 156.5727
+  type: 'test'
+  ...
+# Subtest: forgery before outcome
+ok 113 - forgery before outcome
+  ---
+  duration_ms: 154.3937
+  type: 'test'
+  ...
+# Subtest: forgery before failure domain
+ok 114 - forgery before failure domain
+  ---
+  duration_ms: 155.9084
+  type: 'test'
+  ...
+# Subtest: forgery before leaf
+ok 115 - forgery before leaf
+  ---
+  duration_ms: 155.2057
+  type: 'test'
+  ...
+# Subtest: forgery pass defense domain
+ok 116 - forgery pass defense domain
+  ---
+  duration_ms: 156.0002
+  type: 'test'
+  ...
+# Subtest: forgery pass defense order
+ok 117 - forgery pass defense order
+  ---
+  duration_ms: 155.3403
+  type: 'test'
+  ...
+# Subtest: forgery pass defense edge
+ok 118 - forgery pass defense edge
+  ---
+  duration_ms: 153.5989
+  type: 'test'
+  ...
+# Subtest: forgery pass mating choice
+ok 119 - forgery pass mating choice
+  ---
+  duration_ms: 153.1462
+  type: 'test'
+  ...
+# Subtest: forgery pass mate terminal FEN
+ok 120 - forgery pass mate terminal FEN
+  ---
+  duration_ms: 155.3087
+  type: 'test'
+  ...
+# Subtest: forgery pass outcome
+ok 121 - forgery pass outcome
+  ---
+  duration_ms: 154.5726
+  type: 'test'
+  ...
+# Subtest: forgery actual root
+ok 122 - forgery actual root
+  ---
+  duration_ms: 150.5646
+  type: 'test'
+  ...
+# Subtest: forgery actual defense domain
+ok 123 - forgery actual defense domain
+  ---
+  duration_ms: 151.4532
+  type: 'test'
+  ...
+# Subtest: forgery actual defense edge
+ok 124 - forgery actual defense edge
+  ---
+  duration_ms: 153.2102
+  type: 'test'
+  ...
+# Subtest: forgery actual outcome
+ok 125 - forgery actual outcome
+  ---
+  duration_ms: 155.2342
+  type: 'test'
+  ...
+# Subtest: forgery removed before frame
+ok 126 - forgery removed before frame
+  ---
+  duration_ms: 155.7488
+  type: 'test'
+  ...
+# Subtest: forgery removed after frame
+ok 127 - forgery removed after frame
+  ---
+  duration_ms: 153.7229
+  type: 'test'
+  ...
+# Subtest: forgery removed before root
+ok 128 - forgery removed before root
+  ---
+  duration_ms: 153.8954
+  type: 'test'
+  ...
+# Subtest: forgery removed after winner
+ok 129 - forgery removed after winner
+  ---
+  duration_ms: 158.2273
+  type: 'test'
+  ...
+# Subtest: forgery removed before defense domain
+ok 130 - forgery removed before defense domain
+  ---
+  duration_ms: 156.4718
+  type: 'test'
+  ...
+# Subtest: forgery removed after outcome
+ok 131 - forgery removed after outcome
+  ---
+  duration_ms: 157.3142
+  type: 'test'
+  ...
+# Subtest: forgery text
+ok 132 - forgery text
+  ---
+  duration_ms: 156.4297
+  type: 'test'
+  ...
+# Subtest: forgery quality
+ok 133 - forgery quality
+  ---
+  duration_ms: 160.0443
+  type: 'test'
+  ...
+# Subtest: forgery mandatory waiting omitted
+ok 134 - forgery mandatory waiting omitted
+  ---
+  duration_ms: 160.5285
+  type: 'test'
+  ...
+# Subtest: forgery mandatory reserve omitted
+ok 135 - forgery mandatory reserve omitted
+  ---
+  duration_ms: 160.4886
+  type: 'test'
+  ...
+# Subtest: forgery ledger
+ok 136 - forgery ledger
+  ---
+  duration_ms: 156.3903
+  type: 'test'
+  ...
+# Subtest: forgery status
+ok 137 - forgery status
+  ---
+  duration_ms: 155.1138
+  type: 'test'
+  ...
+# Subtest: forgery limit
+ok 138 - forgery limit
+  ---
+  duration_ms: 156.5173
+  type: 'test'
+  ...
+# Subtest: forgery schema
+ok 139 - forgery schema
+  ---
+  duration_ms: 153.2156
+  type: 'test'
+  ...
+# Subtest: forgery selected comment
+ok 140 - forgery selected comment
+  ---
+  duration_ms: 156.4699
+  type: 'test'
+  ...
+# Subtest: forgery inherited field
+ok 141 - forgery inherited field
+  ---
+  duration_ms: 155.3304
+  type: 'test'
+  ...
+# Subtest: forgery extra field
+ok 142 - forgery extra field
+  ---
+  duration_ms: 160.5996
+  type: 'test'
+  ...
+# Subtest: forgery pass failure laundered
+ok 143 - forgery pass failure laundered
+  ---
+  duration_ms: 13.0079
+  type: 'test'
+  ...
+# Subtest: forgery actual failure laundered
+ok 144 - forgery actual failure laundered
+  ---
+  duration_ms: 168.941
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget reserve-single
+ok 145 - sampled query-stage budget reserve-single
+  ---
+  duration_ms: 2652.4454
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget knight-wait
+ok 146 - sampled query-stage budget knight-wait
+  ---
+  duration_ms: 1307.1123
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget immediate-mate-already-available
+ok 147 - sampled query-stage budget immediate-mate-already-available
+  ---
+  duration_ms: 323.9481
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget integral-queen-move
+ok 148 - sampled query-stage budget integral-queen-move
+  ---
+  duration_ms: 1838.614
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget quiet-no-mating-opportunity
+ok 149 - sampled query-stage budget quiet-no-mating-opportunity
+  ---
+  duration_ms: 127.1687
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget history-reserve
+ok 150 - sampled query-stage budget history-reserve
+  ---
+  duration_ms: 439.4867
+  type: 'test'
+  ...
+# Subtest: sampled query-stage budget actual-clock-terminal
+ok 151 - sampled query-stage budget actual-clock-terminal
+  ---
+  duration_ms: 72.9281
+  type: 'test'
+  ...
+# Subtest: strict null disabled options
+ok 152 - strict null disabled options
+  ---
+  duration_ms: 514.0467
+  type: 'test'
+  ...
+# Subtest: complete original statuses and certificate coverage
+ok 153 - complete original statuses and certificate coverage
+  ---
+  duration_ms: 0.7007
+  type: 'test'
+  ...
+# Subtest: positive full history preserved both colors
+ok 154 - positive full history preserved both colors
+  ---
+  duration_ms: 660.5253
+  type: 'test'
+  ...
+# Subtest: third repetition suppresses E067 proof while fresh FEN qualifies
+ok 155 - third repetition suppresses E067 proof while fresh FEN qualifies
+  ---
+  duration_ms: 555.8926
+  type: 'test'
+  ...
+# Subtest: castling before-check capture and promotion exclusions
+ok 156 - castling before-check capture and promotion exclusions
+  ---
+  duration_ms: 77.3496
+  type: 'test'
+  ...
+# Subtest: stalemated hypothetical pass refused despite legal live actual
+ok 157 - stalemated hypothetical pass refused despite legal live actual
+  ---
+  duration_ms: 41.0969
+  type: 'test'
+  ...
+# Subtest: all-defense before failures and only-pawn removal identity
+ok 158 - all-defense before failures and only-pawn removal identity
+  ---
+  duration_ms: 0.4447
+  type: 'test'
+  ...
+# Subtest: immutable result and parent priority
+ok 159 - immutable result and parent priority
+  ---
+  duration_ms: 498.5702
+  type: 'test'
+  ...
+1..159
+# tests 159
+# suites 0
+# pass 159
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 29325.1922
