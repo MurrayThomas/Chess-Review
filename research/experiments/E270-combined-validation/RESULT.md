@@ -49,7 +49,11 @@ transitions, current collectors/checkers, observations and scientific gates stay
 unchanged. Add a dedicated forged-edge and both legacy closure check. No wildcard
 or caller-supplied source hash. A NEW17-file retry at7e8e4ed is RUNNING, including
 all16original affected files plus the original E220 equality file. Earlier nine
-passes remain diagnostic; all17must now pass on current sources. No failed attempt
+passes remain diagnostic; all17must now pass on current sources. The retry first file passes all16
+adversarial tests in131.206seconds, including both formerly failing legacy source
+closures and forged added-checker rejection. The16remaining dependent files are
+still running. Separate guarded source smoke also passes both exact closures and
+rejects the forged checker hash. No failed attempt
 or original archive overwritten. Full cumulative regression remains unlaunched.
 
 All13affected records (10builds,3supports E211/E214/E228) must be qualified by

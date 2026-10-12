@@ -29,5 +29,11 @@
   "recordsReconciled": false,
   "previousDependentFailure": "evidence/complete-repair-checks/summary.json",
   "affectedTestFiles": 17,
-  "registeredAdditionalObservedChecker": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f"
+  "registeredAdditionalObservedChecker": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
+  "retryAdversarialChecks": {
+    "file": "evidence/complete-repair-retry/00-checks.json",
+    "passed": 16,
+    "failed": 0,
+    "seconds": 131.2061232
+  }
 }

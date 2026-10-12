@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E270-combined-validation/code/producer-repair.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E270-combined-validation/code/producer-repair.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ all48fixed original panels admit exactly unchanged historical views with strict current concordance (49452.3276ms)\n✔ original and current executable identities stay distinct; old panel still fails strict-live checker (6.228ms)\n✔ arbitrary bundle/path/hash/context overrides and unknown IDs reject (1.122ms)\n✔ changed current producer cannot pass structural or concordance admission (14.8319ms)\n✔ forged historical metadata must still agree with authentic original frame (2.2106ms)\n✔ reserialized changed original WDL fails full successor concordance (23.8228ms)\n✔ reserialized changed current WDL fails full successor concordance (23.3599ms)\n✔ omitted successor/failed execution reject; successful stderr is retained per original contract (50.9224ms)\n✔ returned evidence is isolated from admitted original/current records (1949.2828ms)\n✔ source epochs permit only fifteen exact before/after transitions (1.3922ms)\n✔ unregistered changed or newly imported source rejects (0.7125ms)\n✔ complete historical closure admits explicit epochs, never an arbitrary expected source (1832.0249ms)\n✔ legacy panels retain their original schema and lack fabricated observed-process claims (7828.879ms)\n✔ stopped cost study preserves original greater-than-three-second failure (959.5573ms)\n✔ saved positional consumers report their authentic historical context; current checker stays strict (18495.5837ms)\n✔ legacy support admits only exact unchanged observed-checker import edge (1729.7525ms)\nℹ tests 16\nℹ suites 0\nℹ pass 16\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 131106.8242\n",
+  "stderr": "",
+  "seconds": 131.2061232
+}
