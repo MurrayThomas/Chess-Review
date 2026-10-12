@@ -6,6 +6,7 @@ import {pathToFileURL} from 'node:url';
 import {sha256} from '../../../data-policy.mjs';
 import {bindings} from '../../E138-bounded-engine-panels/code/source-bindings.mjs';
 import {admitTerminalRegression} from './semantic-gate.mjs';
+import {proveE083PolicyEpoch} from './e083-policy-epoch.mjs';
 const directory = 'research/experiments/E270-combined-validation';
 export const savedE083 = Object.freeze({file: 'research/experiments/E083-contact-exchange-changes/evidence/results.json',
   bytes: 154796, sha256: '4c707a81419070c274c3fae99d2c330da1b4fe645f27d323ccd044cbb0d2fe83'});
@@ -92,8 +93,9 @@ export async function openFixedE083Report(controlAttempt) {
   assert.equal(build.experiment, 'E083');
   for (const [file, hash] of Object.entries(build.inputHashes)) assert.equal(hash, regression.sourceHashes[file], file);
   const {bothColors} = await import('../../E083-contact-exchange-changes/code/fixtures.mjs');
-  const summary = checkE083ReportShape(report, bothColors, build.inputHashes, regression.receipt);
-  return immutable({report, summary, receipt: regression.receipt, canonical: savedE083, controls,
+  const policyEpoch = await proveE083PolicyEpoch(report.eligibilityReceipt, regression.receipt);
+  const summary = checkE083ReportShape(report, bothColors, build.inputHashes, report.eligibilityReceipt);
+  return immutable({report, summary, receipt: regression.receipt, historicalReceipt: plain(report.eligibilityReceipt), policyEpoch, canonical: savedE083, controls,
     sourceHashes: build.inputHashes, fixtures: plain(bothColors),
     regression: {freezeSha256: regression.freezeSha256, terminalSha256: regression.terminalSha256},
     acceptedCredit: 0, parentSemanticReplayRequired: true});

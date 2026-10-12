@@ -16,7 +16,7 @@ const admission = await admitTerminalRegression();
 const controls = await admitE083Controls(controlAttempt, admission);
 const self = directory + '/preparation/run-e083-replay.mjs';
 const testFile = directory + '/preparation/e083-saved-replay.test.mjs';
-const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-explicit-tap.md', directory + '/AMENDMENT-e083-saved-admission.md',
+const inputHashes = await bindings([self, testFile, directory + '/AMENDMENT-semantic-replay-preparation.md', directory + '/AMENDMENT-e083-guarded-session.md', directory + '/AMENDMENT-e083-explicit-tap.md', directory + '/AMENDMENT-e083-saved-admission.md', directory + '/AMENDMENT-e083-policy-epoch.md',
   'research/experiments/E083-contact-exchange-changes/PLAN.md', 'package.json', 'package-lock.json']);
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], {encoding: 'utf8', windowsHide: true}).trim();
 const out = directory + '/evidence/semantic-e083-replay-' + attempt;
@@ -72,7 +72,7 @@ const completedRowCounts = Object.fromEntries(['parentEvaluations', 'parentError
 const allRowsPassed = rowAudits.length === 33 && rowAudits.every((row, index) => row.index === index && row.passed) &&
   completedRowCounts.parentEvaluations === 29 && completedRowCounts.parentErrorEvaluations === 4 &&
   completedRowCounts.candidateErrorEvaluations === 4 && completedRowCounts.savedReplayAttempts === 29;
-const passed = allRowsPassed && /^# tests 46\r?$/m.test(tap) && /^# pass 46\r?$/m.test(tap) && end.code === 0 && end.signal === null && !error && !hardTimeout && !sourceChanges.length && !canonicalChanges.length && !generated.length &&
+const passed = allRowsPassed && /^# tests 50\r?$/m.test(tap) && /^# pass 50\r?$/m.test(tap) && end.code === 0 && end.signal === null && !error && !hardTimeout && !sourceChanges.length && !canonicalChanges.length && !generated.length &&
   !/^not ok /m.test(tap) && /^# fail 0\r?$/m.test(tap) && /^# cancelled 0\r?$/m.test(tap) && /^# tests [1-9][0-9]*\r?$/m.test(tap);
 const final = {...started, pid: child.pid, exitCode: end.code, signal: end.signal, error, hardTimeout,
   seconds: (performance.now() - begin) / 1000, sourceChanges, canonicalChanges, generated,

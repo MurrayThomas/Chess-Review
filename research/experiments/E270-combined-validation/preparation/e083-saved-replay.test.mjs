@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {checkE083GameReceiptShape} from './e083-policy-epoch.mjs';
 import {openFixedE083Report, checkE083ReportShape, checkE083ReportBytes} from './e083-saved-report.mjs';
 const saved = await openFixedE083Report(process.env.CHESS_E083_CONTROL_ATTEMPT);
 const [{openE083Replay}, {explainMove: parent}, {explainMove}] = await Promise.all([
@@ -48,13 +49,25 @@ const mutations = [
   ['result erased', report => { const row = report.rows.find(item => item.result); delete row.result; row.error = 'Invented'; }]
 ];
 for (const [name, mutate] of mutations) test('saved admission rejection: ' + name, () => {
-  assert.deepEqual(checkE083ReportShape(saved.report, saved.fixtures, saved.sourceHashes, saved.receipt), saved.summary);
+  assert.deepEqual(checkE083ReportShape(saved.report, saved.fixtures, saved.sourceHashes, saved.historicalReceipt), saved.summary);
   const forged = structuredClone(saved.report);
   mutate(forged);
   assert.throws(() => checkE083ReportBytes(Buffer.from(JSON.stringify(forged) + '\n')));
-  assert.throws(() => checkE083ReportShape(forged, saved.fixtures, saved.sourceHashes, saved.receipt));
+  assert.throws(() => checkE083ReportShape(forged, saved.fixtures, saved.sourceHashes, saved.historicalReceipt));
 });
 test('retained input and fixed-report snapshot are immutable', () => {
   assert.throws(() => {saved.report.rows.pop();}, TypeError);
   assert.throws(() => {saved.canonical.sha256 = '0'.repeat(64);}, TypeError);
+});
+
+for (const [name, mutate] of [
+  ['wrong old policy', (old, current) => { old.policySha256 = '0'.repeat(64); }],
+  ['missing old policy', (old, current) => { delete old.policySha256; }],
+  ['changed non-policy field', (old, current) => { old.validatorSha256 = '0'.repeat(64); }],
+  ['wrong current policy', (old, current) => { current.policySha256 = '0'.repeat(64); }]
+]) test('receipt-epoch rejection: ' + name, () => {
+  assert.equal(checkE083GameReceiptShape(saved.historicalReceipt, saved.receipt), true);
+  const old = structuredClone(saved.historicalReceipt), current = structuredClone(saved.receipt);
+  mutate(old, current);
+  assert.throws(() => checkE083GameReceiptShape(old, current));
 });
