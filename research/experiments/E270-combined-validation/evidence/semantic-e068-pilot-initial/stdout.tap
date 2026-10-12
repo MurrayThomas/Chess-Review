@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot kingside white
+ok 1 - pilot kingside white
+  ---
+  duration_ms: 89.6136
+  type: 'test'
+  ...
+# Subtest: pilot kingside black
+ok 2 - pilot kingside black
+  ---
+  duration_ms: 64.7061
+  type: 'test'
+  ...
+# Subtest: pilot queenside white
+ok 3 - pilot queenside white
+  ---
+  duration_ms: 78.0484
+  type: 'test'
+  ...
+# Subtest: pilot queenside black
+ok 4 - pilot queenside black
+  ---
+  duration_ms: 69.8429
+  type: 'test'
+  ...
+# Subtest: old checker permits whole ledger forgery new checker requires exact ledger and tag
+ok 5 - old checker permits whole ledger forgery new checker requires exact ledger and tag
+  ---
+  duration_ms: 104.7066
+  type: 'test'
+  ...
+# Subtest: pilot every integer budget kingside
+ok 6 - pilot every integer budget kingside
+  ---
+  duration_ms: 544.5179
+  type: 'test'
+  ...
+# Subtest: pilot every integer budget missing-history
+ok 7 - pilot every integer budget missing-history
+  ---
+  duration_ms: 105.5413
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1069.8396
