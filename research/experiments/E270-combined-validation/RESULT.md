@@ -4,7 +4,47 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E066 full independent race smoke passed
+## Latest semantic boundary — E066 historical first-queening race results qualified
+
+2026-10-12. Registrationf5c3790/implementation4b7ee85:162/162saved PASS in33.690
+seconds, within25–120forecast/600cap. ALL140rows:136complete results with fresh
+E065 parent outputs/132enabled independent race/history/full positive andnegative
+trees/continuations/status/work oracles/four ABSTRACT illegal classifications
+plus fresh /^Illegal move/ failures. Exact historical error messages unavailable.
+44whole-checker certificates plus44separately ordered unchanged original metadata
+records. Actual positive replay totals872defenses/756first-promotion leaves/
+3440next replies/four terminal promotions/16rival promotions/zero queen captures/
+eight history plies.14shape/inheritance/count/ordered-proof,4receipt and4raw
+rejection controls passed. No failures/timeouts/source/canonical/generated changes;
+all processes terminal, no live handle. Source/diff checks pass.
+
+Retainedcd61a15 at evidence/semantic-e066-saved-initial/qualification.json.
+81new source inputs/197historical Git andcurrent inputs/56semantic paths within
+original/current/full freeze, no supplements/current metadata exceptions. Fixed
+six canonical artifacts, frozen1c291bdf0038b8d7ffc362c40e91c3ea10b5ac25.
+Main/repeat/initially-clean revisions/input/output/config/environment/metrics/
+receipts authenticated. Main andinitially-clean statuses empty; repeat EXACT
+'?? research/experiments/E066-pawn-races/evidence/' preserved as historical own-
+evidence disclosure, not represented as clean.3060ordered E065 fingerprints/
+teaching identity verified; integrity does not establish ancestor semantics.
+Fixed E083 policy epoch only. Unchanged7/7pilot+195/195smoke reused.
+
+15raw Git blobs byte-exact,317,555total bytes/199,622new saved-run bytes.
+No extra chess collection during qualification. Frozen2658sources/1624canonical
+and19prior E067–E085closures/1626source comparisons unchanged. No accepted,
+provisional/support/origin credit. E066 bounded historical mechanics qualified
+conditionally on E065 semantic replay. Direct successful queen-capture
+continuation coverage remains zero and OPEN. E067 removed-pawn king/dead direct
+controls/global inherited historical-terminal API refusal and E073 original
+eight/seven-edge discrepancy remain OPEN.
+
+Next: register independent E065 whole-result triangulation history/geometry/
+rule-state/full-reply/terminal/budget/mandatory presence+absence pilot, then
+complete smoke andhistorical qualification. All171origin combined API integration,
+exact changed-source three reproductions, broader original strategic meanings,
+real-game precision/human usefulness remain OPEN; full research goal active.
+
+## Prior preparation boundary — E066 full independent race smoke passed
 
 2026-10-12. Registeredcf07264/implemented7d1920a:7/7pilot in8.605seconds,
 faster than10–90forecast and within180cap;71source inputs/44,052raw bytes,
