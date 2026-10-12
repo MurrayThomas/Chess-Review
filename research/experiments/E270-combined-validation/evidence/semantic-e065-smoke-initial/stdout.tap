@@ -1,0 +1,1061 @@
+# E065-smoke-summary {"originalRows":120,"errors":4,"certificates":40,"states":{"complete":108,"disabled":4,"exhausted":4},"metrics":{"replies":464,"leaves":464,"historyPlies":192}}
+TAP version 13
+# Subtest: original whole king-return
+ok 1 - original whole king-return
+  ---
+  duration_ms: 90.7832
+  type: 'test'
+  ...
+# Subtest: original whole king-return-black
+ok 2 - original whole king-return-black
+  ---
+  duration_ms: 64.9322
+  type: 'test'
+  ...
+# Subtest: original whole king-return-mirror
+ok 3 - original whole king-return-mirror
+  ---
+  duration_ms: 49.3825
+  type: 'test'
+  ...
+# Subtest: original whole king-return-mirror-black
+ok 4 - original whole king-return-mirror-black
+  ---
+  duration_ms: 52.3747
+  type: 'test'
+  ...
+# Subtest: original whole reverse-triangle
+ok 5 - original whole reverse-triangle
+  ---
+  duration_ms: 61.7985
+  type: 'test'
+  ...
+# Subtest: original whole reverse-triangle-black
+ok 6 - original whole reverse-triangle-black
+  ---
+  duration_ms: 50.4161
+  type: 'test'
+  ...
+# Subtest: original whole reverse-triangle-mirror
+ok 7 - original whole reverse-triangle-mirror
+  ---
+  duration_ms: 51.2159
+  type: 'test'
+  ...
+# Subtest: original whole reverse-triangle-mirror-black
+ok 8 - original whole reverse-triangle-mirror-black
+  ---
+  duration_ms: 54.222
+  type: 'test'
+  ...
+# Subtest: original whole central-triangle
+ok 9 - original whole central-triangle
+  ---
+  duration_ms: 67.4854
+  type: 'test'
+  ...
+# Subtest: original whole central-triangle-black
+ok 10 - original whole central-triangle-black
+  ---
+  duration_ms: 62.1219
+  type: 'test'
+  ...
+# Subtest: original whole central-triangle-mirror
+ok 11 - original whole central-triangle-mirror
+  ---
+  duration_ms: 72.0999
+  type: 'test'
+  ...
+# Subtest: original whole central-triangle-mirror-black
+ok 12 - original whole central-triangle-mirror-black
+  ---
+  duration_ms: 65.0818
+  type: 'test'
+  ...
+# Subtest: original whole rook-return
+ok 13 - original whole rook-return
+  ---
+  duration_ms: 143.4066
+  type: 'test'
+  ...
+# Subtest: original whole rook-return-black
+ok 14 - original whole rook-return-black
+  ---
+  duration_ms: 146.5373
+  type: 'test'
+  ...
+# Subtest: original whole rook-return-mirror
+ok 15 - original whole rook-return-mirror
+  ---
+  duration_ms: 143.6551
+  type: 'test'
+  ...
+# Subtest: original whole rook-return-mirror-black
+ok 16 - original whole rook-return-mirror-black
+  ---
+  duration_ms: 148.1089
+  type: 'test'
+  ...
+# Subtest: original whole knight-return
+ok 17 - original whole knight-return
+  ---
+  duration_ms: 84.1108
+  type: 'test'
+  ...
+# Subtest: original whole knight-return-black
+ok 18 - original whole knight-return-black
+  ---
+  duration_ms: 87.163
+  type: 'test'
+  ...
+# Subtest: original whole knight-return-mirror
+ok 19 - original whole knight-return-mirror
+  ---
+  duration_ms: 82.9093
+  type: 'test'
+  ...
+# Subtest: original whole knight-return-mirror-black
+ok 20 - original whole knight-return-mirror-black
+  ---
+  duration_ms: 84.8243
+  type: 'test'
+  ...
+# Subtest: original whole bishop-return
+ok 21 - original whole bishop-return
+  ---
+  duration_ms: 101.6515
+  type: 'test'
+  ...
+# Subtest: original whole bishop-return-black
+ok 22 - original whole bishop-return-black
+  ---
+  duration_ms: 98.2973
+  type: 'test'
+  ...
+# Subtest: original whole bishop-return-mirror
+ok 23 - original whole bishop-return-mirror
+  ---
+  duration_ms: 122.9458
+  type: 'test'
+  ...
+# Subtest: original whole bishop-return-mirror-black
+ok 24 - original whole bishop-return-mirror-black
+  ---
+  duration_ms: 104.0675
+  type: 'test'
+  ...
+# Subtest: original whole queen-return
+ok 25 - original whole queen-return
+  ---
+  duration_ms: 257.2161
+  type: 'test'
+  ...
+# Subtest: original whole queen-return-black
+ok 26 - original whole queen-return-black
+  ---
+  duration_ms: 249.0944
+  type: 'test'
+  ...
+# Subtest: original whole queen-return-mirror
+ok 27 - original whole queen-return-mirror
+  ---
+  duration_ms: 253.5222
+  type: 'test'
+  ...
+# Subtest: original whole queen-return-mirror-black
+ok 28 - original whole queen-return-mirror-black
+  ---
+  duration_ms: 251.8321
+  type: 'test'
+  ...
+# Subtest: original whole mate-reply-check-evasions
+ok 29 - original whole mate-reply-check-evasions
+  ---
+  duration_ms: 298.2816
+  type: 'test'
+  ...
+# Subtest: original whole mate-reply-check-evasions-black
+ok 30 - original whole mate-reply-check-evasions-black
+  ---
+  duration_ms: 315.7434
+  type: 'test'
+  ...
+# Subtest: original whole mate-reply-check-evasions-mirror
+ok 31 - original whole mate-reply-check-evasions-mirror
+  ---
+  duration_ms: 310.1108
+  type: 'test'
+  ...
+# Subtest: original whole mate-reply-check-evasions-mirror-black
+ok 32 - original whole mate-reply-check-evasions-mirror-black
+  ---
+  duration_ms: 298.4504
+  type: 'test'
+  ...
+# Subtest: original whole triangle-incomplete
+ok 33 - original whole triangle-incomplete
+  ---
+  duration_ms: 48.2271
+  type: 'test'
+  ...
+# Subtest: original whole triangle-incomplete-black
+ok 34 - original whole triangle-incomplete-black
+  ---
+  duration_ms: 47.6871
+  type: 'test'
+  ...
+# Subtest: original whole triangle-incomplete-mirror
+ok 35 - original whole triangle-incomplete-mirror
+  ---
+  duration_ms: 46.4504
+  type: 'test'
+  ...
+# Subtest: original whole triangle-incomplete-mirror-black
+ok 36 - original whole triangle-incomplete-mirror-black
+  ---
+  duration_ms: 47.2672
+  type: 'test'
+  ...
+# Subtest: original whole own-back-and-forth
+ok 37 - original whole own-back-and-forth
+  ---
+  duration_ms: 42.5803
+  type: 'test'
+  ...
+# Subtest: original whole own-back-and-forth-black
+ok 38 - original whole own-back-and-forth-black
+  ---
+  duration_ms: 39.8679
+  type: 'test'
+  ...
+# Subtest: original whole own-back-and-forth-mirror
+ok 39 - original whole own-back-and-forth-mirror
+  ---
+  duration_ms: 40.0294
+  type: 'test'
+  ...
+# Subtest: original whole own-back-and-forth-mirror-black
+ok 40 - original whole own-back-and-forth-mirror-black
+  ---
+  duration_ms: 40.7519
+  type: 'test'
+  ...
+# Subtest: original whole enemy-does-not-return
+ok 41 - original whole enemy-does-not-return
+  ---
+  duration_ms: 57.157
+  type: 'test'
+  ...
+# Subtest: original whole enemy-does-not-return-black
+ok 42 - original whole enemy-does-not-return-black
+  ---
+  duration_ms: 54.6464
+  type: 'test'
+  ...
+# Subtest: original whole enemy-does-not-return-mirror
+ok 43 - original whole enemy-does-not-return-mirror
+  ---
+  duration_ms: 56.3045
+  type: 'test'
+  ...
+# Subtest: original whole enemy-does-not-return-mirror-black
+ok 44 - original whole enemy-does-not-return-mirror-black
+  ---
+  duration_ms: 57.4588
+  type: 'test'
+  ...
+# Subtest: original whole short-history
+ok 45 - original whole short-history
+  ---
+  duration_ms: 33.4993
+  type: 'test'
+  ...
+# Subtest: original whole short-history-black
+ok 46 - original whole short-history-black
+  ---
+  duration_ms: 31.8091
+  type: 'test'
+  ...
+# Subtest: original whole short-history-mirror
+ok 47 - original whole short-history-mirror
+  ---
+  duration_ms: 30.703
+  type: 'test'
+  ...
+# Subtest: original whole short-history-mirror-black
+ok 48 - original whole short-history-mirror-black
+  ---
+  duration_ms: 32.8206
+  type: 'test'
+  ...
+# Subtest: original whole nonking-actual
+ok 49 - original whole nonking-actual
+  ---
+  duration_ms: 50.2851
+  type: 'test'
+  ...
+# Subtest: original whole nonking-actual-black
+ok 50 - original whole nonking-actual-black
+  ---
+  duration_ms: 47.4479
+  type: 'test'
+  ...
+# Subtest: original whole nonking-actual-mirror
+ok 51 - original whole nonking-actual-mirror
+  ---
+  duration_ms: 44.5752
+  type: 'test'
+  ...
+# Subtest: original whole nonking-actual-mirror-black
+ok 52 - original whole nonking-actual-mirror-black
+  ---
+  duration_ms: 49.0471
+  type: 'test'
+  ...
+# Subtest: original whole own-nonking-middle
+ok 53 - original whole own-nonking-middle
+  ---
+  duration_ms: 49.9388
+  type: 'test'
+  ...
+# Subtest: original whole own-nonking-middle-black
+ok 54 - original whole own-nonking-middle-black
+  ---
+  duration_ms: 49.1472
+  type: 'test'
+  ...
+# Subtest: original whole own-nonking-middle-mirror
+ok 55 - original whole own-nonking-middle-mirror
+  ---
+  duration_ms: 49.8516
+  type: 'test'
+  ...
+# Subtest: original whole own-nonking-middle-mirror-black
+ok 56 - original whole own-nonking-middle-mirror-black
+  ---
+  duration_ms: 49.7838
+  type: 'test'
+  ...
+# Subtest: original whole enemy-pawn-moves
+ok 57 - original whole enemy-pawn-moves
+  ---
+  duration_ms: 42.4089
+  type: 'test'
+  ...
+# Subtest: original whole enemy-pawn-moves-black
+ok 58 - original whole enemy-pawn-moves-black
+  ---
+  duration_ms: 41.6692
+  type: 'test'
+  ...
+# Subtest: original whole enemy-pawn-moves-mirror
+ok 59 - original whole enemy-pawn-moves-mirror
+  ---
+  duration_ms: 41.8848
+  type: 'test'
+  ...
+# Subtest: original whole enemy-pawn-moves-mirror-black
+ok 60 - original whole enemy-pawn-moves-mirror-black
+  ---
+  duration_ms: 42.6811
+  type: 'test'
+  ...
+# Subtest: original whole enemy-capture
+ok 61 - original whole enemy-capture
+  ---
+  duration_ms: 107.7725
+  type: 'test'
+  ...
+# Subtest: original whole enemy-capture-black
+ok 62 - original whole enemy-capture-black
+  ---
+  duration_ms: 112.9245
+  type: 'test'
+  ...
+# Subtest: original whole enemy-capture-mirror
+ok 63 - original whole enemy-capture-mirror
+  ---
+  duration_ms: 108.7652
+  type: 'test'
+  ...
+# Subtest: original whole enemy-capture-mirror-black
+ok 64 - original whole enemy-capture-mirror-black
+  ---
+  duration_ms: 107.8577
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-capture
+ok 65 - original whole actual-king-capture
+  ---
+  duration_ms: 95.6596
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-capture-black
+ok 66 - original whole actual-king-capture-black
+  ---
+  duration_ms: 93.0955
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-capture-mirror
+ok 67 - original whole actual-king-capture-mirror
+  ---
+  duration_ms: 97.5769
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-capture-mirror-black
+ok 68 - original whole actual-king-capture-mirror-black
+  ---
+  duration_ms: 93.1321
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-step
+ok 69 - original whole illegal-actual-step
+  ---
+  duration_ms: 2.9997
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-step-black
+ok 70 - original whole illegal-actual-step-black
+  ---
+  duration_ms: 2.0668
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-step-mirror
+ok 71 - original whole illegal-actual-step-mirror
+  ---
+  duration_ms: 2.1215
+  type: 'test'
+  ...
+# Subtest: original whole illegal-actual-step-mirror-black
+ok 72 - original whole illegal-actual-step-mirror-black
+  ---
+  duration_ms: 2.0672
+  type: 'test'
+  ...
+# Subtest: original whole promotion-actual
+ok 73 - original whole promotion-actual
+  ---
+  duration_ms: 73.6456
+  type: 'test'
+  ...
+# Subtest: original whole promotion-actual-black
+ok 74 - original whole promotion-actual-black
+  ---
+  duration_ms: 80.6735
+  type: 'test'
+  ...
+# Subtest: original whole promotion-actual-mirror
+ok 75 - original whole promotion-actual-mirror
+  ---
+  duration_ms: 78.7943
+  type: 'test'
+  ...
+# Subtest: original whole promotion-actual-mirror-black
+ok 76 - original whole promotion-actual-mirror-black
+  ---
+  duration_ms: 83.7507
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled
+ok 77 - original whole profile-disabled
+  ---
+  duration_ms: 46.0763
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-black
+ok 78 - original whole profile-disabled-black
+  ---
+  duration_ms: 44.3312
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-mirror
+ok 79 - original whole profile-disabled-mirror
+  ---
+  duration_ms: 42.6327
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-mirror-black
+ok 80 - original whole profile-disabled-mirror-black
+  ---
+  duration_ms: 45.9455
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget
+ok 81 - original whole zero-new-budget
+  ---
+  duration_ms: 44.4827
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-black
+ok 82 - original whole zero-new-budget-black
+  ---
+  duration_ms: 42.3637
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-mirror
+ok 83 - original whole zero-new-budget-mirror
+  ---
+  duration_ms: 44.926
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-mirror-black
+ok 84 - original whole zero-new-budget-mirror-black
+  ---
+  duration_ms: 45.657
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock
+ok 85 - original whole terminal-clock
+  ---
+  duration_ms: 40.9979
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-black
+ok 86 - original whole terminal-clock-black
+  ---
+  duration_ms: 39.6129
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-mirror
+ok 87 - original whole terminal-clock-mirror
+  ---
+  duration_ms: 39.6648
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-mirror-black
+ok 88 - original whole terminal-clock-mirror-black
+  ---
+  duration_ms: 40.2489
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-reply
+ok 89 - original whole terminal-clock-reply
+  ---
+  duration_ms: 53.3312
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-reply-black
+ok 90 - original whole terminal-clock-reply-black
+  ---
+  duration_ms: 50.7517
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-reply-mirror
+ok 91 - original whole terminal-clock-reply-mirror
+  ---
+  duration_ms: 48.8518
+  type: 'test'
+  ...
+# Subtest: original whole terminal-clock-reply-mirror-black
+ok 92 - original whole terminal-clock-reply-mirror-black
+  ---
+  duration_ms: 51.9667
+  type: 'test'
+  ...
+# Subtest: original whole expired-ep-state
+ok 93 - original whole expired-ep-state
+  ---
+  duration_ms: 48.1552
+  type: 'test'
+  ...
+# Subtest: original whole expired-ep-state-black
+ok 94 - original whole expired-ep-state-black
+  ---
+  duration_ms: 48.3
+  type: 'test'
+  ...
+# Subtest: original whole expired-ep-state-mirror
+ok 95 - original whole expired-ep-state-mirror
+  ---
+  duration_ms: 46.345
+  type: 'test'
+  ...
+# Subtest: original whole expired-ep-state-mirror-black
+ok 96 - original whole expired-ep-state-mirror-black
+  ---
+  duration_ms: 47.5755
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition
+ok 97 - original whole terminal-repetition
+  ---
+  duration_ms: 119.6644
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-black
+ok 98 - original whole terminal-repetition-black
+  ---
+  duration_ms: 114.1242
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-mirror
+ok 99 - original whole terminal-repetition-mirror
+  ---
+  duration_ms: 113.6385
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-mirror-black
+ok 100 - original whole terminal-repetition-mirror-black
+  ---
+  duration_ms: 123.9172
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-reply
+ok 101 - original whole terminal-repetition-reply
+  ---
+  duration_ms: 118.7067
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-reply-black
+ok 102 - original whole terminal-repetition-reply-black
+  ---
+  duration_ms: 110.3807
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-reply-mirror
+ok 103 - original whole terminal-repetition-reply-mirror
+  ---
+  duration_ms: 114.6288
+  type: 'test'
+  ...
+# Subtest: original whole terminal-repetition-reply-mirror-black
+ok 104 - original whole terminal-repetition-reply-mirror-black
+  ---
+  duration_ms: 115.5882
+  type: 'test'
+  ...
+# Subtest: original whole older-triangle-not-current
+ok 105 - original whole older-triangle-not-current
+  ---
+  duration_ms: 76.0783
+  type: 'test'
+  ...
+# Subtest: original whole older-triangle-not-current-black
+ok 106 - original whole older-triangle-not-current-black
+  ---
+  duration_ms: 75.8874
+  type: 'test'
+  ...
+# Subtest: original whole older-triangle-not-current-mirror
+ok 107 - original whole older-triangle-not-current-mirror
+  ---
+  duration_ms: 74.8095
+  type: 'test'
+  ...
+# Subtest: original whole older-triangle-not-current-mirror-black
+ok 108 - original whole older-triangle-not-current-mirror-black
+  ---
+  duration_ms: 77.5528
+  type: 'test'
+  ...
+# Subtest: original whole missing-history
+ok 109 - original whole missing-history
+  ---
+  duration_ms: 17.7177
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-black
+ok 110 - original whole missing-history-black
+  ---
+  duration_ms: 17.135
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-mirror
+ok 111 - original whole missing-history-mirror
+  ---
+  duration_ms: 16.8895
+  type: 'test'
+  ...
+# Subtest: original whole missing-history-mirror-black
+ok 112 - original whole missing-history-mirror-black
+  ---
+  duration_ms: 17.472
+  type: 'test'
+  ...
+# Subtest: original whole own-rights-lost-k
+ok 113 - original whole own-rights-lost-k
+  ---
+  duration_ms: 67.7734
+  type: 'test'
+  ...
+# Subtest: original whole own-rights-lost-k-black
+ok 114 - original whole own-rights-lost-k-black
+  ---
+  duration_ms: 67.8123
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rights-lost-k
+ok 115 - original whole enemy-rights-lost-k
+  ---
+  duration_ms: 116.0413
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rights-lost-k-black
+ok 116 - original whole enemy-rights-lost-k-black
+  ---
+  duration_ms: 110.1711
+  type: 'test'
+  ...
+# Subtest: original whole own-rights-lost-q
+ok 117 - original whole own-rights-lost-q
+  ---
+  duration_ms: 107.7682
+  type: 'test'
+  ...
+# Subtest: original whole own-rights-lost-q-black
+ok 118 - original whole own-rights-lost-q-black
+  ---
+  duration_ms: 107.6654
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rights-lost-q
+ok 119 - original whole enemy-rights-lost-q
+  ---
+  duration_ms: 117.2941
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rights-lost-q-black
+ok 120 - original whole enemy-rights-lost-q-black
+  ---
+  duration_ms: 115.7843
+  type: 'test'
+  ...
+# Subtest: forgery before
+ok 121 - forgery before
+  ---
+  duration_ms: 30.0205
+  type: 'test'
+  ...
+# Subtest: forgery after
+ok 122 - forgery after
+  ---
+  duration_ms: 24.2813
+  type: 'test'
+  ...
+# Subtest: forgery history
+ok 123 - forgery history
+  ---
+  duration_ms: 26.4716
+  type: 'test'
+  ...
+# Subtest: forgery actual
+ok 124 - forgery actual
+  ---
+  duration_ms: 26.1993
+  type: 'test'
+  ...
+# Subtest: forgery segment index
+ok 125 - forgery segment index
+  ---
+  duration_ms: 26.3346
+  type: 'test'
+  ...
+# Subtest: forgery segment record
+ok 126 - forgery segment record
+  ---
+  duration_ms: 26.5037
+  type: 'test'
+  ...
+# Subtest: forgery start frame
+ok 127 - forgery start frame
+  ---
+  duration_ms: 26.3551
+  type: 'test'
+  ...
+# Subtest: forgery king route
+ok 128 - forgery king route
+  ---
+  duration_ms: 25.9902
+  type: 'test'
+  ...
+# Subtest: forgery signed area
+ok 129 - forgery signed area
+  ---
+  duration_ms: 26.0745
+  type: 'test'
+  ...
+# Subtest: forgery enemy type
+ok 130 - forgery enemy type
+  ---
+  duration_ms: 26.1036
+  type: 'test'
+  ...
+# Subtest: forgery enemy color
+ok 131 - forgery enemy color
+  ---
+  duration_ms: 25.7541
+  type: 'test'
+  ...
+# Subtest: forgery enemy route
+ok 132 - forgery enemy route
+  ---
+  duration_ms: 25.2857
+  type: 'test'
+  ...
+# Subtest: forgery start pieces
+ok 133 - forgery start pieces
+  ---
+  duration_ms: 25.7978
+  type: 'test'
+  ...
+# Subtest: forgery after pieces
+ok 134 - forgery after pieces
+  ---
+  duration_ms: 26.1728
+  type: 'test'
+  ...
+# Subtest: forgery placement
+ok 135 - forgery placement
+  ---
+  duration_ms: 26.6616
+  type: 'test'
+  ...
+# Subtest: forgery castling
+ok 136 - forgery castling
+  ---
+  duration_ms: 26.1019
+  type: 'test'
+  ...
+# Subtest: forgery EP
+ok 137 - forgery EP
+  ---
+  duration_ms: 25.8554
+  type: 'test'
+  ...
+# Subtest: forgery before turn
+ok 138 - forgery before turn
+  ---
+  duration_ms: 25.4686
+  type: 'test'
+  ...
+# Subtest: forgery after turn
+ok 139 - forgery after turn
+  ---
+  duration_ms: 24.453
+  type: 'test'
+  ...
+# Subtest: forgery before halfmove
+ok 140 - forgery before halfmove
+  ---
+  duration_ms: 24.3503
+  type: 'test'
+  ...
+# Subtest: forgery after halfmove
+ok 141 - forgery after halfmove
+  ---
+  duration_ms: 26.0177
+  type: 'test'
+  ...
+# Subtest: forgery before fullmove
+ok 142 - forgery before fullmove
+  ---
+  duration_ms: 25.924
+  type: 'test'
+  ...
+# Subtest: forgery after fullmove
+ok 143 - forgery after fullmove
+  ---
+  duration_ms: 25.9594
+  type: 'test'
+  ...
+# Subtest: forgery reply domain
+ok 144 - forgery reply domain
+  ---
+  duration_ms: 26.9471
+  type: 'test'
+  ...
+# Subtest: forgery reply order
+ok 145 - forgery reply order
+  ---
+  duration_ms: 25.9713
+  type: 'test'
+  ...
+# Subtest: forgery reply record
+ok 146 - forgery reply record
+  ---
+  duration_ms: 24.1616
+  type: 'test'
+  ...
+# Subtest: forgery reply frame
+ok 147 - forgery reply frame
+  ---
+  duration_ms: 25.9071
+  type: 'test'
+  ...
+# Subtest: forgery reply terminal
+ok 148 - forgery reply terminal
+  ---
+  duration_ms: 23.912
+  type: 'test'
+  ...
+# Subtest: forgery text
+ok 149 - forgery text
+  ---
+  duration_ms: 25.6476
+  type: 'test'
+  ...
+# Subtest: forgery quality
+ok 150 - forgery quality
+  ---
+  duration_ms: 24.2073
+  type: 'test'
+  ...
+# Subtest: forgery mandatory tag
+ok 151 - forgery mandatory tag
+  ---
+  duration_ms: 26.957
+  type: 'test'
+  ...
+# Subtest: forgery ledger
+ok 152 - forgery ledger
+  ---
+  duration_ms: 26.2528
+  type: 'test'
+  ...
+# Subtest: forgery status
+ok 153 - forgery status
+  ---
+  duration_ms: 24.6284
+  type: 'test'
+  ...
+# Subtest: forgery limit
+ok 154 - forgery limit
+  ---
+  duration_ms: 26.1105
+  type: 'test'
+  ...
+# Subtest: forgery schema
+ok 155 - forgery schema
+  ---
+  duration_ms: 23.9217
+  type: 'test'
+  ...
+# Subtest: forgery comment
+ok 156 - forgery comment
+  ---
+  duration_ms: 26.0167
+  type: 'test'
+  ...
+# Subtest: forgery inherited SAN
+ok 157 - forgery inherited SAN
+  ---
+  duration_ms: 26.7048
+  type: 'test'
+  ...
+# Subtest: forgery extra field
+ok 158 - forgery extra field
+  ---
+  duration_ms: 25.8568
+  type: 'test'
+  ...
+# Subtest: forgery unsolicited negative tag
+ok 159 - forgery unsolicited negative tag
+  ---
+  duration_ms: 10.5795
+  type: 'test'
+  ...
+# Subtest: forgery incomplete exhausted tag
+ok 160 - forgery incomplete exhausted tag
+  ---
+  duration_ms: 24.5335
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget king-return
+ok 161 - exhaustive small budget king-return
+  ---
+  duration_ms: 627.62
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget queen-return
+ok 162 - exhaustive small budget queen-return
+  ---
+  duration_ms: 6876.3561
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget terminal-repetition-reply
+ok 163 - exhaustive small budget terminal-repetition-reply
+  ---
+  duration_ms: 2308.1781
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget terminal-clock
+ok 164 - exhaustive small budget terminal-clock
+  ---
+  duration_ms: 268.4169
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget expired-ep-state
+ok 165 - exhaustive small budget expired-ep-state
+  ---
+  duration_ms: 324.9022
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget short-history
+ok 166 - exhaustive small budget short-history
+  ---
+  duration_ms: 104.9967
+  type: 'test'
+  ...
+# Subtest: exhaustive small budget missing-history
+ok 167 - exhaustive small budget missing-history
+  ---
+  duration_ms: 53.2185
+  type: 'test'
+  ...
+# Subtest: strict null and disabled options
+ok 168 - strict null and disabled options
+  ---
+  duration_ms: 266.039
+  type: 'test'
+  ...
+# Subtest: original counts and positive replay metadata
+ok 169 - original counts and positive replay metadata
+  ---
+  duration_ms: 0.8978
+  type: 'test'
+  ...
+# Subtest: enemy unit families signed triangles and restored rule fields
+ok 170 - enemy unit families signed triangles and restored rule fields
+  ---
+  duration_ms: 0.5871
+  type: 'test'
+  ...
+# Subtest: physical full-history terminal reply reasons captures and fresh FEN distinction
+ok 171 - physical full-history terminal reply reasons captures and fresh FEN distinction
+  ---
+  duration_ms: 254.4505
+  type: 'test'
+  ...
+# Subtest: incomplete nonking pawn capture promotion missing short and older routes refuse own labels
+ok 172 - incomplete nonking pawn capture promotion missing short and older routes refuse own labels
+  ---
+  duration_ms: 2.4232
+  type: 'test'
+  ...
+# Subtest: standard rights EP loss and actual terminal clock repetition suppress labels
+ok 173 - standard rights EP loss and actual terminal clock repetition suppress labels
+  ---
+  duration_ms: 2.9118
+  type: 'test'
+  ...
+# Subtest: specific selected maneuver and urgent mate warning with valid triangle
+ok 174 - specific selected maneuver and urgent mate warning with valid triangle
+  ---
+  duration_ms: 0.2473
+  type: 'test'
+  ...
+# Subtest: input result immutability inherited event order priority and comment
+ok 175 - input result immutability inherited event order priority and comment
+  ---
+  duration_ms: 299.4245
+  type: 'test'
+  ...
+1..175
+# tests 175
+# suites 0
+# pass 175
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22226.5182
