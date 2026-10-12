@@ -171,7 +171,7 @@ try {
   assert.equal(await evaluate(review,"document.querySelector('#concept-view-reply').getAttribute('aria-pressed')"),'true');
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
   assert.ok(await evaluate(review,"document.querySelectorAll('.coach-insight').length<=2"));
-  assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/your knight on f3.*attack your opponent’s pawn on e5/);
+  assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/Your knight on f3.*attacks your opponent’s pawn on e5/);
   await capture('coach-reply-wide');
   await evaluate(review,"import('./analysis.js').then(m=>m.go(4))");
   assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/opponent’s knight on c6.*defends the pawn on e5/);

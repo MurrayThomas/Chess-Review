@@ -19,12 +19,12 @@ const reply=(r,player='w')=>coachReply(r.result.findings,{mover:r.mover,player,c
 const text=(san,player='w')=>reply(row(san),player).items.map(i=>i.text).join(' ');
 
 test('Fast coach picks concrete attacks and defenses with correct ownership for both players',()=>{
- assert.match(text('Nf3'),/your knight on f3.*attack your opponent’s pawn on e5/);
+ assert.match(text('Nf3'),/Your knight on f3.*attacks your opponent’s pawn on e5/);
  assert.match(text('Nf3'),/If you could move again in this exact position.*any immediate reply.*Your opponent moves next/);
- assert.match(text('Nf3','b'),/your opponent’s knight on f3.*attacks your pawn on e5/);
+ assert.match(text('Nf3','b'),/Your opponent’s knight on f3.*attacks your pawn on e5/);
  assert.match(text('Nf3','b'),/If your opponent could move again in this exact position.*You move next/);
  assert.match(text('Nc6'),/opponent’s knight on c6.*defends the pawn on e5, which you attack/);
- assert.match(text('Nc6','b'),/your knight on c6.*defend.*pawn on e5/);
+ assert.match(text('Nc6','b'),/Your knight on c6.*defends.*pawn on e5/);
  assert.match(text('Nf6'),/opponent’s knight on f6.*attacks your pawn on e4/);
  assert.match(text('h3'),/Your pawn on h3 now attacks your opponent’s knight on g4/);
  assert.doesNotMatch(text('h3'),/wins|forced gain|best move/);
@@ -79,8 +79,8 @@ test('Fast narration follows navigation, variations and perspective using cached
  const session=new ConceptSession({demandOnly:true,worker:()=>({postMessage(){},terminate(){}})});t.after(()=>session.stop());a.context.__session=session;a.run('_conceptSession=__session');
  S.settings.conceptsEnabled=true;S.settings.conceptsView='reply';S.meSide='w';S.playerKnown=true;
  for(const ply of [3,4]){a.call('go',ply);const key=conceptKey(a.call('selectedConceptInput'));session.entries.set(key,{...row(ply===3?'Nf3':'Nc6').result,status:'complete'});a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insight > p').textContent,ply===3?/knight on f3/:/knight on c6/);}
- S.meSide='b';S.flipped=true;a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insight > p').textContent,/your knight on c6/);
- branch(a,2,1);const selected=a.call('selectedConceptInput');assert.equal(selected.move,'g1f3');session.entries.set(conceptKey(selected),{...row('Nf3').result,status:'complete'});a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insight > p').textContent,/your opponent’s knight on f3/);
+ S.meSide='b';S.flipped=true;a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insight > p').textContent,/Your knight on c6/);
+ branch(a,2,1);const selected=a.call('selectedConceptInput');assert.equal(selected.move,'g1f3');session.entries.set(conceptKey(selected),{...row('Nf3').result,status:'complete'});a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insight > p').textContent,/Your opponent’s knight on f3/);
  S.playerKnown=false;a.call('renderCoachPanel');assert.match(a.dom.window.document.querySelector('.coach-insights-body').textContent,/could not be identified/);assert.equal(a.dom.window.document.querySelector('.coach-insight'),null);
 });
 
