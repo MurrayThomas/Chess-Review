@@ -200,6 +200,13 @@
     "reusedE039E037TreeCheckersRequired": true,
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
-    "next": "Run unchanged174-test E079 smoke after admitted pilot; then gated160-test saved replay. All broader gates remain open."
+    "next": "Poll SAME live E079 smoke session42133; preserve terminal artifacts then gated160-test saved replay. E078 source audit requires a new complete-result adapter after this boundary.",
+    "smokeProcess": {
+      "runnerPid": 7108,
+      "childPid": 14996,
+      "execSession": 42133,
+      "startedAt": "2026-10-12T04:44:28Z",
+      "terminal": false
+    }
   }
 }

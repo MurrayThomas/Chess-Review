@@ -22,7 +22,23 @@ Actual pilot exceeds10–60second estimate but stays under unchanged120second ca
 no gate changed. Historical support-query work is costlier than earlier wrappers.
 Retain exact logs/source/receipt/PID/cost in evidence/semantic-e079-pilot-initial.
 
-Next start the unchanged174-check smoke against ALL138original cases,30forgeries,
+The unchanged174-check smoke is live in its original process: runner7108,
+child14996, exec session42133, started2026-10-12T04:44:28Z. A live OS/process
+inspection and same-handle poll confirm continuing CPU work at about4minutes;
+no terminal result yet. Do not restart it. Next poll this SAME handle, qualify
+its terminal result and retain raw artifacts before gated saved replay.
+
+Source audit for the NEXT E078 dependency found its separate scalar FEN/pawn
+graph/ray/maximal-battery derivation reconstructs own complete facts, but
+replayResult checks only placementAnalysis and own event subset. It does not
+check disabled-parent identity, all inherited fields, selected comment/priority
+or full-result schema; its returned certificate count is the unexhausted
+derivation count even on exhaustion. Preserve original source/evidence. A
+prospectively registered new full-result adapter is required before reuse,
+conditional on E077; this is a source finding, not an executed E078 experiment
+or a new acceptance claim. Required liberation/strategic scope remains partial.
+
+Registered current work remains the unchanged174-check smoke against ALL138original cases,30forgeries,
 3integer-budget cases and3strict/history/coverage controls. Pilot cost suggests
 roughly300–750seconds instead of230–650; retain original900-second cap, no
 semantic/source/search changes. Saved stage remains gated; no E079 saved replay
