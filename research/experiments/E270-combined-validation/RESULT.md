@@ -37,9 +37,20 @@ file passes all15adversarial checks in130.693seconds, including all48original
 views, strict wrong-epoch and forged metadata rejection, complete domain/outcome
 mutations, stderr retention, immutable caller snapshots, legacy limitations,
 cost failure and original-context versus strict-current consumer checks. Earlier
-14-check development smoke also passed110.144seconds. Remaining dependent tests
-are RUNNING, not claimed passing. An additional unchanged E220 equality file is
-registered for a separate serial supplement before record reconciliation.
+14-check development smoke also passed110.144seconds. The complete first dependent attempt finished641.997seconds: nine files pass,
+then E228 rejects one unregistered new dependency before its semantic checks.
+All1623canonical archive hashes remain unchanged;16-file qualification FAILS.
+The preserved record is evidence/complete-repair-checks/summary.json.
+
+Trace of E228/E230 saved pilot closures identifies exactly one added unchanged
+checker edge: E211 check-execution.mjs, normalized SHA778598e1... (full hash in
+AMENDMENT-exact-checker-edge.md). Register that exact hash only; all15original
+transitions, current collectors/checkers, observations and scientific gates stay
+unchanged. Add a dedicated forged-edge and both legacy closure check. No wildcard
+or caller-supplied source hash. A NEW17-file retry at7e8e4ed is RUNNING, including
+all16original affected files plus the original E220 equality file. Earlier nine
+passes remain diagnostic; all17must now pass on current sources. No failed attempt
+or original archive overwritten. Full cumulative regression remains unlaunched.
 
 All13affected records (10builds,3supports E211/E214/E228) must be qualified by
 passing study tests, exact source bindings and unchanged canonical archives
@@ -48,8 +59,7 @@ Active records currently remain source-stale pending this gate. Baseline's earli
 zero-stale count below describes the ORIGINAL freeze only. Full cumulative
 regression has NOT launched. New source freeze, successful new pilot, all259
 maintained files, independent semantic/integration/reproduction/strategic/human
-gates remain. Concrete next step: finish the frozen16-file run, then E220
-supplement, reconcile qualified records and take the new source freeze/pilot.
+gates remain. Concrete next step: finish the new complete17-file retry, reconcile qualified records and take the new source freeze/pilot.
 
 ## Operational census and source freeze
 

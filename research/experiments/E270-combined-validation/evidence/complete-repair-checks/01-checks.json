@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E211-rook-tablebase-admission/code/execution.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E211-rook-tablebase-admission/code/execution.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ genuine observed process metadata WDL equality forgery rejection and short budget (51308.2159ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 52556.467\n",
+  "stderr": "",
+  "seconds": 52.6534988
+}

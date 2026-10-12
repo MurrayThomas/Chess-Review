@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E228-saved-tablebase-support/code/support.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E228-saved-tablebase-support/code/support.test.mjs"
+  ],
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "stdout": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Unregistered new dependency: research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs\n    at compareEpochs (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/source-epochs.mjs:4:558)\n    at assertSourceEpochs (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/source-epochs.mjs:5:191)\n    at async file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E228-saved-tablebase-support/code/support.test.mjs:12:272 {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}\n\nNode.js v24.14.1\n✖ research\\experiments\\E228-saved-tablebase-support\\code\\support.test.mjs (2269.3535ms)\nℹ tests 1\nℹ suites 0\nℹ pass 0\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2279.5319\n\n✖ failing tests:\n\ntest at research\\experiments\\E228-saved-tablebase-support\\code\\support.test.mjs:1:1\n✖ research\\experiments\\E228-saved-tablebase-support\\code\\support.test.mjs (2269.3535ms)\n  'test failed'\n",
+  "stderr": "",
+  "seconds": 2.367081099999952
+}

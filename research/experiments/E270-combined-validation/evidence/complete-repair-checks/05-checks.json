@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E213-short-side-king-choice/code/resources.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E213-short-side-king-choice/code/resources.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ h2 legal short-side drawing king move versus long-side loss (5.894ms)\n✔ reflection legal short-side drawing king move versus long-side loss (3.698ms)\n✔ two prospective rook-placement negatives retain legal long-side losses without drawing short-side resources (5.679ms)\n✔ all five inherited controls independently withhold king-choice credit (16.7418ms)\n✔ default disabled strict input and missing admission remain explicit (0.7394ms)\n✔ zero-clock genuine empty-history and exact frame prerequisites (0.6392ms)\n✔ admission capability isolation rejects fake outcomes and cloned tokens (2.1585ms)\n✔ independent reconstruction rejects king wing outcome source and getter forgeries (21.0073ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 72303.4482\n",
+  "stderr": "",
+  "seconds": 72.39262179999996
+}

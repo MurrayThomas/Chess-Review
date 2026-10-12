@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E217-defensive-positional-exchange/code/resources.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E217-defensive-positional-exchange/code/resources.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ exchange complete exchange/quiet outcomes independently reconstructed (30.4348ms)\n✔ exchange-black complete exchange/quiet outcomes independently reconstructed (47.1502ms)\n✔ default disabled and missing history/source abstain (5.37ms)\n✔ complete observation admission budget is atomic/exact (20.702ms)\n✔ caller values, cloned tokens and cross-color tokens cannot authenticate outcomes (42.7657ms)\n✔ admission reads are isolated copies (9.0537ms)\n✔ independent checker rejects missing extra swapped acceptance branches (85.9535ms)\n✔ independent checker rejects source ledger frame and WDL mutations (167.7576ms)\n✔ independent checker requires every quiet defense and original bishop (69.713ms)\n✔ ordinary quiet rook move does not qualify (2.5935ms)\n✔ immediate bishop recapture is excluded before source admission (2.8493ms)\n✔ strict input options getters and genuine history (4.257ms)\n✔ actual halfmove counters preserved in zero-counter observation model (0.9822ms)\n✔ retain exactly two independently checked examples (8.6451ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 66739.3646\n",
+  "stderr": "",
+  "seconds": 66.87335369999998
+}

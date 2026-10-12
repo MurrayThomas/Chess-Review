@@ -3,7 +3,7 @@
   "experiment": "E270",
   "fullRegressionLaunched": false,
   "acceptedCredit": 0,
-  "currentExecutionGate": "complete-producer-repair-dependent-tests-running",
+  "currentExecutionGate": "complete-17-file-repair-retry-running",
   "development": [
     {
       "experiment": "E212",
@@ -22,9 +22,12 @@
     "positions": 757,
     "independentTruth": false
   },
-  "dependentChecks": "evidence/complete-repair-checks/started.json",
-  "supplementalStudy": "E220",
+  "dependentChecks": "evidence/complete-repair-retry/started.json",
+  "supplementalStudy": "E220 included in complete retry",
   "sourceTransitions": 15,
   "affectedRecords": 13,
-  "recordsReconciled": false
+  "recordsReconciled": false,
+  "previousDependentFailure": "evidence/complete-repair-checks/summary.json",
+  "affectedTestFiles": 17,
+  "registeredAdditionalObservedChecker": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f"
 }

@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E270-combined-validation/code/producer-repair.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E270-combined-validation/code/producer-repair.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ all48fixed original panels admit exactly unchanged historical views with strict current concordance (47525.0351ms)\n✔ original and current executable identities stay distinct; old panel still fails strict-live checker (6.1271ms)\n✔ arbitrary bundle/path/hash/context overrides and unknown IDs reject (1.1687ms)\n✔ changed current producer cannot pass structural or concordance admission (15.5834ms)\n✔ forged historical metadata must still agree with authentic original frame (2.6886ms)\n✔ reserialized changed original WDL fails full successor concordance (26.2888ms)\n✔ reserialized changed current WDL fails full successor concordance (26.7192ms)\n✔ omitted successor/failed execution reject; successful stderr is retained per original contract (56.8996ms)\n✔ returned evidence is isolated from admitted original/current records (2173.9832ms)\n✔ source epochs permit only fifteen exact before/after transitions (1.5317ms)\n✔ unregistered changed or newly imported source rejects (0.9426ms)\n✔ complete historical closure admits explicit epochs, never an arbitrary expected source (1935.6898ms)\n✔ legacy panels retain their original schema and lack fabricated observed-process claims (7949.5768ms)\n✔ stopped cost study preserves original greater-than-three-second failure (1014.0175ms)\n✔ saved positional consumers report their authentic historical context; current checker stays strict (18411.5476ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 130584.9168\n",
+  "stderr": "",
+  "seconds": 130.693025
+}

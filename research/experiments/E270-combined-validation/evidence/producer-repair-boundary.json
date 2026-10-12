@@ -1,0 +1,187 @@
+{
+  "schema": "E270-producer-repair-boundary-v1",
+  "terminalFiles": [
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/producer-repair/observations.json.gz",
+      "bytes": 100291,
+      "sha256": "d1954a554ac1808b050d46cd3d087cccf59a715356c1b9a74000d56f4d805d68"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/producer-repair/started.json",
+      "bytes": 14072,
+      "sha256": "af1879dee63579ac8bfaf7ec848de88ce78fd248c21a80b9c0a296bf657d21aa"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/producer-repair/summary.json",
+      "bytes": 300,
+      "sha256": "ae497c5b19f7b595a939578fbeeefaa6bdba6235d0f74a2978ba43edab294102"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-producer-repair/observations.json.gz",
+      "bytes": 300333,
+      "sha256": "8c675efe8219a4db3bea13182d77bac4d7a0f7fe308aec9a11b075c2b7bb39cf"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-producer-repair/started.json",
+      "bytes": 13813,
+      "sha256": "45fe67df9cf78375d1b75466e73673d4e8ec3a80ed53fd3e8541990ce9c7ccf7"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-producer-repair/summary.json",
+      "bytes": 293,
+      "sha256": "a4139d90f6bff08ab3981f6012cc5a1f21b9af7e56fe1a9bd0e121428ab6125d"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks/00-checks.json",
+      "bytes": 2833,
+      "sha256": "74388ba93f48183842c019954f1e6de9730e0e158b9c999083b5bc43d88aec60"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks/started.json",
+      "bytes": 22180,
+      "sha256": "bdc80e0e36fd1cc7f2ef17fd37ea6913eddc91fbf39e5accdfbb2bca968eb888"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks/summary.json",
+      "bytes": 21352,
+      "sha256": "b40669d1c7b4c4867cc9a2ad284bcdbe54f3ccdb553474af66315294bf646448"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/00-checks.json",
+      "bytes": 1863,
+      "sha256": "d963c59b7711e34d8fdf2ceef3c8645a7039a505bfbb9d26c0e7043fca88cbec"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/01-checks.json",
+      "bytes": 4273,
+      "sha256": "8e82757cfc699b9e5ae64cf9b25759e1c7b9d5295c8763cae0c39e64a15a6127"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/outputs/1/audit/11104.jsonl",
+      "bytes": 483,
+      "sha256": "76c79fc64f1a5e2b8ff1108076c3954ea54dd221d344e7f6a25d35107e727c69"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/outputs/1/generated/research/experiments/E211-rook-tablebase-admission/evidence/observed-process-panel.json",
+      "bytes": 41593,
+      "sha256": "3268b2f92ac9378fd5f0f726b28699f977c9f4f8b21c48defb81d50616ab21f5"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/started.json",
+      "bytes": 22345,
+      "sha256": "614b2c6ac28760f1b7cfc7f5a2331d6cf09048a035cd110daf2be07c4aaed9bc"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/repair-checks-retry/summary.json",
+      "bytes": 22220,
+      "sha256": "3a708ad66c1b6bd76e13e82cb87116699f3819568a6d164af512e21d772ded1a"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/00-checks.json",
+      "bytes": 2184,
+      "sha256": "dbc42404d0b136551c1bb5cf80fa69481d30d9a8aeb3428efa5aad15e6b8bd0a"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/01-checks.json",
+      "bytes": 840,
+      "sha256": "7107beddcc2cab7d1d249e8cae36e534e8bb77829b0cc438925ba2e862408e34"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/02-checks.json",
+      "bytes": 1856,
+      "sha256": "b4f91e107b95dd9555e683d41bbbc58f41cb6262f547d4bc5e9787ea9058e605"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/03-checks.json",
+      "bytes": 834,
+      "sha256": "592f531f907d2e40b05fa1b48e86b2db8a7e9049d9eba7980dc242fc85aac1be"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/04-checks.json",
+      "bytes": 1388,
+      "sha256": "f095fbeb1509d235467ad116ca09cb34588cfe7f30f16b62fa39a72ee9f187ec"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/05-checks.json",
+      "bytes": 1458,
+      "sha256": "673434b455eda8d00f2b75e8b127625cb02e85e917b27bf4ee7e5cc95549717a"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/06-checks.json",
+      "bytes": 1407,
+      "sha256": "a1ec24d4b1bae04240223d5a5542cbcfcb21e11ca5ec52fd40ca18b62d312a79"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/07-checks.json",
+      "bytes": 2320,
+      "sha256": "e4c7f29976b7868798f397e777f69992a1bcaf95eb6a868f81d253c3e020e2ca"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/08-checks.json",
+      "bytes": 1832,
+      "sha256": "d832bd8638aa45406881392f3df277339dfafd6c834f67334747ce02a95d89a5"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/09-checks.json",
+      "bytes": 1872,
+      "sha256": "56abb5caab1fcb179225452894cebe7d1541188d019e838c98ce874fa1f65a0b"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/1/audit/14800.jsonl",
+      "bytes": 486,
+      "sha256": "1519760250f83e42ef41da40c65cc3b781db4b74031209817fe60caf7bf6522e"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/1/generated/research/experiments/E211-rook-tablebase-admission/evidence/observed-process-panel.json",
+      "bytes": 41593,
+      "sha256": "3268b2f92ac9378fd5f0f726b28699f977c9f4f8b21c48defb81d50616ab21f5"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/4/audit/15224.jsonl",
+      "bytes": 444,
+      "sha256": "8f4b6fa2b3454a29c2210872386060420c62739090b30314bf07a11de822858b"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/4/generated/research/experiments/E212-rook-side-defense/evidence/examples.json",
+      "bytes": 11092,
+      "sha256": "8142061b9bfafdbf43297e34610086ac81d8f331ffe1bd07f6679b30b2ba6f02"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/5/audit/10788.jsonl",
+      "bytes": 454,
+      "sha256": "284e29777f0394071420de3e8897ee772557216572a6c48a1396675795224a38"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/5/generated/research/experiments/E213-short-side-king-choice/evidence/examples.json",
+      "bytes": 11693,
+      "sha256": "9abc7fb8b5b04a47253f8d389a0ec2135115674ad61a4ea5a8349013b447d5e1"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/7/audit/18020.jsonl",
+      "bytes": 472,
+      "sha256": "10b8fe7096d8a7cb1d3e7e4c636cc764c450bd374c102b0ebc73f33d252a2670"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/outputs/7/generated/research/experiments/E215-rook-defense-resource-contrasts/evidence/examples.json",
+      "bytes": 26342,
+      "sha256": "5bb06f8d85ad68103bb473f17d2ff751de49960af5c7aa1b38684477cbae80f3"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/started.json",
+      "bytes": 24994,
+      "sha256": "4c81186e0666ec5eabf1b45d3a069d213f7bf8ca0e0f8468ca992cb626b4395a"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/complete-repair-checks/summary.json",
+      "bytes": 27621,
+      "sha256": "e70041e40350ac341be745f66576d3210cdacc5f6e22a240ecaa2ba97a03f8ce"
+    }
+  ],
+  "bytes": 729426,
+  "canonicalArchivesUnchanged": 1623,
+  "qualificationPassed": false,
+  "completeRetry": "evidence/complete-repair-retry/started.json",
+  "duplicateCollectionCheckpoints": "Exact full rows match terminal archives; redundant partial gzip files retained locally under research/runs/E270 rather than duplicated in Git.",
+  "acceptedCredit": 0,
+  "wholeOriginalScopeComplete": false
+}

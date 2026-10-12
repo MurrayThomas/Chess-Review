@@ -1,0 +1,19 @@
+{
+  "revision": "b9f6be923e5e8723870ec03e2800484aed1a922d",
+  "file": "research/experiments/E211-rook-tablebase-admission/code/panels.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E211-rook-tablebase-admission/code/panels.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ admitted complete WDL panel rook-pawn-root (14.3596ms)\n✔ admitted complete WDL panel rook-pawn-root-black (11.6318ms)\n✔ admitted complete WDL panel promotion-domain (22.4302ms)\n✔ admitted complete WDL panel promotion-domain-black (43.4797ms)\n✔ admitted complete WDL panel capture-domain (13.1555ms)\n✔ admitted complete WDL panel capture-domain-black (13.1ms)\n✔ admitted complete WDL panel mechanical-kings (1.1043ms)\n✔ admitted complete WDL panel mechanical-kings-black (0.9099ms)\n✔ one fresh exact-cap equality and short zero preflight omit partial observations (3134.042ms)\n✔ registry requires exact namespace grant purposes dependency closure exports and origins (1.6421ms)\n✔ unregistered URL refuses and caller receipt mutation cannot change private session (1833.741ms)\n✔ guarded metadata fixtures reject incomplete manifest counterfeit bytes and missing files (3012.7306ms)\n✔ collector strict cap getter material rights and history endpoint refuse (6631.9419ms)\n✔ independent panel rejects domain frame perspective flags budget source and raw-output forgeries (58.945ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 72484.7838\n",
+  "stderr": "",
+  "seconds": 72.5751042
+}
