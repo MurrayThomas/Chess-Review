@@ -1,0 +1,1191 @@
+# E070-admission-audit {"schema":"E270-E070-saved-admission-v1","historicalSourceRevision":"2d561fcbcb192dced4ebc64395f39a0fc74fa093","historicalInputsVerified":213,"historicalInputVectorSha256":"3cb04b2f42bea2b3b9c02950de857f4b62c35fc01a6e72be73dc7728b5c8d3e4","semanticSourceCount":60,"semanticClosureSha256":"d949379b44e17bb5ef459201149b24de1b11dbe501eeb42fba1bb998c081f8a5","canonical":[{"file":"research/experiments/E070-knight-outposts/evidence/clean-run.json","bytes":43820,"sha256":"f5166cd999fd57ec1ea9f574d732600a0f66f2c2a87c1d07492d81f9e724f837"},{"file":"research/experiments/E070-knight-outposts/evidence/concept-status.md","bytes":113145,"sha256":"fe1168db452f952c40cf34eac8c2e8984e45f348e6b25419d010e9253c6e0a41"},{"file":"research/experiments/E070-knight-outposts/evidence/demo.html","bytes":1068149,"sha256":"1a6e3546fd107c61690e1b06809c847a54785e95f50ebe521cc5367c06361bb3"},{"file":"research/experiments/E070-knight-outposts/evidence/repeat-run.json","bytes":43875,"sha256":"3863d5b4ce9be1d79e4c4ed1137d07d69e585f4791aac1d127bc1be6c842a0f6"},{"file":"research/experiments/E070-knight-outposts/evidence/results.json","bytes":3543443,"sha256":"eaa1320fe913e059ea4cd49e2833a345d5031175e095c67d5116abe40e4b909e"},{"file":"research/experiments/E070-knight-outposts/evidence/run.json","bytes":43782,"sha256":"58fafca19b71903cafda56de38822e49d83cab791eed7ca658bd1b5a646ccd6d"}],"currentMetadataDifferences":[],"inheritedFingerprints":{"count":3604,"orderedSha256":"5d1805505a7999262a1b4133fd06115022f4b35c7aa4667ccd577e57db999d31"},"teachingListSha256":"a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd","policyEpochSha256":"8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0","receiptSha256":"d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81","summary":{"rows":148,"results":144,"errors":4,"certificates":100,"states":{"proven":76,"pawn-challenge-refuted":32,"no-legal-support":8,"ineligible":20,"disabled":4,"exhausted":4},"refutationMetadata":32,"byKind":{"knight-outpost-proof":76,"advanced-knight-outpost":24},"ownEventReplays":100}}
+# E070-row-audit {"index":0,"id":"supported-fifth","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":1,"id":"supported-fifth-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":2,"id":"supported-fifth-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":3,"id":"supported-fifth-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":4,"id":"two-supporters","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":5,"id":"two-supporters-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":6,"id":"two-supporters-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":7,"id":"two-supporters-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":8,"id":"no-enemy-pawns","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":9,"id":"no-enemy-pawns-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":10,"id":"no-enemy-pawns-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":11,"id":"no-enemy-pawns-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":12,"id":"capture-entry","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":13,"id":"capture-entry-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":14,"id":"capture-entry-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":15,"id":"capture-entry-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":16,"id":"capture-challenging-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":17,"id":"capture-challenging-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":18,"id":"capture-challenging-pawn-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":19,"id":"capture-challenging-pawn-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":20,"id":"remote-pawns","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":21,"id":"remote-pawns-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":22,"id":"remote-pawns-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":23,"id":"remote-pawns-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":24,"id":"enemy-right-capture-shift","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":25,"id":"enemy-right-capture-shift-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":26,"id":"enemy-right-capture-shift-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":27,"id":"enemy-right-capture-shift-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":28,"id":"passed-enemy-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":29,"id":"passed-enemy-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":30,"id":"passed-enemy-pawn-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":31,"id":"passed-enemy-pawn-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":32,"id":"enemy-knight-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":33,"id":"enemy-knight-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":34,"id":"enemy-knight-capture-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":35,"id":"enemy-knight-capture-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":36,"id":"support-can-be-captured","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":37,"id":"support-can-be-captured-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":38,"id":"support-can-be-captured-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":39,"id":"support-can-be-captured-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":40,"id":"relative-pawn-pin","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":41,"id":"relative-pawn-pin-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":42,"id":"relative-pawn-pin-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":43,"id":"relative-pawn-pin-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":44,"id":"advanced-sixth","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":45,"id":"advanced-sixth-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":46,"id":"advanced-sixth-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":47,"id":"advanced-sixth-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":48,"id":"advanced-blockades-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":49,"id":"advanced-blockades-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":50,"id":"advanced-blockades-pawn-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":51,"id":"advanced-blockades-pawn-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":52,"id":"advanced-two-supporters","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":53,"id":"advanced-two-supporters-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":54,"id":"advanced-two-supporters-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":55,"id":"advanced-two-supporters-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":56,"id":"advanced-right-file","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":57,"id":"advanced-right-file-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":58,"id":"advanced-right-file-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":59,"id":"advanced-right-file-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":60,"id":"fourth-with-promotion-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":61,"id":"fourth-with-promotion-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":62,"id":"fourth-with-promotion-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":63,"id":"fourth-with-promotion-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":64,"id":"enemy-pawn-currently-attacks","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":65,"id":"enemy-pawn-currently-attacks-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":66,"id":"enemy-pawn-currently-attacks-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":67,"id":"enemy-pawn-currently-attacks-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":68,"id":"enemy-pawn-can-advance","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":69,"id":"enemy-pawn-can-advance-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":70,"id":"enemy-pawn-can-advance-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":71,"id":"enemy-pawn-can-advance-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":72,"id":"enemy-pawn-can-shift-file","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":73,"id":"enemy-pawn-can-shift-file-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":74,"id":"enemy-pawn-can-shift-file-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":75,"id":"enemy-pawn-can-shift-file-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":76,"id":"blocked-pawn-still-theoretically-reachable","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":77,"id":"blocked-pawn-still-theoretically-reachable-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":78,"id":"blocked-pawn-still-theoretically-reachable-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":79,"id":"blocked-pawn-still-theoretically-reachable-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":80,"id":"legal-capture-file-chain","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":81,"id":"legal-capture-file-chain-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":82,"id":"legal-capture-file-chain-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":83,"id":"legal-capture-file-chain-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":84,"id":"farther-file-capture-chain","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":85,"id":"farther-file-capture-chain-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":86,"id":"farther-file-capture-chain-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":87,"id":"farther-file-capture-chain-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":88,"id":"advanced-current-pawn-attack","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":89,"id":"advanced-current-pawn-attack-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":90,"id":"advanced-current-pawn-attack-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":91,"id":"advanced-current-pawn-attack-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":1,"refutationMetadataAttempts":1,"passed":true}
+# E070-row-audit {"index":92,"id":"no-pawn-support","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":93,"id":"no-pawn-support-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":94,"id":"no-pawn-support-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":95,"id":"no-pawn-support-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":96,"id":"absolute-pawn-pin","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":97,"id":"absolute-pawn-pin-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":98,"id":"absolute-pawn-pin-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":99,"id":"absolute-pawn-pin-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":100,"id":"too-shallow","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":101,"id":"too-shallow-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":102,"id":"too-shallow-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":103,"id":"too-shallow-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":104,"id":"advanced-f6","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":105,"id":"advanced-f6-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":106,"id":"advanced-f6-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":107,"id":"advanced-f6-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":108,"id":"rank-seven-excluded","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":109,"id":"rank-seven-excluded-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":110,"id":"rank-seven-excluded-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":111,"id":"rank-seven-excluded-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":112,"id":"bishop-not-knight","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":113,"id":"bishop-not-knight-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":114,"id":"bishop-not-knight-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":115,"id":"bishop-not-knight-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":116,"id":"actual-knight-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":117,"id":"actual-knight-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":118,"id":"actual-knight-mate-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":119,"id":"actual-knight-mate-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":120,"id":"disabled","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":121,"id":"disabled-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":122,"id":"disabled-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":123,"id":"disabled-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":124,"id":"zero-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":125,"id":"zero-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":126,"id":"zero-budget-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":127,"id":"zero-budget-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":128,"id":"illegal-knight-step","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":129,"id":"illegal-knight-step-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":130,"id":"illegal-knight-step-mirror","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":131,"id":"illegal-knight-step-mirror-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":132,"id":"actual-clock-terminal","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":133,"id":"actual-clock-terminal-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":134,"id":"actual-clock-terminal-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":135,"id":"actual-clock-terminal-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":136,"id":"clock-terminal-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":137,"id":"clock-terminal-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":138,"id":"clock-terminal-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":139,"id":"clock-terminal-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":140,"id":"history-repetition-reply","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":141,"id":"history-repetition-reply-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":142,"id":"history-repetition-reply-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":143,"id":"history-repetition-reply-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":144,"id":"advanced-check-evasion","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":145,"id":"advanced-check-evasion-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":146,"id":"advanced-check-evasion-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+# E070-row-audit {"index":147,"id":"advanced-check-evasion-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":2,"oracleEvaluations":1,"ownProofReplays":2,"refutationProofReplays":0,"refutationMetadataAttempts":0,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: supported-fifth
+ok 1 - saved whole row 0: supported-fifth
+  ---
+  duration_ms: 65.7244
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: supported-fifth-black
+ok 2 - saved whole row 1: supported-fifth-black
+  ---
+  duration_ms: 24.6905
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: supported-fifth-mirror
+ok 3 - saved whole row 2: supported-fifth-mirror
+  ---
+  duration_ms: 23.9315
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: supported-fifth-mirror-black
+ok 4 - saved whole row 3: supported-fifth-mirror-black
+  ---
+  duration_ms: 21.2988
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: two-supporters
+ok 5 - saved whole row 4: two-supporters
+  ---
+  duration_ms: 38.7673
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: two-supporters-black
+ok 6 - saved whole row 5: two-supporters-black
+  ---
+  duration_ms: 12.4035
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: two-supporters-mirror
+ok 7 - saved whole row 6: two-supporters-mirror
+  ---
+  duration_ms: 12.5685
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: two-supporters-mirror-black
+ok 8 - saved whole row 7: two-supporters-mirror-black
+  ---
+  duration_ms: 11.5528
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: no-enemy-pawns
+ok 9 - saved whole row 8: no-enemy-pawns
+  ---
+  duration_ms: 16.5465
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: no-enemy-pawns-black
+ok 10 - saved whole row 9: no-enemy-pawns-black
+  ---
+  duration_ms: 22.4838
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: no-enemy-pawns-mirror
+ok 11 - saved whole row 10: no-enemy-pawns-mirror
+  ---
+  duration_ms: 17.1487
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: no-enemy-pawns-mirror-black
+ok 12 - saved whole row 11: no-enemy-pawns-mirror-black
+  ---
+  duration_ms: 16.17
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: capture-entry
+ok 13 - saved whole row 12: capture-entry
+  ---
+  duration_ms: 28.4423
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: capture-entry-black
+ok 14 - saved whole row 13: capture-entry-black
+  ---
+  duration_ms: 21.4079
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: capture-entry-mirror
+ok 15 - saved whole row 14: capture-entry-mirror
+  ---
+  duration_ms: 21.3821
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: capture-entry-mirror-black
+ok 16 - saved whole row 15: capture-entry-mirror-black
+  ---
+  duration_ms: 19.2464
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: capture-challenging-pawn
+ok 17 - saved whole row 16: capture-challenging-pawn
+  ---
+  duration_ms: 22.1193
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: capture-challenging-pawn-black
+ok 18 - saved whole row 17: capture-challenging-pawn-black
+  ---
+  duration_ms: 19.8361
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: capture-challenging-pawn-mirror
+ok 19 - saved whole row 18: capture-challenging-pawn-mirror
+  ---
+  duration_ms: 21.0639
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: capture-challenging-pawn-mirror-black
+ok 20 - saved whole row 19: capture-challenging-pawn-mirror-black
+  ---
+  duration_ms: 26.3085
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: remote-pawns
+ok 21 - saved whole row 20: remote-pawns
+  ---
+  duration_ms: 11.3683
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: remote-pawns-black
+ok 22 - saved whole row 21: remote-pawns-black
+  ---
+  duration_ms: 11.4692
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: remote-pawns-mirror
+ok 23 - saved whole row 22: remote-pawns-mirror
+  ---
+  duration_ms: 11.8635
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: remote-pawns-mirror-black
+ok 24 - saved whole row 23: remote-pawns-mirror-black
+  ---
+  duration_ms: 15.735
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: enemy-right-capture-shift
+ok 25 - saved whole row 24: enemy-right-capture-shift
+  ---
+  duration_ms: 7.4017
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: enemy-right-capture-shift-black
+ok 26 - saved whole row 25: enemy-right-capture-shift-black
+  ---
+  duration_ms: 6.8581
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: enemy-right-capture-shift-mirror
+ok 27 - saved whole row 26: enemy-right-capture-shift-mirror
+  ---
+  duration_ms: 10.8962
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: enemy-right-capture-shift-mirror-black
+ok 28 - saved whole row 27: enemy-right-capture-shift-mirror-black
+  ---
+  duration_ms: 11.6597
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: passed-enemy-pawn
+ok 29 - saved whole row 28: passed-enemy-pawn
+  ---
+  duration_ms: 20.1491
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: passed-enemy-pawn-black
+ok 30 - saved whole row 29: passed-enemy-pawn-black
+  ---
+  duration_ms: 16.6269
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: passed-enemy-pawn-mirror
+ok 31 - saved whole row 30: passed-enemy-pawn-mirror
+  ---
+  duration_ms: 17.5154
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: passed-enemy-pawn-mirror-black
+ok 32 - saved whole row 31: passed-enemy-pawn-mirror-black
+  ---
+  duration_ms: 14.6236
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: enemy-knight-capture
+ok 33 - saved whole row 32: enemy-knight-capture
+  ---
+  duration_ms: 30.5483
+  type: 'test'
+  ...
+# Subtest: saved whole row 33: enemy-knight-capture-black
+ok 34 - saved whole row 33: enemy-knight-capture-black
+  ---
+  duration_ms: 31.2219
+  type: 'test'
+  ...
+# Subtest: saved whole row 34: enemy-knight-capture-mirror
+ok 35 - saved whole row 34: enemy-knight-capture-mirror
+  ---
+  duration_ms: 29.677
+  type: 'test'
+  ...
+# Subtest: saved whole row 35: enemy-knight-capture-mirror-black
+ok 36 - saved whole row 35: enemy-knight-capture-mirror-black
+  ---
+  duration_ms: 30.4749
+  type: 'test'
+  ...
+# Subtest: saved whole row 36: support-can-be-captured
+ok 37 - saved whole row 36: support-can-be-captured
+  ---
+  duration_ms: 61.2798
+  type: 'test'
+  ...
+# Subtest: saved whole row 37: support-can-be-captured-black
+ok 38 - saved whole row 37: support-can-be-captured-black
+  ---
+  duration_ms: 52.296
+  type: 'test'
+  ...
+# Subtest: saved whole row 38: support-can-be-captured-mirror
+ok 39 - saved whole row 38: support-can-be-captured-mirror
+  ---
+  duration_ms: 49.618
+  type: 'test'
+  ...
+# Subtest: saved whole row 39: support-can-be-captured-mirror-black
+ok 40 - saved whole row 39: support-can-be-captured-mirror-black
+  ---
+  duration_ms: 52.4594
+  type: 'test'
+  ...
+# Subtest: saved whole row 40: relative-pawn-pin
+ok 41 - saved whole row 40: relative-pawn-pin
+  ---
+  duration_ms: 35.6081
+  type: 'test'
+  ...
+# Subtest: saved whole row 41: relative-pawn-pin-black
+ok 42 - saved whole row 41: relative-pawn-pin-black
+  ---
+  duration_ms: 33.0154
+  type: 'test'
+  ...
+# Subtest: saved whole row 42: relative-pawn-pin-mirror
+ok 43 - saved whole row 42: relative-pawn-pin-mirror
+  ---
+  duration_ms: 30.0325
+  type: 'test'
+  ...
+# Subtest: saved whole row 43: relative-pawn-pin-mirror-black
+ok 44 - saved whole row 43: relative-pawn-pin-mirror-black
+  ---
+  duration_ms: 31.0377
+  type: 'test'
+  ...
+# Subtest: saved whole row 44: advanced-sixth
+ok 45 - saved whole row 44: advanced-sixth
+  ---
+  duration_ms: 28.3537
+  type: 'test'
+  ...
+# Subtest: saved whole row 45: advanced-sixth-black
+ok 46 - saved whole row 45: advanced-sixth-black
+  ---
+  duration_ms: 26.9703
+  type: 'test'
+  ...
+# Subtest: saved whole row 46: advanced-sixth-mirror
+ok 47 - saved whole row 46: advanced-sixth-mirror
+  ---
+  duration_ms: 26.8366
+  type: 'test'
+  ...
+# Subtest: saved whole row 47: advanced-sixth-mirror-black
+ok 48 - saved whole row 47: advanced-sixth-mirror-black
+  ---
+  duration_ms: 25.4231
+  type: 'test'
+  ...
+# Subtest: saved whole row 48: advanced-blockades-pawn
+ok 49 - saved whole row 48: advanced-blockades-pawn
+  ---
+  duration_ms: 15.9995
+  type: 'test'
+  ...
+# Subtest: saved whole row 49: advanced-blockades-pawn-black
+ok 50 - saved whole row 49: advanced-blockades-pawn-black
+  ---
+  duration_ms: 17.1081
+  type: 'test'
+  ...
+# Subtest: saved whole row 50: advanced-blockades-pawn-mirror
+ok 51 - saved whole row 50: advanced-blockades-pawn-mirror
+  ---
+  duration_ms: 16.494
+  type: 'test'
+  ...
+# Subtest: saved whole row 51: advanced-blockades-pawn-mirror-black
+ok 52 - saved whole row 51: advanced-blockades-pawn-mirror-black
+  ---
+  duration_ms: 18.7235
+  type: 'test'
+  ...
+# Subtest: saved whole row 52: advanced-two-supporters
+ok 53 - saved whole row 52: advanced-two-supporters
+  ---
+  duration_ms: 15.2097
+  type: 'test'
+  ...
+# Subtest: saved whole row 53: advanced-two-supporters-black
+ok 54 - saved whole row 53: advanced-two-supporters-black
+  ---
+  duration_ms: 16.5397
+  type: 'test'
+  ...
+# Subtest: saved whole row 54: advanced-two-supporters-mirror
+ok 55 - saved whole row 54: advanced-two-supporters-mirror
+  ---
+  duration_ms: 15.7051
+  type: 'test'
+  ...
+# Subtest: saved whole row 55: advanced-two-supporters-mirror-black
+ok 56 - saved whole row 55: advanced-two-supporters-mirror-black
+  ---
+  duration_ms: 14.4142
+  type: 'test'
+  ...
+# Subtest: saved whole row 56: advanced-right-file
+ok 57 - saved whole row 56: advanced-right-file
+  ---
+  duration_ms: 25.0713
+  type: 'test'
+  ...
+# Subtest: saved whole row 57: advanced-right-file-black
+ok 58 - saved whole row 57: advanced-right-file-black
+  ---
+  duration_ms: 25.0882
+  type: 'test'
+  ...
+# Subtest: saved whole row 58: advanced-right-file-mirror
+ok 59 - saved whole row 58: advanced-right-file-mirror
+  ---
+  duration_ms: 25.5033
+  type: 'test'
+  ...
+# Subtest: saved whole row 59: advanced-right-file-mirror-black
+ok 60 - saved whole row 59: advanced-right-file-mirror-black
+  ---
+  duration_ms: 25.3011
+  type: 'test'
+  ...
+# Subtest: saved whole row 60: fourth-with-promotion-replies
+ok 61 - saved whole row 60: fourth-with-promotion-replies
+  ---
+  duration_ms: 30.2465
+  type: 'test'
+  ...
+# Subtest: saved whole row 61: fourth-with-promotion-replies-black
+ok 62 - saved whole row 61: fourth-with-promotion-replies-black
+  ---
+  duration_ms: 24.4445
+  type: 'test'
+  ...
+# Subtest: saved whole row 62: fourth-with-promotion-replies-mirror
+ok 63 - saved whole row 62: fourth-with-promotion-replies-mirror
+  ---
+  duration_ms: 30.3813
+  type: 'test'
+  ...
+# Subtest: saved whole row 63: fourth-with-promotion-replies-mirror-black
+ok 64 - saved whole row 63: fourth-with-promotion-replies-mirror-black
+  ---
+  duration_ms: 26.148
+  type: 'test'
+  ...
+# Subtest: saved whole row 64: enemy-pawn-currently-attacks
+ok 65 - saved whole row 64: enemy-pawn-currently-attacks
+  ---
+  duration_ms: 15.2585
+  type: 'test'
+  ...
+# Subtest: saved whole row 65: enemy-pawn-currently-attacks-black
+ok 66 - saved whole row 65: enemy-pawn-currently-attacks-black
+  ---
+  duration_ms: 16.1457
+  type: 'test'
+  ...
+# Subtest: saved whole row 66: enemy-pawn-currently-attacks-mirror
+ok 67 - saved whole row 66: enemy-pawn-currently-attacks-mirror
+  ---
+  duration_ms: 14.344
+  type: 'test'
+  ...
+# Subtest: saved whole row 67: enemy-pawn-currently-attacks-mirror-black
+ok 68 - saved whole row 67: enemy-pawn-currently-attacks-mirror-black
+  ---
+  duration_ms: 15.3413
+  type: 'test'
+  ...
+# Subtest: saved whole row 68: enemy-pawn-can-advance
+ok 69 - saved whole row 68: enemy-pawn-can-advance
+  ---
+  duration_ms: 9.0754
+  type: 'test'
+  ...
+# Subtest: saved whole row 69: enemy-pawn-can-advance-black
+ok 70 - saved whole row 69: enemy-pawn-can-advance-black
+  ---
+  duration_ms: 7.9313
+  type: 'test'
+  ...
+# Subtest: saved whole row 70: enemy-pawn-can-advance-mirror
+ok 71 - saved whole row 70: enemy-pawn-can-advance-mirror
+  ---
+  duration_ms: 10.6738
+  type: 'test'
+  ...
+# Subtest: saved whole row 71: enemy-pawn-can-advance-mirror-black
+ok 72 - saved whole row 71: enemy-pawn-can-advance-mirror-black
+  ---
+  duration_ms: 13.3519
+  type: 'test'
+  ...
+# Subtest: saved whole row 72: enemy-pawn-can-shift-file
+ok 73 - saved whole row 72: enemy-pawn-can-shift-file
+  ---
+  duration_ms: 8.1588
+  type: 'test'
+  ...
+# Subtest: saved whole row 73: enemy-pawn-can-shift-file-black
+ok 74 - saved whole row 73: enemy-pawn-can-shift-file-black
+  ---
+  duration_ms: 8.2497
+  type: 'test'
+  ...
+# Subtest: saved whole row 74: enemy-pawn-can-shift-file-mirror
+ok 75 - saved whole row 74: enemy-pawn-can-shift-file-mirror
+  ---
+  duration_ms: 8.1844
+  type: 'test'
+  ...
+# Subtest: saved whole row 75: enemy-pawn-can-shift-file-mirror-black
+ok 76 - saved whole row 75: enemy-pawn-can-shift-file-mirror-black
+  ---
+  duration_ms: 8.4156
+  type: 'test'
+  ...
+# Subtest: saved whole row 76: blocked-pawn-still-theoretically-reachable
+ok 77 - saved whole row 76: blocked-pawn-still-theoretically-reachable
+  ---
+  duration_ms: 11.5056
+  type: 'test'
+  ...
+# Subtest: saved whole row 77: blocked-pawn-still-theoretically-reachable-black
+ok 78 - saved whole row 77: blocked-pawn-still-theoretically-reachable-black
+  ---
+  duration_ms: 12.0499
+  type: 'test'
+  ...
+# Subtest: saved whole row 78: blocked-pawn-still-theoretically-reachable-mirror
+ok 79 - saved whole row 78: blocked-pawn-still-theoretically-reachable-mirror
+  ---
+  duration_ms: 10.5292
+  type: 'test'
+  ...
+# Subtest: saved whole row 79: blocked-pawn-still-theoretically-reachable-mirror-black
+ok 80 - saved whole row 79: blocked-pawn-still-theoretically-reachable-mirror-black
+  ---
+  duration_ms: 10.4696
+  type: 'test'
+  ...
+# Subtest: saved whole row 80: legal-capture-file-chain
+ok 81 - saved whole row 80: legal-capture-file-chain
+  ---
+  duration_ms: 20.9418
+  type: 'test'
+  ...
+# Subtest: saved whole row 81: legal-capture-file-chain-black
+ok 82 - saved whole row 81: legal-capture-file-chain-black
+  ---
+  duration_ms: 21.5991
+  type: 'test'
+  ...
+# Subtest: saved whole row 82: legal-capture-file-chain-mirror
+ok 83 - saved whole row 82: legal-capture-file-chain-mirror
+  ---
+  duration_ms: 20.6647
+  type: 'test'
+  ...
+# Subtest: saved whole row 83: legal-capture-file-chain-mirror-black
+ok 84 - saved whole row 83: legal-capture-file-chain-mirror-black
+  ---
+  duration_ms: 21.3461
+  type: 'test'
+  ...
+# Subtest: saved whole row 84: farther-file-capture-chain
+ok 85 - saved whole row 84: farther-file-capture-chain
+  ---
+  duration_ms: 11.3536
+  type: 'test'
+  ...
+# Subtest: saved whole row 85: farther-file-capture-chain-black
+ok 86 - saved whole row 85: farther-file-capture-chain-black
+  ---
+  duration_ms: 12.3585
+  type: 'test'
+  ...
+# Subtest: saved whole row 86: farther-file-capture-chain-mirror
+ok 87 - saved whole row 86: farther-file-capture-chain-mirror
+  ---
+  duration_ms: 12.2783
+  type: 'test'
+  ...
+# Subtest: saved whole row 87: farther-file-capture-chain-mirror-black
+ok 88 - saved whole row 87: farther-file-capture-chain-mirror-black
+  ---
+  duration_ms: 12.1451
+  type: 'test'
+  ...
+# Subtest: saved whole row 88: advanced-current-pawn-attack
+ok 89 - saved whole row 88: advanced-current-pawn-attack
+  ---
+  duration_ms: 11.4201
+  type: 'test'
+  ...
+# Subtest: saved whole row 89: advanced-current-pawn-attack-black
+ok 90 - saved whole row 89: advanced-current-pawn-attack-black
+  ---
+  duration_ms: 14.2782
+  type: 'test'
+  ...
+# Subtest: saved whole row 90: advanced-current-pawn-attack-mirror
+ok 91 - saved whole row 90: advanced-current-pawn-attack-mirror
+  ---
+  duration_ms: 15.3491
+  type: 'test'
+  ...
+# Subtest: saved whole row 91: advanced-current-pawn-attack-mirror-black
+ok 92 - saved whole row 91: advanced-current-pawn-attack-mirror-black
+  ---
+  duration_ms: 13.1962
+  type: 'test'
+  ...
+# Subtest: saved whole row 92: no-pawn-support
+ok 93 - saved whole row 92: no-pawn-support
+  ---
+  duration_ms: 10.4529
+  type: 'test'
+  ...
+# Subtest: saved whole row 93: no-pawn-support-black
+ok 94 - saved whole row 93: no-pawn-support-black
+  ---
+  duration_ms: 15.9491
+  type: 'test'
+  ...
+# Subtest: saved whole row 94: no-pawn-support-mirror
+ok 95 - saved whole row 94: no-pawn-support-mirror
+  ---
+  duration_ms: 15.6042
+  type: 'test'
+  ...
+# Subtest: saved whole row 95: no-pawn-support-mirror-black
+ok 96 - saved whole row 95: no-pawn-support-mirror-black
+  ---
+  duration_ms: 11.881
+  type: 'test'
+  ...
+# Subtest: saved whole row 96: absolute-pawn-pin
+ok 97 - saved whole row 96: absolute-pawn-pin
+  ---
+  duration_ms: 33.3733
+  type: 'test'
+  ...
+# Subtest: saved whole row 97: absolute-pawn-pin-black
+ok 98 - saved whole row 97: absolute-pawn-pin-black
+  ---
+  duration_ms: 27.5373
+  type: 'test'
+  ...
+# Subtest: saved whole row 98: absolute-pawn-pin-mirror
+ok 99 - saved whole row 98: absolute-pawn-pin-mirror
+  ---
+  duration_ms: 22.8927
+  type: 'test'
+  ...
+# Subtest: saved whole row 99: absolute-pawn-pin-mirror-black
+ok 100 - saved whole row 99: absolute-pawn-pin-mirror-black
+  ---
+  duration_ms: 31.8347
+  type: 'test'
+  ...
+# Subtest: saved whole row 100: too-shallow
+ok 101 - saved whole row 100: too-shallow
+  ---
+  duration_ms: 8.3323
+  type: 'test'
+  ...
+# Subtest: saved whole row 101: too-shallow-black
+ok 102 - saved whole row 101: too-shallow-black
+  ---
+  duration_ms: 8.1874
+  type: 'test'
+  ...
+# Subtest: saved whole row 102: too-shallow-mirror
+ok 103 - saved whole row 102: too-shallow-mirror
+  ---
+  duration_ms: 9.3461
+  type: 'test'
+  ...
+# Subtest: saved whole row 103: too-shallow-mirror-black
+ok 104 - saved whole row 103: too-shallow-mirror-black
+  ---
+  duration_ms: 9.3572
+  type: 'test'
+  ...
+# Subtest: saved whole row 104: advanced-f6
+ok 105 - saved whole row 104: advanced-f6
+  ---
+  duration_ms: 22.0381
+  type: 'test'
+  ...
+# Subtest: saved whole row 105: advanced-f6-black
+ok 106 - saved whole row 105: advanced-f6-black
+  ---
+  duration_ms: 21.9421
+  type: 'test'
+  ...
+# Subtest: saved whole row 106: advanced-f6-mirror
+ok 107 - saved whole row 106: advanced-f6-mirror
+  ---
+  duration_ms: 19.8728
+  type: 'test'
+  ...
+# Subtest: saved whole row 107: advanced-f6-mirror-black
+ok 108 - saved whole row 107: advanced-f6-mirror-black
+  ---
+  duration_ms: 19.969
+  type: 'test'
+  ...
+# Subtest: saved whole row 108: rank-seven-excluded
+ok 109 - saved whole row 108: rank-seven-excluded
+  ---
+  duration_ms: 10.9952
+  type: 'test'
+  ...
+# Subtest: saved whole row 109: rank-seven-excluded-black
+ok 110 - saved whole row 109: rank-seven-excluded-black
+  ---
+  duration_ms: 9.7331
+  type: 'test'
+  ...
+# Subtest: saved whole row 110: rank-seven-excluded-mirror
+ok 111 - saved whole row 110: rank-seven-excluded-mirror
+  ---
+  duration_ms: 11.5538
+  type: 'test'
+  ...
+# Subtest: saved whole row 111: rank-seven-excluded-mirror-black
+ok 112 - saved whole row 111: rank-seven-excluded-mirror-black
+  ---
+  duration_ms: 11.8029
+  type: 'test'
+  ...
+# Subtest: saved whole row 112: bishop-not-knight
+ok 113 - saved whole row 112: bishop-not-knight
+  ---
+  duration_ms: 15.927
+  type: 'test'
+  ...
+# Subtest: saved whole row 113: bishop-not-knight-black
+ok 114 - saved whole row 113: bishop-not-knight-black
+  ---
+  duration_ms: 16.4767
+  type: 'test'
+  ...
+# Subtest: saved whole row 114: bishop-not-knight-mirror
+ok 115 - saved whole row 114: bishop-not-knight-mirror
+  ---
+  duration_ms: 15.2003
+  type: 'test'
+  ...
+# Subtest: saved whole row 115: bishop-not-knight-mirror-black
+ok 116 - saved whole row 115: bishop-not-knight-mirror-black
+  ---
+  duration_ms: 14.6498
+  type: 'test'
+  ...
+# Subtest: saved whole row 116: actual-knight-mate
+ok 117 - saved whole row 116: actual-knight-mate
+  ---
+  duration_ms: 4.9022
+  type: 'test'
+  ...
+# Subtest: saved whole row 117: actual-knight-mate-black
+ok 118 - saved whole row 117: actual-knight-mate-black
+  ---
+  duration_ms: 4.076
+  type: 'test'
+  ...
+# Subtest: saved whole row 118: actual-knight-mate-mirror
+ok 119 - saved whole row 118: actual-knight-mate-mirror
+  ---
+  duration_ms: 3.9058
+  type: 'test'
+  ...
+# Subtest: saved whole row 119: actual-knight-mate-mirror-black
+ok 120 - saved whole row 119: actual-knight-mate-mirror-black
+  ---
+  duration_ms: 4.1822
+  type: 'test'
+  ...
+# Subtest: saved whole row 120: disabled
+ok 121 - saved whole row 120: disabled
+  ---
+  duration_ms: 11.4329
+  type: 'test'
+  ...
+# Subtest: saved whole row 121: disabled-black
+ok 122 - saved whole row 121: disabled-black
+  ---
+  duration_ms: 12.0246
+  type: 'test'
+  ...
+# Subtest: saved whole row 122: disabled-mirror
+ok 123 - saved whole row 122: disabled-mirror
+  ---
+  duration_ms: 12.7508
+  type: 'test'
+  ...
+# Subtest: saved whole row 123: disabled-mirror-black
+ok 124 - saved whole row 123: disabled-mirror-black
+  ---
+  duration_ms: 11.7275
+  type: 'test'
+  ...
+# Subtest: saved whole row 124: zero-budget
+ok 125 - saved whole row 124: zero-budget
+  ---
+  duration_ms: 12.57
+  type: 'test'
+  ...
+# Subtest: saved whole row 125: zero-budget-black
+ok 126 - saved whole row 125: zero-budget-black
+  ---
+  duration_ms: 12.0113
+  type: 'test'
+  ...
+# Subtest: saved whole row 126: zero-budget-mirror
+ok 127 - saved whole row 126: zero-budget-mirror
+  ---
+  duration_ms: 12.5447
+  type: 'test'
+  ...
+# Subtest: saved whole row 127: zero-budget-mirror-black
+ok 128 - saved whole row 127: zero-budget-mirror-black
+  ---
+  duration_ms: 12.2666
+  type: 'test'
+  ...
+# Subtest: saved whole row 128: illegal-knight-step
+ok 129 - saved whole row 128: illegal-knight-step
+  ---
+  duration_ms: 1.6647
+  type: 'test'
+  ...
+# Subtest: saved whole row 129: illegal-knight-step-black
+ok 130 - saved whole row 129: illegal-knight-step-black
+  ---
+  duration_ms: 1.2152
+  type: 'test'
+  ...
+# Subtest: saved whole row 130: illegal-knight-step-mirror
+ok 131 - saved whole row 130: illegal-knight-step-mirror
+  ---
+  duration_ms: 0.9959
+  type: 'test'
+  ...
+# Subtest: saved whole row 131: illegal-knight-step-mirror-black
+ok 132 - saved whole row 131: illegal-knight-step-mirror-black
+  ---
+  duration_ms: 0.9322
+  type: 'test'
+  ...
+# Subtest: saved whole row 132: actual-clock-terminal
+ok 133 - saved whole row 132: actual-clock-terminal
+  ---
+  duration_ms: 7.1236
+  type: 'test'
+  ...
+# Subtest: saved whole row 133: actual-clock-terminal-black
+ok 134 - saved whole row 133: actual-clock-terminal-black
+  ---
+  duration_ms: 7.3336
+  type: 'test'
+  ...
+# Subtest: saved whole row 134: actual-clock-terminal-mirror
+ok 135 - saved whole row 134: actual-clock-terminal-mirror
+  ---
+  duration_ms: 6.9322
+  type: 'test'
+  ...
+# Subtest: saved whole row 135: actual-clock-terminal-mirror-black
+ok 136 - saved whole row 135: actual-clock-terminal-mirror-black
+  ---
+  duration_ms: 6.8091
+  type: 'test'
+  ...
+# Subtest: saved whole row 136: clock-terminal-replies
+ok 137 - saved whole row 136: clock-terminal-replies
+  ---
+  duration_ms: 19.1223
+  type: 'test'
+  ...
+# Subtest: saved whole row 137: clock-terminal-replies-black
+ok 138 - saved whole row 137: clock-terminal-replies-black
+  ---
+  duration_ms: 16.9059
+  type: 'test'
+  ...
+# Subtest: saved whole row 138: clock-terminal-replies-mirror
+ok 139 - saved whole row 138: clock-terminal-replies-mirror
+  ---
+  duration_ms: 17.828
+  type: 'test'
+  ...
+# Subtest: saved whole row 139: clock-terminal-replies-mirror-black
+ok 140 - saved whole row 139: clock-terminal-replies-mirror-black
+  ---
+  duration_ms: 20.098
+  type: 'test'
+  ...
+# Subtest: saved whole row 140: history-repetition-reply
+ok 141 - saved whole row 140: history-repetition-reply
+  ---
+  duration_ms: 67.485
+  type: 'test'
+  ...
+# Subtest: saved whole row 141: history-repetition-reply-black
+ok 142 - saved whole row 141: history-repetition-reply-black
+  ---
+  duration_ms: 60.3171
+  type: 'test'
+  ...
+# Subtest: saved whole row 142: history-repetition-reply-mirror
+ok 143 - saved whole row 142: history-repetition-reply-mirror
+  ---
+  duration_ms: 59.4622
+  type: 'test'
+  ...
+# Subtest: saved whole row 143: history-repetition-reply-mirror-black
+ok 144 - saved whole row 143: history-repetition-reply-mirror-black
+  ---
+  duration_ms: 60.2937
+  type: 'test'
+  ...
+# Subtest: saved whole row 144: advanced-check-evasion
+ok 145 - saved whole row 144: advanced-check-evasion
+  ---
+  duration_ms: 79.3737
+  type: 'test'
+  ...
+# Subtest: saved whole row 145: advanced-check-evasion-black
+ok 146 - saved whole row 145: advanced-check-evasion-black
+  ---
+  duration_ms: 84.0317
+  type: 'test'
+  ...
+# Subtest: saved whole row 146: advanced-check-evasion-mirror
+ok 147 - saved whole row 146: advanced-check-evasion-mirror
+  ---
+  duration_ms: 76.7452
+  type: 'test'
+  ...
+# Subtest: saved whole row 147: advanced-check-evasion-mirror-black
+ok 148 - saved whole row 147: advanced-check-evasion-mirror-black
+  ---
+  duration_ms: 82.6628
+  type: 'test'
+  ...
+# Subtest: saved shape rejects refutation record missing
+ok 149 - saved shape rejects refutation record missing
+  ---
+  duration_ms: 55.0925
+  type: 'test'
+  ...
+# Subtest: saved shape rejects refutation order
+ok 150 - saved shape rejects refutation order
+  ---
+  duration_ms: 56.3416
+  type: 'test'
+  ...
+# Subtest: saved shape rejects schema
+ok 151 - saved shape rejects schema
+  ---
+  duration_ms: 42.9101
+  type: 'test'
+  ...
+# Subtest: saved shape rejects source
+ok 152 - saved shape rejects source
+  ---
+  duration_ms: 54.0806
+  type: 'test'
+  ...
+# Subtest: saved shape rejects missing row
+ok 153 - saved shape rejects missing row
+  ---
+  duration_ms: 42.4001
+  type: 'test'
+  ...
+# Subtest: saved shape rejects duplicate row
+ok 154 - saved shape rejects duplicate row
+  ---
+  duration_ms: 41.3556
+  type: 'test'
+  ...
+# Subtest: saved shape rejects row order
+ok 155 - saved shape rejects row order
+  ---
+  duration_ms: 42.2693
+  type: 'test'
+  ...
+# Subtest: saved shape rejects fixture
+ok 156 - saved shape rejects fixture
+  ---
+  duration_ms: 50.2466
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result missing
+ok 157 - saved shape rejects result missing
+  ---
+  duration_ms: 43.3117
+  type: 'test'
+  ...
+# Subtest: saved shape rejects error inserted
+ok 158 - saved shape rejects error inserted
+  ---
+  duration_ms: 46.0287
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline missing
+ok 159 - saved shape rejects baseline missing
+  ---
+  duration_ms: 42.1648
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline fingerprint
+ok 160 - saved shape rejects baseline fingerprint
+  ---
+  duration_ms: 74.3793
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result count
+ok 161 - saved shape rejects result count
+  ---
+  duration_ms: 49.932
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record order
+ok 162 - saved shape rejects own record order
+  ---
+  duration_ms: 48.9172
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record missing
+ok 163 - saved shape rejects own record missing
+  ---
+  duration_ms: 43.5758
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own kind forged
+ok 164 - saved shape rejects own kind forged
+  ---
+  duration_ms: 43.5342
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 165 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.5632
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 166 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.3428
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 167 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.6532
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 168 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.2473
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects bytes
+ok 169 - raw artifact rejects bytes
+  ---
+  duration_ms: 61.7833
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects content
+ok 170 - raw artifact rejects content
+  ---
+  duration_ms: 19.9098
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects append
+ok 171 - raw artifact rejects append
+  ---
+  duration_ms: 12.3694
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects namespace
+ok 172 - raw artifact rejects namespace
+  ---
+  duration_ms: 15.7938
+  type: 'test'
+  ...
+1..172
+# tests 172
+# suites 0
+# pass 172
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4000.8588

@@ -4,7 +4,56 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E070 complete outpost oracle pilot and smoke passed
+## Latest semantic boundary — E070 complete outpost results qualified
+
+2026-10-12. Historical E070 reuse now independently validates ALL148saved rows:
+144complete results and fresh E069 parents,140enabled independent rank/file-DAG
+oracles,4ABSTRACT 'Illegal move; explanation refused.' classifications plus
+fresh /^Illegal move/ failures. Exact historical runtime messages unavailable.
+100whole-checker positive certificates (76plain/24advanced) and32complete pawn-
+challenge refutations, PLUS100ordered positive and32refutation metadata checks.
+Exact states76proven32pawn-challenge-refuted8no-legal-support20ineligible4disabled
+4exhausted. Full history/support counterframe/captures/DAG/replies/status/nodes/
+atomic exhaustion and complete v51/events/inheritance/selection all compared.
+Shared Chess/E020 validation and E069 parent/priority remain explicit dependencies.
+
+Registrationd7f361c, initial implementation7a30b9d; syntax checks caught generated
+runner replacement expansion before any dispatch. Corrected3f5473b; original
+commit remains in history. No decisive failed run/source epoch retry. Saved
+172/172checks in29.073seconds under600second cap/25–100forecast:148rows,
+16shape/inheritance/metadata/order controls,4receipt controls,4raw controls.
+Reuse unchanged7/7pilot and190/190smoke; exact current closures/raw prerequisites
+verified before payload. No extra candidate/parent/own-count collection in
+qualification. Five raw artifacts per stage,15total Git blobs byte-exact.
+
+Six fixed canonical artifacts verify; original results3543443bytes SHA
+ eaa1320fe913e059ea4cd49e2833a345d5031175e095c67d5116abe40e4b909e.
+Frozen2d561fcbcb192dced4ebc64395f39a0fc74fa093:213original Git inputs,
+60original semantic checker/fixture/E069 paths match original/current/fullfreeze.
+NO supplements or current metadata differences. Main empty; repeat EXACTLY
+`?? research/experiments/E070-knight-outposts/evidence/`; initially-clean empty.
+Three manifests match source/config/environment/metrics/receipts/physical outputs;
+repeat is not initially clean. Fixed-ownership policy epoch proof and3604ordered
+E069 inherited fingerprints/teaching identity verify, not ancestor semantics.
+Completed admission emitted before rows. All15prior segment input closures
+remain unchanged; original E073 eight/seven-edge documentary discrepancy open.
+
+[evidence/semantic-e070-saved-initial/qualification.json](evidence/semantic-e070-saved-initial/qualification.json)
+binds84new source inputs,60old semantic paths,213historical inputs,15raw artifacts,
+all row counters, policy and reproduction distinctions. Frozen2658sources/
+1624canonical unchanged. Existing accepted subset reused,0new accepted/provisional/
+support/origin credit. No general outpost strength/permanent safety/best-play or
+human usefulness claim. Preparation boundary below is historical, superseded
+only as to saved-replay completion.
+
+Next: E069 checking rook/queen invasions independent whole-result gate conditional
+on E068. Source audit shows original per-event ray/reply/history checker but no
+whole-result checker: independently reconstruct entry/ray/all replies/eligibility/
+ledger/negative absence and full inheritance/order/selection. All171-origin combined
+API integration, exact changed-source three reproductions, broader strategic
+meanings and real-game/human usefulness remain open; full goal active.
+
+## Prior preparation boundary — E070 complete outpost oracle pilot and smoke passed
 
 2026-10-12. Registration924d60b/implementation767ad56:7/7pilot in11.313seconds,
 74source inputs/44,904raw bytes, retainedf38cbfd. Separate smoke registration7657a84/
