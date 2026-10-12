@@ -148,6 +148,10 @@ try {
   await evaluate(review,"document.querySelector('#concept-group-pawns').click()");
   assert.equal(await evaluate(review,"import('./analysis.js').then(async m=>{const {conceptKey}=await import('./lib/concepts/session.js');return m._conceptSession.entries.get(conceptKey(m.selectedConceptInput())).reused})"),true);
   await sleep(150);
+  assert.match(await evaluate(review,"document.querySelector('.concepts-panel').textContent"),/Temporarily removed/);
+  await evaluate(review,"[...document.querySelectorAll('.set-section')].find(s=>s.textContent.includes('Temporarily removed')).querySelector('button').click()");
+  await capture('concepts-retired');
+  await evaluate(review,"[...document.querySelectorAll('.set-section')].find(s=>s.textContent.includes('Temporarily removed')).querySelector('button').click()");
   await capture('concepts-wide');
   await evaluate(review,"document.querySelector('[aria-label=\"Settings\"]').click()");
   const assertConceptAlignment=async()=>{
@@ -167,7 +171,13 @@ try {
   assert.equal(await evaluate(review,"document.querySelector('#concept-view-reply').getAttribute('aria-pressed')"),'true');
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
   assert.ok(await evaluate(review,"document.querySelectorAll('.coach-insight').length<=2"));
+  assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/your knight on f3.*attack your opponent’s pawn on e5/);
   await capture('coach-reply-wide');
+  await evaluate(review,"import('./analysis.js').then(m=>m.go(4))");
+  assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/opponent’s knight on c6.*defends the pawn on e5/);
+  assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
+  await capture('coach-defense-wide');
+  await evaluate(review,"import('./analysis.js').then(m=>m.go(3))");
   await evaluate(review,"document.querySelector('#concept-view-all').click()");
   assert.equal(await evaluate(review,"document.querySelectorAll('.coach-insight').length"),selectedFindingCount);
   await assertConceptAlignment(); await capture('concepts-engine-four-lines');
@@ -177,6 +187,10 @@ try {
   await assertConceptAlignment();
   await evaluate(review,"import('./analysis.js').then(m=>{m.S.meSide='b';m.S.playerKnown=true;m.go(2);m.go(3)})");
   assert.match(await evaluate(review,"document.querySelector('.coach-position').textContent"),/Playing Black.*Opponent’s Nf3/);
+  await evaluate(review,"document.querySelector('#concept-view-reply').click()");
+  assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/opponent’s knight on f3.*attacks your pawn on e5/);
+  await capture('coach-reply-black');
+  await evaluate(review,"document.querySelector('#concept-view-all').click()");
   await capture('coach-black');
   for(const width of [390,320]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(500);

@@ -3872,7 +3872,7 @@ function renderCoachPanel() {
     el("button", {class: "engine-bestwalk", id: "coachEnable", onclick: () => setConceptEnabled(true)}, "Enable position insights"));
   else if (!input) body.append(el("p", {}, "Select a move to see what changed and what the resulting position contains."));
   else {
-    const reply = coachReply(entry?.findings || [], {mover, player, change:entry?.change});
+    const reply = coachReply(entry?.findings || [], {mover, player, change:entry?.change, input});
     const insights = view === "reply" ? reply.items : coachInsights(entry?.findings || [], {mover, player});
     if (view === "reply" && !player) body.append(el("p", {class:"coach-status"}, "The playing side could not be identified. All concepts remains available with neutral move labels."));
     if (!entry || entry.status !== "complete") body.append(el("p", {class: "coach-status"}, insights.length ? "Observations ready; checking further continuations…" : "Checking this position…"));

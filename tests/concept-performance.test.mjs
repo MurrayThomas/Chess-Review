@@ -114,4 +114,3 @@ test('Concept settings explain the Fast removal decisions without adding control
  assert.match(panel.textContent,/not changes to research acceptance/);
  assert.equal(panel.querySelectorAll('input').length,9);
 });
-
