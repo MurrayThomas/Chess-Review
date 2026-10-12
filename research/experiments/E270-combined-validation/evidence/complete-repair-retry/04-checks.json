@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E212-rook-side-defense/code/resources.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E212-rook-side-defense/code/resources.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ long-pilot complete legal drawing check versus same-rook losses (36.7264ms)\n✔ long-reflection complete legal drawing check versus same-rook losses (34.5024ms)\n✔ losing geometric fixtures both colors withhold independently (61.8792ms)\n✔ short-side pilot retains missing king contrast and no long-side claim (17.6074ms)\n✔ default disabled and explicit controls preserve absence (0.7469ms)\n✔ strict history clock frame and ordinary-data interfaces (0.8812ms)\n✔ only authenticated admission capabilities can authorize outcomes (9.6019ms)\n✔ independent reconstruction rejects output identity outcome and geometry forgeries (242.6379ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67833.6148\n",
+  "stderr": "",
+  "seconds": 67.92434640000003
+}

@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E220-source-qualified-endgame-equality/code/equality.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E220-source-qualified-endgame-equality/code/equality.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ four authenticated equality pairs independently match recorded source and both actual actor menus (148.7233ms)\n✔ both requested player perspectives retain actual actors and invert every full categorical value (292.8839ms)\n✔ two authentic nonzero roots withhold equality for either requested player (72.8067ms)\n✔ source equality never discards legal losing choices to imply all moves draw (101.2112ms)\n✔ actual capture and quiet halfmove counters remain zero and one without a fake reset (89.5575ms)\n✔ default disabled missing history and missing capability withhold explanations (4.2048ms)\n✔ pair admission zero one-short and exact budgets are atomic and independently checked (184.3931ms)\n✔ strict player enabled budget history UCI extra fields and getters reject (0.8326ms)\n✔ caller observation values receipts and copied capabilities cannot authenticate equality (36.0068ms)\n✔ cross-color swapped branch changed actual move and full-history substitutions reject (15.1403ms)\n✔ independent checker rejects omitted duplicated swapped legal action domains and preserving labels (89.6119ms)\n✔ independent checker rejects in-range WDL category frame source model and ledger forgeries (134.795ms)\n✔ legacy successful stderr gap remains explicit and original sources are not relabelled (0.7305ms)\n✔ output mutation cannot change another authenticated result (38.5997ms)\n✔ retain four independently checked examples without overwriting later replays (5.0689ms)\nℹ tests 15\nℹ suites 0\nℹ pass 15\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 73894.4184\n",
+  "stderr": "",
+  "seconds": 73.99163670000003
+}

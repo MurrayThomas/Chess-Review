@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E252-finite-dynamic-evaluation/code/dynamic.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E252-finite-dynamic-evaluation/code/dynamic.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ both-color unrestricted future-play value is min of every reply max, not static material (265.2743ms)\n✔ both-color checking-only policy loses at the interposition, full domains retained (117.2355ms)\n✔ capturing check nominal plus four loses while quiet minus one draws (4.8276ms)\n✔ source-only alternative cannot masquerade as an uncollected dynamic policy (12.6499ms)\n✔ disabled missing history source and exact short zero budgets abstain (143.2068ms)\n✔ ordinary schema history private tokens and controls reject invalid inputs (7.4529ms)\n✔ cached neutral source frames remain privately owned across policies (18.499ms)\n✔ independent checker rejects quantifier value policy selection material domain and source forgeries (721.5535ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 76631.8439\n",
+  "stderr": "",
+  "seconds": 76.75861169999978
+}

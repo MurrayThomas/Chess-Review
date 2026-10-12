@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E211-rook-tablebase-admission/code/replay.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E211-rook-tablebase-admission/code/replay.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ fixed archive authenticated full replay and independent returned objects (58649.3389ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 58818.997\n",
+  "stderr": "",
+  "seconds": 58.94592679999999
+}

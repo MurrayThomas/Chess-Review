@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E215-rook-defense-resource-contrasts/code/resources.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E215-rook-defense-resource-contrasts/code/resources.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ E214-philidor-barrier independently reconstructs drawing phase versus same-rook nonhanging losses (51.6667ms)\n✔ E214-philidor-retreat independently reconstructs drawing phase versus same-rook nonhanging losses (53.3725ms)\n✔ E214-vancura-pressure independently reconstructs drawing phase versus same-rook nonhanging losses (46.4595ms)\n✔ philidor-barrier-reflection independently reconstructs drawing phase versus same-rook nonhanging losses (52.7508ms)\n✔ philidor-retreat-reflection independently reconstructs drawing phase versus same-rook nonhanging losses (55.6405ms)\n✔ vancura-check-at-pawn-reflection independently reconstructs drawing phase versus same-rook nonhanging losses (34.3822ms)\n✔ vancura-check-at-pawn independently reconstructs drawing phase versus same-rook nonhanging losses (30.6676ms)\n✔ vancura-check-before-pressure-reflection independently reconstructs drawing phase versus same-rook nonhanging losses (56.1369ms)\n✔ cross-family wrong phases withhold independently without relabeling positive outcomes (20.5964ms)\n✔ retreat requires actual recorded waiting move and pawn advance rather than empty or missing history (4.7112ms)\n✔ default-disabled strict phase option and ordinary-data controls (0.5691ms)\n✔ clock exact frame and strict history fields prevent observation substitution (2.9629ms)\n✔ private admissions reject forged tokens and isolate exposed observation mutations (35.8237ms)\n✔ independent own reconstruction rejects phase identity rays history outcomes and getters (414.1999ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 64608.4672\n",
+  "stderr": "",
+  "seconds": 64.69876250000002
+}

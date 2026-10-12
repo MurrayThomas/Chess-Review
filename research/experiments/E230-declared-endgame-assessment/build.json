@@ -9,6 +9,7 @@
     }
   ],
   "inputHashes": {
+    ".gitattributes": "d4bfb858b87bdb83500b2d860214c7231f3ab154925327d78455f66f98fdd6e9",
     "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
     "research/AGENTS.md": "36e62e362eee182b7abb3467f2e3ae31d21b3ff0f8f6938562d4defb6b93268a",
     "research/DATA_POLICY.md": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
@@ -22,6 +23,11 @@
     "research/d001-format.mjs": "5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d",
     "research/data-policy.mjs": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
     "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
     "research/experiments/E138-bounded-engine-panels/code/source-bindings.mjs": "6d42073486e164380a35e6d36c95d3debdfacfdb2bcf4e37bfb4a8bbd818e305",
     "research/experiments/E141-admitted-kqk-tablebases/vendor/COPYING": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
     "research/experiments/E141-admitted-kqk-tablebases/vendor/chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
@@ -29,30 +35,64 @@
     "research/experiments/E141-admitted-kqk-tablebases/vendor/dependency.json": "5f42ae46ba513c760237b78dbd2935cf8b719b6a2d63f0be2caaa3fea7237837",
     "research/experiments/E183-recorded-initiative-turnover/code/plain.mjs": "55383721408cb03afe75a35b5680c2c6c97650d20675c5a95053cce340ebea14",
     "research/experiments/E210-sustainable-threat-policy/code/rules.mjs": "4440b5939c304b0c6ab3dd65ae3bbf4df73910af72fd9708a449ba02ef84a584",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f",
     "research/experiments/E211-rook-tablebase-admission/code/check-panel.mjs": "c3922383bbb583679f87b23034321ee7545afba0cd0c19c7038a32a4ff7ad034",
+    "research/experiments/E211-rook-tablebase-admission/code/collect-observed.mjs": "a7de9138d08bc3d3860f45598a150afdf11767c5edb1b635c376b58ee175b81b",
+    "research/experiments/E211-rook-tablebase-admission/code/collect.mjs": "b5a46b3f59f54e99f1ccfab207140582a5bffbe76c74539e58f70ca103b44177",
     "research/experiments/E211-rook-tablebase-admission/code/context.mjs": "6da0974638c556cc6b5b0eb8fffbe735ad7c0fad6fb0e6e079e71b715b4e51ec",
     "research/experiments/E211-rook-tablebase-admission/code/exports.mjs": "bf9aeb0370116265582f0ddd27abe17ba3b14c8789ffe46f289e6c41de193e09",
     "research/experiments/E211-rook-tablebase-admission/code/fixtures.mjs": "01d04d8191826ec977f8d30b2ead4e47aca23feb7acffd9d3c5836b7abd58a65",
     "research/experiments/E211-rook-tablebase-admission/code/probe.py": "3465337fefd49f33890654e6891f4353727c829336caabc655caf14b0186f7a6",
-    "research/experiments/E211-rook-tablebase-admission/code/saved.mjs": "e8684e52ce344fc7aa930813a964edf98a685b89bf90157463c5da702f2e6efa",
+    "research/experiments/E211-rook-tablebase-admission/code/saved.mjs": "5b7e4aa75542a6ad73375465f9dd36bafaea69b4d091507d059c04194e4316d9",
+    "research/experiments/E212-rook-side-defense/code/admission.mjs": "f49b4a096d6c2ef1303593988cdb979ef83caf8b2777ca7cf7274fcf6f93b1f7",
+    "research/experiments/E213-short-side-king-choice/code/admission.mjs": "0f51cd820d90c0d844ddf86ac721e1a2fe04e8582c9416a62eb9b8e5d9cc19fb",
     "research/experiments/E228-saved-tablebase-support/amendment.md": "82bcf1bf2e23f8d40d1ba7fb014701671298efee529cd66e01989334e7b6f83c",
-    "research/experiments/E228-saved-tablebase-support/code/admission.mjs": "b778bb6c49daf346133de213b7f7f808c58ea8c78c9b3b02a12d91cf0465e3f0",
+    "research/experiments/E228-saved-tablebase-support/code/admission.mjs": "722ed85085fcc9c15ee71694e68bb1ede230669c78737bf7669953ac86f616f8",
     "research/experiments/E228-saved-tablebase-support/code/check-result.mjs": "2dd703fdd0e6beba36f68b100a9073ebd3b22cade3a53e87659d8d799427ef7b",
     "research/experiments/E228-saved-tablebase-support/code/contract.mjs": "a3fbf6f592bb16603a714cb8a85473327fae15acffa9eb1057ae4e1d5a6bc5a4",
     "research/experiments/E228-saved-tablebase-support/code/fixtures.mjs": "d4c5928053a8fa109d6d05733815a428042d6c69790d466d6e0e392448884b16",
     "research/experiments/E228-saved-tablebase-support/code/support.mjs": "4d18a700d0fcce85fc7a53784616874128d0e25442e34cd1fdd478021015ad23",
     "research/experiments/E228-saved-tablebase-support/plan.md": "da0502d980b9c97e2377774e4d75d336df62533893f48f29c99a20c6e5baa4c7",
     "research/experiments/E230-declared-endgame-assessment/code/assessment.mjs": "150d492e2da5b542602122260811de7b61fe1dfd2f3a33223dda337e589a303d",
-    "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs": "67d9c6e6b2b7aa164287052f928413285fd9074841f8e5b00c5ed0db445cea31",
+    "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs": "a0452f236c89793115a2c54afe12270317479f802d41c1f8e0e95937bf2b6b9c",
     "research/experiments/E230-declared-endgame-assessment/code/check-result.mjs": "7e8cda38d13fa395102d29a038c8210a76feece2887cb8b374651ac7d1cdce89",
     "research/experiments/E230-declared-endgame-assessment/code/contract.mjs": "71f2d5cdd45197a94c5e13b33636f726252ece3e4be338995962ac96b2373331",
     "research/experiments/E230-declared-endgame-assessment/code/fixtures.mjs": "95bfa8f3fb181d224eff5b08f01618cf7ccde4419665968f89c242b84fdf7310",
     "research/experiments/E230-declared-endgame-assessment/code/record-build.mjs": "8ca62971dde41d9ba8969de1c45a77eca70d25e3247ebc7c51e57c4d60e6f5d0",
     "research/experiments/E230-declared-endgame-assessment/code/run-focused.mjs": "f6256807a9305b6a0bf879a2f69e9e07630c90a29b8adfea53bfb8e87b4cede8",
     "research/experiments/E230-declared-endgame-assessment/plan.md": "e0d669e14117f3583e2b2edc5a451661b06317b15ce80a06d2492afd363729c1",
+    "research/experiments/E249-material-matched-positional-win/code/admission.mjs": "6805fa9996bf1ef6527e603a627bace5f4e0d622d95c012210752e6fbc68ea15",
+    "research/experiments/E249-material-matched-positional-win/code/parents.mjs": "f3f649e189807eb4f7db3f9910c73d8168307025b8836b9d2bdf993e85faba2f",
+    "research/experiments/E250-active-king-positional-contrast/code/admission.mjs": "1f8d5965fcddee70a3b0233f1b50fde7d785c7c819d72c928e38bc8775b4bc36",
+    "research/experiments/E250-active-king-positional-contrast/code/parents.mjs": "b864f250ebff478335bde94ef8a0bbb44758cfccae6c6fbf64dfdda632e030d4",
+    "research/experiments/E270-combined-validation/.gitattributes": "80718055d991327257c73f4b06334c61b1e022a7d73396f9018ab982e9cb64d8",
+    "research/experiments/E270-combined-validation/AMENDMENT-affected-record-trace.md": "2412c75b2dd473f8b6a7d89c5e0322cab081eac4d1dd8d596bae557d50c1abdf",
+    "research/experiments/E270-combined-validation/AMENDMENT-complete-freeze-inputs.md": "19396139708f39bb32b3558994de731b8347bc38bb0c4b01f7ce85b9feeb4ed3",
+    "research/experiments/E270-combined-validation/AMENDMENT-complete-producer-closure.md": "6d73a907fb44dc3983adcaea8da5706567d86ead64e9f9a41baabd2384d9a7e5",
+    "research/experiments/E270-combined-validation/AMENDMENT-exact-checker-edge.md": "48a7a914ab86ce4cc067f02a399bb099ab201c219fb7a1eda86f56448d14254f",
+    "research/experiments/E270-combined-validation/AMENDMENT-exact-producer-repair.md": "944aa4a9afd60cef66878687a4be32cd1437271a8312c8e710910051a8d2de42",
+    "research/experiments/E270-combined-validation/AMENDMENT-guard-setup.md": "79e097b073301142a9994d316682eceb9533fd149ac88c08ea8224ef9f480979",
+    "research/experiments/E270-combined-validation/AMENDMENT-producer-epochs.md": "5f25ba3b1772b5ee037ea0f32236bc341c4ab0bcb585fe221ae66940d91c8441",
+    "research/experiments/E270-combined-validation/AMENDMENT-repair-test-stderr.md": "214088dfdc1ac05093b9a86861bfc2160e8d2ee5623dc47679b80d5116cbdffb",
+    "research/experiments/E270-combined-validation/AMENDMENT-saved-consumer-contexts.md": "2b515635fee787f805f6978849f4ebffebfcecd3e26ee12cd6ace776edd9c62f",
+    "research/experiments/E270-combined-validation/code/complete-repair-manifest.json": "753b59548afd89e3a245eeda241cbe2cd17fa6b3ce01070bf862c0c6741605f3",
+    "research/experiments/E270-combined-validation/code/freeze-inputs.mjs": "cfdfad62b673aeaa6f3bec7f3142436833be5837788bf8402c3ad145070d510c",
+    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "4109ea2e73119f451df050177c9615c62c00ffb3768868662cbffa803a4d99f0",
+    "research/experiments/E270-combined-validation/code/output-policy.mjs": "86473426b6eaeab6dfc168412c5a3490636dff03fd8a6836b816b531eb76f5a0",
+    "research/experiments/E270-combined-validation/code/output-preload.mjs": "8787f9fd62cd26f31b416df5391ad15f04f1c0d3e38cac91e7a4de447f0ed830",
+    "research/experiments/E270-combined-validation/code/producer-repair.test.mjs": "2b97fa7d2a45b2800596b2ef738ccdcf96ee250e43adf3bac27af361a0d3d580",
+    "research/experiments/E270-combined-validation/code/reconcile-builds.mjs": "9d705cc75a3077ee945561802aaed9bb74245748a9d510a2ed0966453039ffe9",
+    "research/experiments/E270-combined-validation/code/record-complete-repair-checks.mjs": "d21028aba9dbb164a705414cdc0f669531b8b5000ce2f1e9fe072a4df0cbfdc7",
+    "research/experiments/E270-combined-validation/code/record-complete-repair-retry.mjs": "6ad7136aed2e65d5d542c7788e05d1f5f9c4b9a2af5485e6322fef55186bad30",
+    "research/experiments/E270-combined-validation/code/record-equality-repair-checks.mjs": "d7de085760e33f491d00ddb2a3915426aace7eeb382be33474618a3fc3f425ce",
+    "research/experiments/E270-combined-validation/code/repair-manifest.json": "0f4b97630ff1026d10ec6adfa16c73e1535e1b8c295fa7be1310f9cf6b9d9a4a",
+    "research/experiments/E270-combined-validation/code/source-epochs.json": "b3481bee5b21fab1818dcda9e75162e88657b29811a5e22d60e784a471ee0bdd",
+    "research/experiments/E270-combined-validation/code/source-epochs.mjs": "cb1138514a2fdc50f6a80093b86ba251c4087b87fe5510c82dc56c88f4f3d8e0",
+    "research/experiments/E270-combined-validation/plan.md": "6f019e20f043050764ddde80f8b653ccddcb53e761cbd6de16c3e57fe65c1408",
     "research/experiments/FRIEND-shared/lib.mjs": "db5f0b05bfb833a7c37565fe5b9d066de9ef6a7132d561e5dfa1ca6bfb9038d5",
     "research/fresh-format.mjs": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
     "research/tablebase-rook-data-policy.mjs": "a27a6c5d66ee1454a6d3985673c1060105b362c4161f0be88f2065b1265d0bb8",
+    "research/workflow.mjs": "b63788bd01aef5f5b5f2bfcc387da403ed82c9d44575f7036a6155394ab27d20",
     "tools/calibration/core.mjs": "c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace"
   },
   "focusedChecks": [
@@ -60,12 +100,41 @@
     "13authored assessments with eight genuine admitted contradictions, three agreement and two unsupported controls independently reconstructed",
     "actual actors/player inversion, all-five declared categories, exact model/FEN/counters, history/clock/termination separation, missing source/domain, strict/default-disabled/getters/capabilities/clones, exact/short/zero atomic budgets and witness/source/mental-state forgeries",
     "npm run verify:source",
-    "git diff --check"
+    "git diff --check",
+    "E270 fixed historical-producer repair: original semantic/forgery/budget checks and16 new adversarial checks pass across every affected study; exact48-panel concordance; strict current E211 collection unchanged"
   ],
   "deferredChecks": [
     "authenticated player-assessment provenance and independent source/retrograde outcome truth",
     "wider ending domains, complete history/arbitrary-clock game outcomes and causal decision/mental misjudgment",
     "eligible real-game precision and independent human usefulness",
     "combined original-occurrence/semantic/integration validation, changed-source main/repeat/clean reproduction and separate production promotion"
-  ]
+  ],
+  "sourceAmendments": {
+    "experiment": "E270",
+    "beforeRecordSha256": "b4169266b876303ac6696cd35c98540a137d3d8b6a08c818cdb767fd7229833f",
+    "beforeRecord": "research/experiments/E270-combined-validation/evidence/reconciled-records/E230-build-before.json",
+    "transitions": [
+      {
+        "file": "research/experiments/E211-rook-tablebase-admission/code/saved.mjs",
+        "before": "e8684e52ce344fc7aa930813a964edf98a685b89bf90157463c5da702f2e6efa",
+        "after": "5b7e4aa75542a6ad73375465f9dd36bafaea69b4d091507d059c04194e4316d9"
+      },
+      {
+        "file": "research/experiments/E228-saved-tablebase-support/code/admission.mjs",
+        "before": "b778bb6c49daf346133de213b7f7f808c58ea8c78c9b3b02a12d91cf0465e3f0",
+        "after": "722ed85085fcc9c15ee71694e68bb1ede230669c78737bf7669953ac86f616f8"
+      },
+      {
+        "file": "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs",
+        "before": "67d9c6e6b2b7aa164287052f928413285fd9074841f8e5b00c5ed0db445cea31",
+        "after": "a0452f236c89793115a2c54afe12270317479f802d41c1f8e0e95937bf2b6b9c"
+      }
+    ],
+    "producerConcordanceSha256": "8c675efe8219a4db3bea13182d77bac4d7a0f7fe308aec9a11b075c2b7bb39cf",
+    "checks": {
+      "research/experiments/E270-combined-validation/evidence/complete-repair-retry/summary.json": "b8e6d8901f0d46bc202d14fc7fc8a2d3274aa5196e851a4444435266a018bc9a"
+    },
+    "scopeChanged": false,
+    "acceptedCredit": 0
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E228-saved-tablebase-support/code/support.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E228-saved-tablebase-support/code/support.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ ten saved-root queries independently reconstruct unchanged with zero probes (275.5329ms)\n✔ current guarded source identities and legacy process limitations remain explicit (0.3281ms)\n✔ all five WDL categories remain distinct with exact signs and absent DTZ/DTM (0.3726ms)\n✔ root and successor perspectives invert actual actor/requested player independently (0.264ms)\n✔ complete successor inventory preserves capture, underpromotion, SAN, FEN and zeroing (6.2393ms)\n✔ actual clocks and claim eligibility do not become zero-counter game outcome claims (0.2644ms)\n✔ supplied repetition segment permits optional claim decline and exposes fivefold termination (91.7863ms)\n✔ mechanical draw and missing root remain explicit without inferred best moves or fresh probes (5.4019ms)\n✔ disabled admission/inspection and missing source never use caller data as authenticated tables (0.5441ms)\n✔ strict schema/getters/unknown approval/custom prototypes and invalid options reject (23.3815ms)\n✔ exact/short/zero record and history budgets expose no partial view or routes (83.1005ms)\n✔ illegal query/history endpoints and unsupported rights never alias a saved source root (4.557ms)\n✔ independent reconstruction rejects WDL, sign, distance, clock, history, source and strategy forgeries (104.7034ms)\n✔ both original scopes, source/capability clones and returned rows isolate private admission (12.1059ms)\nℹ tests 14\nℹ suites 0\nℹ pass 14\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 61817.4843\n",
+  "stderr": "",
+  "seconds": 61.90545689999999
+}

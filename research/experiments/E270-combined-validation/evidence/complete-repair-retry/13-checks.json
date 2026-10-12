@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E245-adaptive-rook-defense/code/policy.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E245-adaptive-rook-defense/code/policy.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ both colors cover every genuine enemy reply with complete adaptive nonloss menus (970.3946ms)\n✔ interposition refutes noncapturing check-only continuation; all alternatives remain visible (475.6197ms)\n✔ checking-only flags and all refutations are independently reconstructed (966.8948ms)\n✔ strict ordinary controls, defaults, missing prerequisites and actual histories (5.3972ms)\n✔ private capability and exact current/source frame cannot be forged (251.6885ms)\n✔ full root/check/response record accounting with atomic exact/short/zero caps (1455.7317ms)\n✔ omitted branches, frame/value/identity/material/selection/source/budget forgeries reject (4282.0013ms)\n✔ independent returned trees, source snapshots and caller values remain isolated (478.267ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 85410.0483\n",
+  "stderr": "",
+  "seconds": 85.49828090000001
+}

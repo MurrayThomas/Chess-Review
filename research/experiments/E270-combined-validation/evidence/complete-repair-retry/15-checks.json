@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E250-active-king-positional-contrast/code/positional.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E250-active-king-positional-contrast/code/positional.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ both-color quiet king advances sustain source win through EVERY defense (233.3976ms)\n✔ matched same-material control stays drawn, with ONLY seventh-rank rook defense drawing (121.5108ms)\n✔ original E249 rook-support refutation stays negative without recollection (7477.3988ms)\n✔ default, missing history/source and fifty-move context abstain (9.3099ms)\n✔ strict ordinary inputs, genuine histories, exact move and private source isolation (77.1515ms)\n✔ all43represented source records charged; zero/short caps atomically hide claims (383.8521ms)\n✔ valid source baseline rejects value, frame, history, domain and execution forgeries (22.4382ms)\n✔ independent reconstruction rejects identity/material/control/tactics/outcome/label/budget mutations (676.1239ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 67163.7785\n",
+  "stderr": "",
+  "seconds": 67.25561199999997
+}

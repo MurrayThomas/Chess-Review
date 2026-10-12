@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E230-declared-endgame-assessment/code/assessment.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ thirteen saved assessment cases independently reconstruct unchanged with genuine source positives (294.0602ms)\n✔ declared draw versus admitted loss produces an exact source-qualified C0877 contradiction (0.201ms)\n✔ requested player perspective stays distinct from actual actor and changes agreement correctly (0.1584ms)\n✔ all five reported categories are compared exactly without collapsing cursed/blessed into draws (111.2924ms)\n✔ actual-game assessments abstain even when hypothetical categories look correct or mechanically drawn (44.443ms)\n✔ actual clocks and earlier-history uncertainty remain separate from hypothetical WDL evidence (0.3292ms)\n✔ missing source or saved domain never means agreement and caller/copy tokens cannot supply outcomes (1.1062ms)\n✔ assessment full FEN must match the canonical actual query frame including clocks (2.3138ms)\n✔ strict category/model/player/fields/getters/prototypes and budgets reject malformed reports (1.0028ms)\n✔ default disabled returns no judgment/context and never inspects a capability (0.3944ms)\n✔ exact/short/zero combined assessment/record/history caps never expose a partial contradiction (138.0602ms)\n✔ independent derivation rejects declared/observed/source/perspective/context and mental-state forgeries (177.1833ms)\n✔ C0877 explanation remains bounded, caller-qualified and isolated from input/returned clones (14.3386ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 59279.6332\n",
+  "stderr": "",
+  "seconds": 59.37271880000003
+}

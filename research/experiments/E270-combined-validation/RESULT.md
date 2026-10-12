@@ -47,23 +47,33 @@ checker edge: E211 check-execution.mjs, normalized SHA778598e1... (full hash in
 AMENDMENT-exact-checker-edge.md). Register that exact hash only; all15original
 transitions, current collectors/checkers, observations and scientific gates stay
 unchanged. Add a dedicated forged-edge and both legacy closure check. No wildcard
-or caller-supplied source hash. A NEW17-file retry at7e8e4ed is RUNNING, including
-all16original affected files plus the original E220 equality file. Earlier nine
-passes remain diagnostic; all17must now pass on current sources. The retry first file passes all16
-adversarial tests in131.206seconds, including both formerly failing legacy source
-closures and forged added-checker rejection. The16remaining dependent files are
-still running. Separate guarded source smoke also passes both exact closures and
-rejects the forged checker hash. No failed attempt
-or original archive overwritten. Full cumulative regression remains unlaunched.
+or caller-supplied source hash. The NEW17-file retry at7e8e4ed completes successfully:
+**165tests,17files,1195.144seconds,zero failures**. All1623original canonical
+archive hashes and complete run source bindings match. Eight generated output/
+audit files are retained separately. Both formerly failing support closures and
+all original semantic/forgery/history/clock/budget assertions pass. Original
+failed attempts remain unchanged. Qualification: evidence/qualified-repair.json.
 
-All13affected records (10builds,3supports E211/E214/E228) must be qualified by
-passing study tests, exact source bindings and unchanged canonical archives
-before any update. Preserve original record bytes; no scope/accepted credit.
-Active records currently remain source-stale pending this gate. Baseline's earlier
-zero-stale count below describes the ORIGINAL freeze only. Full cumulative
-regression has NOT launched. New source freeze, successful new pilot, all259
-maintained files, independent semantic/integration/reproduction/strategic/human
-gates remain. Concrete next step: finish the new complete17-file retry, reconcile qualified records and take the new source freeze/pilot.
+All13affected records are reconciled (10builds and3supports E211/E214/E228), with
+original record bytes retained in evidence/reconciled-records. Independent
+metadata comparison verifies all fields except source hashes, appended focused
+check and explicit source-amendment provenance are identical; scopes, stage,
+claims, original checks and every deferred gate remain. Accepted tracker bytes
+match the original freeze. Build status returns162provisional ready batches,
+zero SOURCE-stale; accepted378/1085, additional provisional539, support127,
+strategic prerequisites41 remain unchanged. No acceptance or new concept credit.
+
+The repaired freeze will bind all15current configuration files (all dated
+amendments, plan, root/scoped retention attributes, both fixed artifact manifests
+and registry), complete source/test closures and the consumed fixed concordance
+proof as a canonical test input. Expect1624archives: all1623original plus that
+proof. Syntax/configuration/source smoke checks pass; ALL live retry source
+bindings stayed unchanged during this preparation. Original baseline immutable.
+
+Next: commit qualified boundary, create the repaired source freeze, then a NEW
+pilot. Full cumulative regression has NOT launched; it requires that pilot to
+pass. All259maintained coach files and later independent semantic/integration/
+reproduction/strategic/human gates remain; full original meanings stay open.
 
 ## Operational census and source freeze
 

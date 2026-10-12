@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E214-named-rook-defense-phases/code/phases.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E214-named-rook-defense-phases/code/phases.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ Philidor waiting barrier covers all three king-entry squares with drawing same-rook alternatives (26.9682ms)\n✔ actual Philidor pawn-advance history retained with drawing retreat but absent registered nonhanging sixth-rank loss (25.9047ms)\n✔ Vancura pressure root needs immediate lateral check rather than quiet sixth-rank waiting (11.3479ms)\n✔ registered family stop rules retained no reflection or unregistered continuation (5.0542ms)\n✔ complete actual process outputs and all legal successors stay within source and cost limits (1.2107ms)\n✔ fixed retained bytes reject alterations before trusting in-range WDL or unknown artifact identity (8.4485ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 56902.7393\n",
+  "stderr": "",
+  "seconds": 56.99610749999999
+}

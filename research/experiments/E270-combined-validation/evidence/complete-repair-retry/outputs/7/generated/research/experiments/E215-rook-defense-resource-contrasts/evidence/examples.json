@@ -1,0 +1,974 @@
+[
+  {
+    "id": "E214-philidor-barrier",
+    "phase": "philidor-barrier",
+    "input": {
+      "fen": "4k3/8/r7/3KP3/8/8/7R/8 b - - 0 1",
+      "history": {
+        "fen": "4k3/8/r7/3KP3/8/8/7R/8 b - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0670",
+      "phase": "philidor-barrier",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "b",
+      "resources": [
+        {
+          "move": "a6b6",
+          "san": "Rb6",
+          "zeroing": false,
+          "fen": "4k3/8/1r6/3KP3/8/8/7R/8 w - - 1 2",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        },
+        {
+          "move": "a6g6",
+          "san": "Rg6",
+          "zeroing": false,
+          "fen": "4k3/8/6r1/3KP3/8/8/7R/8 w - - 1 2",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "a6a7",
+          "san": "Ra7",
+          "zeroing": false,
+          "fen": "4k3/r7/8/3KP3/8/8/7R/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "a6a8",
+          "san": "Ra8",
+          "zeroing": false,
+          "fen": "r3k3/8/8/3KP3/8/8/7R/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "b",
+        "pawn": "e5",
+        "king": "e8",
+        "attackerKing": "d5",
+        "rook": "a6",
+        "attacker": "w",
+        "pawnRank": 5,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "h2",
+        "kingOnPromotionSquare": true,
+        "entryTargets": [
+          "c6",
+          "d6",
+          "e6"
+        ],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E214-named-rook-defense-phases/evidence/philidor-barrier.json",
+        "exposure": "previously exposed development",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "E214-philidor-retreat",
+    "phase": "philidor-retreat",
+    "input": {
+      "fen": "4k3/8/1r2P3/3K4/8/8/7R/8 b - - 0 2",
+      "history": {
+        "fen": "4k3/8/r7/3KP3/8/8/7R/8 b - - 0 1",
+        "moves": [
+          "a6b6",
+          "e5e6"
+        ]
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0670",
+      "phase": "philidor-retreat",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "b",
+      "resources": [
+        {
+          "move": "b6b1",
+          "san": "Rb1",
+          "zeroing": false,
+          "fen": "4k3/8/4P3/3K4/8/8/7R/1r6 w - - 1 3",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "b6b7",
+          "san": "Rb7",
+          "zeroing": false,
+          "fen": "4k3/1r6/4P3/3K4/8/8/7R/8 w - - 1 3",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "b6b8",
+          "san": "Rb8",
+          "zeroing": false,
+          "fen": "1r2k3/8/4P3/3K4/8/8/7R/8 w - - 1 3",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "b",
+        "pawn": "e6",
+        "king": "e8",
+        "attackerKing": "d5",
+        "rook": "b6",
+        "attacker": "w",
+        "pawnRank": 6,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "h2",
+        "kingOnPromotionSquare": true,
+        "entryTargets": [],
+        "recordedAdvance": true,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E214-named-rook-defense-phases/evidence/philidor-retreat.json",
+        "exposure": "previously exposed development",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "E214-vancura-pressure",
+    "phase": "vancura-check-before-pressure",
+    "input": {
+      "fen": "R7/6k1/P4r2/K7/8/8/8/8 b - - 0 1",
+      "history": {
+        "fen": "R7/6k1/P4r2/K7/8/8/8/8 b - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0671",
+      "phase": "vancura-check-before-pressure",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "b",
+      "resources": [
+        {
+          "move": "f6f5",
+          "san": "Rf5+",
+          "zeroing": false,
+          "fen": "R7/6k1/P7/K4r2/8/8/8/8 w - - 1 2",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "f6c6",
+          "san": "Rc6",
+          "zeroing": false,
+          "fen": "R7/6k1/P1r5/K7/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f6d6",
+          "san": "Rd6",
+          "zeroing": false,
+          "fen": "R7/6k1/P2r4/K7/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f6e6",
+          "san": "Re6",
+          "zeroing": false,
+          "fen": "R7/6k1/P3r3/K7/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f6g6",
+          "san": "Rg6",
+          "zeroing": false,
+          "fen": "R7/6k1/P5r1/K7/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f6h6",
+          "san": "Rh6",
+          "zeroing": false,
+          "fen": "R7/6k1/P6r/K7/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "b",
+        "pawn": "a6",
+        "king": "g7",
+        "attackerKing": "a5",
+        "rook": "f6",
+        "attacker": "w",
+        "pawnRank": 6,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "a8",
+        "kingOnPromotionSquare": false,
+        "entryTargets": [],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E214-named-rook-defense-phases/evidence/vancura-pressure.json",
+        "exposure": "previously exposed development",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "philidor-barrier-reflection",
+    "phase": "philidor-barrier",
+    "input": {
+      "fen": "8/7r/8/8/3kp3/R7/8/4K3 w - - 0 1",
+      "history": {
+        "fen": "8/7r/8/8/3kp3/R7/8/4K3 w - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0670",
+      "phase": "philidor-barrier",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "w",
+      "resources": [
+        {
+          "move": "a3b3",
+          "san": "Rb3",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3kp3/1R6/8/4K3 b - - 1 1",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        },
+        {
+          "move": "a3g3",
+          "san": "Rg3",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3kp3/6R1/8/4K3 b - - 1 1",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "a3a1",
+          "san": "Ra1",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3kp3/8/8/R3K3 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "a3a2",
+          "san": "Ra2",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3kp3/8/R7/4K3 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "w",
+        "pawn": "e4",
+        "king": "e1",
+        "attackerKing": "d4",
+        "rook": "a3",
+        "attacker": "b",
+        "pawnRank": 5,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "h7",
+        "kingOnPromotionSquare": true,
+        "entryTargets": [
+          "c3",
+          "d3",
+          "e3"
+        ],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E215-rook-defense-resource-contrasts/evidence/philidor-barrier-reflection.json",
+        "sha256": "736ed4eb8dc69dde367f22b7e2ea7acd4feddf69cb73e69d106849e81df59fb0",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "philidor-retreat-reflection",
+    "phase": "philidor-retreat",
+    "input": {
+      "fen": "8/7r/8/8/3k4/1R2p3/8/4K3 w - - 0 2",
+      "history": {
+        "fen": "8/7r/8/8/3kp3/R7/8/4K3 w - - 0 1",
+        "moves": [
+          "a3b3",
+          "e4e3"
+        ]
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0670",
+      "phase": "philidor-retreat",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "w",
+      "resources": [
+        {
+          "move": "b3b8",
+          "san": "Rb8",
+          "zeroing": false,
+          "fen": "1R6/7r/8/8/3k4/4p3/8/4K3 b - - 1 2",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "b3b1",
+          "san": "Rb1",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3k4/4p3/8/1R2K3 b - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "b3b2",
+          "san": "Rb2",
+          "zeroing": false,
+          "fen": "8/7r/8/8/3k4/4p3/1R6/4K3 b - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "w",
+        "pawn": "e3",
+        "king": "e1",
+        "attackerKing": "d4",
+        "rook": "b3",
+        "attacker": "b",
+        "pawnRank": 6,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "h7",
+        "kingOnPromotionSquare": true,
+        "entryTargets": [],
+        "recordedAdvance": true,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E215-rook-defense-resource-contrasts/evidence/philidor-retreat-reflection.json",
+        "sha256": "674ab1817e43083362f5070177c01eeb2e5e161d6549817c0b230a11e508733a",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "vancura-check-at-pawn-reflection",
+    "phase": "vancura-check-at-pawn",
+    "input": {
+      "fen": "8/8/8/8/5R2/pk6/6K1/r7 w - - 0 1",
+      "history": {
+        "fen": "8/8/8/8/5R2/pk6/6K1/r7 w - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0671",
+      "phase": "vancura-check-at-pawn",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "w",
+      "resources": [
+        {
+          "move": "f4f3",
+          "san": "Rf3+",
+          "zeroing": false,
+          "fen": "8/8/8/8/8/pk3R2/6K1/r7 b - - 1 1",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "f4d4",
+          "san": "Rd4",
+          "zeroing": false,
+          "fen": "8/8/8/8/3R4/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4e4",
+          "san": "Re4",
+          "zeroing": false,
+          "fen": "8/8/8/8/4R3/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4f2",
+          "san": "Rf2",
+          "zeroing": false,
+          "fen": "8/8/8/8/8/pk6/5RK1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4f5",
+          "san": "Rf5",
+          "zeroing": false,
+          "fen": "8/8/8/5R2/8/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4f6",
+          "san": "Rf6",
+          "zeroing": false,
+          "fen": "8/8/5R2/8/8/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4f7",
+          "san": "Rf7",
+          "zeroing": false,
+          "fen": "8/5R2/8/8/8/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4f8",
+          "san": "Rf8",
+          "zeroing": false,
+          "fen": "5R2/8/8/8/8/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4g4",
+          "san": "Rg4",
+          "zeroing": false,
+          "fen": "8/8/8/8/6R1/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f4h4",
+          "san": "Rh4",
+          "zeroing": false,
+          "fen": "8/8/8/8/7R/pk6/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "w",
+        "pawn": "a3",
+        "king": "g2",
+        "attackerKing": "b3",
+        "rook": "f4",
+        "attacker": "b",
+        "pawnRank": 6,
+        "attackerKingRank": 6,
+        "rookRank": 5,
+        "attackerRook": "a1",
+        "kingOnPromotionSquare": false,
+        "entryTargets": [],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-at-pawn-reflection.json",
+        "sha256": "deb6828d3f61f088f467fdcfef26b259053be51c0e621ff4043f187e01e32d9c",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "vancura-check-at-pawn",
+    "phase": "vancura-check-at-pawn",
+    "input": {
+      "fen": "R7/6k1/PK6/5r2/8/8/8/8 b - - 0 1",
+      "history": {
+        "fen": "R7/6k1/PK6/5r2/8/8/8/8 b - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0671",
+      "phase": "vancura-check-at-pawn",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "b",
+      "resources": [
+        {
+          "move": "f5f6",
+          "san": "Rf6+",
+          "zeroing": false,
+          "fen": "R7/6k1/PK3r2/8/8/8/8/8 w - - 1 2",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "f5d5",
+          "san": "Rd5",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/3r4/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5e5",
+          "san": "Re5",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/4r3/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5f1",
+          "san": "Rf1",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/8/8/8/8/5r2 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5f2",
+          "san": "Rf2",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/8/8/8/5r2/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5f3",
+          "san": "Rf3",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/8/8/5r2/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5f4",
+          "san": "Rf4",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/8/5r2/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5f7",
+          "san": "Rf7",
+          "zeroing": false,
+          "fen": "R7/5rk1/PK6/8/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5g5",
+          "san": "Rg5",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/6r1/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f5h5",
+          "san": "Rh5",
+          "zeroing": false,
+          "fen": "R7/6k1/PK6/7r/8/8/8/8 w - - 1 2",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "b",
+        "pawn": "a6",
+        "king": "g7",
+        "attackerKing": "b6",
+        "rook": "f5",
+        "attacker": "w",
+        "pawnRank": 6,
+        "attackerKingRank": 6,
+        "rookRank": 5,
+        "attackerRook": "a8",
+        "kingOnPromotionSquare": false,
+        "entryTargets": [],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-at-pawn.json",
+        "sha256": "42a480759e73b0628305d5d5ef617e12eb36c61ad570829139f6f070684cee0c",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  },
+  {
+    "id": "vancura-check-before-pressure-reflection",
+    "phase": "vancura-check-before-pressure",
+    "input": {
+      "fen": "8/8/8/8/k7/p4R2/6K1/r7 w - - 0 1",
+      "history": {
+        "fen": "8/8/8/8/k7/p4R2/6K1/r7 w - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E215-named-rook-resource",
+      "id": "C0671",
+      "phase": "vancura-check-before-pressure",
+      "available": true,
+      "status": "observed-resource",
+      "defender": "w",
+      "resources": [
+        {
+          "move": "f3f4",
+          "san": "Rf4+",
+          "zeroing": false,
+          "fen": "8/8/8/8/k4R2/p7/6K1/r7 b - - 1 1",
+          "wdl": 0,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": 0
+        }
+      ],
+      "losingAlternatives": [
+        {
+          "move": "f3c3",
+          "san": "Rc3",
+          "zeroing": false,
+          "fen": "8/8/8/8/k7/p1R5/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f3d3",
+          "san": "Rd3",
+          "zeroing": false,
+          "fen": "8/8/8/8/k7/p2R4/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f3e3",
+          "san": "Re3",
+          "zeroing": false,
+          "fen": "8/8/8/8/k7/p3R3/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f3g3",
+          "san": "Rg3",
+          "zeroing": false,
+          "fen": "8/8/8/8/k7/p5R1/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        },
+        {
+          "move": "f3h3",
+          "san": "Rh3",
+          "zeroing": false,
+          "fen": "8/8/8/8/k7/p6R/6K1/r7 b - - 1 1",
+          "wdl": 2,
+          "flags": {
+            "checkmate": false,
+            "stalemate": false,
+            "insufficient": false
+          },
+          "rootActorWdl": -2
+        }
+      ],
+      "geometry": {
+        "defender": "w",
+        "pawn": "a3",
+        "king": "g2",
+        "attackerKing": "a4",
+        "rook": "f3",
+        "attacker": "b",
+        "pawnRank": 6,
+        "attackerKingRank": 5,
+        "rookRank": 6,
+        "attackerRook": "a1",
+        "kingOnPromotionSquare": false,
+        "entryTargets": [],
+        "recordedAdvance": false,
+        "supported": true
+      },
+      "source": {
+        "artifact": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-before-pressure-reflection.json",
+        "sha256": "d4c40a4334053a1a108530ef220673a38c93e4f010d53fbb98645903721772d3",
+        "ruleModel": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+      },
+      "outcomeScope": "WDL50 zero-counter outcome; no arbitrary-clock/repetition adjudication"
+    }
+  }
+]

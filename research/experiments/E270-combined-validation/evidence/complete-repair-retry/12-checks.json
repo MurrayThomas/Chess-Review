@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E244-static-material-dynamic-resource/code/contrast.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E244-static-material-dynamic-resource/code/contrast.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ both colors: complete unchanged static ledger versus source-qualified drawing check (163.5659ms)\n✔ every same-rook quiet actual withholds despite its identical material ledger (97.2522ms)\n✔ losing source roots with the same material edge cannot establish dynamic compensation (170.8287ms)\n✔ default-disabled, missing source/history, zero-counter and genuine endpoint admission (6.8936ms)\n✔ strict ordinary fields/limits/getters and private observation capabilities (6.6077ms)\n✔ all records charged, exact cap passes and short/zero caps atomically hide context (22.8842ms)\n✔ material/identity/full-domain/actor/check/outcome/source/result mutations fail independent replay (49.4369ms)\n✔ clones/nonmutation and actual/current input cannot borrow another source frame (5.8732ms)\n✔ warm neutral caches preserve full accounting, recompute actual decisions and isolate all copies (12.4227ms)\nℹ tests 9\nℹ suites 0\nℹ pass 9\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 63177.6124\n",
+  "stderr": "",
+  "seconds": 63.266434699999984
+}

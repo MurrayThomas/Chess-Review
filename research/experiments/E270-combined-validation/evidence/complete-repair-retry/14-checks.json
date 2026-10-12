@@ -1,0 +1,19 @@
+{
+  "revision": "7e8e4ed271da23f27060c80ffe4336641546f9c3",
+  "file": "research/experiments/E249-material-matched-positional-win/code/audit.test.mjs",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/code/output-preload.mjs",
+    "--test",
+    "--test-concurrency=1",
+    "--test-timeout=600000",
+    "research/experiments/E249-material-matched-positional-win/code/audit.test.mjs"
+  ],
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "✔ registered quiet rook support does not sustain the source win (51.7834ms)\n✔ all14defenses retained: four draws, ten source wins; every unit/material preserved (23.3444ms)\n✔ default, missing history and source abstain (7.3021ms)\n✔ ordinary strict controls/history/actual and private capabilities (20.1147ms)\n✔ old plus new records fully charged; zero/short caps hide every observation (81.1339ms)\n✔ valid saved source baseline rejects outcome, FEN, domain and execution forgeries (18.3246ms)\n✔ independent result reconstruction rejects tactics, ownership, outcomes, gates and work mutations (272.5803ms)\n✔ private source snapshots and caller inputs cannot be altered through inspection (22.0118ms)\nℹ tests 8\nℹ suites 0\nℹ pass 8\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 57913.7771\n",
+  "stderr": "",
+  "seconds": 58.00369069999992
+}
