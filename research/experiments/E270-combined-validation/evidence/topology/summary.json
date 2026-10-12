@@ -1,0 +1,28 @@
+{
+  "schema": "E270-source-api-topology-v1",
+  "revision": "82b6a11334c7008fdad9e9d952bac4c4180e3a42",
+  "freezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+  "origins": 171,
+  "candidates": 162,
+  "supports": 9,
+  "ownedModules": 1556,
+  "exportDeclarations": 1514,
+  "arrowExports": 286,
+  "staticTestCalls": 13861,
+  "chainEdges": 105,
+  "chainLeaves": [
+    "research/experiments/E139-recorded-geometric-traps/code/traps.mjs",
+    "research/experiments/E177-queen-exchange-ending/code/ending.mjs",
+    "research/experiments/FRIEND-01-four-versus-three/code/fourthree.mjs",
+    "research/experiments/FRIEND-02-symmetrical-position/code/symmetry.mjs"
+  ],
+  "originalClaimRows": 685,
+  "bytes": 276486,
+  "sha256": "c36876521b3331aa555f21aefc18ef1c9ea936b9e01f4105de0d92d285c0db1e",
+  "seconds": 5.0585242,
+  "allLiveFreezeSourcesUnchanged": true,
+  "sourceOnly": true,
+  "executedCandidateModules": 0,
+  "semanticReplay": false,
+  "acceptedCredit": 0
+}
