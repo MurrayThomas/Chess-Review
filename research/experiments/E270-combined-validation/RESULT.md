@@ -4,7 +4,59 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E068 complete rook-swing results qualified
+## Latest preparation boundary — E067 independent mate-preservation pilot passed
+
+2026-10-12. Prior goal turn made progress qualifying E068. Registration519a091/
+implementationba2b4d6:7/7pilot in11.764seconds, within10–90forecast/180cap;
+72source inputs/44,130raw bytes, five raw Git blobs byte-exact, retained6024ed0.
+No failures/timeouts/source or canonical changes/generated outputs; process
+terminal, no live handle. Candidate/checker/fixtures/frozen evidence unchanged.
+
+Separate whole oracle implements specialized one-own-move mate search and
+all-defense/two-ply enemy-reply→own-mate search WITHOUT E029 query/solve import.
+Preserves mate/check/capture/quiet/UCI witness order, full terminal leaves,
+complete before no-mate1 failures/all defense proofs/first counterchoices and
+exact search ticks. Every completed query, positive or negative, independently
+replays through unchanged E029 replayQuery; incomplete budget query has no
+completed proof. Reconstructs full history before+actual, fresh legal enemy-turn
+pass and pawn-removed counterframes with EP cleared and only actual pawn removed;
+exact removed placement/rights/EP identity. Derives mandatory waiting/reserve
+presence and failure statuses/ledger/atomic clearing/full v48/inherited E066/
+priority159.01/.02/comment/disabled identity. Every positive certificate also
+unchanged E067 checker. Shared Chess/E020 validator/E029 independent replay/E066
+parent priority remain explicit dependencies; no general waiting intent/zugzwang/
+reserve stock/best play/real-game human benefit claim. Actual own move carries
+no own tick; initial/history/search ticks preserve original contract.
+
+Pilot reserve-single andknight-wait bothcolors (4), old per-event checker whole
+ledger forgery and omitted mandatory reserve tag rejection (1), mandatory immediate-
+mate-available refusal with independent completed choice proof (1), sampled
+query-stage end±1/0/1/full+1 budgets for reserve-single (1). Reserve reconstructs
+five completed queries versus three for piece waiting; before proof loses,
+pass/actual/removed proofs win. Exhausting optional reserve proof removes the
+already-completed waiting event too. Sampled semantic query boundaries are NOT
+an exhaustive integer sweep, deliberately preregistered for larger mate searches.
+
+Frozen2658sources/1624canonical unchanged;18prior qualified source closures verify
+1543hash comparisons. E073 original eight/seven-edge documentary contradiction
+remains open. This is pilot preparation ONLY, no full smoke or E067 saved-result
+qualification yet;0accepted/provisional/support/origin credit. Guarded metadata
+probe only:104original rows/3200inherited fingerprints; original states12immediate-
+mate-available20pass-refuted16ineligible8disabled8exhausted32proven4actual-refuted,
+32waiting/24reserve certificates. These saved payload outcomes have not been
+validated by the new whole oracle. No original-query/inherited/full recollection.
+
+Next: separately preregister/implement full104original/tampered whole-result/
+complete mate-tree+counterfactual/negative presence+status/strict-null-disabled/
+full-history/optional reserve/query-prefix budget smoke, then historical source/
+three reproduction/saved/ordered metadata/receipt/fingerprint/teaching qualification.
+Audit remaining original-plan pass-illegal/removed-pawn legality/dead state/castling/
+promotion/repetition controls; preserve any missing evidence as open rather than
+assuming original fixture coverage proves those gates. E066 semantics andall171-
+origin combined API integration/exact changed-source three reproductions/broader
+strategy/real-game human usefulness remain open; full goal active.
+
+## Prior semantic boundary — E068 complete rook-swing results qualified
 
 2026-10-12. Registrationa1723bf/implementation8c05641:130/130saved checks
 in26.970seconds, within25–100forecast/600cap. ALL108rows/104complete results
