@@ -1,10 +1,39 @@
-# E270 — Combined validation; complete producer repair under test
+# E270 — Cumulative regression passed; independent validation pending
 
 2026-10-12. **Validation in progress, not accepted or code-ready.** No build.json,
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Authoritative live observation — 2026-10-12
+## Qualified full cumulative terminal result — 2026-10-12
+
+The SAME original run atbced17c has finished successfully: ALL259frozen files,
+12017tests/pass,0fail/cancelled/skipped/todo,4274.588seconds (about71.24minutes).
+Exit0, no signal/launch error/hard timeout; all2658frozen source/config hashes and
+ALL1624canonical archive hashes remain unchanged. Original runner6976/test20036
+are terminal and absent from OS process inventory. No restart or second full run.
+Original per-test/whole-run limits, assertion inventory and source freeze retained.
+
+Complete terminal evidence/full-repaired/final.json SHA
+3b8eca73f181a38cbc31099848bc866147722db4460ba9b3e22f02af25bfce66;
+freeze remains2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b.
+Qualification rechecks exact start/freeze/revision/259-file identity, full TAP and
+stderr hashes, terminal summary,19generated/audit outputs and every original
+source/canonical hash. ALL24original run artifact Git-index blobs match physical
+raw bytes (2028679bytes); qualification.json retains full manifest. Scoped stream
+attributes unchanged. No original failed attempts or evidence were overwritten.
+Maintained-source and diff checks pass. This is ONE regression gate, not whole
+semantic acceptance, independent tablebase/chess truth, production or new credit.
+
+Next: execute committed preparation/run-e083-controls.mjs initial (120-second
+cap). Preserve any failure and diagnose before repairs/retry. On qualified65/65
+control pass, execute run-e083-replay.mjs initial initial with fixed33-row saved
+report,46replay/provenance checks and600-second cap. New preparation was outside
+this regression's source/test inventory and requires its own actual qualification.
+All171origin semantic replay, actual combined API integration, exact changed-source
+main/repeat/initially-clean reproductions, full strategic/original meanings and
+independent human usefulness remain open.378accepted/539provisional/127support/
+41strategic prerequisites unchanged. Overall goal remains ACTIVE.
+## Historical live observation — 2026-10-12 (superseded by terminal result)
 
 Previous goal turn progressed through58af3ef's complete fixed saved-replay code.
 This continuation is a VERIFIED WAIT: actual OS runner6976/test20036 remain live,

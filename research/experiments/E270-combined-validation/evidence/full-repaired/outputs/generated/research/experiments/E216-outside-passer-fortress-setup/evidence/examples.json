@@ -1,0 +1,2204 @@
+[
+  {
+    "id": "rook-race",
+    "kind": "outside",
+    "input": {
+      "fen": "7k/5K2/6P1/8/7r/8/p7/1R6 w - - 0 1",
+      "move": "g6g7",
+      "history": {
+        "fen": "7k/5K2/6P1/8/7r/8/p7/1R6 w - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E216-finite-ending-resource",
+      "id": "C0683",
+      "available": true,
+      "status": "proven",
+      "nodes": 5,
+      "limit": 2000,
+      "witness": {
+        "actor": "w",
+        "before": "7k/5K2/6P1/8/7r/8/p7/1R6 w - - 0 1",
+        "after": "7k/5KP1/8/8/7r/8/p7/1R6 b - - 0 1",
+        "move": "g6g7",
+        "pawn": "g7",
+        "otherPawns": [
+          "a2"
+        ],
+        "scope": "complete surviving-queen route; not full outside-passer distraction or rook-ending conversion",
+        "proof": {
+          "rootFen": "7k/5KP1/8/8/7r/8/p7/1R6 b - - 0 1",
+          "color": "w",
+          "pawn": "g7",
+          "depth": 1,
+          "initialBalance": 0,
+          "win": true,
+          "tree": {
+            "kind": "all",
+            "fen": "7k/5KP1/8/8/7r/8/p7/1R6 b - - 0 1",
+            "branches": [
+              {
+                "move": "h8h7",
+                "child": {
+                  "kind": "choice",
+                  "fen": "8/5KPk/8/8/7r/8/p7/1R6 w - - 1 2",
+                  "move": "g7g8q",
+                  "child": {
+                    "kind": "safe-promotion",
+                    "fen": "6Q1/5K1k/8/8/7r/8/p7/1R6 b - - 0 2",
+                    "target": "g8",
+                    "mate": false,
+                    "responses": [
+                      {
+                        "move": "h7h6",
+                        "gain": 8,
+                        "fen": "6Q1/5K2/7k/8/7r/8/p7/1R6 w - - 1 3"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "admission": {
+          "passed": true,
+          "replies": 1,
+          "leaves": 1
+        }
+      }
+    }
+  },
+  {
+    "id": "rook-race-black",
+    "kind": "outside",
+    "input": {
+      "fen": "1r6/P7/8/7R/8/6p1/5k2/7K b - - 0 1",
+      "move": "g3g2",
+      "history": {
+        "fen": "1r6/P7/8/7R/8/6p1/5k2/7K b - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E216-finite-ending-resource",
+      "id": "C0683",
+      "available": true,
+      "status": "proven",
+      "nodes": 5,
+      "limit": 2000,
+      "witness": {
+        "actor": "b",
+        "before": "1r6/P7/8/7R/8/6p1/5k2/7K b - - 0 1",
+        "after": "1r6/P7/8/7R/8/8/5kp1/7K w - - 0 2",
+        "move": "g3g2",
+        "pawn": "g2",
+        "otherPawns": [
+          "a7"
+        ],
+        "scope": "complete surviving-queen route; not full outside-passer distraction or rook-ending conversion",
+        "proof": {
+          "rootFen": "1r6/P7/8/7R/8/8/5kp1/7K w - - 0 2",
+          "color": "b",
+          "pawn": "g2",
+          "depth": 1,
+          "initialBalance": 0,
+          "win": true,
+          "tree": {
+            "kind": "all",
+            "fen": "1r6/P7/8/7R/8/8/5kp1/7K w - - 0 2",
+            "branches": [
+              {
+                "move": "h1h2",
+                "child": {
+                  "kind": "choice",
+                  "fen": "1r6/P7/8/7R/8/8/5kpK/8 b - - 1 2",
+                  "move": "g2g1q",
+                  "child": {
+                    "kind": "safe-promotion",
+                    "fen": "1r6/P7/8/7R/8/8/5k1K/6q1 w - - 0 3",
+                    "target": "g1",
+                    "mate": false,
+                    "responses": [
+                      {
+                        "move": "h2h3",
+                        "gain": 8,
+                        "fen": "1r6/P7/8/7R/8/7K/5k2/6q1 b - - 1 3"
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "admission": {
+          "passed": true,
+          "replies": 1,
+          "leaves": 1
+        }
+      }
+    }
+  },
+  {
+    "id": "quiet-setup",
+    "kind": "fortress",
+    "input": {
+      "fen": "7k/8/R4K2/5N2/2B5/8/8/n1n1n1n1 w - - 0 1",
+      "move": "a6a7",
+      "history": {
+        "fen": "7k/8/R4K2/5N2/2B5/8/8/n1n1n1n1 w - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E216-finite-ending-resource",
+      "id": "C0746",
+      "available": true,
+      "status": "proven",
+      "nodes": 133,
+      "limit": 2000,
+      "witness": {
+        "actor": "w",
+        "enemy": "b",
+        "before": "7k/8/R4K2/5N2/2B5/8/8/n1n1n1n1 w - - 0 1",
+        "after": "7k/R7/5K2/5N2/2B5/8/8/n1n1n1n1 b - - 1 1",
+        "move": "a6a7",
+        "deficit": -1,
+        "beforeFrameKind": "hypothetical enemy-turn diagram",
+        "beforeEnemyFen": "7k/8/R4K2/5N2/2B5/8/8/n1n1n1n1 b - - 0 1",
+        "beforeKingMoves": [
+          "h8h7"
+        ],
+        "afterKingMoves": [],
+        "replies": [
+          "a1b3",
+          "a1c2",
+          "c1a2",
+          "c1b3",
+          "c1d3",
+          "c1e2",
+          "e1c2",
+          "e1d3",
+          "e1f3",
+          "e1g2",
+          "g1e2",
+          "g1f3",
+          "g1h3"
+        ],
+        "scope": "quiet king-confinement setup to bounded checking-fortress claim policy; not permanent static fortress or optimal outcome",
+        "proof": {
+          "rootFen": "7k/R7/5K2/5N2/2B5/8/8/n1n1n1n1 b - - 1 1",
+          "actor": "w",
+          "mode": "repetition",
+          "plies": 9,
+          "tree": {
+            "kind": "all",
+            "win": true,
+            "fen": "7k/R7/5K2/5N2/2B5/8/8/n1n1n1n1 b - - 1 1",
+            "branches": [
+              {
+                "move": "a1b3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/2n1n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/1n6/8/2n1n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/1n6/8/2n1n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/1n6/8/2n1n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/2n1n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/1n6/8/2n1n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/1n6/8/2n1n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/1n6/8/2n1n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/2n1n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/1n6/8/2n1n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "a1c2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/2n1n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/2n5/2n1n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/2n5/2n1n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/2n5/2n1n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/2n1n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/2n5/2n1n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/2n5/2n1n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/2n5/2n1n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/2n1n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/2n5/2n1n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c1a2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/n7/n3n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/n7/n3n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/n7/n3n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/n7/n3n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/n7/n3n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/n7/n3n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/n7/n3n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/n7/n3n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/n7/n3n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/n7/n3n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c1b3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/n3n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/1n6/8/n3n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/1n6/8/n3n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/1n6/8/n3n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/n3n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/1n6/8/n3n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/1n6/8/n3n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/1n6/8/n3n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/1n6/8/n3n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/1n6/8/n3n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c1d3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n3n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/3n4/8/n3n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/3n4/8/n3n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/3n4/8/n3n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n3n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/3n4/8/n3n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/3n4/8/n3n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/3n4/8/n3n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n3n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/3n4/8/n3n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c1e2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n3n1n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/4n3/n3n1n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/4n3/n3n1n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/4n3/n3n1n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n3n1n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/4n3/n3n1n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/4n3/n3n1n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/4n3/n3n1n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n3n1n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/4n3/n3n1n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e1c2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/n1n3n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/2n5/n1n3n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/2n5/n1n3n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/2n5/n1n3n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/n1n3n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/2n5/n1n3n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/2n5/n1n3n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/2n5/n1n3n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/2n5/n1n3n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/2n5/n1n3n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e1d3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n1n3n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/3n4/8/n1n3n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/3n4/8/n1n3n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/3n4/8/n1n3n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n1n3n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/3n4/8/n1n3n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/3n4/8/n1n3n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/3n4/8/n1n3n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/3n4/8/n1n3n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/3n4/8/n1n3n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e1f3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n3n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/5n2/8/n1n3n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/5n2/8/n1n3n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/5n2/8/n1n3n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n3n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/5n2/8/n1n3n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/5n2/8/n1n3n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/5n2/8/n1n3n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n3n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/5n2/8/n1n3n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e1g2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/6n1/n1n3n1 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/6n1/n1n3n1 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/6n1/n1n3n1 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/6n1/n1n3n1 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/6n1/n1n3n1 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/6n1/n1n3n1 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/6n1/n1n3n1 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/6n1/n1n3n1 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/6n1/n1n3n1 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/6n1/n1n3n1 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g1e2",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n1n1n3 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/8/4n3/n1n1n3 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/8/4n3/n1n1n3 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/8/4n3/n1n1n3 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n1n1n3 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/8/4n3/n1n1n3 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/8/4n3/n1n1n3 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/8/4n3/n1n1n3 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/8/4n3/n1n1n3 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/8/4n3/n1n1n3 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g1f3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n1n3 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/5n2/8/n1n1n3 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/5n2/8/n1n1n3 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/5n2/8/n1n1n3 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n1n3 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/5n2/8/n1n1n3 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/5n2/8/n1n1n3 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/5n2/8/n1n1n3 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/5n2/8/n1n1n3 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/5n2/8/n1n1n3 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g1h3",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "7k/R7/5K2/5N2/2B5/7n/8/n1n1n3 w - - 2 2",
+                  "move": "a7a8",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "R6k/8/5K2/5N2/2B5/7n/8/n1n1n3 b - - 3 2",
+                    "branches": [
+                      {
+                        "move": "h8h7",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "R7/7k/5K2/5N2/2B5/7n/8/n1n1n3 w - - 4 3",
+                          "move": "a8a7",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "8/R6k/5K2/5N2/2B5/7n/8/n1n1n3 b - - 5 3",
+                            "branches": [
+                              {
+                                "move": "h7h8",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "7k/R7/5K2/5N2/2B5/7n/8/n1n1n3 w - - 6 4",
+                                  "move": "a7a8",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "R6k/8/5K2/5N2/2B5/7n/8/n1n1n3 b - - 7 4",
+                                    "branches": [
+                                      {
+                                        "move": "h8h7",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "R7/7k/5K2/5N2/2B5/7n/8/n1n1n3 w - - 8 5",
+                                          "move": "a8a7",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "8/R6k/5K2/5N2/2B5/7n/8/n1n1n3 b - - 9 5",
+                                            "branches": [
+                                              {
+                                                "move": "h7h8",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "7k/R7/5K2/5N2/2B5/7n/8/n1n1n3 w - - 10 6",
+                                                  "key": "7k/R7/5K2/5N2/2B5/7n/8/n1n1n3 w - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "admission": {
+          "passed": true,
+          "replies": 65,
+          "leaves": 13
+        }
+      }
+    }
+  },
+  {
+    "id": "quiet-setup-black",
+    "kind": "fortress",
+    "input": {
+      "fen": "N1N1N1N1/8/8/2b5/5n2/r4k2/8/7K b - - 0 1",
+      "move": "a3a2",
+      "history": {
+        "fen": "N1N1N1N1/8/8/2b5/5n2/r4k2/8/7K b - - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "schema": "E216-finite-ending-resource",
+      "id": "C0746",
+      "available": true,
+      "status": "proven",
+      "nodes": 133,
+      "limit": 2000,
+      "witness": {
+        "actor": "b",
+        "enemy": "w",
+        "before": "N1N1N1N1/8/8/2b5/5n2/r4k2/8/7K b - - 0 1",
+        "after": "N1N1N1N1/8/8/2b5/5n2/5k2/r7/7K w - - 1 2",
+        "move": "a3a2",
+        "deficit": -1,
+        "beforeFrameKind": "hypothetical enemy-turn diagram",
+        "beforeEnemyFen": "N1N1N1N1/8/8/2b5/5n2/r4k2/8/7K w - - 0 1",
+        "beforeKingMoves": [
+          "h1h2"
+        ],
+        "afterKingMoves": [],
+        "replies": [
+          "a8b6",
+          "a8c7",
+          "c8a7",
+          "c8b6",
+          "c8d6",
+          "c8e7",
+          "e8c7",
+          "e8d6",
+          "e8f6",
+          "e8g7",
+          "g8e7",
+          "g8f6",
+          "g8h6"
+        ],
+        "scope": "quiet king-confinement setup to bounded checking-fortress claim policy; not permanent static fortress or optimal outcome",
+        "proof": {
+          "rootFen": "N1N1N1N1/8/8/2b5/5n2/5k2/r7/7K w - - 1 2",
+          "actor": "b",
+          "mode": "repetition",
+          "plies": 9,
+          "tree": {
+            "kind": "all",
+            "win": true,
+            "fen": "N1N1N1N1/8/8/2b5/5n2/5k2/r7/7K w - - 1 2",
+            "branches": [
+              {
+                "move": "a8b6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "2N1N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "2N1N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "a8c7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "2N1N1N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "2N1N1N1/2N5/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c8a7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N3N1N1/N7/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N3N1N1/N7/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N3N1N1/N7/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N3N1N1/N7/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N3N1N1/N7/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N3N1N1/N7/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N3N1N1/N7/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N3N1N1/N7/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N3N1N1/N7/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N3N1N1/N7/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c8b6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N3N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N3N1N1/8/1N6/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c8d6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N3N1N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N3N1N1/8/3N4/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "c8e7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N3N1N1/4N3/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N3N1N1/4N3/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e8c7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N3N1/2N5/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N3N1/2N5/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e8d6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N3N1/8/3N4/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N3N1/8/3N4/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e8f6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N3N1/8/5N2/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N3N1/8/5N2/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "e8g7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N3N1/6N1/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N3N1/6N1/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g8e7",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N1N3/4N3/8/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N1N3/4N3/8/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g8f6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N1N3/8/5N2/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N1N3/8/5N2/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "move": "g8h6",
+                "child": {
+                  "kind": "choice",
+                  "win": true,
+                  "fen": "N1N1N3/8/7N/2b5/5n2/5k2/r7/7K b - - 2 2",
+                  "move": "a2a1",
+                  "child": {
+                    "kind": "all",
+                    "win": true,
+                    "fen": "N1N1N3/8/7N/2b5/5n2/5k2/8/r6K w - - 3 3",
+                    "branches": [
+                      {
+                        "move": "h1h2",
+                        "child": {
+                          "kind": "choice",
+                          "win": true,
+                          "fen": "N1N1N3/8/7N/2b5/5n2/5k2/7K/r7 b - - 4 3",
+                          "move": "a1a2",
+                          "child": {
+                            "kind": "all",
+                            "win": true,
+                            "fen": "N1N1N3/8/7N/2b5/5n2/5k2/r6K/8 w - - 5 4",
+                            "branches": [
+                              {
+                                "move": "h2h1",
+                                "child": {
+                                  "kind": "choice",
+                                  "win": true,
+                                  "fen": "N1N1N3/8/7N/2b5/5n2/5k2/r7/7K b - - 6 4",
+                                  "move": "a2a1",
+                                  "child": {
+                                    "kind": "all",
+                                    "win": true,
+                                    "fen": "N1N1N3/8/7N/2b5/5n2/5k2/8/r6K w - - 7 5",
+                                    "branches": [
+                                      {
+                                        "move": "h1h2",
+                                        "child": {
+                                          "kind": "choice",
+                                          "win": true,
+                                          "fen": "N1N1N3/8/7N/2b5/5n2/5k2/7K/r7 b - - 8 5",
+                                          "move": "a1a2",
+                                          "child": {
+                                            "kind": "all",
+                                            "win": true,
+                                            "fen": "N1N1N3/8/7N/2b5/5n2/5k2/r6K/8 w - - 9 6",
+                                            "branches": [
+                                              {
+                                                "move": "h2h1",
+                                                "child": {
+                                                  "kind": "goal",
+                                                  "win": true,
+                                                  "fen": "N1N1N3/8/7N/2b5/5n2/5k2/r7/7K b - - 10 6",
+                                                  "key": "N1N1N3/8/7N/2b5/5n2/5k2/r7/7K b - -",
+                                                  "goal": "repetition"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "admission": {
+          "passed": true,
+          "replies": 65,
+          "leaves": 13
+        }
+      }
+    }
+  }
+]

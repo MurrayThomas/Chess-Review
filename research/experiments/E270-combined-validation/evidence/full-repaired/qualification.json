@@ -1,0 +1,145 @@
+{
+  "sourceFreezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+  "terminalSha256": "3b8eca73f181a38cbc31099848bc866147722db4460ba9b3e22f02af25bfce66",
+  "revision": "bced17c6f7c0a0c0b71ce3d6827d3009f4316058",
+  "testFiles": 259,
+  "tests": 12017,
+  "passed": 12017,
+  "failed": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "seconds": 4274.587783200001,
+  "sourceChanges": [],
+  "canonicalChanges": [],
+  "hardTimeout": false,
+  "outputs": 19,
+  "artifacts": [
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/final.json",
+      "bytes": 59269,
+      "sha256": "3b8eca73f181a38cbc31099848bc866147722db4460ba9b3e22f02af25bfce66"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/12556.jsonl",
+      "bytes": 439,
+      "sha256": "5bab0b3dc0e41f31573b5deff9c960c00d56eb9280ddfd6d6d5a0ea333306cb1"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/1444.jsonl",
+      "bytes": 504,
+      "sha256": "c9545c1378d222b060568115d330b7b2a33835c9aa3d8024b74c19ad8829a998"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/15028.jsonl",
+      "bytes": 463,
+      "sha256": "4149c5020509ffc86b9b1473d3ea21d61dbca372f0e20f699d53ec004f289578"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/18436.jsonl",
+      "bytes": 493,
+      "sha256": "fc3a621e66a2e64f2a8faa4dece623bf71e7a10fd87fb6e63c73bd63eeaca21b"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/18840.jsonl",
+      "bytes": 481,
+      "sha256": "508f003ec0d585426bb90ffade98313e5b753723d99da8d720d974e0ad209145"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/19152.jsonl",
+      "bytes": 449,
+      "sha256": "b429e89a9a15960f2858e67c3af7105d39694431c6916337a5675545d003ce5b"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/audit/19196.jsonl",
+      "bytes": 467,
+      "sha256": "aa41e347bcfb56df5fda54a21f0c9e5bd06e50908cc6c3ee85628072730a81a7"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E175-recorded-quality-exchanges/evidence/current-preservation-isolator.json.gz",
+      "bytes": 7060,
+      "sha256": "33edefd9867f9d8bf34631b7450e3b5d18309494304985b5e90e41367d1b8040"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E181-historical-forcing-resources/evidence/longer-policy-control.json.gz",
+      "bytes": 26734,
+      "sha256": "6b8c22e7c07f9f9cf46cc60d2c3febb94e84d14236235372a2cbbab47cd44ff0"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E211-rook-tablebase-admission/evidence/observed-process-panel.json",
+      "bytes": 41593,
+      "sha256": "3268b2f92ac9378fd5f0f726b28699f977c9f4f8b21c48defb81d50616ab21f5"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E212-rook-side-defense/evidence/examples.json",
+      "bytes": 11092,
+      "sha256": "8142061b9bfafdbf43297e34610086ac81d8f331ffe1bd07f6679b30b2ba6f02"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E213-short-side-king-choice/evidence/examples.json",
+      "bytes": 11693,
+      "sha256": "9abc7fb8b5b04a47253f8d389a0ec2135115674ad61a4ea5a8349013b447d5e1"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E215-rook-defense-resource-contrasts/evidence/examples.json",
+      "bytes": 26342,
+      "sha256": "5bb06f8d85ad68103bb473f17d2ff751de49960af5c7aa1b38684477cbae80f3"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/generated/research/experiments/E216-outside-passer-fortress-setup/evidence/examples.json",
+      "bytes": 99309,
+      "sha256": "7f73c1582118bc8dd4c5de87fe26d2721e0c4f39c0145798afccf86232d88243"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/guard-8120/audit/11840.jsonl",
+      "bytes": 1461,
+      "sha256": "ac75f4c75e142b160e200f8cdca3d30521387083c5633a01d307251b8fcaff74"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/guard-8120/child-result.json",
+      "bytes": 38,
+      "sha256": "77680158933a39acfe6fc5873cf3b39ee1474f07a9928fd82e8c9fa052cc4a4d"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/guard-8120/generated/research/experiments/E175-recorded-quality-exchanges/evidence/current-preservation-isolator.json.gz",
+      "bytes": 4,
+      "sha256": "75c75efe327a8ef35a072f25117961f5b99e35035dc9bd86493dd29fd7bc07eb"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/guard-8120/generated/research/experiments/E181-historical-forcing-resources/evidence/longer-policy-control.json.gz",
+      "bytes": 8,
+      "sha256": "f2579d976934c7888785842d8e5a48a140453222e5dbca50d5a1226cd63a8dc7"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/outputs/guard-8120/generated/research/experiments/E212-rook-side-defense/evidence/examples.json",
+      "bytes": 5,
+      "sha256": "d098ab5e44b9aabb755f76d806598f43573c662b35e4a2eab1e312ec9ad195e2"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/process.json",
+      "bytes": 209,
+      "sha256": "8d1ed328cd089bea11d01b8e892ce72b686e1b1c41c3ec6776254c90ef8006a8"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/started.json",
+      "bytes": 51795,
+      "sha256": "579e3f04317389fb96a5064a66c4e08f607ccdd698c06dabc3ac47e75cfe0831"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/full-repaired/stdout.tap",
+      "bytes": 1688771,
+      "sha256": "5b027ef58e1fce7b5dde2f406359e4d81009a89ba016b10613e1f7f898b923a4"
+    }
+  ],
+  "bytes": 2028679,
+  "allIndexedGitBlobsMatchRawHashes": true,
+  "independentSemanticStageEligible": true,
+  "semanticAcceptance": false,
+  "acceptedCredit": 0,
+  "wholeOriginalScopeComplete": false
+}

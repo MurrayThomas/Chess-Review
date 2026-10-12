@@ -3,7 +3,7 @@
   "experiment": "E270",
   "fullRegressionLaunched": true,
   "acceptedCredit": 0,
-  "currentExecutionGate": "full-cumulative-running",
+  "currentExecutionGate": "independent-semantic-replay",
   "development": [],
   "sourceAvailabilityIsRuntimeAcceptance": false,
   "completeConcordance": {
@@ -70,7 +70,11 @@
     "pid": 20036,
     "runnerPid": 6976,
     "tests": 259,
-    "terminalResult": false
+    "terminalResult": true,
+    "qualification": "evidence/full-repaired/qualification.json",
+    "passed": 12017,
+    "failed": 0,
+    "seconds": 4274.587783200001
   },
   "postRegressionPreparation": {
     "file": "evidence/topology-corrected/verification.json",
