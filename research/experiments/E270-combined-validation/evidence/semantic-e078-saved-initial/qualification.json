@@ -1,0 +1,3423 @@
+{
+  "legacyCountAudit": {
+    "additionalIndependentOwnReplayCalls": 166,
+    "emittedTotal": 88,
+    "legacyDerivedTotal": 88,
+    "rows": [
+      {
+        "fixture": "outside-chain",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-chain-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-chain-capture",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-chain-capture-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-branched-chain",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-branched-chain-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-separate-chains",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-separate-chains-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-still-not-beyond",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-still-not-beyond-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-nonchain-pawn",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-nonchain-pawn-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-enemy-pawns",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-enemy-pawns-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-other-first-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-other-first-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-no-root-restriction",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-no-root-restriction-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-wrong-bishop-color",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-wrong-bishop-color-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-beyond-but-backward-chain",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-beyond-but-backward-chain-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-unchanged-bishop",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-unchanged-bishop-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-chain-pawn-move",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "outside-chain-pawn-move-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-chain",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-chain-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-branched-chain",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-branched-chain-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-already",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-already-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-nonrestrictive",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-nonrestrictive-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "qr-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qr-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qr-rank",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qr-rank-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qb-rising",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qb-rising-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qb-falling",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qb-falling-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-rising",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-rising-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-falling",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-falling-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "rr-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "rr-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "bb-rising",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "bb-rising-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-middle",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-middle-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-front",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-front-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-rear",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queen-rear-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "four-sliders",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "four-sliders-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-compatible-blocker",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-compatible-blocker-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "move-noncompatible-blocker",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "move-noncompatible-blocker-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "battery-knight-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-knight-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-pawn-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-pawn-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-bishop-orth-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-bishop-orth-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-king-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-king-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-enemy-rook-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-enemy-rook-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-enemy-endpoint",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-enemy-endpoint-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-singleton",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-singleton-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-rook-bishop-incompatible",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-rook-bishop-incompatible-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-existing-advance",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-existing-advance-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-existing-quiet",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-existing-quiet-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-queen-with-enemy-bound",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "battery-queen-with-enemy-bound-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "battery-diagonal-own-rook-blocker",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "battery-diagonal-own-rook-blocker-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "disabled-profile",
+        "state": "disabled",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": null
+      },
+      {
+        "fixture": "disabled-profile-black",
+        "state": "disabled",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": null
+      },
+      {
+        "fixture": "zero-budget",
+        "state": "exhausted",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "zero-budget-black",
+        "state": "exhausted",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-rejected",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-rejected-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-exhausted",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-exhausted-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-terminal-root",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-terminal-root-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-mate",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-mate-black",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-stalemate",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-stalemate-black",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "dead-promotion",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "dead-promotion-black",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "ep-removes-two-blockers",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "ep-removes-two-blockers-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "valid-history",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "valid-history-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "repetition-root",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "repetition-root-black",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-clock-root",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-clock-root-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-two-blockers-already",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "behind-two-blockers-already-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "rr-rank",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "rr-rank-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-rank",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "qq-rank-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "bb-falling",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "bb-falling-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queens",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "triple-queens-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "four-bishops",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "four-bishops-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "merge-maximal-groups",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "merge-maximal-groups-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "split-triple-to-pair",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "split-triple-to-pair-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "split-pair-to-singletons",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "split-pair-to-singletons-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "promotion-q",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-q-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-q",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-q-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-r",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-r-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-r",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-r-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-b",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-b-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-b",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "capture-promotion-b-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "promotion-n",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "promotion-n-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "capture-promotion-n",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "capture-promotion-n-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "bb-falling-existing",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "bb-falling-existing-black",
+        "state": "no-new-fact",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-dead-capture",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "actual-dead-capture-black",
+        "state": "not-live",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "combined-profiles",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "combined-profiles-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "foundation-root-mate",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-root-mate-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-root-stalemate",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "foundation-root-stalemate-black",
+        "state": "not-applicable",
+        "emittedCertificates": 0,
+        "legacyDerivedCertificates": 0
+      },
+      {
+        "fixture": "two-new-batteries",
+        "state": "proven",
+        "emittedCertificates": 2,
+        "legacyDerivedCertificates": 2
+      },
+      {
+        "fixture": "two-new-batteries-black",
+        "state": "proven",
+        "emittedCertificates": 2,
+        "legacyDerivedCertificates": 2
+      },
+      {
+        "fixture": "outside-chain-reversed-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-chain-reversed-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-capture-reversed-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-capture-reversed-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-branch-reversed-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "outside-branch-reversed-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-chain-reversed-file",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "behind-chain-reversed-file-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "quiet-qq-display",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      },
+      {
+        "fixture": "quiet-qq-display-black",
+        "state": "proven",
+        "emittedCertificates": 1,
+        "legacyDerivedCertificates": 1
+      }
+    ]
+  },
+  "schema": "E270-E078-accepted-reuse-qualification-v1",
+  "regression": {
+    "receipt": {
+      "schema": "research-data-eligibility-v1",
+      "policyVersion": "public-data-v1",
+      "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f",
+      "validatorSha256": "595ea82720f6699405b19e0f64fdc793597ace0b9e5b9096b482b9781c3d7225",
+      "originValidatorSha256": "6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21",
+      "registrySha256": "c00de91f767ec439aecbf27fd0929fd26ed3d8c3ca6a5525e996ee58989d026b",
+      "purpose": "test",
+      "manifestHashes": {
+        "D001": "a333bd2a96240f10a084b41f63931901e22fa804e50106606efc20617bd691cf"
+      },
+      "sourceEvidence": {
+        "lichess-standard-2026-summer": {
+          "license": "CC0-1.0",
+          "termsUrl": "https://database.lichess.org/",
+          "verifiedOn": "2026-10-05",
+          "evidenceSha256": "a227e286dce1e9e355101356507e57c4ad89ec39d65f9762f94ab76a6ffdd4ac"
+        }
+      },
+      "inputHashes": {
+        "tools/calibration/public/sources.json": "13e7e502f8dc39ddfb917d3966ae3d483238597b2fd2de38591a581e8365033a",
+        "tools/calibration/public/dataset.json.gz": "802f4fa8819408df565de0b3a0316ee24b5a302fa92291cba788a8ad5e9ac15f",
+        "tools/calibration/public/sf18-evidence.json.gz": "2771b2b8a7839e4d9f2ddbff73aa6e0dfbe017f3aa3a7b052584147ee21c968b",
+        "tools/calibration/public/sf18-rating-evidence.json.gz": "f41178347bc9569390b744f9e6fb2206882cf2307c762de8b8f8aab35c2a1e31",
+        "tools/calibration/public/sf19-rating-evidence.json.gz": "8ac253f86fa87a945c06e86f2b7c82d4f2b7e8c96ae9b990a6efadbac9f7d721",
+        "tools/calibration/public/expected-scores.json": "969664315be01fab6f719ce158926741c45ec59ef8e3accfe28f0dcc595b7df6",
+        "tools/calibration/public/validation.json": "865aa647f484f3932c42baa2bd15625bd7cdfd253f504aa6d64aba3e4eb07076",
+        "research/experiments/E003-sf19-archive-replay/evidence/sf19-quality.json.gz": "5cef8a6d20482a743351c8ca3a85da030fd95b3eb91a6395aeca0b8d7f7fe745",
+        "research/experiments/E001-evidence-audit/evidence/sf19-quality-archive.json": "3953a2a13f8e491e5c0dedbf40d38bb7d0d24ac4abe546278b8fb8360e1d3c2d",
+        "research/experiments/E003-sf19-archive-replay/evidence/sf19-choice-confirmation.json.gz": "5e9e1f61b48d39030e91dea0615aee4510ac9c29e3fcf3d2b7e3ad47b82efbae",
+        "research/experiments/E001-evidence-audit/evidence/sf19-choice-confirmation-archive.json": "a762d73fb732e107da84d7edae8991cc89227f3252b164d3008e64a7c1c6906b",
+        "research/experiments/E002-nonlinear-rating/evidence/results.json": "9219f67a34e1c1f6ba8252f1b5a46958b8afd7dba13b90c24d660b2370f64f18",
+        "research/experiments/E002-nonlinear-rating/evidence/predictions.json.gz": "a78f5b9f69f1a4ea21a8e17cbedb373e6b56cc432f36b9d1dbdb75d2cbebc8ac",
+        "tools/calibration/public/manifest.json": "e7d928e440f8a4b73bfa64c11e11f48320f9f3cc556c29a3bca72e1e5d15ff6a",
+        "research/experiments/E003-sf19-archive-replay/evidence/inputs.json": "e752fd0883e2db58b1121071dc59e879adcd8e982984198e58e9056f9ad84447",
+        "research/experiments/E004-practical-outcomes/evidence/results.json": "f2d89e9d9e07b45bceca955af522fca4d0ad39db100b0bece0e235403c93adea",
+        "research/experiments/E004-practical-outcomes/evidence/predictions.json.gz": "89bc0719cc00708a80d55b6c5c7a88d53d0f52e05d252eddda052b434d1c3e96",
+        "research/experiments/E005-category-review/evidence/cases.json": "b6974f3159c839f3764eed3d8da5dff406dece9bb2414c958e8484d81271c41f",
+        "research/experiments/E005-category-review/evidence/selection-key.json": "33e75aa79f26b07358d53f432535c862a85aa79a4e5f38101eff3ec8ff94b5c0",
+        "research/experiments/E005-category-review/evidence/run.json": "6e9042785eba0be3a842763f8e0b14de1590174d3ba21b1b09595ab703ffc817",
+        "research/experiments/E006-rating-uncertainty/evidence/results.json": "bf5380629014af3bf06db4324a93f347e9f858ebe27731c8a00f06146c68ea2e",
+        "research/experiments/E006-rating-uncertainty/evidence/predictions.json.gz": "10b4cd8fb5462eaa9ee6beff4ba62fc94dfe4f79f9fa5b23d69d5dfa4b97c14f",
+        "research/experiments/E006-rating-uncertainty/evidence/run.json": "c4b7ac8a82d4b6f3f165c1ce2c0191de5a00b0f3777c7b93e9edb7158056c9e8",
+        "research/experiments/E012-offer-evidence/evidence/policy.json": "a7365e813d97470d55056fda3baf5b3a8311b85bcc301ecc9c88403e5314a6b4",
+        "research/experiments/E012-offer-evidence/evidence/freeze-run.json": "0287e95d96658a7b3c190ac763469b4b165441bd5d261e05a1854eeae13b7d07",
+        "research/experiments/E012-offer-evidence/evidence/sf18-observations.json.gz": "02367574df6676276243cd1f60e23e5c2ec984eb70a49df24d2188aaea6be547",
+        "research/experiments/E012-offer-evidence/evidence/collection-run.json": "555eeff8f289050ea81ea140fb722515a3d3cfdb127fdd0044b23d4386c5108a",
+        "research/experiments/E012-offer-evidence/evidence/results.json": "d31ed066a4fdcea3e81a79320c0e06f358177d84f4c3332c42ada85b49a9db0d",
+        "research/experiments/E012-offer-evidence/evidence/run.json": "134203b7f0d839b05287454db0f45211037e36a0fb6f7eeaeeddf86f7ba10b15",
+        "research/experiments/E012-offer-evidence/evidence/verification.json": "9da4fbd2ee6aa54a1eb906de1d2f18d40066fb87de71a9d2c6c4032c3991beed",
+        "research/experiments/E012-offer-evidence/evidence/clean-replay.json": "6bd00b4aebde0cac726784c81bc7299bccd1e04e3b5450af5051e8edf53e0546",
+        "research/experiments/E012-offer-evidence/evidence/clean-archive.json": "0c9cab45a3767ee9ed7d69b9d4d3e811e01242a6ef79c08617ef902186b3d5af",
+        "research/experiments/E013-net-offer-pack/evidence/policy.json": "f9f60ba511e03a1826d442504315baa9d7dd0ac16511d34008c006f0cfee5d5d",
+        "research/experiments/E013-net-offer-pack/evidence/cases.json": "d6f0c63a657901d822bdb0920895576371457f134a82c3aed35ccce04fc8c521",
+        "research/experiments/E013-net-offer-pack/evidence/selection-key.json": "32dbeb26b0e078b431156344602d2115fb4ce9e263b3ca331170d330312948ea",
+        "research/experiments/E013-net-offer-pack/evidence/build-run.json": "c36523f4429231afd19da0a5a67147eb8b3568470b8b3ec63a2f3e91798f8831",
+        "research/experiments/E013-net-offer-pack/evidence/sf18-observations.json.gz": "b7ee839acb88813dce83d16eae6dd93ee2a6d1eca8557471dae947b29ced68ea",
+        "research/experiments/E013-net-offer-pack/evidence/collection-run.json": "b077265c7ab656bc6e002ed07f567f5347dcde781f35eb386300f4835986e47c",
+        "research/experiments/E013-net-offer-pack/evidence/results.json": "7a7357cc21d012cace4782f26a407110feb14e57674e37d55da51ae239348d5a",
+        "research/experiments/E013-net-offer-pack/evidence/run.json": "43c9cd128d206e51218f2229d7a71b0c6a4b1aafdc995fcc468a9643f7273692",
+        "research/experiments/E013-net-offer-pack/evidence/verification.json": "d89a486c70dd3685c08fe078ad7e91780a4c6907deb3b40ff20e6c09cc5ca970",
+        "research/experiments/E013-net-offer-pack/evidence/clean-replay.json": "2d6932ab2d1af6e3e1a8a17a747f1bd4d4d45ac4a2eb4633594fbaef01b8112a",
+        "research/experiments/E013-net-offer-pack/evidence/clean-archive.json": "fbc50686a4b22b96f53c24b8db3b777b16ac9bde6522d4817ea4367fab399c82",
+        "research/experiments/E014-root-pair-consistency/evidence/freeze-SF18.json": "d4dab90dbc0c03d33ebab7f88728c89730e1a2e5f1165dd93a550034b2a8a110",
+        "research/experiments/E014-root-pair-consistency/evidence/freeze-run-SF18.json": "7dc93a3d18af5668871e688aaf270fcc59b32eaef0e01b103ee804743de095f1",
+        "research/experiments/E014-root-pair-consistency/evidence/results-SF18.json": "a6f2a640274b6c02e571db210b8bb46989447c62739ed95c54fc9ab742e3b56c",
+        "research/experiments/E014-root-pair-consistency/evidence/run-SF18.json": "49d8e22c8a96dfd0f535af919316e36541762454d084ec0e161e06c041bcee10",
+        "research/experiments/E014-root-pair-consistency/evidence/verification-SF18.json": "91f7a74cec294c57ea444d53e043f3e6e6ee6b8f161b12b65d7b6960826a54b6",
+        "research/experiments/E014-root-pair-consistency/evidence/source-line-endings-SF18.json": "5c073480f6cfb10450c73fb5c9dac5ff03c90bff3d415944717961a0decacbb4",
+        "research/experiments/E014-root-pair-consistency/evidence/failed-clean-replay-SF18.json": "c579eadadc1bf36894816642da325544ccb66da65977587bd73322f6e588108d",
+        "research/experiments/E014-root-pair-consistency/evidence/clean-replay-SF18.json": "172fc46b1bfc875a5c97e4d258de4d09c860482ce8df12920cfdd82eaf7f90b5",
+        "research/experiments/E014-root-pair-consistency/evidence/clean-archive-SF18.json": "61f904ac8a64af5a762974f5e7246da834843a734aa52adda4a2f7ac1bc7b124",
+        "research/datasets/D001-public-baseline/locators.json.gz": "f42bd028f7fca5950ca206164405385f6324363f7d720242e1250b4b83736cf6",
+        "research/datasets/D001-public-baseline/reconstruction.json": "af54589497239c4f851d74a1a4b1fac296ec54a779efca9193629adac9a67307"
+      },
+      "datasets": {
+        "D001": {
+          "gameCount": 2000,
+          "archives": [
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-06.pgn.zst",
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-07.pgn.zst",
+            "https://database.lichess.org/standard/lichess_db_standard_rated_2026-08.pgn.zst"
+          ],
+          "provenanceStatus": "reconstruction-verified",
+          "limitations": [
+            "Archive-window/rating-quota convenience sample; not representative of the whole blitz population.",
+            "Only recorded fragment bytes are verified; no whole-archive checksum or publisher signature is claimed.",
+            "Provisional-rating status is unavailable; recorded ratings do not establish stable playing strength.",
+            "Engine observations are retained, not regenerated by dataset reconstruction.",
+            "Existing development/test exposure prevents new confirmation claims."
+          ]
+        }
+      }
+    },
+    "freezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+    "terminalSha256": "3b8eca73f181a38cbc31099848bc866147722db4460ba9b3e22f02af25bfce66",
+    "regressionRevision": "bced17c6f7c0a0c0b71ce3d6827d3009f4316058"
+  },
+  "smoke": {
+    "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/final.json",
+    "sha256": "2e660d5441fb8c266fad7b77b0ba94fec57f1b0879988fa5db0dab3cf7dd6f9e",
+    "revision": "472b1c2cee9df0fd75ad44c22efe94c05e6eced6"
+  },
+  "final": {
+    "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/final.json",
+    "sha256": "9c25c49603bc40fecc9b554363a29bd69cc2e5b25744e55fe0695e6ebb8103d2",
+    "revision": "a7084d59649368b9e4c15630c5e8bd3b4f9990e9",
+    "tests": 214,
+    "seconds": 36.6007824
+  },
+  "canonical": [
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/clean-run.json",
+      "bytes": 50669,
+      "sha256": "270a3b16ff2578a667261b7a0a3edccd4edfd25797f4d40bcc561fcf6a173d04"
+    },
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/concept-status.md",
+      "bytes": 118878,
+      "sha256": "27a6807b7f2665549f1fcc4cd9fd51881eaac6e176a47106303d4c2dc3efb4b6"
+    },
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/demo.html",
+      "bytes": 793488,
+      "sha256": "aac0679d260ad875ae7b2d95c5ffd0e659cc555cd47e0516e50b017e233608fc"
+    },
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/repeat-run.json",
+      "bytes": 50663,
+      "sha256": "04cba31cbae11cfe9e4644fc89e9922750ed6216c6ade3f8eb87bd4a523ee75b"
+    },
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/results.json",
+      "bytes": 4208449,
+      "sha256": "9b743d2010694152f6525f4b62cba4208f5efd3b8e236c474e0f523b1c1f8866"
+    },
+    {
+      "file": "research/experiments/E078-bishop-chains-batteries/evidence/run.json",
+      "bytes": 50631,
+      "sha256": "f865400e746cf13aadcd202d9e069abb7f8ca5d44105e39606ab915a7f3b11ec"
+    }
+  ],
+  "summary": {
+    "rows": 192,
+    "results": 168,
+    "errors": 24,
+    "certificates": 88,
+    "states": {
+      "proven": 86,
+      "no-new-fact": 56,
+      "disabled": 2,
+      "exhausted": 2,
+      "not-applicable": 12,
+      "not-live": 10
+    },
+    "byKind": {
+      "outside-chain-proof": 14,
+      "behind-chain-proof": 6,
+      "slider-battery-proof": 68
+    },
+    "ownEventReplays": 88
+  },
+  "sourceInputs": 85,
+  "semanticClosure": {
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "research/experiments/E020-coach-concepts/code/concepts.mjs": "b6e917d81c675175f840b19233ebcac61591ac163e5277fa6a1f12a3b9aaa692",
+    "research/experiments/E020-coach-concepts/code/fixtures.mjs": "2881a88866b4ea8fa2e06a5af75d92d4169c9b430de2e25efa1e2d9f14b9d853",
+    "research/experiments/E021-structural-concepts/code/explain.mjs": "b2578320f9d6a81c2a803789126ea0104ce720890361c953cd1b2811e3811be6",
+    "research/experiments/E021-structural-concepts/code/features.mjs": "88ae24e21f310e53aa26263a26b13c990c34e86cbe56df128ed80585e966df66",
+    "research/experiments/E021-structural-concepts/code/fixtures.mjs": "a47f86d82710003b20470268e65af21d9bd60a052803a57f8cbedec14eaaa5ce",
+    "research/experiments/E022-move-tactics/code/tactics.mjs": "04ea550a22503c1f3aa13cb822dcb67fcca130bb86102faa171ca588359592d4",
+    "research/experiments/E023-broad-tactics/code/tactics.mjs": "a00d789ffb538ed5a274257c82420716716e04ddfe84e970d115aee1cee01a74",
+    "research/experiments/E024-transitions/code/fixtures.mjs": "d9caff4270921b1ae0970bb462be08f10b13b52f10c8a48b73c43bbdb25c7a8e",
+    "research/experiments/E024-transitions/code/transitions.mjs": "14c933ccf39ca66e89803d04701defb311f02bc4519001369878d1c66f9fb437",
+    "research/experiments/E025-pawn-formations/code/formations.mjs": "e1d52eddcd92da7229213fa99e3bfd3bc6ebe1bcb5a4492aacee0c6bdd0a81cf",
+    "research/experiments/E025-pawn-formations/code/selection.mjs": "189e73c5fc6a7f2083cb70644baf1d980f86f32cac281a21a829ccd88c7e70fc",
+    "research/experiments/E026-pin-proofs/code/proofs.mjs": "4e2962a201f90858d7f0d5255d9d718e30449fdae51db2868c4c40e3bc5dade8",
+    "research/experiments/E027-defensive-resources/code/defense.mjs": "43e8d09fe3928793cdea30d00b33fb6538640a1b7903ee12f18c9e074195eeab",
+    "research/experiments/E028-mating-patterns/code/patterns.mjs": "5655557ef51dcda0688c98b3518408cbe6b509b0e255637257c4f0ea9c1e552e",
+    "research/experiments/E029-forced-mates/code/mates.mjs": "dabf4dac0f0e6cc54eb26783b4ade335a0b37d61ca851e9ded1448a825092228",
+    "research/experiments/E030-mating-sacrifices/code/sacrifices.mjs": "4a16a83f2c7cd0ad452670be45e5441f890aec375221f193875cc2da47e9b88f",
+    "research/experiments/E031-intermediate-moves/code/intermediate.mjs": "a0e6fa2d206e864ea120b488c85b5753df9defe70463b6d37b03a9402f567e4a",
+    "research/experiments/E032-draw-history/code/draws.mjs": "29a7fee649b44a611ba1705707c64a3a7b386bb27f0de35dad157342fb5961cf",
+    "research/experiments/E033-mobility-traps/code/traps.mjs": "de29e49c614ad22e2d5fdc08995a37fb074e025766391de51d40785fb991a872",
+    "research/experiments/E034-bishop-patterns/code/bishops.mjs": "c3e647d4464e94063085d6943e9672c5c749b13cdbce1622899c78af62db1764",
+    "research/experiments/E035-opening-development/code/opening.mjs": "2401040f3d2c85f58d0d96968911459b6a71ae726a1f79be7e143a03a4ed2b08",
+    "research/experiments/E036-passer-context/code/passers.mjs": "5930d3aa75f26077c67f82aa87e24e7359d597d716202b9dd747106b6f89a72a",
+    "research/experiments/E037-promotion-routes/code/routes.mjs": "aaa17c22f8275bc4e73695dbc5a671334e835f8a7c244317c26bbe8842eed343",
+    "research/experiments/E038-underpromotion-stalemate/code/resources.mjs": "02520b66830e922b96eeb61519b31e5b528e6b4021e7231d82bd7ab6ef6891e3",
+    "research/experiments/E039-king-promotion-support/code/support.mjs": "dff2346e970ab8f1f66038acec398e72d14597e1762216c654d07fc56717669b",
+    "research/experiments/E040-quiet-mating-nets/code/nets.mjs": "e3b7f79d1d8530c8ff1ee0d9dd12b7006584da769e235a6bec78649ad0e4cbc5",
+    "research/experiments/E041-unique-mate-defense/code/defense.mjs": "a80276c0c3b082da845ab006396f6049a11549f54f07eba6328febe8a77b9d31",
+    "research/experiments/E042-defensive-counterattacks/code/counter.mjs": "f033909430f9694fd082923729caa184cc1e0906c192a82e31bd30e7163dc98e",
+    "research/experiments/E043-mating-decoys/code/decoys.mjs": "eb2a70aa9d3bd109538db4a52cf5dd6c089523a78b13d83a818a5a903ab6d177",
+    "research/experiments/E044-named-mating-combinations/code/combinations.mjs": "91cb6eb6f6d4d19976c8cc4e8f60c7b45c7288585fa842dafadcca0a81fabca5",
+    "research/experiments/E045-supported-mating-patterns/code/supported.mjs": "b79f637aad02173a7bbce114378c7be2a861a909a5fa57642542d104db219a05",
+    "research/experiments/E046-coordinated-mating-patterns/code/nets.mjs": "82f16b71dfa6a1d3f3df7bba9693009325d62afa42dabeb7475a12370bee136f",
+    "research/experiments/E047-history-and-basic-mates/code/history.mjs": "ba16d5392b6411dcae99fadef948b59ef435e1212835d3ea7eeffc82c2356575",
+    "research/experiments/E048-legal-defense-counts/code/counts.mjs": "f17d204825943895c546721b5a6a53b51b4660dd876dc8b7acff60420c04c3c1",
+    "research/experiments/E049-overloaded-defenders/code/overload.mjs": "8ef2ebeb37b880e66ed2ada7dba96e5b55b72c32bc72955560cc9d8a0edfc58f",
+    "research/experiments/E050-square-clearance-and-recovery/code/clearance.mjs": "d504e2d590f06d5f9cfe732d340331a04aacae3304a14b72a7cb69d46798e470",
+    "research/experiments/E051-interference-combinations/code/interference.mjs": "07bebfa3f8a13b751a157633f3d910234b24b812273971c8bb93e2306db4a8ad",
+    "research/experiments/E052-desperado-captures/code/desperado.mjs": "c7bf41aba7e77f6a9e402a5dfc0246994090019b10541c1459cf7eb8470278dd",
+    "research/experiments/E053-cross-checks/code/cross.mjs": "06c94560fc59bc81fdb58346032b54732ee393a331afad5438d7976b19db2501",
+    "research/experiments/E054-causal-mating-combinations/code/named.mjs": "97d01fb8fa2d958f02a7b0e34b9d7cbafc650f0eafc6b1f1038942664c672d98",
+    "research/experiments/E055-intermediate-sacrifices/code/timed.mjs": "cc9b630543033802be7add85475ce60cbeae89f88b7fa635b40752adf28287f8",
+    "research/experiments/E056-pawn-blockades/code/blockade.mjs": "511e094cef873ec03644e0761dd0125dff014dc0a38ddf77eb58471fde2ea40d",
+    "research/experiments/E057-rook-checking-distance/code/checking.mjs": "1b516114d92a31e6681ff74c80f611a2181f67ef650c7c241b9a22074e945e82",
+    "research/experiments/E058-wrong-bishop-rook-pawn/code/corner.mjs": "cda9a445fa30a33f727f9c787596c8953c0212f723715d1746ac547a5047f470",
+    "research/experiments/E059-pawn-restraint/code/restraint.mjs": "927ffe03dd600c22ed630ba72b9c84df2411a39dec8962ab1298a4a43887834b",
+    "research/experiments/E060-pawn-breaks/code/breaks.mjs": "51ec80f7e3afdfd27721f6fb997b4ba09136deb394788dc68db4ecd5793c07f1",
+    "research/experiments/E061-closed-files/code/files.mjs": "186ca69020de609bc20d0f67b55a933700554276eac6c7fd944ab4e711a9b4e5",
+    "research/experiments/E062-pawn-space/code/space.mjs": "baeba263cbe7db29102ca4a80175651d0b9ec777e9fd949b6e64d00602221447",
+    "research/experiments/E063-pawn-storm/code/storm.mjs": "6450445edb5244e4158637cd5756bd3c4f56a9b8cd1c438dad3482e7abcd1592",
+    "research/experiments/E064-blocked-position/code/blocked.mjs": "28c77338b70bde8c98fa9a18ecc6dbe7c04b6b5ca4d9ce626bf5c24bc97b3abe",
+    "research/experiments/E065-king-triangulation/code/triangle.mjs": "e1dde61de5728c988ba02fc4e97aa829960cde4e02adcc9a64f6a65c80421884",
+    "research/experiments/E066-pawn-races/code/race.mjs": "91e8ba79a8f304af5d66a7132b2aa2f1595be0d60b3f54dc19f5f87e76413385",
+    "research/experiments/E067-waiting-tempi/code/tempi.mjs": "5a8f4130fecb46d786def90abe6e7a89016e0613e57fd9668b5873586eacb6c6",
+    "research/experiments/E068-rook-swings/code/swing.mjs": "00d75a52c811498245d1f392004e1405fe3ad51604e460c85a313939103dbe38",
+    "research/experiments/E069-checking-invasions/code/invasion.mjs": "68eaadce6899762553427cfabbb3265b65297d8e26a011a31676f8414919fe2c",
+    "research/experiments/E070-knight-outposts/code/outpost.mjs": "cb442c24920a8f68e10d6ec59c92fdd65a7ec5af5b1e63bd47f811cc5fe6d893",
+    "research/experiments/E071-octopus-knights/code/octopus.mjs": "5ce3bf8858db7609288cec4042669159d92569080b8a952e57488197d5d606e6",
+    "research/experiments/E072-named-pawn-formations/code/formations.mjs": "409bf1fae779fd7a3e379df12218f600cee06eda09b272b914d717e6bf319b33",
+    "research/experiments/E073-carlsbad-hedgehog/code/structures.mjs": "6ca84c3821e87983c0169219d19f19efe5f883f7a47f1aa2b0b3c3d84b9b5ff4",
+    "research/experiments/E074-french-scheveningen/code/centers.mjs": "731f129fe00ee2c2e2c904060b2a9c8820085100c9cdbc733d539ed370402529",
+    "research/experiments/E075-board-material/code/foundations.mjs": "9cd1b52656c3e45d5d31e82ca54a4d82f7639f1cfe232a67f0753d35191266a9",
+    "research/experiments/E076-pawn-army-inventories/code/inventories.mjs": "3b2c53e6af7f14904c06f1a992f55955b188236defb45d9e56bcbdc763ecb9c3",
+    "research/experiments/E077-connected-passers-open-lines/code/fixtures.mjs": "98cf913d92512f5c32b9822969bfcc74b4429b7864a53518923c39172778c813",
+    "research/experiments/E077-connected-passers-open-lines/code/lines.mjs": "16a5284d3d69c7fe0155aabc33fa266abed3ef1a17174e9e4d73c560b0444a73",
+    "research/experiments/E078-bishop-chains-batteries/code/fixtures.mjs": "efa3abf8fcd90e98580ce898c27545a197569f81321c1888b5b280afa8c906fe",
+    "research/experiments/E078-bishop-chains-batteries/code/replay.mjs": "e128b5dfeafeffa784ecbd856109a89fa2a5bb662ab55e48d6b535031ee84ead"
+  },
+  "historicalSourceRevision": "87ef831a69dd616e6fbc75c772f512284bb05afc",
+  "historicalOriginalInputsVerified": 253,
+  "historicalVerificationEvidence": {
+    "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/stdout.tap",
+    "sha256": "471720ba4b526e79d461334bedd3279fe49fc1a020609f83b3055f51289bca3b",
+    "admissionAudit": {
+      "schema": "E270-E078-saved-admission-v1",
+      "historicalSourceRevision": "87ef831a69dd616e6fbc75c772f512284bb05afc",
+      "historicalInputsVerified": 253,
+      "historicalInputVectorSha256": "daa15ad14681b73153708883c1198f7996a73cd94f06d290f3ea40e03f91e2f0",
+      "semanticSourceCount": 67,
+      "semanticClosureSha256": "d2313acf356145112e325fc2e9e9fa1c773b2dda580a86d9f1b7c9c312e4fae9",
+      "canonical": [
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/clean-run.json",
+          "bytes": 50669,
+          "sha256": "270a3b16ff2578a667261b7a0a3edccd4edfd25797f4d40bcc561fcf6a173d04"
+        },
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/concept-status.md",
+          "bytes": 118878,
+          "sha256": "27a6807b7f2665549f1fcc4cd9fd51881eaac6e176a47106303d4c2dc3efb4b6"
+        },
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/demo.html",
+          "bytes": 793488,
+          "sha256": "aac0679d260ad875ae7b2d95c5ffd0e659cc555cd47e0516e50b017e233608fc"
+        },
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/repeat-run.json",
+          "bytes": 50663,
+          "sha256": "04cba31cbae11cfe9e4644fc89e9922750ed6216c6ade3f8eb87bd4a523ee75b"
+        },
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/results.json",
+          "bytes": 4208449,
+          "sha256": "9b743d2010694152f6525f4b62cba4208f5efd3b8e236c474e0f523b1c1f8866"
+        },
+        {
+          "file": "research/experiments/E078-bishop-chains-batteries/evidence/run.json",
+          "bytes": 50631,
+          "sha256": "f865400e746cf13aadcd202d9e069abb7f8ca5d44105e39606ab915a7f3b11ec"
+        }
+      ],
+      "currentMetadataDifferences": [
+        {
+          "file": "research/concepts/ACTIVE-QUEUE.md",
+          "historical": "a9b2728280be600efec56fa011476bc153dfd19bac00ff6aa550a0aa73f6d784",
+          "current": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+          "inSemanticClosure": false
+        }
+      ],
+      "inheritedFingerprints": {
+        "count": 4860,
+        "orderedSha256": "2a52f6ad8bafef8a40528ecb4ad4d73f6d31b91c95c6531614ee74cfe0e07eb2"
+      },
+      "teachingListSha256": "a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd",
+      "policyEpochSha256": "8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0",
+      "receiptSha256": "d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81",
+      "summary": {
+        "rows": 192,
+        "results": 168,
+        "errors": 24,
+        "certificates": 88,
+        "states": {
+          "proven": 86,
+          "no-new-fact": 56,
+          "disabled": 2,
+          "exhausted": 2,
+          "not-applicable": 12,
+          "not-live": 10
+        },
+        "byKind": {
+          "outside-chain-proof": 14,
+          "behind-chain-proof": 6,
+          "slider-battery-proof": 68
+        },
+        "ownEventReplays": 88
+      }
+    },
+    "emittedAfterAllOriginalGitInputComparisons": true
+  },
+  "supplementaryHistoricalSources": [],
+  "currentMetadataDifferences": [
+    {
+      "file": "research/concepts/ACTIVE-QUEUE.md",
+      "historical": "a9b2728280be600efec56fa011476bc153dfd19bac00ff6aa550a0aa73f6d784",
+      "current": "695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1",
+      "inSemanticClosure": false
+    }
+  ],
+  "originalReproductionManifestsAuthenticated": 3,
+  "originalWorkingTreeStatuses": [
+    "",
+    "",
+    ""
+  ],
+  "inheritedFingerprints": {
+    "count": 4860,
+    "orderedSha256": "2a52f6ad8bafef8a40528ecb4ad4d73f6d31b91c95c6531614ee74cfe0e07eb2",
+    "semanticAncestorProof": false
+  },
+  "teachingListSha256": "a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd",
+  "policyEpoch": {
+    "historical": {
+      "revision": "43fdad510b5ccf8ab8e590b841559159d0c41438",
+      "policySha256": "9e6e2e256958657981c680d3678a07ebf28f94c99c809652453004cf161204b6"
+    },
+    "current": {
+      "revision": "ea1e96e256485a1b01bef65bec1f5bb52099c624",
+      "policySha256": "b9f78bc7e345dc2d5fea681b16f801d85c808ae2173cf8b44ece30ba99e2298f"
+    },
+    "change": "Exact computed-tablebase addendum only; original game policy body byte-identical",
+    "allOtherReceiptFieldsIdentical": true,
+    "receiptsRemainDistinct": true,
+    "tablebaseAdmission": false
+  },
+  "rowAudits": [
+    {
+      "index": 0,
+      "id": "outside-chain",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "id": "outside-chain-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 2,
+      "id": "outside-chain-capture",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 3,
+      "id": "outside-chain-capture-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 4,
+      "id": "outside-branched-chain",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 5,
+      "id": "outside-branched-chain-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 6,
+      "id": "outside-separate-chains",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 7,
+      "id": "outside-separate-chains-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 8,
+      "id": "outside-still-not-beyond",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 9,
+      "id": "outside-still-not-beyond-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 10,
+      "id": "outside-nonchain-pawn",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 11,
+      "id": "outside-nonchain-pawn-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 12,
+      "id": "outside-enemy-pawns",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 13,
+      "id": "outside-enemy-pawns-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 14,
+      "id": "outside-other-first-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 15,
+      "id": "outside-other-first-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 16,
+      "id": "outside-no-root-restriction",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 17,
+      "id": "outside-no-root-restriction-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 18,
+      "id": "outside-wrong-bishop-color",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 19,
+      "id": "outside-wrong-bishop-color-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 20,
+      "id": "outside-beyond-but-backward-chain",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 21,
+      "id": "outside-beyond-but-backward-chain-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 22,
+      "id": "outside-unchanged-bishop",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 23,
+      "id": "outside-unchanged-bishop-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 24,
+      "id": "outside-chain-pawn-move",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 25,
+      "id": "outside-chain-pawn-move-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "id": "behind-chain",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 27,
+      "id": "behind-chain-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 28,
+      "id": "behind-branched-chain",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 29,
+      "id": "behind-branched-chain-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 30,
+      "id": "behind-already",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 31,
+      "id": "behind-already-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 32,
+      "id": "behind-nonrestrictive",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 33,
+      "id": "behind-nonrestrictive-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 34,
+      "id": "qr-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 35,
+      "id": "qr-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 36,
+      "id": "qr-rank",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 37,
+      "id": "qr-rank-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 38,
+      "id": "qb-rising",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 39,
+      "id": "qb-rising-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 40,
+      "id": "qb-falling",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 41,
+      "id": "qb-falling-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 42,
+      "id": "qq-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 43,
+      "id": "qq-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 44,
+      "id": "qq-rising",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 45,
+      "id": "qq-rising-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 46,
+      "id": "qq-falling",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 47,
+      "id": "qq-falling-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 48,
+      "id": "rr-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 49,
+      "id": "rr-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 50,
+      "id": "bb-rising",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 51,
+      "id": "bb-rising-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 52,
+      "id": "triple-queen-middle",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 53,
+      "id": "triple-queen-middle-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 54,
+      "id": "triple-queen-front",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 55,
+      "id": "triple-queen-front-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 56,
+      "id": "triple-queen-rear",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 57,
+      "id": "triple-queen-rear-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 58,
+      "id": "four-sliders",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 59,
+      "id": "four-sliders-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 60,
+      "id": "capture-compatible-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 61,
+      "id": "capture-compatible-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 62,
+      "id": "move-noncompatible-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 63,
+      "id": "move-noncompatible-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 64,
+      "id": "battery-knight-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 65,
+      "id": "battery-knight-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 66,
+      "id": "battery-pawn-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 67,
+      "id": "battery-pawn-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 68,
+      "id": "battery-bishop-orth-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 69,
+      "id": "battery-bishop-orth-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 70,
+      "id": "battery-king-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 71,
+      "id": "battery-king-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 72,
+      "id": "battery-enemy-rook-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 73,
+      "id": "battery-enemy-rook-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 74,
+      "id": "battery-enemy-endpoint",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 75,
+      "id": "battery-enemy-endpoint-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 76,
+      "id": "battery-singleton",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 77,
+      "id": "battery-singleton-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 78,
+      "id": "battery-rook-bishop-incompatible",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 79,
+      "id": "battery-rook-bishop-incompatible-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 80,
+      "id": "battery-existing-advance",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 81,
+      "id": "battery-existing-advance-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 82,
+      "id": "battery-existing-quiet",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 83,
+      "id": "battery-existing-quiet-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 84,
+      "id": "battery-queen-with-enemy-bound",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 85,
+      "id": "battery-queen-with-enemy-bound-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 86,
+      "id": "battery-diagonal-own-rook-blocker",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 87,
+      "id": "battery-diagonal-own-rook-blocker-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 88,
+      "id": "disabled-profile",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 89,
+      "id": "disabled-profile-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 90,
+      "id": "zero-budget",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 91,
+      "id": "zero-budget-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 92,
+      "id": "foundation-rejected",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 93,
+      "id": "foundation-rejected-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 94,
+      "id": "foundation-exhausted",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 95,
+      "id": "foundation-exhausted-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 96,
+      "id": "foundation-terminal-root",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 97,
+      "id": "foundation-terminal-root-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 98,
+      "id": "actual-mate",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 99,
+      "id": "actual-mate-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 100,
+      "id": "actual-stalemate",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 101,
+      "id": "actual-stalemate-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 102,
+      "id": "dead-promotion",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 103,
+      "id": "dead-promotion-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 104,
+      "id": "ep-removes-two-blockers",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 105,
+      "id": "ep-removes-two-blockers-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 106,
+      "id": "valid-history",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 107,
+      "id": "valid-history-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 108,
+      "id": "repetition-root",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 109,
+      "id": "repetition-root-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 110,
+      "id": "clock-root",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 111,
+      "id": "clock-root-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 112,
+      "id": "foundation-clock-root",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 113,
+      "id": "foundation-clock-root-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 114,
+      "id": "bad-flag",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 115,
+      "id": "bad-flag-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 116,
+      "id": "bad-budget-negative",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 117,
+      "id": "bad-budget-negative-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 118,
+      "id": "bad-budget-fraction",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 119,
+      "id": "bad-budget-fraction-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 120,
+      "id": "bad-budget-large",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 121,
+      "id": "bad-budget-large-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 122,
+      "id": "history-mismatch",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 123,
+      "id": "history-mismatch-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 124,
+      "id": "behind-two-blockers-already",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 125,
+      "id": "behind-two-blockers-already-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 126,
+      "id": "rr-rank",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 127,
+      "id": "rr-rank-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 128,
+      "id": "qq-rank",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 129,
+      "id": "qq-rank-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 130,
+      "id": "bb-falling",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 131,
+      "id": "bb-falling-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 132,
+      "id": "triple-queens",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 133,
+      "id": "triple-queens-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 134,
+      "id": "four-bishops",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 135,
+      "id": "four-bishops-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 136,
+      "id": "merge-maximal-groups",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 137,
+      "id": "merge-maximal-groups-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 138,
+      "id": "split-triple-to-pair",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 139,
+      "id": "split-triple-to-pair-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 140,
+      "id": "split-pair-to-singletons",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 141,
+      "id": "split-pair-to-singletons-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 142,
+      "id": "promotion-q",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 143,
+      "id": "promotion-q-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 144,
+      "id": "capture-promotion-q",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 145,
+      "id": "capture-promotion-q-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 146,
+      "id": "promotion-r",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 147,
+      "id": "promotion-r-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 148,
+      "id": "capture-promotion-r",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 149,
+      "id": "capture-promotion-r-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 150,
+      "id": "promotion-b",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 151,
+      "id": "promotion-b-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 152,
+      "id": "capture-promotion-b",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 153,
+      "id": "capture-promotion-b-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 154,
+      "id": "promotion-n",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 155,
+      "id": "promotion-n-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 156,
+      "id": "capture-promotion-n",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 157,
+      "id": "capture-promotion-n-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 158,
+      "id": "bb-falling-existing",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 159,
+      "id": "bb-falling-existing-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 160,
+      "id": "malformed-fen",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 161,
+      "id": "malformed-fen-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 162,
+      "id": "malformed-uci",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 163,
+      "id": "malformed-uci-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 164,
+      "id": "ordinary-illegal",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 165,
+      "id": "ordinary-illegal-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 166,
+      "id": "default-dead-root",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 167,
+      "id": "default-dead-root-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 168,
+      "id": "actual-dead-capture",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 169,
+      "id": "actual-dead-capture-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 170,
+      "id": "combined-profiles",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 171,
+      "id": "combined-profiles-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 172,
+      "id": "root-mate",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 173,
+      "id": "root-mate-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 174,
+      "id": "foundation-root-mate",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 175,
+      "id": "foundation-root-mate-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 176,
+      "id": "root-stalemate",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 177,
+      "id": "root-stalemate-black",
+      "parentEvaluations": 0,
+      "savedReplayAttempts": 0,
+      "candidateErrorEvaluations": 1,
+      "savedErrorComparisons": 1,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 178,
+      "id": "foundation-root-stalemate",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 179,
+      "id": "foundation-root-stalemate-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 0,
+      "passed": true
+    },
+    {
+      "index": 180,
+      "id": "two-new-batteries",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 2,
+      "passed": true
+    },
+    {
+      "index": 181,
+      "id": "two-new-batteries-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 2,
+      "passed": true
+    },
+    {
+      "index": 182,
+      "id": "outside-chain-reversed-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 183,
+      "id": "outside-chain-reversed-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 184,
+      "id": "outside-capture-reversed-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 185,
+      "id": "outside-capture-reversed-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 186,
+      "id": "outside-branch-reversed-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 187,
+      "id": "outside-branch-reversed-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 188,
+      "id": "behind-chain-reversed-file",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 189,
+      "id": "behind-chain-reversed-file-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 190,
+      "id": "quiet-qq-display",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    },
+    {
+      "index": 191,
+      "id": "quiet-qq-display-black",
+      "parentEvaluations": 1,
+      "savedReplayAttempts": 1,
+      "candidateErrorEvaluations": 0,
+      "savedErrorComparisons": 0,
+      "ownEventReplayAttempts": 1,
+      "passed": true
+    }
+  ],
+  "completedRowCounts": {
+    "ownEventReplayAttempts": 88,
+    "parentEvaluations": 168,
+    "savedReplayAttempts": 168,
+    "candidateErrorEvaluations": 24,
+    "savedErrorComparisons": 24
+  },
+  "artifacts": [
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-pilot-initial/final.json",
+      "bytes": 24381,
+      "sha256": "bd7dd108f7155b3a177e9f7481b19348b7b8cc2dc19f28bb8395ac94086b7fe3"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-pilot-initial/process.json",
+      "bytes": 83,
+      "sha256": "fa093ae0fb6c9197ea383327247e31f49206cb9a711d04255e9980310c767d29"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-pilot-initial/started.json",
+      "bytes": 22391,
+      "sha256": "adc26080610dd76ad51465396ce500964dc6280ed081baf5a3d86a4f1413f82e"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-pilot-initial/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-pilot-initial/stdout.tap",
+      "bytes": 1197,
+      "sha256": "27111e61a96478638115f91a5f24169c1a539e089dbdee7f9e99ae7406e70636"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/final.json",
+      "bytes": 25245,
+      "sha256": "2e660d5441fb8c266fad7b77b0ba94fec57f1b0879988fa5db0dab3cf7dd6f9e"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/process.json",
+      "bytes": 84,
+      "sha256": "7be78882dba5d4e594511cf41eacc0da57c571d552ca106f91c2a22667f104a7"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/started.json",
+      "bytes": 22642,
+      "sha256": "7abadc2b154365bfd167b3aedbd0f271317c10b086ab012e5e782f1e228bc913"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-smoke-initial/stdout.tap",
+      "bytes": 38290,
+      "sha256": "150023012d34f2e196e200cbee1cdd328b6b6feb843795e02b4d1cd54bfb10dd"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/final.json",
+      "bytes": 78173,
+      "sha256": "9c25c49603bc40fecc9b554363a29bd69cc2e5b25744e55fe0695e6ebb8103d2"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/process.json",
+      "bytes": 83,
+      "sha256": "70663799d1a7c593f41b73b9c5d734b46c1379de0a14154ced89e7351df32565"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/started.json",
+      "bytes": 22642,
+      "sha256": "8e88fa08a9b81a3a33f10bca056816ae02a11566dfc1f5780a0a2df1ea536197"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/semantic-e078-saved-initial/stdout.tap",
+      "bytes": 73904,
+      "sha256": "471720ba4b526e79d461334bedd3279fe49fc1a020609f83b3055f51289bca3b"
+    }
+  ],
+  "rawGitBlobsExact": true,
+  "priorClosures": [
+    {
+      "attempt": "semantic-e083-replay-policy-epoch",
+      "sourceInputs": 89,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e084-saved-initial",
+      "sourceInputs": 88,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e085-saved-initial",
+      "sourceInputs": 91,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e082-saved-supplemented",
+      "sourceInputs": 101,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e081-saved-initial",
+      "sourceInputs": 92,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e080-saved-repeat-tree",
+      "sourceInputs": 92,
+      "unchanged": true
+    },
+    {
+      "attempt": "semantic-e079-saved-initial",
+      "sourceInputs": 90,
+      "unchanged": true
+    }
+  ],
+  "existingAcceptedStudyReused": true,
+  "provisionalOriginCredit": 0,
+  "parentSemanticReplayRequired": true,
+  "parentPriorityDependency": true,
+  "reusedE078OwnFactCheckerRequired": true,
+  "wholeResultAdapterRequired": true,
+  "legacyDerivedCertificateCountsPreserved": true,
+  "sharedChessDependency": true,
+  "semanticAcceptance": false,
+  "acceptedCredit": 0,
+  "remaining": "E077 and older parent semantics, all remaining provisional/support origins, broader original meanings, combined API integration, exact changed-source reproduction and strategic/human usefulness."
+}
