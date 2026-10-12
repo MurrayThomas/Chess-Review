@@ -67,7 +67,7 @@ await inspect(runRoot);
 const rowAudits=[...tap.matchAll(/^#(?:\s*#)?\s*E082-row-audit\s+(\{.*\})\s*$/gm)].map(m=>JSON.parse(m[1]));
 const completedRowCounts={parentEvaluations:rowAudits.reduce((n,r)=>n+r.parentEvaluations,0),savedReplayAttempts:rowAudits.reduce((n,r)=>n+r.savedReplayAttempts,0),candidateErrorEvaluations:rowAudits.reduce((n,r)=>n+r.candidateErrorEvaluations,0),savedErrorComparisons:rowAudits.reduce((n,r)=>n+r.savedErrorComparisons,0)};
 const rowsValid=phase==='smoke'||rowAudits.length===246&&rowAudits.every((r,i)=>r.index===i&&r.passed)&&completedRowCounts.parentEvaluations===198&&completedRowCounts.savedReplayAttempts===198&&completedRowCounts.candidateErrorEvaluations===48&&completedRowCounts.savedErrorComparisons===48;
-const expected=phase==='smoke'?55:266;
+const expected=phase==='smoke'?55:269;
 const countsValid=['tests','pass'].every(k=>new RegExp('^# '+k+' '+expected+'\\r?$','m').test(tap));
 const passed = rowsValid && countsValid && end.code === 0 && end.signal === null && !error && !hardTimeout && !sourceChanges.length && !canonicalChanges.length && !generated.length &&
   !/^not ok /m.test(tap) && /^# fail 0\r?$/m.test(tap) && /^# cancelled 0\r?$/m.test(tap) && /^# tests [1-9][0-9]*\r?$/m.test(tap);

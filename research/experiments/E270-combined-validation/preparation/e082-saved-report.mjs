@@ -15,6 +15,12 @@ export const savedE082=Object.freeze([
  {file:base+'results.json',bytes:5145797,sha256:'6c5f82b0847d3ef2d73b36d64acd43eaaf9f02ef8c0ec2ffb59a281da02d01fd'},
  {file:base+'run.json',bytes:59703,sha256:'0d353bd28963d14789141867357a51d9e4591c280b533a6f740fc00519b86b45'}
 ]);
+export const historicalE082Supplements=Object.freeze([
+ {file:'research/d001-format.mjs',sha256:'5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d'},
+ {file:'research/fresh-format.mjs',sha256:'6537d177ad21cbe16c89471040e63d0f42ad43a69e4f189787b8dcf2624e5b21'},
+ {file:'tools/calibration/core.mjs',sha256:'c9f38c42f4937fcfdcb3bd44fdaf1d4eea6323c69533a24ca16779cfc4178ace'}
+]);
+export function checkE082Supplements(list){assert.deepEqual(list,historicalE082Supplements);return true;}
 const clone=x=>JSON.parse(JSON.stringify(x));
 export function checkE082Bytes(file,raw){const spec=savedE082.find(x=>x.file===file);assert.ok(spec);assert.equal(raw.length,spec.bytes);assert.equal(sha256(raw),spec.sha256);return true;}
 export function checkE082Shape(report,fixtures,manifest,inherited){
@@ -33,7 +39,7 @@ export function checkE082Shape(report,fixtures,manifest,inherited){
  assert.equal(report.rookEndingReplays.length,198);assert.deepEqual(report.rookEndingReplays.map(x=>x.fixture),report.results.filter(x=>x.result).map(x=>x.fixture.id));assert.equal(manifest.metrics.newFixtureCases,246);assert.equal(manifest.metrics.rookEndingCertificates,summary.certificates);assert.equal(manifest.metrics.rookEndingReplies,summary.replies);
  return summary;
 }
-export async function e082SourceInputs(){const d='research/experiments/E270-combined-validation/';return bindings([d+'preparation/run-e082.mjs',d+'preparation/e082-replay.test.mjs',d+'AMENDMENT-e082-accepted-replay-reuse.md',root+'PLAN.md',root+'AMENDMENT.md','research/concepts/ACTIVE-QUEUE.md','package.json','package-lock.json']);}
+export async function e082SourceInputs(){const d='research/experiments/E270-combined-validation/';return bindings([d+'preparation/run-e082.mjs',d+'preparation/e082-replay.test.mjs',d+'AMENDMENT-e082-accepted-replay-reuse.md',d+'AMENDMENT-e082-transitive-supplements.md',root+'PLAN.md',root+'AMENDMENT.md','research/concepts/ACTIVE-QUEUE.md','package.json','package-lock.json']);}
 export async function admitE082Smoke(attempt,admission){
  assert.match(attempt||'',/^[a-z0-9][a-z0-9-]{0,63}$/);const p='research/experiments/E270-combined-validation/evidence/semantic-e082-smoke-'+attempt+'/',raw=await readFile(p+'final.json'),f=JSON.parse(raw);assert.equal(f.schema,'E270-E082-semantic-v1');assert.equal(f.phase,'smoke');assert.equal(f.stagePassed,true);assert.equal(f.exitCode,0);assert.equal(f.signal,null);assert.equal(f.error,null);assert.equal(f.hardTimeout,false);assert.equal(f.hardLimitSeconds,120);
  assert.equal(f.admission.terminalSha256,admission.terminalSha256);assert.equal(f.admission.freezeSha256,admission.freezeSha256);assert.deepEqual(f.admission.receipt,admission.receipt);assert.deepEqual(f.inputHashes,await e082SourceInputs());for(const key of ['sourceChanges','canonicalChanges','generated'])assert.deepEqual(f[key],[]);
@@ -52,7 +58,13 @@ export async function openE082Saved(){
   const raw=await readFile(file),current=sha256(file.endsWith('.gz')?raw:raw.toString().replaceAll('\r\n','\n'));if(current!==hash)currentDifferences.push({file,historical:hash,current,inSemanticClosure:Object.hasOwn(semantic,file)});
  }
  assert.deepEqual(currentDifferences,[{file:'research/concepts/ACTIVE-QUEUE.md',historical:'a9b2728280be600efec56fa011476bc153dfd19bac00ff6aa550a0aa73f6d784',current:'695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1',inSemanticClosure:false}]);
- for(const [file,hash]of Object.entries(semantic)){assert.equal(hash,admission.sourceHashes[file]);assert.equal(hash,manifest.inputHashes[file],'Semantic input not preserved in historical vector: '+file);assert.equal(digest(normalized(file,await readFile(file))),hash);}
+ const supplements=[];
+ for(const [file,hash]of Object.entries(semantic)){
+  assert.equal(hash,admission.sourceHashes[file]);assert.equal(digest(normalized(file,await readFile(file))),hash);
+  if(Object.hasOwn(manifest.inputHashes,file))assert.equal(hash,manifest.inputHashes[file],'Semantic input differs from historical vector: '+file);
+  else {const historical=execFileSync('git',['show',frozenE082Revision+':'+file],{maxBuffer:8*1024*1024,windowsHide:true});assert.equal(digest(normalized(file,historical)),hash);supplements.push({file,sha256:hash});}
+ }
+ checkE082Supplements(supplements);
  const policyEpoch=await proveE083PolicyEpoch(manifest.eligibilityReceipt,admission.receipt);
  const {unpackReport}=await import('../../E079-central-king-support/code/saved.mjs'),{fixtures,reflect}=await import('../../E082-rook-ending-facts/code/fixtures.mjs');
  const report=unpackReport(JSON.parse(bytes.get(base+'results.json'))),allFixtures=fixtures.flatMap(f=>[f,reflect(f)]),priorBase='research/experiments/E081-direct-attacks/evidence/';
@@ -60,5 +72,5 @@ export async function openE082Saved(){
  const priorManifest=JSON.parse(priorBytes['run.json']);assert.equal(sha256(priorBytes['results.json']),priorManifest.outputHashes['results.json']);assert.equal(manifest.inputHashes['research/experiments/E020-coach-concepts/CONCEPTS.md'],priorManifest.inputHashes['research/experiments/E020-coach-concepts/CONCEPTS.md']);const prior=unpackReport(JSON.parse(priorBytes['results.json']));
  const inherited=[...prior.results.map(row=>[row.fixture.id,sha256(JSON.stringify(row.result||{error:row.error}))]),...prior.baselineResults.map(row=>[row.fixture,row.fullResultHash])];
  const summary=checkE082Shape(report,allFixtures,manifest,inherited);
- return {report,fixtures:clone(allFixtures),manifest,summary,inherited,receipt:admission.receipt,historicalReceipt:clone(manifest.eligibilityReceipt),policyEpoch,canonical:savedE082,semanticClosure:semantic,currentDifferences,historicalInputsVerified:309};
+ return {report,fixtures:clone(allFixtures),manifest,summary,inherited,receipt:admission.receipt,historicalReceipt:clone(manifest.eligibilityReceipt),policyEpoch,canonical:savedE082,semanticClosure:semantic,currentDifferences,historicalInputsVerified:309,supplementaryHistoricalSources:supplements};
 }
