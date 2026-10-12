@@ -1,0 +1,85 @@
+{
+  "revision": "8a8780c816e5004cf87b8c5756efdd4cff239854",
+  "parent": {
+    "file": "research/experiments/E268-sustained-two-front-allocation/evidence/collection.json.gz",
+    "sha256": "fabc40c28d1ffd047bbb197c9b91a07584166691ef388a3d702e1a34a4fdce60",
+    "revision": "82d8a27f7853544d374ed58cd0b39d1fc12da909",
+    "replaySeconds": 26.965163399999998,
+    "calibration": {
+      "references": 2,
+      "reusedPanels": 2,
+      "oneDefensePositives": 2,
+      "exclusiveCapacities": 4
+    }
+  },
+  "rows": 6,
+  "ticks": 2639,
+  "seconds": 5.004860300000001,
+  "bytes": 56658,
+  "error": null,
+  "incomplete": null,
+  "gate": {
+    "parentQueries": 34,
+    "newQueries": 6,
+    "exposedParentForecastFailures": [
+      "b2-e8-f1g1-01-all-original",
+      "b2-e8-f1g1-01-all-reflected"
+    ],
+    "positiveJointPolicies": 2,
+    "newControlPositives": 0,
+    "matchedPlacementContrast": true,
+    "lastingPrinciple": false,
+    "independentConfirmation": false
+  },
+  "outcomes": [
+    {
+      "id": "b2-e8-f1f2-01-original",
+      "win": false,
+      "expected": false,
+      "nodes": 443,
+      "captures": 38,
+      "counters": 306
+    },
+    {
+      "id": "b2-e8-f1f2-01-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 748,
+      "captures": 59,
+      "counters": 537
+    },
+    {
+      "id": "b2-e8-f1f2-0-original",
+      "win": false,
+      "expected": false,
+      "nodes": 318,
+      "captures": 27,
+      "counters": 200
+    },
+    {
+      "id": "b2-e8-f1f2-0-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 640,
+      "captures": 49,
+      "counters": 446
+    },
+    {
+      "id": "b2-e8-f1f2-1-original",
+      "win": false,
+      "expected": false,
+      "nodes": 236,
+      "captures": 13,
+      "counters": 134
+    },
+    {
+      "id": "b2-e8-f1f2-1-reflected",
+      "win": false,
+      "expected": false,
+      "nodes": 254,
+      "captures": 14,
+      "counters": 147
+    }
+  ],
+  "sha256": "d4304234f289c52af8b9dd40a4c4edf727bf6a1ee578e250debe4fa6b0eac133"
+}
