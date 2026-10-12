@@ -480,3 +480,23 @@ including complete source permission/artifact/input provenance. Current guards
 still revalidate all original permissions. Next: fixed-artifact dated policy-epoch
 amendment with exact Git proof, unchanged-field equality and historical/current
 identity separation; never arbitrary old policy override or tablebase admission.
+
+## E084 complete-domain smoke failure retained — 2026-10-12
+
+Previous goal turn progressed through437d6d4 (full12017-test pass and E083 segment
+65control/50saved passes). Current independent E084 ray-walk adapter and gated
+smoke/saved code are preregistered at1b64b69/implemented ata72e2e3, outside full
+freeze. First smoke atthat committed source:51tests,48pass/3fail,18.465seconds,
+exit1, no timeout/source/canonical changes/generated writes. Original full/E083
+qualified closures remain unchanged; saved E084 payload not loaded/replayed.
+
+Failures: reordered multi-witness control, expected2-witness multi-slider case
+and its explicit-history version. Authored control put WhiteKa1/Re1 against
+BlackRf1. Hypothetical Rxe7 vacates e1 and exposes Ka1, so it is illegal: candidate
+correctly retains only bishop contact. Reversing its singleton list does nothing.
+All18original authored/color cases, complete representative budgets and other
+forgeries pass. This diagnoses an erroneous new control, not a detector or oracle
+failure. Preserve semantic-e084-smoke-initial exact logs/start/process/final.
+Next: prospectively move control king to b2 (no ray change), independently assert
+both captures illegal-before/legal-after, repeat ALL51tests with unchanged limits.
+No full-suite rerun or accepted/new concept credit. All wider gates remain open.

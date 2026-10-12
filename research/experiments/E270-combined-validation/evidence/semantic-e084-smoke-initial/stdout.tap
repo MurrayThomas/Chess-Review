@@ -1,0 +1,856 @@
+TAP version 13
+# Subtest: authored whole result: file-check
+ok 1 - authored whole result: file-check
+  ---
+  duration_ms: 106.6151
+  type: 'test'
+  ...
+# Subtest: authored whole result: file-check-black
+ok 2 - authored whole result: file-check-black
+  ---
+  duration_ms: 58.3909
+  type: 'test'
+  ...
+# Subtest: authored whole result: queen-check
+ok 3 - authored whole result: queen-check
+  ---
+  duration_ms: 84.0304
+  type: 'test'
+  ...
+# Subtest: authored whole result: queen-check-black
+ok 4 - authored whole result: queen-check-black
+  ---
+  duration_ms: 103.335
+  type: 'test'
+  ...
+# Subtest: authored whole result: rook-queen
+ok 5 - authored whole result: rook-queen
+  ---
+  duration_ms: 149.9362
+  type: 'test'
+  ...
+# Subtest: authored whole result: rook-queen-black
+ok 6 - authored whole result: rook-queen-black
+  ---
+  duration_ms: 117.5381
+  type: 'test'
+  ...
+# Subtest: authored whole result: diagonal-contact
+ok 7 - authored whole result: diagonal-contact
+  ---
+  duration_ms: 71.1383
+  type: 'test'
+  ...
+# Subtest: authored whole result: diagonal-contact-black
+ok 8 - authored whole result: diagonal-contact-black
+  ---
+  duration_ms: 57.7779
+  type: 'test'
+  ...
+# Subtest: authored whole result: remaining-blocker
+ok 9 - authored whole result: remaining-blocker
+  ---
+  duration_ms: 77.163
+  type: 'test'
+  ...
+# Subtest: authored whole result: remaining-blocker-black
+ok 10 - authored whole result: remaining-blocker-black
+  ---
+  duration_ms: 71.0421
+  type: 'test'
+  ...
+# Subtest: authored whole result: existing-line
+ok 11 - authored whole result: existing-line
+  ---
+  duration_ms: 160.519
+  type: 'test'
+  ...
+# Subtest: authored whole result: existing-line-black
+ok 12 - authored whole result: existing-line-black
+  ---
+  duration_ms: 148.6588
+  type: 'test'
+  ...
+# Subtest: authored whole result: slider-moves
+ok 13 - authored whole result: slider-moves
+  ---
+  duration_ms: 154.361
+  type: 'test'
+  ...
+# Subtest: authored whole result: slider-moves-black
+ok 14 - authored whole result: slider-moves-black
+  ---
+  duration_ms: 135.4857
+  type: 'test'
+  ...
+# Subtest: authored whole result: pinned-slider
+ok 15 - authored whole result: pinned-slider
+  ---
+  duration_ms: 215.1188
+  type: 'test'
+  ...
+# Subtest: authored whole result: pinned-slider-black
+ok 16 - authored whole result: pinned-slider-black
+  ---
+  duration_ms: 229.682
+  type: 'test'
+  ...
+# Subtest: authored whole result: ordinary
+ok 17 - authored whole result: ordinary
+  ---
+  duration_ms: 12.5122
+  type: 'test'
+  ...
+# Subtest: authored whole result: ordinary-black
+ok 18 - authored whole result: ordinary-black
+  ---
+  duration_ms: 10.7036
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: all witness frames and claims omitted
+ok 19 - complete-domain rejection: all witness frames and claims omitted
+  ---
+  duration_ms: 81.6931
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: one entire witness omitted
+ok 20 - complete-domain rejection: one entire witness omitted
+  ---
+  duration_ms: 1040.6379
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: witness duplicated
+ok 21 - complete-domain rejection: witness duplicated
+  ---
+  duration_ms: 1044.9518
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: witnesses reordered
+not ok 22 - complete-domain rejection: witnesses reordered
+  ---
+  duration_ms: 1012.3765
+  type: 'test'
+  location: 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E270-combined-validation\\preparation\\e084-replay.test.mjs:45:41'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected "actual" not to be strictly deep-equal to:
+    
+    {
+      after: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 b - - 1 1',
+      before: '7k/4q3/8/1B6/8/8/4N3/K3Rr2 w - - 0 1',
+      comment: 'Watch out: Qxe1+ captures your rook on e1, gaining material through every immediate reply.',
+      defenseBudget: {
+        exhausted: false,
+        limit: 50000,
+        nodes: 17
+      },
+      diagnostics: {
+        broadTactics: {
+          nodes: 44,
+          status: 'complete'
+        },
+        history: null,
+        maxNodes: 50000,
+        moveTactics: {
+          nodes: 0,
+          status: 'complete'
+        },
+        nodes: 0,
+        replyScan: 'disabled',
+        tactics: 'complete'
+      },
+      events: [
+        {
+          evidence: {
+            attacker: 'b5',
+            legalCapture: 'b5f1',
+            line: [
+              'c4',
+              'd3',
+              'e2'
+            ],
+            target: {
+              color: 'b',
+              square: 'f1',
+              type: 'r'
+            },
+            vacated: 'e2'
+          },
+          id: 'discovered-attack',
+          qualityClaim: false,
+          text: 'Discovered attack: moving from e2 opens b5’s attack on the rook at f1.'
+        },
+        {
+    ...
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    schema: 'coach-concepts-E084-prototype'
+    before: '7k/4q3/8/1B6/8/8/4N3/K3Rr2 w - - 0 1'
+    after: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 b - - 1 1'
+    move: 'e2c3'
+    san: 'Nc3'
+    events:
+      0:
+        id: 'discovered-attack'
+        text: 'Discovered attack: moving from e2 opens b5’s attack on the rook at f1.'
+        evidence:
+          vacated: 'e2'
+          attacker: 'b5'
+          target:
+            square: 'f1'
+            type: 'r'
+            color: 'b'
+          legalCapture: 'b5f1'
+          line:
+            0: 'c4'
+            1: 'd3'
+            2: 'e2'
+        qualityClaim: false
+      1:
+        id: 'en-prise'
+        text: 'The rook on f1 is en prise: Bxf1 is a legal capture if available next turn.'
+        evidence:
+          target: <Circular>
+          capture: 'b5f1'
+          hypotheticalTurn: 'w'
+        qualityClaim: false
+      2:
+        id: 'allows-capture'
+        text: 'Watch out: Qxe1+ legally captures your rook on e1.'
+        evidence:
+          capture: 'e7e1'
+          target: 'e1'
+          piece: 'r'
+        qualityClaim: false
+      3:
+        id: 'hanging-piece'
+        text: 'Watch out: Qxe1+ captures your rook on e1, gaining material through every immediate reply.'
+        evidence:
+          capture: 'e7e1'
+          target: 'e1'
+          piece: 'r'
+          color: 'b'
+          proof:
+            horizonPliesAfterCapture: 1
+            materialValues:
+              p: 1
+              n: 3
+              b: 3
+              r: 5
+              q: 9
+              k: 0
+            minimumGain: 5
+            witnesses:
+              0:
+                reply: 'c3d1'
+                gain: 5
+              1:
+                reply: 'c3b1'
+                gain: 5
+              2:
+                reply: 'a1a2'
+                gain: 5
+              3:
+                reply: 'a1b2'
+                gain: 5
+        qualityClaim: false
+      4:
+        id: 'legal-line-clearance'
+        text: 'Line clearance: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence:
+          experiment: 'E084'
+          actor: 'w'
+          history: ~
+          before: '7k/4q3/8/1B6/8/8/4N3/K3Rr2 w - - 0 1'
+          after: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 b - - 1 1'
+          beforePieces:
+            0:
+              square: 'a1'
+              type: 'k'
+              color: 'w'
+            1:
+              square: 'b5'
+              type: 'b'
+              color: 'w'
+            2:
+              square: 'e1'
+              type: 'r'
+              color: 'w'
+            3:
+              square: 'e2'
+              type: 'n'
+              color: 'w'
+            4:
+              square: 'e7'
+              type: 'q'
+              color: 'b'
+            5:
+              square: 'f1'
+              type: 'r'
+              color: 'b'
+            6:
+              square: 'h8'
+              type: 'k'
+              color: 'b'
+          afterPieces:
+            0:
+              square: 'a1'
+              type: 'k'
+              color: 'w'
+            1:
+              square: 'b5'
+              type: 'b'
+              color: 'w'
+            2:
+              square: 'c3'
+              type: 'n'
+              color: 'w'
+            3:
+              square: 'e1'
+              type: 'r'
+              color: 'w'
+            4:
+              square: 'e7'
+              type: 'q'
+              color: 'b'
+            5:
+              square: 'f1'
+              type: 'r'
+              color: 'b'
+            6:
+              square: 'h8'
+              type: 'k'
+              color: 'b'
+          played:
+            uci: 'e2c3'
+            san: 'Nc3'
+            piece: 'n'
+            captured: ~
+            promotion: ~
+          slider: <Circular>
+          target: <Circular>
+          cells:
+            0: 'c4'
+            1: 'd3'
+            2: 'e2'
+          blocker: 'e2'
+          captures:
+            0: 'b5f1'
+          checking: false
+          replies:
+          hypotheticalActorFen: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 w - - 1 1'
+      5:
+        id: 'legal-clearance'
+        text: 'Clearance: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      6:
+        id: 'legal-line-opening'
+        text: 'Line opening: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      7:
+        id: 'legal-opening-lines'
+        text: 'Opening lines: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      8:
+        id: 'legal-alignment'
+        text: 'Witnessed alignment: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      9:
+        id: 'legal-line-contact'
+        text: 'Line contact: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      10:
+        id: 'legal-alignment-contact'
+        text: 'Alignment contact: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+    comment: 'Watch out: Qxe1+ captures your rook on e1, gaining material through every immediate reply.'
+    diagnostics:
+      tactics: 'complete'
+      replyScan: 'disabled'
+      nodes: 0
+      maxNodes: 50000
+      moveTactics:
+        status: 'complete'
+        nodes: 0
+      broadTactics:
+        status: 'complete'
+        nodes: 44
+      history: ~
+    proofBudget:
+      nodes: 0
+      limit: 50000
+      exhausted: false
+    defenseBudget:
+      nodes: 17
+      limit: 50000
+      exhausted: false
+    trapAnalysis:
+      maxTrapNodes: 50000
+      nodes: 627
+      status: 'complete'
+    lineAnalysis:
+      limit: 50000
+      nodes: 18
+      status: 'proven'
+      witnesses:
+        0: <Circular>
+  actual:
+    schema: 'coach-concepts-E084-prototype'
+    before: '7k/4q3/8/1B6/8/8/4N3/K3Rr2 w - - 0 1'
+    after: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 b - - 1 1'
+    move: 'e2c3'
+    san: 'Nc3'
+    events:
+      0:
+        id: 'discovered-attack'
+        text: 'Discovered attack: moving from e2 opens b5’s attack on the rook at f1.'
+        evidence:
+          vacated: 'e2'
+          attacker: 'b5'
+          target:
+            square: 'f1'
+            type: 'r'
+            color: 'b'
+          legalCapture: 'b5f1'
+          line:
+            0: 'c4'
+            1: 'd3'
+            2: 'e2'
+        qualityClaim: false
+      1:
+        id: 'en-prise'
+        text: 'The rook on f1 is en prise: Bxf1 is a legal capture if available next turn.'
+        evidence:
+          target: <Circular>
+          capture: 'b5f1'
+          hypotheticalTurn: 'w'
+        qualityClaim: false
+      2:
+        id: 'allows-capture'
+        text: 'Watch out: Qxe1+ legally captures your rook on e1.'
+        evidence:
+          capture: 'e7e1'
+          target: 'e1'
+          piece: 'r'
+        qualityClaim: false
+      3:
+        id: 'hanging-piece'
+        text: 'Watch out: Qxe1+ captures your rook on e1, gaining material through every immediate reply.'
+        evidence:
+          capture: 'e7e1'
+          target: 'e1'
+          piece: 'r'
+          color: 'b'
+          proof:
+            horizonPliesAfterCapture: 1
+            materialValues:
+              p: 1
+              n: 3
+              b: 3
+              r: 5
+              q: 9
+              k: 0
+            minimumGain: 5
+            witnesses:
+              0:
+                reply: 'c3d1'
+                gain: 5
+              1:
+                reply: 'c3b1'
+                gain: 5
+              2:
+                reply: 'a1a2'
+                gain: 5
+              3:
+                reply: 'a1b2'
+                gain: 5
+        qualityClaim: false
+      4:
+        id: 'legal-line-clearance'
+        text: 'Line clearance: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence:
+          experiment: 'E084'
+          actor: 'w'
+          history: ~
+          before: '7k/4q3/8/1B6/8/8/4N3/K3Rr2 w - - 0 1'
+          after: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 b - - 1 1'
+          beforePieces:
+            0:
+              square: 'a1'
+              type: 'k'
+              color: 'w'
+            1:
+              square: 'b5'
+              type: 'b'
+              color: 'w'
+            2:
+              square: 'e1'
+              type: 'r'
+              color: 'w'
+            3:
+              square: 'e2'
+              type: 'n'
+              color: 'w'
+            4:
+              square: 'e7'
+              type: 'q'
+              color: 'b'
+            5:
+              square: 'f1'
+              type: 'r'
+              color: 'b'
+            6:
+              square: 'h8'
+              type: 'k'
+              color: 'b'
+          afterPieces:
+            0:
+              square: 'a1'
+              type: 'k'
+              color: 'w'
+            1:
+              square: 'b5'
+              type: 'b'
+              color: 'w'
+            2:
+              square: 'c3'
+              type: 'n'
+              color: 'w'
+            3:
+              square: 'e1'
+              type: 'r'
+              color: 'w'
+            4:
+              square: 'e7'
+              type: 'q'
+              color: 'b'
+            5:
+              square: 'f1'
+              type: 'r'
+              color: 'b'
+            6:
+              square: 'h8'
+              type: 'k'
+              color: 'b'
+          played:
+            uci: 'e2c3'
+            san: 'Nc3'
+            piece: 'n'
+            captured: ~
+            promotion: ~
+          slider: <Circular>
+          target: <Circular>
+          cells:
+            0: 'c4'
+            1: 'd3'
+            2: 'e2'
+          blocker: 'e2'
+          captures:
+            0: 'b5f1'
+          checking: false
+          replies:
+          hypotheticalActorFen: '7k/4q3/8/1B6/8/2N5/8/K3Rr2 w - - 1 1'
+      5:
+        id: 'legal-clearance'
+        text: 'Clearance: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      6:
+        id: 'legal-line-opening'
+        text: 'Line opening: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      7:
+        id: 'legal-opening-lines'
+        text: 'Opening lines: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      8:
+        id: 'legal-alignment'
+        text: 'Witnessed alignment: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      9:
+        id: 'legal-line-contact'
+        text: 'Line contact: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+      10:
+        id: 'legal-alignment-contact'
+        text: 'Alignment contact: moving from e2 clears b5–f1; bishop b5 has a legal capture contact on f1.'
+        qualityClaim: false
+        evidence: <Circular>
+    comment: 'Watch out: Qxe1+ captures your rook on e1, gaining material through every immediate reply.'
+    diagnostics:
+      tactics: 'complete'
+      replyScan: 'disabled'
+      nodes: 0
+      maxNodes: 50000
+      moveTactics:
+        status: 'complete'
+        nodes: 0
+      broadTactics:
+        status: 'complete'
+        nodes: 44
+      history: ~
+    proofBudget:
+      nodes: 0
+      limit: 50000
+      exhausted: false
+    defenseBudget:
+      nodes: 17
+      limit: 50000
+      exhausted: false
+    trapAnalysis:
+      maxTrapNodes: 50000
+      nodes: 627
+      status: 'complete'
+    lineAnalysis:
+      limit: 50000
+      nodes: 18
+      status: 'proven'
+      witnesses:
+        0: <Circular>
+  operator: 'notDeepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e084-replay.test.mjs:45:195)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: complete-domain rejection: spurious negative witness
+ok 23 - complete-domain rejection: spurious negative witness
+  ---
+  duration_ms: 11.4807
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: ray shortened
+ok 24 - complete-domain rejection: ray shortened
+  ---
+  duration_ms: 67.1726
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: blocker forged
+ok 25 - complete-domain rejection: blocker forged
+  ---
+  duration_ms: 66.1829
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: capture domain omitted
+ok 26 - complete-domain rejection: capture domain omitted
+  ---
+  duration_ms: 152.4994
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: check flag forged
+ok 27 - complete-domain rejection: check flag forged
+  ---
+  duration_ms: 67.208
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: all evasions omitted
+ok 28 - complete-domain rejection: all evasions omitted
+  ---
+  duration_ms: 72.034
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: evasion result forged
+ok 29 - complete-domain rejection: evasion result forged
+  ---
+  duration_ms: 88.5535
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: actor-turn frame forged
+ok 30 - complete-domain rejection: actor-turn frame forged
+  ---
+  duration_ms: 156.2295
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: before inventory omitted
+ok 31 - complete-domain rejection: before inventory omitted
+  ---
+  duration_ms: 66.2328
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: actor forged
+ok 32 - complete-domain rejection: actor forged
+  ---
+  duration_ms: 65.0042
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: history invented
+ok 33 - complete-domain rejection: history invented
+  ---
+  duration_ms: 68.2647
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: target type forged
+ok 34 - complete-domain rejection: target type forged
+  ---
+  duration_ms: 67.7126
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: entire event omitted
+ok 35 - complete-domain rejection: entire event omitted
+  ---
+  duration_ms: 68.1835
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: event duplicated
+ok 36 - complete-domain rejection: event duplicated
+  ---
+  duration_ms: 68.8496
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: events reordered
+ok 37 - complete-domain rejection: events reordered
+  ---
+  duration_ms: 65.154
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: event evidence forged
+ok 38 - complete-domain rejection: event evidence forged
+  ---
+  duration_ms: 65.6099
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: quality assertion forged
+ok 39 - complete-domain rejection: quality assertion forged
+  ---
+  duration_ms: 64.8653
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: comment forged
+ok 40 - complete-domain rejection: comment forged
+  ---
+  duration_ms: 66.3968
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: status forged
+ok 41 - complete-domain rejection: status forged
+  ---
+  duration_ms: 67.3449
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: nodes forged
+ok 42 - complete-domain rejection: nodes forged
+  ---
+  duration_ms: 66.2178
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: limit forged
+ok 43 - complete-domain rejection: limit forged
+  ---
+  duration_ms: 66.6884
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: inherited fields forged
+ok 44 - complete-domain rejection: inherited fields forged
+  ---
+  duration_ms: 66.3881
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: file-check
+ok 45 - all integer budget boundaries: file-check
+  ---
+  duration_ms: 748.5922
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: rook-queen
+ok 46 - all integer budget boundaries: rook-queen
+  ---
+  duration_ms: 1377.1878
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: diagonal-contact
+ok 47 - all integer budget boundaries: diagonal-contact
+  ---
+  duration_ms: 592.279
+  type: 'test'
+  ...
+# Subtest: independent complete multi-slider target domain
+not ok 48 - independent complete multi-slider target domain
+  ---
+  duration_ms: 512.9621
+  type: 'test'
+  location: 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E270-combined-validation\\preparation\\e084-replay.test.mjs:47:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e084-replay.test.mjs:47:96)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: complete explicit history domain
+not ok 49 - complete explicit history domain
+  ---
+  duration_ms: 553.6641
+  type: 'test'
+  location: 'C:\\Users\\thoma\\Documents\\Git\\Chess-Review\\research\\experiments\\E270-combined-validation\\preparation\\e084-replay.test.mjs:48:2'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    1 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e084-replay.test.mjs:48:218)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: default/disabled, malformed controls/history and terminal result
+ok 50 - default/disabled, malformed controls/history and terminal result
+  ---
+  duration_ms: 148.2922
+  type: 'test'
+  ...
+# Subtest: checking every supplied witness cannot prove whole-list completeness
+ok 51 - checking every supplied witness cannot prove whole-list completeness
+  ---
+  duration_ms: 64.1615
+  type: 'test'
+  ...
+1..51
+# tests 51
+# suites 0
+# pass 48
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 10784.1651
