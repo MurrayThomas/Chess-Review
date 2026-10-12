@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive stone-d-completes
+ok 1 - pilot whole positive stone-d-completes
+  ---
+  duration_ms: 41.3042
+  type: 'test'
+  ...
+# Subtest: pilot whole positive stone-d-completes-black
+ok 2 - pilot whole positive stone-d-completes-black
+  ---
+  duration_ms: 15.6425
+  type: 'test'
+  ...
+# Subtest: pilot whole positive maroczy-recorded-exchange
+ok 3 - pilot whole positive maroczy-recorded-exchange
+  ---
+  duration_ms: 42.4663
+  type: 'test'
+  ...
+# Subtest: pilot whole positive maroczy-recorded-exchange-black
+ok 4 - pilot whole positive maroczy-recorded-exchange-black
+  ---
+  duration_ms: 49.8011
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only comment gap
+ok 5 - pilot closes own-event-only comment gap
+  ---
+  duration_ms: 27.6415
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only inherited field gap
+ok 6 - pilot closes own-event-only inherited field gap
+  ---
+  duration_ms: 21.7833
+  type: 'test'
+  ...
+# Subtest: pilot every integer Stonewall budget
+ok 7 - pilot every integer Stonewall budget
+  ---
+  duration_ms: 165.4783
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 376.8256
