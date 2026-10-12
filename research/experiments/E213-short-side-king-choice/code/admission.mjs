@@ -1,3 +1,5 @@
+import {readHistoricalPanel} from '../../E270-combined-validation/code/historical-producer.mjs';
+import {assertSourceEpochs} from '../../E270-combined-validation/code/source-epochs.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {sha256} from '../../../data-policy.mjs';
@@ -11,7 +13,7 @@ function seal(value){const token=Object.freeze({});tokens.set(token,structuredCl
 export function readAdmission(token){if(!tokens.has(token))throw Error('Unadmitted short-side observation');return structuredClone(tokens.get(token));}
 export async function admitSaved(){
  const ctx=await context(),rows=[];
- for(const [id,hash]of Object.entries(artifactHashes)){const bytes=await readFile(dir+'/evidence/'+id+'.json');assert.equal(sha256(bytes),hash);const r=JSON.parse(bytes);assert.deepEqual(r.inputHashes,await bindings(Object.keys(r.inputHashes)));const view=checkObservedRookPanel(r.input,r.options,r.bundle,ctx);rows.push({id,token:seal({input:r.input,view,source:{artifact:dir+'/evidence/'+id+'.json',sha256:hash,ruleModel:view.outcomeScope}})});}
+ for(const [id,hash]of Object.entries(artifactHashes)){const bytes=await readFile(dir+'/evidence/'+id+'.json');assert.equal(sha256(bytes),hash);const r=JSON.parse(bytes);await assertSourceEpochs(r.inputHashes);const view=(await readHistoricalPanel('E213/'+id)).view;rows.push({id,token:seal({input:r.input,view,source:{artifact:dir+'/evidence/'+id+'.json',sha256:hash,ruleModel:view.outcomeScope}})});}
  for(const r of await parentSaved())rows.push({id:'E212-'+r.id,token:seal(parentRead(r.token))});return rows;
 }
 // The parent collector takes authored input, never caller-supplied outcome data.

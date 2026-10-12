@@ -1,3 +1,5 @@
+import {readHistoricalPanel} from '../../E270-combined-validation/code/historical-producer.mjs';
+import {assertSourceEpochs} from '../../E270-combined-validation/code/source-epochs.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {sha256} from '../../../data-policy.mjs';
@@ -20,8 +22,8 @@ export async function admitSaved(){
  const ctx=await context(),groups=new Map();
  for(const [id,hash]of Object.entries(artifactHashes)){
   const file=dir+'/evidence/'+id+'.json',bytes=await readFile(file);assert.equal(sha256(bytes),hash,'Changed saved observation');const r=JSON.parse(bytes);
-  assert.deepEqual(r.inputHashes,await bindings(Object.keys(r.inputHashes)));assert.ok(r.seconds<=3);
-  const view=checkObservedRookPanel(r.input,r.options,r.bundle,ctx),family=id.startsWith('exchange-black-')?'exchange-black':'exchange';
+  await assertSourceEpochs(r.inputHashes);assert.ok(r.seconds<=3);
+  const view=(await readHistoricalPanel('E217/'+id)).view,family=id.startsWith('exchange-black-')?'exchange-black':'exchange';
   if(!groups.has(family))groups.set(family,[]);groups.get(family).push({id,input:r.input,view,source:{artifact:file,sha256:hash,ruleModel:view.outcomeScope}});
  }
  return [...groups].map(([id,observations])=>{

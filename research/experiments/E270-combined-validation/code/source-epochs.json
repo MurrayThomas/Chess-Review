@@ -1,0 +1,40 @@
+{
+  "schema": "E270-exact-source-epochs-v1",
+  "originalRevision": "1c1e14b",
+  "transitions": {
+    "research/experiments/E212-rook-side-defense/code/admission.mjs": {
+      "before": "d34276967a636ca8e09df6a98ba85edcd2f5f06aa237947498e40a1d0875e980",
+      "after": "f49b4a096d6c2ef1303593988cdb979ef83caf8b2777ca7cf7274fcf6f93b1f7"
+    },
+    "research/experiments/E213-short-side-king-choice/code/admission.mjs": {
+      "before": "f68889778cfa36cafe6ace222ce601db0f7bd0ce6f1fc8ddfa582af2d20a489a",
+      "after": "0f51cd820d90c0d844ddf86ac721e1a2fe04e8582c9416a62eb9b8e5d9cc19fb"
+    },
+    "research/experiments/E214-named-rook-defense-phases/code/retained.mjs": {
+      "before": "1c4e61c235d7e4ad8824a53161305b91e7e262adba8a9a66162e93630a6eb74e",
+      "after": "0e1679111087ec69bac84ec6dffd644a75617bdc3031d9e1b283d99973ef21a1"
+    },
+    "research/experiments/E215-rook-defense-resource-contrasts/code/admission.mjs": {
+      "before": "f21eea4de75ca8b677185c7ecf7feb8347ee1facb53e88f8835d03c60afb63bb",
+      "after": "4f485fc4de8aa8863f98d194a42f258300e2e872c0b714d754837d99c4937c6d"
+    },
+    "research/experiments/E217-defensive-positional-exchange/code/admission.mjs": {
+      "before": "110f6bec90ee1d97447eec7134cb7f40bcd7e8319781f10141a7f293ad6409cc",
+      "after": "fd1dfee40e63ef7cf4a460b6285228de494c6e8b1020d8062b77959454c452e6"
+    },
+    "research/experiments/E245-adaptive-rook-defense/code/admission.mjs": {
+      "before": "129ebbbf21ecc64a8e7d7e2b90fe72954d2be95dba387efcabab8d7955f261c6",
+      "after": "8b6c7f6b2d8f1723f3a1d08d58d4e9394c638c8b570c811b1c78332d7d3f761f"
+    },
+    "research/experiments/E250-active-king-positional-contrast/code/admission.mjs": {
+      "before": "db914c3d392bb98f5915080f35a121c8ef9d5f7a4b406d012bd230d3206bcc08",
+      "after": "e5ad4dda20848ded136dd0e54179adf3184dc2d0679f250aa731468e5b2c8e5c"
+    }
+  },
+  "additions": {
+    "research/experiments/E270-combined-validation/code/source-epochs.mjs": null,
+    "research/experiments/E270-combined-validation/code/source-epochs.json": null,
+    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "19fd683e5b3a1538b9384d3003489aedd81d8107a07bc3ba2be8d0a58c6f1e24"
+  },
+  "note": "Null hashes only for this trusted registry and its verifying implementation; both are explicitly pinned by the repaired build closure. No old original dependency gets a null exception."
+}

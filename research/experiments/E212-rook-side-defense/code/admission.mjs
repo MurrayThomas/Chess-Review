@@ -1,3 +1,5 @@
+import {readHistoricalPanel} from '../../E270-combined-validation/code/historical-producer.mjs';
+import {assertSourceEpochs} from '../../E270-combined-validation/code/source-epochs.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {sha256} from '../../../data-policy.mjs';
@@ -18,7 +20,7 @@ export function readAdmission(token){if(!tokens.has(token))throw Error('Unadmitt
 // the guarded local collector; structural legality cannot authenticate WDL truth.
 export async function admitSaved(){
  const ctx=await context(),out=[];
- for(const [id,hash]of Object.entries(artifactHashes)){const bytes=await readFile(dir+'/evidence/'+id+'.json');assert.equal(sha256(bytes),hash);const r=JSON.parse(bytes);assert.deepEqual(r.inputHashes,await bindings(Object.keys(r.inputHashes)));const view=checkObservedRookPanel(r.input,r.options,r.bundle,ctx);out.push({id,token:seal(r.input,view,{artifact:dir+'/evidence/'+id+'.json',sha256:hash,ruleModel:view.outcomeScope})});}
+ for(const [id,hash]of Object.entries(artifactHashes)){const bytes=await readFile(dir+'/evidence/'+id+'.json');assert.equal(sha256(bytes),hash);const r=JSON.parse(bytes);await assertSourceEpochs(r.inputHashes);const view=(await readHistoricalPanel('E212/'+id)).view;out.push({id,token:seal(r.input,view,{artifact:dir+'/evidence/'+id+'.json',sha256:hash,ruleModel:view.outcomeScope})});}
  const old=await oldSaved();for(const r of old.rows.filter(r=>r.fixture.id==='rook-pawn-root'||r.fixture.id==='rook-pawn-root-black'))out.push({id:r.fixture.id,token:seal(r.fixture.input,r.view,{artifact:'E211 fixed archive',sha256:old.archiveSha256,ruleModel:r.view.outcomeScope,legacySuccessStderrUnavailable:true})});
  return out;
 }
