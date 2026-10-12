@@ -395,3 +395,19 @@ last sampled11205passes/zero not-ok is interim. Next: original full terminal
 record, then65controls on committed source, then full fixed saved replay. Preserve
 any concrete failures before amendments/fixes. No accepted credit; every171origin,
 full original scope, integration/reproduction/strategic/human gate stays required.
+
+## First E083 control attempt retained — reporter qualification failure
+
+2026-10-12 atb918d24: committed65control assertions execute successfully in the
+single child process (reported65pass/0fail/cancelled/skipped/todo,7.373seconds),
+including complete-result omissions, budgets, focused-checker omission bypasses
+and prospective geometric-versus-legal unpinning distinction. Actual default
+reporter is SPEC (checkmarks/info), not TAP. Overall controlStagePassed is FALSE,
+exit wrapper1 despite child0,16.238seconds, no hard timeout/error/source/canonical
+changes/generated files. Do not label this qualified65/65 or admit saved replay.
+Original evidence/semantic-e083-controls-initial streams/start/process/final are
+preserved. Source control data guard remains unchanged. First direct reporter
+assumption was wrong; no chess/assertion/budget failure is hidden by this diagnosis.
+Next: dated reporter-only amendment, explicit TAP flag in direct one-process
+execution and command admission, cheap no-chess reporter smoke, separate retry.
+Full12017-test pass remains valid; these prepared runners are outside its freeze.
