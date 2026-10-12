@@ -166,3 +166,34 @@ a winning continuation. Accepted scopes and provisional study status are unchang
 
 See [P005](../research/promotions/P005-fast-coach-curation.md) for decisions,
 validation and limitations.
+
+## Fast continuations and individual choices (P006)
+
+Fast now explains selected high-value next knight jumps, surviving fork patterns
+and alternative jumps not played. These are legal patterns, with hypothetical
+turns explicitly distinguished from immediate replies. They do not establish a
+winning fork. Short played-capture and offered-loss checks reuse the existing
+capture certificate, with recaptures, promotion offsets and en-passant squares
+handled explicitly. An unprotected pawn offer can be explained even where a full
+net-gain certificate fails. Longer recovery and compensation remain unresolved.
+
+Quiet original minor-piece development has a concrete fallback; rim lessons are
+qualified. Early c-pawn moves can explain a legally supported central d-pawn plan.
+This does not add a general opening-theory database or infer a player's intent.
+
+Settings → Concepts now shows Excluded concepts above the group list. Each group
+expands independently to per-finding switches, roughly ordered by computation
+cost. Reset to default restores Fast and item defaults without turning analysis
+off or changing the view. Disabled IDs belong to cache identity, not research
+input contracts. Owners with all outputs disabled are skipped, while shared
+prerequisite work may remain. Switching views or player perspective reuses results.
+Closed groups build their item rows only when expanded.
+
+See [P006](../research/promotions/P006-fast-consequences-controls.md) for exact
+witness bounds, integration decisions and validation. P001–P005 research evidence,
+acceptance counts and unavailable conceptual prerequisites remain unchanged.
+
+Implemented locally in `3a3c838`; 366 regression tests and 40 packaged browser
+layout cases passed. The added consequence pass took 1.575 s over the supplied
+57-ply fixture; four-move cached navigation measured 105.5 ms. See P006 for the
+exact evidence, environment limits, reused engine checks and provisional scopes.

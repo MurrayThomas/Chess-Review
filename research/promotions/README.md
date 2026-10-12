@@ -23,3 +23,8 @@ heuristic, with no new benefit or effectiveness claim.
 [P004: Selected-move performance and cost controls](P004-concept-performance.md) records the Fast/default profile, demand-driven execution and optional cost groups.
 
 [P005: Fast curation and move-story coaching](P005-fast-coach-curation.md) removes routine outputs from Fast, records those teaching decisions in settings, and prioritizes concrete player-aware consequences from shared findings. Research acceptance remains separate.
+
+[P006: Fast consequence witnesses and individual controls](P006-fast-consequences-controls.md)
+adds bounded local follow-up patterns, scoped material consequences, purposeful
+opening/development replies and expandable per-finding settings. New observations
+remain provisional; implementation status does not change research acceptance.
