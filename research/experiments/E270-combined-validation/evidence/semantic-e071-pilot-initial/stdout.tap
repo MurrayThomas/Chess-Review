@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive central-d6
+ok 1 - pilot whole positive central-d6
+  ---
+  duration_ms: 206.9628
+  type: 'test'
+  ...
+# Subtest: pilot whole positive central-d6-black
+ok 2 - pilot whole positive central-d6-black
+  ---
+  duration_ms: 149.1004
+  type: 'test'
+  ...
+# Subtest: pilot whole positive central-e6
+ok 3 - pilot whole positive central-e6
+  ---
+  duration_ms: 154.4152
+  type: 'test'
+  ...
+# Subtest: pilot whole positive central-e6-black
+ok 4 - pilot whole positive central-e6-black
+  ---
+  duration_ms: 152.151
+  type: 'test'
+  ...
+# Subtest: pilot closes old guard omitted suppression IDs gap
+ok 5 - pilot closes old guard omitted suppression IDs gap
+  ---
+  duration_ms: 524.5507
+  type: 'test'
+  ...
+# Subtest: pilot closes old guard inherited SAN gap
+ok 6 - pilot closes old guard inherited SAN gap
+  ---
+  duration_ms: 271.9361
+  type: 'test'
+  ...
+# Subtest: pilot every integer octopus budget
+ok 7 - pilot every integer octopus budget
+  ---
+  duration_ms: 4039.3658
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5515.8529
