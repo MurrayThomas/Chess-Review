@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot reserve-single white
+ok 1 - pilot reserve-single white
+  ---
+  duration_ms: 362.915
+  type: 'test'
+  ...
+# Subtest: pilot reserve-single black
+ok 2 - pilot reserve-single black
+  ---
+  duration_ms: 350.955
+  type: 'test'
+  ...
+# Subtest: pilot knight-wait white
+ok 3 - pilot knight-wait white
+  ---
+  duration_ms: 189.7561
+  type: 'test'
+  ...
+# Subtest: pilot knight-wait black
+ok 4 - pilot knight-wait black
+  ---
+  duration_ms: 232.6203
+  type: 'test'
+  ...
+# Subtest: old per-event checker permits ledger forgery whole oracle requires ledger and both tags
+ok 5 - old per-event checker permits ledger forgery whole oracle requires ledger and both tags
+  ---
+  duration_ms: 497.7195
+  type: 'test'
+  ...
+# Subtest: immediate mate available refusal is mandatory
+ok 6 - immediate mate available refusal is mandatory
+  ---
+  duration_ms: 110.0585
+  type: 'test'
+  ...
+# Subtest: sampled query-stage boundaries preserve atomic optional-reserve exhaustion
+ok 7 - sampled query-stage boundaries preserve atomic optional-reserve exhaustion
+  ---
+  duration_ms: 2954.5794
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4711.0523
