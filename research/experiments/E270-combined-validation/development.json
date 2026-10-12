@@ -94,5 +94,15 @@
     "fullOriginAccepted": false,
     "acceptedCredit": 0,
     "next": "E084/E085 independent complete-domain adapters and saved replay"
+  },
+  "independentE084Segment": {
+    "qualification": "evidence/semantic-e084-saved-initial/qualification.json",
+    "smokeTests": 51,
+    "savedReplayTests": 34,
+    "rows": 18,
+    "parentSemanticReplayRequired": true,
+    "fullOriginAccepted": false,
+    "acceptedCredit": 0,
+    "next": "E085 mandatory complete move/mate-domain adapter and saved replay"
   }
 }

@@ -1,0 +1,232 @@
+# E084-row-audit {"index":0,"id":"file-check","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":1,"id":"file-check-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":2,"id":"queen-check","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":3,"id":"queen-check-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":4,"id":"rook-queen","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":5,"id":"rook-queen-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":6,"id":"diagonal-contact","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":7,"id":"diagonal-contact-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":8,"id":"remaining-blocker","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":9,"id":"remaining-blocker-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":10,"id":"existing-line","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":11,"id":"existing-line-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":12,"id":"slider-moves","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":13,"id":"slider-moves-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":14,"id":"pinned-slider","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":15,"id":"pinned-slider-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":16,"id":"ordinary","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+# E084-row-audit {"index":17,"id":"ordinary-black","parentEvaluations":1,"savedReplayAttempts":1,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: file-check
+ok 1 - saved whole row 0: file-check
+  ---
+  duration_ms: 81.27
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: file-check-black
+ok 2 - saved whole row 1: file-check-black
+  ---
+  duration_ms: 30.9986
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: queen-check
+ok 3 - saved whole row 2: queen-check
+  ---
+  duration_ms: 41.8256
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: queen-check-black
+ok 4 - saved whole row 3: queen-check-black
+  ---
+  duration_ms: 41.8092
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: rook-queen
+ok 5 - saved whole row 4: rook-queen
+  ---
+  duration_ms: 73.0298
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: rook-queen-black
+ok 6 - saved whole row 5: rook-queen-black
+  ---
+  duration_ms: 59.9206
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: diagonal-contact
+ok 7 - saved whole row 6: diagonal-contact
+  ---
+  duration_ms: 35.0527
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: diagonal-contact-black
+ok 8 - saved whole row 7: diagonal-contact-black
+  ---
+  duration_ms: 27.8341
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: remaining-blocker
+ok 9 - saved whole row 8: remaining-blocker
+  ---
+  duration_ms: 41.9596
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: remaining-blocker-black
+ok 10 - saved whole row 9: remaining-blocker-black
+  ---
+  duration_ms: 47.1232
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: existing-line
+ok 11 - saved whole row 10: existing-line
+  ---
+  duration_ms: 79.34
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: existing-line-black
+ok 12 - saved whole row 11: existing-line-black
+  ---
+  duration_ms: 67.9787
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: slider-moves
+ok 13 - saved whole row 12: slider-moves
+  ---
+  duration_ms: 69.3298
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: slider-moves-black
+ok 14 - saved whole row 13: slider-moves-black
+  ---
+  duration_ms: 56.5229
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: pinned-slider
+ok 15 - saved whole row 14: pinned-slider
+  ---
+  duration_ms: 112.068
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: pinned-slider-black
+ok 16 - saved whole row 15: pinned-slider-black
+  ---
+  duration_ms: 93.4105
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: ordinary
+ok 17 - saved whole row 16: ordinary
+  ---
+  duration_ms: 7.4917
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: ordinary-black
+ok 18 - saved whole row 17: ordinary-black
+  ---
+  duration_ms: 5.9986
+  type: 'test'
+  ...
+# Subtest: saved admission rejects schema
+ok 19 - saved admission rejects schema
+  ---
+  duration_ms: 5.8154
+  type: 'test'
+  ...
+# Subtest: saved admission rejects role
+ok 20 - saved admission rejects role
+  ---
+  duration_ms: 3.3724
+  type: 'test'
+  ...
+# Subtest: saved admission rejects missing row
+ok 21 - saved admission rejects missing row
+  ---
+  duration_ms: 3.4002
+  type: 'test'
+  ...
+# Subtest: saved admission rejects duplicate row
+ok 22 - saved admission rejects duplicate row
+  ---
+  duration_ms: 3.6898
+  type: 'test'
+  ...
+# Subtest: saved admission rejects row order
+ok 23 - saved admission rejects row order
+  ---
+  duration_ms: 4.759
+  type: 'test'
+  ...
+# Subtest: saved admission rejects fixture
+ok 24 - saved admission rejects fixture
+  ---
+  duration_ms: 3.1649
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source hash
+ok 25 - saved admission rejects source hash
+  ---
+  duration_ms: 3.4456
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source omitted
+ok 26 - saved admission rejects source omitted
+  ---
+  duration_ms: 3.5449
+  type: 'test'
+  ...
+# Subtest: saved admission rejects source inserted
+ok 27 - saved admission rejects source inserted
+  ---
+  duration_ms: 3.4985
+  type: 'test'
+  ...
+# Subtest: saved admission rejects receipt
+ok 28 - saved admission rejects receipt
+  ---
+  duration_ms: 3.7495
+  type: 'test'
+  ...
+# Subtest: saved admission rejects result missing
+ok 29 - saved admission rejects result missing
+  ---
+  duration_ms: 3.3145
+  type: 'test'
+  ...
+# Subtest: saved admission rejects error invented
+ok 30 - saved admission rejects error invented
+  ---
+  duration_ms: 3.3699
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 31 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.306
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 32 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.2293
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 33 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.5679
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 34 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.2665
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1055.4264

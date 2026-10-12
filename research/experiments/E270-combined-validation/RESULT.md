@@ -4,6 +4,48 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — E084 complete ray-domain replay passes
+
+2026-10-12. This goal turn progresses from437d6d4's E083 segment to a separately
+qualified E084 segment. New adapter walks stationary sliders' after-position rays
+to first occupants, independently reconstructing COMPLETE admissible target/witness
+sets, causal prior blocker, capture/check/evasion domains, all snapshots/ordered
+comments, full work ledger and atomic rollback. It imports no candidate/history/
+ray/turn helper or focused checker. Shared Chess and inherited parent winner/
+semantic evidence remain explicitly conditional, not independently established.
+
+Initial51-check smoke at a72e2e3 retains48pass/3fail18.465seconds: new multi-slider
+control's Ka1 pinned Re1 against Rf1, so Rxe7 was illegal. Prospective amendment
+preserves this failure and moves only authored king to b2. Independent original/
+after legal move domains verify BOTH captures newly legal. No original fixture,
+candidate, canonical artifact, scope or adapter change; singleton reversal cannot
+be misreported as a meaningful mutation. Corrected full51/51smoke at747b44a passes
+19.633seconds, all original cases/budgets/forgeries/history/multi-slider controls.
+
+Full saved replay at79e9370 passes34/34checks11.648seconds: ALL18original rows,
+0errors,8witnessed cases,12report/domain/provenance and4receipt-epoch mutations.
+Exactly18completed saved-result replay attempts and18fresh E083 parent comparisons
+are audited; no positive E084 candidate recollection. Fixed original146618-byte
+SHAa44984135a9cdfdb39e663aa8a11c9c65d6c56f66e5e8ac51431fc70f8a72812,
+all84saved source bindings, complete fixture order and receipt ownership match.
+Historical/current policy identities remain separate through unchanged exact Git
+addendum proof; no general old-receipt/tablebase permission. Saved stage cannot
+load payload without full terminal PASS AND exact51-smoke log/source admission.
+
+semantic-e084-saved-initial/qualification.json retains full source/control/input/
+output identity, policy proof and ALL15original artifact raw hashes (initial failed
+smoke, corrected smoke, saved replay); every Git-index blob byte-exact. Zero source/
+canonical changes, hard timeout, signal/errors or generated files in passing runs.
+Original full2658source/1624canonical freeze and qualified E083 replay source
+closure still match; no unchanged full/E083 rerun. Source/diff verification passes.
+
+No accepted tracker or full-origin completion credit. E084's11original bounded
+scopes remain distinct from broader useful alignment/x-ray/quiet/strategic/human
+meanings; conditional parent proof, combined API integration and exact main/repeat/
+initially-clean reproduction remain open. All171origin requirements preserved.
+Next concrete batch: E085 independent mandatory before-opponent/root/actual reply/
+mate/alternative domains, complete saved replay and omission controls.378accepted/
+539provisional/127support/41strategic prerequisites unchanged; goal stays active.
 ## Latest semantic boundary — E083 segment replay passes
 
 2026-10-12. Qualified full regression stays12017/12017. New E083 controls65/65
