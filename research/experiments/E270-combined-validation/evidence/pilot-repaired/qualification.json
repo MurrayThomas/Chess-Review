@@ -1,0 +1,62 @@
+{
+  "sourceFreezeSha256": "2a65293d96e648577b7985b6a6480d3da0431a563541503632c317dad5baf61b",
+  "revision": "bced17c6f7c0a0c0b71ce3d6827d3009f4316058",
+  "tests": 44,
+  "passed": 44,
+  "failed": 0,
+  "seconds": 120.44806529999998,
+  "sourceChanges": [],
+  "canonicalChanges": [],
+  "hardTimeout": false,
+  "artifacts": [
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/final.json",
+      "bytes": 14329,
+      "sha256": "6c9d20a7c6e46d79aa0e0f5aaa832811f241a340f800b9dd6ca9df93c2f16b9e"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/outputs/audit/12152.jsonl",
+      "bytes": 440,
+      "sha256": "aba5c6f410545b356e30428cfb1a881e2729947a41918167eda402442f6677c9"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/outputs/audit/8404.jsonl",
+      "bytes": 494,
+      "sha256": "64ca0adf868bcbac5b0e98e8f3173eb7133faf0cfa8e7822d56a925dc539807f"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/outputs/generated/research/experiments/E181-historical-forcing-resources/evidence/longer-policy-control.json.gz",
+      "bytes": 26735,
+      "sha256": "bf72ffaa73489139edc0f7a3fa18cdc9c1655f666360aa3594f5313a9ff2754b"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/outputs/generated/research/experiments/E212-rook-side-defense/evidence/examples.json",
+      "bytes": 11092,
+      "sha256": "8142061b9bfafdbf43297e34610086ac81d8f331ffe1bd07f6679b30b2ba6f02"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/process.json",
+      "bytes": 211,
+      "sha256": "8cb43344eaceae53f29ca9e01c0a565205821a70bb561fe6e65edceca3f3f31f"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/started.json",
+      "bytes": 10957,
+      "sha256": "7739d290c1f71b732a04ce5ead726d289d856b66d1fe9d566bbad64413ffa969"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "research/experiments/E270-combined-validation/evidence/pilot-repaired/stdout.tap",
+      "bytes": 8176,
+      "sha256": "2743abfffb7e0157abfbc32c9eab9f4665fe6d2b615d8d3d6d89f8ff76899cb5"
+    }
+  ],
+  "bytes": 72434,
+  "cumulativeRunEligible": true,
+  "semanticAcceptance": false,
+  "acceptedCredit": 0
+}

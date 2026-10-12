@@ -1,0 +1,274 @@
+TAP version 13
+# Subtest: conversion history resource and distinct live/terminal gates 0
+ok 1 - conversion history resource and distinct live/terminal gates 0
+  ---
+  duration_ms: 79.1387
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 1
+ok 2 - conversion history resource and distinct live/terminal gates 1
+  ---
+  duration_ms: 62.4926
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 2
+ok 3 - conversion history resource and distinct live/terminal gates 2
+  ---
+  duration_ms: 58.2887
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 3
+ok 4 - conversion history resource and distinct live/terminal gates 3
+  ---
+  duration_ms: 74.4708
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 4
+ok 5 - conversion history resource and distinct live/terminal gates 4
+  ---
+  duration_ms: 108.8906
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 5
+ok 6 - conversion history resource and distinct live/terminal gates 5
+  ---
+  duration_ms: 102.5563
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 6
+ok 7 - conversion history resource and distinct live/terminal gates 6
+  ---
+  duration_ms: 152.7651
+  type: 'test'
+  ...
+# Subtest: conversion history resource and distinct live/terminal gates 7
+ok 8 - conversion history resource and distinct live/terminal gates 7
+  ---
+  duration_ms: 162.1604
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 0
+ok 9 - hunt unique earlier reply vs current defensive policy 0
+  ---
+  duration_ms: 9689.1653
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 1
+ok 10 - hunt unique earlier reply vs current defensive policy 1
+  ---
+  duration_ms: 10239.5624
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 2
+ok 11 - hunt unique earlier reply vs current defensive policy 2
+  ---
+  duration_ms: 8583.2396
+  type: 'test'
+  ...
+# Subtest: hunt unique earlier reply vs current defensive policy 3
+ok 12 - hunt unique earlier reply vs current defensive policy 3
+  ---
+  duration_ms: 9143.7529
+  type: 'test'
+  ...
+# Subtest: strict source, options, flags, horizons, caps and history
+ok 13 - strict source, options, flags, horizons, caps and history
+  ---
+  duration_ms: 5.3889
+  type: 'test'
+  ...
+# Subtest: source snapshots unchanged by explicit evaluator
+ok 14 - source snapshots unchanged by explicit evaluator
+  ---
+  duration_ms: 6.7109
+  type: 'test'
+  ...
+# Subtest: inspector missing current continuation abstains instead of assuming loss
+ok 15 - inspector missing current continuation abstains instead of assuming loss
+  ---
+  duration_ms: 7.1173
+  type: 'test'
+  ...
+# Subtest: fresh/cached exact, one-short and zero budgets agree atomically
+ok 16 - fresh/cached exact, one-short and zero budgets agree atomically
+  ---
+  duration_ms: 528.3752
+  type: 'test'
+  ...
+# Subtest: missing, old short horizon and old exhausted source do not produce claims
+ok 17 - missing, old short horizon and old exhausted source do not produce claims
+  ---
+  duration_ms: 19.3267
+  type: 'test'
+  ...
+# Subtest: genuine irreversible history prefix and selected source start
+ok 18 - genuine irreversible history prefix and selected source start
+  ---
+  duration_ms: 254.1279
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects tree
+ok 19 - changed supplied current graph rejects tree
+  ---
+  duration_ms: 9.0764
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects history
+ok 20 - changed supplied current graph rejects history
+  ---
+  duration_ms: 6.5979
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects claim
+ok 21 - changed supplied current graph rejects claim
+  ---
+  duration_ms: 60.0696
+  type: 'test'
+  ...
+# Subtest: changed supplied current graph rejects horizon
+ok 22 - changed supplied current graph rejects horizon
+  ---
+  duration_ms: 4.7775
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects root
+ok 23 - changed original conversion proof rejects root
+  ---
+  duration_ms: 29.397
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects span
+ok 24 - changed original conversion proof rejects span
+  ---
+  duration_ms: 35.945
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects trace
+ok 25 - changed original conversion proof rejects trace
+  ---
+  duration_ms: 33.2909
+  type: 'test'
+  ...
+# Subtest: changed original conversion proof rejects claim
+ok 26 - changed original conversion proof rejects claim
+  ---
+  duration_ms: 29.3854
+  type: 'test'
+  ...
+# Subtest: changed prior hunt inventory and source budget reject
+ok 27 - changed prior hunt inventory and source budget reject
+  ---
+  duration_ms: 4929.4523
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects bound
+ok 28 - independent changed decision rejects bound
+  ---
+  duration_ms: 104.3989
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects frame
+ok 29 - independent changed decision rejects frame
+  ---
+  duration_ms: 106.9602
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects history
+ok 30 - independent changed decision rejects history
+  ---
+  duration_ms: 103.9128
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects terminal
+ok 31 - independent changed decision rejects terminal
+  ---
+  duration_ms: 103.1575
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects defenses
+ok 32 - independent changed decision rejects defenses
+  ---
+  duration_ms: 104.5499
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects ledger
+ok 33 - independent changed decision rejects ledger
+  ---
+  duration_ms: 108.2851
+  type: 'test'
+  ...
+# Subtest: independent changed decision rejects nodes
+ok 34 - independent changed decision rejects nodes
+  ---
+  duration_ms: 105.0882
+  type: 'test'
+  ...
+# Subtest: admission cache refuses custom serialization hiding changed source
+ok 35 - admission cache refuses custom serialization hiding changed source
+  ---
+  duration_ms: 3.9881
+  type: 'test'
+  ...
+# Subtest: longer earlier policy remains covered when actual mate finishes sooner
+ok 36 - longer earlier policy remains covered when actual mate finishes sooner
+  ---
+  duration_ms: 2691.0988
+  type: 'test'
+  ...
+# Subtest: long-pilot complete legal drawing check versus same-rook losses
+ok 37 - long-pilot complete legal drawing check versus same-rook losses
+  ---
+  duration_ms: 37.1571
+  type: 'test'
+  ...
+# Subtest: long-reflection complete legal drawing check versus same-rook losses
+ok 38 - long-reflection complete legal drawing check versus same-rook losses
+  ---
+  duration_ms: 38.6264
+  type: 'test'
+  ...
+# Subtest: losing geometric fixtures both colors withhold independently
+ok 39 - losing geometric fixtures both colors withhold independently
+  ---
+  duration_ms: 56.038
+  type: 'test'
+  ...
+# Subtest: short-side pilot retains missing king contrast and no long-side claim
+ok 40 - short-side pilot retains missing king contrast and no long-side claim
+  ---
+  duration_ms: 16.0684
+  type: 'test'
+  ...
+# Subtest: default disabled and explicit controls preserve absence
+ok 41 - default disabled and explicit controls preserve absence
+  ---
+  duration_ms: 0.8118
+  type: 'test'
+  ...
+# Subtest: strict history clock frame and ordinary-data interfaces
+ok 42 - strict history clock frame and ordinary-data interfaces
+  ---
+  duration_ms: 0.8177
+  type: 'test'
+  ...
+# Subtest: only authenticated admission capabilities can authorize outcomes
+ok 43 - only authenticated admission capabilities can authorize outcomes
+  ---
+  duration_ms: 2.6368
+  type: 'test'
+  ...
+# Subtest: independent reconstruction rejects output identity outcome and geometry forgeries
+ok 44 - independent reconstruction rejects output identity outcome and geometry forgeries
+  ---
+  duration_ms: 215.7472
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 117783.1318
