@@ -1,0 +1,340 @@
+TAP version 13
+# Subtest: original representative whole result: side-no-advanced-passer
+ok 1 - original representative whole result: side-no-advanced-passer
+  ---
+  duration_ms: 128.5745
+  type: 'test'
+  ...
+# Subtest: original representative whole result: side-no-advanced-passer-black
+ok 2 - original representative whole result: side-no-advanced-passer-black
+  ---
+  duration_ms: 73.333
+  type: 'test'
+  ...
+# Subtest: original representative whole result: four-three-last-minor-capture
+ok 3 - original representative whole result: four-three-last-minor-capture
+  ---
+  duration_ms: 46.3739
+  type: 'test'
+  ...
+# Subtest: original representative whole result: four-three-last-minor-capture-black
+ok 4 - original representative whole result: four-three-last-minor-capture-black
+  ---
+  duration_ms: 78.5543
+  type: 'test'
+  ...
+# Subtest: original representative whole result: three-two-last-minor-capture
+ok 5 - original representative whole result: three-two-last-minor-capture
+  ---
+  duration_ms: 37.5691
+  type: 'test'
+  ...
+# Subtest: original representative whole result: three-two-last-minor-capture-black
+ok 6 - original representative whole result: three-two-last-minor-capture-black
+  ---
+  duration_ms: 58.6561
+  type: 'test'
+  ...
+# Subtest: original representative whole result: capturable-side-check
+ok 7 - original representative whole result: capturable-side-check
+  ---
+  duration_ms: 66.4565
+  type: 'test'
+  ...
+# Subtest: original representative whole result: capturable-side-check-black
+ok 8 - original representative whole result: capturable-side-check-black
+  ---
+  duration_ms: 69.8553
+  type: 'test'
+  ...
+# Subtest: original representative whole result: already-four-three
+ok 9 - original representative whole result: already-four-three
+  ---
+  duration_ms: 39.0601
+  type: 'test'
+  ...
+# Subtest: original representative whole result: already-four-three-black
+ok 10 - original representative whole result: already-four-three-black
+  ---
+  duration_ms: 71.4976
+  type: 'test'
+  ...
+# Subtest: original representative whole result: side-and-four-three
+ok 11 - original representative whole result: side-and-four-three
+  ---
+  duration_ms: 32.3236
+  type: 'test'
+  ...
+# Subtest: original representative whole result: side-and-four-three-black
+ok 12 - original representative whole result: side-and-four-three-black
+  ---
+  duration_ms: 31.4314
+  type: 'test'
+  ...
+# Subtest: original representative whole result: four-promotion-interpositions
+ok 13 - original representative whole result: four-promotion-interpositions
+  ---
+  duration_ms: 136.5174
+  type: 'test'
+  ...
+# Subtest: original representative whole result: four-promotion-interpositions-black
+ok 14 - original representative whole result: four-promotion-interpositions-black
+  ---
+  duration_ms: 111.8292
+  type: 'test'
+  ...
+# Subtest: original representative whole result: reused-E057-side-three-clear-squares
+ok 15 - original representative whole result: reused-E057-side-three-clear-squares
+  ---
+  duration_ms: 70.6861
+  type: 'test'
+  ...
+# Subtest: original representative whole result: reused-E057-side-three-clear-squares-black
+ok 16 - original representative whole result: reused-E057-side-three-clear-squares-black
+  ---
+  duration_ms: 67.1397
+  type: 'test'
+  ...
+# Subtest: original representative whole result: en-passant-count-transition-4-3
+ok 17 - original representative whole result: en-passant-count-transition-4-3
+  ---
+  duration_ms: 70.5405
+  type: 'test'
+  ...
+# Subtest: original representative whole result: en-passant-count-transition-4-3-black
+ok 18 - original representative whole result: en-passant-count-transition-4-3-black
+  ---
+  duration_ms: 105.2309
+  type: 'test'
+  ...
+# Subtest: original representative whole result: disabled
+ok 19 - original representative whole result: disabled
+  ---
+  duration_ms: 54.2666
+  type: 'test'
+  ...
+# Subtest: original representative whole result: disabled-black
+ok 20 - original representative whole result: disabled-black
+  ---
+  duration_ms: 56.3727
+  type: 'test'
+  ...
+# Subtest: original representative whole result: zero-budget
+ok 21 - original representative whole result: zero-budget
+  ---
+  duration_ms: 54.2166
+  type: 'test'
+  ...
+# Subtest: original representative whole result: zero-budget-black
+ok 22 - original representative whole result: zero-budget-black
+  ---
+  duration_ms: 60.493
+  type: 'test'
+  ...
+# Subtest: original representative whole result: side-check-clock-terminal
+ok 23 - original representative whole result: side-check-clock-terminal
+  ---
+  duration_ms: 28.7348
+  type: 'test'
+  ...
+# Subtest: original representative whole result: side-check-clock-terminal-black
+ok 24 - original representative whole result: side-check-clock-terminal-black
+  ---
+  duration_ms: 34.2232
+  type: 'test'
+  ...
+# Subtest: whole replay rejects whole witness omitted
+ok 25 - whole replay rejects whole witness omitted
+  ---
+  duration_ms: 106.4619
+  type: 'test'
+  ...
+# Subtest: whole replay rejects mandatory side omitted
+ok 26 - whole replay rejects mandatory side omitted
+  ---
+  duration_ms: 106.1246
+  type: 'test'
+  ...
+# Subtest: whole replay rejects complete categories omitted
+ok 27 - whole replay rejects complete categories omitted
+  ---
+  duration_ms: 47.9747
+  type: 'test'
+  ...
+# Subtest: whole replay rejects all replies omitted
+ok 28 - whole replay rejects all replies omitted
+  ---
+  duration_ms: 104.4728
+  type: 'test'
+  ...
+# Subtest: whole replay rejects reply duplicated
+ok 29 - whole replay rejects reply duplicated
+  ---
+  duration_ms: 100.7966
+  type: 'test'
+  ...
+# Subtest: whole replay rejects replies reordered
+ok 30 - whole replay rejects replies reordered
+  ---
+  duration_ms: 101.9382
+  type: 'test'
+  ...
+# Subtest: whole replay rejects inventory omitted
+ok 31 - whole replay rejects inventory omitted
+  ---
+  duration_ms: 60.3864
+  type: 'test'
+  ...
+# Subtest: whole replay rejects pawn count forged
+ok 32 - whole replay rejects pawn count forged
+  ---
+  duration_ms: 58.2302
+  type: 'test'
+  ...
+# Subtest: whole replay rejects wing forged
+ok 33 - whole replay rejects wing forged
+  ---
+  duration_ms: 73.6483
+  type: 'test'
+  ...
+# Subtest: whole replay rejects ray shortened
+ok 34 - whole replay rejects ray shortened
+  ---
+  duration_ms: 110.9215
+  type: 'test'
+  ...
+# Subtest: whole replay rejects checker identity forged
+ok 35 - whole replay rejects checker identity forged
+  ---
+  duration_ms: 127.8134
+  type: 'test'
+  ...
+# Subtest: whole replay rejects history invented
+ok 36 - whole replay rejects history invented
+  ---
+  duration_ms: 102.1761
+  type: 'test'
+  ...
+# Subtest: whole replay rejects played flags forged
+ok 37 - whole replay rejects played flags forged
+  ---
+  duration_ms: 62.6086
+  type: 'test'
+  ...
+# Subtest: whole replay rejects legal moves omitted
+ok 38 - whole replay rejects legal moves omitted
+  ---
+  duration_ms: 97.6797
+  type: 'test'
+  ...
+# Subtest: whole replay rejects parent reuse index forged
+ok 39 - whole replay rejects parent reuse index forged
+  ---
+  duration_ms: 110.0508
+  type: 'test'
+  ...
+# Subtest: whole replay rejects spurious side category
+ok 40 - whole replay rejects spurious side category
+  ---
+  duration_ms: 59.2011
+  type: 'test'
+  ...
+# Subtest: whole replay rejects entire new event omitted
+ok 41 - whole replay rejects entire new event omitted
+  ---
+  duration_ms: 103.7551
+  type: 'test'
+  ...
+# Subtest: whole replay rejects new event order forged
+ok 42 - whole replay rejects new event order forged
+  ---
+  duration_ms: 46.2133
+  type: 'test'
+  ...
+# Subtest: whole replay rejects event text forged
+ok 43 - whole replay rejects event text forged
+  ---
+  duration_ms: 110.4053
+  type: 'test'
+  ...
+# Subtest: whole replay rejects quality claim forged
+ok 44 - whole replay rejects quality claim forged
+  ---
+  duration_ms: 97.7495
+  type: 'test'
+  ...
+# Subtest: whole replay rejects selected comment forged
+ok 45 - whole replay rejects selected comment forged
+  ---
+  duration_ms: 117.1374
+  type: 'test'
+  ...
+# Subtest: whole replay rejects status forged
+ok 46 - whole replay rejects status forged
+  ---
+  duration_ms: 100.4417
+  type: 'test'
+  ...
+# Subtest: whole replay rejects node count forged
+ok 47 - whole replay rejects node count forged
+  ---
+  duration_ms: 100.3764
+  type: 'test'
+  ...
+# Subtest: whole replay rejects limit forged
+ok 48 - whole replay rejects limit forged
+  ---
+  duration_ms: 97.4093
+  type: 'test'
+  ...
+# Subtest: whole replay rejects inherited field forged
+ok 49 - whole replay rejects inherited field forged
+  ---
+  duration_ms: 98.7609
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: side-no-advanced-passer
+ok 50 - every integer budget boundary: side-no-advanced-passer
+  ---
+  duration_ms: 1260.5148
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: four-three-last-minor-capture
+ok 51 - every integer budget boundary: four-three-last-minor-capture
+  ---
+  duration_ms: 401.3521
+  type: 'test'
+  ...
+# Subtest: every integer budget boundary: already-four-three
+ok 52 - every integer budget boundary: already-four-three
+  ---
+  duration_ms: 365.1593
+  type: 'test'
+  ...
+# Subtest: default disabled and strict malformed controls
+ok 53 - default disabled and strict malformed controls
+  ---
+  duration_ms: 109.88
+  type: 'test'
+  ...
+# Subtest: history and ignored metadata preserve actual repetition terminal
+ok 54 - history and ignored metadata preserve actual repetition terminal
+  ---
+  duration_ms: 198.9972
+  type: 'test'
+  ...
+# Subtest: foundation-rejected legal board inherits zero new work
+ok 55 - foundation-rejected legal board inherits zero new work
+  ---
+  duration_ms: 4.3395
+  type: 'test'
+  ...
+1..55
+# tests 55
+# suites 0
+# pass 55
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6262.4457
