@@ -4,6 +4,60 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — accepted E081 direct-attack replay reused
+
+2026-10-12. E081's unchanged independent whole-result checker is now separately
+authenticated for reuse conditional on E080 parent/priority. It enumerates64
+squares, scalar piece contact and clear rays, prior geometric exclusion, all
+hypothetical legal captures/target categories, exact witnesses/events/text,
+selection/ledger/rollback. It imports no E081 detector/geometry helper. Shared
+Chess and ancestor semantics remain explicit dependencies. E081 is historical
+accepted mechanics, not an additional provisional origin or new accepted credit.
+
+Smoke at5894cc7 passes183/183checks26.476seconds: ALL144original authored/color
+cases,32whole-result forgeries,4exhaustive integer-budget cases and3extra strict/
+geometric/history controls. Original coverage includes all6attacker families,
+5nonking target families, both colors, all capture promotions, multiple targets,
+pins/checks/blockers/EP/castling, actual history and terminal/foundation refusal.
+Authored pinned/unpinned controls independently confirm prior geometric contact
+is excluded even when unpinning makes capture newly legal; all four color/matched
+cases remain no-new-fact. This preserves explicit E081 scope, not broad useful
+attack meaning and not a silent resolution of E083's separate wording gap.
+
+Saved stage at eae223e passes164/164checks34.338seconds: ALL144original rows,
+108saved whole-result attempts with108fresh E080 parent comparisons and36fresh
+exact input-error evaluations/comparisons, plus12shape/inheritance,4receipt and
+4raw-artifact rejection controls. Retains50proven witnesses,4disabled/4exhausted/
+28negative/12not-applicable/10not-live. No saved-cohort positive recollection.
+
+All six original artifacts authenticate, including4263717-byte results SHA
+ed4e53cf2471fe8a028229946ced13f434bab776d5857bf83739406e06cb7c97.
+Original main/repeat/initially-clean manifests match frozen9166ebad source,
+284physical inputs verified against original Git blobs, config/environment/
+metrics/receipts/output hashes and clean tree. All74semantic replay/fixture
+closure paths are in that vector and remain identical to current/full frozen
+sources; NO missing supplements. The exact sole ACTIVE-QUEUE metadata difference
+stays outside that closure. Historical vector and policy identities stay intact;
+existing exact policy-addendum proof authenticates current receipt compatibility.
+All5312ordered inherited full-result fingerprints and teaching-list hash match
+E080 evidence; this is inherited integrity, not new ancestor semantic proof.
+
+semantic-e081-saved-initial/qualification.json binds92new-source inputs,
+74semantic sources,284historical inputs, full/smoke/saved gates, original artifact
+ownership and ALL10raw attempt artifacts with byte-exact staged Git blobs.
+Qualified E082/E083/E084/E085 source closures remain unchanged, as do2658full
+frozen sources and1624canonical archives. Passing stages have zero source/
+canonical mutations, generated output, errors/signals or hard timeout. Source/
+diff checks pass; historical full collections and unchanged regression not rerun.
+
+Accepted378/1085 (34.8%),539additional provisional scopes,162ready/0stale,
+127support/41strategic prerequisites and original1085/duplicate scopes unchanged.
+Next concrete step: source-review and preregister authenticated E080 pawn-shield
+whole-result replay reuse, including its independent one-ply truth table and
+replayQuery dependency, conditional on E079. All remaining provisional/support
+origins, broader strategic/human meanings, combined integration and exact
+changed-source reproductions remain open. Goal active and unfinished.
+
 ## Latest semantic boundary — accepted E082 whole-result replay reused
 
 2026-10-12. Source review found an existing complete E082 replayer, independently

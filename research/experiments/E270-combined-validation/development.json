@@ -140,5 +140,26 @@
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
     "next": "Source-review authenticated E081 complete direct-attack replay reuse conditional on E080; all remaining origins and broader gates remain open"
+  },
+  "acceptedE081ReplayReuse": {
+    "qualification": "evidence/semantic-e081-saved-initial/qualification.json",
+    "historicalAcceptedStudy": true,
+    "smokeTests": 183,
+    "savedReplayTests": 164,
+    "rows": 144,
+    "resultReplays": 108,
+    "errorComparisons": 36,
+    "certificates": 50,
+    "newSourceInputs": 92,
+    "semanticClosureSources": 74,
+    "historicalOriginalInputs": 284,
+    "historicalSupplements": 0,
+    "retainedRawArtifacts": 10,
+    "inheritedFingerprints": 5312,
+    "priorGeometricExclusionPreserved": true,
+    "parentSemanticReplayRequired": true,
+    "provisionalOriginCredit": 0,
+    "acceptedCredit": 0,
+    "next": "Source-review E080 complete pawn-shield checker/one-ply proof reuse conditional on E079; all remaining origins and broader gates stay open"
   }
 }
