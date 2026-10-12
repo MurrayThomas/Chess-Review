@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot whole positive french-advanced-e-completes
+ok 1 - pilot whole positive french-advanced-e-completes
+  ---
+  duration_ms: 43.3629
+  type: 'test'
+  ...
+# Subtest: pilot whole positive french-advanced-e-completes-black
+ok 2 - pilot whole positive french-advanced-e-completes-black
+  ---
+  duration_ms: 15.2604
+  type: 'test'
+  ...
+# Subtest: pilot whole positive scheveningen-recorded-exchange
+ok 3 - pilot whole positive scheveningen-recorded-exchange
+  ---
+  duration_ms: 74.7153
+  type: 'test'
+  ...
+# Subtest: pilot whole positive scheveningen-recorded-exchange-black
+ok 4 - pilot whole positive scheveningen-recorded-exchange-black
+  ---
+  duration_ms: 75.6055
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only comment gap
+ok 5 - pilot closes own-event-only comment gap
+  ---
+  duration_ms: 27.8702
+  type: 'test'
+  ...
+# Subtest: pilot closes own-event-only inherited field gap
+ok 6 - pilot closes own-event-only inherited field gap
+  ---
+  duration_ms: 22.5776
+  type: 'test'
+  ...
+# Subtest: pilot every integer French budget
+ok 7 - pilot every integer French budget
+  ---
+  duration_ms: 153.1019
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 425.5803
