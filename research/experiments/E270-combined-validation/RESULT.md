@@ -4,7 +4,57 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E067 historical waiting/reserve results qualified
+## Latest preparation boundary — E066 full independent race smoke passed
+
+2026-10-12. Registeredcf07264/implemented7d1920a:7/7pilot in8.605seconds,
+faster than10–90forecast and within180cap;71source inputs/44,052raw bytes,
+retained4af71a0. Registered full smoked1a6250/implementedbcc07fd:195/195 PASS
+in32.044seconds, within15–120forecast/300cap;75source inputs/73,881raw bytes,
+retained934c576. Ten raw Git blobs byte-exact. Evidence:
+evidence/semantic-e066-pilot-initial/ and evidence/semantic-e066-smoke-initial/.
+No failures/timeouts/source/canonical/generated changes; all processes terminal,
+no live handle. Maintained source/diff checks pass.19prior qualified E067–E085
+closures verify1626unchanged source comparisons;2658frozen sources/1624canonical
+unchanged. No accepted/provisional/support/origin credit or tracker change.
+
+Separate independent whole oracle imports no E066 candidate/query helper. Distinct
+enemy-defense/own-push resolvers reconstruct all legal branches (no first-failure
+shortcut), captured/terminal/limit/no-push/rival-first leaves, straight queen-only
+route and every next enemy reply/terminal/queen-presence record. Full history
+move/undo, initial/history/state/edge/continuation ledger and atomic exhaustion
+match frozen contract, with no actual/first-promotion-leaf tick. Requires exact
+before/after/history/material/passed/distance/depth/evidence/status/refutationTree,
+mandatory tag presence/absence, v47/parent events/comment157.05 and disabled E065
+identity; unchanged E066 positive checker additionally validates all certificates.
+Shared Chess/E020 legality/E065 output+priority remain explicit dependencies.
+First queening is not a win, best move or queen-safety claim.
+
+Pilot covered one/two-push routes bothcolors, whole ledger/mandatory absence gaps
+in the old positive-only checker, all four rival first promotions, complete
+negative refutations and sampled promotion-continuation budget exhaustion.
+Full smoke covers ALL140original cases (136complete results/132enabled oracles/
+four illegal refusals),40named whole-result/frame/tree/continuation/negative
+forgeries,seven sampled budget groups andeight strict/null/disabled/history/
+terminal/material/actual/depth/inheritance controls. Sampled root-defense and
+first/last continuation boundaries ±1/0/1/full±1 are not all integer budgets.
+Original states44proven28refuted44ineligible12short-profile4disabled4exhausted.
+44positive certificates retain872defenses/756promotion leaves/3440next replies,
+four terminal own promotions/16rival promotions/eight history plies. Zero queen
+captures: direct successful queen-capture continuation coverage remains OPEN;
+queenPresent corruption controls do not prove that branch is directly covered.
+Authored threefold history suppresses E066 own labels while fresh FEN qualifies;
+the broader inherited historically-terminal API refusal issue stays OPEN.
+
+No original saved payload qualification yet. Next preregister E066 historical
+whole-result/ordered metadata/source/three-reproduction/receipt/fingerprint/
+teaching gate, with197original source inputs and3060ordered E065 fingerprints
+already disclosed by guarded metadata only. E065 parent semantics follow.
+E067 removed-pawn king-exposure/dead-frame direct controls and E073 original
+eight/seven-edge discrepancy remain OPEN. All171origin combined API integration,
+exact changed-source three reproductions, broader original strategic meanings,
+real-game precision and human usefulness remain OPEN; full goal active.
+
+## Prior semantic boundary — E067 historical waiting/reserve results qualified
 
 2026-10-12. Registration359f096/implementation6e8c540;126/126saved checks PASS
 in48.106seconds, within25–120forecast/600cap. ALL104rows:100complete saved results
