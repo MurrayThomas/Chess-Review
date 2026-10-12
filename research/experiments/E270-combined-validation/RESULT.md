@@ -4,7 +4,57 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E062 independent causal pawn-space smoke qualified
+## Latest semantic boundary — E062 historical causal pawn-space results qualified
+
+2026-10-12. Registration8dc1c72/implementation8e56762:130/130saved PASS in35.399
+seconds, within25–120forecast/600cap. ALL108rows:104complete saved results with
+fresh E061 parent outputs/100enabled independent full-history actual/pawn-control
+geometry/legal-live before enemy-turn andremoved-only-pawn frames/complete ordered
+ALLlegal-move-then-king domains/causal denied intersection/ALLactual replies/pawn
+presence/remaining controls/terminal/mandatory absence/exact-work oracles; four
+ABSTRACT illegal classifications plus fresh /^Illegal move/ failures. Exact
+historical runtime messages unavailable.48whole-checker certificates plus48
+separately ordered unchanged original metadata records.560replies/1000king-move
+references/56denied squares; after whole validation,12pawn captures/eightterminal
+replies/eighthistory plies/eightbefore+removedcastle references tallied. Physical
+replay reused from unchanged smoke; no extra chess collection.14shape/inheritance/
+count/ordered-proof,4receipt and4raw rejection controls pass. No failures/timeouts/
+source/canonical/generated changes. Processes terminal/no live handle.
+
+Retained0f7bb2f at evidence/semantic-e062-saved-initial/qualification.json.
+78newsource inputs/181historical Git/current inputs/52semantic paths within
+original/current/full freeze; no supplements/current metadata exceptions. Six
+canonical artifacts; frozenff182a35b80dc4fe0e6fec565cb49133b79a6518. Allthree
+original reproduction revisions/input/output/config/environment/metrics/receipts
+andphysical bytes authenticated. Main+initially-clean statuses empty; repeat EXACT
+'?? research/experiments/E062-pawn-space/evidence/' sole historical untracked
+entry preserved.2592ordered E061 fingerprints/teaching identity preserved;
+integrity does not establish ancestor semantics. Fixed E083 policy epoch only.
+Unchanged7/7pilot+163/163corrected smoke reused. Initial smoke remains failed
+(stagefalse/child0/163assertions versus copied155expectation); all71inputs compared
+with recorded79a6a0d2d433372ed6c0f85beea72623de7a5229 Git, corrected72inputs
+with currentdf5b9c1d87929e307b81854279724a2dd5af5dca. Both source epochs and
+initial failed-stage raw bytes authenticated; corrected smoke supplies admission.
+
+20raw Git blobs byte-exact,344,686total bytes/164,411new saved-run bytes including
+initialfailed smoke. Frozen2658sources/1624canonical and23prior E063–E085closures/
+1942source comparisons unchanged. Source/diff checks pass. No accepted/provisional/
+support/origin credit. E062 historical bounded mechanics qualified conditionally
+on E061 semantic replay. Causal king restriction does not establish general space,
+advantage/permanence/other-unit safe occupation or human usefulness. Actual
+irreversible pawn-move scope does not imply generic fresh-FEN history safety;
+both causal/before frames remain explicit legal-live counterfactuals.
+
+Next: complete E061 original closed-file contract/exposure/candidate/replay/fixture
+reading andregister independent whole-result pawn occupancy/geometric rays/ALL
+full-history replies/next-turn tracked-slider legal file-move domains/negative/
+work pilot, then full smoke andhistorical qualification. E066directqueen-capture
+continuation, E067directremoved-pawn controls/global historical-terminal API gap
+and E073eight/sevenedge discrepancy stay OPEN. All171origin combined API
+integration/exact changed-source three reproductions/broader original strategy/
+real-game precision/human usefulness remain OPEN; full research goal active.
+
+## Prior preparation boundary — E062 independent causal pawn-space smoke qualified
 
 2026-10-12. Pilot registered030bcb2/implementeda006a64:7/7PASS in11.873seconds,
 within10–90forecast/180cap;67source inputs/43,526raw bytes, retained2269695.
