@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot king-return white
+ok 1 - pilot king-return white
+  ---
+  duration_ms: 83.7935
+  type: 'test'
+  ...
+# Subtest: pilot king-return black
+ok 2 - pilot king-return black
+  ---
+  duration_ms: 54.3427
+  type: 'test'
+  ...
+# Subtest: pilot rook-return white
+ok 3 - pilot rook-return white
+  ---
+  duration_ms: 138.4211
+  type: 'test'
+  ...
+# Subtest: pilot rook-return black
+ok 4 - pilot rook-return black
+  ---
+  duration_ms: 145.6359
+  type: 'test'
+  ...
+# Subtest: old per-event checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+ok 5 - old per-event checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+  ---
+  duration_ms: 82.7996
+  type: 'test'
+  ...
+# Subtest: full history repetition reply differs from fresh FEN and forged terminal flag rejects
+ok 6 - full history repetition reply differs from fresh FEN and forged terminal flag rejects
+  ---
+  duration_ms: 171.5489
+  type: 'test'
+  ...
+# Subtest: exhaustive small fixture integer budget sweep clears incomplete history and reply evidence
+ok 7 - exhaustive small fixture integer budget sweep clears incomplete history and reply evidence
+  ---
+  duration_ms: 643.4875
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1333.613
