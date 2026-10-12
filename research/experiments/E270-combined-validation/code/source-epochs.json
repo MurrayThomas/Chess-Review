@@ -66,7 +66,8 @@
   "additions": {
     "research/experiments/E270-combined-validation/code/source-epochs.mjs": null,
     "research/experiments/E270-combined-validation/code/source-epochs.json": null,
-    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "4109ea2e73119f451df050177c9615c62c00ffb3768868662cbffa803a4d99f0"
+    "research/experiments/E270-combined-validation/code/historical-producer.mjs": "4109ea2e73119f451df050177c9615c62c00ffb3768868662cbffa803a4d99f0",
+    "research/experiments/E211-rook-tablebase-admission/code/check-execution.mjs": "778598e1fa741f25dfd36bac971499050cce7eb56dd9be311c9192b900edb30f"
   },
   "note": "Null hashes only for this trusted registry and its verifying implementation; both are explicitly pinned by the repaired build closure. No old original dependency gets a null exception."
 }
