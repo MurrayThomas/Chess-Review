@@ -1,0 +1,1181 @@
+# E064-smoke-summary {"originalRows":140,"errors":4,"certificates":48,"states":{"complete":128,"disabled":4,"exhausted":4},"metrics":{"replies":308,"leaves":2608,"historyPlies":8},"beforePawnMoves":140,"rams":216}
+TAP version 13
+# Subtest: original whole four-file-wall
+ok 1 - original whole four-file-wall
+  ---
+  duration_ms: 59.4685
+  type: 'test'
+  ...
+# Subtest: original whole four-file-wall-black
+ok 2 - original whole four-file-wall-black
+  ---
+  duration_ms: 16.7674
+  type: 'test'
+  ...
+# Subtest: original whole four-file-wall-mirror
+ok 3 - original whole four-file-wall-mirror
+  ---
+  duration_ms: 16.4159
+  type: 'test'
+  ...
+# Subtest: original whole four-file-wall-mirror-black
+ok 4 - original whole four-file-wall-mirror-black
+  ---
+  duration_ms: 14.4709
+  type: 'test'
+  ...
+# Subtest: original whole six-file-wall
+ok 5 - original whole six-file-wall
+  ---
+  duration_ms: 27.4242
+  type: 'test'
+  ...
+# Subtest: original whole six-file-wall-black
+ok 6 - original whole six-file-wall-black
+  ---
+  duration_ms: 15.7876
+  type: 'test'
+  ...
+# Subtest: original whole six-file-wall-mirror
+ok 7 - original whole six-file-wall-mirror
+  ---
+  duration_ms: 15.642
+  type: 'test'
+  ...
+# Subtest: original whole six-file-wall-mirror-black
+ok 8 - original whole six-file-wall-mirror-black
+  ---
+  duration_ms: 15.5196
+  type: 'test'
+  ...
+# Subtest: original whole eight-file-wall
+ok 9 - original whole eight-file-wall
+  ---
+  duration_ms: 15.8583
+  type: 'test'
+  ...
+# Subtest: original whole eight-file-wall-black
+ok 10 - original whole eight-file-wall-black
+  ---
+  duration_ms: 18.0808
+  type: 'test'
+  ...
+# Subtest: original whole eight-file-wall-mirror
+ok 11 - original whole eight-file-wall-mirror
+  ---
+  duration_ms: 23.5447
+  type: 'test'
+  ...
+# Subtest: original whole eight-file-wall-mirror-black
+ok 12 - original whole eight-file-wall-mirror-black
+  ---
+  duration_ms: 15.6283
+  type: 'test'
+  ...
+# Subtest: original whole double-step-wall
+ok 13 - original whole double-step-wall
+  ---
+  duration_ms: 12.3857
+  type: 'test'
+  ...
+# Subtest: original whole double-step-wall-black
+ok 14 - original whole double-step-wall-black
+  ---
+  duration_ms: 11.9854
+  type: 'test'
+  ...
+# Subtest: original whole double-step-wall-mirror
+ok 15 - original whole double-step-wall-mirror
+  ---
+  duration_ms: 12.7073
+  type: 'test'
+  ...
+# Subtest: original whole double-step-wall-mirror-black
+ok 16 - original whole double-step-wall-mirror-black
+  ---
+  duration_ms: 12.0665
+  type: 'test'
+  ...
+# Subtest: original whole lower-wall
+ok 17 - original whole lower-wall
+  ---
+  duration_ms: 11.9829
+  type: 'test'
+  ...
+# Subtest: original whole lower-wall-black
+ok 18 - original whole lower-wall-black
+  ---
+  duration_ms: 12.8171
+  type: 'test'
+  ...
+# Subtest: original whole lower-wall-mirror
+ok 19 - original whole lower-wall-mirror
+  ---
+  duration_ms: 12.0523
+  type: 'test'
+  ...
+# Subtest: original whole lower-wall-mirror-black
+ok 20 - original whole lower-wall-mirror-black
+  ---
+  duration_ms: 12.4817
+  type: 'test'
+  ...
+# Subtest: original whole checking-enemy-reply
+ok 21 - original whole checking-enemy-reply
+  ---
+  duration_ms: 34.851
+  type: 'test'
+  ...
+# Subtest: original whole checking-enemy-reply-black
+ok 22 - original whole checking-enemy-reply-black
+  ---
+  duration_ms: 34.242
+  type: 'test'
+  ...
+# Subtest: original whole checking-enemy-reply-mirror
+ok 23 - original whole checking-enemy-reply-mirror
+  ---
+  duration_ms: 31.4741
+  type: 'test'
+  ...
+# Subtest: original whole checking-enemy-reply-mirror-black
+ok 24 - original whole checking-enemy-reply-mirror-black
+  ---
+  duration_ms: 33.1517
+  type: 'test'
+  ...
+# Subtest: original whole two-rams
+ok 25 - original whole two-rams
+  ---
+  duration_ms: 10.2654
+  type: 'test'
+  ...
+# Subtest: original whole two-rams-black
+ok 26 - original whole two-rams-black
+  ---
+  duration_ms: 12.8043
+  type: 'test'
+  ...
+# Subtest: original whole two-rams-mirror
+ok 27 - original whole two-rams-mirror
+  ---
+  duration_ms: 9.4164
+  type: 'test'
+  ...
+# Subtest: original whole two-rams-mirror-black
+ok 28 - original whole two-rams-mirror-black
+  ---
+  duration_ms: 12.2083
+  type: 'test'
+  ...
+# Subtest: original whole flank-only
+ok 29 - original whole flank-only
+  ---
+  duration_ms: 7.9976
+  type: 'test'
+  ...
+# Subtest: original whole flank-only-black
+ok 30 - original whole flank-only-black
+  ---
+  duration_ms: 9.0281
+  type: 'test'
+  ...
+# Subtest: original whole flank-only-mirror
+ok 31 - original whole flank-only-mirror
+  ---
+  duration_ms: 8.0522
+  type: 'test'
+  ...
+# Subtest: original whole flank-only-mirror-black
+ok 32 - original whole flank-only-mirror-black
+  ---
+  duration_ms: 7.9223
+  type: 'test'
+  ...
+# Subtest: original whole noncontiguous
+ok 33 - original whole noncontiguous
+  ---
+  duration_ms: 8.1462
+  type: 'test'
+  ...
+# Subtest: original whole noncontiguous-black
+ok 34 - original whole noncontiguous-black
+  ---
+  duration_ms: 7.9759
+  type: 'test'
+  ...
+# Subtest: original whole noncontiguous-mirror
+ok 35 - original whole noncontiguous-mirror
+  ---
+  duration_ms: 8.1778
+  type: 'test'
+  ...
+# Subtest: original whole noncontiguous-mirror-black
+ok 36 - original whole noncontiguous-mirror-black
+  ---
+  duration_ms: 7.5106
+  type: 'test'
+  ...
+# Subtest: original whole unmatched-enemy-pawn
+ok 37 - original whole unmatched-enemy-pawn
+  ---
+  duration_ms: 8.7313
+  type: 'test'
+  ...
+# Subtest: original whole unmatched-enemy-pawn-black
+ok 38 - original whole unmatched-enemy-pawn-black
+  ---
+  duration_ms: 8.7571
+  type: 'test'
+  ...
+# Subtest: original whole unmatched-enemy-pawn-mirror
+ok 39 - original whole unmatched-enemy-pawn-mirror
+  ---
+  duration_ms: 8.4078
+  type: 'test'
+  ...
+# Subtest: original whole unmatched-enemy-pawn-mirror-black
+ok 40 - original whole unmatched-enemy-pawn-mirror-black
+  ---
+  duration_ms: 8.5415
+  type: 'test'
+  ...
+# Subtest: original whole extra-mobile-own-pawn
+ok 41 - original whole extra-mobile-own-pawn
+  ---
+  duration_ms: 10.4674
+  type: 'test'
+  ...
+# Subtest: original whole extra-mobile-own-pawn-black
+ok 42 - original whole extra-mobile-own-pawn-black
+  ---
+  duration_ms: 9.1603
+  type: 'test'
+  ...
+# Subtest: original whole extra-mobile-own-pawn-mirror
+ok 43 - original whole extra-mobile-own-pawn-mirror
+  ---
+  duration_ms: 11.3864
+  type: 'test'
+  ...
+# Subtest: original whole extra-mobile-own-pawn-mirror-black
+ok 44 - original whole extra-mobile-own-pawn-mirror-black
+  ---
+  duration_ms: 9.6392
+  type: 'test'
+  ...
+# Subtest: original whole extra-blocked-own-pawn
+ok 45 - original whole extra-blocked-own-pawn
+  ---
+  duration_ms: 11.3088
+  type: 'test'
+  ...
+# Subtest: original whole extra-blocked-own-pawn-black
+ok 46 - original whole extra-blocked-own-pawn-black
+  ---
+  duration_ms: 9.917
+  type: 'test'
+  ...
+# Subtest: original whole extra-blocked-own-pawn-mirror
+ok 47 - original whole extra-blocked-own-pawn-mirror
+  ---
+  duration_ms: 9.7296
+  type: 'test'
+  ...
+# Subtest: original whole extra-blocked-own-pawn-mirror-black
+ok 48 - original whole extra-blocked-own-pawn-mirror-black
+  ---
+  duration_ms: 10.6116
+  type: 'test'
+  ...
+# Subtest: original whole extra-enemy-pawn
+ok 49 - original whole extra-enemy-pawn
+  ---
+  duration_ms: 9.2049
+  type: 'test'
+  ...
+# Subtest: original whole extra-enemy-pawn-black
+ok 50 - original whole extra-enemy-pawn-black
+  ---
+  duration_ms: 9.6223
+  type: 'test'
+  ...
+# Subtest: original whole extra-enemy-pawn-mirror
+ok 51 - original whole extra-enemy-pawn-mirror
+  ---
+  duration_ms: 9.4568
+  type: 'test'
+  ...
+# Subtest: original whole extra-enemy-pawn-mirror-black
+ok 52 - original whole extra-enemy-pawn-mirror-black
+  ---
+  duration_ms: 9.206
+  type: 'test'
+  ...
+# Subtest: original whole adjacent-pawn-captures
+ok 53 - original whole adjacent-pawn-captures
+  ---
+  duration_ms: 22.562
+  type: 'test'
+  ...
+# Subtest: original whole adjacent-pawn-captures-black
+ok 54 - original whole adjacent-pawn-captures-black
+  ---
+  duration_ms: 20.0399
+  type: 'test'
+  ...
+# Subtest: original whole adjacent-pawn-captures-mirror
+ok 55 - original whole adjacent-pawn-captures-mirror
+  ---
+  duration_ms: 21.1437
+  type: 'test'
+  ...
+# Subtest: original whole adjacent-pawn-captures-mirror-black
+ok 56 - original whole adjacent-pawn-captures-mirror-black
+  ---
+  duration_ms: 19.9843
+  type: 'test'
+  ...
+# Subtest: original whole double-step-allows-ep
+ok 57 - original whole double-step-allows-ep
+  ---
+  duration_ms: 12.8339
+  type: 'test'
+  ...
+# Subtest: original whole double-step-allows-ep-black
+ok 58 - original whole double-step-allows-ep-black
+  ---
+  duration_ms: 12.3482
+  type: 'test'
+  ...
+# Subtest: original whole double-step-allows-ep-mirror
+ok 59 - original whole double-step-allows-ep-mirror
+  ---
+  duration_ms: 12.4523
+  type: 'test'
+  ...
+# Subtest: original whole double-step-allows-ep-mirror-black
+ok 60 - original whole double-step-allows-ep-mirror-black
+  ---
+  duration_ms: 11.8141
+  type: 'test'
+  ...
+# Subtest: original whole enemy-king-captures-wall
+ok 61 - original whole enemy-king-captures-wall
+  ---
+  duration_ms: 15.6515
+  type: 'test'
+  ...
+# Subtest: original whole enemy-king-captures-wall-black
+ok 62 - original whole enemy-king-captures-wall-black
+  ---
+  duration_ms: 15.9723
+  type: 'test'
+  ...
+# Subtest: original whole enemy-king-captures-wall-mirror
+ok 63 - original whole enemy-king-captures-wall-mirror
+  ---
+  duration_ms: 14.9634
+  type: 'test'
+  ...
+# Subtest: original whole enemy-king-captures-wall-mirror-black
+ok 64 - original whole enemy-king-captures-wall-mirror-black
+  ---
+  duration_ms: 15.1669
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rook-captures-wall
+ok 65 - original whole enemy-rook-captures-wall
+  ---
+  duration_ms: 25.0734
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rook-captures-wall-black
+ok 66 - original whole enemy-rook-captures-wall-black
+  ---
+  duration_ms: 25.2059
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rook-captures-wall-mirror
+ok 67 - original whole enemy-rook-captures-wall-mirror
+  ---
+  duration_ms: 25.5325
+  type: 'test'
+  ...
+# Subtest: original whole enemy-rook-captures-wall-mirror-black
+ok 68 - original whole enemy-rook-captures-wall-mirror-black
+  ---
+  duration_ms: 25.6903
+  type: 'test'
+  ...
+# Subtest: original whole enemy-knight-offers-pawn-capture
+ok 69 - original whole enemy-knight-offers-pawn-capture
+  ---
+  duration_ms: 17.2644
+  type: 'test'
+  ...
+# Subtest: original whole enemy-knight-offers-pawn-capture-black
+ok 70 - original whole enemy-knight-offers-pawn-capture-black
+  ---
+  duration_ms: 19.0008
+  type: 'test'
+  ...
+# Subtest: original whole enemy-knight-offers-pawn-capture-mirror
+ok 71 - original whole enemy-knight-offers-pawn-capture-mirror
+  ---
+  duration_ms: 18.1171
+  type: 'test'
+  ...
+# Subtest: original whole enemy-knight-offers-pawn-capture-mirror-black
+ok 72 - original whole enemy-knight-offers-pawn-capture-mirror-black
+  ---
+  duration_ms: 20.699
+  type: 'test'
+  ...
+# Subtest: original whole enemy-bishop-offers-pawn-capture
+ok 73 - original whole enemy-bishop-offers-pawn-capture
+  ---
+  duration_ms: 24.2512
+  type: 'test'
+  ...
+# Subtest: original whole enemy-bishop-offers-pawn-capture-black
+ok 74 - original whole enemy-bishop-offers-pawn-capture-black
+  ---
+  duration_ms: 25.4976
+  type: 'test'
+  ...
+# Subtest: original whole enemy-bishop-offers-pawn-capture-mirror
+ok 75 - original whole enemy-bishop-offers-pawn-capture-mirror
+  ---
+  duration_ms: 22.9539
+  type: 'test'
+  ...
+# Subtest: original whole enemy-bishop-offers-pawn-capture-mirror-black
+ok 76 - original whole enemy-bishop-offers-pawn-capture-mirror-black
+  ---
+  duration_ms: 23.5381
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-capture
+ok 77 - original whole actual-pawn-capture
+  ---
+  duration_ms: 20.1518
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-capture-black
+ok 78 - original whole actual-pawn-capture-black
+  ---
+  duration_ms: 12.0774
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-capture-mirror
+ok 79 - original whole actual-pawn-capture-mirror
+  ---
+  duration_ms: 21.0369
+  type: 'test'
+  ...
+# Subtest: original whole actual-pawn-capture-mirror-black
+ok 80 - original whole actual-pawn-capture-mirror-black
+  ---
+  duration_ms: 13.1573
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-move
+ok 81 - original whole actual-king-move
+  ---
+  duration_ms: 9.8613
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-move-black
+ok 82 - original whole actual-king-move-black
+  ---
+  duration_ms: 10.2797
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-move-mirror
+ok 83 - original whole actual-king-move-mirror
+  ---
+  duration_ms: 16.4207
+  type: 'test'
+  ...
+# Subtest: original whole actual-king-move-mirror-black
+ok 84 - original whole actual-king-move-mirror-black
+  ---
+  duration_ms: 21.2401
+  type: 'test'
+  ...
+# Subtest: original whole illegal-pawn-step
+ok 85 - original whole illegal-pawn-step
+  ---
+  duration_ms: 0.6984
+  type: 'test'
+  ...
+# Subtest: original whole illegal-pawn-step-black
+ok 86 - original whole illegal-pawn-step-black
+  ---
+  duration_ms: 0.282
+  type: 'test'
+  ...
+# Subtest: original whole illegal-pawn-step-mirror
+ok 87 - original whole illegal-pawn-step-mirror
+  ---
+  duration_ms: 0.2529
+  type: 'test'
+  ...
+# Subtest: original whole illegal-pawn-step-mirror-black
+ok 88 - original whole illegal-pawn-step-mirror-black
+  ---
+  duration_ms: 0.2145
+  type: 'test'
+  ...
+# Subtest: original whole own-turn-counterfactual-illegal
+ok 89 - original whole own-turn-counterfactual-illegal
+  ---
+  duration_ms: 10.2328
+  type: 'test'
+  ...
+# Subtest: original whole own-turn-counterfactual-illegal-black
+ok 90 - original whole own-turn-counterfactual-illegal-black
+  ---
+  duration_ms: 10.5202
+  type: 'test'
+  ...
+# Subtest: original whole own-turn-counterfactual-illegal-mirror
+ok 91 - original whole own-turn-counterfactual-illegal-mirror
+  ---
+  duration_ms: 10.4568
+  type: 'test'
+  ...
+# Subtest: original whole own-turn-counterfactual-illegal-mirror-black
+ok 92 - original whole own-turn-counterfactual-illegal-mirror-black
+  ---
+  duration_ms: 9.0334
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate
+ok 93 - original whole actual-mate
+  ---
+  duration_ms: 24.2564
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-black
+ok 94 - original whole actual-mate-black
+  ---
+  duration_ms: 22.8135
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-mirror
+ok 95 - original whole actual-mate-mirror
+  ---
+  duration_ms: 22.8738
+  type: 'test'
+  ...
+# Subtest: original whole actual-mate-mirror-black
+ok 96 - original whole actual-mate-mirror-black
+  ---
+  duration_ms: 22.5577
+  type: 'test'
+  ...
+# Subtest: original whole enemy-terminal-reply
+ok 97 - original whole enemy-terminal-reply
+  ---
+  duration_ms: 41.528
+  type: 'test'
+  ...
+# Subtest: original whole enemy-terminal-reply-black
+ok 98 - original whole enemy-terminal-reply-black
+  ---
+  duration_ms: 39.4593
+  type: 'test'
+  ...
+# Subtest: original whole enemy-terminal-reply-mirror
+ok 99 - original whole enemy-terminal-reply-mirror
+  ---
+  duration_ms: 39.6572
+  type: 'test'
+  ...
+# Subtest: original whole enemy-terminal-reply-mirror-black
+ok 100 - original whole enemy-terminal-reply-mirror-black
+  ---
+  duration_ms: 42.9525
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled
+ok 101 - original whole profile-disabled
+  ---
+  duration_ms: 6.9532
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-black
+ok 102 - original whole profile-disabled-black
+  ---
+  duration_ms: 6.8792
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-mirror
+ok 103 - original whole profile-disabled-mirror
+  ---
+  duration_ms: 6.7307
+  type: 'test'
+  ...
+# Subtest: original whole profile-disabled-mirror-black
+ok 104 - original whole profile-disabled-mirror-black
+  ---
+  duration_ms: 6.6451
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget
+ok 105 - original whole zero-new-budget
+  ---
+  duration_ms: 7.9404
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-black
+ok 106 - original whole zero-new-budget-black
+  ---
+  duration_ms: 6.9734
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-mirror
+ok 107 - original whole zero-new-budget-mirror
+  ---
+  duration_ms: 7.192
+  type: 'test'
+  ...
+# Subtest: original whole zero-new-budget-mirror-black
+ok 108 - original whole zero-new-budget-mirror-black
+  ---
+  duration_ms: 7.4438
+  type: 'test'
+  ...
+# Subtest: original whole history-king-reply
+ok 109 - original whole history-king-reply
+  ---
+  duration_ms: 20.6199
+  type: 'test'
+  ...
+# Subtest: original whole history-king-reply-black
+ok 110 - original whole history-king-reply-black
+  ---
+  duration_ms: 19.692
+  type: 'test'
+  ...
+# Subtest: original whole history-king-reply-mirror
+ok 111 - original whole history-king-reply-mirror
+  ---
+  duration_ms: 20.4953
+  type: 'test'
+  ...
+# Subtest: original whole history-king-reply-mirror-black
+ok 112 - original whole history-king-reply-mirror-black
+  ---
+  duration_ms: 23.3606
+  type: 'test'
+  ...
+# Subtest: original whole history-enemy-double-step
+ok 113 - original whole history-enemy-double-step
+  ---
+  duration_ms: 21.8353
+  type: 'test'
+  ...
+# Subtest: original whole history-enemy-double-step-black
+ok 114 - original whole history-enemy-double-step-black
+  ---
+  duration_ms: 16.4439
+  type: 'test'
+  ...
+# Subtest: original whole history-enemy-double-step-mirror
+ok 115 - original whole history-enemy-double-step-mirror
+  ---
+  duration_ms: 17.0821
+  type: 'test'
+  ...
+# Subtest: original whole history-enemy-double-step-mirror-black
+ok 116 - original whole history-enemy-double-step-mirror-black
+  ---
+  duration_ms: 15.6397
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion
+ok 117 - original whole actual-promotion
+  ---
+  duration_ms: 25.3383
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-black
+ok 118 - original whole actual-promotion-black
+  ---
+  duration_ms: 25.6971
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-mirror
+ok 119 - original whole actual-promotion-mirror
+  ---
+  duration_ms: 21.2168
+  type: 'test'
+  ...
+# Subtest: original whole actual-promotion-mirror-black
+ok 120 - original whole actual-promotion-mirror-black
+  ---
+  duration_ms: 23.217
+  type: 'test'
+  ...
+# Subtest: original whole actual-en-passant
+ok 121 - original whole actual-en-passant
+  ---
+  duration_ms: 21.2211
+  type: 'test'
+  ...
+# Subtest: original whole actual-en-passant-black
+ok 122 - original whole actual-en-passant-black
+  ---
+  duration_ms: 21.855
+  type: 'test'
+  ...
+# Subtest: original whole actual-en-passant-mirror
+ok 123 - original whole actual-en-passant-mirror
+  ---
+  duration_ms: 22.6313
+  type: 'test'
+  ...
+# Subtest: original whole actual-en-passant-mirror-black
+ok 124 - original whole actual-en-passant-mirror-black
+  ---
+  duration_ms: 21.5214
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-k
+ok 125 - original whole enemy-castling-k
+  ---
+  duration_ms: 55.4413
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-k-black
+ok 126 - original whole enemy-castling-k-black
+  ---
+  duration_ms: 50.819
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-k-mirror
+ok 127 - original whole enemy-castling-k-mirror
+  ---
+  duration_ms: 42.7554
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-k-mirror-black
+ok 128 - original whole enemy-castling-k-mirror-black
+  ---
+  duration_ms: 44.0112
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-q
+ok 129 - original whole enemy-castling-q
+  ---
+  duration_ms: 60.0686
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-q-black
+ok 130 - original whole enemy-castling-q-black
+  ---
+  duration_ms: 56.2376
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-q-mirror
+ok 131 - original whole enemy-castling-q-mirror
+  ---
+  duration_ms: 46.4509
+  type: 'test'
+  ...
+# Subtest: original whole enemy-castling-q-mirror-black
+ok 132 - original whole enemy-castling-q-mirror-black
+  ---
+  duration_ms: 46.5291
+  type: 'test'
+  ...
+# Subtest: original whole pre-existing-other-piece-capture
+ok 133 - original whole pre-existing-other-piece-capture
+  ---
+  duration_ms: 52.604
+  type: 'test'
+  ...
+# Subtest: original whole pre-existing-other-piece-capture-black
+ok 134 - original whole pre-existing-other-piece-capture-black
+  ---
+  duration_ms: 46.5022
+  type: 'test'
+  ...
+# Subtest: original whole pre-existing-other-piece-capture-mirror
+ok 135 - original whole pre-existing-other-piece-capture-mirror
+  ---
+  duration_ms: 47.5325
+  type: 'test'
+  ...
+# Subtest: original whole pre-existing-other-piece-capture-mirror-black
+ok 136 - original whole pre-existing-other-piece-capture-mirror-black
+  ---
+  duration_ms: 50.5116
+  type: 'test'
+  ...
+# Subtest: original whole higher-priority-trapped-piece
+ok 137 - original whole higher-priority-trapped-piece
+  ---
+  duration_ms: 78.5079
+  type: 'test'
+  ...
+# Subtest: original whole higher-priority-trapped-piece-black
+ok 138 - original whole higher-priority-trapped-piece-black
+  ---
+  duration_ms: 73.9674
+  type: 'test'
+  ...
+# Subtest: original whole higher-priority-trapped-piece-mirror
+ok 139 - original whole higher-priority-trapped-piece-mirror
+  ---
+  duration_ms: 79.778
+  type: 'test'
+  ...
+# Subtest: original whole higher-priority-trapped-piece-mirror-black
+ok 140 - original whole higher-priority-trapped-piece-mirror-black
+  ---
+  duration_ms: 77.1918
+  type: 'test'
+  ...
+# Subtest: forgery before
+ok 141 - forgery before
+  ---
+  duration_ms: 11.6591
+  type: 'test'
+  ...
+# Subtest: forgery after
+ok 142 - forgery after
+  ---
+  duration_ms: 7.8989
+  type: 'test'
+  ...
+# Subtest: forgery history
+ok 143 - forgery history
+  ---
+  duration_ms: 7.608
+  type: 'test'
+  ...
+# Subtest: forgery actual
+ok 144 - forgery actual
+  ---
+  duration_ms: 6.9477
+  type: 'test'
+  ...
+# Subtest: forgery before pawn domain
+ok 145 - forgery before pawn domain
+  ---
+  duration_ms: 6.7417
+  type: 'test'
+  ...
+# Subtest: forgery before pawn record
+ok 146 - forgery before pawn record
+  ---
+  duration_ms: 6.7717
+  type: 'test'
+  ...
+# Subtest: forgery own pawn identities
+ok 147 - forgery own pawn identities
+  ---
+  duration_ms: 6.8728
+  type: 'test'
+  ...
+# Subtest: forgery enemy pawn identities
+ok 148 - forgery enemy pawn identities
+  ---
+  duration_ms: 7.0976
+  type: 'test'
+  ...
+# Subtest: forgery ram domain
+ok 149 - forgery ram domain
+  ---
+  duration_ms: 7.1685
+  type: 'test'
+  ...
+# Subtest: forgery ram own identity
+ok 150 - forgery ram own identity
+  ---
+  duration_ms: 7.0588
+  type: 'test'
+  ...
+# Subtest: forgery ram enemy identity
+ok 151 - forgery ram enemy identity
+  ---
+  duration_ms: 7.2482
+  type: 'test'
+  ...
+# Subtest: forgery ram file
+ok 152 - forgery ram file
+  ---
+  duration_ms: 6.6222
+  type: 'test'
+  ...
+# Subtest: forgery enemy domain
+ok 153 - forgery enemy domain
+  ---
+  duration_ms: 7.3611
+  type: 'test'
+  ...
+# Subtest: forgery enemy order
+ok 154 - forgery enemy order
+  ---
+  duration_ms: 6.7987
+  type: 'test'
+  ...
+# Subtest: forgery enemy record
+ok 155 - forgery enemy record
+  ---
+  duration_ms: 6.5758
+  type: 'test'
+  ...
+# Subtest: forgery own turn frame
+ok 156 - forgery own turn frame
+  ---
+  duration_ms: 6.9042
+  type: 'test'
+  ...
+# Subtest: forgery own turn pawn moves
+ok 157 - forgery own turn pawn moves
+  ---
+  duration_ms: 6.6703
+  type: 'test'
+  ...
+# Subtest: forgery reply domain
+ok 158 - forgery reply domain
+  ---
+  duration_ms: 6.9085
+  type: 'test'
+  ...
+# Subtest: forgery reply order
+ok 159 - forgery reply order
+  ---
+  duration_ms: 6.3156
+  type: 'test'
+  ...
+# Subtest: forgery reply record
+ok 160 - forgery reply record
+  ---
+  duration_ms: 6.8325
+  type: 'test'
+  ...
+# Subtest: forgery reply terminal
+ok 161 - forgery reply terminal
+  ---
+  duration_ms: 6.5779
+  type: 'test'
+  ...
+# Subtest: forgery reply own pawns
+ok 162 - forgery reply own pawns
+  ---
+  duration_ms: 6.58
+  type: 'test'
+  ...
+# Subtest: forgery reply enemy pawns
+ok 163 - forgery reply enemy pawns
+  ---
+  duration_ms: 6.6939
+  type: 'test'
+  ...
+# Subtest: forgery reply pawn moves
+ok 164 - forgery reply pawn moves
+  ---
+  duration_ms: 7.0038
+  type: 'test'
+  ...
+# Subtest: forgery reply frame
+ok 165 - forgery reply frame
+  ---
+  duration_ms: 6.8893
+  type: 'test'
+  ...
+# Subtest: forgery text
+ok 166 - forgery text
+  ---
+  duration_ms: 6.6343
+  type: 'test'
+  ...
+# Subtest: forgery quality
+ok 167 - forgery quality
+  ---
+  duration_ms: 6.7096
+  type: 'test'
+  ...
+# Subtest: forgery mandatory tag
+ok 168 - forgery mandatory tag
+  ---
+  duration_ms: 24.431
+  type: 'test'
+  ...
+# Subtest: forgery ledger
+ok 169 - forgery ledger
+  ---
+  duration_ms: 11.4035
+  type: 'test'
+  ...
+# Subtest: forgery status
+ok 170 - forgery status
+  ---
+  duration_ms: 7.5309
+  type: 'test'
+  ...
+# Subtest: forgery limit
+ok 171 - forgery limit
+  ---
+  duration_ms: 7.0643
+  type: 'test'
+  ...
+# Subtest: forgery schema
+ok 172 - forgery schema
+  ---
+  duration_ms: 7.5191
+  type: 'test'
+  ...
+# Subtest: forgery comment
+ok 173 - forgery comment
+  ---
+  duration_ms: 6.4771
+  type: 'test'
+  ...
+# Subtest: forgery inherited SAN
+ok 174 - forgery inherited SAN
+  ---
+  duration_ms: 6.3605
+  type: 'test'
+  ...
+# Subtest: forgery extra field
+ok 175 - forgery extra field
+  ---
+  duration_ms: 6.5045
+  type: 'test'
+  ...
+# Subtest: forgery unsolicited negative tag
+ok 176 - forgery unsolicited negative tag
+  ---
+  duration_ms: 7.4163
+  type: 'test'
+  ...
+# Subtest: forgery incomplete exhausted tag
+ok 177 - forgery incomplete exhausted tag
+  ---
+  duration_ms: 5.9964
+  type: 'test'
+  ...
+# Subtest: forgery own turn EP
+ok 178 - forgery own turn EP
+  ---
+  duration_ms: 6.4947
+  type: 'test'
+  ...
+# Subtest: forgery history record
+ok 179 - forgery history record
+  ---
+  duration_ms: 9.6614
+  type: 'test'
+  ...
+# Subtest: forgery before pawn order
+ok 180 - forgery before pawn order
+  ---
+  duration_ms: 6.6484
+  type: 'test'
+  ...
+# Subtest: sampled domain budget four-file-wall
+ok 181 - sampled domain budget four-file-wall
+  ---
+  duration_ms: 352.0034
+  type: 'test'
+  ...
+# Subtest: sampled domain budget eight-file-wall
+ok 182 - sampled domain budget eight-file-wall
+  ---
+  duration_ms: 405.3579
+  type: 'test'
+  ...
+# Subtest: sampled domain budget enemy-castling-k
+ok 183 - sampled domain budget enemy-castling-k
+  ---
+  duration_ms: 3276.9153
+  type: 'test'
+  ...
+# Subtest: sampled domain budget double-step-allows-ep
+ok 184 - sampled domain budget double-step-allows-ep
+  ---
+  duration_ms: 171.0455
+  type: 'test'
+  ...
+# Subtest: sampled domain budget enemy-bishop-offers-pawn-capture
+ok 185 - sampled domain budget enemy-bishop-offers-pawn-capture
+  ---
+  duration_ms: 1340.6548
+  type: 'test'
+  ...
+# Subtest: sampled domain budget own-turn-counterfactual-illegal
+ok 186 - sampled domain budget own-turn-counterfactual-illegal
+  ---
+  duration_ms: 126.0232
+  type: 'test'
+  ...
+# Subtest: sampled domain budget history-enemy-double-step
+ok 187 - sampled domain budget history-enemy-double-step
+  ---
+  duration_ms: 458.1791
+  type: 'test'
+  ...
+# Subtest: strict null and disabled options
+ok 188 - strict null and disabled options
+  ---
+  duration_ms: 43.2355
+  type: 'test'
+  ...
+# Subtest: original counts and positive replay metadata
+ok 189 - original counts and positive replay metadata
+  ---
+  duration_ms: 0.9496
+  type: 'test'
+  ...
+# Subtest: four six eight lower double wall geometry and complete move sets
+ok 190 - four six eight lower double wall geometry and complete move sets
+  ---
+  duration_ms: 127.7077
+  type: 'test'
+  ...
+# Subtest: physical full-history positive castle checking and other-piece capture replies
+ok 191 - physical full-history positive castle checking and other-piece capture replies
+  ---
+  duration_ms: 58.1968
+  type: 'test'
+  ...
+# Subtest: physical wall captures offers EP and actual or reply mate refutations
+ok 192 - physical wall captures offers EP and actual or reply mate refutations
+  ---
+  duration_ms: 1.3692
+  type: 'test'
+  ...
+# Subtest: material central contiguous adjacent capture and wrong actual exclusions
+ok 193 - material central contiguous adjacent capture and wrong actual exclusions
+  ---
+  duration_ms: 0.4326
+  type: 'test'
+  ...
+# Subtest: full positive history EP capture and own-turn counterfactual fields
+ok 194 - full positive history EP capture and own-turn counterfactual fields
+  ---
+  duration_ms: 76.4366
+  type: 'test'
+  ...
+# Subtest: immutability inherited priority selected wall trap mate and pre-existing capture policy
+ok 195 - immutability inherited priority selected wall trap mate and pre-existing capture policy
+  ---
+  duration_ms: 68.8745
+  type: 'test'
+  ...
+1..195
+# tests 195
+# suites 0
+# pass 195
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9815.2512
