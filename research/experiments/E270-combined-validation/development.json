@@ -161,5 +161,30 @@
     "provisionalOriginCredit": 0,
     "acceptedCredit": 0,
     "next": "Source-review E080 complete pawn-shield checker/one-ply proof reuse conditional on E079; all remaining origins and broader gates stay open"
+  },
+  "acceptedE080ReplayReuse": {
+    "qualification": "evidence/semantic-e080-saved-repeat-tree/qualification.json",
+    "historicalAcceptedStudy": true,
+    "smokeTests": 166,
+    "savedReplayTests": 144,
+    "rows": 122,
+    "resultReplays": 84,
+    "errorComparisons": 38,
+    "certificates": 16,
+    "proofReplies": 444,
+    "proofLeaves": 444,
+    "newSourceInputs": 92,
+    "semanticClosureSources": 73,
+    "historicalOriginalInputs": 272,
+    "historicalSupplements": 0,
+    "retainedRawArtifacts": 20,
+    "inheritedFingerprints": 5190,
+    "initialSavedGateFailedBeforeAnyRows": true,
+    "exactHistoricalRepeatTreePreserved": true,
+    "parentSemanticReplayRequired": true,
+    "reusedE029TreeCheckerRequired": true,
+    "provisionalOriginCredit": 0,
+    "acceptedCredit": 0,
+    "next": "Source-review E079 complete central-king result/E039 support-proof reuse conditional on E078; all remaining origins and broader gates remain open"
   }
 }

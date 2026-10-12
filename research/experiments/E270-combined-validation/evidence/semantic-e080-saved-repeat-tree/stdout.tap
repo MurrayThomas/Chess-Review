@@ -1,0 +1,997 @@
+# E080-admission-audit {"schema":"E270-E080-saved-admission-v1","historicalSourceRevision":"fe78fcf871cc485fb6078fc78a2d3e3addcdda31","historicalInputsVerified":272,"historicalInputVectorSha256":"58339e17d7c4226f7f1f8cc14d9dee0f547142977e88d7f622cd1624c4cc012d","semanticSourceCount":73,"semanticClosureSha256":"334f60624c4e7ed001243194b225de2b05c6205886c08ab9243642e3a2557d56","canonical":[{"file":"research/experiments/E080-pawn-shield-defense/evidence/clean-run.json","bytes":53976,"sha256":"bae46b2e1a52a29a07901b9915cd31e34ddc3e3ff60da35506b35be6f6703b14"},{"file":"research/experiments/E080-pawn-shield-defense/evidence/concept-status.md","bytes":120106,"sha256":"65820789717e96aa37f31c05933e17db4cfb9b6ab510dbde9eabaab9ff6ed579"},{"file":"research/experiments/E080-pawn-shield-defense/evidence/demo.html","bytes":490532,"sha256":"11e1afef5c033ea2ec159dc06453c14481b323261ad303b47c8be99b3e5c28c9"},{"file":"research/experiments/E080-pawn-shield-defense/evidence/repeat-run.json","bytes":54035,"sha256":"56fb0a6eb15eccc2465821db72b036fa33ed933b9c2c699cbe6619eea554f4b3"},{"file":"research/experiments/E080-pawn-shield-defense/evidence/results.json","bytes":4134060,"sha256":"c08d7f7fe023d98f481d5b7f23eb0b0fa2130fda3deca78ac5598663a68530b3"},{"file":"research/experiments/E080-pawn-shield-defense/evidence/run.json","bytes":53945,"sha256":"157a0577fcb452f0286de619763de41d616440648fb6881442e555a1c9e884da"}],"currentMetadataDifferences":[{"file":"research/concepts/ACTIVE-QUEUE.md","historical":"a9b2728280be600efec56fa011476bc153dfd19bac00ff6aa550a0aa73f6d784","current":"695a265e10dc5d9ac585becdf47e7ebc4ba4428646345b98425d75af549db2b1","inSemanticClosure":false}],"inheritedFingerprints":{"count":5190,"orderedSha256":"3eba8821c7f455dc20401ddbba8f9299bd08c23d29ee475ef973b2dfcc9b02f0"},"teachingListSha256":"a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd","policyEpochSha256":"8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0","receiptSha256":"d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81","summary":{"rows":122,"results":84,"errors":38,"certificates":16,"states":{"proven":16,"no-new-fact":40,"disabled":2,"exhausted":4,"not-applicable":12,"not-live":10},"replies":444,"leaves":444}}
+# E080-row-audit {"index":0,"id":"queen-file-cover","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":1,"id":"queen-file-cover-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":2,"id":"rook-file-cover","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":3,"id":"rook-file-cover-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":4,"id":"queen-home-c","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":5,"id":"queen-home-c-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":6,"id":"rook-home-c","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":7,"id":"rook-home-c-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":8,"id":"queen-home-e","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":9,"id":"queen-home-e-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":10,"id":"rook-home-e","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":11,"id":"rook-home-e-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":12,"id":"queen-file-cover-other-bishop-ray","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":13,"id":"queen-file-cover-other-bishop-ray-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":14,"id":"rook-file-cover-other-bishop-ray","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":15,"id":"rook-file-cover-other-bishop-ray-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":16,"id":"rook-original-negative","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":17,"id":"rook-original-negative-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":18,"id":"disabled","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":19,"id":"disabled-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":20,"id":"zero-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":21,"id":"zero-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":22,"id":"one-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":23,"id":"one-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":24,"id":"bad-flag-null","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":25,"id":"bad-flag-null-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":26,"id":"bad-flag-number","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":27,"id":"bad-flag-number-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":28,"id":"bad-flag-string","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":29,"id":"bad-flag-string-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":30,"id":"bad-limit-null","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":31,"id":"bad-limit-null-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":32,"id":"bad-limit-negative","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":33,"id":"bad-limit-negative-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":34,"id":"bad-limit-fraction","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":35,"id":"bad-limit-fraction-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":36,"id":"bad-limit-over","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":37,"id":"bad-limit-over-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":38,"id":"nonpawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":39,"id":"nonpawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":40,"id":"king-move","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":41,"id":"king-move-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":42,"id":"capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":43,"id":"capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":44,"id":"castling-original-checked-enemy","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":45,"id":"castling-original-checked-enemy-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":46,"id":"castling","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":47,"id":"castling-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":48,"id":"promotion","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":49,"id":"promotion-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":50,"id":"two-square-outside-cover","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":51,"id":"two-square-outside-cover-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":52,"id":"outside-home-file","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":53,"id":"outside-home-file-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":54,"id":"outside-home-rank","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":55,"id":"outside-home-rank-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":56,"id":"pinned-slider-no-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":57,"id":"pinned-slider-no-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":58,"id":"cover-pawn-original-unpinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":59,"id":"cover-pawn-original-unpinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":60,"id":"pinned-cover-pawn","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":61,"id":"pinned-cover-pawn-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":62,"id":"bishop-mate-does-not-use-moved-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":63,"id":"bishop-mate-does-not-use-moved-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":64,"id":"valid-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":65,"id":"valid-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":66,"id":"history-mismatch","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":67,"id":"history-mismatch-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":68,"id":"history-illegal","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":69,"id":"history-illegal-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":70,"id":"history-null","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":71,"id":"history-null-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":72,"id":"guard-foundation-rejected","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":73,"id":"guard-foundation-rejected-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":74,"id":"guard-foundation-exhausted","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":75,"id":"guard-foundation-exhausted-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":76,"id":"guard-foundation-terminal-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":77,"id":"guard-foundation-terminal-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":78,"id":"guard-dead-promotion","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":79,"id":"guard-dead-promotion-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":80,"id":"guard-valid-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":81,"id":"guard-valid-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":82,"id":"guard-repetition-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":83,"id":"guard-repetition-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":84,"id":"guard-clock-root","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":85,"id":"guard-clock-root-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":86,"id":"guard-foundation-clock-root","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":87,"id":"guard-foundation-clock-root-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":88,"id":"guard-malformed-fen","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":89,"id":"guard-malformed-fen-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":90,"id":"guard-malformed-uci","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":91,"id":"guard-malformed-uci-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":92,"id":"guard-ordinary-illegal","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":93,"id":"guard-ordinary-illegal-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":94,"id":"guard-default-dead-root","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":95,"id":"guard-default-dead-root-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":96,"id":"guard-actual-dead-capture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":97,"id":"guard-actual-dead-capture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":98,"id":"guard-root-mate","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":99,"id":"guard-root-mate-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":100,"id":"guard-root-stalemate","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":101,"id":"guard-root-stalemate-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"passed":true}
+# E080-row-audit {"index":102,"id":"guard-foundation-root-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":103,"id":"guard-foundation-root-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":104,"id":"guard-foundation-root-stalemate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":105,"id":"guard-foundation-root-stalemate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":106,"id":"guard-actual-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":107,"id":"guard-actual-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":108,"id":"guard-actual-stalemate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":109,"id":"guard-actual-stalemate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":110,"id":"checking-pawn-move","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":111,"id":"checking-pawn-move-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":112,"id":"extra-distant-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":113,"id":"extra-distant-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":114,"id":"prior-warning-selection","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":115,"id":"prior-warning-selection-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":116,"id":"rook-file-cover-file-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":117,"id":"rook-file-cover-file-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":118,"id":"rook-home-c-file-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":119,"id":"rook-home-c-file-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":120,"id":"rook-home-e-file-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+# E080-row-audit {"index":121,"id":"rook-home-e-file-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: queen-file-cover
+ok 1 - saved whole row 0: queen-file-cover
+  ---
+  duration_ms: 166.9887
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: queen-file-cover-black
+ok 2 - saved whole row 1: queen-file-cover-black
+  ---
+  duration_ms: 127.668
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: rook-file-cover
+ok 3 - saved whole row 2: rook-file-cover
+  ---
+  duration_ms: 37.8887
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: rook-file-cover-black
+ok 4 - saved whole row 3: rook-file-cover-black
+  ---
+  duration_ms: 34.222
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: queen-home-c
+ok 5 - saved whole row 4: queen-home-c
+  ---
+  duration_ms: 47.1193
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: queen-home-c-black
+ok 6 - saved whole row 5: queen-home-c-black
+  ---
+  duration_ms: 64.6174
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: rook-home-c
+ok 7 - saved whole row 6: rook-home-c
+  ---
+  duration_ms: 30.294
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: rook-home-c-black
+ok 8 - saved whole row 7: rook-home-c-black
+  ---
+  duration_ms: 39.807
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: queen-home-e
+ok 9 - saved whole row 8: queen-home-e
+  ---
+  duration_ms: 67.3784
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: queen-home-e-black
+ok 10 - saved whole row 9: queen-home-e-black
+  ---
+  duration_ms: 53.7394
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: rook-home-e
+ok 11 - saved whole row 10: rook-home-e
+  ---
+  duration_ms: 31.1015
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: rook-home-e-black
+ok 12 - saved whole row 11: rook-home-e-black
+  ---
+  duration_ms: 35.3404
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: queen-file-cover-other-bishop-ray
+ok 13 - saved whole row 12: queen-file-cover-other-bishop-ray
+  ---
+  duration_ms: 50.8665
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: queen-file-cover-other-bishop-ray-black
+ok 14 - saved whole row 13: queen-file-cover-other-bishop-ray-black
+  ---
+  duration_ms: 55.4333
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: rook-file-cover-other-bishop-ray
+ok 15 - saved whole row 14: rook-file-cover-other-bishop-ray
+  ---
+  duration_ms: 22.89
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: rook-file-cover-other-bishop-ray-black
+ok 16 - saved whole row 15: rook-file-cover-other-bishop-ray-black
+  ---
+  duration_ms: 24.9889
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: rook-original-negative
+ok 17 - saved whole row 16: rook-original-negative
+  ---
+  duration_ms: 796.8781
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: rook-original-negative-black
+ok 18 - saved whole row 17: rook-original-negative-black
+  ---
+  duration_ms: 46.288
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: disabled
+ok 19 - saved whole row 18: disabled
+  ---
+  duration_ms: 27.0286
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: disabled-black
+ok 20 - saved whole row 19: disabled-black
+  ---
+  duration_ms: 42.5406
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: zero-budget
+ok 21 - saved whole row 20: zero-budget
+  ---
+  duration_ms: 26.9256
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: zero-budget-black
+ok 22 - saved whole row 21: zero-budget-black
+  ---
+  duration_ms: 43.0961
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: one-budget
+ok 23 - saved whole row 22: one-budget
+  ---
+  duration_ms: 27.4537
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: one-budget-black
+ok 24 - saved whole row 23: one-budget-black
+  ---
+  duration_ms: 43.6406
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: bad-flag-null
+ok 25 - saved whole row 24: bad-flag-null
+  ---
+  duration_ms: 0.7538
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: bad-flag-null-black
+ok 26 - saved whole row 25: bad-flag-null-black
+  ---
+  duration_ms: 0.1141
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: bad-flag-number
+ok 27 - saved whole row 26: bad-flag-number
+  ---
+  duration_ms: 0.1934
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: bad-flag-number-black
+ok 28 - saved whole row 27: bad-flag-number-black
+  ---
+  duration_ms: 0.1433
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: bad-flag-string
+ok 29 - saved whole row 28: bad-flag-string
+  ---
+  duration_ms: 0.1257
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: bad-flag-string-black
+ok 30 - saved whole row 29: bad-flag-string-black
+  ---
+  duration_ms: 0.1192
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: bad-limit-null
+ok 31 - saved whole row 30: bad-limit-null
+  ---
+  duration_ms: 0.124
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: bad-limit-null-black
+ok 32 - saved whole row 31: bad-limit-null-black
+  ---
+  duration_ms: 0.1151
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: bad-limit-negative
+ok 33 - saved whole row 32: bad-limit-negative
+  ---
+  duration_ms: 0.1087
+  type: 'test'
+  ...
+# Subtest: saved whole row 33: bad-limit-negative-black
+ok 34 - saved whole row 33: bad-limit-negative-black
+  ---
+  duration_ms: 0.1379
+  type: 'test'
+  ...
+# Subtest: saved whole row 34: bad-limit-fraction
+ok 35 - saved whole row 34: bad-limit-fraction
+  ---
+  duration_ms: 0.1141
+  type: 'test'
+  ...
+# Subtest: saved whole row 35: bad-limit-fraction-black
+ok 36 - saved whole row 35: bad-limit-fraction-black
+  ---
+  duration_ms: 0.1354
+  type: 'test'
+  ...
+# Subtest: saved whole row 36: bad-limit-over
+ok 37 - saved whole row 36: bad-limit-over
+  ---
+  duration_ms: 0.1488
+  type: 'test'
+  ...
+# Subtest: saved whole row 37: bad-limit-over-black
+ok 38 - saved whole row 37: bad-limit-over-black
+  ---
+  duration_ms: 0.0999
+  type: 'test'
+  ...
+# Subtest: saved whole row 38: nonpawn
+ok 39 - saved whole row 38: nonpawn
+  ---
+  duration_ms: 23.4397
+  type: 'test'
+  ...
+# Subtest: saved whole row 39: nonpawn-black
+ok 40 - saved whole row 39: nonpawn-black
+  ---
+  duration_ms: 26.6924
+  type: 'test'
+  ...
+# Subtest: saved whole row 40: king-move
+ok 41 - saved whole row 40: king-move
+  ---
+  duration_ms: 199.8527
+  type: 'test'
+  ...
+# Subtest: saved whole row 41: king-move-black
+ok 42 - saved whole row 41: king-move-black
+  ---
+  duration_ms: 39.9794
+  type: 'test'
+  ...
+# Subtest: saved whole row 42: capture
+ok 43 - saved whole row 42: capture
+  ---
+  duration_ms: 201.4535
+  type: 'test'
+  ...
+# Subtest: saved whole row 43: capture-black
+ok 44 - saved whole row 43: capture-black
+  ---
+  duration_ms: 54.7834
+  type: 'test'
+  ...
+# Subtest: saved whole row 44: castling-original-checked-enemy
+ok 45 - saved whole row 44: castling-original-checked-enemy
+  ---
+  duration_ms: 0.3954
+  type: 'test'
+  ...
+# Subtest: saved whole row 45: castling-original-checked-enemy-black
+ok 46 - saved whole row 45: castling-original-checked-enemy-black
+  ---
+  duration_ms: 0.2275
+  type: 'test'
+  ...
+# Subtest: saved whole row 46: castling
+ok 47 - saved whole row 46: castling
+  ---
+  duration_ms: 110.5327
+  type: 'test'
+  ...
+# Subtest: saved whole row 47: castling-black
+ok 48 - saved whole row 47: castling-black
+  ---
+  duration_ms: 34.1442
+  type: 'test'
+  ...
+# Subtest: saved whole row 48: promotion
+ok 49 - saved whole row 48: promotion
+  ---
+  duration_ms: 16.115
+  type: 'test'
+  ...
+# Subtest: saved whole row 49: promotion-black
+ok 50 - saved whole row 49: promotion-black
+  ---
+  duration_ms: 16.0767
+  type: 'test'
+  ...
+# Subtest: saved whole row 50: two-square-outside-cover
+ok 51 - saved whole row 50: two-square-outside-cover
+  ---
+  duration_ms: 30.5626
+  type: 'test'
+  ...
+# Subtest: saved whole row 51: two-square-outside-cover-black
+ok 52 - saved whole row 51: two-square-outside-cover-black
+  ---
+  duration_ms: 29.4625
+  type: 'test'
+  ...
+# Subtest: saved whole row 52: outside-home-file
+ok 53 - saved whole row 52: outside-home-file
+  ---
+  duration_ms: 41.9515
+  type: 'test'
+  ...
+# Subtest: saved whole row 53: outside-home-file-black
+ok 54 - saved whole row 53: outside-home-file-black
+  ---
+  duration_ms: 45.9106
+  type: 'test'
+  ...
+# Subtest: saved whole row 54: outside-home-rank
+ok 55 - saved whole row 54: outside-home-rank
+  ---
+  duration_ms: 33.258
+  type: 'test'
+  ...
+# Subtest: saved whole row 55: outside-home-rank-black
+ok 56 - saved whole row 55: outside-home-rank-black
+  ---
+  duration_ms: 48.528
+  type: 'test'
+  ...
+# Subtest: saved whole row 56: pinned-slider-no-mate
+ok 57 - saved whole row 56: pinned-slider-no-mate
+  ---
+  duration_ms: 27.9352
+  type: 'test'
+  ...
+# Subtest: saved whole row 57: pinned-slider-no-mate-black
+ok 58 - saved whole row 57: pinned-slider-no-mate-black
+  ---
+  duration_ms: 19.9081
+  type: 'test'
+  ...
+# Subtest: saved whole row 58: cover-pawn-original-unpinned
+ok 59 - saved whole row 58: cover-pawn-original-unpinned
+  ---
+  duration_ms: 19.0231
+  type: 'test'
+  ...
+# Subtest: saved whole row 59: cover-pawn-original-unpinned-black
+ok 60 - saved whole row 59: cover-pawn-original-unpinned-black
+  ---
+  duration_ms: 21.1015
+  type: 'test'
+  ...
+# Subtest: saved whole row 60: pinned-cover-pawn
+ok 61 - saved whole row 60: pinned-cover-pawn
+  ---
+  duration_ms: 0.6662
+  type: 'test'
+  ...
+# Subtest: saved whole row 61: pinned-cover-pawn-black
+ok 62 - saved whole row 61: pinned-cover-pawn-black
+  ---
+  duration_ms: 0.4019
+  type: 'test'
+  ...
+# Subtest: saved whole row 62: bishop-mate-does-not-use-moved-pawn
+ok 63 - saved whole row 62: bishop-mate-does-not-use-moved-pawn
+  ---
+  duration_ms: 23.0167
+  type: 'test'
+  ...
+# Subtest: saved whole row 63: bishop-mate-does-not-use-moved-pawn-black
+ok 64 - saved whole row 63: bishop-mate-does-not-use-moved-pawn-black
+  ---
+  duration_ms: 31.3501
+  type: 'test'
+  ...
+# Subtest: saved whole row 64: valid-history
+ok 65 - saved whole row 64: valid-history
+  ---
+  duration_ms: 132.9229
+  type: 'test'
+  ...
+# Subtest: saved whole row 65: valid-history-black
+ok 66 - saved whole row 65: valid-history-black
+  ---
+  duration_ms: 170.7575
+  type: 'test'
+  ...
+# Subtest: saved whole row 66: history-mismatch
+ok 67 - saved whole row 66: history-mismatch
+  ---
+  duration_ms: 0.6153
+  type: 'test'
+  ...
+# Subtest: saved whole row 67: history-mismatch-black
+ok 68 - saved whole row 67: history-mismatch-black
+  ---
+  duration_ms: 0.3612
+  type: 'test'
+  ...
+# Subtest: saved whole row 68: history-illegal
+ok 69 - saved whole row 68: history-illegal
+  ---
+  duration_ms: 0.3092
+  type: 'test'
+  ...
+# Subtest: saved whole row 69: history-illegal-black
+ok 70 - saved whole row 69: history-illegal-black
+  ---
+  duration_ms: 0.3199
+  type: 'test'
+  ...
+# Subtest: saved whole row 70: history-null
+ok 71 - saved whole row 70: history-null
+  ---
+  duration_ms: 0.1505
+  type: 'test'
+  ...
+# Subtest: saved whole row 71: history-null-black
+ok 72 - saved whole row 71: history-null-black
+  ---
+  duration_ms: 0.1586
+  type: 'test'
+  ...
+# Subtest: saved whole row 72: guard-foundation-rejected
+ok 73 - saved whole row 72: guard-foundation-rejected
+  ---
+  duration_ms: 1.6695
+  type: 'test'
+  ...
+# Subtest: saved whole row 73: guard-foundation-rejected-black
+ok 74 - saved whole row 73: guard-foundation-rejected-black
+  ---
+  duration_ms: 0.9132
+  type: 'test'
+  ...
+# Subtest: saved whole row 74: guard-foundation-exhausted
+ok 75 - saved whole row 74: guard-foundation-exhausted
+  ---
+  duration_ms: 8.1892
+  type: 'test'
+  ...
+# Subtest: saved whole row 75: guard-foundation-exhausted-black
+ok 76 - saved whole row 75: guard-foundation-exhausted-black
+  ---
+  duration_ms: 8.1846
+  type: 'test'
+  ...
+# Subtest: saved whole row 76: guard-foundation-terminal-root
+ok 77 - saved whole row 76: guard-foundation-terminal-root
+  ---
+  duration_ms: 0.296
+  type: 'test'
+  ...
+# Subtest: saved whole row 77: guard-foundation-terminal-root-black
+ok 78 - saved whole row 77: guard-foundation-terminal-root-black
+  ---
+  duration_ms: 0.2019
+  type: 'test'
+  ...
+# Subtest: saved whole row 78: guard-dead-promotion
+ok 79 - saved whole row 78: guard-dead-promotion
+  ---
+  duration_ms: 6.2589
+  type: 'test'
+  ...
+# Subtest: saved whole row 79: guard-dead-promotion-black
+ok 80 - saved whole row 79: guard-dead-promotion-black
+  ---
+  duration_ms: 6.7147
+  type: 'test'
+  ...
+# Subtest: saved whole row 80: guard-valid-history
+ok 81 - saved whole row 80: guard-valid-history
+  ---
+  duration_ms: 18.5933
+  type: 'test'
+  ...
+# Subtest: saved whole row 81: guard-valid-history-black
+ok 82 - saved whole row 81: guard-valid-history-black
+  ---
+  duration_ms: 21.4815
+  type: 'test'
+  ...
+# Subtest: saved whole row 82: guard-repetition-root
+ok 83 - saved whole row 82: guard-repetition-root
+  ---
+  duration_ms: 55.6706
+  type: 'test'
+  ...
+# Subtest: saved whole row 83: guard-repetition-root-black
+ok 84 - saved whole row 83: guard-repetition-root-black
+  ---
+  duration_ms: 39.1001
+  type: 'test'
+  ...
+# Subtest: saved whole row 84: guard-clock-root
+ok 85 - saved whole row 84: guard-clock-root
+  ---
+  duration_ms: 0.5941
+  type: 'test'
+  ...
+# Subtest: saved whole row 85: guard-clock-root-black
+ok 86 - saved whole row 85: guard-clock-root-black
+  ---
+  duration_ms: 0.4352
+  type: 'test'
+  ...
+# Subtest: saved whole row 86: guard-foundation-clock-root
+ok 87 - saved whole row 86: guard-foundation-clock-root
+  ---
+  duration_ms: 0.247
+  type: 'test'
+  ...
+# Subtest: saved whole row 87: guard-foundation-clock-root-black
+ok 88 - saved whole row 87: guard-foundation-clock-root-black
+  ---
+  duration_ms: 0.197
+  type: 'test'
+  ...
+# Subtest: saved whole row 88: guard-malformed-fen
+ok 89 - saved whole row 88: guard-malformed-fen
+  ---
+  duration_ms: 0.2745
+  type: 'test'
+  ...
+# Subtest: saved whole row 89: guard-malformed-fen-black
+ok 90 - saved whole row 89: guard-malformed-fen-black
+  ---
+  duration_ms: 0.1519
+  type: 'test'
+  ...
+# Subtest: saved whole row 90: guard-malformed-uci
+ok 91 - saved whole row 90: guard-malformed-uci
+  ---
+  duration_ms: 0.1946
+  type: 'test'
+  ...
+# Subtest: saved whole row 91: guard-malformed-uci-black
+ok 92 - saved whole row 91: guard-malformed-uci-black
+  ---
+  duration_ms: 0.1942
+  type: 'test'
+  ...
+# Subtest: saved whole row 92: guard-ordinary-illegal
+ok 93 - saved whole row 92: guard-ordinary-illegal
+  ---
+  duration_ms: 0.6198
+  type: 'test'
+  ...
+# Subtest: saved whole row 93: guard-ordinary-illegal-black
+ok 94 - saved whole row 93: guard-ordinary-illegal-black
+  ---
+  duration_ms: 0.4456
+  type: 'test'
+  ...
+# Subtest: saved whole row 94: guard-default-dead-root
+ok 95 - saved whole row 94: guard-default-dead-root
+  ---
+  duration_ms: 0.3202
+  type: 'test'
+  ...
+# Subtest: saved whole row 95: guard-default-dead-root-black
+ok 96 - saved whole row 95: guard-default-dead-root-black
+  ---
+  duration_ms: 0.2865
+  type: 'test'
+  ...
+# Subtest: saved whole row 96: guard-actual-dead-capture
+ok 97 - saved whole row 96: guard-actual-dead-capture
+  ---
+  duration_ms: 8.8628
+  type: 'test'
+  ...
+# Subtest: saved whole row 97: guard-actual-dead-capture-black
+ok 98 - saved whole row 97: guard-actual-dead-capture-black
+  ---
+  duration_ms: 8.0152
+  type: 'test'
+  ...
+# Subtest: saved whole row 98: guard-root-mate
+ok 99 - saved whole row 98: guard-root-mate
+  ---
+  duration_ms: 0.2956
+  type: 'test'
+  ...
+# Subtest: saved whole row 99: guard-root-mate-black
+ok 100 - saved whole row 99: guard-root-mate-black
+  ---
+  duration_ms: 0.1582
+  type: 'test'
+  ...
+# Subtest: saved whole row 100: guard-root-stalemate
+ok 101 - saved whole row 100: guard-root-stalemate
+  ---
+  duration_ms: 0.161
+  type: 'test'
+  ...
+# Subtest: saved whole row 101: guard-root-stalemate-black
+ok 102 - saved whole row 101: guard-root-stalemate-black
+  ---
+  duration_ms: 0.1641
+  type: 'test'
+  ...
+# Subtest: saved whole row 102: guard-foundation-root-mate
+ok 103 - saved whole row 102: guard-foundation-root-mate
+  ---
+  duration_ms: 0.1859
+  type: 'test'
+  ...
+# Subtest: saved whole row 103: guard-foundation-root-mate-black
+ok 104 - saved whole row 103: guard-foundation-root-mate-black
+  ---
+  duration_ms: 0.207
+  type: 'test'
+  ...
+# Subtest: saved whole row 104: guard-foundation-root-stalemate
+ok 105 - saved whole row 104: guard-foundation-root-stalemate
+  ---
+  duration_ms: 0.1914
+  type: 'test'
+  ...
+# Subtest: saved whole row 105: guard-foundation-root-stalemate-black
+ok 106 - saved whole row 105: guard-foundation-root-stalemate-black
+  ---
+  duration_ms: 0.1771
+  type: 'test'
+  ...
+# Subtest: saved whole row 106: guard-actual-mate
+ok 107 - saved whole row 106: guard-actual-mate
+  ---
+  duration_ms: 21.7116
+  type: 'test'
+  ...
+# Subtest: saved whole row 107: guard-actual-mate-black
+ok 108 - saved whole row 107: guard-actual-mate-black
+  ---
+  duration_ms: 21.7678
+  type: 'test'
+  ...
+# Subtest: saved whole row 108: guard-actual-stalemate
+ok 109 - saved whole row 108: guard-actual-stalemate
+  ---
+  duration_ms: 23.6539
+  type: 'test'
+  ...
+# Subtest: saved whole row 109: guard-actual-stalemate-black
+ok 110 - saved whole row 109: guard-actual-stalemate-black
+  ---
+  duration_ms: 26.7485
+  type: 'test'
+  ...
+# Subtest: saved whole row 110: checking-pawn-move
+ok 111 - saved whole row 110: checking-pawn-move
+  ---
+  duration_ms: 59.7699
+  type: 'test'
+  ...
+# Subtest: saved whole row 111: checking-pawn-move-black
+ok 112 - saved whole row 111: checking-pawn-move-black
+  ---
+  duration_ms: 54.0979
+  type: 'test'
+  ...
+# Subtest: saved whole row 112: extra-distant-pawn
+ok 113 - saved whole row 112: extra-distant-pawn
+  ---
+  duration_ms: 39.1366
+  type: 'test'
+  ...
+# Subtest: saved whole row 113: extra-distant-pawn-black
+ok 114 - saved whole row 113: extra-distant-pawn-black
+  ---
+  duration_ms: 43.978
+  type: 'test'
+  ...
+# Subtest: saved whole row 114: prior-warning-selection
+ok 115 - saved whole row 114: prior-warning-selection
+  ---
+  duration_ms: 125.426
+  type: 'test'
+  ...
+# Subtest: saved whole row 115: prior-warning-selection-black
+ok 116 - saved whole row 115: prior-warning-selection-black
+  ---
+  duration_ms: 116.3603
+  type: 'test'
+  ...
+# Subtest: saved whole row 116: rook-file-cover-file-mirror
+ok 117 - saved whole row 116: rook-file-cover-file-mirror
+  ---
+  duration_ms: 16.9466
+  type: 'test'
+  ...
+# Subtest: saved whole row 117: rook-file-cover-file-mirror-black
+ok 118 - saved whole row 117: rook-file-cover-file-mirror-black
+  ---
+  duration_ms: 21.2575
+  type: 'test'
+  ...
+# Subtest: saved whole row 118: rook-home-c-file-mirror
+ok 119 - saved whole row 118: rook-home-c-file-mirror
+  ---
+  duration_ms: 16.4079
+  type: 'test'
+  ...
+# Subtest: saved whole row 119: rook-home-c-file-mirror-black
+ok 120 - saved whole row 119: rook-home-c-file-mirror-black
+  ---
+  duration_ms: 19.8572
+  type: 'test'
+  ...
+# Subtest: saved whole row 120: rook-home-e-file-mirror
+ok 121 - saved whole row 120: rook-home-e-file-mirror
+  ---
+  duration_ms: 16.6895
+  type: 'test'
+  ...
+# Subtest: saved whole row 121: rook-home-e-file-mirror-black
+ok 122 - saved whole row 121: rook-home-e-file-mirror-black
+  ---
+  duration_ms: 23.363
+  type: 'test'
+  ...
+# Subtest: saved shape rejects schema
+ok 123 - saved shape rejects schema
+  ---
+  duration_ms: 59.3004
+  type: 'test'
+  ...
+# Subtest: saved shape rejects source
+ok 124 - saved shape rejects source
+  ---
+  duration_ms: 58.5261
+  type: 'test'
+  ...
+# Subtest: saved shape rejects missing row
+ok 125 - saved shape rejects missing row
+  ---
+  duration_ms: 54.3365
+  type: 'test'
+  ...
+# Subtest: saved shape rejects duplicate row
+ok 126 - saved shape rejects duplicate row
+  ---
+  duration_ms: 49.3364
+  type: 'test'
+  ...
+# Subtest: saved shape rejects row order
+ok 127 - saved shape rejects row order
+  ---
+  duration_ms: 68.9034
+  type: 'test'
+  ...
+# Subtest: saved shape rejects fixture
+ok 128 - saved shape rejects fixture
+  ---
+  duration_ms: 58.3852
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result missing
+ok 129 - saved shape rejects result missing
+  ---
+  duration_ms: 61.5798
+  type: 'test'
+  ...
+# Subtest: saved shape rejects error inserted
+ok 130 - saved shape rejects error inserted
+  ---
+  duration_ms: 58.5659
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline missing
+ok 131 - saved shape rejects baseline missing
+  ---
+  duration_ms: 53.6269
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline fingerprint
+ok 132 - saved shape rejects baseline fingerprint
+  ---
+  duration_ms: 105.7611
+  type: 'test'
+  ...
+# Subtest: saved shape rejects original result count
+ok 133 - saved shape rejects original result count
+  ---
+  duration_ms: 57.5098
+  type: 'test'
+  ...
+# Subtest: saved shape rejects replay order
+ok 134 - saved shape rejects replay order
+  ---
+  duration_ms: 62.9619
+  type: 'test'
+  ...
+# Subtest: saved shape rejects reply count
+ok 135 - saved shape rejects reply count
+  ---
+  duration_ms: 63.456
+  type: 'test'
+  ...
+# Subtest: saved shape rejects leaf count
+ok 136 - saved shape rejects leaf count
+  ---
+  duration_ms: 66.5894
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 137 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.4892
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 138 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.2941
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 139 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.6855
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 140 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.25
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects bytes
+ok 141 - raw artifact rejects bytes
+  ---
+  duration_ms: 62.9867
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects content
+ok 142 - raw artifact rejects content
+  ---
+  duration_ms: 25.5318
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects append
+ok 143 - raw artifact rejects append
+  ---
+  duration_ms: 14.7314
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects namespace
+ok 144 - raw artifact rejects namespace
+  ---
+  duration_ms: 17.8836
+  type: 'test'
+  ...
+1..144
+# tests 144
+# suites 0
+# pass 144
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5208.308

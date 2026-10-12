@@ -4,6 +4,59 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
+## Latest semantic boundary — accepted E080 pawn-shield replay reused
+
+2026-10-12. E080's unchanged whole-result checker is authenticated for reuse
+conditional on E079 parent/priority and E029 independent tree replay. Separate
+64-square inventories, cover/ray reconstruction and one-ply truth tables verify
+the actual history/transition and causal obstruction of a prior mate capture.
+Negative after-proofs require EVERY legal opponent reply. No E080 detector or
+E029 solver is imported by the checker. Shared Chess remains a dependency.
+Historical accepted E080 adds no provisional origin or new acceptance credit.
+
+Initial166/166 controls pass34.090seconds at a65e52f. Initial saved admission at
+6d140b6 fails10.173seconds before ANY row evaluation: the new gate wrongly assumed
+all historical manifest trees empty. Fixed original manifests show main/initially
+clean empty; repeat has only the exact untracked E080 evidence output directory.
+Failure is retained unchanged. Dated repeat-tree amendment49575b8 registers exact
+ordered tree admission before implementation b37dc9c; no source/semantic/budget
+relaxation. Corrected166/166 smoke passes33.804seconds at b37dc9c. Covers ALL122
+original cases,37 complete-frame/proof/causal/event forgeries,3 exhaustive integer
+budget controls, strict inputs, actual history/repetition and independent E029
+rejection of a missing negative reply. Q/R and c/e/g king coverage preserved;
+no invented bishop-positive or enduring-safety claim.
+
+Saved retry at fb52686 passes144/144checks44.952seconds: ALL122 original rows,
+84saved whole-result attempts with84fresh E079 parent comparisons,38fresh exact
+error evaluations/comparisons,14shape/inheritance/metrics,4receipt and4raw-artifact
+rejections. Retains16proven certificates,40negative/2disabled/4exhausted/
+12not-applicable/10not-live and444proof replies/leaves. No saved positive
+recollection. All5190ordered inherited fingerprints and teaching-list identity
+match authenticated E079 evidence; integrity does not prove ancestor semantics.
+
+Six fixed original artifacts, frozenfe78fcf8 source,272original Git inputs,
+main/repeat/initially-clean source/config/environment/metrics/receipts/output
+hashes authenticate. All73semantic closure paths are inside the original vector
+and current/full frozen source, with NO supplements. Sole exact ACTIVE-QUEUE
+metadata difference remains outside that closure. Exact policy-addendum proof
+preserves historical/current receipt identities. Completed admission is recorded
+in the raw stream BEFORE any row tests; qualification independently checks its
+vector/closure/canonical/policy/inheritance digests and bound emitting source.
+
+[evidence/semantic-e080-saved-repeat-tree/qualification.json](evidence/semantic-e080-saved-repeat-tree/qualification.json)
+binds92new source inputs,73semantic dependencies,272historical inputs and all20
+raw artifacts across both smoke attempts and failed/passed saved attempts, with
+byte-exact staged Git retention. Prior E081–E085 qualified source closures and
+2658full frozen sources/1624canonical archives remain unchanged. Passing stages
+have no source/canonical mutations, generated output, errors/signals/timeouts.
+Source/diff checks pass; unchanged full regression/old collections not repeated.
+
+Accepted378/1085,539additional provisional scopes,162ready/0stale,127support/
+41strategic prerequisites unchanged. Next: source-review/preregister E079
+central-king complete result and E039 support-proof reuse conditional on E078.
+All remaining origins, full strategic/human meanings, combined API integration
+and exact changed-source reproductions remain open. Goal active and unfinished.
+
 ## Latest semantic boundary — accepted E081 direct-attack replay reused
 
 2026-10-12. E081's unchanged independent whole-result checker is now separately
