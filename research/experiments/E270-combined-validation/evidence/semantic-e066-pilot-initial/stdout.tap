@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot one-push-first white
+ok 1 - pilot one-push-first white
+  ---
+  duration_ms: 117.106
+  type: 'test'
+  ...
+# Subtest: pilot one-push-first black
+ok 2 - pilot one-push-first black
+  ---
+  duration_ms: 60.9747
+  type: 'test'
+  ...
+# Subtest: pilot two-push-first white
+ok 3 - pilot two-push-first white
+  ---
+  duration_ms: 208.6131
+  type: 'test'
+  ...
+# Subtest: pilot two-push-first black
+ok 4 - pilot two-push-first black
+  ---
+  duration_ms: 231.3975
+  type: 'test'
+  ...
+# Subtest: old positive checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+ok 5 - old positive checker accepts whole ledger forgery; whole oracle requires ledger and mandatory tag
+  ---
+  duration_ms: 92.9531
+  type: 'test'
+  ...
+# Subtest: rival first promotions retain full negative tree and mandatory refusal
+ok 6 - rival first promotions retain full negative tree and mandatory refusal
+  ---
+  duration_ms: 127.4919
+  type: 'test'
+  ...
+# Subtest: sampled root defense and continuation budget prefixes clear incomplete result atomically
+ok 7 - sampled root defense and continuation budget prefixes clear incomplete result atomically
+  ---
+  duration_ms: 749.1701
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1604.5479
