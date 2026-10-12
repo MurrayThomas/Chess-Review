@@ -1,0 +1,316 @@
+TAP version 13
+# Subtest: authored whole result: file-check
+ok 1 - authored whole result: file-check
+  ---
+  duration_ms: 132.4202
+  type: 'test'
+  ...
+# Subtest: authored whole result: file-check-black
+ok 2 - authored whole result: file-check-black
+  ---
+  duration_ms: 58.4887
+  type: 'test'
+  ...
+# Subtest: authored whole result: queen-check
+ok 3 - authored whole result: queen-check
+  ---
+  duration_ms: 81.077
+  type: 'test'
+  ...
+# Subtest: authored whole result: queen-check-black
+ok 4 - authored whole result: queen-check-black
+  ---
+  duration_ms: 76.7
+  type: 'test'
+  ...
+# Subtest: authored whole result: rook-queen
+ok 5 - authored whole result: rook-queen
+  ---
+  duration_ms: 168.6776
+  type: 'test'
+  ...
+# Subtest: authored whole result: rook-queen-black
+ok 6 - authored whole result: rook-queen-black
+  ---
+  duration_ms: 139.5813
+  type: 'test'
+  ...
+# Subtest: authored whole result: diagonal-contact
+ok 7 - authored whole result: diagonal-contact
+  ---
+  duration_ms: 71.7451
+  type: 'test'
+  ...
+# Subtest: authored whole result: diagonal-contact-black
+ok 8 - authored whole result: diagonal-contact-black
+  ---
+  duration_ms: 54.8902
+  type: 'test'
+  ...
+# Subtest: authored whole result: remaining-blocker
+ok 9 - authored whole result: remaining-blocker
+  ---
+  duration_ms: 74.8369
+  type: 'test'
+  ...
+# Subtest: authored whole result: remaining-blocker-black
+ok 10 - authored whole result: remaining-blocker-black
+  ---
+  duration_ms: 69.3192
+  type: 'test'
+  ...
+# Subtest: authored whole result: existing-line
+ok 11 - authored whole result: existing-line
+  ---
+  duration_ms: 153.0964
+  type: 'test'
+  ...
+# Subtest: authored whole result: existing-line-black
+ok 12 - authored whole result: existing-line-black
+  ---
+  duration_ms: 129.5215
+  type: 'test'
+  ...
+# Subtest: authored whole result: slider-moves
+ok 13 - authored whole result: slider-moves
+  ---
+  duration_ms: 129.836
+  type: 'test'
+  ...
+# Subtest: authored whole result: slider-moves-black
+ok 14 - authored whole result: slider-moves-black
+  ---
+  duration_ms: 113.3724
+  type: 'test'
+  ...
+# Subtest: authored whole result: pinned-slider
+ok 15 - authored whole result: pinned-slider
+  ---
+  duration_ms: 212.943
+  type: 'test'
+  ...
+# Subtest: authored whole result: pinned-slider-black
+ok 16 - authored whole result: pinned-slider-black
+  ---
+  duration_ms: 178.6109
+  type: 'test'
+  ...
+# Subtest: authored whole result: ordinary
+ok 17 - authored whole result: ordinary
+  ---
+  duration_ms: 13.482
+  type: 'test'
+  ...
+# Subtest: authored whole result: ordinary-black
+ok 18 - authored whole result: ordinary-black
+  ---
+  duration_ms: 11.5336
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: all witness frames and claims omitted
+ok 19 - complete-domain rejection: all witness frames and claims omitted
+  ---
+  duration_ms: 85.8356
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: one entire witness omitted
+ok 20 - complete-domain rejection: one entire witness omitted
+  ---
+  duration_ms: 1181.3382
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: witness duplicated
+ok 21 - complete-domain rejection: witness duplicated
+  ---
+  duration_ms: 1163.8118
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: witnesses reordered
+ok 22 - complete-domain rejection: witnesses reordered
+  ---
+  duration_ms: 1164.0716
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: spurious negative witness
+ok 23 - complete-domain rejection: spurious negative witness
+  ---
+  duration_ms: 11.5259
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: ray shortened
+ok 24 - complete-domain rejection: ray shortened
+  ---
+  duration_ms: 78.0783
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: blocker forged
+ok 25 - complete-domain rejection: blocker forged
+  ---
+  duration_ms: 69.447
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: capture domain omitted
+ok 26 - complete-domain rejection: capture domain omitted
+  ---
+  duration_ms: 146.6554
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: check flag forged
+ok 27 - complete-domain rejection: check flag forged
+  ---
+  duration_ms: 65.4508
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: all evasions omitted
+ok 28 - complete-domain rejection: all evasions omitted
+  ---
+  duration_ms: 73.1068
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: evasion result forged
+ok 29 - complete-domain rejection: evasion result forged
+  ---
+  duration_ms: 66.6369
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: actor-turn frame forged
+ok 30 - complete-domain rejection: actor-turn frame forged
+  ---
+  duration_ms: 150.2394
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: before inventory omitted
+ok 31 - complete-domain rejection: before inventory omitted
+  ---
+  duration_ms: 70.3011
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: actor forged
+ok 32 - complete-domain rejection: actor forged
+  ---
+  duration_ms: 65.335
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: history invented
+ok 33 - complete-domain rejection: history invented
+  ---
+  duration_ms: 65.5447
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: target type forged
+ok 34 - complete-domain rejection: target type forged
+  ---
+  duration_ms: 66.2279
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: entire event omitted
+ok 35 - complete-domain rejection: entire event omitted
+  ---
+  duration_ms: 68.2419
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: event duplicated
+ok 36 - complete-domain rejection: event duplicated
+  ---
+  duration_ms: 67.331
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: events reordered
+ok 37 - complete-domain rejection: events reordered
+  ---
+  duration_ms: 68.6631
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: event evidence forged
+ok 38 - complete-domain rejection: event evidence forged
+  ---
+  duration_ms: 68.1524
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: quality assertion forged
+ok 39 - complete-domain rejection: quality assertion forged
+  ---
+  duration_ms: 66.3991
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: comment forged
+ok 40 - complete-domain rejection: comment forged
+  ---
+  duration_ms: 86.9552
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: status forged
+ok 41 - complete-domain rejection: status forged
+  ---
+  duration_ms: 68.1503
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: nodes forged
+ok 42 - complete-domain rejection: nodes forged
+  ---
+  duration_ms: 65.6719
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: limit forged
+ok 43 - complete-domain rejection: limit forged
+  ---
+  duration_ms: 67.2837
+  type: 'test'
+  ...
+# Subtest: complete-domain rejection: inherited fields forged
+ok 44 - complete-domain rejection: inherited fields forged
+  ---
+  duration_ms: 67.2722
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: file-check
+ok 45 - all integer budget boundaries: file-check
+  ---
+  duration_ms: 735.5422
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: rook-queen
+ok 46 - all integer budget boundaries: rook-queen
+  ---
+  duration_ms: 1325.6445
+  type: 'test'
+  ...
+# Subtest: all integer budget boundaries: diagonal-contact
+ok 47 - all integer budget boundaries: diagonal-contact
+  ---
+  duration_ms: 584.1509
+  type: 'test'
+  ...
+# Subtest: independent complete multi-slider target domain
+ok 48 - independent complete multi-slider target domain
+  ---
+  duration_ms: 1192.0915
+  type: 'test'
+  ...
+# Subtest: complete explicit history domain
+ok 49 - complete explicit history domain
+  ---
+  duration_ms: 1277.829
+  type: 'test'
+  ...
+# Subtest: default/disabled, malformed controls/history and terminal result
+ok 50 - default/disabled, malformed controls/history and terminal result
+  ---
+  duration_ms: 147.6809
+  type: 'test'
+  ...
+# Subtest: checking every supplied witness cannot prove whole-list completeness
+ok 51 - checking every supplied witness cannot prove whole-list completeness
+  ---
+  duration_ms: 62.5746
+  type: 'test'
+  ...
+1..51
+# tests 51
+# suites 0
+# pass 51
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 12438.0503
