@@ -4,7 +4,66 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E065 historical king-triangulation results qualified
+## Latest preparation boundary — E064 full independent pawn-wall smoke passed
+
+2026-10-12. Registered8aea76b/implemented3a97dc1:7/7pilot in9.234seconds,
+faster than10–90forecast/within180cap;69source inputs/43,549raw bytes,
+retained6f4ccca. Full smoke registeredc76b1f1/implementedd48476b:195/195PASS
+in18.912seconds, within15–120forecast/300cap;73source inputs/73,291raw bytes,
+retained8fbf69b. Evidence: evidence/semantic-e064-pilot-initial/ and
+evidence/semantic-e064-smoke-initial/. Ten raw Git blobs byte-exact. No failures/
+timeouts/source/canonical/generated changes. Processes terminal; no live handle.
+Maintained source/diff checks pass.21prior E065–E085qualified closures/1787source
+comparisons andfrozen2658sources/1624canonical unchanged. No accepted/provisional/
+support/origin credit or production change; full research goal active.
+
+Separate independent whole oracle imports no E064 candidate/helpers. File/rank
+maps derive ALL own/enemy pawn identities, unique matched rams across contiguous
+central files with no extra pawns. Full history andactual legal straight pawn
+advance, complete BEFORE domain then pawn subset, ALL enemy domain, legal live
+fresh own-turn counterfactual (only turn/EP changed), complete own pawn subset,
+EVERY reply/live status/full pawn lists/complete own pawn subset independently
+reconstructed. All refuting replies still enumerated. New oracle retains actual
+history during move/undo reply probes. Original candidate/checker use fresh after
+boards; the actual irreversible pawn advance resets clocks andmakes the earlier
+pawn placement inaccessible, so this scope does not depend on pre-push repetition.
+Counterfactual intentionally fresh; no general fresh-FEN history safety inference.
+
+Whole check requires exact before/after/history/actual/all domains/records/rams/
+counterframe/replies/text/quality/mandatory presence+absence/v45/status/work ledger/
+full inherited E063/order/priority101.025/comment/disabled identity. Positive
+certificates also unchanged original checker, which alone permits forged whole
+ledger andomitted mandatory tags. Charge initial/history ticks, ALL legal moves
+before pawn filtering in EACH enumeration, eligible geometry tick andeach reply;
+terminal child skips child enumeration, no actual tick. Complete negatives retain
+complete status; any exhaustion clears own tag/incomplete evidence. Strict/null
+options validate even disabled. Shared Chess/E020 legality/E063 output+priority
+remain explicit dependencies; finite pawn immobility is not permanent blockade,
+fortress/draw/advantage/nonpawn safety/usefulness.
+
+Pilot four/six-file walls bothcolors, ledger/mandatory presence gaps, illegal
+own-turn frame andexhaustive four-file integer budgets passed. Smoke covers ALL
+140originals (136whole results/132enabled oracles/four illegal refusals),40named
+frame/domain/material/record/absence/ledger forgeries,seven sampled enumeration/
+reply-end±1/0/1/full±1budget groups andeight strict/geometry/history/physical
+reply/refutation/inheritance/selection controls. Only pilot four-file fixture has
+an exhaustive integer sweep.128complete/4disabled/4exhausted,48certificates retain
+308replies/2608pawn-identity references/eight history plies/140before pawn moves/
+216rams. Physical positive replies include four castles/16checks/four captures of
+OTHER pieces, all live with no pawn moves. Wall captures, knight/bishop offers,
+legal EP, actual/reply mates, illegal own-turn, exact material/file exclusions,
+history/EP andstronger trapped-knight/mating warning priorities verified. No
+unsupported safety warning for a pre-existing other-piece capture.
+
+No E064 historical saved payload qualification yet; next preregister original
+source/three-reproduction/saved/ordered metadata/receipt/2800E063fingerprint/
+teaching gate, conditional on E063 semantic replay. E066 direct queen-capture
+continuation coverage, E067 removed-pawn direct king/dead controls/global historical-
+terminal API refusal and E073 eight/seven-edge discrepancy stay OPEN. All171origin
+combined API integration/exact changed-source three reproductions/broader original
+strategy/real-game precision/human usefulness remain OPEN.
+
+## Prior semantic boundary — E065 historical king-triangulation results qualified
 
 2026-10-12. Registrationf601a2d/implementationa2e9981:142/142saved PASS in29.574
 seconds, within25–120forecast/600cap. ALL120rows:116complete saved results with
