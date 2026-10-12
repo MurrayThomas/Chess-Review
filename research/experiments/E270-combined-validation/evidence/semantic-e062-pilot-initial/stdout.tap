@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: pilot one denied square white
+ok 1 - pilot one denied square white
+  ---
+  duration_ms: 84.9992
+  type: 'test'
+  ...
+# Subtest: pilot one denied square black
+ok 2 - pilot one denied square black
+  ---
+  duration_ms: 58.054
+  type: 'test'
+  ...
+# Subtest: standard castle denial both flanks colors physically restored only in causal frame
+ok 3 - standard castle denial both flanks colors physically restored only in causal frame
+  ---
+  duration_ms: 261.7261
+  type: 'test'
+  ...
+# Subtest: old per-event checker accepts whole ledger forgery; whole requires ledger and mandatory tag
+ok 4 - old per-event checker accepts whole ledger forgery; whole requires ledger and mandatory tag
+  ---
+  duration_ms: 85.1284
+  type: 'test'
+  ...
+# Subtest: direct illegal own-king exposure before-turn and dead causal frames abstain
+ok 5 - direct illegal own-king exposure before-turn and dead causal frames abstain
+  ---
+  duration_ms: 165.5174
+  type: 'test'
+  ...
+# Subtest: full-history EP capture physical off-destination removal clears both hypothetical EP fields
+ok 6 - full-history EP capture physical off-destination removal clears both hypothetical EP fields
+  ---
+  duration_ms: 87.5543
+  type: 'test'
+  ...
+# Subtest: exhaustive integer budgets span both hypothetical attempts ALLlegal scans replies atomicclear
+ok 7 - exhaustive integer budgets span both hypothetical attempts ALLlegal scans replies atomicclear
+  ---
+  duration_ms: 2358.4834
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3113.8144
