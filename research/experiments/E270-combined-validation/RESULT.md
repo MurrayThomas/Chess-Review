@@ -4,7 +4,80 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E072 complete Stonewall/Maroczy outcomes validated
+## Latest semantic boundary — E071 complete octopus trees and terminal guard validated
+
+2026-10-12. New independent whole oracle scans64squares for knight geometry and
+FEN inventory for literal P1 N3 B3 R5 Q9 K0 material; reconstructs full actual
+history and every defense/same-knight original-queen capture/immediate counterreply,
+all flags/gains/AND-OR outcomes, exact status/nodes/refutation/atomic exhaustion.
+Embedded outpost anchored to fresh E070; unchanged old positive/refutation
+checker replays the E070 independent prerequisite and full tree. Complete guard
+reconstructs every actual historical defense and exact eligible suppressed IDs
+from raw parent events, before own budget. Old guard accepts missing suppressed
+IDs; whole checker rejects. Fresh E070 inheritance, corrected guarded parent,
+v52schema/events/order/145.05 priority/selected comment/disabled identity verify.
+No-history guard null; zero octopus/outpost budget cannot restore terminal-invalid
+inherited fork/broad-fork/triple/discovered-double promises. Original terminal
+AMENDMENT supersedes exhaustion-preserves-uncorrected-parent wording; original
+initial failed evidence retained untouched. Shared Chess/E020 validator/E070
+proof/parent priority remain dependencies, not independent rules or general strength.
+
+Registration45d66ff/implementatione8ba40a: pilot7/7 in12.563seconds;
+166/166smoke at201fc7e in66.803seconds;132/132saved at4ce8529 in41.059seconds.
+Unchanged120/180/600second caps and forecasts hold. ALL108original cases,
+48forgeries covering eight-square/king/original queen/outpost/values/baseline/
+complete defense-capture-counter domains/gains/draw/mate/win/refutation/history/
+actual/guard reply flags/exact suppressed IDs/nodes/full schema/inherited SAN/
+comment/quality/omitted-proof laundering;4all-integer budgets positive/knight-
+capture refutation/terminal repetition/positive history;6strict-default/full-
+history-vs-FEN+zero independent budgets/state coverage/returned-value immutability/
+full branch coverage/normalized history controls. Both colors/reflections/d-e
+centers/capture entry/multiple queens/promotions/counterrecaptures/countermate/
+dead material/clock/repetition/missing support/current-future pawn challenge/
+parent disabled/offcenter cases retained. Full history terminal differs from
+fresh FEN; complete suppression independently checks even zero outpost budget.
+Budget validates even disabled; null flag→disabled/null budget→default explicit.
+
+Saved ALL108rows:104complete/fresh E070 comparisons,100enabled independent
+outcome/tree/guard reconstructions;40whole-checker positive proofs,20refutations,
+100old guard replays, PLUS40ordered positive/20refutation/100guard metadata
+comparisons. Guard records include92null-history and8history guards,4terminal.
+States40proven/36ineligible/20queen-gain-refuted/4disabled/4exhausted.
+Four original ABSTRACT 'Illegal move; explanation refused.' classifications
+plus fresh /^Illegal move/ failures, not exact historical runtime messages.
+16shape/inheritance/guard/refutation/count+4receipt+4raw rejection controls.
+No additional candidate/parent/own-count collection in qualification. Tactical
+finite immediate nominal queen gain does not prove general positional octopus
+strength, permanent safety, best play, longer-term win or real-game/human usefulness.
+
+Fixed6canonical originals authenticate including5250797-byte results SHA
+4349b6fe4f8b955cfa25eb514e95dc2ac1ba06f49b7b4a76c0d9590a273ff612.
+Frozen c687a1ca949b0acf511be284c3f82535c1efbcc7:218original Git inputs,
+62original checker/fixtures/E070 semantic paths within original/current/fullfreeze,
+NO supplements/current metadata differences. Main AND repeat EXACTLY
+`?? research/experiments/E071-octopus-knights/evidence/`; only initially-clean
+manifest empty. Do not call main/repeat initially clean. Source/config/environment/
+metrics/receipts/outputs match. Fixed-ownership policy epoch and3752ordered E070
+fingerprints/teaching identity verify; integrity is not independent ancestor
+semantics. Completed admission emitted before rows.
+
+[evidence/semantic-e071-saved-initial/qualification.json](evidence/semantic-e071-saved-initial/qualification.json)
+binds80new inputs/62semantic sources/218historical inputs,15raw process artifacts
+byte exact in staged Git, complete parent/oracle/positive/refutation/guard counts,
+exact suppression and original error limits. Prior E072–E085qualified closures
+and2658frozen sources/1624canonical inputs unchanged, including explicit E073
+original eight-edge discrepancy flag still open. No failed decisive stage,
+source/canonical mutation/generated outputs/errors/signals/timeouts. Source/diff
+checks pass; unchanged full regression/inherited collections not rerun. No active
+process remains. Accepted378/1085,539additional provisional scopes,162ready/
+0stale,127support/41strategic prerequisites unchanged; no new accepted/origin
+credit. Next E070 knight-outpost complete independent whole-result gate conditional
+on E069, including full pre-promotion pawn reachability DAG/refutations. All171
+origins, original documentary discrepancy/broad meanings, combined API integration,
+exact changed-source main/repeat/initially-clean reproductions and strategic/human
+usefulness remain open. Goal active and unfinished.
+
+## Previous semantic boundary — E072 complete Stonewall/Maroczy outcomes validated
 
 2026-10-12. Separate independent whole-result oracle closes event-only gap:
 scalar original d/c pawn survival and immediate opposite-nonpawn recapture,
