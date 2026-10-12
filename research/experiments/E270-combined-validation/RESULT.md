@@ -4,7 +4,73 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E075 complete board/legal-input/material result validated
+## Latest semantic boundary — E074 complete French/Scheveningen outcomes validated
+
+2026-10-12. New independent whole-result oracle closes original event-only gap:
+reconstructs scalar original c/d pawn survival/immediate exchange, actual pawn
+newness and live guards, fixed advanced/base/Scheveningen cores, legal opposite-
+knight support/control capture domains, both-side ram-pawn move domains and all
+history/reply tick counts. Derives complete positive role set AND all negative/
+exhausted statuses/nodes; omitted proof cannot be laundered as ineligible.
+Every positive also uses unchanged independent per-event checker for full history,
+inventories, actual/replacement moves, exchange, replies/flags and exact text.
+Exact own-event/evidence keys enforced. Full v55 result/fresh E073 inherited
+fields and event order,101.012/101.013/E073 priority, comment and disabled identity
+verify. Shared E020 legalPosition/Chess/parent priority remain dependencies;
+this is not an independently implemented rules engine or new strategic truth.
+
+Registration80b8ee2/implementation3bca297:7/7pilot in7.564seconds;
+241/241smoke ateec18b4 in16.831seconds;210/210saved at36581ce in33.977seconds.
+Caps120/180/600seconds and forecasts hold. ALL188original cases,44forgeries of
+core/inventories/targets/role/rams/counterframes/capture/move domains/exchange/
+history/actual/all reply fields/full result/text/quality/schema/inherited SAN/
+comment/ledger/omitted-proof+status laundering,4all-integer budgets French
+advanced/base/Scheveningen EP/support-negative,5strict-default/history/coverage/
+EP-exchange+ram-reply+extra-capture/negative-ledger+atomic-output controls.
+Both colors, horizontal-mirror negatives, all original missing/pinned/wrong-core/
+absent history/wrong original identities/delayed recapture/occupied target/
+extra-file/terminal/clock/unrelated cases, promotions/EP/reply shape losses retained.
+Budget validates even when disabled; implemented null flag→disabled/null limit→
+default compatibility stays explicit. Pilot old own-event-only check accepts
+corrupt comment/SAN while new whole checker rejects both.
+
+Saved ALL188rows:184complete replays/184fresh E073 comparisons,180enabled
+independent outcome-oracle calls,48whole-checker positive proof replays plus
+48fresh ordered individual metadata comparisons. States48proven/118ineligible/
+10no-legal-support-control/4disabled/4exhausted. Certificates28French (advanced/
+base) and20Scheveningen. Four invalid attempts stored original ABSTRACT string
+'Illegal move; explanation refused.'; require exact original classification and
+fresh /^Illegal move/ failure, NOT exact historical runtime-message equality.
+14shape/inheritance/count+4receipt+4raw rejection controls. No additional
+candidate/parent/own-count collection in qualification. Current structure facts
+and legal counterframes do not prove opening provenance, safe center, permanent
+closure, strategic superiority, winning attack/break/counterplay or human value.
+
+Fixed6canonical originals authenticate including3962007-byte results SHA
+37c337d1f475834dce9dfc7153c584dd6706cf53921319591f322f3b8f8691fe.
+Frozen5a829ce632beb48cdbfe31b6becb97073703b7d9:231original Git inputs,
+64original checker/fixtures/E073 semantic paths inside original/current/fullfreeze;
+NO supplements and NO current metadata differences (no ACTIVE-QUEUE exception).
+All3original main/repeat/initially-clean trees empty; exact source/config/
+environment/metrics/receipts/output identities verify. Fixed-ownership policy
+epoch proof retained.4232ordered E073 fingerprints and teaching identity match;
+integrity is not independent ancestor proof. Admission emitted before rows.
+
+[evidence/semantic-e074-saved-initial/qualification.json](evidence/semantic-e074-saved-initial/qualification.json)
+binds81new inputs,64semantic sources,231historical inputs,15raw process artifacts
+with exact staged Git bytes, explicit whole-oracle/proof counters and original
+abstract-error limits. Prior E075–E085qualified closures and2658frozen sources/
+1624canonical artifacts unchanged. No failed decisive stage/source mutation/
+canonical mutation/generated output/error/signal/timeout. Source/diff checks
+pass. Unchanged full regression/inherited collections not repeated. No active
+process remains. Accepted378/1085,539additional provisional scopes,162ready/
+0stale,127support/41strategic prerequisites unchanged; no new accepted/origin
+credit. Next E073 Carlsbad/Hedgehog complete independent whole-result gate
+conditional on E072. All171origins, original broad meanings, combined API
+integration, exact changed-source main/repeat/initially-clean reproduction and
+strategic/human usefulness remain open. Goal active and unfinished.
+
+## Previous semantic boundary — E075 complete board/legal-input/material result validated
 
 2026-10-12. New whole-result adapter retains the unchanged independent FEN
 inventory/literal P1 N3 B3 R5 Q9 K0 arithmetic/legal set/history/king safety/

@@ -1,0 +1,1459 @@
+# E074-admission-audit {"schema":"E270-E074-saved-admission-v1","historicalSourceRevision":"5a829ce632beb48cdbfe31b6becb97073703b7d9","historicalInputsVerified":231,"historicalInputVectorSha256":"0fe31cd1f8822e2721c9521f055959a50d4c248ff4bae37a510813fa2fef828c","semanticSourceCount":64,"semanticClosureSha256":"7cb26f46a8156bff44d040a9391e953e00efb494ead7e7ee3ecbf37ee4d945b8","canonical":[{"file":"research/experiments/E074-french-scheveningen/evidence/clean-run.json","bytes":46747,"sha256":"6e5bf2012c8d2025814965da1e54314a4aa28e442d3dff3db62b194fb3329538"},{"file":"research/experiments/E074-french-scheveningen/evidence/concept-status.md","bytes":115089,"sha256":"d929648b87055ff1e8c51754e23966bd4706ec88a45f85d3feaf99e6e18576e1"},{"file":"research/experiments/E074-french-scheveningen/evidence/demo.html","bytes":1473614,"sha256":"9ed11efe10977187290b694b8b31d6552ab6420821123f7acd6ff93e19fcd601"},{"file":"research/experiments/E074-french-scheveningen/evidence/repeat-run.json","bytes":46741,"sha256":"4a1433e5e6099c610d1cdb928e8b56fce45fc3e910af522e7d908b4de3f440ac"},{"file":"research/experiments/E074-french-scheveningen/evidence/results.json","bytes":3962007,"sha256":"37c337d1f475834dce9dfc7153c584dd6706cf53921319591f322f3b8f8691fe"},{"file":"research/experiments/E074-french-scheveningen/evidence/run.json","bytes":46709,"sha256":"819499a02f1680f18f07ce5e906316d98b07420cc6709a45eb427efce0fda722"}],"currentMetadataDifferences":[],"inheritedFingerprints":{"count":4232,"orderedSha256":"13cc9aaf58992480a80a7be7b7f013a1e57d8d4953af75a8ea4b59c34da53909"},"teachingListSha256":"a7b06b6f9530b8c894471f32eeaea49c8ef340deb40e215e7f065967016a1bdd","policyEpochSha256":"8f24c056986c40a496d13916ddc70f682577b7f404861b09cfaf67290323d5b0","receiptSha256":"d13c26182db656af6631d2f71d15a7669776c9874549ee7e399645f46942ec81","summary":{"rows":188,"results":184,"errors":4,"certificates":48,"states":{"proven":48,"ineligible":118,"no-legal-support-control":10,"disabled":4,"exhausted":4},"byKind":{"french-pawn-chain":28,"scheveningen-structure":20},"ownEventReplays":48}}
+# E074-row-audit {"index":0,"id":"french-advanced-e-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":1,"id":"french-advanced-e-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":2,"id":"french-advanced-e-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":3,"id":"french-advanced-e-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":4,"id":"french-advanced-d-double-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":5,"id":"french-advanced-d-double-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":6,"id":"french-advanced-d-double-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":7,"id":"french-advanced-d-double-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":8,"id":"french-advanced-capture-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":9,"id":"french-advanced-capture-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":10,"id":"french-advanced-capture-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":11,"id":"french-advanced-capture-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":12,"id":"french-base-e-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":13,"id":"french-base-e-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":14,"id":"french-base-e-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":15,"id":"french-base-e-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":16,"id":"french-base-d-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":17,"id":"french-base-d-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":18,"id":"french-base-d-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":19,"id":"french-base-d-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":20,"id":"french-base-capture-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":21,"id":"french-base-capture-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":22,"id":"french-base-capture-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":23,"id":"french-base-capture-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":24,"id":"french-extra-support-captures","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":25,"id":"french-extra-support-captures-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":26,"id":"french-extra-support-captures-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":27,"id":"french-extra-support-captures-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":28,"id":"french-core-capture-resources","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":29,"id":"french-core-capture-resources-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":30,"id":"french-core-capture-resources-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":31,"id":"french-core-capture-resources-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":32,"id":"french-own-support-pinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":33,"id":"french-own-support-pinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":34,"id":"french-own-support-pinned-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":35,"id":"french-own-support-pinned-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":36,"id":"french-enemy-support-pinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":37,"id":"french-enemy-support-pinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":38,"id":"french-enemy-support-pinned-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":39,"id":"french-enemy-support-pinned-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":40,"id":"french-base-own-support-pinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":41,"id":"french-base-own-support-pinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":42,"id":"french-base-own-support-pinned-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":43,"id":"french-base-own-support-pinned-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":44,"id":"french-base-enemy-support-pinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":45,"id":"french-base-enemy-support-pinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":46,"id":"french-base-enemy-support-pinned-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":47,"id":"french-base-enemy-support-pinned-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":48,"id":"french-missing-own-base","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":49,"id":"french-missing-own-base-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":50,"id":"french-missing-own-base-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":51,"id":"french-missing-own-base-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":52,"id":"french-missing-enemy-base","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":53,"id":"french-missing-enemy-base-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":54,"id":"french-missing-enemy-base-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":55,"id":"french-missing-enemy-base-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":56,"id":"french-missing-enemy-head","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":57,"id":"french-missing-enemy-head-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":58,"id":"french-missing-enemy-head-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":59,"id":"french-missing-enemy-head-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":60,"id":"french-wrong-enemy-rank","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":61,"id":"french-wrong-enemy-rank-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":62,"id":"french-wrong-enemy-rank-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":63,"id":"french-wrong-enemy-rank-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":64,"id":"french-wrong-color","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":65,"id":"french-wrong-color-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":66,"id":"french-wrong-color-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":67,"id":"french-wrong-color-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":68,"id":"french-preexisting-unrelated","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":69,"id":"french-preexisting-unrelated-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":70,"id":"french-preexisting-unrelated-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":71,"id":"french-preexisting-unrelated-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":72,"id":"french-preexisting-flank-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":73,"id":"french-preexisting-flank-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":74,"id":"french-preexisting-flank-pawn-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":75,"id":"french-preexisting-flank-pawn-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":76,"id":"french-promotion-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":77,"id":"french-promotion-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":78,"id":"french-promotion-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":79,"id":"french-promotion-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":80,"id":"french-terminal-promotion-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":81,"id":"french-terminal-promotion-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":82,"id":"french-terminal-promotion-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":83,"id":"french-terminal-promotion-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":84,"id":"french-en-passant-reply","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":85,"id":"french-en-passant-reply-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":86,"id":"french-en-passant-reply-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":87,"id":"french-en-passant-reply-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":88,"id":"french-core-pawn-loss","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":89,"id":"french-core-pawn-loss-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":90,"id":"french-core-pawn-loss-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":91,"id":"french-core-pawn-loss-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":92,"id":"french-actual-mate","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":93,"id":"french-actual-mate-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":94,"id":"french-actual-mate-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":95,"id":"french-actual-mate-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":96,"id":"french-disabled","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":97,"id":"french-disabled-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":98,"id":"french-disabled-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":99,"id":"french-disabled-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":100,"id":"french-zero-budget","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":101,"id":"french-zero-budget-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":102,"id":"french-zero-budget-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":103,"id":"french-zero-budget-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":104,"id":"french-illegal-push","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":105,"id":"french-illegal-push-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":106,"id":"french-illegal-push-mirror","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":107,"id":"french-illegal-push-mirror-black","parentEvaluations":0,"savedReplayAttempts":0,"candidateErrorEvaluations":1,"savedErrorComparisons":1,"ownEventReplayAttempts":0,"oracleEvaluations":0,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":108,"id":"scheveningen-recorded-exchange","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":109,"id":"scheveningen-recorded-exchange-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":110,"id":"scheveningen-recorded-exchange-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":111,"id":"scheveningen-recorded-exchange-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":112,"id":"scheveningen-hanging-center-warning","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":113,"id":"scheveningen-hanging-center-warning-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":114,"id":"scheveningen-hanging-center-warning-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":115,"id":"scheveningen-hanging-center-warning-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":116,"id":"scheveningen-d-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":117,"id":"scheveningen-d-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":118,"id":"scheveningen-d-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":119,"id":"scheveningen-d-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":120,"id":"scheveningen-capture-completes","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":121,"id":"scheveningen-capture-completes-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":122,"id":"scheveningen-capture-completes-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":123,"id":"scheveningen-capture-completes-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":124,"id":"scheveningen-extra-control-captures","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":125,"id":"scheveningen-extra-control-captures-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":126,"id":"scheveningen-extra-control-captures-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":127,"id":"scheveningen-extra-control-captures-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":128,"id":"scheveningen-enemy-d-captures","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":129,"id":"scheveningen-enemy-d-captures-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":130,"id":"scheveningen-enemy-d-captures-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":131,"id":"scheveningen-enemy-d-captures-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":132,"id":"scheveningen-original-exchange-ep","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":133,"id":"scheveningen-original-exchange-ep-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":134,"id":"scheveningen-original-exchange-ep-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":135,"id":"scheveningen-original-exchange-ep-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":136,"id":"scheveningen-check-evasion-pinned","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":137,"id":"scheveningen-check-evasion-pinned-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":138,"id":"scheveningen-check-evasion-pinned-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":139,"id":"scheveningen-check-evasion-pinned-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":140,"id":"scheveningen-missing-context","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":141,"id":"scheveningen-missing-context-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":142,"id":"scheveningen-missing-context-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":143,"id":"scheveningen-missing-context-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":144,"id":"scheveningen-occupied-target","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":145,"id":"scheveningen-occupied-target-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":146,"id":"scheveningen-occupied-target-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":147,"id":"scheveningen-occupied-target-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":148,"id":"scheveningen-own-c-file-pawn","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":149,"id":"scheveningen-own-c-file-pawn-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":150,"id":"scheveningen-own-c-file-pawn-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":151,"id":"scheveningen-own-c-file-pawn-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":152,"id":"scheveningen-wrong-root-c","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":153,"id":"scheveningen-wrong-root-c-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":154,"id":"scheveningen-wrong-root-c-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":155,"id":"scheveningen-wrong-root-c-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":156,"id":"scheveningen-wrong-root-d","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":157,"id":"scheveningen-wrong-root-d-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":158,"id":"scheveningen-wrong-root-d-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":159,"id":"scheveningen-wrong-root-d-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":160,"id":"scheveningen-delayed-recapture","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":161,"id":"scheveningen-delayed-recapture-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":162,"id":"scheveningen-delayed-recapture-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":163,"id":"scheveningen-delayed-recapture-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":164,"id":"scheveningen-promotion-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":165,"id":"scheveningen-promotion-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":166,"id":"scheveningen-promotion-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":167,"id":"scheveningen-promotion-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":168,"id":"scheveningen-terminal-promotion-replies","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":169,"id":"scheveningen-terminal-promotion-replies-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":170,"id":"scheveningen-terminal-promotion-replies-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":171,"id":"scheveningen-terminal-promotion-replies-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":172,"id":"scheveningen-core-pawn-loss","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":173,"id":"scheveningen-core-pawn-loss-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":174,"id":"scheveningen-core-pawn-loss-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":175,"id":"scheveningen-core-pawn-loss-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":176,"id":"scheveningen-no-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":177,"id":"scheveningen-no-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":178,"id":"scheveningen-no-history-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":179,"id":"scheveningen-no-history-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":180,"id":"french-clock-reset","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":181,"id":"french-clock-reset-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":182,"id":"french-clock-reset-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":183,"id":"french-clock-reset-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":184,"id":"french-legal-history","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":185,"id":"french-legal-history-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":1,"oracleEvaluations":1,"ownProofReplays":1,"passed":true}
+# E074-row-audit {"index":186,"id":"french-legal-history-mirror","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+# E074-row-audit {"index":187,"id":"french-legal-history-mirror-black","parentEvaluations":1,"savedReplayAttempts":1,"candidateErrorEvaluations":0,"savedErrorComparisons":0,"ownEventReplayAttempts":0,"oracleEvaluations":1,"ownProofReplays":0,"passed":true}
+TAP version 13
+# Subtest: saved whole row 0: french-advanced-e-completes
+ok 1 - saved whole row 0: french-advanced-e-completes
+  ---
+  duration_ms: 48.8072
+  type: 'test'
+  ...
+# Subtest: saved whole row 1: french-advanced-e-completes-black
+ok 2 - saved whole row 1: french-advanced-e-completes-black
+  ---
+  duration_ms: 19.1372
+  type: 'test'
+  ...
+# Subtest: saved whole row 2: french-advanced-e-completes-mirror
+ok 3 - saved whole row 2: french-advanced-e-completes-mirror
+  ---
+  duration_ms: 7.6148
+  type: 'test'
+  ...
+# Subtest: saved whole row 3: french-advanced-e-completes-mirror-black
+ok 4 - saved whole row 3: french-advanced-e-completes-mirror-black
+  ---
+  duration_ms: 8.3529
+  type: 'test'
+  ...
+# Subtest: saved whole row 4: french-advanced-d-double-completes
+ok 5 - saved whole row 4: french-advanced-d-double-completes
+  ---
+  duration_ms: 12.4184
+  type: 'test'
+  ...
+# Subtest: saved whole row 5: french-advanced-d-double-completes-black
+ok 6 - saved whole row 5: french-advanced-d-double-completes-black
+  ---
+  duration_ms: 12.1304
+  type: 'test'
+  ...
+# Subtest: saved whole row 6: french-advanced-d-double-completes-mirror
+ok 7 - saved whole row 6: french-advanced-d-double-completes-mirror
+  ---
+  duration_ms: 6.7391
+  type: 'test'
+  ...
+# Subtest: saved whole row 7: french-advanced-d-double-completes-mirror-black
+ok 8 - saved whole row 7: french-advanced-d-double-completes-mirror-black
+  ---
+  duration_ms: 6.7328
+  type: 'test'
+  ...
+# Subtest: saved whole row 8: french-advanced-capture-completes
+ok 9 - saved whole row 8: french-advanced-capture-completes
+  ---
+  duration_ms: 15.6814
+  type: 'test'
+  ...
+# Subtest: saved whole row 9: french-advanced-capture-completes-black
+ok 10 - saved whole row 9: french-advanced-capture-completes-black
+  ---
+  duration_ms: 13.3992
+  type: 'test'
+  ...
+# Subtest: saved whole row 10: french-advanced-capture-completes-mirror
+ok 11 - saved whole row 10: french-advanced-capture-completes-mirror
+  ---
+  duration_ms: 9.1432
+  type: 'test'
+  ...
+# Subtest: saved whole row 11: french-advanced-capture-completes-mirror-black
+ok 12 - saved whole row 11: french-advanced-capture-completes-mirror-black
+  ---
+  duration_ms: 7.5204
+  type: 'test'
+  ...
+# Subtest: saved whole row 12: french-base-e-completes
+ok 13 - saved whole row 12: french-base-e-completes
+  ---
+  duration_ms: 16.0311
+  type: 'test'
+  ...
+# Subtest: saved whole row 13: french-base-e-completes-black
+ok 14 - saved whole row 13: french-base-e-completes-black
+  ---
+  duration_ms: 8.9995
+  type: 'test'
+  ...
+# Subtest: saved whole row 14: french-base-e-completes-mirror
+ok 15 - saved whole row 14: french-base-e-completes-mirror
+  ---
+  duration_ms: 5.4175
+  type: 'test'
+  ...
+# Subtest: saved whole row 15: french-base-e-completes-mirror-black
+ok 16 - saved whole row 15: french-base-e-completes-mirror-black
+  ---
+  duration_ms: 5.116
+  type: 'test'
+  ...
+# Subtest: saved whole row 16: french-base-d-completes
+ok 17 - saved whole row 16: french-base-d-completes
+  ---
+  duration_ms: 10.0366
+  type: 'test'
+  ...
+# Subtest: saved whole row 17: french-base-d-completes-black
+ok 18 - saved whole row 17: french-base-d-completes-black
+  ---
+  duration_ms: 9.4044
+  type: 'test'
+  ...
+# Subtest: saved whole row 18: french-base-d-completes-mirror
+ok 19 - saved whole row 18: french-base-d-completes-mirror
+  ---
+  duration_ms: 5.3668
+  type: 'test'
+  ...
+# Subtest: saved whole row 19: french-base-d-completes-mirror-black
+ok 20 - saved whole row 19: french-base-d-completes-mirror-black
+  ---
+  duration_ms: 5.3881
+  type: 'test'
+  ...
+# Subtest: saved whole row 20: french-base-capture-completes
+ok 21 - saved whole row 20: french-base-capture-completes
+  ---
+  duration_ms: 14.2283
+  type: 'test'
+  ...
+# Subtest: saved whole row 21: french-base-capture-completes-black
+ok 22 - saved whole row 21: french-base-capture-completes-black
+  ---
+  duration_ms: 15.3779
+  type: 'test'
+  ...
+# Subtest: saved whole row 22: french-base-capture-completes-mirror
+ok 23 - saved whole row 22: french-base-capture-completes-mirror
+  ---
+  duration_ms: 7.2907
+  type: 'test'
+  ...
+# Subtest: saved whole row 23: french-base-capture-completes-mirror-black
+ok 24 - saved whole row 23: french-base-capture-completes-mirror-black
+  ---
+  duration_ms: 7.0554
+  type: 'test'
+  ...
+# Subtest: saved whole row 24: french-extra-support-captures
+ok 25 - saved whole row 24: french-extra-support-captures
+  ---
+  duration_ms: 12.2233
+  type: 'test'
+  ...
+# Subtest: saved whole row 25: french-extra-support-captures-black
+ok 26 - saved whole row 25: french-extra-support-captures-black
+  ---
+  duration_ms: 12.7746
+  type: 'test'
+  ...
+# Subtest: saved whole row 26: french-extra-support-captures-mirror
+ok 27 - saved whole row 26: french-extra-support-captures-mirror
+  ---
+  duration_ms: 6.828
+  type: 'test'
+  ...
+# Subtest: saved whole row 27: french-extra-support-captures-mirror-black
+ok 28 - saved whole row 27: french-extra-support-captures-mirror-black
+  ---
+  duration_ms: 6.2702
+  type: 'test'
+  ...
+# Subtest: saved whole row 28: french-core-capture-resources
+ok 29 - saved whole row 28: french-core-capture-resources
+  ---
+  duration_ms: 68.9652
+  type: 'test'
+  ...
+# Subtest: saved whole row 29: french-core-capture-resources-black
+ok 30 - saved whole row 29: french-core-capture-resources-black
+  ---
+  duration_ms: 62.6983
+  type: 'test'
+  ...
+# Subtest: saved whole row 30: french-core-capture-resources-mirror
+ok 31 - saved whole row 30: french-core-capture-resources-mirror
+  ---
+  duration_ms: 38.4735
+  type: 'test'
+  ...
+# Subtest: saved whole row 31: french-core-capture-resources-mirror-black
+ok 32 - saved whole row 31: french-core-capture-resources-mirror-black
+  ---
+  duration_ms: 32.8008
+  type: 'test'
+  ...
+# Subtest: saved whole row 32: french-own-support-pinned
+ok 33 - saved whole row 32: french-own-support-pinned
+  ---
+  duration_ms: 12.8546
+  type: 'test'
+  ...
+# Subtest: saved whole row 33: french-own-support-pinned-black
+ok 34 - saved whole row 33: french-own-support-pinned-black
+  ---
+  duration_ms: 13.0464
+  type: 'test'
+  ...
+# Subtest: saved whole row 34: french-own-support-pinned-mirror
+ok 35 - saved whole row 34: french-own-support-pinned-mirror
+  ---
+  duration_ms: 11.8661
+  type: 'test'
+  ...
+# Subtest: saved whole row 35: french-own-support-pinned-mirror-black
+ok 36 - saved whole row 35: french-own-support-pinned-mirror-black
+  ---
+  duration_ms: 12.1971
+  type: 'test'
+  ...
+# Subtest: saved whole row 36: french-enemy-support-pinned
+ok 37 - saved whole row 36: french-enemy-support-pinned
+  ---
+  duration_ms: 9.3641
+  type: 'test'
+  ...
+# Subtest: saved whole row 37: french-enemy-support-pinned-black
+ok 38 - saved whole row 37: french-enemy-support-pinned-black
+  ---
+  duration_ms: 9.2039
+  type: 'test'
+  ...
+# Subtest: saved whole row 38: french-enemy-support-pinned-mirror
+ok 39 - saved whole row 38: french-enemy-support-pinned-mirror
+  ---
+  duration_ms: 8.4983
+  type: 'test'
+  ...
+# Subtest: saved whole row 39: french-enemy-support-pinned-mirror-black
+ok 40 - saved whole row 39: french-enemy-support-pinned-mirror-black
+  ---
+  duration_ms: 8.3287
+  type: 'test'
+  ...
+# Subtest: saved whole row 40: french-base-own-support-pinned
+ok 41 - saved whole row 40: french-base-own-support-pinned
+  ---
+  duration_ms: 10.4057
+  type: 'test'
+  ...
+# Subtest: saved whole row 41: french-base-own-support-pinned-black
+ok 42 - saved whole row 41: french-base-own-support-pinned-black
+  ---
+  duration_ms: 9.9798
+  type: 'test'
+  ...
+# Subtest: saved whole row 42: french-base-own-support-pinned-mirror
+ok 43 - saved whole row 42: french-base-own-support-pinned-mirror
+  ---
+  duration_ms: 9.556
+  type: 'test'
+  ...
+# Subtest: saved whole row 43: french-base-own-support-pinned-mirror-black
+ok 44 - saved whole row 43: french-base-own-support-pinned-mirror-black
+  ---
+  duration_ms: 10.332
+  type: 'test'
+  ...
+# Subtest: saved whole row 44: french-base-enemy-support-pinned
+ok 45 - saved whole row 44: french-base-enemy-support-pinned
+  ---
+  duration_ms: 10.472
+  type: 'test'
+  ...
+# Subtest: saved whole row 45: french-base-enemy-support-pinned-black
+ok 46 - saved whole row 45: french-base-enemy-support-pinned-black
+  ---
+  duration_ms: 9.0822
+  type: 'test'
+  ...
+# Subtest: saved whole row 46: french-base-enemy-support-pinned-mirror
+ok 47 - saved whole row 46: french-base-enemy-support-pinned-mirror
+  ---
+  duration_ms: 8.6577
+  type: 'test'
+  ...
+# Subtest: saved whole row 47: french-base-enemy-support-pinned-mirror-black
+ok 48 - saved whole row 47: french-base-enemy-support-pinned-mirror-black
+  ---
+  duration_ms: 7.3228
+  type: 'test'
+  ...
+# Subtest: saved whole row 48: french-missing-own-base
+ok 49 - saved whole row 48: french-missing-own-base
+  ---
+  duration_ms: 4.8014
+  type: 'test'
+  ...
+# Subtest: saved whole row 49: french-missing-own-base-black
+ok 50 - saved whole row 49: french-missing-own-base-black
+  ---
+  duration_ms: 4.9847
+  type: 'test'
+  ...
+# Subtest: saved whole row 50: french-missing-own-base-mirror
+ok 51 - saved whole row 50: french-missing-own-base-mirror
+  ---
+  duration_ms: 5.0973
+  type: 'test'
+  ...
+# Subtest: saved whole row 51: french-missing-own-base-mirror-black
+ok 52 - saved whole row 51: french-missing-own-base-mirror-black
+  ---
+  duration_ms: 5.9095
+  type: 'test'
+  ...
+# Subtest: saved whole row 52: french-missing-enemy-base
+ok 53 - saved whole row 52: french-missing-enemy-base
+  ---
+  duration_ms: 4.7055
+  type: 'test'
+  ...
+# Subtest: saved whole row 53: french-missing-enemy-base-black
+ok 54 - saved whole row 53: french-missing-enemy-base-black
+  ---
+  duration_ms: 4.7583
+  type: 'test'
+  ...
+# Subtest: saved whole row 54: french-missing-enemy-base-mirror
+ok 55 - saved whole row 54: french-missing-enemy-base-mirror
+  ---
+  duration_ms: 4.9551
+  type: 'test'
+  ...
+# Subtest: saved whole row 55: french-missing-enemy-base-mirror-black
+ok 56 - saved whole row 55: french-missing-enemy-base-mirror-black
+  ---
+  duration_ms: 4.7859
+  type: 'test'
+  ...
+# Subtest: saved whole row 56: french-missing-enemy-head
+ok 57 - saved whole row 56: french-missing-enemy-head
+  ---
+  duration_ms: 5.7738
+  type: 'test'
+  ...
+# Subtest: saved whole row 57: french-missing-enemy-head-black
+ok 58 - saved whole row 57: french-missing-enemy-head-black
+  ---
+  duration_ms: 4.9307
+  type: 'test'
+  ...
+# Subtest: saved whole row 58: french-missing-enemy-head-mirror
+ok 59 - saved whole row 58: french-missing-enemy-head-mirror
+  ---
+  duration_ms: 4.5834
+  type: 'test'
+  ...
+# Subtest: saved whole row 59: french-missing-enemy-head-mirror-black
+ok 60 - saved whole row 59: french-missing-enemy-head-mirror-black
+  ---
+  duration_ms: 5.7134
+  type: 'test'
+  ...
+# Subtest: saved whole row 60: french-wrong-enemy-rank
+ok 61 - saved whole row 60: french-wrong-enemy-rank
+  ---
+  duration_ms: 6.0181
+  type: 'test'
+  ...
+# Subtest: saved whole row 61: french-wrong-enemy-rank-black
+ok 62 - saved whole row 61: french-wrong-enemy-rank-black
+  ---
+  duration_ms: 5.8659
+  type: 'test'
+  ...
+# Subtest: saved whole row 62: french-wrong-enemy-rank-mirror
+ok 63 - saved whole row 62: french-wrong-enemy-rank-mirror
+  ---
+  duration_ms: 5.1478
+  type: 'test'
+  ...
+# Subtest: saved whole row 63: french-wrong-enemy-rank-mirror-black
+ok 64 - saved whole row 63: french-wrong-enemy-rank-mirror-black
+  ---
+  duration_ms: 5.0601
+  type: 'test'
+  ...
+# Subtest: saved whole row 64: french-wrong-color
+ok 65 - saved whole row 64: french-wrong-color
+  ---
+  duration_ms: 5.0801
+  type: 'test'
+  ...
+# Subtest: saved whole row 65: french-wrong-color-black
+ok 66 - saved whole row 65: french-wrong-color-black
+  ---
+  duration_ms: 4.8275
+  type: 'test'
+  ...
+# Subtest: saved whole row 66: french-wrong-color-mirror
+ok 67 - saved whole row 66: french-wrong-color-mirror
+  ---
+  duration_ms: 5.1895
+  type: 'test'
+  ...
+# Subtest: saved whole row 67: french-wrong-color-mirror-black
+ok 68 - saved whole row 67: french-wrong-color-mirror-black
+  ---
+  duration_ms: 5.4552
+  type: 'test'
+  ...
+# Subtest: saved whole row 68: french-preexisting-unrelated
+ok 69 - saved whole row 68: french-preexisting-unrelated
+  ---
+  duration_ms: 4.602
+  type: 'test'
+  ...
+# Subtest: saved whole row 69: french-preexisting-unrelated-black
+ok 70 - saved whole row 69: french-preexisting-unrelated-black
+  ---
+  duration_ms: 4.473
+  type: 'test'
+  ...
+# Subtest: saved whole row 70: french-preexisting-unrelated-mirror
+ok 71 - saved whole row 70: french-preexisting-unrelated-mirror
+  ---
+  duration_ms: 4.6229
+  type: 'test'
+  ...
+# Subtest: saved whole row 71: french-preexisting-unrelated-mirror-black
+ok 72 - saved whole row 71: french-preexisting-unrelated-mirror-black
+  ---
+  duration_ms: 4.7423
+  type: 'test'
+  ...
+# Subtest: saved whole row 72: french-preexisting-flank-pawn
+ok 73 - saved whole row 72: french-preexisting-flank-pawn
+  ---
+  duration_ms: 5.2139
+  type: 'test'
+  ...
+# Subtest: saved whole row 73: french-preexisting-flank-pawn-black
+ok 74 - saved whole row 73: french-preexisting-flank-pawn-black
+  ---
+  duration_ms: 4.8653
+  type: 'test'
+  ...
+# Subtest: saved whole row 74: french-preexisting-flank-pawn-mirror
+ok 75 - saved whole row 74: french-preexisting-flank-pawn-mirror
+  ---
+  duration_ms: 4.7558
+  type: 'test'
+  ...
+# Subtest: saved whole row 75: french-preexisting-flank-pawn-mirror-black
+ok 76 - saved whole row 75: french-preexisting-flank-pawn-mirror-black
+  ---
+  duration_ms: 4.8852
+  type: 'test'
+  ...
+# Subtest: saved whole row 76: french-promotion-replies
+ok 77 - saved whole row 76: french-promotion-replies
+  ---
+  duration_ms: 12.5623
+  type: 'test'
+  ...
+# Subtest: saved whole row 77: french-promotion-replies-black
+ok 78 - saved whole row 77: french-promotion-replies-black
+  ---
+  duration_ms: 11.9532
+  type: 'test'
+  ...
+# Subtest: saved whole row 78: french-promotion-replies-mirror
+ok 79 - saved whole row 78: french-promotion-replies-mirror
+  ---
+  duration_ms: 6.2146
+  type: 'test'
+  ...
+# Subtest: saved whole row 79: french-promotion-replies-mirror-black
+ok 80 - saved whole row 79: french-promotion-replies-mirror-black
+  ---
+  duration_ms: 6.2668
+  type: 'test'
+  ...
+# Subtest: saved whole row 80: french-terminal-promotion-replies
+ok 81 - saved whole row 80: french-terminal-promotion-replies
+  ---
+  duration_ms: 17.2763
+  type: 'test'
+  ...
+# Subtest: saved whole row 81: french-terminal-promotion-replies-black
+ok 82 - saved whole row 81: french-terminal-promotion-replies-black
+  ---
+  duration_ms: 16.0161
+  type: 'test'
+  ...
+# Subtest: saved whole row 82: french-terminal-promotion-replies-mirror
+ok 83 - saved whole row 82: french-terminal-promotion-replies-mirror
+  ---
+  duration_ms: 7.0284
+  type: 'test'
+  ...
+# Subtest: saved whole row 83: french-terminal-promotion-replies-mirror-black
+ok 84 - saved whole row 83: french-terminal-promotion-replies-mirror-black
+  ---
+  duration_ms: 11.3643
+  type: 'test'
+  ...
+# Subtest: saved whole row 84: french-en-passant-reply
+ok 85 - saved whole row 84: french-en-passant-reply
+  ---
+  duration_ms: 14.1967
+  type: 'test'
+  ...
+# Subtest: saved whole row 85: french-en-passant-reply-black
+ok 86 - saved whole row 85: french-en-passant-reply-black
+  ---
+  duration_ms: 12.2958
+  type: 'test'
+  ...
+# Subtest: saved whole row 86: french-en-passant-reply-mirror
+ok 87 - saved whole row 86: french-en-passant-reply-mirror
+  ---
+  duration_ms: 7.683
+  type: 'test'
+  ...
+# Subtest: saved whole row 87: french-en-passant-reply-mirror-black
+ok 88 - saved whole row 87: french-en-passant-reply-mirror-black
+  ---
+  duration_ms: 11.2862
+  type: 'test'
+  ...
+# Subtest: saved whole row 88: french-core-pawn-loss
+ok 89 - saved whole row 88: french-core-pawn-loss
+  ---
+  duration_ms: 13.1624
+  type: 'test'
+  ...
+# Subtest: saved whole row 89: french-core-pawn-loss-black
+ok 90 - saved whole row 89: french-core-pawn-loss-black
+  ---
+  duration_ms: 12.1909
+  type: 'test'
+  ...
+# Subtest: saved whole row 90: french-core-pawn-loss-mirror
+ok 91 - saved whole row 90: french-core-pawn-loss-mirror
+  ---
+  duration_ms: 5.964
+  type: 'test'
+  ...
+# Subtest: saved whole row 91: french-core-pawn-loss-mirror-black
+ok 92 - saved whole row 91: french-core-pawn-loss-mirror-black
+  ---
+  duration_ms: 5.9572
+  type: 'test'
+  ...
+# Subtest: saved whole row 92: french-actual-mate
+ok 93 - saved whole row 92: french-actual-mate
+  ---
+  duration_ms: 8.5015
+  type: 'test'
+  ...
+# Subtest: saved whole row 93: french-actual-mate-black
+ok 94 - saved whole row 93: french-actual-mate-black
+  ---
+  duration_ms: 8.644
+  type: 'test'
+  ...
+# Subtest: saved whole row 94: french-actual-mate-mirror
+ok 95 - saved whole row 94: french-actual-mate-mirror
+  ---
+  duration_ms: 7.5717
+  type: 'test'
+  ...
+# Subtest: saved whole row 95: french-actual-mate-mirror-black
+ok 96 - saved whole row 95: french-actual-mate-mirror-black
+  ---
+  duration_ms: 9.1694
+  type: 'test'
+  ...
+# Subtest: saved whole row 96: french-disabled
+ok 97 - saved whole row 96: french-disabled
+  ---
+  duration_ms: 4.738
+  type: 'test'
+  ...
+# Subtest: saved whole row 97: french-disabled-black
+ok 98 - saved whole row 97: french-disabled-black
+  ---
+  duration_ms: 5.0996
+  type: 'test'
+  ...
+# Subtest: saved whole row 98: french-disabled-mirror
+ok 99 - saved whole row 98: french-disabled-mirror
+  ---
+  duration_ms: 5.1759
+  type: 'test'
+  ...
+# Subtest: saved whole row 99: french-disabled-mirror-black
+ok 100 - saved whole row 99: french-disabled-mirror-black
+  ---
+  duration_ms: 4.8895
+  type: 'test'
+  ...
+# Subtest: saved whole row 100: french-zero-budget
+ok 101 - saved whole row 100: french-zero-budget
+  ---
+  duration_ms: 5.2
+  type: 'test'
+  ...
+# Subtest: saved whole row 101: french-zero-budget-black
+ok 102 - saved whole row 101: french-zero-budget-black
+  ---
+  duration_ms: 5.2735
+  type: 'test'
+  ...
+# Subtest: saved whole row 102: french-zero-budget-mirror
+ok 103 - saved whole row 102: french-zero-budget-mirror
+  ---
+  duration_ms: 5.0386
+  type: 'test'
+  ...
+# Subtest: saved whole row 103: french-zero-budget-mirror-black
+ok 104 - saved whole row 103: french-zero-budget-mirror-black
+  ---
+  duration_ms: 5.5898
+  type: 'test'
+  ...
+# Subtest: saved whole row 104: french-illegal-push
+ok 105 - saved whole row 104: french-illegal-push
+  ---
+  duration_ms: 1.0934
+  type: 'test'
+  ...
+# Subtest: saved whole row 105: french-illegal-push-black
+ok 106 - saved whole row 105: french-illegal-push-black
+  ---
+  duration_ms: 0.4368
+  type: 'test'
+  ...
+# Subtest: saved whole row 106: french-illegal-push-mirror
+ok 107 - saved whole row 106: french-illegal-push-mirror
+  ---
+  duration_ms: 0.2937
+  type: 'test'
+  ...
+# Subtest: saved whole row 107: french-illegal-push-mirror-black
+ok 108 - saved whole row 107: french-illegal-push-mirror-black
+  ---
+  duration_ms: 0.2866
+  type: 'test'
+  ...
+# Subtest: saved whole row 108: scheveningen-recorded-exchange
+ok 109 - saved whole row 108: scheveningen-recorded-exchange
+  ---
+  duration_ms: 41.4747
+  type: 'test'
+  ...
+# Subtest: saved whole row 109: scheveningen-recorded-exchange-black
+ok 110 - saved whole row 109: scheveningen-recorded-exchange-black
+  ---
+  duration_ms: 41.802
+  type: 'test'
+  ...
+# Subtest: saved whole row 110: scheveningen-recorded-exchange-mirror
+ok 111 - saved whole row 110: scheveningen-recorded-exchange-mirror
+  ---
+  duration_ms: 32.1969
+  type: 'test'
+  ...
+# Subtest: saved whole row 111: scheveningen-recorded-exchange-mirror-black
+ok 112 - saved whole row 111: scheveningen-recorded-exchange-mirror-black
+  ---
+  duration_ms: 34.6646
+  type: 'test'
+  ...
+# Subtest: saved whole row 112: scheveningen-hanging-center-warning
+ok 113 - saved whole row 112: scheveningen-hanging-center-warning
+  ---
+  duration_ms: 37.7017
+  type: 'test'
+  ...
+# Subtest: saved whole row 113: scheveningen-hanging-center-warning-black
+ok 114 - saved whole row 113: scheveningen-hanging-center-warning-black
+  ---
+  duration_ms: 44.8895
+  type: 'test'
+  ...
+# Subtest: saved whole row 114: scheveningen-hanging-center-warning-mirror
+ok 115 - saved whole row 114: scheveningen-hanging-center-warning-mirror
+  ---
+  duration_ms: 26.443
+  type: 'test'
+  ...
+# Subtest: saved whole row 115: scheveningen-hanging-center-warning-mirror-black
+ok 116 - saved whole row 115: scheveningen-hanging-center-warning-mirror-black
+  ---
+  duration_ms: 28.3373
+  type: 'test'
+  ...
+# Subtest: saved whole row 116: scheveningen-d-completes
+ok 117 - saved whole row 116: scheveningen-d-completes
+  ---
+  duration_ms: 40.0059
+  type: 'test'
+  ...
+# Subtest: saved whole row 117: scheveningen-d-completes-black
+ok 118 - saved whole row 117: scheveningen-d-completes-black
+  ---
+  duration_ms: 39.9903
+  type: 'test'
+  ...
+# Subtest: saved whole row 118: scheveningen-d-completes-mirror
+ok 119 - saved whole row 118: scheveningen-d-completes-mirror
+  ---
+  duration_ms: 31.6002
+  type: 'test'
+  ...
+# Subtest: saved whole row 119: scheveningen-d-completes-mirror-black
+ok 120 - saved whole row 119: scheveningen-d-completes-mirror-black
+  ---
+  duration_ms: 36.888
+  type: 'test'
+  ...
+# Subtest: saved whole row 120: scheveningen-capture-completes
+ok 121 - saved whole row 120: scheveningen-capture-completes
+  ---
+  duration_ms: 53.2939
+  type: 'test'
+  ...
+# Subtest: saved whole row 121: scheveningen-capture-completes-black
+ok 122 - saved whole row 121: scheveningen-capture-completes-black
+  ---
+  duration_ms: 57.4895
+  type: 'test'
+  ...
+# Subtest: saved whole row 122: scheveningen-capture-completes-mirror
+ok 123 - saved whole row 122: scheveningen-capture-completes-mirror
+  ---
+  duration_ms: 51.7667
+  type: 'test'
+  ...
+# Subtest: saved whole row 123: scheveningen-capture-completes-mirror-black
+ok 124 - saved whole row 123: scheveningen-capture-completes-mirror-black
+  ---
+  duration_ms: 55.2443
+  type: 'test'
+  ...
+# Subtest: saved whole row 124: scheveningen-extra-control-captures
+ok 125 - saved whole row 124: scheveningen-extra-control-captures
+  ---
+  duration_ms: 53.177
+  type: 'test'
+  ...
+# Subtest: saved whole row 125: scheveningen-extra-control-captures-black
+ok 126 - saved whole row 125: scheveningen-extra-control-captures-black
+  ---
+  duration_ms: 50.2112
+  type: 'test'
+  ...
+# Subtest: saved whole row 126: scheveningen-extra-control-captures-mirror
+ok 127 - saved whole row 126: scheveningen-extra-control-captures-mirror
+  ---
+  duration_ms: 31.8599
+  type: 'test'
+  ...
+# Subtest: saved whole row 127: scheveningen-extra-control-captures-mirror-black
+ok 128 - saved whole row 127: scheveningen-extra-control-captures-mirror-black
+  ---
+  duration_ms: 34.2314
+  type: 'test'
+  ...
+# Subtest: saved whole row 128: scheveningen-enemy-d-captures
+ok 129 - saved whole row 128: scheveningen-enemy-d-captures
+  ---
+  duration_ms: 39.3682
+  type: 'test'
+  ...
+# Subtest: saved whole row 129: scheveningen-enemy-d-captures-black
+ok 130 - saved whole row 129: scheveningen-enemy-d-captures-black
+  ---
+  duration_ms: 38.8223
+  type: 'test'
+  ...
+# Subtest: saved whole row 130: scheveningen-enemy-d-captures-mirror
+ok 131 - saved whole row 130: scheveningen-enemy-d-captures-mirror
+  ---
+  duration_ms: 32.2691
+  type: 'test'
+  ...
+# Subtest: saved whole row 131: scheveningen-enemy-d-captures-mirror-black
+ok 132 - saved whole row 131: scheveningen-enemy-d-captures-mirror-black
+  ---
+  duration_ms: 26.7934
+  type: 'test'
+  ...
+# Subtest: saved whole row 132: scheveningen-original-exchange-ep
+ok 133 - saved whole row 132: scheveningen-original-exchange-ep
+  ---
+  duration_ms: 46.2063
+  type: 'test'
+  ...
+# Subtest: saved whole row 133: scheveningen-original-exchange-ep-black
+ok 134 - saved whole row 133: scheveningen-original-exchange-ep-black
+  ---
+  duration_ms: 46.2442
+  type: 'test'
+  ...
+# Subtest: saved whole row 134: scheveningen-original-exchange-ep-mirror
+ok 135 - saved whole row 134: scheveningen-original-exchange-ep-mirror
+  ---
+  duration_ms: 40.5796
+  type: 'test'
+  ...
+# Subtest: saved whole row 135: scheveningen-original-exchange-ep-mirror-black
+ok 136 - saved whole row 135: scheveningen-original-exchange-ep-mirror-black
+  ---
+  duration_ms: 30.9572
+  type: 'test'
+  ...
+# Subtest: saved whole row 136: scheveningen-check-evasion-pinned
+ok 137 - saved whole row 136: scheveningen-check-evasion-pinned
+  ---
+  duration_ms: 30.9854
+  type: 'test'
+  ...
+# Subtest: saved whole row 137: scheveningen-check-evasion-pinned-black
+ok 138 - saved whole row 137: scheveningen-check-evasion-pinned-black
+  ---
+  duration_ms: 32.153
+  type: 'test'
+  ...
+# Subtest: saved whole row 138: scheveningen-check-evasion-pinned-mirror
+ok 139 - saved whole row 138: scheveningen-check-evasion-pinned-mirror
+  ---
+  duration_ms: 38.9384
+  type: 'test'
+  ...
+# Subtest: saved whole row 139: scheveningen-check-evasion-pinned-mirror-black
+ok 140 - saved whole row 139: scheveningen-check-evasion-pinned-mirror-black
+  ---
+  duration_ms: 32.1169
+  type: 'test'
+  ...
+# Subtest: saved whole row 140: scheveningen-missing-context
+ok 141 - saved whole row 140: scheveningen-missing-context
+  ---
+  duration_ms: 29.5995
+  type: 'test'
+  ...
+# Subtest: saved whole row 141: scheveningen-missing-context-black
+ok 142 - saved whole row 141: scheveningen-missing-context-black
+  ---
+  duration_ms: 29.461
+  type: 'test'
+  ...
+# Subtest: saved whole row 142: scheveningen-missing-context-mirror
+ok 143 - saved whole row 142: scheveningen-missing-context-mirror
+  ---
+  duration_ms: 37.5218
+  type: 'test'
+  ...
+# Subtest: saved whole row 143: scheveningen-missing-context-mirror-black
+ok 144 - saved whole row 143: scheveningen-missing-context-mirror-black
+  ---
+  duration_ms: 36.6935
+  type: 'test'
+  ...
+# Subtest: saved whole row 144: scheveningen-occupied-target
+ok 145 - saved whole row 144: scheveningen-occupied-target
+  ---
+  duration_ms: 53.8598
+  type: 'test'
+  ...
+# Subtest: saved whole row 145: scheveningen-occupied-target-black
+ok 146 - saved whole row 145: scheveningen-occupied-target-black
+  ---
+  duration_ms: 43.1305
+  type: 'test'
+  ...
+# Subtest: saved whole row 146: scheveningen-occupied-target-mirror
+ok 147 - saved whole row 146: scheveningen-occupied-target-mirror
+  ---
+  duration_ms: 54.8556
+  type: 'test'
+  ...
+# Subtest: saved whole row 147: scheveningen-occupied-target-mirror-black
+ok 148 - saved whole row 147: scheveningen-occupied-target-mirror-black
+  ---
+  duration_ms: 44.0286
+  type: 'test'
+  ...
+# Subtest: saved whole row 148: scheveningen-own-c-file-pawn
+ok 149 - saved whole row 148: scheveningen-own-c-file-pawn
+  ---
+  duration_ms: 31.4103
+  type: 'test'
+  ...
+# Subtest: saved whole row 149: scheveningen-own-c-file-pawn-black
+ok 150 - saved whole row 149: scheveningen-own-c-file-pawn-black
+  ---
+  duration_ms: 33.1853
+  type: 'test'
+  ...
+# Subtest: saved whole row 150: scheveningen-own-c-file-pawn-mirror
+ok 151 - saved whole row 150: scheveningen-own-c-file-pawn-mirror
+  ---
+  duration_ms: 30.4525
+  type: 'test'
+  ...
+# Subtest: saved whole row 151: scheveningen-own-c-file-pawn-mirror-black
+ok 152 - saved whole row 151: scheveningen-own-c-file-pawn-mirror-black
+  ---
+  duration_ms: 32.5945
+  type: 'test'
+  ...
+# Subtest: saved whole row 152: scheveningen-wrong-root-c
+ok 153 - saved whole row 152: scheveningen-wrong-root-c
+  ---
+  duration_ms: 27.2383
+  type: 'test'
+  ...
+# Subtest: saved whole row 153: scheveningen-wrong-root-c-black
+ok 154 - saved whole row 153: scheveningen-wrong-root-c-black
+  ---
+  duration_ms: 29.1102
+  type: 'test'
+  ...
+# Subtest: saved whole row 154: scheveningen-wrong-root-c-mirror
+ok 155 - saved whole row 154: scheveningen-wrong-root-c-mirror
+  ---
+  duration_ms: 30.1592
+  type: 'test'
+  ...
+# Subtest: saved whole row 155: scheveningen-wrong-root-c-mirror-black
+ok 156 - saved whole row 155: scheveningen-wrong-root-c-mirror-black
+  ---
+  duration_ms: 30.0697
+  type: 'test'
+  ...
+# Subtest: saved whole row 156: scheveningen-wrong-root-d
+ok 157 - saved whole row 156: scheveningen-wrong-root-d
+  ---
+  duration_ms: 28.7804
+  type: 'test'
+  ...
+# Subtest: saved whole row 157: scheveningen-wrong-root-d-black
+ok 158 - saved whole row 157: scheveningen-wrong-root-d-black
+  ---
+  duration_ms: 28.0387
+  type: 'test'
+  ...
+# Subtest: saved whole row 158: scheveningen-wrong-root-d-mirror
+ok 159 - saved whole row 158: scheveningen-wrong-root-d-mirror
+  ---
+  duration_ms: 28.5197
+  type: 'test'
+  ...
+# Subtest: saved whole row 159: scheveningen-wrong-root-d-mirror-black
+ok 160 - saved whole row 159: scheveningen-wrong-root-d-mirror-black
+  ---
+  duration_ms: 30.8
+  type: 'test'
+  ...
+# Subtest: saved whole row 160: scheveningen-delayed-recapture
+ok 161 - saved whole row 160: scheveningen-delayed-recapture
+  ---
+  duration_ms: 29.152
+  type: 'test'
+  ...
+# Subtest: saved whole row 161: scheveningen-delayed-recapture-black
+ok 162 - saved whole row 161: scheveningen-delayed-recapture-black
+  ---
+  duration_ms: 30.0072
+  type: 'test'
+  ...
+# Subtest: saved whole row 162: scheveningen-delayed-recapture-mirror
+ok 163 - saved whole row 162: scheveningen-delayed-recapture-mirror
+  ---
+  duration_ms: 29.4323
+  type: 'test'
+  ...
+# Subtest: saved whole row 163: scheveningen-delayed-recapture-mirror-black
+ok 164 - saved whole row 163: scheveningen-delayed-recapture-mirror-black
+  ---
+  duration_ms: 31.4398
+  type: 'test'
+  ...
+# Subtest: saved whole row 164: scheveningen-promotion-replies
+ok 165 - saved whole row 164: scheveningen-promotion-replies
+  ---
+  duration_ms: 50.5059
+  type: 'test'
+  ...
+# Subtest: saved whole row 165: scheveningen-promotion-replies-black
+ok 166 - saved whole row 165: scheveningen-promotion-replies-black
+  ---
+  duration_ms: 47.5031
+  type: 'test'
+  ...
+# Subtest: saved whole row 166: scheveningen-promotion-replies-mirror
+ok 167 - saved whole row 166: scheveningen-promotion-replies-mirror
+  ---
+  duration_ms: 35.1154
+  type: 'test'
+  ...
+# Subtest: saved whole row 167: scheveningen-promotion-replies-mirror-black
+ok 168 - saved whole row 167: scheveningen-promotion-replies-mirror-black
+  ---
+  duration_ms: 34.8442
+  type: 'test'
+  ...
+# Subtest: saved whole row 168: scheveningen-terminal-promotion-replies
+ok 169 - saved whole row 168: scheveningen-terminal-promotion-replies
+  ---
+  duration_ms: 66.7063
+  type: 'test'
+  ...
+# Subtest: saved whole row 169: scheveningen-terminal-promotion-replies-black
+ok 170 - saved whole row 169: scheveningen-terminal-promotion-replies-black
+  ---
+  duration_ms: 73.5375
+  type: 'test'
+  ...
+# Subtest: saved whole row 170: scheveningen-terminal-promotion-replies-mirror
+ok 171 - saved whole row 170: scheveningen-terminal-promotion-replies-mirror
+  ---
+  duration_ms: 47.1716
+  type: 'test'
+  ...
+# Subtest: saved whole row 171: scheveningen-terminal-promotion-replies-mirror-black
+ok 172 - saved whole row 171: scheveningen-terminal-promotion-replies-mirror-black
+  ---
+  duration_ms: 42.5457
+  type: 'test'
+  ...
+# Subtest: saved whole row 172: scheveningen-core-pawn-loss
+ok 173 - saved whole row 172: scheveningen-core-pawn-loss
+  ---
+  duration_ms: 68.2756
+  type: 'test'
+  ...
+# Subtest: saved whole row 173: scheveningen-core-pawn-loss-black
+ok 174 - saved whole row 173: scheveningen-core-pawn-loss-black
+  ---
+  duration_ms: 69.3148
+  type: 'test'
+  ...
+# Subtest: saved whole row 174: scheveningen-core-pawn-loss-mirror
+ok 175 - saved whole row 174: scheveningen-core-pawn-loss-mirror
+  ---
+  duration_ms: 56.1376
+  type: 'test'
+  ...
+# Subtest: saved whole row 175: scheveningen-core-pawn-loss-mirror-black
+ok 176 - saved whole row 175: scheveningen-core-pawn-loss-mirror-black
+  ---
+  duration_ms: 59.5251
+  type: 'test'
+  ...
+# Subtest: saved whole row 176: scheveningen-no-history
+ok 177 - saved whole row 176: scheveningen-no-history
+  ---
+  duration_ms: 11.5966
+  type: 'test'
+  ...
+# Subtest: saved whole row 177: scheveningen-no-history-black
+ok 178 - saved whole row 177: scheveningen-no-history-black
+  ---
+  duration_ms: 11.9309
+  type: 'test'
+  ...
+# Subtest: saved whole row 178: scheveningen-no-history-mirror
+ok 179 - saved whole row 178: scheveningen-no-history-mirror
+  ---
+  duration_ms: 12.5392
+  type: 'test'
+  ...
+# Subtest: saved whole row 179: scheveningen-no-history-mirror-black
+ok 180 - saved whole row 179: scheveningen-no-history-mirror-black
+  ---
+  duration_ms: 14.439
+  type: 'test'
+  ...
+# Subtest: saved whole row 180: french-clock-reset
+ok 181 - saved whole row 180: french-clock-reset
+  ---
+  duration_ms: 8.7207
+  type: 'test'
+  ...
+# Subtest: saved whole row 181: french-clock-reset-black
+ok 182 - saved whole row 181: french-clock-reset-black
+  ---
+  duration_ms: 9.0517
+  type: 'test'
+  ...
+# Subtest: saved whole row 182: french-clock-reset-mirror
+ok 183 - saved whole row 182: french-clock-reset-mirror
+  ---
+  duration_ms: 5.2156
+  type: 'test'
+  ...
+# Subtest: saved whole row 183: french-clock-reset-mirror-black
+ok 184 - saved whole row 183: french-clock-reset-mirror-black
+  ---
+  duration_ms: 5.0301
+  type: 'test'
+  ...
+# Subtest: saved whole row 184: french-legal-history
+ok 185 - saved whole row 184: french-legal-history
+  ---
+  duration_ms: 12.8005
+  type: 'test'
+  ...
+# Subtest: saved whole row 185: french-legal-history-black
+ok 186 - saved whole row 185: french-legal-history-black
+  ---
+  duration_ms: 12.3309
+  type: 'test'
+  ...
+# Subtest: saved whole row 186: french-legal-history-mirror
+ok 187 - saved whole row 186: french-legal-history-mirror
+  ---
+  duration_ms: 7.6021
+  type: 'test'
+  ...
+# Subtest: saved whole row 187: french-legal-history-mirror-black
+ok 188 - saved whole row 187: french-legal-history-mirror-black
+  ---
+  duration_ms: 7.4542
+  type: 'test'
+  ...
+# Subtest: saved shape rejects schema
+ok 189 - saved shape rejects schema
+  ---
+  duration_ms: 47.3439
+  type: 'test'
+  ...
+# Subtest: saved shape rejects source
+ok 190 - saved shape rejects source
+  ---
+  duration_ms: 45.054
+  type: 'test'
+  ...
+# Subtest: saved shape rejects missing row
+ok 191 - saved shape rejects missing row
+  ---
+  duration_ms: 52.955
+  type: 'test'
+  ...
+# Subtest: saved shape rejects duplicate row
+ok 192 - saved shape rejects duplicate row
+  ---
+  duration_ms: 45.4385
+  type: 'test'
+  ...
+# Subtest: saved shape rejects row order
+ok 193 - saved shape rejects row order
+  ---
+  duration_ms: 64.7333
+  type: 'test'
+  ...
+# Subtest: saved shape rejects fixture
+ok 194 - saved shape rejects fixture
+  ---
+  duration_ms: 58.2903
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result missing
+ok 195 - saved shape rejects result missing
+  ---
+  duration_ms: 62.92
+  type: 'test'
+  ...
+# Subtest: saved shape rejects error inserted
+ok 196 - saved shape rejects error inserted
+  ---
+  duration_ms: 56.4256
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline missing
+ok 197 - saved shape rejects baseline missing
+  ---
+  duration_ms: 43.8551
+  type: 'test'
+  ...
+# Subtest: saved shape rejects baseline fingerprint
+ok 198 - saved shape rejects baseline fingerprint
+  ---
+  duration_ms: 75.0095
+  type: 'test'
+  ...
+# Subtest: saved shape rejects result count
+ok 199 - saved shape rejects result count
+  ---
+  duration_ms: 43.4848
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record order
+ok 200 - saved shape rejects own record order
+  ---
+  duration_ms: 54.2036
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own record missing
+ok 201 - saved shape rejects own record missing
+  ---
+  duration_ms: 43.9952
+  type: 'test'
+  ...
+# Subtest: saved shape rejects own kind forged
+ok 202 - saved shape rejects own kind forged
+  ---
+  duration_ms: 54.1228
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects old policy
+ok 203 - receipt epoch rejects old policy
+  ---
+  duration_ms: 0.4997
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects missing old policy
+ok 204 - receipt epoch rejects missing old policy
+  ---
+  duration_ms: 0.3264
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects validator
+ok 205 - receipt epoch rejects validator
+  ---
+  duration_ms: 0.8127
+  type: 'test'
+  ...
+# Subtest: receipt epoch rejects current policy
+ok 206 - receipt epoch rejects current policy
+  ---
+  duration_ms: 0.3743
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects bytes
+ok 207 - raw artifact rejects bytes
+  ---
+  duration_ms: 67.92
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects content
+ok 208 - raw artifact rejects content
+  ---
+  duration_ms: 29.3637
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects append
+ok 209 - raw artifact rejects append
+  ---
+  duration_ms: 13.6426
+  type: 'test'
+  ...
+# Subtest: raw artifact rejects namespace
+ok 210 - raw artifact rejects namespace
+  ---
+  duration_ms: 17.8565
+  type: 'test'
+  ...
+1..210
+# tests 210
+# suites 0
+# pass 210
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4820.3492
