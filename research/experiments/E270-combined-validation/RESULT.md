@@ -107,3 +107,4 @@ Broader original meanings, including every accepted/provisional narrow scope,
 remain explicit. No blocked or complete goal status is justified while this
 concrete source-repair/validation work is available.
 Boundary manifest covers17files/505807bytes plus2625-source/1623-archive baseline references;38own diagnostic/guard source bindings match. Final source verification/diff checks pass.
+Exact-byte retention follow-up: scoped .gitattributes preserves TAP/text subprocess streams across checkout platforms; all17original evidence Git blobs match physical hashes. retention.json binds attributes and the unchanged original manifest; no test/query replay or original evidence rewrite.
