@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Semantic input not preserved in historical vector: research/d001-format.mjs
++ actual - expected
+
++ '5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d'
+- undefined
+
+    at openE082Saved (file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e082-saved-report.mjs:55:107)
+    at async file:///C:/Users/thoma/Documents/Git/Chess-Review/research/experiments/E270-combined-validation/preparation/e082-replay.test.mjs:47:174 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '5dffe4a50655536950d2bb8c475fef31f493cfb9b47cfcaad808b0fb087ea24d',
+  expected: undefined,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.14.1
