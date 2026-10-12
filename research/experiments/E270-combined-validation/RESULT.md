@@ -4,7 +4,45 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest preparation boundary — E067 independent mate-preservation pilot passed
+## Latest preparation boundary — E067 full smoke passed; historical qualification next
+
+2026-10-12. Registration84d0e0e/implementationd97cfea; first159-test smoke
+retained1a0a2b1:158pass/1fail in36.690seconds,76source inputs/68,401raw bytes.
+The authored repetition control incorrectly expected the whole explanation API
+ to refuse historically terminal input. E020 validates terminality from fresh FEN;
+E067 reconstructs history and suppresses its own tags as ineligible. This exposes
+an OPEN inherited historical-terminal API refusal issue for combined integration.
+No frozen/shared implementation was changed to hide it.
+
+Prospective correctioncec8a25/implementatione32e863 checks exact E067 suppression
+versus fresh-FEN qualification. Corrected159/159 PASS in36.721seconds, within
+35–180forecast/300cap;77source inputs/67,903raw bytes, retainedcc46110.
+Evidence: evidence/semantic-e067-smoke-initial/ and
+ evidence/semantic-e067-smoke-repetition-state-corrected/. All ten raw Git blobs
+byte-exact; failed vector checked at d97cfea, corrected vector at e32e863/current
+preparation sources. Both attempts retained, no timeout/source/canonical/generated
+changes. Processes terminal; no live handle. Unchanged7/7 pilot reused.
+
+104 original cases (100 results/four abstract illegal-move errors),40 named whole-
+result/tree/frame/absence/status/metadata forgeries,seven sampled query-boundary
+budget groups andeight strict/history/legality/inheritance controls passed.
+Original whole results yield56certificates (32waiting/24reserve) and208 completed
+independent queries replayed, including negative proofs. New authored controls
+cover positive full history both colors, threefold suppression, illegal pass,
+castling/own-check exclusions, all defenses and optional-reserve atomic clearing.
+Sampled budgets do not establish an exhaustive integer sweep. Direct authored
+positive waiting cases whose removed pawn exposes its king or creates a dead
+position remain OPEN original-plan coverage gaps; frame tampering is no substitute.
+
+Frozen2658sources/1624canonical and18prior qualified closures/1543source comparisons
+unchanged. E073 original eight/seven-edge discrepancy remains OPEN. No new accepted,
+provisional, support or origin credit. Historical E067 saved payloads/ordered
+metadata/three reproduction receipts/teaching/source qualification NOT yet passed;
+that separate gate is next, conditional on subsequent E066 parent semantic replay.
+All171-origin combined API integration/exact changed-source three reproductions,
+broader strategic meanings/real-game precision/human usefulness remain OPEN.
+
+## Prior preparation boundary — E067 independent mate-preservation pilot passed
 
 2026-10-12. Prior goal turn made progress qualifying E068. Registration519a091/
 implementationba2b4d6:7/7pilot in11.764seconds, within10–90forecast/180cap;
