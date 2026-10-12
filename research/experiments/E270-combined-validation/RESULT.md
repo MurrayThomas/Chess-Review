@@ -4,7 +4,70 @@
 new concept credit, production or accepted tracker change. Current-main exception,
 local commits/no push. All original scopes retained; overall goal active.
 
-## Latest semantic boundary — E076 complete pawn/army inventory result validated
+## Latest semantic boundary — E075 complete board/legal-input/material result validated
+
+2026-10-12. New whole-result adapter retains the unchanged independent FEN
+inventory/literal P1 N3 B3 R5 Q9 K0 arithmetic/legal set/history/king safety/
+special movement checker. Independently validates root/history/legal membership,
+then selects correct route: disabled exact fresh E074; accepted fresh E074 plus
+own facts; rejected and terminal without calling parent's illegal/terminal path.
+Checks complete v56 shape, inherited fields/event order,4.3–4.8/illegal1000/E074
+priority and stable selected comment. Terminal exact empty/no after; illegal
+attempt no played after; accepted exhaustion complete parent; rejected exhausted
+empty. Strict UCI errors remain distinct from legal-set rejection. Original
+checker/parent priority/shared Chess remain dependencies; all broad material
+position-evaluation/strength/human claims and original scopes remain open.
+
+Registration793f0d3/implementationecc47ed: pilot7/7 in7.706seconds;
+smoke183/183 at9a9a106 in12.476seconds; saved156/156 ata266f98 in32.863seconds.
+Unchanged120/180/600second caps/forecasts hold. ALL134original cases,40forgeries
+of full legal/origin sets/coordinates/inventories/counts/values/nominal totals/
+history/played transitions/castle/EP/promotion/full inheritance/schema/comment/
+order/quality/ledger;4all-integer budgets balanced legal/unequal legal/illegal/
+history;5strict-default/normalized history/repetition/coverage/special transitions/
+branch controls. Both colors/all six types/all promotion choices, full legal
+alternatives/truncation, check/mate/stalemate/dead positions, original invalid
+roots and actual repetition/clock terminal behavior retained. Historical null
+flag→disabled/null limit→default compatibility explicit. Pilot confirms old
+own-only checker accepts corrupt accepted comment/SAN; new adapter rejects both.
+
+Saved ALL134ordered rows:118complete result replays,16fresh exact errors,
+400fresh ordered per-event metadata checks.66fresh E074 parent comparisons
+(62accepted+2accepted exhausted+2disabled), not118: rejected/unavailable routes
+never evaluate parent. States62accepted/40rejected/10unavailable/2disabled/
+4exhausted. Certificates62each movement/coordinates/legal-input/inventory/
+nominal-balance,50unequal-army comparisons,40illegal refusals.14shape/inheritance/
+count+4receipt+4raw rejection controls. Extra116enabled pure own-checker count
+audits across118results skip2disabled: emitted400/reported400, including zero
+exhaustion; no additional candidate/parent collection. Equal nominal points do
+not mean equal combinations or positional equality; kings retain arithmetic0
+and remain essential. All enabled direct explainAttempt outputs equal explainMove.
+
+Fixed6original artifacts authenticate, including4037526-byte results SHA
+946c5a5c856652ff2dd9f0745d6eaa52f01587469fe75c20839a9d722cf7c437.
+Frozen0d459987709588262b4c5fc300ff890a22e27ae4:241original Git inputs;
+63semantic checker/fixtures/E074 paths inside original/current/fullfreeze,
+NO supplements. All3original main/repeat/initially-clean trees empty; exact
+source/config/environment/metrics/receipts/output identities verify. Sole exact
+ACTIVE-QUEUE exception outside closure and policy epoch retained.4420ordered
+E074 inherited fingerprints and teaching identity authenticate; integrity does
+not prove ancestor semantics. Admission audit emitted before rows.
+
+[evidence/semantic-e075-saved-initial/qualification.json](evidence/semantic-e075-saved-initial/qualification.json)
+binds80new inputs,63semantic sources,241historical inputs,15raw process artifacts
+with exact staged Git bytes,116extra own-count audits and branch-aware row totals.
+Prior E076–E085qualified closures and2658frozen sources/1624canonical inputs
+unchanged. No failed decisive stage, source/canonical mutation, generated output,
+error/signal/timeout. Source/diff checks pass. No unchanged full regression or
+inherited collection rerun. No process remains active. Accepted378/1085,
+539additional provisional scopes,162ready/0stale,127support/41strategic
+prerequisites unchanged; no new accepted/provisional-origin credit.
+Next E074 French/Scheveningen complete independent result gate conditional on
+E073. All171origins, broader original meanings, combined API integration,
+exact changed-source main/repeat/initially-clean reproduction and strategic/human
+usefulness gates stay open. Goal active and unfinished.
+
+## Previous semantic boundary — E076 complete pawn/army inventory result validated
 
 2026-10-12. New whole-result adapter wraps the unchanged independent FEN,
 complete pawn/piece inventories, eight-file/eight-rank maps, full army signatures,
