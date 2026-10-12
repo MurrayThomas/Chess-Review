@@ -1,0 +1,130 @@
+{
+  "schema": "E270-exact-producer-repair-v1",
+  "originalRevision": "1c1e14b",
+  "artifacts": [
+    {
+      "id": "E212/long-pilot",
+      "file": "research/experiments/E212-rook-side-defense/evidence/long-pilot.json",
+      "sha256": "a98d1123553a0e950ff6d712154ce245a92b9212cca5ae4a4d08d16d9a41bd67"
+    },
+    {
+      "id": "E212/short-pilot",
+      "file": "research/experiments/E212-rook-side-defense/evidence/short-pilot.json",
+      "sha256": "22b03bddbf712e6ce9b8495c0d3468425a6054d5b9aa34187b7d02ec03e972d2"
+    },
+    {
+      "id": "E212/long-reflection",
+      "file": "research/experiments/E212-rook-side-defense/evidence/long-reflection.json",
+      "sha256": "74608bd7f696c8323e9da2fbf1a7c1f4fa459b18ce167edee042cffe37539c1d"
+    },
+    {
+      "id": "E213/d2",
+      "file": "research/experiments/E213-short-side-king-choice/evidence/d2.json",
+      "sha256": "8dc473b13d5cee97b551692742ef530b0b83c5622936fcf105bd645438ca771c"
+    },
+    {
+      "id": "E213/b2",
+      "file": "research/experiments/E213-short-side-king-choice/evidence/b2.json",
+      "sha256": "6c4703c5b8881ba7d8771749bb351dbcc73a4517b2c5e6c28e1aaab001d321a2"
+    },
+    {
+      "id": "E213/h2",
+      "file": "research/experiments/E213-short-side-king-choice/evidence/h2.json",
+      "sha256": "141a99d7e8cbe55d89358ee0dab43c39a1fb82215c050b76212295142cd6ad6f"
+    },
+    {
+      "id": "E213/reflection",
+      "file": "research/experiments/E213-short-side-king-choice/evidence/reflection.json",
+      "sha256": "55b1e8d7b6ab1c305c1381769558bb11964167dfc10288b6ae3fea1619170a28"
+    },
+    {
+      "id": "E214/philidor-barrier",
+      "file": "research/experiments/E214-named-rook-defense-phases/evidence/philidor-barrier.json",
+      "sha256": "ec59e91c8b50107206947a881e7cb64d340c77789ec7d9541b35e699e3b002fb"
+    },
+    {
+      "id": "E214/philidor-retreat",
+      "file": "research/experiments/E214-named-rook-defense-phases/evidence/philidor-retreat.json",
+      "sha256": "736e2a54813381c7a2837d63c7cb90ac33d694a8b767a440d76e9344a3454252"
+    },
+    {
+      "id": "E214/vancura-pressure",
+      "file": "research/experiments/E214-named-rook-defense-phases/evidence/vancura-pressure.json",
+      "sha256": "3accbcd757f5c2945566fb7c56af17b0c2a02224efd5317c3bf517869d99bc46"
+    },
+    {
+      "id": "E215/philidor-barrier-reflection",
+      "file": "research/experiments/E215-rook-defense-resource-contrasts/evidence/philidor-barrier-reflection.json",
+      "sha256": "736ed4eb8dc69dde367f22b7e2ea7acd4feddf69cb73e69d106849e81df59fb0"
+    },
+    {
+      "id": "E215/philidor-retreat-reflection",
+      "file": "research/experiments/E215-rook-defense-resource-contrasts/evidence/philidor-retreat-reflection.json",
+      "sha256": "674ab1817e43083362f5070177c01eeb2e5e161d6549817c0b230a11e508733a"
+    },
+    {
+      "id": "E215/vancura-check-at-pawn-reflection",
+      "file": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-at-pawn-reflection.json",
+      "sha256": "deb6828d3f61f088f467fdcfef26b259053be51c0e621ff4043f187e01e32d9c"
+    },
+    {
+      "id": "E215/vancura-check-at-pawn",
+      "file": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-at-pawn.json",
+      "sha256": "42a480759e73b0628305d5d5ef617e12eb36c61ad570829139f6f070684cee0c"
+    },
+    {
+      "id": "E215/vancura-check-before-pressure-reflection",
+      "file": "research/experiments/E215-rook-defense-resource-contrasts/evidence/vancura-check-before-pressure-reflection.json",
+      "sha256": "d4c40a4334053a1a108530ef220673a38c93e4f010d53fbb98645903721772d3"
+    },
+    {
+      "id": "E217/exchange-h5h7-accepted",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h5h7-accepted.json",
+      "sha256": "b32bf9d71895ec4cadee337fb086847f7514682a2b8fee7c66b189cb92d98d19"
+    },
+    {
+      "id": "E217/exchange-h8h7-accepted",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h8h7-accepted.json",
+      "sha256": "3fc12772e252ad4fe50b78ad4add1ad12ba9c5a1022abdd5930f744c9b84cf4c"
+    },
+    {
+      "id": "E217/exchange-h5h7-quiet",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h5h7-quiet.json",
+      "sha256": "85e5cc02631bd8b015964480b1ffba6cbe0845303bf7a48a2369abea020af9b7"
+    },
+    {
+      "id": "E217/exchange-h8h7-quiet",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-h8h7-quiet.json",
+      "sha256": "44266bca2e36b40f6d98d9d4bb30ed646c2eea05973e24f3d7ee624e2540adfc"
+    },
+    {
+      "id": "E217/exchange-black-h1h2-accepted",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-accepted.json",
+      "sha256": "7cd0531d2d632e02bce8587b848afd7cc9443abd0ac7c5c43c3130408c241909"
+    },
+    {
+      "id": "E217/exchange-black-h4h2-accepted",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h4h2-accepted.json",
+      "sha256": "9f443b8f4bc1efd9d410b85dd2cf49db5dfdace2bf4cf66baadf815283c3c23f"
+    },
+    {
+      "id": "E217/exchange-black-h1h2-quiet",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h1h2-quiet.json",
+      "sha256": "62981317cda22f528774bae07bc45eee93ddf3f259f4293a96220bcaa288ce8a"
+    },
+    {
+      "id": "E217/exchange-black-h4h2-quiet",
+      "file": "research/experiments/E217-defensive-positional-exchange/evidence/exchange-black-h4h2-quiet.json",
+      "sha256": "4892244e3c033f81e0c1e89c373fc2264638bc368bcd51c0342ad1c18725676a"
+    }
+  ],
+  "before": {
+    "research/experiments/E212-rook-side-defense/code/admission.mjs": "d34276967a636ca8e09df6a98ba85edcd2f5f06aa237947498e40a1d0875e980",
+    "research/experiments/E213-short-side-king-choice/code/admission.mjs": "f68889778cfa36cafe6ace222ce601db0f7bd0ce6f1fc8ddfa582af2d20a489a",
+    "research/experiments/E214-named-rook-defense-phases/code/retained.mjs": "1c4e61c235d7e4ad8824a53161305b91e7e262adba8a9a66162e93630a6eb74e",
+    "research/experiments/E215-rook-defense-resource-contrasts/code/admission.mjs": "f21eea4de75ca8b677185c7ecf7feb8347ee1facb53e88f8835d03c60afb63bb",
+    "research/experiments/E217-defensive-positional-exchange/code/admission.mjs": "110f6bec90ee1d97447eec7134cb7f40bcd7e8319781f10141a7f293ad6409cc",
+    "research/experiments/E245-adaptive-rook-defense/code/admission.mjs": "129ebbbf21ecc64a8e7d7e2b90fe72954d2be95dba387efcabab8d7955f261c6",
+    "research/experiments/E250-active-king-positional-contrast/code/admission.mjs": "db914c3d392bb98f5915080f35a121c8ef9d5f7a4b406d012bd230d3206bcc08"
+  }
+}
