@@ -1,0 +1,1108 @@
+TAP version 13
+# Subtest: original whole result pawn-advance
+ok 1 - original whole result pawn-advance
+  ---
+  duration_ms: 56.2144
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-advance-black
+ok 2 - original whole result pawn-advance-black
+  ---
+  duration_ms: 18.05
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-king-no-change
+ok 3 - original whole result quiet-king-no-change
+  ---
+  duration_ms: 13.9337
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-king-no-change-black
+ok 4 - original whole result quiet-king-no-change-black
+  ---
+  duration_ms: 14.2276
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-creates-passer
+ok 5 - original whole result pawn-capture-creates-passer
+  ---
+  duration_ms: 26.28
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-creates-passer-black
+ok 6 - original whole result pawn-capture-creates-passer-black
+  ---
+  duration_ms: 23.4246
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-own-majority
+ok 7 - original whole result pawn-capture-own-majority
+  ---
+  duration_ms: 13.6574
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-own-majority-black
+ok 8 - original whole result pawn-capture-own-majority-black
+  ---
+  duration_ms: 12.6739
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-enemy-majority
+ok 9 - original whole result pawn-capture-enemy-majority
+  ---
+  duration_ms: 12.1113
+  type: 'test'
+  ...
+# Subtest: original whole result pawn-capture-enemy-majority-black
+ok 10 - original whole result pawn-capture-enemy-majority-black
+  ---
+  duration_ms: 13.6975
+  type: 'test'
+  ...
+# Subtest: original whole result d-e-boundary-transfer
+ok 11 - original whole result d-e-boundary-transfer
+  ---
+  duration_ms: 26.0018
+  type: 'test'
+  ...
+# Subtest: original whole result d-e-boundary-transfer-black
+ok 12 - original whole result d-e-boundary-transfer-black
+  ---
+  duration_ms: 21.1457
+  type: 'test'
+  ...
+# Subtest: original whole result bishop-captures-pawn
+ok 13 - original whole result bishop-captures-pawn
+  ---
+  duration_ms: 32.3668
+  type: 'test'
+  ...
+# Subtest: original whole result bishop-captures-pawn-black
+ok 14 - original whole result bishop-captures-pawn-black
+  ---
+  duration_ms: 27.0497
+  type: 'test'
+  ...
+# Subtest: original whole result piece-capture-no-pawn-change
+ok 15 - original whole result piece-capture-no-pawn-change
+  ---
+  duration_ms: 29.2916
+  type: 'test'
+  ...
+# Subtest: original whole result piece-capture-no-pawn-change-black
+ok 16 - original whole result piece-capture-no-pawn-change-black
+  ---
+  duration_ms: 25.8691
+  type: 'test'
+  ...
+# Subtest: original whole result own-paired-bishops-bn
+ok 17 - original whole result own-paired-bishops-bn
+  ---
+  duration_ms: 87.642
+  type: 'test'
+  ...
+# Subtest: original whole result own-paired-bishops-bn-black
+ok 18 - original whole result own-paired-bishops-bn-black
+  ---
+  duration_ms: 75.0554
+  type: 'test'
+  ...
+# Subtest: original whole result own-paired-bishops-nn
+ok 19 - original whole result own-paired-bishops-nn
+  ---
+  duration_ms: 74.1934
+  type: 'test'
+  ...
+# Subtest: original whole result own-paired-bishops-nn-black
+ok 20 - original whole result own-paired-bishops-nn-black
+  ---
+  duration_ms: 68.0865
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-paired-bishops
+ok 21 - original whole result enemy-paired-bishops
+  ---
+  duration_ms: 61.8796
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-paired-bishops-black
+ok 22 - original whole result enemy-paired-bishops-black
+  ---
+  duration_ms: 62.963
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-paired-bishops-nn
+ok 23 - original whole result enemy-paired-bishops-nn
+  ---
+  duration_ms: 55.2691
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-paired-bishops-nn-black
+ok 24 - original whole result enemy-paired-bishops-nn-black
+  ---
+  duration_ms: 58.974
+  type: 'test'
+  ...
+# Subtest: original whole result same-color-bishops-refused
+ok 25 - original whole result same-color-bishops-refused
+  ---
+  duration_ms: 123.7039
+  type: 'test'
+  ...
+# Subtest: original whole result same-color-bishops-refused-black
+ok 26 - original whole result same-color-bishops-refused-black
+  ---
+  duration_ms: 150.2643
+  type: 'test'
+  ...
+# Subtest: original whole result extra-rook-refuses-pair
+ok 27 - original whole result extra-rook-refuses-pair
+  ---
+  duration_ms: 102.7369
+  type: 'test'
+  ...
+# Subtest: original whole result extra-rook-refuses-pair-black
+ok 28 - original whole result extra-rook-refuses-pair-black
+  ---
+  duration_ms: 109.7281
+  type: 'test'
+  ...
+# Subtest: original whole result already-paired-armies
+ok 29 - original whole result already-paired-armies
+  ---
+  duration_ms: 62.1316
+  type: 'test'
+  ...
+# Subtest: original whole result already-paired-armies-black
+ok 30 - original whole result already-paired-armies-black
+  ---
+  duration_ms: 55.4847
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-bb
+ok 31 - original whole result rook-vs-bb
+  ---
+  duration_ms: 38.2226
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-bb-black
+ok 32 - original whole result rook-vs-bb-black
+  ---
+  duration_ms: 34.8703
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-bn
+ok 33 - original whole result rook-vs-bn
+  ---
+  duration_ms: 44.6974
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-bn-black
+ok 34 - original whole result rook-vs-bn-black
+  ---
+  duration_ms: 40.4177
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-nn
+ok 35 - original whole result rook-vs-nn
+  ---
+  duration_ms: 41.3901
+  type: 'test'
+  ...
+# Subtest: original whole result rook-vs-nn-black
+ok 36 - original whole result rook-vs-nn-black
+  ---
+  duration_ms: 38.1721
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-bn
+ok 37 - original whole result enemy-rook-vs-bn
+  ---
+  duration_ms: 58.6731
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-bn-black
+ok 38 - original whole result enemy-rook-vs-bn-black
+  ---
+  duration_ms: 60.6228
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-bb
+ok 39 - original whole result enemy-rook-vs-bb
+  ---
+  duration_ms: 71.9555
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-bb-black
+ok 40 - original whole result enemy-rook-vs-bb-black
+  ---
+  duration_ms: 50.9488
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-nn
+ok 41 - original whole result enemy-rook-vs-nn
+  ---
+  duration_ms: 46.8643
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-rook-vs-nn-black
+ok 42 - original whole result enemy-rook-vs-nn-black
+  ---
+  duration_ms: 47.2515
+  type: 'test'
+  ...
+# Subtest: original whole result extra-knight-refuses-rook
+ok 43 - original whole result extra-knight-refuses-rook
+  ---
+  duration_ms: 47.0782
+  type: 'test'
+  ...
+# Subtest: original whole result extra-knight-refuses-rook-black
+ok 44 - original whole result extra-knight-refuses-rook-black
+  ---
+  duration_ms: 50.7867
+  type: 'test'
+  ...
+# Subtest: original whole result already-rook-armies
+ok 45 - original whole result already-rook-armies
+  ---
+  duration_ms: 50.0476
+  type: 'test'
+  ...
+# Subtest: original whole result already-rook-armies-black
+ok 46 - original whole result already-rook-armies-black
+  ---
+  duration_ms: 49.3622
+  type: 'test'
+  ...
+# Subtest: original whole result blocked-passer-geometry
+ok 47 - original whole result blocked-passer-geometry
+  ---
+  duration_ms: 14.6131
+  type: 'test'
+  ...
+# Subtest: original whole result blocked-passer-geometry-black
+ok 48 - original whole result blocked-passer-geometry-black
+  ---
+  duration_ms: 14.1259
+  type: 'test'
+  ...
+# Subtest: original whole result pinned-passer-geometry
+ok 49 - original whole result pinned-passer-geometry
+  ---
+  duration_ms: 37.4128
+  type: 'test'
+  ...
+# Subtest: original whole result pinned-passer-geometry-black
+ok 50 - original whole result pinned-passer-geometry-black
+  ---
+  duration_ms: 38.5302
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-ahead
+ok 51 - original whole result adjacent-pawn-ahead
+  ---
+  duration_ms: 8.4478
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-ahead-black
+ok 52 - original whole result adjacent-pawn-ahead-black
+  ---
+  duration_ms: 8.1639
+  type: 'test'
+  ...
+# Subtest: original whole result same-file-pawn-ahead
+ok 53 - original whole result same-file-pawn-ahead
+  ---
+  duration_ms: 8.6855
+  type: 'test'
+  ...
+# Subtest: original whole result same-file-pawn-ahead-black
+ok 54 - original whole result same-file-pawn-ahead-black
+  ---
+  duration_ms: 8.3785
+  type: 'test'
+  ...
+# Subtest: original whole result same-file-pawn-behind
+ok 55 - original whole result same-file-pawn-behind
+  ---
+  duration_ms: 8.1204
+  type: 'test'
+  ...
+# Subtest: original whole result same-file-pawn-behind-black
+ok 56 - original whole result same-file-pawn-behind-black
+  ---
+  duration_ms: 8.0452
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-same-rank
+ok 57 - original whole result adjacent-pawn-same-rank
+  ---
+  duration_ms: 8.5295
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-same-rank-black
+ok 58 - original whole result adjacent-pawn-same-rank-black
+  ---
+  duration_ms: 8.6066
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-behind
+ok 59 - original whole result adjacent-pawn-behind
+  ---
+  duration_ms: 8.5728
+  type: 'test'
+  ...
+# Subtest: original whole result adjacent-pawn-behind-black
+ok 60 - original whole result adjacent-pawn-behind-black
+  ---
+  duration_ms: 8.3551
+  type: 'test'
+  ...
+# Subtest: original whole result ep-vulnerable-double
+ok 61 - original whole result ep-vulnerable-double
+  ---
+  duration_ms: 23.6952
+  type: 'test'
+  ...
+# Subtest: original whole result ep-vulnerable-double-black
+ok 62 - original whole result ep-vulnerable-double-black
+  ---
+  duration_ms: 24.185
+  type: 'test'
+  ...
+# Subtest: original whole result ep-illegal-pinned-double
+ok 63 - original whole result ep-illegal-pinned-double
+  ---
+  duration_ms: 20.7477
+  type: 'test'
+  ...
+# Subtest: original whole result ep-illegal-pinned-double-black
+ok 64 - original whole result ep-illegal-pinned-double-black
+  ---
+  duration_ms: 18.6197
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-pair
+ok 65 - original whole result promotion-pair
+  ---
+  duration_ms: 28.3251
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-pair-black
+ok 66 - original whole result promotion-pair-black
+  ---
+  duration_ms: 30.9235
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-rook
+ok 67 - original whole result promotion-rook
+  ---
+  duration_ms: 20.5099
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-rook-black
+ok 68 - original whole result promotion-rook-black
+  ---
+  duration_ms: 24.243
+  type: 'test'
+  ...
+# Subtest: original whole result empty-map-after-queen
+ok 69 - original whole result empty-map-after-queen
+  ---
+  duration_ms: 21.8495
+  type: 'test'
+  ...
+# Subtest: original whole result empty-map-after-queen-black
+ok 70 - original whole result empty-map-after-queen-black
+  ---
+  duration_ms: 23.7597
+  type: 'test'
+  ...
+# Subtest: original whole result own-empty-map
+ok 71 - original whole result own-empty-map
+  ---
+  duration_ms: 33.249
+  type: 'test'
+  ...
+# Subtest: original whole result own-empty-map-black
+ok 72 - original whole result own-empty-map-black
+  ---
+  duration_ms: 30.6203
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-empty-map
+ok 73 - original whole result enemy-empty-map
+  ---
+  duration_ms: 16.5078
+  type: 'test'
+  ...
+# Subtest: original whole result enemy-empty-map-black
+ok 74 - original whole result enemy-empty-map-black
+  ---
+  duration_ms: 16.7323
+  type: 'test'
+  ...
+# Subtest: original whole result actual-pawn-check
+ok 75 - original whole result actual-pawn-check
+  ---
+  duration_ms: 21.8995
+  type: 'test'
+  ...
+# Subtest: original whole result actual-pawn-check-black
+ok 76 - original whole result actual-pawn-check-black
+  ---
+  duration_ms: 19.3165
+  type: 'test'
+  ...
+# Subtest: original whole result actual-mate
+ok 77 - original whole result actual-mate
+  ---
+  duration_ms: 39.1933
+  type: 'test'
+  ...
+# Subtest: original whole result actual-mate-black
+ok 78 - original whole result actual-mate-black
+  ---
+  duration_ms: 40.4733
+  type: 'test'
+  ...
+# Subtest: original whole result actual-stalemate
+ok 79 - original whole result actual-stalemate
+  ---
+  duration_ms: 45.2836
+  type: 'test'
+  ...
+# Subtest: original whole result actual-stalemate-black
+ok 80 - original whole result actual-stalemate-black
+  ---
+  duration_ms: 46.9658
+  type: 'test'
+  ...
+# Subtest: original whole result dead-promotion
+ok 81 - original whole result dead-promotion
+  ---
+  duration_ms: 8.8704
+  type: 'test'
+  ...
+# Subtest: original whole result dead-promotion-black
+ok 82 - original whole result dead-promotion-black
+  ---
+  duration_ms: 10.2204
+  type: 'test'
+  ...
+# Subtest: original whole result disabled-profile
+ok 83 - original whole result disabled-profile
+  ---
+  duration_ms: 13.3699
+  type: 'test'
+  ...
+# Subtest: original whole result disabled-profile-black
+ok 84 - original whole result disabled-profile-black
+  ---
+  duration_ms: 15.173
+  type: 'test'
+  ...
+# Subtest: original whole result zero-budget
+ok 85 - original whole result zero-budget
+  ---
+  duration_ms: 14.352
+  type: 'test'
+  ...
+# Subtest: original whole result zero-budget-black
+ok 86 - original whole result zero-budget-black
+  ---
+  duration_ms: 14.6639
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-rejected
+ok 87 - original whole result foundation-rejected
+  ---
+  duration_ms: 1.8663
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-rejected-black
+ok 88 - original whole result foundation-rejected-black
+  ---
+  duration_ms: 0.9747
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-exhausted
+ok 89 - original whole result foundation-exhausted
+  ---
+  duration_ms: 13.586
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-exhausted-black
+ok 90 - original whole result foundation-exhausted-black
+  ---
+  duration_ms: 14.3508
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-terminal-root
+ok 91 - original whole result foundation-terminal-root
+  ---
+  duration_ms: 0.4488
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-terminal-root-black
+ok 92 - original whole result foundation-terminal-root-black
+  ---
+  duration_ms: 0.3768
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-q
+ok 93 - original whole result promotion-q
+  ---
+  duration_ms: 28.7603
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-q-black
+ok 94 - original whole result promotion-q-black
+  ---
+  duration_ms: 32.0703
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-q
+ok 95 - original whole result capture-promotion-q
+  ---
+  duration_ms: 36.7167
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-q-black
+ok 96 - original whole result capture-promotion-q-black
+  ---
+  duration_ms: 41.9919
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-r
+ok 97 - original whole result promotion-r
+  ---
+  duration_ms: 24.2611
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-r-black
+ok 98 - original whole result promotion-r-black
+  ---
+  duration_ms: 26.7926
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-r
+ok 99 - original whole result capture-promotion-r
+  ---
+  duration_ms: 32.5072
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-r-black
+ok 100 - original whole result capture-promotion-r-black
+  ---
+  duration_ms: 36.595
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-b
+ok 101 - original whole result promotion-b
+  ---
+  duration_ms: 25.2705
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-b-black
+ok 102 - original whole result promotion-b-black
+  ---
+  duration_ms: 24.6111
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-b
+ok 103 - original whole result capture-promotion-b
+  ---
+  duration_ms: 31.2105
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-b-black
+ok 104 - original whole result capture-promotion-b-black
+  ---
+  duration_ms: 31.2447
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-n
+ok 105 - original whole result promotion-n
+  ---
+  duration_ms: 23.764
+  type: 'test'
+  ...
+# Subtest: original whole result promotion-n-black
+ok 106 - original whole result promotion-n-black
+  ---
+  duration_ms: 25.2813
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-n
+ok 107 - original whole result capture-promotion-n
+  ---
+  duration_ms: 30.2246
+  type: 'test'
+  ...
+# Subtest: original whole result capture-promotion-n-black
+ok 108 - original whole result capture-promotion-n-black
+  ---
+  duration_ms: 32.0166
+  type: 'test'
+  ...
+# Subtest: original whole result ep-capture
+ok 109 - original whole result ep-capture
+  ---
+  duration_ms: 21.0198
+  type: 'test'
+  ...
+# Subtest: original whole result ep-capture-black
+ok 110 - original whole result ep-capture-black
+  ---
+  duration_ms: 21.6204
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-ep-expiry
+ok 111 - original whole result quiet-ep-expiry
+  ---
+  duration_ms: 16.5138
+  type: 'test'
+  ...
+# Subtest: original whole result quiet-ep-expiry-black
+ok 112 - original whole result quiet-ep-expiry-black
+  ---
+  duration_ms: 16.0123
+  type: 'test'
+  ...
+# Subtest: original whole result valid-history
+ok 113 - original whole result valid-history
+  ---
+  duration_ms: 36.1631
+  type: 'test'
+  ...
+# Subtest: original whole result valid-history-black
+ok 114 - original whole result valid-history-black
+  ---
+  duration_ms: 35.6505
+  type: 'test'
+  ...
+# Subtest: original whole result repetition-root
+ok 115 - original whole result repetition-root
+  ---
+  duration_ms: 75.0768
+  type: 'test'
+  ...
+# Subtest: original whole result repetition-root-black
+ok 116 - original whole result repetition-root-black
+  ---
+  duration_ms: 75.3472
+  type: 'test'
+  ...
+# Subtest: original whole result clock-root
+ok 117 - original whole result clock-root
+  ---
+  duration_ms: 0.8381
+  type: 'test'
+  ...
+# Subtest: original whole result clock-root-black
+ok 118 - original whole result clock-root-black
+  ---
+  duration_ms: 0.3498
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-clock-root
+ok 119 - original whole result foundation-clock-root
+  ---
+  duration_ms: 0.4405
+  type: 'test'
+  ...
+# Subtest: original whole result foundation-clock-root-black
+ok 120 - original whole result foundation-clock-root-black
+  ---
+  duration_ms: 0.4649
+  type: 'test'
+  ...
+# Subtest: original whole result bad-flag
+ok 121 - original whole result bad-flag
+  ---
+  duration_ms: 0.0761
+  type: 'test'
+  ...
+# Subtest: original whole result bad-flag-black
+ok 122 - original whole result bad-flag-black
+  ---
+  duration_ms: 0.0595
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget
+ok 123 - original whole result bad-budget
+  ---
+  duration_ms: 0.0627
+  type: 'test'
+  ...
+# Subtest: original whole result bad-budget-black
+ok 124 - original whole result bad-budget-black
+  ---
+  duration_ms: 0.0559
+  type: 'test'
+  ...
+# Subtest: original whole result history-mismatch
+ok 125 - original whole result history-mismatch
+  ---
+  duration_ms: 0.514
+  type: 'test'
+  ...
+# Subtest: original whole result history-mismatch-black
+ok 126 - original whole result history-mismatch-black
+  ---
+  duration_ms: 0.471
+  type: 'test'
+  ...
+# Subtest: complete frame rejects skeleton own map omitted
+ok 127 - complete frame rejects skeleton own map omitted
+  ---
+  duration_ms: 15.3042
+  type: 'test'
+  ...
+# Subtest: complete frame rejects skeleton enemy map omitted
+ok 128 - complete frame rejects skeleton enemy map omitted
+  ---
+  duration_ms: 9.5001
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete before own map omitted
+ok 129 - complete frame rejects complete before own map omitted
+  ---
+  duration_ms: 8.2766
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete after enemy map omitted
+ok 130 - complete frame rejects complete after enemy map omitted
+  ---
+  duration_ms: 7.8971
+  type: 'test'
+  ...
+# Subtest: complete frame rejects eight-file pawn map omitted
+ok 131 - complete frame rejects eight-file pawn map omitted
+  ---
+  duration_ms: 8.0003
+  type: 'test'
+  ...
+# Subtest: complete frame rejects eight-rank pawn map omitted
+ok 132 - complete frame rejects eight-rank pawn map omitted
+  ---
+  duration_ms: 7.9172
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete before inventory omitted
+ok 133 - complete frame rejects complete before inventory omitted
+  ---
+  duration_ms: 7.6615
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete after inventory omitted
+ok 134 - complete frame rejects complete after inventory omitted
+  ---
+  duration_ms: 8.9274
+  type: 'test'
+  ...
+# Subtest: complete frame rejects front blocker invented
+ok 135 - complete frame rejects front blocker invented
+  ---
+  duration_ms: 10.5016
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete pawn classification omitted
+ok 136 - complete frame rejects complete pawn classification omitted
+  ---
+  duration_ms: 7.5397
+  type: 'test'
+  ...
+# Subtest: complete frame rejects geometric passed truth forged
+ok 137 - complete frame rejects geometric passed truth forged
+  ---
+  duration_ms: 7.6641
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete passer list omitted
+ok 138 - complete frame rejects complete passer list omitted
+  ---
+  duration_ms: 7.5588
+  type: 'test'
+  ...
+# Subtest: complete frame rejects legal EP domain omitted
+ok 139 - complete frame rejects legal EP domain omitted
+  ---
+  duration_ms: 11.3519
+  type: 'test'
+  ...
+# Subtest: complete frame rejects off-destination victim forged
+ok 140 - complete frame rejects off-destination victim forged
+  ---
+  duration_ms: 11.3498
+  type: 'test'
+  ...
+# Subtest: complete frame rejects legal EP move forged
+ok 141 - complete frame rejects legal EP move forged
+  ---
+  duration_ms: 11.5115
+  type: 'test'
+  ...
+# Subtest: complete frame rejects EP resulting board forged
+ok 142 - complete frame rejects EP resulting board forged
+  ---
+  duration_ms: 13.4296
+  type: 'test'
+  ...
+# Subtest: complete frame rejects individual EP exclusion omitted
+ok 143 - complete frame rejects individual EP exclusion omitted
+  ---
+  duration_ms: 10.9155
+  type: 'test'
+  ...
+# Subtest: complete frame rejects EP-vulnerable pawn called passed
+ok 144 - complete frame rejects EP-vulnerable pawn called passed
+  ---
+  duration_ms: 11.8658
+  type: 'test'
+  ...
+# Subtest: complete frame rejects whole own army signature forged
+ok 145 - complete frame rejects whole own army signature forged
+  ---
+  duration_ms: 41.4059
+  type: 'test'
+  ...
+# Subtest: complete frame rejects bishop inventory omitted
+ok 146 - complete frame rejects bishop inventory omitted
+  ---
+  duration_ms: 42.7049
+  type: 'test'
+  ...
+# Subtest: complete frame rejects opposite-square colors forged
+ok 147 - complete frame rejects opposite-square colors forged
+  ---
+  duration_ms: 41.246
+  type: 'test'
+  ...
+# Subtest: complete frame rejects whole opposing army forged
+ok 148 - complete frame rejects whole opposing army forged
+  ---
+  duration_ms: 42.2731
+  type: 'test'
+  ...
+# Subtest: complete frame rejects bishop-comparison actor role forged
+ok 149 - complete frame rejects bishop-comparison actor role forged
+  ---
+  duration_ms: 41.393
+  type: 'test'
+  ...
+# Subtest: complete frame rejects bishop comparison forged
+ok 150 - complete frame rejects bishop comparison forged
+  ---
+  duration_ms: 41.8686
+  type: 'test'
+  ...
+# Subtest: complete frame rejects rook comparison forged
+ok 151 - complete frame rejects rook comparison forged
+  ---
+  duration_ms: 23.7431
+  type: 'test'
+  ...
+# Subtest: complete frame rejects whole rook army forged
+ok 152 - complete frame rejects whole rook army forged
+  ---
+  duration_ms: 22.6651
+  type: 'test'
+  ...
+# Subtest: complete frame rejects corrected four-file wing shortened
+ok 153 - complete frame rejects corrected four-file wing shortened
+  ---
+  duration_ms: 7.3237
+  type: 'test'
+  ...
+# Subtest: complete frame rejects wing own contributor omitted
+ok 154 - complete frame rejects wing own contributor omitted
+  ---
+  duration_ms: 7.1473
+  type: 'test'
+  ...
+# Subtest: complete frame rejects wing enemy contributor omitted
+ok 155 - complete frame rejects wing enemy contributor omitted
+  ---
+  duration_ms: 7.4085
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete wing domain omitted
+ok 156 - complete frame rejects complete wing domain omitted
+  ---
+  duration_ms: 8.5896
+  type: 'test'
+  ...
+# Subtest: complete frame rejects wing identity forged
+ok 157 - complete frame rejects wing identity forged
+  ---
+  duration_ms: 9.1933
+  type: 'test'
+  ...
+# Subtest: complete frame rejects wing pawn classification forged
+ok 158 - complete frame rejects wing pawn classification forged
+  ---
+  duration_ms: 7.374
+  type: 'test'
+  ...
+# Subtest: complete frame rejects actor forged
+ok 159 - complete frame rejects actor forged
+  ---
+  duration_ms: 7.2768
+  type: 'test'
+  ...
+# Subtest: complete frame rejects history forged
+ok 160 - complete frame rejects history forged
+  ---
+  duration_ms: 7.193
+  type: 'test'
+  ...
+# Subtest: complete frame rejects actual move identity forged
+ok 161 - complete frame rejects actual move identity forged
+  ---
+  duration_ms: 7.0209
+  type: 'test'
+  ...
+# Subtest: complete frame rejects actual flags forged
+ok 162 - complete frame rejects actual flags forged
+  ---
+  duration_ms: 6.8028
+  type: 'test'
+  ...
+# Subtest: complete frame rejects schema forged
+ok 163 - complete frame rejects schema forged
+  ---
+  duration_ms: 7.728
+  type: 'test'
+  ...
+# Subtest: complete frame rejects selected comment forged
+ok 164 - complete frame rejects selected comment forged
+  ---
+  duration_ms: 7.8545
+  type: 'test'
+  ...
+# Subtest: complete frame rejects inherited SAN forged
+ok 165 - complete frame rejects inherited SAN forged
+  ---
+  duration_ms: 7.4443
+  type: 'test'
+  ...
+# Subtest: complete frame rejects inherited event invented
+ok 166 - complete frame rejects inherited event invented
+  ---
+  duration_ms: 7.6769
+  type: 'test'
+  ...
+# Subtest: complete frame rejects whole claim omitted and laundered
+ok 167 - complete frame rejects whole claim omitted and laundered
+  ---
+  duration_ms: 4.7311
+  type: 'test'
+  ...
+# Subtest: complete frame rejects own event duplicated
+ok 168 - complete frame rejects own event duplicated
+  ---
+  duration_ms: 18.3479
+  type: 'test'
+  ...
+# Subtest: complete frame rejects quality claim forged
+ok 169 - complete frame rejects quality claim forged
+  ---
+  duration_ms: 7.3484
+  type: 'test'
+  ...
+# Subtest: complete frame rejects text forged
+ok 170 - complete frame rejects text forged
+  ---
+  duration_ms: 7.3149
+  type: 'test'
+  ...
+# Subtest: complete frame rejects complete own event order reversed
+ok 171 - complete frame rejects complete own event order reversed
+  ---
+  duration_ms: 11.0288
+  type: 'test'
+  ...
+# Subtest: complete frame rejects node count forged
+ok 172 - complete frame rejects node count forged
+  ---
+  duration_ms: 5.4534
+  type: 'test'
+  ...
+# Subtest: complete frame rejects budget limit forged
+ok 173 - complete frame rejects budget limit forged
+  ---
+  duration_ms: 5.2211
+  type: 'test'
+  ...
+# Subtest: complete frame rejects status forged
+ok 174 - complete frame rejects status forged
+  ---
+  duration_ms: 5.0398
+  type: 'test'
+  ...
+# Subtest: every integer budget pawn-capture-own-majority
+ok 175 - every integer budget pawn-capture-own-majority
+  ---
+  duration_ms: 66.2736
+  type: 'test'
+  ...
+# Subtest: every integer budget own-paired-bishops-bn
+ok 176 - every integer budget own-paired-bishops-bn
+  ---
+  duration_ms: 447.215
+  type: 'test'
+  ...
+# Subtest: every integer budget ep-vulnerable-double
+ok 177 - every integer budget ep-vulnerable-double
+  ---
+  duration_ms: 145.0762
+  type: 'test'
+  ...
+# Subtest: every integer budget valid-history
+ok 178 - every integer budget valid-history
+  ---
+  duration_ms: 244.3415
+  type: 'test'
+  ...
+# Subtest: implemented strict and historical null/default compatibility
+ok 179 - implemented strict and historical null/default compatibility
+  ---
+  duration_ms: 55.393
+  type: 'test'
+  ...
+# Subtest: positive normalized history and actual repetition terminal
+ok 180 - positive normalized history and actual repetition terminal
+  ---
+  duration_ms: 230.185
+  type: 'test'
+  ...
+# Subtest: all original states five kinds complete army roles and comparisons
+ok 181 - all original states five kinds complete army roles and comparisons
+  ---
+  duration_ms: 0.1902
+  type: 'test'
+  ...
+# Subtest: legacy checker already reports actual atomic emitted count
+ok 182 - legacy checker already reports actual atomic emitted count
+  ---
+  duration_ms: 9.4995
+  type: 'test'
+  ...
+# Subtest: legal versus pinned EP exclusion and central d-e wing transfer
+ok 183 - legal versus pinned EP exclusion and central d-e wing transfer
+  ---
+  duration_ms: 114.0034
+  type: 'test'
+  ...
+1..183
+# tests 183
+# suites 0
+# pass 183
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5931.8165
