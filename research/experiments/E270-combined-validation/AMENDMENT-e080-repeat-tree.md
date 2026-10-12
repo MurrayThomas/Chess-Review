@@ -1,0 +1,5 @@
+# E080 historical repeat tree correction — 2026-10-12
+
+The initial saved admission at6d140b6 failed before any rows/proofs/errors were evaluated. Its gate incorrectly required all three original manifests to have empty workingTreeStatus. Fixed canonical manifests show main and initially-clean empty; repeat records exactly `?? research/experiments/E080-pawn-shield-defense/evidence/`. This is the historical output directory, not a source difference. Preserve these three distinct authenticated values and all other historical source/config/environment/output/receipt checks; do not call the repeat initially clean or rewrite old evidence.
+
+Prospectively correct only the new saved-admission status assertion to this exact ordered vector, bind this amendment in the new source inputs, and rerun the unchanged166 smoke controls because the preparation binding changes. Then run a distinct saved attempt under the existing600-second cap. Retain the initial failed raw artifacts and zero row counters. No historical checker/candidate/test/input or full regression changes; no budget/semantic relaxation, new acceptance or origin credit. All remaining research gates remain open.
