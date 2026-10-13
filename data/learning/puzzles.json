@@ -1,0 +1,6765 @@
+{
+  "schema": 1,
+  "source": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "license": "CC0-1.0",
+  "sourceDocumentation": "https://database.lichess.org/#puzzles",
+  "retrievedAt": "2026-10-13T22:03:07.072Z",
+  "rowsRead": 74099,
+  "validation": "All setup and solution moves replayed legally using bundled chess.js and exact-position admission. Solutions and tactical tags are supplied by the Lichess Stockfish puzzle pipeline. Any mate-in-one checkmate is accepted.",
+  "puzzles": [
+    {
+      "id": "00008",
+      "fen": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2b1/PqP3PP/7K w - - 0 25",
+      "setup": {
+        "fen": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2R1/PqP2bPP/7K b - - 0 24",
+        "move": "f2g3"
+      },
+      "solution": [
+        "e6e7",
+        "b2b1",
+        "b3c1",
+        "b1c1",
+        "h6c1"
+      ],
+      "rating": 1811,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00008",
+        "gameUrl": "https://lichess.org/787zsVup/black#48",
+        "license": "CC0-1.0",
+        "rowSha256": "e86df2a48ba7fcc538338f94194a72ae6a869397cfe3f6cd8099783271b40ef8"
+      }
+    },
+    {
+      "id": "0000D",
+      "fen": "5rk1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 b - - 3 27",
+      "setup": {
+        "fen": "5rk1/1p3ppp/pq3b2/8/8/1P1Q1N2/P4PPP/3R2K1 w - - 2 27",
+        "move": "d3d6"
+      },
+      "solution": [
+        "f8d8",
+        "d6d8",
+        "f6d8"
+      ],
+      "rating": 1529,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0000D",
+        "gameUrl": "https://lichess.org/F8M8OS71#53",
+        "license": "CC0-1.0",
+        "rowSha256": "6faa1ec16a17e73f8ede3817b61a739e00c160e89f699f949adf7dbb7c73889c"
+      }
+    },
+    {
+      "id": "0008Q",
+      "fen": "8/5R2/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 b - - 2 64",
+      "setup": {
+        "fen": "8/4R3/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 w - - 1 64",
+        "move": "e7f7"
+      },
+      "solution": [
+        "f5e5",
+        "e2f1",
+        "e5e6"
+      ],
+      "rating": 1383,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0008Q",
+        "gameUrl": "https://lichess.org/MQSyb3KW#127",
+        "license": "CC0-1.0",
+        "rowSha256": "aca292eb1d25e35db303d50cb3864ae4819438a9e9a82d0cf359cf9ff6f8a7f5"
+      }
+    },
+    {
+      "id": "000Pw",
+      "fen": "6k1/5p1p/4p3/4q3/3n4/2Q3P1/PP1N1P1P/6K1 b - - 3 37",
+      "setup": {
+        "fen": "6k1/5p1p/4p3/4q3/3nN3/2Q3P1/PP3P1P/6K1 w - - 2 37",
+        "move": "e4d2"
+      },
+      "solution": [
+        "d4e2",
+        "g1f1",
+        "e2c3"
+      ],
+      "rating": 1530,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/000Pw",
+        "gameUrl": "https://lichess.org/au2lCK5o#73",
+        "license": "CC0-1.0",
+        "rowSha256": "a75d7c0a14a675e01e871be5436041e35a8c53e90bc03e8c6446fd4ab0a1c603"
+      }
+    },
+    {
+      "id": "000Sa",
+      "fen": "2Q2bk1/5p1p/p5p1/2p3P1/4B3/7P/qPr2P2/2K4R w - - 0 33",
+      "setup": {
+        "fen": "2Q2bk1/5p1p/p5p1/2p3P1/2r1B3/7P/qPQ2P2/2K4R b - - 0 32",
+        "move": "c4c2"
+      },
+      "solution": [
+        "e4c2",
+        "a2a1",
+        "c2b1"
+      ],
+      "rating": 1476,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/000Sa",
+        "gameUrl": "https://lichess.org/lTTa9lwd/black#64",
+        "license": "CC0-1.0",
+        "rowSha256": "b6eea4acb799e03975d9b3259e47a5654f98ec4532564db08cc1b2aeb8ea75ba"
+      }
+    },
+    {
+      "id": "000Zo",
+      "fen": "4r3/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/6K1 b - - 0 35",
+      "setup": {
+        "fen": "4r3/1k6/pp3r2/1b2P2p/3R1p2/P1R2P2/1P4PP/6K1 w - - 0 35",
+        "move": "e5f6"
+      },
+      "solution": [
+        "e8e1",
+        "g1f2",
+        "e1f1"
+      ],
+      "rating": 1363,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "operaMate",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/000Zo",
+        "gameUrl": "https://lichess.org/n8Ff742v#69",
+        "license": "CC0-1.0",
+        "rowSha256": "c05ef180eb795012e73c8f1e3839e634db32dffd349ce4f98055d65ec381ad75"
+      }
+    },
+    {
+      "id": "000hf",
+      "fen": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+      "setup": {
+        "fen": "r1bqk2r/pp1nbNp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 b kq - 0 19",
+        "move": "e8f7"
+      },
+      "solution": [
+        "e2e6",
+        "f7f8",
+        "e6f7"
+      ],
+      "rating": 1391,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/000hf",
+        "gameUrl": "https://lichess.org/71ygsFeE/black#38",
+        "license": "CC0-1.0",
+        "rowSha256": "f2ee7d409525279cdf4c8adb3260fe73a2a0baeb46e8cfef3791890c12f457b6"
+      }
+    },
+    {
+      "id": "000lC",
+      "fen": "3r3r/pQNk1ppp/1qnR1n2/1B6/8/8/PPP3PP/5R1K b - - 0 19",
+      "setup": {
+        "fen": "3r3r/pQNk1ppp/1qnb1n2/1B6/8/8/PPP3PP/3R1R1K w - - 5 19",
+        "move": "d1d6"
+      },
+      "solution": [
+        "d7d6",
+        "b7b6",
+        "a7b6"
+      ],
+      "rating": 1356,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/000lC",
+        "gameUrl": "https://lichess.org/vaqz2bx6#37",
+        "license": "CC0-1.0",
+        "rowSha256": "fbcf328276d129c6ceace1c0545fc97df5a01a0eed320db28b524b9dcb1c55f1"
+      }
+    },
+    {
+      "id": "000qP",
+      "fen": "8/7R/8/5p2/4bk1P/8/2r5/5KR1 b - - 8 51",
+      "setup": {
+        "fen": "8/7R/8/5p2/4bk1P/8/2r2K2/6R1 w - - 7 51",
+        "move": "f2f1"
+      },
+      "solution": [
+        "f4f3",
+        "f1e1",
+        "c2c1",
+        "e1d2",
+        "c1g1"
+      ],
+      "rating": 2167,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/000qP",
+        "gameUrl": "https://lichess.org/r4xUR6fC#101",
+        "license": "CC0-1.0",
+        "rowSha256": "199ee273698fa4bb05080c68205039c41086db79a81ef7bccf290c366ef529e2"
+      }
+    },
+    {
+      "id": "000rZ",
+      "fen": "2kr1b1r/p1p2pp1/2pqN3/7p/6n1/2NPB3/PPP2PPP/R2Q1RK1 b - - 0 13",
+      "setup": {
+        "fen": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+        "move": "d4e6"
+      },
+      "solution": [
+        "d6h2"
+      ],
+      "rating": 662,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "opening"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/000rZ",
+        "gameUrl": "https://lichess.org/seIMDWkD#25",
+        "license": "CC0-1.0",
+        "rowSha256": "940f4d8457546354a6170e7e78f6f66512e3647ff0464658b2fea9825c9509ab"
+      }
+    },
+    {
+      "id": "0017R",
+      "fen": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2n5/2NBBP1P/PP3P2/R2QK2R w KQkq - 0 13",
+      "setup": {
+        "fen": "r2qk2r/pp2ppbp/1n1p2p1/3Pn3/2P5/2NBBP1P/PP3P2/R2QK2R b KQkq - 0 12",
+        "move": "e5c4"
+      },
+      "solution": [
+        "d3c4",
+        "b6c4",
+        "d1a4",
+        "d8d7",
+        "a4c4"
+      ],
+      "rating": 1655,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/0017R",
+        "gameUrl": "https://lichess.org/ol84k0z4/black#24",
+        "license": "CC0-1.0",
+        "rowSha256": "7dd7ba09a9c6a82344466fed96dc691dfe112300b732ab063a2bf31d0b427910"
+      }
+    },
+    {
+      "id": "001XA",
+      "fen": "2r2rk1/pbq1bppp/8/8/2p1N3/P1Bn2P1/2Q2PBP/1R3RK1 w - - 4 24",
+      "setup": {
+        "fen": "1qr2rk1/pb2bppp/8/8/2p1N3/P1Bn2P1/2Q2PBP/1R3RK1 b - - 3 23",
+        "move": "b8c7"
+      },
+      "solution": [
+        "b1b7",
+        "c7b7",
+        "e4f6",
+        "e7f6",
+        "g2b7"
+      ],
+      "rating": 1687,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "long",
+        "master",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/001XA",
+        "gameUrl": "https://lichess.org/KZRiN695/black#46",
+        "license": "CC0-1.0",
+        "rowSha256": "59698716ec8eafb7fe593bf56c6529cea4f7a2a0cedb2bad588acf1210411733"
+      }
+    },
+    {
+      "id": "001aK",
+      "fen": "6k1/5p2/4p3/P1B5/2P4P/4Pnp1/Rb2r3/5K2 w - - 0 34",
+      "setup": {
+        "fen": "6k1/5p2/4p3/P1B5/2P4P/4Pnp1/Rb1rN3/5K2 b - - 1 33",
+        "move": "d2e2"
+      },
+      "solution": [
+        "f1e2",
+        "g3g2",
+        "e3e4",
+        "f3d4",
+        "e2f2"
+      ],
+      "rating": 2056,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "crushing",
+        "endgame",
+        "hangingPiece",
+        "long",
+        "quietMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/001aK",
+        "gameUrl": "https://lichess.org/Epr0AiEh/black#66",
+        "license": "CC0-1.0",
+        "rowSha256": "b91766c85622e083f492eeddd32524409abf233d1e41f04ee3d833846baedd3e"
+      }
+    },
+    {
+      "id": "001cr",
+      "fen": "8/3B2pp/p5k1/6P1/1ppp1K2/8/1P6/8 w - - 0 39",
+      "setup": {
+        "fen": "8/3B2pp/p5k1/2p3P1/1p1p1K2/8/1P6/8 b - - 0 38",
+        "move": "c5c4"
+      },
+      "solution": [
+        "d7e8"
+      ],
+      "rating": 1517,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "bishopEndgame",
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/001cr",
+        "gameUrl": "https://lichess.org/7FFNwibw/black#76",
+        "license": "CC0-1.0",
+        "rowSha256": "44af0be97ca058d7194a9bac6093fc2e6b85ab190ecc7959ddd111dd24ab421a"
+      }
+    },
+    {
+      "id": "001h8",
+      "fen": "2r3k1/2r4p/4p1p1/1p1q1pP1/p2P1P1Q/P6R/4bB2/2R3K1 w - - 6 35",
+      "setup": {
+        "fen": "2r3k1/2r4p/4p1p1/1p1q1pP1/p1bP1P1Q/P6R/5B2/2R3K1 b - - 5 34",
+        "move": "c4e2"
+      },
+      "solution": [
+        "h4h7",
+        "c7h7",
+        "c1c8",
+        "g8g7",
+        "c8c7"
+      ],
+      "rating": 1749,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "crushing",
+        "deflection",
+        "kingsideAttack",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/001h8",
+        "gameUrl": "https://lichess.org/IxCahP6X/black#68",
+        "license": "CC0-1.0",
+        "rowSha256": "174b92e260100b1b0f11e05ffb315fac9bbc7d7d1367c2279711ee40ca07a5d0"
+      }
+    },
+    {
+      "id": "001kG",
+      "fen": "rnbq3r/1p3kpp/p4n2/2b5/2pNP3/2N5/PPP3PP/R1BQ1RK1 w - - 2 12",
+      "setup": {
+        "fen": "rnbq3r/1p2bkpp/p4n2/8/2pNP3/2N5/PPP3PP/R1BQ1RK1 b - - 1 11",
+        "move": "e7c5"
+      },
+      "solution": [
+        "d1h5",
+        "f7g8",
+        "h5c5"
+      ],
+      "rating": 1974,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "opening",
+        "pin",
+        "short"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/001kG",
+        "gameUrl": "https://lichess.org/xXAEaVto/black#22",
+        "license": "CC0-1.0",
+        "rowSha256": "d1c5585b6444c728369041be20173ed363434cf81616de56c4d254d601771f21"
+      }
+    },
+    {
+      "id": "001wR",
+      "fen": "6nr/p4p1p/k1p5/1p6/1QN5/2P1P3/4KPqP/8 w - - 0 27",
+      "setup": {
+        "fen": "6nr/pp3p1p/k1p5/8/1QN5/2P1P3/4KPqP/8 b - - 5 26",
+        "move": "b7b5"
+      },
+      "solution": [
+        "b4a5",
+        "a6b7",
+        "c4d6",
+        "b7b8",
+        "a5d8"
+      ],
+      "rating": 1152,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/001wR",
+        "gameUrl": "https://lichess.org/ruvbd9JW/black#52",
+        "license": "CC0-1.0",
+        "rowSha256": "8fc387a021d6b6636790c53363b35333d4ea281b284e37f73300d2e54b6effc5"
+      }
+    },
+    {
+      "id": "001wr",
+      "fen": "r4rk1/p3ppbp/Pp1q1np1/3PpbB1/2B5/2N2P2/1PPQ2PP/3RR1K1 b - - 0 18",
+      "setup": {
+        "fen": "r4rk1/p3ppbp/Pp1q1np1/3PpbB1/2B5/2N5/1PPQ1PPP/3RR1K1 w - - 4 18",
+        "move": "f2f3"
+      },
+      "solution": [
+        "d6c5",
+        "g1h1",
+        "c5c4"
+      ],
+      "rating": 989,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "master",
+        "masterVsMaster",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/001wr",
+        "gameUrl": "https://lichess.org/KnJ2mojX#35",
+        "license": "CC0-1.0",
+        "rowSha256": "c34055bee79a5ea6f48f5fa62b04c5ea4f500762e5800501b01995774d4e593b"
+      }
+    },
+    {
+      "id": "001xO",
+      "fen": "k1r1b3/p1r1nppp/Bp1qpn2/2Np4/1P1P4/PQR1PN2/5PPP/2R3K1 b - - 1 19",
+      "setup": {
+        "fen": "k1r1b3/p1r1nppp/1p1qpn2/2Np4/1P1P4/PQRBPN2/5PPP/2R3K1 w - - 0 19",
+        "move": "d3a6"
+      },
+      "solution": [
+        "b6c5",
+        "a6c8",
+        "c5c4"
+      ],
+      "rating": 1780,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "crushing",
+        "master",
+        "masterVsMaster",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/001xO",
+        "gameUrl": "https://lichess.org/fNCePFgY#37",
+        "license": "CC0-1.0",
+        "rowSha256": "45e8a413eae46cbdc8ef15ef84de6a59bdf00887a8f7e25d287b6d16b5ae31a2"
+      }
+    },
+    {
+      "id": "001xl",
+      "fen": "8/4R3/p4kpp/3B4/5q2/8/5P1P/6K1 w - - 6 41",
+      "setup": {
+        "fen": "8/4R1k1/p5pp/3B4/5q2/8/5P1P/6K1 b - - 5 40",
+        "move": "g7f6"
+      },
+      "solution": [
+        "e7f7",
+        "f6e5",
+        "f7f4"
+      ],
+      "rating": 1299,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "advantage",
+        "endgame",
+        "master",
+        "masterVsMaster",
+        "short",
+        "skewer",
+        "superGM"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/001xl",
+        "gameUrl": "https://lichess.org/bEQkfPQD/black#80",
+        "license": "CC0-1.0",
+        "rowSha256": "26d558dba207242f1cde8ab383f1f715d77c570063cc602fdfd2fc08a6064a69"
+      }
+    },
+    {
+      "id": "002HE",
+      "fen": "1qr2rk1/1p1p1ppp/pB2p1n1/7n/2P1P3/1Q2NP1P/PP2BKPb/3R1R2 b - - 2 20",
+      "setup": {
+        "fen": "1qr2rk1/1p1p1ppp/pB2p1n1/7n/2P1P3/1Q2NP1P/PP2B1Pb/3R1RK1 w - - 1 20",
+        "move": "g1f2"
+      },
+      "solution": [
+        "b8g3"
+      ],
+      "rating": 1116,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "master",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/002HE",
+        "gameUrl": "https://lichess.org/U21EXYdv#39",
+        "license": "CC0-1.0",
+        "rowSha256": "ab798c67e8b98b1b81280a943fc543e25d9ac708c7ab2e07de29487a1e86ab58"
+      }
+    },
+    {
+      "id": "002KJ",
+      "fen": "r3k2r/ppq1bppp/4pn2/2Ppn3/1P4bP/2P2N2/P3BPP1/RNBQ1RK1 w kq - 3 11",
+      "setup": {
+        "fen": "r3kb1r/ppq2ppp/4pn2/2Ppn3/1P4bP/2P2N2/P3BPP1/RNBQ1RK1 b kq - 2 10",
+        "move": "f8e7"
+      },
+      "solution": [
+        "f3e5",
+        "c7e5",
+        "e2g4"
+      ],
+      "rating": 1569,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/002KJ",
+        "gameUrl": "https://lichess.org/2NpTzh7O/black#20",
+        "license": "CC0-1.0",
+        "rowSha256": "0ed1599156b0a3a97bd26cab1a9f5d6271d0fb521a171353caef87995c0624d3"
+      }
+    },
+    {
+      "id": "002LF",
+      "fen": "7r/p4pk1/1pp3p1/8/6q1/4Q3/PP1R1P1r/5KN1 w - - 0 39",
+      "setup": {
+        "fen": "7r/p2q1pk1/1pp3p1/8/6P1/4Q3/PP1R1P1r/5KN1 b - - 0 38",
+        "move": "d7g4"
+      },
+      "solution": [
+        "e3e5",
+        "f7f6",
+        "e5c7",
+        "g7h6",
+        "c7h2"
+      ],
+      "rating": 2185,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "interference",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/002LF",
+        "gameUrl": "https://lichess.org/md88dHiL/black#76",
+        "license": "CC0-1.0",
+        "rowSha256": "b3bf85fdf1212a46f3e821d9db7c6958522750e3a7059b4791a988e72adb1867"
+      }
+    },
+    {
+      "id": "002Uy",
+      "fen": "8/8/1p6/k7/P7/1KR4r/8/8 b - - 27 64",
+      "setup": {
+        "fen": "8/8/1p6/k7/P1R5/1K5r/8/8 w - - 26 64",
+        "move": "c4c3"
+      },
+      "solution": [
+        "h3c3",
+        "b3c3",
+        "a5a4",
+        "c3b2",
+        "a4b4"
+      ],
+      "rating": 1565,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/002Uy",
+        "gameUrl": "https://lichess.org/sLU7YN1A#127",
+        "license": "CC0-1.0",
+        "rowSha256": "982b17c51274d006c27234b9de1c7c1d14523bb333a57c17fbc8a30cca957cbf"
+      }
+    },
+    {
+      "id": "002bK",
+      "fen": "8/7p/4k3/pb1p1pPB/1n1P3P/N1p1P3/4K3/8 w - - 2 43",
+      "setup": {
+        "fen": "8/7p/2b1k3/p2p1pPB/1n1P3P/N1p1P3/4K3/8 b - - 1 42",
+        "move": "c6b5"
+      },
+      "solution": [
+        "a3b5",
+        "c3c2",
+        "e2d2"
+      ],
+      "rating": 1100,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/002bK",
+        "gameUrl": "https://lichess.org/IFGj8W5s/black#84",
+        "license": "CC0-1.0",
+        "rowSha256": "5398ec78b67e7fefff767653103dd1858e939a75539add938d0dd5d0e1f15b59"
+      }
+    },
+    {
+      "id": "002e8",
+      "fen": "3rnrk1/1b3pp1/4pb2/p3q3/1p1N4/3B2R1/PPPQN2P/1K4R1 w - - 2 24",
+      "setup": {
+        "fen": "r3nrk1/1b3pp1/4pb2/p3q3/1p1N4/3B2R1/PPPQN2P/1K4R1 b - - 1 23",
+        "move": "a8d8"
+      },
+      "solution": [
+        "d2h6",
+        "g7g6",
+        "g3h3"
+      ],
+      "rating": 2554,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "master",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/002e8",
+        "gameUrl": "https://lichess.org/ygzu5djr/black#46",
+        "license": "CC0-1.0",
+        "rowSha256": "26e66cde6fe453975797eaec104c81a434ffd2f5d7f2488c03b8671d45a12d38"
+      }
+    },
+    {
+      "id": "002vV",
+      "fen": "8/6k1/1R5p/5p1P/5P1K/6P1/8/r7 b - - 3 58",
+      "setup": {
+        "fen": "8/6k1/2R4p/5p1P/5P1K/6P1/8/r7 w - - 2 58",
+        "move": "c6b6"
+      },
+      "solution": [
+        "a1h1"
+      ],
+      "rating": 576,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "master",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/002vV",
+        "gameUrl": "https://lichess.org/KB7FAntf#115",
+        "license": "CC0-1.0",
+        "rowSha256": "7535435450559dfa539f57b7997c959bd6a3a537704f24db85af2e5348a3fb6a"
+      }
+    },
+    {
+      "id": "0039T",
+      "fen": "1r5r/p3kp2/4p2p/4P3/R4Pp1/6P1/P1P4P/4K2R b K - 2 25",
+      "setup": {
+        "fen": "1r5r/p3kp2/4p2p/4P3/3R1Pp1/6P1/P1P4P/4K2R w K - 1 25",
+        "move": "d4a4"
+      },
+      "solution": [
+        "b8b1",
+        "e1f2",
+        "b1h1",
+        "a4a7",
+        "e7f8"
+      ],
+      "rating": 1121,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "rookEndgame",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0039T",
+        "gameUrl": "https://lichess.org/BrtVeJlj#49",
+        "license": "CC0-1.0",
+        "rowSha256": "7cc250b2bfaa4b4b029e2cab55f3343d7b0b9070176f64d3ced053cdb62a85fc"
+      }
+    },
+    {
+      "id": "003AX",
+      "fen": "2r2rk1/5ppp/bq2p3/p2pP1N1/Pb1p2P1/1P2P2P/2QN4/2R1K2R w K - 0 19",
+      "setup": {
+        "fen": "2r2rk1/5ppp/bq2p3/p1ppP1N1/Pb1P2P1/1P2P2P/2QN4/2R1K2R b K - 1 18",
+        "move": "c5d4"
+      },
+      "solution": [
+        "c2h7"
+      ],
+      "rating": 1014,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003AX",
+        "gameUrl": "https://lichess.org/kRgejRSt/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "d19a3f824f203eda0b5f2576b5cb5020e388ae3bb3e6b608e84453918a63d823"
+      }
+    },
+    {
+      "id": "003IX",
+      "fen": "8/3pk3/R7/1R2PK1p/2PPn1r1/8/8/8 b - - 0 43",
+      "setup": {
+        "fen": "8/3pk3/R7/1R2Pp1p/2PPnKr1/8/8/8 w - - 4 43",
+        "move": "f4f5"
+      },
+      "solution": [
+        "e4g3"
+      ],
+      "rating": 1698,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/003IX",
+        "gameUrl": "https://lichess.org/576Btq56#85",
+        "license": "CC0-1.0",
+        "rowSha256": "79a89a8bf8db1c7d5f6126863067e938783cbf6b55cf184aab302b22662f0b3a"
+      }
+    },
+    {
+      "id": "003S3",
+      "fen": "1r3k1r/pNqnppb1/6pn/2p3Np/7P/2P2Q2/PP3PP1/R1B1K2R w KQ - 3 16",
+      "setup": {
+        "fen": "r4k1r/pNqnppb1/6pn/2p3Np/7P/2P2Q2/PP3PP1/R1B1K2R b KQ - 2 15",
+        "move": "a8b8"
+      },
+      "solution": [
+        "g5e6",
+        "f8g8",
+        "e6c7"
+      ],
+      "rating": 1336,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003S3",
+        "gameUrl": "https://lichess.org/Eu6S0GPA/black#30",
+        "license": "CC0-1.0",
+        "rowSha256": "45f5a57309226e242d1a360e45e8338613fc7faa6b80b5cecf51475a7a1488be"
+      }
+    },
+    {
+      "id": "003UW",
+      "fen": "8/6pk/7p/2pq4/3p4/5PP1/P3QK1P/8 w - - 2 41",
+      "setup": {
+        "fen": "8/6pk/7p/2p5/2qp4/5PP1/P3QK1P/8 b - - 1 40",
+        "move": "c4d5"
+      },
+      "solution": [
+        "e2e4",
+        "d5e4",
+        "f3e4"
+      ],
+      "rating": 1473,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "queenEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/003UW",
+        "gameUrl": "https://lichess.org/cXMga3rb/black#80",
+        "license": "CC0-1.0",
+        "rowSha256": "f5846025182a2572403c3fb4444ab88a182023771b7a436f941408b3a1c3d518"
+      }
+    },
+    {
+      "id": "003eP",
+      "fen": "6k1/r1b1q3/2p3p1/2Pp4/1P2p1n1/2B1P3/NQ6/2K4R w - - 2 37",
+      "setup": {
+        "fen": "8/r1b1q2k/2p3p1/2Pp4/1P2p1n1/2B1P3/NQ6/2K4R b - - 1 36",
+        "move": "h7g8"
+      },
+      "solution": [
+        "h1h8",
+        "g8f7",
+        "h8h7",
+        "f7e8",
+        "h7e7"
+      ],
+      "rating": 1156,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "skewer"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003eP",
+        "gameUrl": "https://lichess.org/n9vCFmKh/black#72",
+        "license": "CC0-1.0",
+        "rowSha256": "a7ad2d48a8781e4de5a6d7690223ecc05af384846b4d0febabe7bb3a6259a24f"
+      }
+    },
+    {
+      "id": "003jb",
+      "fen": "r3kb1r/p4ppp/b3p3/2pq4/3Q4/4BN2/PPP2PPP/R3K2R w KQkq - 0 12",
+      "setup": {
+        "fen": "r3kb1r/p4ppp/b1p1p3/3q4/3Q4/4BN2/PPP2PPP/R3K2R b KQkq - 0 11",
+        "move": "c6c5"
+      },
+      "solution": [
+        "d4a4",
+        "a6b5",
+        "a4b5"
+      ],
+      "rating": 962,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "fork",
+        "master",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003jb",
+        "gameUrl": "https://lichess.org/960EzUS0/black#22",
+        "license": "CC0-1.0",
+        "rowSha256": "6520128b8bc7c7458db7f052c3343a17b24bd1d4a8f780ba5327726128c61e5e"
+      }
+    },
+    {
+      "id": "003o0",
+      "fen": "r1bqk2r/pp1nbppp/3p4/1B1p4/3P1B2/5N2/PPP2PPP/R2QK2R b KQkq - 3 9",
+      "setup": {
+        "fen": "r1bqk2r/pp1nbppp/3p4/1B1p4/3P1B2/8/PPP2PPP/R2QK1NR w KQkq - 2 9",
+        "move": "g1f3"
+      },
+      "solution": [
+        "d8a5",
+        "d1d2",
+        "a5b5"
+      ],
+      "rating": 1001,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "master",
+        "opening",
+        "short"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/003o0",
+        "gameUrl": "https://lichess.org/Ae0t9V1Z#17",
+        "license": "CC0-1.0",
+        "rowSha256": "2b05bdedd04d4dc6dcc2975fd1d53f71b302f9806071e28b80942aa61673057d"
+      }
+    },
+    {
+      "id": "003r5",
+      "fen": "r2qr1k1/ppp2ppp/4P3/8/1nP2Q2/2N2N1P/PP3KP1/R4R2 b - - 0 15",
+      "setup": {
+        "fen": "r2qr1k1/ppp2ppp/4b3/3P4/1nP2Q2/2N2N1P/PP3KP1/R4R2 w - - 1 15",
+        "move": "d5e6"
+      },
+      "solution": [
+        "b4d3",
+        "f2g1",
+        "d3f4"
+      ],
+      "rating": 1130,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "fork",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003r5",
+        "gameUrl": "https://lichess.org/JPN97v7j#29",
+        "license": "CC0-1.0",
+        "rowSha256": "555ded5a564f4b2b3501676ebbee7b9124d2ed62b110b1aecfe33abc7cac078e"
+      }
+    },
+    {
+      "id": "003wQ",
+      "fen": "2r2rk1/6pp/3Q1q2/8/3N1B2/6P1/PP1K3P/5R2 b - - 0 24",
+      "setup": {
+        "fen": "2r2rk1/6pp/3Q1q2/8/3N1B2/6P1/PP1K3P/R4b2 w - - 0 24",
+        "move": "a1f1"
+      },
+      "solution": [
+        "f6d6",
+        "f4d6",
+        "f8f1"
+      ],
+      "rating": 1814,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/003wQ",
+        "gameUrl": "https://lichess.org/W3wvnzlo#47",
+        "license": "CC0-1.0",
+        "rowSha256": "4f0f7641b2e996280c660481bea1e131ba43ada7af27fbf07872e344530fc9aa"
+      }
+    },
+    {
+      "id": "0040n",
+      "fen": "r7/p2k1pp1/p1p1pn2/3p4/3P4/P3PQp1/1PP2P1R/2K5 b - - 0 20",
+      "setup": {
+        "fen": "r7/p2k1pp1/p1p1pn2/3p4/3P4/P3PQp1/1PP2P1q/2K4R w - - 0 20",
+        "move": "h1h2"
+      },
+      "solution": [
+        "g3h2",
+        "f3h3",
+        "f6g4"
+      ],
+      "rating": 1268,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0040n",
+        "gameUrl": "https://lichess.org/WIUWcrdG#39",
+        "license": "CC0-1.0",
+        "rowSha256": "d79e03c0cad651549401d0994ea3bf10cfc9b0a403f7e02fe1289cb677aa0e22"
+      }
+    },
+    {
+      "id": "0048h",
+      "fen": "4r3/p5k1/2R4p/2Pp4/1P1pr1P1/P6P/8/3R3K b - - 0 35",
+      "setup": {
+        "fen": "4r3/p5k1/2p2R1p/2Pp4/1P1pr1P1/P6P/8/3R3K w - - 1 35",
+        "move": "f6c6"
+      },
+      "solution": [
+        "e4e1",
+        "d1e1",
+        "e8e1",
+        "h1g2",
+        "d4d3"
+      ],
+      "rating": 1152,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0048h",
+        "gameUrl": "https://lichess.org/dq15P00L#69",
+        "license": "CC0-1.0",
+        "rowSha256": "57f1f04821747202bb8305abece13ae119f6e29ed62917e683aa1de7d749deee"
+      }
+    },
+    {
+      "id": "004Ax",
+      "fen": "8/5k2/4R2p/p7/5rPK/8/7P/8 w - - 3 43",
+      "setup": {
+        "fen": "8/8/4R1kp/p7/5rPK/8/7P/8 b - - 2 42",
+        "move": "g6f7"
+      },
+      "solution": [
+        "e6h6",
+        "f4f6",
+        "h6h7",
+        "f7g6",
+        "h7a7"
+      ],
+      "rating": 1999,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004Ax",
+        "gameUrl": "https://lichess.org/x2mMwVJD/black#84",
+        "license": "CC0-1.0",
+        "rowSha256": "cbb632254659fceb6a9f8301f021e01b1c09da53d57ead2883391ecc56e9a83f"
+      }
+    },
+    {
+      "id": "004JD",
+      "fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP2K3/P3NP2/8 b - - 4 41",
+      "setup": {
+        "fen": "3r4/R7/2p5/p1P2p2/1p4k1/nP6/P2KNP2/8 w - - 3 41",
+        "move": "d2e3"
+      },
+      "solution": [
+        "a3c2"
+      ],
+      "rating": 1291,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "cornerMate",
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004JD",
+        "gameUrl": "https://lichess.org/6vTeEc3x#81",
+        "license": "CC0-1.0",
+        "rowSha256": "5907688cc317ebea4e637c1e70777f76cf6eb52dc4e85c89dcb688b5a05f4bb4"
+      }
+    },
+    {
+      "id": "004LZ",
+      "fen": "8/7R/5p2/p7/7P/2p5/3k2N1/1K6 b - - 0 48",
+      "setup": {
+        "fen": "8/7R/5p2/p7/7P/2p5/3k2r1/1K2N3 w - - 3 48",
+        "move": "e1g2"
+      },
+      "solution": [
+        "c3c2",
+        "b1a2",
+        "c2c1q",
+        "h7d7",
+        "d2e2"
+      ],
+      "rating": 1195,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "defensiveMove",
+        "deflection",
+        "endgame",
+        "long",
+        "promotion"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004LZ",
+        "gameUrl": "https://lichess.org/drahwNdj#95",
+        "license": "CC0-1.0",
+        "rowSha256": "9113c16e9ce49b0cdcd93b98fabb462853ece3cc89adfde43d79b6ce5605630e"
+      }
+    },
+    {
+      "id": "004Lu",
+      "fen": "8/p1p1k2p/4P3/2PP1p1P/1r3r2/5B2/P3RK2/8 w - - 4 39",
+      "setup": {
+        "fen": "8/p1p4p/4Pk2/2PP1p1P/1r3r2/5B2/P3RK2/8 b - - 3 38",
+        "move": "f6e7"
+      },
+      "solution": [
+        "d5d6",
+        "c7d6",
+        "c5d6",
+        "e7d6",
+        "e6e7"
+      ],
+      "rating": 1201,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "exposedKing",
+        "long",
+        "master"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004Lu",
+        "gameUrl": "https://lichess.org/WMeZuWza/black#76",
+        "license": "CC0-1.0",
+        "rowSha256": "77cdba1be6107c00b0e8fc7cfa4a9a641a5de2c16cf923ed62230f4190e73f08"
+      }
+    },
+    {
+      "id": "004Op",
+      "fen": "2kr2r1/1bp4n/1pq1p2p/p1P5/1P3B2/P6P/5RP1/RB3QK1 b - - 4 26",
+      "setup": {
+        "fen": "2kr2r1/1bp4n/1pq1p2p/p1P5/1P3B2/P6P/5RP1/RB2Q1K1 w - - 3 26",
+        "move": "e1f1"
+      },
+      "solution": [
+        "d8d1",
+        "f1d1",
+        "g8g2",
+        "g1f1",
+        "g2g1",
+        "f1e2",
+        "g1d1"
+      ],
+      "rating": 2280,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "deflection",
+        "kingsideAttack",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "skewer",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/004Op",
+        "gameUrl": "https://lichess.org/tneg9Bzk#51",
+        "license": "CC0-1.0",
+        "rowSha256": "4d6e7573d3f518851293b9789043131c9277cb5b5c96751f5f664a12309bfa78"
+      }
+    },
+    {
+      "id": "004mT",
+      "fen": "5Q2/8/1bk1p1p1/5p2/3p4/5qPK/7P/8 w - - 2 52",
+      "setup": {
+        "fen": "5Q2/8/1b1kp1p1/5p2/3p4/5qPK/7P/8 b - - 1 51",
+        "move": "d6c6"
+      },
+      "solution": [
+        "f8a8",
+        "c6d6",
+        "a8f3"
+      ],
+      "rating": 1361,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004mT",
+        "gameUrl": "https://lichess.org/Jqhi4ozb/black#102",
+        "license": "CC0-1.0",
+        "rowSha256": "d22bcc9f1fc345f332cfd736f9018cae90cf0ff976767bd6718c9440fbc56e97"
+      }
+    },
+    {
+      "id": "004sg",
+      "fen": "6k1/p3b2p/1p1pP3/2P3P1/2np3B/P6P/3Q3K/8 b - - 0 38",
+      "setup": {
+        "fen": "6k1/p3b2p/1p1pP3/2p3P1/1Pnp3B/P6P/3Q3K/8 w - - 0 38",
+        "move": "b4c5"
+      },
+      "solution": [
+        "c4d2",
+        "c5c6",
+        "d6d5",
+        "g5g6",
+        "e7d6"
+      ],
+      "rating": 2439,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "clearance",
+        "endgame",
+        "hangingPiece",
+        "long",
+        "quietMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004sg",
+        "gameUrl": "https://lichess.org/pSRIvt7K#75",
+        "license": "CC0-1.0",
+        "rowSha256": "f4c1cf76e9710bedd0566b21fd2490a1c766800826271ff3210045445beda7bd"
+      }
+    },
+    {
+      "id": "004u0",
+      "fen": "4r1k1/ppq3pp/2p2p2/4r3/4p1Q1/P5RP/1P3PP1/3R2K1 w - - 4 35",
+      "setup": {
+        "fen": "6k1/ppq3pp/2p1rp2/4r3/4p1Q1/P5RP/1P3PP1/3R2K1 b - - 3 34",
+        "move": "e6e8"
+      },
+      "solution": [
+        "d1d7",
+        "c7d7",
+        "g4d7"
+      ],
+      "rating": 1325,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/004u0",
+        "gameUrl": "https://lichess.org/3gEqoQeQ/black#68",
+        "license": "CC0-1.0",
+        "rowSha256": "a9430dd9524c5a73f604c2a6169de569df1a83cfd8ca5024372876fb722205ba"
+      }
+    },
+    {
+      "id": "0050w",
+      "fen": "5rk1/1p2p2p/p2p4/2pPb2R/2P1P3/1P1BKPrR/8/8 w - - 5 31",
+      "setup": {
+        "fen": "5rk1/1p2p1rp/p2p4/2pPb2R/2P1P3/1P1BKP1R/8/8 b - - 4 30",
+        "move": "g7g3"
+      },
+      "solution": [
+        "h3g3",
+        "e5g3",
+        "h5g5",
+        "g8f7",
+        "g5g3"
+      ],
+      "rating": 1131,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0050w",
+        "gameUrl": "https://lichess.org/QD8pUcTR/black#60",
+        "license": "CC0-1.0",
+        "rowSha256": "cc89baee356271138c556873f4bd0f474917b7dd3b5f78fcec3cadc24ba5fd82"
+      }
+    },
+    {
+      "id": "005Bm",
+      "fen": "4rk2/p4q2/1p3Q1b/8/1p5N/2P1p3/P3P3/2K5 w - - 1 44",
+      "setup": {
+        "fen": "4rk2/p1q5/1p3Q1b/8/1p5N/2P1p3/P3P3/2K5 b - - 0 43",
+        "move": "c7f7"
+      },
+      "solution": [
+        "h4g6",
+        "f8g8",
+        "f6h8"
+      ],
+      "rating": 1434,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "pin",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/005Bm",
+        "gameUrl": "https://lichess.org/KKslCMev/black#86",
+        "license": "CC0-1.0",
+        "rowSha256": "131f2acc094f0733d6a0093f7bc88f274f645393b69dfc4a01c8eddb6d3c10d3"
+      }
+    },
+    {
+      "id": "005HG",
+      "fen": "r2q1rk1/p1p2pp1/3bbn1p/4N3/8/1P4P1/PBQPPP1P/RN2K2R b KQ - 2 12",
+      "setup": {
+        "fen": "r2q1rk1/p1p2pp1/3bbn1p/4N3/2Q5/1P4P1/PB1PPP1P/RN2K2R w KQ - 1 12",
+        "move": "c4c2"
+      },
+      "solution": [
+        "d6e5",
+        "b2e5",
+        "d8d5",
+        "f2f3",
+        "d5e5"
+      ],
+      "rating": 1788,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "clearance",
+        "fork",
+        "long",
+        "opening"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/005HG",
+        "gameUrl": "https://lichess.org/JTymzeq9#23",
+        "license": "CC0-1.0",
+        "rowSha256": "78048f67e8f33737ba33df9d8b8915792ea973ef6ff923fa5ab7e96783ea8544"
+      }
+    },
+    {
+      "id": "005gP",
+      "fen": "8/8/3p4/2kP2P1/1p6/2pK4/P7/8 b - - 0 42",
+      "setup": {
+        "fen": "8/8/3p4/2kP4/1p4P1/2pK4/P7/8 w - - 1 42",
+        "move": "g4g5"
+      },
+      "solution": [
+        "c5d5",
+        "g5g6",
+        "d5e6",
+        "g6g7",
+        "e6f7",
+        "a2a4",
+        "b4a3",
+        "g7g8r",
+        "f7g8"
+      ],
+      "rating": 1723,
+      "difficulty": "Intermediate",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "enPassant",
+        "endgame",
+        "pawnEndgame",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/005gP",
+        "gameUrl": "https://lichess.org/I76OvKQT#83",
+        "license": "CC0-1.0",
+        "rowSha256": "6f06a623040448eafedbf39106ac98a2b67bb8aaaae4a6a99cef0f5324390467"
+      }
+    },
+    {
+      "id": "005nD",
+      "fen": "3rk2r/2qn2p1/p1Q1p3/3n3p/8/8/PP4PP/5R1K w k - 0 24",
+      "setup": {
+        "fen": "3rk2r/2qn1pp1/p1Q1R3/3n3p/8/8/PP4PP/5R1K b k - 0 23",
+        "move": "f7e6"
+      },
+      "solution": [
+        "c6e6",
+        "d5e7",
+        "e6f7"
+      ],
+      "rating": 1111,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "fork",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/005nD",
+        "gameUrl": "https://lichess.org/hlgaj6lV/black#46",
+        "license": "CC0-1.0",
+        "rowSha256": "3fed6b94c0773ca023bb17edb7bc0032ae7764bdaf18258e49de45b09ae4b369"
+      }
+    },
+    {
+      "id": "005ws",
+      "fen": "8/8/4Kpp1/7p/3N2kP/8/8/8 b - - 3 62",
+      "setup": {
+        "fen": "8/8/5pp1/3K3p/3N2kP/8/8/8 w - - 2 62",
+        "move": "d5e6"
+      },
+      "solution": [
+        "g6g5",
+        "h4g5",
+        "f6g5",
+        "e6d5",
+        "h5h4",
+        "d5e4",
+        "h4h3",
+        "d4f3",
+        "g4g3"
+      ],
+      "rating": 2448,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "endgame",
+        "knightEndgame",
+        "master",
+        "masterVsMaster",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/005ws",
+        "gameUrl": "https://lichess.org/LOwACSXb#123",
+        "license": "CC0-1.0",
+        "rowSha256": "361831d104d2c7176426034dc28f44e30294e4ee10e1c62d70fff2a855655b6d"
+      }
+    },
+    {
+      "id": "005wy",
+      "fen": "1r6/pp2kppQ/2n1p1n1/3p2P1/5P2/2PqP3/PP1N4/2KR3R b - - 4 27",
+      "setup": {
+        "fen": "1r6/pp2kpp1/2n1p1n1/3p2PQ/5P2/2PqP3/PP1N4/2KR3R w - - 3 27",
+        "move": "h5h7"
+      },
+      "solution": [
+        "c6b4",
+        "c3b4",
+        "b8c8",
+        "d2c4",
+        "c8c4"
+      ],
+      "rating": 1780,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/005wy",
+        "gameUrl": "https://lichess.org/mBQMheB4#53",
+        "license": "CC0-1.0",
+        "rowSha256": "f360fe44a69b70a1ab4e20206d9a4dbc876b571ef9a1b0ed07869aa58a0d6709"
+      }
+    },
+    {
+      "id": "0068D",
+      "fen": "7r/pppk4/2pN1r2/8/3P2p1/2P5/PP2RPP1/4R1K1 b - - 0 26",
+      "setup": {
+        "fen": "7r/pppk4/2pb1r2/8/2NP2p1/2P5/PP2RPP1/4R1K1 w - - 2 26",
+        "move": "c4d6"
+      },
+      "solution": [
+        "f6h6",
+        "f2f4",
+        "g4g3",
+        "e2e7",
+        "d7d6",
+        "g1f1",
+        "h6h1"
+      ],
+      "rating": 1949,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "endgame",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0068D",
+        "gameUrl": "https://lichess.org/WNAZgV2o#51",
+        "license": "CC0-1.0",
+        "rowSha256": "829ed62b9e8c5071b51b91db17d4a26e725a1d7e5e220b638807b9f298c021f4"
+      }
+    },
+    {
+      "id": "006HV",
+      "fen": "1r6/5k2/2Q1pNp1/p5Pp/1p2P2P/2P4R/KP3P2/3q4 b - - 0 31",
+      "setup": {
+        "fen": "1r6/5k2/2p1pNp1/p5Pp/1pQ1P2P/2P4R/KP3P2/3q4 w - - 4 31",
+        "move": "c4c6"
+      },
+      "solution": [
+        "b4b3",
+        "a2a3",
+        "d1a1"
+      ],
+      "rating": 1159,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/006HV",
+        "gameUrl": "https://lichess.org/ibb2c72C#61",
+        "license": "CC0-1.0",
+        "rowSha256": "86bfd1fa852e37283ba927e05c1e1a0bfc03273e8fb43bbffa8580c07da1a5a8"
+      }
+    },
+    {
+      "id": "006XF",
+      "fen": "r5kr/pp1qb1p1/2p4p/3pP2Q/3Pb3/2P1B3/PP4PP/R4RK1 w - - 2 18",
+      "setup": {
+        "fen": "r5kr/pp1qb1p1/2p4p/3pPb1Q/3P4/2P1B3/PP4PP/R4RK1 b - - 1 17",
+        "move": "f5e4"
+      },
+      "solution": [
+        "h5f7",
+        "g8h7",
+        "f1f6",
+        "e7f6",
+        "f7d7"
+      ],
+      "rating": 2372,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "pin"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/006XF",
+        "gameUrl": "https://lichess.org/Ynra1LLE/black#34",
+        "license": "CC0-1.0",
+        "rowSha256": "bb3fbb7dd898390693f210c02bcaa421544a1a32bf72724aee5d4c8a149ca693"
+      }
+    },
+    {
+      "id": "006fF",
+      "fen": "r1b4r/pp1k2p1/2nb2qp/1B1p2B1/3p3Q/8/PPP2PPP/3RR1K1 w - - 0 18",
+      "setup": {
+        "fen": "r1b4r/pp1k2pp/2nb2q1/1B1p2B1/3p3Q/8/PPP2PPP/3RR1K1 b - - 5 17",
+        "move": "h7h6"
+      },
+      "solution": [
+        "h4g4",
+        "d7c7",
+        "g5d8",
+        "h8d8",
+        "g4g6"
+      ],
+      "rating": 1702,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/006fF",
+        "gameUrl": "https://lichess.org/mAf9SSin/black#34",
+        "license": "CC0-1.0",
+        "rowSha256": "032cd9865744169bf58acaf726ddd2028c25347593fd7722de1ed1cf35d74d94"
+      }
+    },
+    {
+      "id": "006om",
+      "fen": "1r3k2/5p1p/2p1pp2/P2n4/r3N3/P4PK1/2R2P1P/2R5 w - - 10 30",
+      "setup": {
+        "fen": "1r3k2/5p1p/2p1pp2/P2n4/2r1N3/P4PK1/2R2P1P/2R5 b - - 9 29",
+        "move": "c4a4"
+      },
+      "solution": [
+        "e4c5",
+        "a4a5",
+        "c5d7",
+        "f8g7",
+        "d7b8"
+      ],
+      "rating": 1921,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "long",
+        "master"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/006om",
+        "gameUrl": "https://lichess.org/BMIgw1OR/black#58",
+        "license": "CC0-1.0",
+        "rowSha256": "7c52d7cdd850077f34ea836482e588dbda45b158c1aba78002a47fa51c0de336"
+      }
+    },
+    {
+      "id": "006pe",
+      "fen": "r4r2/2q1Nb2/5Qpk/2n4p/pp5P/8/1PP2PP1/2KR3R w - - 0 29",
+      "setup": {
+        "fen": "r4r2/2q1NN2/4bQpk/2n4p/pp5P/8/1PP2PP1/2KR3R b - - 0 28",
+        "move": "e6f7"
+      },
+      "solution": [
+        "e7f5",
+        "h6h7",
+        "f6g7"
+      ],
+      "rating": 1588,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "master",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/006pe",
+        "gameUrl": "https://lichess.org/gkSEAS27/black#56",
+        "license": "CC0-1.0",
+        "rowSha256": "26af46ce6e0616803c5884b711a79f24162788ef05bd5480123cfae1cd4e55ba"
+      }
+    },
+    {
+      "id": "00761",
+      "fen": "3r2k1/1b4bR/p2P2p1/3p2N1/2p5/2P2N2/PP6/2K5 w - - 0 29",
+      "setup": {
+        "fen": "3r2k1/1b3pbR/p2P2P1/3p2N1/2p5/2P2N2/PP6/2K5 b - - 0 28",
+        "move": "f7g6"
+      },
+      "solution": [
+        "h7g7",
+        "g8g7",
+        "g5e6",
+        "g7g8",
+        "e6d8"
+      ],
+      "rating": 1357,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "fork",
+        "long",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00761",
+        "gameUrl": "https://lichess.org/vu70Maig/black#56",
+        "license": "CC0-1.0",
+        "rowSha256": "347bfeeb8ff4c8e3ea7d6443bf6f1c08f4c2a0cec4f0c68e1d00bea5a13aa344"
+      }
+    },
+    {
+      "id": "00798",
+      "fen": "8/4k1K1/4P3/6pp/6rP/4R1P1/8/8 b - - 1 60",
+      "setup": {
+        "fen": "6K1/4k3/4P3/6pp/6rP/4R1P1/8/8 w - - 0 60",
+        "move": "g8g7"
+      },
+      "solution": [
+        "g5h4",
+        "g7h6",
+        "h4g3"
+      ],
+      "rating": 1895,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00798",
+        "gameUrl": "https://lichess.org/4DOjQjiM#119",
+        "license": "CC0-1.0",
+        "rowSha256": "c99273160d33ed97cd06d89a13408ad7383850afda55f550829f64d66656de0f"
+      }
+    },
+    {
+      "id": "007eS",
+      "fen": "6k1/p4p2/1p5p/4r3/P3B3/1P2KP2/2P3PP/8 b - - 1 29",
+      "setup": {
+        "fen": "6k1/p4p2/1p5p/4r3/P3B3/1P3P2/2PK2PP/8 w - - 0 29",
+        "move": "d2e3"
+      },
+      "solution": [
+        "f7f5",
+        "g2g4",
+        "f5e4"
+      ],
+      "rating": 1197,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/007eS",
+        "gameUrl": "https://lichess.org/8qs8bafy#57",
+        "license": "CC0-1.0",
+        "rowSha256": "63dc7eb0e2314c05dd1eb3d14cd08015ecbed9377bc90c4a1fb0107691f94df3"
+      }
+    },
+    {
+      "id": "007en",
+      "fen": "rn3rk1/4pp1p/3p2pB/2q4P/3QP1b1/Pp6/1P2B3/1K1R2NR b - - 0 20",
+      "setup": {
+        "fen": "rn3rk1/4pp1p/3p2pB/2q4P/3bP1b1/Pp2Q3/1P2B3/1K1R2NR w - - 0 20",
+        "move": "e3d4"
+      },
+      "solution": [
+        "c5c2",
+        "b1a1",
+        "a8a3",
+        "b2a3",
+        "c2a2"
+      ],
+      "rating": 1842,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/007en",
+        "gameUrl": "https://lichess.org/jzE2yKAk#39",
+        "license": "CC0-1.0",
+        "rowSha256": "92a857bc54feba048a010087234a5cab7743393256161443b67cb7193aed25cf"
+      }
+    },
+    {
+      "id": "007fJ",
+      "fen": "1Q6/5ppp/8/8/8/2pk3P/3p2P1/3K4 b - - 0 52",
+      "setup": {
+        "fen": "8/1P3ppp/8/8/8/2pk3P/3p2P1/3K4 w - - 0 52",
+        "move": "b7b8q"
+      },
+      "solution": [
+        "c3c2"
+      ],
+      "rating": 571,
+      "difficulty": "Introductory",
+      "theme": "mateIn1",
+      "themes": [
+        "advancedPawn",
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "queenEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/007fJ",
+        "gameUrl": "https://lichess.org/34ezZi7R#103",
+        "license": "CC0-1.0",
+        "rowSha256": "31a6fa40387cbbfc2cd111a82b1b83de59c958f00a5594a0e67999a99a620179"
+      }
+    },
+    {
+      "id": "007ku",
+      "fen": "r1bq3Q/1np3p1/p5k1/1p1Pp3/1Pn2BP1/2b2P2/P3K3/R4N2 w - - 0 36",
+      "setup": {
+        "fen": "r1bq3Q/1np2kp1/p5B1/1p1Pp3/1Pn2BP1/2b2P2/P3K3/R4N2 b - - 5 35",
+        "move": "f7g6"
+      },
+      "solution": [
+        "h8h5",
+        "g6f6",
+        "f4g5"
+      ],
+      "rating": 1663,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/007ku",
+        "gameUrl": "https://lichess.org/QveLbBjG/black#70",
+        "license": "CC0-1.0",
+        "rowSha256": "d8ac11fbfcdaefe4356327447ae953dcd2ccd94cf97e0e652cd24ad7f82a65a2"
+      }
+    },
+    {
+      "id": "007tv",
+      "fen": "r3k1nr/1pp2ppp/1pnp4/4p1q1/2B1P3/3P1Q1P/PPP2PP1/R4RK1 w kq - 0 12",
+      "setup": {
+        "fen": "r3k1nr/1pp2ppp/1pnp2q1/4p1B1/2B1P3/3P1Q1P/PPP2PP1/R4RK1 b kq - 0 11",
+        "move": "g6g5"
+      },
+      "solution": [
+        "f3f7",
+        "e8d8",
+        "f7f8",
+        "d8d7",
+        "f8a8"
+      ],
+      "rating": 1108,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "advantage",
+        "attackingF2F7",
+        "long",
+        "middlegame",
+        "skewer"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/007tv",
+        "gameUrl": "https://lichess.org/ky7qZNjk/black#22",
+        "license": "CC0-1.0",
+        "rowSha256": "e43022ce9733cd93adf7e07c6ddd92144fd8b17a8b20e57c97e69f585b5b6edb"
+      }
+    },
+    {
+      "id": "008D5",
+      "fen": "r1bqk2r/pp3ppp/4p3/3pPn2/1b1P1P2/2N5/PP4PP/R1BQKB1R w KQkq - 3 10",
+      "setup": {
+        "fen": "r1bqk2r/pp3ppp/4p2n/3pP3/1b1P1P2/2N5/PP4PP/R1BQKB1R b KQkq - 2 9",
+        "move": "h6f5"
+      },
+      "solution": [
+        "d1a4",
+        "c8d7",
+        "a4b4"
+      ],
+      "rating": 1421,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "master",
+        "opening",
+        "short"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/008D5",
+        "gameUrl": "https://lichess.org/jIGC2FuP/black#18",
+        "license": "CC0-1.0",
+        "rowSha256": "bc4e0ddb3110f42af4869dcad26b8e300eb8f5d072e01dca93ee15f4470b438f"
+      }
+    },
+    {
+      "id": "008EC",
+      "fen": "6k1/4rRp1/p6p/7P/q1pP4/2Pb2Q1/P4RP1/6K1 b - - 0 31",
+      "setup": {
+        "fen": "6k1/4rpp1/p6p/7P/q1pP1R2/2Pb2Q1/P4RP1/6K1 w - - 9 31",
+        "move": "f4f7"
+      },
+      "solution": [
+        "e7f7",
+        "g3b8",
+        "g8h7",
+        "f2f7",
+        "a4d1",
+        "g1f2",
+        "d1f1",
+        "f2g3",
+        "f1f7"
+      ],
+      "rating": 2344,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "advantage",
+        "endgame",
+        "skewer",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/008EC",
+        "gameUrl": "https://lichess.org/q5CqLXP5#61",
+        "license": "CC0-1.0",
+        "rowSha256": "64719c621191e9ce1ca42b8b8a122e27a6c373c2cee6d7504da8422f34dcc579"
+      }
+    },
+    {
+      "id": "008LT",
+      "fen": "r4r1k/6p1/b3p1nN/p1pp4/1p3P1q/3P1Q1B/PPP2PK1/R6R w - - 1 27",
+      "setup": {
+        "fen": "r4rk1/6p1/b3p1nN/p1pp4/1p3P1q/3P1Q1B/PPP2PK1/R6R b - - 0 26",
+        "move": "g8h8"
+      },
+      "solution": [
+        "h6f7",
+        "f8f7",
+        "h3e6"
+      ],
+      "rating": 2209,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "pin",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/008LT",
+        "gameUrl": "https://lichess.org/vnxisKeU/black#52",
+        "license": "CC0-1.0",
+        "rowSha256": "d6cfc85b872d63726ff53d95fe758a243ea674fd5dd9449af270bf735b8546c8"
+      }
+    },
+    {
+      "id": "008Nz",
+      "fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P2PPR1/r3b2r/3R2K1 w - - 2 30",
+      "setup": {
+        "fen": "6k1/2p2ppp/pnp5/B7/2P3PP/1P1bPPR1/r6r/3R2K1 b - - 1 29",
+        "move": "d3e2"
+      },
+      "solution": [
+        "d1d8"
+      ],
+      "rating": 473,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/008Nz",
+        "gameUrl": "https://lichess.org/HNU4zavC/black#58",
+        "license": "CC0-1.0",
+        "rowSha256": "c25a3afaa86d7936207c953e309c83c7f971510e0dc92b9f24227b751c2182a0"
+      }
+    },
+    {
+      "id": "008P4",
+      "fen": "8/4k3/1p1p4/rP2p1p1/P2nP1P1/3B4/3K4/R7 b - - 1 35",
+      "setup": {
+        "fen": "8/4k3/1p1p4/rP2p1p1/P2nP1P1/3BK3/8/R7 w - - 0 35",
+        "move": "e3d2"
+      },
+      "solution": [
+        "d4b3",
+        "d2c3",
+        "b3a1"
+      ],
+      "rating": 703,
+      "difficulty": "Introductory",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/008P4",
+        "gameUrl": "https://lichess.org/3GoHPRp3#69",
+        "license": "CC0-1.0",
+        "rowSha256": "dbbfd3fb60a1c34a45f8ecb7f73c6317a00b3eb7333f116b718d368f2fba0ccc"
+      }
+    },
+    {
+      "id": "008Sk",
+      "fen": "8/6pp/3Bp2k/p2pP2P/P3p1PK/8/r4b2/5R2 w - - 3 38",
+      "setup": {
+        "fen": "8/6pp/3Bp2k/p2pP2P/P2bp1PK/8/r7/5R2 b - - 2 37",
+        "move": "d4f2"
+      },
+      "solution": [
+        "f1f2",
+        "g7g5",
+        "h4g3",
+        "a2f2",
+        "g3f2"
+      ],
+      "rating": 1912,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/008Sk",
+        "gameUrl": "https://lichess.org/rah6MiKa/black#74",
+        "license": "CC0-1.0",
+        "rowSha256": "b8d81e045fe3bd3aa7a5e6f98f727094425b0e1084fd4ec20eb06c3fe33e97d6"
+      }
+    },
+    {
+      "id": "008Y3",
+      "fen": "r5k1/1p1r1pp1/p3pnp1/2qN4/8/1Q5P/PP3PP1/3RR1K1 w - - 0 25",
+      "setup": {
+        "fen": "r5k1/1p1rqpp1/p3pnp1/2PN4/8/1Q5P/PP3PP1/3RR1K1 b - - 0 24",
+        "move": "e7c5"
+      },
+      "solution": [
+        "d5f6",
+        "g7f6",
+        "d1d7"
+      ],
+      "rating": 1054,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "kingsideAttack",
+        "master",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/008Y3",
+        "gameUrl": "https://lichess.org/jAILX5BH/black#48",
+        "license": "CC0-1.0",
+        "rowSha256": "32dc35f786b74d8157a8d983bbb7852df21872f9c19e213e4625381fe1cfb9a9"
+      }
+    },
+    {
+      "id": "008lc",
+      "fen": "7k/pb1qn1rn/1p2R2Q/2p2p2/2Pp4/3B4/PP3P1P/4RK2 w - - 2 28",
+      "setup": {
+        "fen": "7k/pb1qn2n/1p2R2Q/2p2p2/2Pp4/3B4/PP3PrP/4RK2 b - - 1 27",
+        "move": "g2g7"
+      },
+      "solution": [
+        "h6g7",
+        "h8g7",
+        "e6e7",
+        "d7e7",
+        "e1e7"
+      ],
+      "rating": 1974,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "attraction",
+        "crushing",
+        "exposedKing",
+        "fork",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/008lc",
+        "gameUrl": "https://lichess.org/UdZXrVA5/black#54",
+        "license": "CC0-1.0",
+        "rowSha256": "7ea96c9254c33cc124d633b7d749fe900b00cc75f200262569754acd882945a1"
+      }
+    },
+    {
+      "id": "008tL",
+      "fen": "8/7k/R6p/3p4/5r2/2P1p2P/P5P1/6K1 b - - 0 40",
+      "setup": {
+        "fen": "8/7k/pR5p/3p4/5r2/2P1p2P/P5P1/6K1 w - - 0 40",
+        "move": "b6a6"
+      },
+      "solution": [
+        "e3e2",
+        "a6e6",
+        "f4f1"
+      ],
+      "rating": 1193,
+      "difficulty": "Introductory",
+      "theme": "endgame",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "master",
+        "rookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/008tL",
+        "gameUrl": "https://lichess.org/yhNupFCi#79",
+        "license": "CC0-1.0",
+        "rowSha256": "0550d4c82f8866c8539a552f4ee000aba300a0074b5576276280d163ec37331f"
+      }
+    },
+    {
+      "id": "0095W",
+      "fen": "8/pp1r2kp/q2P1ppb/4N3/4P3/1Q5P/PPR2PP1/6K1 b - - 0 32",
+      "setup": {
+        "fen": "8/pp1r2kp/q2P1ppb/4p3/2N1P3/1Q5P/PPR2PP1/6K1 w - - 3 32",
+        "move": "c4e5"
+      },
+      "solution": [
+        "f6e5",
+        "c2c7",
+        "a6d6"
+      ],
+      "rating": 1832,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0095W",
+        "gameUrl": "https://lichess.org/CaL8Bl7F#63",
+        "license": "CC0-1.0",
+        "rowSha256": "71914fb7b5921851f69929a316cd9e4076a9806b6cb4e26161a2d488cf4775bb"
+      }
+    },
+    {
+      "id": "009BH",
+      "fen": "3r3k/6p1/4Q3/4B3/1p3P2/4PKP1/3q4/8 w - - 18 52",
+      "setup": {
+        "fen": "3r2k1/6p1/4Q3/4B3/1p3P2/4PKP1/3q4/8 b - - 17 51",
+        "move": "g8h8"
+      },
+      "solution": [
+        "e6h6",
+        "h8g8",
+        "h6g7"
+      ],
+      "rating": 1513,
+      "difficulty": "Intermediate",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "pin",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/009BH",
+        "gameUrl": "https://lichess.org/QauOOpOY/black#102",
+        "license": "CC0-1.0",
+        "rowSha256": "70b316dcc13cbce34a9a1d083bdbc45f99597b3c1d7b8f25112603714386d932"
+      }
+    },
+    {
+      "id": "009IO",
+      "fen": "3r4/4kp1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 w - - 5 26",
+      "setup": {
+        "fen": "3rk3/5p1r/p2Np1p1/3bP3/P2n4/8/1P3RPP/5RK1 b - - 4 25",
+        "move": "e8e7"
+      },
+      "solution": [
+        "f2f7",
+        "h7f7",
+        "f1f7"
+      ],
+      "rating": 1162,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "hookMate",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/009IO",
+        "gameUrl": "https://lichess.org/LJBrm9Or/black#50",
+        "license": "CC0-1.0",
+        "rowSha256": "6ab632916ee1066589488756e969ba669ec981ab813763343302460cbac238ca"
+      }
+    },
+    {
+      "id": "009lk",
+      "fen": "1R6/6pk/2p4p/3bP2r/5B1P/2P1RqP1/P4P1Q/6K1 b - - 3 40",
+      "setup": {
+        "fen": "1R6/6pk/2p4p/3bP2r/5B1P/2P2qP1/P4P1Q/4R1K1 w - - 2 40",
+        "move": "e1e3"
+      },
+      "solution": [
+        "f3d1",
+        "e3e1",
+        "d1e1"
+      ],
+      "rating": 915,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/009lk",
+        "gameUrl": "https://lichess.org/gLNPef4f#79",
+        "license": "CC0-1.0",
+        "rowSha256": "416e38c529ebe9190ab68f26a330fac1324053df4b47526e1675a07afa92c7fc"
+      }
+    },
+    {
+      "id": "009oc",
+      "fen": "5Q2/pbp3np/1p1pq1pk/1P6/P6P/6K1/8/8 w - - 0 33",
+      "setup": {
+        "fen": "5Q2/pbp3np/1p1pB1pk/1P6/P3q2P/6K1/8/8 b - - 1 32",
+        "move": "e4e6"
+      },
+      "solution": [
+        "f8f4",
+        "g6g5",
+        "f4g5"
+      ],
+      "rating": 1165,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/009oc",
+        "gameUrl": "https://lichess.org/426eHXom/black#64",
+        "license": "CC0-1.0",
+        "rowSha256": "773568d2bd62b93a74ca4551c7cd5f7ce608c9c9f32915c0744afe6be4f6fca6"
+      }
+    },
+    {
+      "id": "009wR",
+      "fen": "1R2R3/p7/1p1k3p/1Pb5/P5p1/6P1/5r1P/7K b - - 7 41",
+      "setup": {
+        "fen": "1R2R3/p7/1p1k3p/1Pb5/P5p1/6P1/5rKP/8 w - - 6 41",
+        "move": "g2h1"
+      },
+      "solution": [
+        "f2f1",
+        "h1g2",
+        "f1g1"
+      ],
+      "rating": 1250,
+      "difficulty": "Introductory",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "operaMate",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/009wR",
+        "gameUrl": "https://lichess.org/tBBaKL5q#81",
+        "license": "CC0-1.0",
+        "rowSha256": "d768ca2a956c5248c5cbc1df3e3c1c03f0d6c7a697e1d4926538ffd5215ae593"
+      }
+    },
+    {
+      "id": "009zS",
+      "fen": "r3r1k1/1p3p1p/p1p3p1/8/6bP/Q3b1P1/PP2B3/R3K2R b KQ - 0 20",
+      "setup": {
+        "fen": "r3r1k1/1p3p1p/p1p3p1/8/6bP/Q3b3/PP2B1P1/R3K2R w KQ - 2 20",
+        "move": "g2g3"
+      },
+      "solution": [
+        "g4e2",
+        "e1e2",
+        "e3c5",
+        "e2f3",
+        "c5a3"
+      ],
+      "rating": 1434,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "discoveredCheck",
+        "exposedKing",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/009zS",
+        "gameUrl": "https://lichess.org/YSoU6ySt#39",
+        "license": "CC0-1.0",
+        "rowSha256": "429eeacfa2d7dc729a97302cb78260dd7f383ec230c685051216c498fadcc92f"
+      }
+    },
+    {
+      "id": "00A5m",
+      "fen": "8/1p6/p1p2p2/P3b3/1PK3P1/2PB4/3k4/8 w - - 4 61",
+      "setup": {
+        "fen": "8/1p6/p1p2p2/P3b3/1PK3P1/2PBk3/8/8 b - - 3 60",
+        "move": "e3d2"
+      },
+      "solution": [
+        "d3f5",
+        "e5c7",
+        "f5c8",
+        "b7b6",
+        "a5b6",
+        "c7b6",
+        "c8a6"
+      ],
+      "rating": 1965,
+      "difficulty": "Advanced",
+      "theme": "endgame",
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "endgame",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00A5m",
+        "gameUrl": "https://lichess.org/Y4Ftfosz/black#120",
+        "license": "CC0-1.0",
+        "rowSha256": "bdfb47f5b55fa5d6e206f73eb896e76d57098f5f4a18637302eda1ee228ddd57"
+      }
+    },
+    {
+      "id": "00AB1",
+      "fen": "8/7Q/3p1kp1/1p6/2b5/2q4P/5PPK/8 w - - 0 37",
+      "setup": {
+        "fen": "8/7Q/3p1kp1/1p6/2b5/2P4P/5PPK/4q3 b - - 8 36",
+        "move": "e1c3"
+      },
+      "solution": [
+        "h7h8",
+        "f6e6",
+        "h8c3"
+      ],
+      "rating": 1107,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "short",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00AB1",
+        "gameUrl": "https://lichess.org/KQDr21Ph/black#72",
+        "license": "CC0-1.0",
+        "rowSha256": "b92c56cc6ed8233e67662fff4e7e9cf0c69f70a87bea280e81ce67ba532edbcd"
+      }
+    },
+    {
+      "id": "00AFG",
+      "fen": "r4rk1/5ppp/p3bp2/2q2N1Q/Ppp5/8/1PP2PPP/R2R2K1 w - - 0 22",
+      "setup": {
+        "fen": "r4rk1/2q2ppp/p3bp2/2P2N1Q/Ppp5/8/1PP2PPP/R2R2K1 b - - 6 21",
+        "move": "c7c5"
+      },
+      "solution": [
+        "f5h6",
+        "g7h6",
+        "h5c5"
+      ],
+      "rating": 1486,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00AFG",
+        "gameUrl": "https://lichess.org/xpx24bwV/black#42",
+        "license": "CC0-1.0",
+        "rowSha256": "730a3888a2b4abbd6a3745467dd01c3b9afa3a7fe9c9a430a6f858723ee2f52e"
+      }
+    },
+    {
+      "id": "00AdI",
+      "fen": "3r4/4kp1p/1PQ1p1p1/p3b3/1p2P2P/1P5K/6P1/8 b - - 2 36",
+      "setup": {
+        "fen": "3r4/4kp1p/1PQ1p1p1/p3b3/1p2P2P/1P6/6PK/8 w - - 1 36",
+        "move": "h2h3"
+      },
+      "solution": [
+        "d8d3",
+        "g2g3",
+        "d3g3",
+        "h3h2",
+        "g3c3"
+      ],
+      "rating": 1263,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "discoveredCheck",
+        "endgame",
+        "long",
+        "master"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00AdI",
+        "gameUrl": "https://lichess.org/WWyIGzPi#71",
+        "license": "CC0-1.0",
+        "rowSha256": "3e41dbd91550056bbfd913fb73f755e8982bd7bbb62ec840b8dcaf561abf43d5"
+      }
+    },
+    {
+      "id": "00BCa",
+      "fen": "1r6/p2kp1P1/3p4/2pP4/2P2B2/1N6/p4PK1/8 w - - 0 42",
+      "setup": {
+        "fen": "1r6/p2kp1P1/3p4/2pP4/2P2B2/pN6/5PK1/8 b - - 1 41",
+        "move": "a3a2"
+      },
+      "solution": [
+        "b3c5",
+        "d6c5",
+        "f4b8",
+        "a2a1q",
+        "g7g8q"
+      ],
+      "rating": 1293,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "master",
+        "promotion"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00BCa",
+        "gameUrl": "https://lichess.org/B8N0BmLk/black#82",
+        "license": "CC0-1.0",
+        "rowSha256": "aac7e76cddc7e16604e77b3f2824943cb64acbc3fd8fefb29dd572681b16bcbc"
+      }
+    },
+    {
+      "id": "00BJm",
+      "fen": "r4rk1/1Q2bppp/p1N1p3/1p1q4/2pP1n2/2P5/PP3PPP/R4RK1 w - - 2 19",
+      "setup": {
+        "fen": "r2q1rk1/1Q2bppp/p1N1p3/1p6/2pP1n2/2P5/PP3PPP/R4RK1 b - - 1 18",
+        "move": "d8d5"
+      },
+      "solution": [
+        "c6e7",
+        "g8h8",
+        "e7d5"
+      ],
+      "rating": 1088,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "fork",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00BJm",
+        "gameUrl": "https://lichess.org/Umzi5RNZ/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "4e000fef940c7114b110f3a9610ea256aa9bbb67aa0dda23b3814706653d0b07"
+      }
+    },
+    {
+      "id": "00Bul",
+      "fen": "rnbqk2r/pp3ppp/5n2/4N3/2p5/2P5/P1PPQPPP/R1B1K2R w KQkq - 0 9",
+      "setup": {
+        "fen": "rnbqk2r/pp3ppp/5n2/3pN3/2B5/2P5/P1PPQPPP/R1B1K2R b KQkq - 1 8",
+        "move": "d5c4"
+      },
+      "solution": [
+        "e5c6",
+        "c8e6",
+        "c6d8"
+      ],
+      "rating": 1295,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "discoveredCheck",
+        "opening",
+        "short"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/00Bul",
+        "gameUrl": "https://lichess.org/70pObIpq/black#16",
+        "license": "CC0-1.0",
+        "rowSha256": "8e7001833bf3638f784bb65b37ffe412d16387a1f706f5e893aab0c830c84fdf"
+      }
+    },
+    {
+      "id": "00CMj",
+      "fen": "7R/8/8/6p1/2p1p1k1/2Pb3p/P4K2/8 b - - 5 71",
+      "setup": {
+        "fen": "7R/8/8/6p1/2p1p1k1/2PbK2p/P7/8 w - - 4 71",
+        "move": "e3f2"
+      },
+      "solution": [
+        "e4e3",
+        "f2e3",
+        "g4g3"
+      ],
+      "rating": 1655,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "master",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00CMj",
+        "gameUrl": "https://lichess.org/JJZ8AIxT#141",
+        "license": "CC0-1.0",
+        "rowSha256": "50eed7f01ec747d0f3ec8b5db3cd96b91af1592325176d744139a97fe76a2539"
+      }
+    },
+    {
+      "id": "00CWE",
+      "fen": "3r4/1p4p1/2pB1bBp/p1Pk4/3rp3/P7/1PK2P2/4R3 w - - 2 32",
+      "setup": {
+        "fen": "3r4/1p4p1/2pBkbBp/p1P5/3rp3/P7/1PK2P2/4R3 b - - 1 31",
+        "move": "e6d5"
+      },
+      "solution": [
+        "g6f7"
+      ],
+      "rating": 1503,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00CWE",
+        "gameUrl": "https://lichess.org/VCQ4NAd0/black#62",
+        "license": "CC0-1.0",
+        "rowSha256": "cdcf5e19a504fa88826cba700a7244f2f53c4bdd4b4c859fe593b56fc5d9cba8"
+      }
+    },
+    {
+      "id": "00CXr",
+      "fen": "r2k2nr/p3qBb1/1p1p3p/Q5p1/3n1B2/2N2R2/PPP3P1/R5K1 w - - 0 19",
+      "setup": {
+        "fen": "r2k2nr/pp2qBb1/3p3p/Q5p1/3n1B2/2N2R2/PPP3P1/R5K1 b - - 1 18",
+        "move": "b7b6"
+      },
+      "solution": [
+        "a5d5",
+        "d4f3",
+        "g2f3",
+        "a8c8",
+        "f4d6"
+      ],
+      "rating": 1909,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00CXr",
+        "gameUrl": "https://lichess.org/sr8OoFsx/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "1d9273fe8d0b54296becae4cf69f23403655224f0d5476d106032c27da15d66a"
+      }
+    },
+    {
+      "id": "00Cqg",
+      "fen": "3r2k1/pp4bp/4qpp1/3Pp3/8/4Q2P/4B1P1/2rR3K w - - 0 27",
+      "setup": {
+        "fen": "2rr2k1/pp4bp/4qpp1/3Pp3/8/4Q2P/4B1P1/2RR3K b - - 0 26",
+        "move": "c8c1"
+      },
+      "solution": [
+        "d5e6",
+        "d8d1",
+        "e2d1",
+        "c1d1",
+        "h1h2"
+      ],
+      "rating": 1615,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00Cqg",
+        "gameUrl": "https://lichess.org/mXY3kzod/black#52",
+        "license": "CC0-1.0",
+        "rowSha256": "dd58176aceb7c5f1fc1be50920d6fcaaee343ccee4209b35d49db6f5143c263d"
+      }
+    },
+    {
+      "id": "00DKr",
+      "fen": "3r1k2/2p1R3/p2p2n1/1p6/1P1P2Q1/7P/5qPK/4R3 b - - 3 42",
+      "setup": {
+        "fen": "3r1k2/2p1R3/p2p2n1/1p6/1P1P2Q1/7P/5qPK/3R4 w - - 2 42",
+        "move": "d1e1"
+      },
+      "solution": [
+        "g6e7",
+        "e1e4",
+        "f8e8"
+      ],
+      "rating": 2142,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00DKr",
+        "gameUrl": "https://lichess.org/mYdqj7UD#83",
+        "license": "CC0-1.0",
+        "rowSha256": "1cf1f477ffb076a2f9e2f04b0859632be4b01427eb1c4b04f89eeae36132597b"
+      }
+    },
+    {
+      "id": "00DZe",
+      "fen": "8/5k2/7p/p1P1bPpP/Pp2P3/1P1p1K2/5B2/8 b - - 2 47",
+      "setup": {
+        "fen": "8/5k2/7p/p1P1bPpP/Pp2P3/1P1pBK2/8/8 w - - 1 47",
+        "move": "e3f2"
+      },
+      "solution": [
+        "g5g4",
+        "f3e3",
+        "e5d4",
+        "e3d3",
+        "d4f2"
+      ],
+      "rating": 2318,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "bishopEndgame",
+        "crushing",
+        "deflection",
+        "endgame",
+        "long",
+        "master",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00DZe",
+        "gameUrl": "https://lichess.org/MVHl8Zy9#93",
+        "license": "CC0-1.0",
+        "rowSha256": "cf7afd55390e1cab157ee300462029284cc12c114032a1e85824e537c84d7fd4"
+      }
+    },
+    {
+      "id": "00EUu",
+      "fen": "8/5P1P/1p4Kr/8/6P1/8/2p5/k7 w - - 1 63",
+      "setup": {
+        "fen": "8/5P1P/1p4K1/8/6P1/8/2p5/k6r b - - 0 62",
+        "move": "h1h6"
+      },
+      "solution": [
+        "g6h6",
+        "c2c1q",
+        "g4g5",
+        "c1c6",
+        "h6g7"
+      ],
+      "rating": 2529,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00EUu",
+        "gameUrl": "https://lichess.org/u5HjwjcV/black#124",
+        "license": "CC0-1.0",
+        "rowSha256": "f9772493ebe64f16f8c218d80c5fef8e310a0caad9cf14bdabfb3861dbd5cb2b"
+      }
+    },
+    {
+      "id": "00F6y",
+      "fen": "2k3r1/pppb1prp/1q6/8/Q7/2P1R1P1/P4P1P/4R1K1 w - - 4 24",
+      "setup": {
+        "fen": "2k3r1/ppp2prp/1q2b3/8/Q7/2P1R1P1/P4P1P/4R1K1 b - - 3 23",
+        "move": "e6d7"
+      },
+      "solution": [
+        "e3e8",
+        "d7e8",
+        "e1e8",
+        "g8e8",
+        "a4e8"
+      ],
+      "rating": 938,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00F6y",
+        "gameUrl": "https://lichess.org/Hii0fRVd/black#46",
+        "license": "CC0-1.0",
+        "rowSha256": "813fb66e9f5cca8a7f52345082c5938296dab47835e179e4c3fcb909dd55ef0c"
+      }
+    },
+    {
+      "id": "00FHX",
+      "fen": "2r3k1/5p1p/4pP2/3p3P/8/5P2/p5P1/1bR3K1 w - - 1 31",
+      "setup": {
+        "fen": "2r3k1/5p1p/4pP2/3p3P/8/5P2/p1b3P1/2R3K1 b - - 0 30",
+        "move": "c2b1"
+      },
+      "solution": [
+        "c1c8"
+      ],
+      "rating": 473,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "endgame",
+        "hangingPiece",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00FHX",
+        "gameUrl": "https://lichess.org/rztVgThB/black#60",
+        "license": "CC0-1.0",
+        "rowSha256": "0c94541ffc3531989f61046d16f272578b31504b3943031ed0aa54e8c0301734"
+      }
+    },
+    {
+      "id": "00G81",
+      "fen": "3r4/5k2/p4Pp1/2K3Pp/2R5/P7/8/8 b - - 0 51",
+      "setup": {
+        "fen": "3r4/5k2/p4Pp1/2pK2Pp/2R5/P7/8/8 w - - 7 51",
+        "move": "d5c5"
+      },
+      "solution": [
+        "d8c8",
+        "c5d4",
+        "c8c4",
+        "d4c4",
+        "h5h4"
+      ],
+      "rating": 1442,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00G81",
+        "gameUrl": "https://lichess.org/Q8HZlLcF#101",
+        "license": "CC0-1.0",
+        "rowSha256": "5d0dd6afa2902413718b5bd00b496eb7d18b44b3ccca76c333e0902eb428dfb7"
+      }
+    },
+    {
+      "id": "00GBX",
+      "fen": "r6k/pp2n1pp/2nN4/4p1r1/1PB5/2P4b/P3Nb1P/R2R3K w - - 0 23",
+      "setup": {
+        "fen": "r6k/pp2n1pp/2nN4/4p1Br/1PB5/2P4b/P3Nb1P/R2R3K b - - 1 22",
+        "move": "h5g5"
+      },
+      "solution": [
+        "d6f7",
+        "h8g8",
+        "f7g5"
+      ],
+      "rating": 864,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "discoveredCheck",
+        "fork",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00GBX",
+        "gameUrl": "https://lichess.org/1YLxwOt0/black#44",
+        "license": "CC0-1.0",
+        "rowSha256": "2954875ca78b40c0bb02e08591ded2695d393224999791d7de492972315b42aa"
+      }
+    },
+    {
+      "id": "00GVf",
+      "fen": "5k2/3b2q1/pn4p1/1rp2p2/8/8/1P2Q1P1/1K2R2R w - - 4 33",
+      "setup": {
+        "fen": "2b2k2/6q1/pn4p1/1rp2p2/8/8/1P2Q1P1/1K2R2R b - - 3 32",
+        "move": "c8d7"
+      },
+      "solution": [
+        "h1h8",
+        "g7h8",
+        "e2e7",
+        "f8g8",
+        "e7d8"
+      ],
+      "rating": 1544,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "long",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00GVf",
+        "gameUrl": "https://lichess.org/sTFSNjA5/black#64",
+        "license": "CC0-1.0",
+        "rowSha256": "8f9616dbd07f1be8e301b3677f6a00029eb3c13467143e4e9966241de2cd5617"
+      }
+    },
+    {
+      "id": "00GiQ",
+      "fen": "5r2/5p1k/6pp/ppqp1P2/7Q/5N2/6PP/5N1K w - - 0 32",
+      "setup": {
+        "fen": "5r2/1p3p1k/6pp/p1qp1P2/7Q/5N2/6PP/5N1K b - - 4 31",
+        "move": "b7b5"
+      },
+      "solution": [
+        "f3g5",
+        "h7g7",
+        "f5f6",
+        "g7f6",
+        "g5e4"
+      ],
+      "rating": 1830,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "attraction",
+        "crushing",
+        "discoveredCheck",
+        "doubleCheck",
+        "endgame",
+        "long",
+        "pin"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00GiQ",
+        "gameUrl": "https://lichess.org/XLwP4TgT/black#62",
+        "license": "CC0-1.0",
+        "rowSha256": "94a6176b877f5dbc87aee9dbfa17521b6f2a238025abac3be2548993b5db32a0"
+      }
+    },
+    {
+      "id": "00GuD",
+      "fen": "1n5k/6p1/p2q1rPp/1ppB4/8/3P4/PPP1rPQ1/2K4R w - - 0 26",
+      "setup": {
+        "fen": "1n5k/4r1p1/p2q1rPp/1ppB4/8/3P4/PPP1RPQ1/2K4R b - - 4 25",
+        "move": "e7e2"
+      },
+      "solution": [
+        "h1h6",
+        "g7h6",
+        "g6g7",
+        "h8h7",
+        "g7g8q"
+      ],
+      "rating": 1152,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "kingsideAttack",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "promotion",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00GuD",
+        "gameUrl": "https://lichess.org/zcHeWRaO/black#50",
+        "license": "CC0-1.0",
+        "rowSha256": "10b21f92aa0f47314187de5588ad2bf58fe71f1bec6b77b9ee59e8de258ac86e"
+      }
+    },
+    {
+      "id": "00GuG",
+      "fen": "8/7p/1KR3k1/8/5p2/5n2/8/8 b - - 1 63",
+      "setup": {
+        "fen": "2R5/7p/1K4k1/8/5p2/5n2/8/8 w - - 0 63",
+        "move": "c8c6"
+      },
+      "solution": [
+        "g6f5",
+        "b6c5",
+        "h7h5"
+      ],
+      "rating": 2511,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "master",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00GuG",
+        "gameUrl": "https://lichess.org/6xU6SaA2#125",
+        "license": "CC0-1.0",
+        "rowSha256": "bc3b05122a2ddf4ecff160846f771588c77827d834507601f269df418b653cfe"
+      }
+    },
+    {
+      "id": "00Gvr",
+      "fen": "8/1b4p1/1k3pPp/4K2P/4PP2/8/8/8 w - - 0 47",
+      "setup": {
+        "fen": "8/1b3pp1/1k4Pp/4K2P/4PP2/8/8/8 b - - 0 46",
+        "move": "f7f6"
+      },
+      "solution": [
+        "e5e6",
+        "b7e4",
+        "e6f7"
+      ],
+      "rating": 1149,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "bishopEndgame",
+        "defensiveMove",
+        "endgame",
+        "master",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00Gvr",
+        "gameUrl": "https://lichess.org/tHhRpYsL/black#92",
+        "license": "CC0-1.0",
+        "rowSha256": "1cdd6cd72dd226deaf2e067df8d07876a39cdfaeabd8a7fb6c46ebfbefb1bdd8"
+      }
+    },
+    {
+      "id": "00H5n",
+      "fen": "8/5Rpk/3p3p/p1qPp3/P7/5N1P/1Q3nPK/2r5 w - - 0 36",
+      "setup": {
+        "fen": "8/5Rpk/3p3p/p1qPp3/P3n3/5N1P/1Q3PPK/2r5 b - - 0 35",
+        "move": "e4f2"
+      },
+      "solution": [
+        "b2b7",
+        "c1h1",
+        "h2g3",
+        "f2e4",
+        "g3g4",
+        "e4f6",
+        "f7f6",
+        "c5b4",
+        "b7b4"
+      ],
+      "rating": 2503,
+      "difficulty": "Advanced",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "endgame",
+        "pin",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00H5n",
+        "gameUrl": "https://lichess.org/84oSZ8O3/black#70",
+        "license": "CC0-1.0",
+        "rowSha256": "01a3f2f9e7ef15758fa9312871545cec5e661d73207ba9fe2ac9a7837185acfe"
+      }
+    },
+    {
+      "id": "00HEx",
+      "fen": "R7/5pk1/4pn1p/8/3NP3/5P2/6PP/2rB2K1 b - - 0 31",
+      "setup": {
+        "fen": "b7/5pk1/R3pn1p/8/3NP3/5P2/6PP/2rB2K1 w - - 1 31",
+        "move": "a6a8"
+      },
+      "solution": [
+        "c1d1",
+        "g1f2",
+        "d1d4"
+      ],
+      "rating": 911,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "hangingPiece",
+        "master",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00HEx",
+        "gameUrl": "https://lichess.org/Kl5pBLfs#61",
+        "license": "CC0-1.0",
+        "rowSha256": "4183ba1faa1c296df3aa0d957ce38dbdc57b3dda31527b6d5eb85cd7bf87d5d2"
+      }
+    },
+    {
+      "id": "00HXr",
+      "fen": "2k4r/Q1p2pp1/5n2/3rNq2/4p3/6pb/PPP1BP1P/R3R1K1 w - - 0 23",
+      "setup": {
+        "fen": "2k4r/Q1p2pp1/5n2/3rNq2/4p2p/6Pb/PPP1BP1P/R3R1K1 b - - 1 22",
+        "move": "h4g3"
+      },
+      "solution": [
+        "a7a8"
+      ],
+      "rating": 1437,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00HXr",
+        "gameUrl": "https://lichess.org/c18wDmSc/black#44",
+        "license": "CC0-1.0",
+        "rowSha256": "4e4b5270709bbb133c67410fac7c6bf16c1ae6d3eeed383068d3e2a75d6953d7"
+      }
+    },
+    {
+      "id": "00HoG",
+      "fen": "5r1k/8/2b2rQp/1p1p2p1/1q4P1/8/8/1B3R1K w - - 0 37",
+      "setup": {
+        "fen": "5r1k/5r2/2b2RQp/1p1p2p1/1q4P1/8/8/1B3R1K b - - 0 36",
+        "move": "f7f6"
+      },
+      "solution": [
+        "g6h7"
+      ],
+      "rating": 1487,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00HoG",
+        "gameUrl": "https://lichess.org/zwJu9mKP/black#72",
+        "license": "CC0-1.0",
+        "rowSha256": "ec1539d3e5732ba1ff0d92078a367aff062f08fc5c1d927f4f01e3e41cb99490"
+      }
+    },
+    {
+      "id": "00HzX",
+      "fen": "4r1k1/5pp1/7R/1p6/8/1PP3QP/2q2PP1/6K1 b - - 0 29",
+      "setup": {
+        "fen": "4r1k1/5pp1/2R4p/1p6/8/1PP3QP/2q2PP1/6K1 w - - 0 29",
+        "move": "c6h6"
+      },
+      "solution": [
+        "c2c1",
+        "g1h2",
+        "c1h6"
+      ],
+      "rating": 1565,
+      "difficulty": "Intermediate",
+      "theme": "fork",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00HzX",
+        "gameUrl": "https://lichess.org/tKKATkce#57",
+        "license": "CC0-1.0",
+        "rowSha256": "23212625a4d5911a831de5e74a1a905e12c00d19b94071fce5d809a967dae586"
+      }
+    },
+    {
+      "id": "00ICz",
+      "fen": "2k3r1/1p1q3p/1p2p3/1NbpQr2/P1p2P2/6P1/6KP/R4R2 w - - 1 32",
+      "setup": {
+        "fen": "2k2rr1/1p1q3p/1p2p3/1NbpQ3/P1p2P2/6P1/6KP/R4R2 b - - 0 31",
+        "move": "f8f5"
+      },
+      "solution": [
+        "b5a7",
+        "c8d8",
+        "e5b8",
+        "d8e7",
+        "b8g8"
+      ],
+      "rating": 1205,
+      "difficulty": "Introductory",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "long",
+        "middlegame",
+        "skewer"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00ICz",
+        "gameUrl": "https://lichess.org/aGEDdbh2/black#62",
+        "license": "CC0-1.0",
+        "rowSha256": "0777f233c7a4a2a55b5ec1b5247ec2b36c11d802197bd0637fccf05cc9020618"
+      }
+    },
+    {
+      "id": "00IF1",
+      "fen": "1k6/p1p5/P2p4/3P4/1PK2r1p/4P3/8/4B3 w - - 0 58",
+      "setup": {
+        "fen": "1k6/p1p5/P2p4/3P4/1PK2N1p/4P3/5r2/4B3 b - - 12 57",
+        "move": "f2f4"
+      },
+      "solution": [
+        "e3f4",
+        "h4h3",
+        "e1g3"
+      ],
+      "rating": 1266,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00IF1",
+        "gameUrl": "https://lichess.org/bX3dAdx9/black#114",
+        "license": "CC0-1.0",
+        "rowSha256": "cf8f58a6485c85ef722318707b16d8cba6fbf908fc71de0cfe8f493bceea9636"
+      }
+    },
+    {
+      "id": "00IHi",
+      "fen": "8/8/1k6/8/p7/1p1N2P1/5KP1/r3R3 b - - 1 55",
+      "setup": {
+        "fen": "8/4R3/1k6/8/p7/1p1N2P1/5KP1/r7 w - - 0 55",
+        "move": "e7e1"
+      },
+      "solution": [
+        "a1e1",
+        "f2e1",
+        "a4a3",
+        "e1d2",
+        "a3a2",
+        "d2c3",
+        "a2a1q"
+      ],
+      "rating": 1710,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "promotion",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00IHi",
+        "gameUrl": "https://lichess.org/DiBepPdz#109",
+        "license": "CC0-1.0",
+        "rowSha256": "ea560cd4430ca5f44acce1a09a963a098b0e1db293dc457f8288dbb1f720cfb0"
+      }
+    },
+    {
+      "id": "00IPp",
+      "fen": "4Q3/6pk/p3p2p/5P2/1p1P4/4q2P/2B1n2B/7K b - - 0 35",
+      "setup": {
+        "fen": "4Q3/6pk/p3p2p/5p2/1p1P2P1/4q2P/2B1n2B/7K w - - 0 35",
+        "move": "g4f5"
+      },
+      "solution": [
+        "e3f3"
+      ],
+      "rating": 1520,
+      "difficulty": "Intermediate",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00IPp",
+        "gameUrl": "https://lichess.org/JKNcTJw1#69",
+        "license": "CC0-1.0",
+        "rowSha256": "92a251cab03a61c83dbba2aed69916862d151ebd17d65837d33853a2f89e7e26"
+      }
+    },
+    {
+      "id": "00IUW",
+      "fen": "8/2p1r1kp/5pp1/3P3r/4P3/2N1QbPq/PPP2R1P/5RK1 b - - 4 23",
+      "setup": {
+        "fen": "8/Q1p1r1kp/5pp1/3P3r/4P3/2N2bPq/PPP2R1P/5RK1 w - - 3 23",
+        "move": "a7e3"
+      },
+      "solution": [
+        "h3g3",
+        "h2g3",
+        "h5h1"
+      ],
+      "rating": 1615,
+      "difficulty": "Intermediate",
+      "theme": "sacrifice",
+      "themes": [
+        "clearance",
+        "kingsideAttack",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "operaMate",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00IUW",
+        "gameUrl": "https://lichess.org/83tyhOfz#45",
+        "license": "CC0-1.0",
+        "rowSha256": "ae80c779bffa3dc2c8fc11addbdf0bed523ee7778cda61b8c6b9a07af3bc9f27"
+      }
+    },
+    {
+      "id": "00IYg",
+      "fen": "r1b2r2/pp2n1p1/1qn1ppk1/3pP1N1/3P3P/P7/1P1Q1PP1/RN2K2R w KQ - 0 14",
+      "setup": {
+        "fen": "r1b2r2/pp2npp1/1qn1p1k1/3pP1N1/3P3P/P7/1P1Q1PP1/RN2K2R b KQ - 0 13",
+        "move": "f7f6"
+      },
+      "solution": [
+        "h4h5",
+        "g6h6",
+        "g5e6",
+        "h6h7",
+        "e6f8"
+      ],
+      "rating": 1720,
+      "difficulty": "Intermediate",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "discoveredCheck",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00IYg",
+        "gameUrl": "https://lichess.org/SWSWl6dS/black#26",
+        "license": "CC0-1.0",
+        "rowSha256": "a45c9b85b76c98e8b54d97580f3594c659f635392f77d8668a4299f8553d4911"
+      }
+    },
+    {
+      "id": "00InW",
+      "fen": "8/2p5/pp1p4/3P1N2/PPP1Pp2/5n1p/5K1k/8 w - - 0 47",
+      "setup": {
+        "fen": "8/2p5/pp1p4/3PnN2/PPP1Pp2/5P1p/5K1k/8 b - - 3 46",
+        "move": "e5f3"
+      },
+      "solution": [
+        "f2f3",
+        "h2g1",
+        "f3f4",
+        "h3h2",
+        "f5g3"
+      ],
+      "rating": 1450,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "hangingPiece",
+        "knightEndgame",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00InW",
+        "gameUrl": "https://lichess.org/CZaimWSp/black#92",
+        "license": "CC0-1.0",
+        "rowSha256": "5ee2175bcea54d01790cf7595677ca3646c292fc4e83f57efa593fc580f5de44"
+      }
+    },
+    {
+      "id": "00JtR",
+      "fen": "1rbk3r/3qp1b1/p3P1Bp/1N4p1/8/P5P1/1P2Q1P1/R3K2R b KQ - 0 23",
+      "setup": {
+        "fen": "1rbk3r/3qp1b1/p3p1Bp/1N1P2p1/8/P5P1/1P2Q1P1/R3K2R w KQ - 2 23",
+        "move": "d5e6"
+      },
+      "solution": [
+        "d7b5",
+        "e2d2",
+        "d8c7",
+        "a1c1",
+        "c7b7",
+        "g6e4",
+        "b7a7"
+      ],
+      "rating": 2099,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00JtR",
+        "gameUrl": "https://lichess.org/eQy3tkuB#45",
+        "license": "CC0-1.0",
+        "rowSha256": "e9042ebbd0247835ab6a6ed9314962c4274c227ea22e2510ce63f41480face18"
+      }
+    },
+    {
+      "id": "00KNK",
+      "fen": "r3r1k1/p1p4p/3b4/6qN/4p3/1P1b1Q2/P2P1PP1/B5KR w - - 0 23",
+      "setup": {
+        "fen": "r3r1k1/p1p4p/3b4/4p1qN/8/1P1b1Q2/P2P1PP1/B5KR b - - 2 22",
+        "move": "e5e4"
+      },
+      "solution": [
+        "h5f6",
+        "g8f8",
+        "f6h7",
+        "f8e7",
+        "a1f6",
+        "g5f6",
+        "f3f6"
+      ],
+      "rating": 2022,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "deflection",
+        "discoveredCheck",
+        "doubleCheck",
+        "fork",
+        "middlegame",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00KNK",
+        "gameUrl": "https://lichess.org/L8oTZ2cM/black#44",
+        "license": "CC0-1.0",
+        "rowSha256": "64f10899770aa6a61c98c443988202586703362480a7867f3e02a4fad72c0787"
+      }
+    },
+    {
+      "id": "00L4x",
+      "fen": "1r4k1/4Pp1p/p5pb/2q5/p2n4/P2Q2B1/r2N1PPP/3KR2R w - - 1 28",
+      "setup": {
+        "fen": "1r4k1/4Ppbp/p5p1/2q5/p2n4/P2Q2B1/r2N1PPP/3KR2R b - - 0 27",
+        "move": "g7h6"
+      },
+      "solution": [
+        "e7e8q",
+        "b8e8",
+        "e1e8"
+      ],
+      "rating": 1260,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "kingsideAttack",
+        "middlegame",
+        "promotion",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00L4x",
+        "gameUrl": "https://lichess.org/kQUg1Hn3/black#54",
+        "license": "CC0-1.0",
+        "rowSha256": "acfb893cddba16b6e6b4a3f73655b75cc87c02fce7ffde2b9fc71c66d0d822b2"
+      }
+    },
+    {
+      "id": "00LNB",
+      "fen": "kr6/1pR4p/p4R2/n7/P3p3/3rB3/6PP/6K1 w - - 1 39",
+      "setup": {
+        "fen": "kr6/1pR4p/p4R2/n2r4/P3p3/4B3/6PP/6K1 b - - 0 38",
+        "move": "d5d3"
+      },
+      "solution": [
+        "f6a6",
+        "b7a6",
+        "c7a7"
+      ],
+      "rating": 1074,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "operaMate",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00LNB",
+        "gameUrl": "https://lichess.org/MQYDGoEM/black#76",
+        "license": "CC0-1.0",
+        "rowSha256": "cb60ab4e993b3a29f945cbf8bf145a0b3fb6f4ebffa460dba85249f359423ab6"
+      }
+    },
+    {
+      "id": "00LNH",
+      "fen": "1k2r3/pp2r2p/2pqbpp1/3n4/3P1p2/1B3N1P/PPQB1PP1/1K1RR3 b - - 3 22",
+      "setup": {
+        "fen": "1k2r3/pp2r2p/2pqbpp1/3n4/2BP1p2/5N1P/PPQB1PP1/1K1RR3 w - - 2 22",
+        "move": "c4b3"
+      },
+      "solution": [
+        "e6f5",
+        "c2f5",
+        "g6f5"
+      ],
+      "rating": 1593,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00LNH",
+        "gameUrl": "https://lichess.org/gVcbpusg#43",
+        "license": "CC0-1.0",
+        "rowSha256": "695586096ce5efcab536a99b9e013a9bc1c455c25f34f324f8290e65ced5106a"
+      }
+    },
+    {
+      "id": "00LRq",
+      "fen": "1k6/1p1q2r1/P2p3p/1NpPpn1Q/5b2/2P5/1P2B1P1/R6K w - - 4 29",
+      "setup": {
+        "fen": "1k6/1p1q4/P2p3p/1NpPpn1Q/5b2/2P3r1/1P2B1P1/R6K b - - 3 28",
+        "move": "g3g7"
+      },
+      "solution": [
+        "a6a7",
+        "b8a8",
+        "b5c7",
+        "d7c7",
+        "h5e8",
+        "c7b8",
+        "a7b8q"
+      ],
+      "rating": 2222,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "discoveredCheck",
+        "doubleCheck",
+        "mate",
+        "mateIn4",
+        "middlegame",
+        "promotion",
+        "queensideAttack",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00LRq",
+        "gameUrl": "https://lichess.org/i9yxFCW9/black#56",
+        "license": "CC0-1.0",
+        "rowSha256": "7144be80e65df2d77b99dec40673990d908dd446ca7859c51112fccd5711d590"
+      }
+    },
+    {
+      "id": "00LZl",
+      "fen": "r2qk2r/ppp2ppp/2n5/3pPb2/1b1n1B2/2NB1N2/PP3PPP/R2QK2R w KQkq - 4 10",
+      "setup": {
+        "fen": "r2qkb1r/ppp2ppp/2n5/3pPb2/3n1B2/2NB1N2/PP3PPP/R2QK2R b KQkq - 3 9",
+        "move": "f8b4"
+      },
+      "solution": [
+        "f3d4",
+        "c6d4",
+        "d1a4",
+        "d4c6",
+        "d3f5"
+      ],
+      "rating": 2128,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "deflection",
+        "fork",
+        "long",
+        "opening"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/00LZl",
+        "gameUrl": "https://lichess.org/jBb2kj01/black#18",
+        "license": "CC0-1.0",
+        "rowSha256": "8b26b246228a3c4884f52342be246a9f0e3a009252bea9705d375cd5f02d5177"
+      }
+    },
+    {
+      "id": "00M1q",
+      "fen": "2r3k1/2r3p1/p3pqQ1/1p1p4/nP1P4/2P4R/P4PPP/2R3K1 w - - 1 31",
+      "setup": {
+        "fen": "2r3k1/2r1q1p1/p3p1Q1/1p1p4/nP1P4/2P4R/P4PPP/2R3K1 b - - 0 30",
+        "move": "e7f6"
+      },
+      "solution": [
+        "g6h7",
+        "g8f7",
+        "h3f3",
+        "f6f3",
+        "g2f3"
+      ],
+      "rating": 1434,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "pin"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00M1q",
+        "gameUrl": "https://lichess.org/nsAQV9mj/black#60",
+        "license": "CC0-1.0",
+        "rowSha256": "46fe56c38f98d28e8db42df05850882f583941a74227e27f37d7ae7f9771d746"
+      }
+    },
+    {
+      "id": "00NEO",
+      "fen": "4qr2/pR4pk/2b2p1p/4pPP1/3bB3/3P3Q/P1r4P/4BR1K w - - 1 25",
+      "setup": {
+        "fen": "4qr2/pR1b2pk/5p1p/4pPP1/3bB3/3P3Q/P1r4P/4BR1K b - - 0 24",
+        "move": "d7c6"
+      },
+      "solution": [
+        "h3h6",
+        "h7g8",
+        "h6g7"
+      ],
+      "rating": 1863,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00NEO",
+        "gameUrl": "https://lichess.org/43Kqr7qG/black#48",
+        "license": "CC0-1.0",
+        "rowSha256": "5f3ff85f1235369d05902935e88c0ff3873187ab00dfc869460063146efc01be"
+      }
+    },
+    {
+      "id": "00O3h",
+      "fen": "5k2/R3Rp2/6p1/1p5p/1P1r3K/2n5/7P/8 w - - 8 44",
+      "setup": {
+        "fen": "5k2/R3Rp2/6p1/1p5p/1P5K/2nr4/7P/8 b - - 7 43",
+        "move": "d3d4"
+      },
+      "solution": [
+        "h4g5",
+        "c3e4",
+        "g5h6"
+      ],
+      "rating": 1136,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00O3h",
+        "gameUrl": "https://lichess.org/71bhLvdU/black#86",
+        "license": "CC0-1.0",
+        "rowSha256": "a0a8f5d9acdec6cacfc4e2d1ee44684f33e170a1a87ab812a14713fb0d1c01a9"
+      }
+    },
+    {
+      "id": "00O9Z",
+      "fen": "5Q1R/5p1p/1b3qp1/p6k/P2P4/8/1P2rPPP/5RK1 b - - 8 32",
+      "setup": {
+        "fen": "5QR1/5p1p/1b3qp1/p6k/P2P4/8/1P2rPPP/5RK1 w - - 7 32",
+        "move": "g8h8"
+      },
+      "solution": [
+        "f6f2",
+        "f1f2",
+        "e2e1",
+        "f2f1",
+        "b6d4",
+        "g1h1",
+        "e1f1"
+      ],
+      "rating": 1612,
+      "difficulty": "Intermediate",
+      "theme": "pin",
+      "themes": [
+        "backRankMate",
+        "deflection",
+        "endgame",
+        "fork",
+        "master",
+        "mate",
+        "mateIn4",
+        "pin",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00O9Z",
+        "gameUrl": "https://lichess.org/DKnGKRmQ#63",
+        "license": "CC0-1.0",
+        "rowSha256": "305968f9118c8b495e35d528fc43294ba65d30056e970e3bf83887ec330d1b51"
+      }
+    },
+    {
+      "id": "00O9a",
+      "fen": "1k3r2/q5r1/2Qp3p/3Bp3/2N1P1p1/P7/1PP2PPP/R5K1 b - - 13 35",
+      "setup": {
+        "fen": "1k3r2/q5r1/2Qp3p/N2Bp3/4P1p1/P7/1PP2PPP/R5K1 w - - 12 35",
+        "move": "a5c4"
+      },
+      "solution": [
+        "a7f2",
+        "g1h1",
+        "f2f1",
+        "a1f1",
+        "f8f1"
+      ],
+      "rating": 985,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00O9a",
+        "gameUrl": "https://lichess.org/t6wbqTty#69",
+        "license": "CC0-1.0",
+        "rowSha256": "fffbfee519b7f6d71e37f8243e5290c5081a09aecf45a4932398b98816e858c3"
+      }
+    },
+    {
+      "id": "00OCQ",
+      "fen": "1rr3k1/5p1p/p5pQ/4p3/4q3/B1P1P3/PP1R1PPP/2KR4 b - - 0 27",
+      "setup": {
+        "fen": "1rr3k1/5p1p/p5pQ/4p3/4q3/B3P3/PPPR1PPP/2KR4 w - - 6 27",
+        "move": "c2c3"
+      },
+      "solution": [
+        "c8c3",
+        "b2c3",
+        "b8b1"
+      ],
+      "rating": 1174,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "queensideAttack",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00OCQ",
+        "gameUrl": "https://lichess.org/kcUnWeDs#53",
+        "license": "CC0-1.0",
+        "rowSha256": "2273f7b3ab68a9cdf35e600dad15b11d7dd87d980973bcb29a4778bd0b0e6c49"
+      }
+    },
+    {
+      "id": "00OLF",
+      "fen": "k1r5/n1N3p1/Q2p4/P2Pp2p/q3Pp1P/2RK4/5PP1/8 b - - 0 36",
+      "setup": {
+        "fen": "k1r5/n1p3p1/Q2pN3/P2Pp2p/q3Pp1P/2RK4/5PP1/8 w - - 4 36",
+        "move": "e6c7"
+      },
+      "solution": [
+        "c8c7",
+        "c3c7",
+        "a4d1",
+        "d3c3",
+        "d1c1",
+        "c3b3",
+        "c1c7"
+      ],
+      "rating": 2005,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "sacrifice",
+        "skewer",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00OLF",
+        "gameUrl": "https://lichess.org/REkdb3WG#71",
+        "license": "CC0-1.0",
+        "rowSha256": "c6948df091cd9734906229f33ae6076b0b724f7a368c969fbcb30efc6534214a"
+      }
+    },
+    {
+      "id": "00OPc",
+      "fen": "1k1rr3/ppp1q3/8/4nQ1p/8/2P2N1P/PP4P1/2K1R2R b - - 1 25",
+      "setup": {
+        "fen": "1k1rr3/ppp1q3/8/4nQNp/8/2P4P/PP4P1/2K1R2R w - - 0 25",
+        "move": "g5f3"
+      },
+      "solution": [
+        "e5d3",
+        "f5d3",
+        "d8d3",
+        "e1e7",
+        "e8e7"
+      ],
+      "rating": 2141,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00OPc",
+        "gameUrl": "https://lichess.org/43yrfr28#49",
+        "license": "CC0-1.0",
+        "rowSha256": "ef3bf46877ce5a2b7c1ba9119d6b6a3b437ab939832fcd5a44ea6adb198f3bff"
+      }
+    },
+    {
+      "id": "00Oim",
+      "fen": "1r3rk1/q5pp/2R5/3P4/2Q5/1p2NpPb/1P3P1P/3R2K1 b - - 1 32",
+      "setup": {
+        "fen": "1r3rk1/q5pp/2R5/3P4/8/1p2NpPb/1P3P1P/2QR2K1 w - - 0 32",
+        "move": "c1c4"
+      },
+      "solution": [
+        "a7e3",
+        "f2e3",
+        "f3f2"
+      ],
+      "rating": 1247,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00Oim",
+        "gameUrl": "https://lichess.org/p1cFe6Z8#63",
+        "license": "CC0-1.0",
+        "rowSha256": "8973076395a40f088b91531a0517f0137ce133430df227b7168f83444af034f5"
+      }
+    },
+    {
+      "id": "00P81",
+      "fen": "6k1/5p2/4p2p/3pPP2/1R5P/2r5/2B5/2b2K2 w - - 1 47",
+      "setup": {
+        "fen": "6k1/5p2/4p2p/3pPP2/1R5P/7r/2B5/2b2K2 b - - 0 46",
+        "move": "h3c3"
+      },
+      "solution": [
+        "b4b8",
+        "g8h7",
+        "f5e6",
+        "c3c2",
+        "e6e7"
+      ],
+      "rating": 2122,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "discoveredAttack",
+        "discoveredCheck",
+        "endgame",
+        "long",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00P81",
+        "gameUrl": "https://lichess.org/SIETCqbJ/black#92",
+        "license": "CC0-1.0",
+        "rowSha256": "9dd62d62ab8afc8901b5be4bfb3b67d7229da61e69f752327a43a4e66f79c86d"
+      }
+    },
+    {
+      "id": "00PHg",
+      "fen": "R7/P4p2/7p/q3k1n1/5R2/7P/5PK1/8 w - - 3 47",
+      "setup": {
+        "fen": "R7/P4p2/5k1p/q5n1/5R2/7P/5PK1/8 b - - 2 46",
+        "move": "f6e5"
+      },
+      "solution": [
+        "a8e8",
+        "e5f4",
+        "a7a8q",
+        "a5a8",
+        "e8a8"
+      ],
+      "rating": 1367,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "clearance",
+        "endgame",
+        "long",
+        "promotion"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00PHg",
+        "gameUrl": "https://lichess.org/u5o6sm6r/black#92",
+        "license": "CC0-1.0",
+        "rowSha256": "ea1682d40fa52d6db804b918ec4ad372d4643d7056fc5b4e0db2eba575954756"
+      }
+    },
+    {
+      "id": "00QjF",
+      "fen": "8/8/1pr3kp/pbPpp1pN/3Pp1P1/1P2K3/P6P/2R5 w - - 0 30",
+      "setup": {
+        "fen": "8/8/1pr1p1kp/pbPp2pN/3Pp1P1/1P2K3/P6P/2R5 b - - 0 29",
+        "move": "e6e5"
+      },
+      "solution": [
+        "c5b6",
+        "c6c1",
+        "b6b7",
+        "c1e1",
+        "e3d2"
+      ],
+      "rating": 2097,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "master",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00QjF",
+        "gameUrl": "https://lichess.org/oPvDBkpv/black#58",
+        "license": "CC0-1.0",
+        "rowSha256": "e25ddfa608d0f0f40d51f604cfb4354ea5cafc5718a717bd78a38928e94f9a11"
+      }
+    },
+    {
+      "id": "00R2A",
+      "fen": "2kr1b1R/p5p1/8/3P1p2/2P5/4B3/PP1K1P2/8 b - - 0 25",
+      "setup": {
+        "fen": "2kr1b1R/p5p1/8/3P1p2/8/4B3/PPPK1P2/8 w - - 1 25",
+        "move": "c2c4"
+      },
+      "solution": [
+        "f8b4",
+        "d2d3",
+        "d8h8"
+      ],
+      "rating": 856,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00R2A",
+        "gameUrl": "https://lichess.org/ZjzT3REI#49",
+        "license": "CC0-1.0",
+        "rowSha256": "ab5437c0b40de382485e8d8228a20d6cc33eeb964afbc0c7095fdd5614df33da"
+      }
+    },
+    {
+      "id": "00RPk",
+      "fen": "8/2p5/5ppp/1k1P4/p4PPP/P1K5/8/8 w - - 0 40",
+      "setup": {
+        "fen": "8/2p5/5ppp/1PkP4/p4PPP/P1K5/8/8 b - - 0 39",
+        "move": "c5b5"
+      },
+      "solution": [
+        "c3d4",
+        "c7c5",
+        "d5c6",
+        "b5c6",
+        "d4c4"
+      ],
+      "rating": 2644,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "enPassant",
+        "endgame",
+        "long",
+        "pawnEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00RPk",
+        "gameUrl": "https://lichess.org/vOFXdfEu/black#78",
+        "license": "CC0-1.0",
+        "rowSha256": "dd85afc3009189667b88845384e85fd57bf238db1da7bafc0626f8523b267f09"
+      }
+    },
+    {
+      "id": "00Rue",
+      "fen": "r2qkb1r/pp1nppp1/2p2n1p/3p1b2/2PP4/BP2PN2/P4PPP/RN1QKB1R b KQkq - 0 7",
+      "setup": {
+        "fen": "r2qkb1r/pp1nppp1/2p2n1p/3p1b2/3P4/BP2PN2/P1P2PPP/RN1QKB1R w KQkq - 2 7",
+        "move": "c2c4"
+      },
+      "solution": [
+        "f5b1",
+        "a1b1",
+        "d8a5",
+        "b3b4",
+        "a5a3"
+      ],
+      "rating": 1880,
+      "difficulty": "Advanced",
+      "theme": "fork",
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "opening"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/00Rue",
+        "gameUrl": "https://lichess.org/tgFzBrLu#13",
+        "license": "CC0-1.0",
+        "rowSha256": "8428ccd90e952f2be04691fdb4ee74e43f03b60ef361da6902ee2847ebebf5e3"
+      }
+    },
+    {
+      "id": "00SlL",
+      "fen": "r5k1/2p1qp1p/2b1p1pQ/pp5P/3P2P1/3r4/PP2N3/2KR3R w - - 0 24",
+      "setup": {
+        "fen": "r5k1/2p1qp1p/2b1p1pQ/pp5P/3P2P1/3P1r2/PP2N3/2KR3R b - - 0 23",
+        "move": "f3d3"
+      },
+      "solution": [
+        "d1d3",
+        "c6h1",
+        "h5g6",
+        "f7g6",
+        "h6h1"
+      ],
+      "rating": 2330,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00SlL",
+        "gameUrl": "https://lichess.org/ktai3EiG/black#46",
+        "license": "CC0-1.0",
+        "rowSha256": "486eb0c57254bf85076e4fa3221117e968187ac041c80083dd9599bc1f22804e"
+      }
+    },
+    {
+      "id": "00TU2",
+      "fen": "1k1r4/1p3Qp1/p2q3p/8/1N6/8/PP3PPP/2R3K1 b - - 0 22",
+      "setup": {
+        "fen": "1k1r4/1p3Qp1/p2q3p/3N4/1b6/8/PP3PPP/2R3K1 w - - 4 22",
+        "move": "d5b4"
+      },
+      "solution": [
+        "d6d1",
+        "c1d1",
+        "d8d1"
+      ],
+      "rating": 623,
+      "difficulty": "Introductory",
+      "theme": "sacrifice",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00TU2",
+        "gameUrl": "https://lichess.org/p32396Rd#43",
+        "license": "CC0-1.0",
+        "rowSha256": "364bb04ec7868b9d77cada725a529ef8e5993db4e00ee604f3e258a9f1937fbc"
+      }
+    },
+    {
+      "id": "00Tdk",
+      "fen": "r6r/4kppp/2pNpnq1/p1P1n3/8/B3P3/PP1Q1PPP/3R1RK1 b - - 8 20",
+      "setup": {
+        "fen": "r6r/4kppp/2pNpnq1/p1P1n3/8/B3P3/PP2QPPP/3R1RK1 w - - 7 20",
+        "move": "e2d2"
+      },
+      "solution": [
+        "e5f3",
+        "g1h1",
+        "f3d2"
+      ],
+      "rating": 1041,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00Tdk",
+        "gameUrl": "https://lichess.org/UgDWX5rx#39",
+        "license": "CC0-1.0",
+        "rowSha256": "2c103aa3b4a06a78f54e688d99357ebfdaa491fbaa6baf96ab672e0f292619cc"
+      }
+    },
+    {
+      "id": "00TuA",
+      "fen": "8/6p1/8/pp2k1p1/2p2p2/2P2PPP/PP3K2/8 b - - 1 37",
+      "setup": {
+        "fen": "8/6p1/8/pp2k1p1/2p2p2/2P1KPPP/PP6/8 w - - 0 37",
+        "move": "e3f2"
+      },
+      "solution": [
+        "f4g3",
+        "f2g3",
+        "e5f5"
+      ],
+      "rating": 2173,
+      "difficulty": "Advanced",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "pawnEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00TuA",
+        "gameUrl": "https://lichess.org/qtped91w#73",
+        "license": "CC0-1.0",
+        "rowSha256": "b07306a6841ba73310ed2e16b16a6cf3c3c6cf331a9b32aa31c33e7bcdfa3bdf"
+      }
+    },
+    {
+      "id": "00UHZ",
+      "fen": "6k1/6p1/pp2np1p/8/2r1NR1P/6P1/1PP5/1K6 w - - 2 33",
+      "setup": {
+        "fen": "3n2k1/6p1/pp3p1p/8/2r1NR1P/6P1/1PP5/1K6 b - - 1 32",
+        "move": "d8e6"
+      },
+      "solution": [
+        "e4f6",
+        "g7f6",
+        "f4c4"
+      ],
+      "rating": 1071,
+      "difficulty": "Introductory",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "endgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00UHZ",
+        "gameUrl": "https://lichess.org/bQ4MdAO1/black#64",
+        "license": "CC0-1.0",
+        "rowSha256": "92bc2303b3854a171c61d62577f74ae1273bc7a94d842b8d2b9e28b606ea7e25"
+      }
+    },
+    {
+      "id": "00UI2",
+      "fen": "2r3nr/p5pp/b3k3/3p1p2/4p3/BP3P2/P1PN2PP/2KR3R w - - 0 19",
+      "setup": {
+        "fen": "2r3nr/p5pp/b3kp2/3p4/4p3/BP3P2/P1PN2PP/2KR3R b - - 0 18",
+        "move": "f6f5"
+      },
+      "solution": [
+        "f3e4",
+        "f5e4",
+        "d2e4",
+        "d5e4",
+        "d1d6",
+        "e6f7",
+        "d6a6"
+      ],
+      "rating": 1947,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "clearance",
+        "crushing",
+        "fork",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00UI2",
+        "gameUrl": "https://lichess.org/eellQ95m/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "1460aae8aa4f2fe0f264799ba6df11b33a0e294a96b829f986e0d5509de6da39"
+      }
+    },
+    {
+      "id": "00UJP",
+      "fen": "1r2q1k1/2R4p/3pNp2/3P4/1p3pbb/1BP5/1P3PPK/Q4R2 b - - 0 28",
+      "setup": {
+        "fen": "1r2q1k1/R1p4p/3pNp2/3P4/1p3pbb/1BP5/1P3PPK/Q4R2 w - - 2 28",
+        "move": "a7c7"
+      },
+      "solution": [
+        "h4g3",
+        "h2g1",
+        "e8h5",
+        "c7g7",
+        "g8h8",
+        "f2g3",
+        "f4g3",
+        "f1f3",
+        "h5h2"
+      ],
+      "rating": 2180,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "crushing",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00UJP",
+        "gameUrl": "https://lichess.org/qkY18hUD#55",
+        "license": "CC0-1.0",
+        "rowSha256": "eb781c85a9d31b8c4dd6bc4dd329778259330f5ab4d8551d51079d599101598c"
+      }
+    },
+    {
+      "id": "00UQj",
+      "fen": "6r1/pp1qbpk1/8/2pPp1r1/2P1Pp2/P1N2QpR/3B2K1/R7 b - - 1 31",
+      "setup": {
+        "fen": "6r1/pp1qbpk1/8/2pPp1r1/2P1Pp2/P1N2Qp1/3B2K1/R6R w - - 0 31",
+        "move": "h1h3"
+      },
+      "solution": [
+        "d7h3",
+        "g2h3",
+        "g3g2"
+      ],
+      "rating": 2375,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "master",
+        "middlegame",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00UQj",
+        "gameUrl": "https://lichess.org/uZNJ299M#61",
+        "license": "CC0-1.0",
+        "rowSha256": "3e9a97920a4027acb80aaa7f58662b06414a12544c396feb8ae7c27c2ce27e0a"
+      }
+    },
+    {
+      "id": "00WJN",
+      "fen": "5Q2/7K/8/8/4p2P/3k2q1/8/8 w - - 2 54",
+      "setup": {
+        "fen": "5Q2/7K/8/8/4p2P/3kq3/8/8 b - - 1 53",
+        "move": "e3g3"
+      },
+      "solution": [
+        "f8a3",
+        "d3d2",
+        "a3g3"
+      ],
+      "rating": 1324,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "queenEndgame",
+        "short",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00WJN",
+        "gameUrl": "https://lichess.org/27eUCFoJ/black#106",
+        "license": "CC0-1.0",
+        "rowSha256": "402ef78289f4f4576a63c64410bbaa39c41cdc5a1b88aef87bbf52aa97fb14ca"
+      }
+    },
+    {
+      "id": "00WoW",
+      "fen": "8/4kppR/r1p1p2p/p3P2P/4P1P1/1pP2P2/3K2B1/8 b - - 1 29",
+      "setup": {
+        "fen": "8/4kppR/r1p1p2p/p3P2P/4P1P1/1pP1KP2/6B1/8 w - - 0 29",
+        "move": "e3d2"
+      },
+      "solution": [
+        "a5a4",
+        "g2f1",
+        "a4a3",
+        "f1a6",
+        "a3a2"
+      ],
+      "rating": 2158,
+      "difficulty": "Advanced",
+      "theme": "sacrifice",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "long",
+        "master",
+        "quietMove",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00WoW",
+        "gameUrl": "https://lichess.org/cuQl3aZ8#57",
+        "license": "CC0-1.0",
+        "rowSha256": "0e40adff823f2acd4f3c2c57a5a0ef23790edf4a07009571dcef493ae3e976d6"
+      }
+    },
+    {
+      "id": "00X0Q",
+      "fen": "6R1/8/8/2P5/1K6/3r4/PP3kp1/8 b - - 0 52",
+      "setup": {
+        "fen": "6R1/8/8/8/1KP5/3r4/PP3kp1/8 w - - 3 52",
+        "move": "c4c5"
+      },
+      "solution": [
+        "d3g3",
+        "g8g3",
+        "f2g3",
+        "c5c6",
+        "g2g1q"
+      ],
+      "rating": 1425,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "promotion",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00X0Q",
+        "gameUrl": "https://lichess.org/aWPHCaqm#103",
+        "license": "CC0-1.0",
+        "rowSha256": "967ef1ca49b3e8fcaf898963346e75f16de3b10eadd15edf2f3477f436ff7115"
+      }
+    },
+    {
+      "id": "00X2j",
+      "fen": "8/5KP1/R7/2k5/2pp4/8/8/6r1 w - - 2 51",
+      "setup": {
+        "fen": "8/5KP1/R1k5/8/2pp4/8/8/6r1 b - - 1 50",
+        "move": "c6c5"
+      },
+      "solution": [
+        "a6g6",
+        "g1g6",
+        "f7g6",
+        "d4d3",
+        "g7g8q"
+      ],
+      "rating": 1549,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "long",
+        "promotion",
+        "rookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00X2j",
+        "gameUrl": "https://lichess.org/GY1HtJCo/black#100",
+        "license": "CC0-1.0",
+        "rowSha256": "1be72fa96bf6de0615aaf90d5ac8a5b7ba6f7b1f65d64b8c66fa460e18e46d57"
+      }
+    },
+    {
+      "id": "00XL2",
+      "fen": "2kr3r/ppp3pp/6q1/3Pnp2/1PPQp3/7P/P3NPP1/R4RK1 b - - 2 17",
+      "setup": {
+        "fen": "2kr3r/ppp3pp/6q1/3Pnp2/1PP1p3/7P/P2QNPP1/R4RK1 w - - 1 17",
+        "move": "d2d4"
+      },
+      "solution": [
+        "e5f3",
+        "g1h1",
+        "f3d4"
+      ],
+      "rating": 998,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00XL2",
+        "gameUrl": "https://lichess.org/WEWuNMx5#33",
+        "license": "CC0-1.0",
+        "rowSha256": "f20043d3767fe92ac61178659d0af4a1fbea611df42335eea2c57ac7ac6992c1"
+      }
+    },
+    {
+      "id": "00XZR",
+      "fen": "8/2p5/p1n5/1pP1p2k/1P1p4/P2P3q/5P2/R4KR1 w - - 0 35",
+      "setup": {
+        "fen": "8/2p5/p1n5/1pP1p2k/1P1p4/P2P3P/5P2/R4KRq b - - 9 34",
+        "move": "h1h3"
+      },
+      "solution": [
+        "f1e2",
+        "e5e4",
+        "g1h1",
+        "e4d3",
+        "e2d2"
+      ],
+      "rating": 1641,
+      "difficulty": "Intermediate",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "pin"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00XZR",
+        "gameUrl": "https://lichess.org/cvl7Zq2b/black#68",
+        "license": "CC0-1.0",
+        "rowSha256": "83322383ce009b9243d878ba2b9f3ad0237f1c03f82a197dbfcdd928ab90d567"
+      }
+    },
+    {
+      "id": "00Xop",
+      "fen": "r2q1rk1/2B2nbp/3p2p1/4p1N1/4P1P1/1bN4P/PP1Q1P2/2KR3R b - - 0 18",
+      "setup": {
+        "fen": "r2q1rk1/2p2nbp/1B1p2p1/4p1N1/4P1P1/1bN4P/PP1Q1P2/2KR3R w - - 0 18",
+        "move": "b6c7"
+      },
+      "solution": [
+        "d8c7",
+        "a2b3",
+        "f7g5"
+      ],
+      "rating": 2466,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "master",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00Xop",
+        "gameUrl": "https://lichess.org/Bw3qJ0LJ#35",
+        "license": "CC0-1.0",
+        "rowSha256": "2fb837098728fbdfdd822af90b5363451accb6b645da5d69f69ae198ab6e71e9"
+      }
+    },
+    {
+      "id": "00ZEW",
+      "fen": "r1b5/pppqNkp1/3p3p/4r2n/1PP2p1N/P5P1/4Q2P/4RRK1 w - - 4 23",
+      "setup": {
+        "fen": "r1b5/pppqNkp1/3p3p/6rn/1PP2p1N/P5P1/4Q2P/4RRK1 b - - 3 22",
+        "move": "g5e5"
+      },
+      "solution": [
+        "e2h5",
+        "e5h5",
+        "f1f4",
+        "f7e8",
+        "e7g6"
+      ],
+      "rating": 2206,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "advantage",
+        "discoveredAttack",
+        "discoveredCheck",
+        "long",
+        "middlegame",
+        "pin",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00ZEW",
+        "gameUrl": "https://lichess.org/cjMxj5uZ/black#44",
+        "license": "CC0-1.0",
+        "rowSha256": "e3a8887775e7a9f33eb8d359821c6430e425715d8e6225d3123069a6736672cf"
+      }
+    },
+    {
+      "id": "00ZSZ",
+      "fen": "3r4/6pp/pNnNpk2/1p6/3p1R2/8/PPP2PPK/8 b - - 5 32",
+      "setup": {
+        "fen": "3r4/6pp/pNnNpk2/1p6/3pR3/8/PPP2PPK/8 w - - 4 32",
+        "move": "e4f4"
+      },
+      "solution": [
+        "f6e5",
+        "d6f7",
+        "e5f4",
+        "f7d8",
+        "c6d8"
+      ],
+      "rating": 1057,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "long"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00ZSZ",
+        "gameUrl": "https://lichess.org/66DBsV70#63",
+        "license": "CC0-1.0",
+        "rowSha256": "73526e5c3f3d503237f210688f0cddfd281320e6af8ae388c31092133381d88a"
+      }
+    },
+    {
+      "id": "00ZSd",
+      "fen": "2R5/5pk1/pb4p1/1p1q4/3P1P1p/P3r2P/1PQ3P1/3R3K b - - 7 45",
+      "setup": {
+        "fen": "2R5/5pk1/pb4p1/1p1q4/3P1P1p/P3r2P/1PQ3P1/3R2K1 w - - 6 45",
+        "move": "g1h1"
+      },
+      "solution": [
+        "e3h3",
+        "h1g1",
+        "b6d4",
+        "d1d4",
+        "d5d4"
+      ],
+      "rating": 1290,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pin"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00ZSd",
+        "gameUrl": "https://lichess.org/D5o6GOOI#89",
+        "license": "CC0-1.0",
+        "rowSha256": "f066c2eb31c11de76ab2827688a79af0b421eae08bd0df8d12f5f627a8efb3d6"
+      }
+    },
+    {
+      "id": "00aZ3",
+      "fen": "8/6k1/8/1K1np1p1/P5P1/1B3r2/1PP5/8 w - - 2 37",
+      "setup": {
+        "fen": "8/6k1/1n6/1K2p1p1/P5P1/1B3r2/1PP5/8 b - - 1 36",
+        "move": "b6d5"
+      },
+      "solution": [
+        "b3d5",
+        "f3f4",
+        "a4a5",
+        "e5e4",
+        "a5a6",
+        "e4e3",
+        "a6a7"
+      ],
+      "rating": 2055,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "hangingPiece",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00aZ3",
+        "gameUrl": "https://lichess.org/0yMvFk5C/black#72",
+        "license": "CC0-1.0",
+        "rowSha256": "73f5ba684eca76732f207e1f84bfb519b7ff7f804e684dde6e05957239c9939f"
+      }
+    },
+    {
+      "id": "00bQA",
+      "fen": "r7/4n1k1/2b1R1n1/1p4R1/1P1p3p/3P1PpP/2N3P1/6K1 w - - 1 41",
+      "setup": {
+        "fen": "r7/6k1/2b1R1n1/1p3nR1/1P1p3p/3P1PpP/2N3P1/6K1 b - - 0 40",
+        "move": "f5e7"
+      },
+      "solution": [
+        "e6e7",
+        "g7f6",
+        "g5g6",
+        "f6e7",
+        "g6c6",
+        "e7d7",
+        "c6c5"
+      ],
+      "rating": 2225,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "exposedKing",
+        "master",
+        "middlegame",
+        "pin",
+        "skewer",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00bQA",
+        "gameUrl": "https://lichess.org/1NlzMdB5/black#80",
+        "license": "CC0-1.0",
+        "rowSha256": "3a3498a53e0836fdf31d0da0dc8838878853327641716d6cc001e715c1fdf829"
+      }
+    },
+    {
+      "id": "00baa",
+      "fen": "1r1qr1k1/p1p2ppp/1p1b1n2/3N4/3Q4/1P4P1/PBP1PPKP/R3R3 b - - 2 15",
+      "setup": {
+        "fen": "1r1qr1k1/p1p2ppp/1p1b1n2/8/3Q4/1PN3P1/PBP1PPKP/R3R3 w - - 1 15",
+        "move": "c3d5"
+      },
+      "solution": [
+        "d6e5",
+        "d5f6",
+        "d8f6",
+        "d4c4",
+        "e5b2"
+      ],
+      "rating": 2001,
+      "difficulty": "Advanced",
+      "theme": "skewer",
+      "themes": [
+        "advantage",
+        "long",
+        "middlegame",
+        "skewer"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00baa",
+        "gameUrl": "https://lichess.org/6toE70as#29",
+        "license": "CC0-1.0",
+        "rowSha256": "cfa294f024489da35f7a5ae6218a8832b7f84e77eea13ea3ac621c96e4bade4f"
+      }
+    },
+    {
+      "id": "00byq",
+      "fen": "2r3k1/2r1bppp/3ppn2/qp6/4P3/1Q2B1P1/PP3PBP/1RR3K1 b - - 6 21",
+      "setup": {
+        "fen": "2r3k1/2r1bppp/3ppn2/qp6/3BP3/1Q4P1/PP3PBP/1RR3K1 w - - 5 21",
+        "move": "d4e3"
+      },
+      "solution": [
+        "c7c1",
+        "b1c1",
+        "c8c1",
+        "e3c1",
+        "a5e1",
+        "g2f1",
+        "e1c1"
+      ],
+      "rating": 1141,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "advantage",
+        "fork",
+        "middlegame",
+        "pin",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00byq",
+        "gameUrl": "https://lichess.org/gofuvC2L#41",
+        "license": "CC0-1.0",
+        "rowSha256": "a17f686282645c5619872b68b77003807162706083daf79d470bd2ed56e07d9a"
+      }
+    },
+    {
+      "id": "00coU",
+      "fen": "6k1/R3K3/8/1r6/5r2/p4N2/8/5R2 b - - 4 50",
+      "setup": {
+        "fen": "6k1/R7/5K2/1r6/5r2/p4N2/8/5R2 w - - 3 50",
+        "move": "f6e7"
+      },
+      "solution": [
+        "f4f7",
+        "e7d6",
+        "f7a7"
+      ],
+      "rating": 1526,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "short",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00coU",
+        "gameUrl": "https://lichess.org/msAMDBoS#99",
+        "license": "CC0-1.0",
+        "rowSha256": "fad62c4f47824be908b4ee2027c9b91354d871888aa998c79ed8762710c713b4"
+      }
+    },
+    {
+      "id": "00cy1",
+      "fen": "2rknb2/3q1pp1/p1pP3r/1pQ1P3/5P1p/1P4P1/PB4K1/3R4 w - - 0 28",
+      "setup": {
+        "fen": "2rknb2/3q1pp1/p1pP3r/1pQ1P2p/5P2/1P4P1/PB4K1/3R4 b - - 0 27",
+        "move": "h5h4"
+      },
+      "solution": [
+        "c5b6",
+        "e8c7",
+        "d6c7"
+      ],
+      "rating": 1229,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "master",
+        "middlegame",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00cy1",
+        "gameUrl": "https://lichess.org/TsSnBR0S/black#54",
+        "license": "CC0-1.0",
+        "rowSha256": "e9e967f13da43699610cdc518358f1cf2131956e0da9c054847a7f43235c3681"
+      }
+    },
+    {
+      "id": "00dTd",
+      "fen": "3r4/ppp1Q3/1b3P2/3k4/4qp2/P1Pr4/1P3P2/1K2N3 w - - 6 32",
+      "setup": {
+        "fen": "3r4/ppp1Q3/1b2kP2/8/4qp2/P1Pr4/1P3P2/1K2N3 b - - 5 31",
+        "move": "e6d5"
+      },
+      "solution": [
+        "e7d8",
+        "d5c6",
+        "e1d3"
+      ],
+      "rating": 1976,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "endgame",
+        "hangingPiece",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00dTd",
+        "gameUrl": "https://lichess.org/UVi7iEcB/black#62",
+        "license": "CC0-1.0",
+        "rowSha256": "9a4086708ef6339b8a2c9846f2647927a8b023838ea249a11614b7b88c6e555d"
+      }
+    },
+    {
+      "id": "00dzT",
+      "fen": "6k1/1Q4p1/p1p4p/3pP3/P3bq2/2N4P/1P4P1/5B1K b - - 2 26",
+      "setup": {
+        "fen": "6k1/1Q4p1/p1p4p/3pP3/P3bq2/2N4P/1P4PK/5B2 w - - 1 26",
+        "move": "h2h1"
+      },
+      "solution": [
+        "f4f1",
+        "h1h2",
+        "f1g2"
+      ],
+      "rating": 857,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "endgame",
+        "hangingPiece",
+        "mate",
+        "mateIn2",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00dzT",
+        "gameUrl": "https://lichess.org/Kxd5ijdt#51",
+        "license": "CC0-1.0",
+        "rowSha256": "3df19058429cce7d34fcccf35689069208f8beca164547036e5105321f69f2b4"
+      }
+    },
+    {
+      "id": "00hSW",
+      "fen": "2R5/3Nb1pk/1r5p/2pP4/1p2P3/3P4/4K1PP/8 b - - 2 39",
+      "setup": {
+        "fen": "2R5/4b1pk/1r5p/2pPN3/1p2P3/3P4/4K1PP/8 w - - 1 39",
+        "move": "e5d7"
+      },
+      "solution": [
+        "b4b3",
+        "d5d6",
+        "e7d6",
+        "d7b6",
+        "b3b2",
+        "b6c4",
+        "b2b1q"
+      ],
+      "rating": 1882,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "master",
+        "promotion",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00hSW",
+        "gameUrl": "https://lichess.org/56G5UTGb#77",
+        "license": "CC0-1.0",
+        "rowSha256": "382b22b1ce8a354e323e97e42b4b420bdfd5f7d66a8e3dcd48bf4fa517bda516"
+      }
+    },
+    {
+      "id": "00hbV",
+      "fen": "8/pk1r2R1/1p2b3/8/2P2N2/1P6/1K6/8 w - - 22 61",
+      "setup": {
+        "fen": "8/pk1r1bR1/1p6/8/2P2N2/1P6/1K6/8 b - - 21 60",
+        "move": "f7e6"
+      },
+      "solution": [
+        "f4e6",
+        "d7g7",
+        "e6g7"
+      ],
+      "rating": 919,
+      "difficulty": "Introductory",
+      "theme": "hangingPiece",
+      "themes": [
+        "crushing",
+        "endgame",
+        "hangingPiece",
+        "master",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00hbV",
+        "gameUrl": "https://lichess.org/DL4VBFov/black#120",
+        "license": "CC0-1.0",
+        "rowSha256": "9cada247b5ff8d1faf7b44520bdf3b5907183848cbefe184141e2bfccd9bc214"
+      }
+    },
+    {
+      "id": "00hxr",
+      "fen": "r4rk1/pp3pBp/4p3/3p2qB/Q1p5/2PbP3/PP1N1P1P/R3K2R b KQ - 0 15",
+      "setup": {
+        "fen": "r4rk1/pp3ppp/4p3/3pB1qB/Q1p5/2PbP3/PP1N1P1P/R3K2R w KQ - 0 15",
+        "move": "e5g7"
+      },
+      "solution": [
+        "g5h5",
+        "a4d1",
+        "h5d1",
+        "a1d1",
+        "g8g7"
+      ],
+      "rating": 1730,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00hxr",
+        "gameUrl": "https://lichess.org/4QIugid6#29",
+        "license": "CC0-1.0",
+        "rowSha256": "c381b8b49d6f68dbfbcda1065eff5b2ed9051afedc0dfd65cc1a8314386a96a6"
+      }
+    },
+    {
+      "id": "00iQC",
+      "fen": "1k3b1r/3rq3/QBpp4/4p3/4P2p/5p2/P5PP/4R1K1 w - - 1 29",
+      "setup": {
+        "fen": "1k1r1b1r/4q3/QBpp4/4p3/4P2p/5p2/P5PP/4R1K1 b - - 0 28",
+        "move": "d8d7"
+      },
+      "solution": [
+        "e1b1",
+        "d7b7",
+        "b6a7",
+        "b8c8",
+        "a6c6",
+        "e7c7",
+        "c6e8"
+      ],
+      "rating": 2123,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "exposedKing",
+        "middlegame",
+        "queensideAttack",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00iQC",
+        "gameUrl": "https://lichess.org/Yg1J59NW/black#56",
+        "license": "CC0-1.0",
+        "rowSha256": "a7826ff066b267a947c76452e4b56d239a71ebdf33cdf9aafa6c6335454db25d"
+      }
+    },
+    {
+      "id": "00iQD",
+      "fen": "8/8/8/3K2kp/2P5/4P3/8/8 b - - 0 50",
+      "setup": {
+        "fen": "8/8/8/3K2kp/8/2P1P3/8/8 w - - 0 50",
+        "move": "c3c4"
+      },
+      "solution": [
+        "h5h4",
+        "d5e4",
+        "g5g4",
+        "c4c5",
+        "h4h3",
+        "e4e5",
+        "h3h2",
+        "c5c6",
+        "h2h1q"
+      ],
+      "rating": 1530,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "promotion",
+        "quietMove",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00iQD",
+        "gameUrl": "https://lichess.org/dDMWuoiZ#99",
+        "license": "CC0-1.0",
+        "rowSha256": "d9b4a5d3debb7a45c778ac708b0ab158f6d7caab669ab39a87791df14ba26939"
+      }
+    },
+    {
+      "id": "00jPw",
+      "fen": "r3r1k1/ppp2R2/1b5Q/3PP2n/2B3bq/2N5/PP4PP/R6K b - - 0 18",
+      "setup": {
+        "fen": "r3r1k1/ppp2p2/1b5Q/3PP2n/2B3bq/2N5/PP4PP/R4R1K w - - 1 18",
+        "move": "f1f7"
+      },
+      "solution": [
+        "h5g3"
+      ],
+      "rating": 1159,
+      "difficulty": "Introductory",
+      "theme": "pin",
+      "themes": [
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove",
+        "pin"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00jPw",
+        "gameUrl": "https://lichess.org/rMGqxihy#35",
+        "license": "CC0-1.0",
+        "rowSha256": "734f5dd101c13949d19828f2100430a2c975218d22fa6eaa7c55f2e673ddf615"
+      }
+    },
+    {
+      "id": "00kS9",
+      "fen": "4r1k1/1ppbrppB/7p/p2P4/3q1P2/P4P2/1P1Q2PP/3RR2K b - - 6 26",
+      "setup": {
+        "fen": "4r1k1/1ppbrpp1/7p/p2P4/3q1P2/P2B1P2/1P1Q2PP/3RR2K w - - 5 26",
+        "move": "d3h7"
+      },
+      "solution": [
+        "g8h7",
+        "e1e7",
+        "d4d2",
+        "d1d2",
+        "e8e7"
+      ],
+      "rating": 1458,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00kS9",
+        "gameUrl": "https://lichess.org/EqdCxWr9#51",
+        "license": "CC0-1.0",
+        "rowSha256": "9ea9601c3eb2556a6a4de20423d904587c61ef8eeeed9541418271e79636a506"
+      }
+    },
+    {
+      "id": "00lJm",
+      "fen": "7k/ppp1nrp1/3pN3/7p/3P3P/2P2RK1/PP3QP1/1q5r w - - 0 27",
+      "setup": {
+        "fen": "5r1k/ppp1nBp1/3pN3/7p/3P3P/2P2RK1/PP3QP1/1q5r b - - 6 26",
+        "move": "f8f7"
+      },
+      "solution": [
+        "f3f7",
+        "b1d3",
+        "f2f3"
+      ],
+      "rating": 2032,
+      "difficulty": "Advanced",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00lJm",
+        "gameUrl": "https://lichess.org/iXsE09XZ/black#52",
+        "license": "CC0-1.0",
+        "rowSha256": "4a2acb5a0a3bc897797427c18fca22e9213dc4b2ed2521bd1727dfe9b98f31a6"
+      }
+    },
+    {
+      "id": "00oOp",
+      "fen": "5rk1/p3ppbp/bq3np1/3N4/3P4/1B3Q2/PrPB1PPP/R3K2R b KQ - 0 15",
+      "setup": {
+        "fen": "5rk1/p3ppbp/bq3np1/3p4/3P4/1BN2Q2/PrPB1PPP/R3K2R w KQ - 4 15",
+        "move": "c3d5"
+      },
+      "solution": [
+        "f6d5",
+        "f3d5",
+        "g7d4"
+      ],
+      "rating": 2231,
+      "difficulty": "Advanced",
+      "theme": "discoveredAttack",
+      "themes": [
+        "crushing",
+        "discoveredAttack",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00oOp",
+        "gameUrl": "https://lichess.org/hkM4TRId#29",
+        "license": "CC0-1.0",
+        "rowSha256": "67324141da766e7bde85dd5e66bfd7882703ae454a3fa721d26330a60c5078d8"
+      }
+    },
+    {
+      "id": "00oYS",
+      "fen": "8/3KP1k1/8/8/8/8/2p1R3/2r5 b - - 11 59",
+      "setup": {
+        "fen": "4K3/4P1k1/8/8/8/8/2p1R3/2r5 w - - 10 59",
+        "move": "e8d7"
+      },
+      "solution": [
+        "c1d1",
+        "d7e6",
+        "c2c1q"
+      ],
+      "rating": 1043,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "clearance",
+        "crushing",
+        "endgame",
+        "master",
+        "promotion",
+        "rookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00oYS",
+        "gameUrl": "https://lichess.org/poyLvn1d#117",
+        "license": "CC0-1.0",
+        "rowSha256": "befdb7de371f5f929e668ebef508ceea34bb907d3950462bfbe92012c25d8891"
+      }
+    },
+    {
+      "id": "00qIK",
+      "fen": "B4rk1/p3b1pp/1q2bp2/1p2p3/2p2P2/3PR1P1/PPPN3P/R1BQ2K1 b - - 0 16",
+      "setup": {
+        "fen": "r4rk1/p3b1pp/1qB1bp2/1p2p3/2p2P2/3PR1P1/PPPN3P/R1BQ2K1 w - - 1 16",
+        "move": "c6a8"
+      },
+      "solution": [
+        "b6e3",
+        "g1g2",
+        "f8a8"
+      ],
+      "rating": 1526,
+      "difficulty": "Intermediate",
+      "theme": "hangingPiece",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "intermezzo",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00qIK",
+        "gameUrl": "https://lichess.org/sFoTW7Rq#31",
+        "license": "CC0-1.0",
+        "rowSha256": "d8f09c22997957ed1fc7ddd706340883f087a30c3685e37bdb976bc080ca2bde"
+      }
+    },
+    {
+      "id": "00rTX",
+      "fen": "3r2k1/pp3ppp/4p3/2N5/7q/1Q3P2/PP1R2PP/4R2K b - - 0 24",
+      "setup": {
+        "fen": "3r2k1/pp3ppp/4p3/2N5/7q/1Q3P2/PP1r2PP/3RR2K w - - 3 24",
+        "move": "d1d2"
+      },
+      "solution": [
+        "h4e1"
+      ],
+      "rating": 971,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "hangingPiece",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00rTX",
+        "gameUrl": "https://lichess.org/MCnmXb6q#47",
+        "license": "CC0-1.0",
+        "rowSha256": "7f24a784c456c282f4a1db98b3f13f0032f6fb9b4f226552cd5bbafe6b34225e"
+      }
+    },
+    {
+      "id": "00ueM",
+      "fen": "2kr4/2pR4/2P1K1P1/8/8/4n3/p7/8 w - - 0 50",
+      "setup": {
+        "fen": "2kr4/2pR4/2P1K1P1/8/8/p3n3/8/8 b - - 1 49",
+        "move": "a3a2"
+      },
+      "solution": [
+        "d7d8",
+        "c8d8",
+        "g6g7",
+        "a2a1q",
+        "g7g8q"
+      ],
+      "rating": 1719,
+      "difficulty": "Intermediate",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3",
+        "promotion"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00ueM",
+        "gameUrl": "https://lichess.org/d2IhwIPS/black#98",
+        "license": "CC0-1.0",
+        "rowSha256": "eff77cd1347b39de1be7edecd199344432302cbaef4e6d3c140547b0d2fafb5d"
+      }
+    },
+    {
+      "id": "00yzf",
+      "fen": "3rk3/3N2R1/4P1pr/3pP3/2p5/8/PP4p1/2K5 w - - 0 30",
+      "setup": {
+        "fen": "3rk3/3N2R1/4P1pr/3pP3/2p5/6p1/PP6/2K5 b - - 3 29",
+        "move": "g3g2"
+      },
+      "solution": [
+        "d7f6",
+        "e8f8",
+        "g7f7"
+      ],
+      "rating": 1884,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short",
+        "vukovicMate"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/00yzf",
+        "gameUrl": "https://lichess.org/OIVHVypq/black#58",
+        "license": "CC0-1.0",
+        "rowSha256": "c107e4db1aa0def74da5552a0cadb052323143d955a18a5a9fa44fad54173922"
+      }
+    },
+    {
+      "id": "00zVd",
+      "fen": "3rkbnr/1pp3pp/p4p2/4N3/4R3/8/PPP2PPP/RNB3K1 b k - 0 11",
+      "setup": {
+        "fen": "3rkbnr/1pp3pp/p4p2/4N3/4b3/8/PPP2PPP/RNB1R1K1 w k - 0 11",
+        "move": "e1e4"
+      },
+      "solution": [
+        "d8d1",
+        "e4e1",
+        "d1e1"
+      ],
+      "rating": 676,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "fork",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/00zVd",
+        "gameUrl": "https://lichess.org/i2LOkagE#21",
+        "license": "CC0-1.0",
+        "rowSha256": "00fb3567a7c8ad801c691a514c1821b98d5ebbbd9141d637d6e5af987b30a48a"
+      }
+    },
+    {
+      "id": "01243",
+      "fen": "r7/pp1Qp1B1/3b4/3k4/4q3/8/PP3PP1/5K2 w - - 5 35",
+      "setup": {
+        "fen": "r7/pp1Qp1B1/8/3kb3/4q3/8/PP3PP1/5K2 b - - 4 34",
+        "move": "e5d6"
+      },
+      "solution": [
+        "d7b7",
+        "d5e6",
+        "b7e4"
+      ],
+      "rating": 1561,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "deflection",
+        "endgame",
+        "fork",
+        "master",
+        "short",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01243",
+        "gameUrl": "https://lichess.org/dfLW8TS1/black#68",
+        "license": "CC0-1.0",
+        "rowSha256": "d63972c1c29ed17c6531e6ba0381b364d6bffbe129878430cbc19da25f0cb854"
+      }
+    },
+    {
+      "id": "012LI",
+      "fen": "6k1/p4p1p/4bp2/1p2p3/3r4/KP1nQPN1/P7/5B2 b - - 1 33",
+      "setup": {
+        "fen": "6k1/p4p1p/4bp2/1p2p3/3r4/KP1nQPN1/P5B1/8 w - - 0 33",
+        "move": "g2f1"
+      },
+      "solution": [
+        "d4a4",
+        "b3a4",
+        "b5b4"
+      ],
+      "rating": 2194,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "master",
+        "mate",
+        "mateIn2",
+        "sacrifice",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/012LI",
+        "gameUrl": "https://lichess.org/ITMhkGpD#65",
+        "license": "CC0-1.0",
+        "rowSha256": "1e10bceb4604610421531b5f168072e4c92702719526517ad5d739990aca6a26"
+      }
+    },
+    {
+      "id": "015pp",
+      "fen": "8/8/8/3p4/5p1R/r3k3/6K1/8 w - - 0 52",
+      "setup": {
+        "fen": "8/8/8/3pp3/5P1R/r3k3/6K1/8 b - - 0 51",
+        "move": "e5f4"
+      },
+      "solution": [
+        "h4h3",
+        "e3e2",
+        "h3a3",
+        "d5d4",
+        "a3a2"
+      ],
+      "rating": 1600,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "rookEndgame",
+        "skewer"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/015pp",
+        "gameUrl": "https://lichess.org/gORdjPkR/black#102",
+        "license": "CC0-1.0",
+        "rowSha256": "8e1421b100b6e60f78e4af8fe3a0da9854117f077a4840d6eaa1ab1104d94136"
+      }
+    },
+    {
+      "id": "017AB",
+      "fen": "8/5k2/7p/1R3Kp1/4P3/5P1P/1pr5/8 b - - 3 51",
+      "setup": {
+        "fen": "8/5k2/7p/1R4p1/4P1K1/5P1P/1pr5/8 w - - 2 51",
+        "move": "g4f5"
+      },
+      "solution": [
+        "c2c5",
+        "b5c5",
+        "b2b1q"
+      ],
+      "rating": 1153,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "deflection",
+        "endgame",
+        "promotion",
+        "rookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/017AB",
+        "gameUrl": "https://lichess.org/2zYITnbk#101",
+        "license": "CC0-1.0",
+        "rowSha256": "3d1c660b8bef9f739f58f86a09f242ba6800e22f5cce5765cd377da4c02f111e"
+      }
+    },
+    {
+      "id": "017qg",
+      "fen": "7Q/5R2/3k2p1/4p3/4P1P1/8/p4p1K/r7 b - - 0 46",
+      "setup": {
+        "fen": "8/5R1P/3k2p1/4p3/4P1P1/8/p4p1K/r7 w - - 0 46",
+        "move": "h7h8q"
+      },
+      "solution": [
+        "a1h1",
+        "h2h1",
+        "a2a1q",
+        "h1g2",
+        "a1g1"
+      ],
+      "rating": 1896,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "attraction",
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long",
+        "promotion",
+        "queenRookEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/017qg",
+        "gameUrl": "https://lichess.org/n2AOBjIy#91",
+        "license": "CC0-1.0",
+        "rowSha256": "4a06674f9c4b46f38b00952fecec57f9ecdd5848325b5440d6132c245b2f6ff9"
+      }
+    },
+    {
+      "id": "019uR",
+      "fen": "8/4r2k/6p1/8/4qPPp/1P2pR1P/P3Q2K/8 b - g3 0 49",
+      "setup": {
+        "fen": "8/4r2k/6p1/8/4qP1p/1P2pR1P/P3Q1PK/8 w - - 0 49",
+        "move": "g2g4"
+      },
+      "solution": [
+        "e4f3",
+        "e2f3",
+        "e3e2",
+        "f3c3",
+        "e2e1q",
+        "c3e1",
+        "e7e1"
+      ],
+      "rating": 1894,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "promotion",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/019uR",
+        "gameUrl": "https://lichess.org/bDHhoBNV#97",
+        "license": "CC0-1.0",
+        "rowSha256": "31ec0633f7d303087c3f1de2a1777c1e7b3d8cfa9bc0d133065957ba5b84edfc"
+      }
+    },
+    {
+      "id": "01BBu",
+      "fen": "2r5/7R/2P2p2/1P3P2/7k/6pp/1K6/8 b - - 3 48",
+      "setup": {
+        "fen": "2r5/3R4/2P2p2/1P3P2/7k/6pp/1K6/8 w - - 2 48",
+        "move": "d7h7"
+      },
+      "solution": [
+        "h4g4",
+        "c6c7",
+        "c8c7",
+        "h7c7",
+        "h3h2",
+        "b5b6",
+        "h2h1q"
+      ],
+      "rating": 2558,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "crushing",
+        "endgame",
+        "promotion",
+        "rookEndgame",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01BBu",
+        "gameUrl": "https://lichess.org/xI6LfrwV#95",
+        "license": "CC0-1.0",
+        "rowSha256": "ae8601c14cd564fdb0d86519eb358d5989989361e92b08bda78f343800e4c442"
+      }
+    },
+    {
+      "id": "01GBu",
+      "fen": "5r1k/3p2bp/p4pp1/qp1Pr3/8/1Q4B1/PP2RPPP/4R1K1 b - - 0 23",
+      "setup": {
+        "fen": "5r1k/3p2bp/p4pp1/qp1br3/4P3/1Q4B1/PP2RPPP/4R1K1 w - - 0 23",
+        "move": "e4d5"
+      },
+      "solution": [
+        "a5e1",
+        "e2e1",
+        "e5e1"
+      ],
+      "rating": 1257,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short",
+        "xRayAttack"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/01GBu",
+        "gameUrl": "https://lichess.org/t1gBJrWV#45",
+        "license": "CC0-1.0",
+        "rowSha256": "68a3016f8c6a621cd8bed0fd80fc22ce60819249b99a9a39e0400e1e3c4c8521"
+      }
+    },
+    {
+      "id": "01GnH",
+      "fen": "1R6/P7/6p1/7p/2q5/7k/K7/8 w - - 2 44",
+      "setup": {
+        "fen": "1R6/P7/6p1/7p/8/7k/K7/2q5 b - - 1 43",
+        "move": "c1c4"
+      },
+      "solution": [
+        "b8b3",
+        "h3g4",
+        "a7a8q"
+      ],
+      "rating": 1139,
+      "difficulty": "Introductory",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "endgame",
+        "promotion",
+        "queenRookEndgame",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01GnH",
+        "gameUrl": "https://lichess.org/QXjY4nyw/black#86",
+        "license": "CC0-1.0",
+        "rowSha256": "1128613f1d11bcb0d1af32de88338d170be0aaec58729813d13ab836c0dc913f"
+      }
+    },
+    {
+      "id": "01OYe",
+      "fen": "8/p2Q2k1/1p2p1pn/1P1p1p1R/3P1P2/qN2r3/P1r3PP/R5K1 b - - 3 40",
+      "setup": {
+        "fen": "3Q4/p5k1/1p2p1pn/1P1p1p1R/3P1P2/qN2r3/P1r3PP/R5K1 w - - 2 40",
+        "move": "d8d7"
+      },
+      "solution": [
+        "h6f7",
+        "h5h7",
+        "g7h7"
+      ],
+      "rating": 1129,
+      "difficulty": "Introductory",
+      "theme": "defensiveMove",
+      "themes": [
+        "crushing",
+        "defensiveMove",
+        "middlegame",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/01OYe",
+        "gameUrl": "https://lichess.org/GbHWYq9g#79",
+        "license": "CC0-1.0",
+        "rowSha256": "ece84b534871e2427ea49ff8cee004f0cfa3225336f81c1b9f35873ebef71d7b"
+      }
+    },
+    {
+      "id": "01Qs6",
+      "fen": "6k1/1N3ppp/p1PK4/8/8/4p2P/8/1r6 w - - 0 44",
+      "setup": {
+        "fen": "6k1/1N3ppp/p1PK4/8/4p3/7P/8/1r6 b - - 0 43",
+        "move": "e4e3"
+      },
+      "solution": [
+        "c6c7",
+        "b1d1",
+        "d6c6",
+        "h7h6",
+        "c7c8q"
+      ],
+      "rating": 1933,
+      "difficulty": "Advanced",
+      "theme": "promotion",
+      "themes": [
+        "advancedPawn",
+        "advantage",
+        "defensiveMove",
+        "endgame",
+        "long",
+        "promotion"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01Qs6",
+        "gameUrl": "https://lichess.org/PobTSlWC/black#86",
+        "license": "CC0-1.0",
+        "rowSha256": "c2b10924778fa3ab755a2b15aa59e43f2dc3b292f2d73909adfa7037910829ff"
+      }
+    },
+    {
+      "id": "01S2P",
+      "fen": "r4rk1/5qpp/p1p1p3/3pB3/6Q1/4R3/PPP2PPP/R5K1 b - - 5 18",
+      "setup": {
+        "fen": "r4rk1/5qpp/p1p1p3/3pB3/6Q1/8/PPP2PPP/R3R1K1 w - - 4 18",
+        "move": "e1e3"
+      },
+      "solution": [
+        "f7f2",
+        "g1h1",
+        "f2f1",
+        "a1f1",
+        "f8f1"
+      ],
+      "rating": 980,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "fork",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/01S2P",
+        "gameUrl": "https://lichess.org/PpvbkBkX#35",
+        "license": "CC0-1.0",
+        "rowSha256": "09713921134090b95b52823faf49f08e457a2bca11d4b0e391556acf3b17d10d"
+      }
+    },
+    {
+      "id": "01YlD",
+      "fen": "8/P7/7p/1N1b4/5k2/7K/3r4/R7 b - - 0 48",
+      "setup": {
+        "fen": "8/8/P6p/1N1b4/5k2/7K/3r4/R7 w - - 0 48",
+        "move": "a6a7"
+      },
+      "solution": [
+        "d5e6",
+        "h3h4",
+        "d2h2"
+      ],
+      "rating": 1883,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01YlD",
+        "gameUrl": "https://lichess.org/fnki0BgO#95",
+        "license": "CC0-1.0",
+        "rowSha256": "252dc26e8a57ff994b846f5919d66d3468beb8ea2c263612308e40428b4a88f2"
+      }
+    },
+    {
+      "id": "01Z1w",
+      "fen": "r7/2p2pk1/q4np1/3PQ3/4P3/5PPK/2R2N1P/8 b - - 0 34",
+      "setup": {
+        "fen": "r7/2p2pk1/q4np1/3PQ3/4P3/5PPp/2R2NKP/8 w - - 0 34",
+        "move": "g2h3"
+      },
+      "solution": [
+        "a6f1",
+        "h3h4",
+        "a8h8",
+        "h4g5",
+        "h8h5",
+        "g5f4",
+        "h5e5"
+      ],
+      "rating": 1624,
+      "difficulty": "Intermediate",
+      "theme": "skewer",
+      "themes": [
+        "crushing",
+        "endgame",
+        "skewer",
+        "veryLong"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/01Z1w",
+        "gameUrl": "https://lichess.org/3goHO8hu#67",
+        "license": "CC0-1.0",
+        "rowSha256": "9f46ed38ae7a659fc46894dd0a06e6201e8930f0b39a0affbb3f3cc9e3b60212"
+      }
+    },
+    {
+      "id": "01g9c",
+      "fen": "r4rk1/ppR3pp/8/3pn1B1/8/3B1N1b/PP2NKPb/3QR3 b - - 0 19",
+      "setup": {
+        "fen": "r4rk1/ppq3pp/8/3pn1B1/8/3B1N1b/PP2NKPb/2RQR3 w - - 0 19",
+        "move": "c1c7"
+      },
+      "solution": [
+        "e5g4",
+        "f2f1",
+        "f8f3"
+      ],
+      "rating": 1961,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "deflection",
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "pillsburysMate",
+        "pin",
+        "short"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/01g9c",
+        "gameUrl": "https://lichess.org/3lzZihNd#37",
+        "license": "CC0-1.0",
+        "rowSha256": "ecacf9ee107a2b20dbd753c4f996786cd71520ba4c35ab893e61fdae741501ac"
+      }
+    },
+    {
+      "id": "01pl8",
+      "fen": "3r4/pR4p1/2p2N1k/4p2p/2B1Pn1N/1P6/P1P2PPP/3R2K1 b - - 0 31",
+      "setup": {
+        "fen": "3r4/pR1N2p1/2p2p1k/4p2p/2B1Pn1N/1P6/P1P2PPP/3R2K1 w - - 4 31",
+        "move": "d7f6"
+      },
+      "solution": [
+        "d8d1",
+        "c4f1",
+        "f4e2",
+        "g1h1",
+        "d1f1"
+      ],
+      "rating": 1098,
+      "difficulty": "Introductory",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "deflection",
+        "hangingPiece",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "pin"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/01pl8",
+        "gameUrl": "https://lichess.org/nCrUcojU#61",
+        "license": "CC0-1.0",
+        "rowSha256": "bdafa5548be522cca0e5bb73b2135e6ddf4b9380415016f4ce7f34f4500f0eab"
+      }
+    },
+    {
+      "id": "01qh2",
+      "fen": "r1b1r1k1/pp1p1Npp/2p2q2/2bB3Q/8/3P4/PPP2PPP/R1B2RK1 b - - 0 12",
+      "setup": {
+        "fen": "r1b1r1k1/pp1p1Npp/2p2q2/2bn3Q/2B5/3P4/PPP2PPP/R1B2RK1 w - - 0 12",
+        "move": "c4d5"
+      },
+      "solution": [
+        "f6f2",
+        "g1h1",
+        "f2f1"
+      ],
+      "rating": 1880,
+      "difficulty": "Advanced",
+      "theme": "mateIn2",
+      "themes": [
+        "deflection",
+        "kingsideAttack",
+        "mate",
+        "mateIn2",
+        "opening",
+        "short"
+      ],
+      "phase": "Opening",
+      "source": {
+        "url": "https://lichess.org/training/01qh2",
+        "gameUrl": "https://lichess.org/3VDxYtAy#23",
+        "license": "CC0-1.0",
+        "rowSha256": "ba657e08e92d4292f70f9b23c2bf39aa594a1dbaea776750b537253fa27a8231"
+      }
+    },
+    {
+      "id": "020Gj",
+      "fen": "r4r1k/ppp1N1pp/1b1p1p2/8/4B3/2P2q1b/P1QB1P1P/R3R1K1 b - - 1 21",
+      "setup": {
+        "fen": "r4r1k/ppp1N1pp/1b1p1p2/8/8/2PB1q1b/P1QB1P1P/R3R1K1 w - - 0 21",
+        "move": "d3e4"
+      },
+      "solution": [
+        "b6f2"
+      ],
+      "rating": 1970,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/020Gj",
+        "gameUrl": "https://lichess.org/4yncvvbj#41",
+        "license": "CC0-1.0",
+        "rowSha256": "30a1b08ce493edb4ccbff0366227b7a85f88fa68adfb79f104ca309713d23956"
+      }
+    },
+    {
+      "id": "03XcA",
+      "fen": "Q7/pp1k1p1p/8/8/1b2q3/1bN5/1P3PPP/RN3K1R b - - 2 20",
+      "setup": {
+        "fen": "Q7/pp1k1p1p/8/8/1b2q3/1bN5/1P3PPP/RN2K2R w KQ - 1 20",
+        "move": "e1f1"
+      },
+      "solution": [
+        "b3c4",
+        "c3e2",
+        "e4e2",
+        "f1g1",
+        "e2d1"
+      ],
+      "rating": 1545,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/03XcA",
+        "gameUrl": "https://lichess.org/wbEFWefj#39",
+        "license": "CC0-1.0",
+        "rowSha256": "dedbabaf13d8f71ba3ace5f439dcbcd5941bee0e3bd100cb87ac1e870981c75a"
+      }
+    },
+    {
+      "id": "04cDV",
+      "fen": "r6r/pp2kppp/4nq2/1B6/8/2b3QP/P4PP1/3R1RK1 w - - 0 19",
+      "setup": {
+        "fen": "r4k1r/pp2Bppp/4nq2/1B6/8/2b3QP/P4PP1/3R1RK1 b - - 0 18",
+        "move": "f8e7"
+      },
+      "solution": [
+        "g3d6"
+      ],
+      "rating": 1934,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "mate",
+        "mateIn1",
+        "middlegame",
+        "oneMove"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/04cDV",
+        "gameUrl": "https://lichess.org/kOHlHrhw/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "266cd3209cd5a2b9d983d0d410e0e6a83b63a381ce2759a444869588c3877ddf"
+      }
+    },
+    {
+      "id": "04hNd",
+      "fen": "8/7p/2p5/5pQ1/4p3/3q1kPP/3P1P2/6K1 w - - 3 36",
+      "setup": {
+        "fen": "8/7p/2p5/3q1pQ1/4p3/5kPP/3P1P2/6K1 b - - 2 35",
+        "move": "d5d3"
+      },
+      "solution": [
+        "g5h5"
+      ],
+      "rating": 1951,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "queenEndgame"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/04hNd",
+        "gameUrl": "https://lichess.org/acB1djfT/black#70",
+        "license": "CC0-1.0",
+        "rowSha256": "736aae2b7807318d8e67ec9669a27e4dc62814897b4c27ed6cbabe510376fb3e"
+      }
+    },
+    {
+      "id": "05Ryc",
+      "fen": "k2rRn2/p1Q5/1p6/3q4/8/2N3B1/PPP2P1P/1K6 b - - 0 27",
+      "setup": {
+        "fen": "k2rrn2/p1Q5/1p6/3q4/8/2N3B1/PPP2P1P/1K2R3 w - - 0 27",
+        "move": "e1e8"
+      },
+      "solution": [
+        "d5h1",
+        "e8e1",
+        "h1e1",
+        "c3d1",
+        "d8d1"
+      ],
+      "rating": 1970,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/05Ryc",
+        "gameUrl": "https://lichess.org/39wRYSjL#53",
+        "license": "CC0-1.0",
+        "rowSha256": "64e5afed2b0b99c0ad58774773d21c7b8f5b4cd4e03f508668db48cef414fb7e"
+      }
+    },
+    {
+      "id": "07tSd",
+      "fen": "2r2rk1/p5pp/b3p3/2P1B3/3PQ3/6R1/P2q2PP/4R1K1 b - - 4 25",
+      "setup": {
+        "fen": "2r2rk1/p5pp/b3p3/2P1B3/3PQ3/1R6/P2q2PP/4R1K1 w - - 3 25",
+        "move": "b3g3"
+      },
+      "solution": [
+        "d2f2",
+        "g1h1",
+        "f2f1",
+        "e1f1",
+        "f8f1"
+      ],
+      "rating": 1692,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "long",
+        "master",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/07tSd",
+        "gameUrl": "https://lichess.org/xXhyVVhi#49",
+        "license": "CC0-1.0",
+        "rowSha256": "15e80976792f3240b8bedd5cfc972a83f50a3358be3eeee78e8a755367d7f7e4"
+      }
+    },
+    {
+      "id": "08SqC",
+      "fen": "8/5pkp/2p3p1/2p1P3/5Q2/2Pq4/5PPP/1rR3K1 b - - 0 35",
+      "setup": {
+        "fen": "8/5pkp/2p3p1/2p5/4PQ2/2Pq4/5PPP/1rR3K1 w - - 1 35",
+        "move": "e4e5"
+      },
+      "solution": [
+        "d3d1",
+        "c1d1",
+        "b1d1"
+      ],
+      "rating": 1364,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "sacrifice",
+        "short",
+        "xRayAttack"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/08SqC",
+        "gameUrl": "https://lichess.org/WlZyqrBs#69",
+        "license": "CC0-1.0",
+        "rowSha256": "7d12d8537d48a3c5763d2104a5a1293788a788fa05632919f279f9df47d2c9e6"
+      }
+    },
+    {
+      "id": "08mXx",
+      "fen": "6k1/p3pp1p/6p1/3Q4/4P3/5B2/P2q2PP/2r2RK1 b - - 2 23",
+      "setup": {
+        "fen": "6k1/p3pp1p/6p1/3Q4/4P3/5B2/P2q1RPP/2r3K1 w - - 1 23",
+        "move": "f2f1"
+      },
+      "solution": [
+        "d2e3",
+        "g1h1",
+        "c1f1"
+      ],
+      "rating": 1423,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "deflection",
+        "endgame",
+        "mate",
+        "mateIn2",
+        "short"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/08mXx",
+        "gameUrl": "https://lichess.org/dMPJBu1z#45",
+        "license": "CC0-1.0",
+        "rowSha256": "9ea8efb67082471462fca276f1139940a29f54a69a0587792e2cb4af5c7dc3e9"
+      }
+    },
+    {
+      "id": "08zLJ",
+      "fen": "r5k1/3bQ1pp/3pp3/p1p5/4P3/2qP3P/6P1/5R1K w - - 0 25",
+      "setup": {
+        "fen": "r5k1/3bQ1pp/3pp3/p1p5/4P3/2NP3P/1q4P1/5R1K b - - 1 24",
+        "move": "b2c3"
+      },
+      "solution": [
+        "e7f7",
+        "g8h8",
+        "f7f8",
+        "a8f8",
+        "f1f8"
+      ],
+      "rating": 1327,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "fork",
+        "long",
+        "mate",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/08zLJ",
+        "gameUrl": "https://lichess.org/GySCAejv/black#48",
+        "license": "CC0-1.0",
+        "rowSha256": "eccc30aec7671bf612ce4c3d3dad31370b3a102394a0370cc52c84966b7cb276"
+      }
+    },
+    {
+      "id": "097wk",
+      "fen": "2r3k1/p2Q1p1p/1p2p1p1/4P3/q4P2/6P1/PP5P/1K1R4 b - - 9 30",
+      "setup": {
+        "fen": "2r3k1/p3Qp1p/1p2p1p1/4P3/q4P2/6P1/PP5P/1K1R4 w - - 8 30",
+        "move": "e7d7"
+      },
+      "solution": [
+        "a4c2",
+        "b1a1",
+        "c2c1",
+        "d1c1",
+        "c8c1"
+      ],
+      "rating": 1623,
+      "difficulty": "Intermediate",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3",
+        "sacrifice"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/097wk",
+        "gameUrl": "https://lichess.org/jWBqWVx1#59",
+        "license": "CC0-1.0",
+        "rowSha256": "a4e71bf25ba73a13e73b8dd9de264e745ea71aa50ae6284fdaa64b8daa8dc9f4"
+      }
+    },
+    {
+      "id": "09kAc",
+      "fen": "8/7p/5Qpk/p7/P3BP2/4n1PK/4q2P/8 b - - 0 49",
+      "setup": {
+        "fen": "8/4Q2p/5ppk/p7/P3BP2/4n1PK/4q2P/8 w - - 9 49",
+        "move": "e7f6"
+      },
+      "solution": [
+        "e2g4"
+      ],
+      "rating": 1991,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/09kAc",
+        "gameUrl": "https://lichess.org/xeVzc1vE#97",
+        "license": "CC0-1.0",
+        "rowSha256": "b2889779e4d130554772e05e84ca6e06e7198c03f731a0c843a158cbdf1e3dc4"
+      }
+    },
+    {
+      "id": "09nQI",
+      "fen": "6k1/8/4p2p/2b1P3/1p6/5qNp/PR3Q1B/6K1 b - - 4 36",
+      "setup": {
+        "fen": "6k1/8/4p2p/2b1P3/1p6/5qNp/PR1Q3B/6K1 w - - 3 36",
+        "move": "d2f2"
+      },
+      "solution": [
+        "f3g2"
+      ],
+      "rating": 1978,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "pin"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/09nQI",
+        "gameUrl": "https://lichess.org/DsZLWBKA#71",
+        "license": "CC0-1.0",
+        "rowSha256": "a70fc957cabf94fa931413a679a5a201707b3e0354fb866543f5a49f395eed11"
+      }
+    },
+    {
+      "id": "0DybW",
+      "fen": "8/8/ppn4p/2p2p2/N1K1k3/1PP4P/P4PP1/8 b - - 1 36",
+      "setup": {
+        "fen": "8/8/ppn4p/2p2p2/2K1k3/1PP4P/PN3PP1/8 w - - 0 36",
+        "move": "b2a4"
+      },
+      "solution": [
+        "c6e5"
+      ],
+      "rating": 1896,
+      "difficulty": "Advanced",
+      "theme": "mateIn1",
+      "themes": [
+        "endgame",
+        "knightEndgame",
+        "mate",
+        "mateIn1",
+        "oneMove"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0DybW",
+        "gameUrl": "https://lichess.org/MlJCE2Yn#71",
+        "license": "CC0-1.0",
+        "rowSha256": "c393ee6d34211692a351fcbb486cfc824d13dea936c0fe658fa2ed18710c55bc"
+      }
+    },
+    {
+      "id": "0LFwt",
+      "fen": "4R3/3Q3p/3p1Npk/3B4/7q/3P4/PPP2n2/2K5 b - - 0 35",
+      "setup": {
+        "fen": "4R3/3Q3p/3p1rpk/3B4/4N2q/3P4/PPP2n2/2K5 w - - 5 35",
+        "move": "e4f6"
+      },
+      "solution": [
+        "h4g5",
+        "c1b1",
+        "g5g1",
+        "e8e1",
+        "g1e1"
+      ],
+      "rating": 2007,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "fork",
+        "long",
+        "mate",
+        "mateIn3"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0LFwt",
+        "gameUrl": "https://lichess.org/ny4AWdki#69",
+        "license": "CC0-1.0",
+        "rowSha256": "e3ffd73cbabb8c1733f6d7b0ee2a1020422db7bd569b3a8d369f194a00c083d2"
+      }
+    },
+    {
+      "id": "0Mvwc",
+      "fen": "rn2Qbk1/ppp2ppp/8/8/2P3b1/3P1qP1/P2B1P1P/R3R1K1 w - - 2 19",
+      "setup": {
+        "fen": "rn2Q1k1/ppp2ppp/8/2b5/2P3b1/3P1qP1/P2B1P1P/R3R1K1 b - - 1 18",
+        "move": "c5f8"
+      },
+      "solution": [
+        "e8f8",
+        "g8f8",
+        "d2b4",
+        "c7c5",
+        "b4c5",
+        "f8g8",
+        "e1e8"
+      ],
+      "rating": 1953,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "attraction",
+        "backRankMate",
+        "mate",
+        "mateIn4",
+        "middlegame",
+        "sacrifice",
+        "veryLong"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/0Mvwc",
+        "gameUrl": "https://lichess.org/5FHXs8O1/black#36",
+        "license": "CC0-1.0",
+        "rowSha256": "8b7babfeaf698443fc603e5f1cd04684f00e3c0e3f9fef512864a247365b8079"
+      }
+    },
+    {
+      "id": "0e2UG",
+      "fen": "6k1/2p2pp1/pp4bp/3Q4/3P4/P1B2P2/1P2q1PP/6K1 b - - 2 26",
+      "setup": {
+        "fen": "6k1/2p2pp1/pp4bp/3Q4/3P4/P4P2/1P1Bq1PP/6K1 w - - 1 26",
+        "move": "d2c3"
+      },
+      "solution": [
+        "e2e3",
+        "g1h1",
+        "e3c1",
+        "c3e1",
+        "c1e1"
+      ],
+      "rating": 2007,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0e2UG",
+        "gameUrl": "https://lichess.org/9OtsXCQ0#51",
+        "license": "CC0-1.0",
+        "rowSha256": "a58d432be6012e5520f941b9aea288dae3742d6a069dc3fccf28caf17f33b01b"
+      }
+    },
+    {
+      "id": "0iNXs",
+      "fen": "6k1/6pp/2Q1pr2/p1P5/4p3/1P6/P3q1PP/3R3K w - - 0 28",
+      "setup": {
+        "fen": "6k1/6pp/2Q1pr2/p1P5/4p3/1P6/P3BqPP/3R3K b - - 1 27",
+        "move": "f2e2"
+      },
+      "solution": [
+        "d1d8",
+        "f6f8",
+        "c6e6",
+        "g8h8",
+        "d8f8"
+      ],
+      "rating": 1981,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "deflection",
+        "endgame",
+        "long",
+        "mate",
+        "mateIn3"
+      ],
+      "phase": "Endgame",
+      "source": {
+        "url": "https://lichess.org/training/0iNXs",
+        "gameUrl": "https://lichess.org/ZNz8kSOu/black#54",
+        "license": "CC0-1.0",
+        "rowSha256": "021d472367181016911708609b3dcf75c7cb4d4fbe3809b88cace3a7a39a27e7"
+      }
+    },
+    {
+      "id": "0kRIT",
+      "fen": "3r2k1/1p3p2/5Q1B/8/3r4/8/Pq3PPP/R1R3K1 b - - 0 27",
+      "setup": {
+        "fen": "3r2k1/1p3p2/5p1B/5Q2/3r4/8/Pq3PPP/R1R3K1 w - - 1 27",
+        "move": "f5f6"
+      },
+      "solution": [
+        "b2c1",
+        "a1c1",
+        "d4d1",
+        "c1d1",
+        "d8d1"
+      ],
+      "rating": 1935,
+      "difficulty": "Advanced",
+      "theme": "backRankMate",
+      "themes": [
+        "backRankMate",
+        "long",
+        "mate",
+        "mateIn3",
+        "middlegame",
+        "sacrifice"
+      ],
+      "phase": "Middlegame",
+      "source": {
+        "url": "https://lichess.org/training/0kRIT",
+        "gameUrl": "https://lichess.org/3PY12bTg#53",
+        "license": "CC0-1.0",
+        "rowSha256": "f8f1bf69513aa04d5c889a6407cbb4ce28e1eaf41378da043e3853fa3ca925a5"
+      }
+    }
+  ]
+}
