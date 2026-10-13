@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {Chess} from '../lib/chess.js';
-import {CONCEPT_GROUPS,DEFAULT_CONCEPT_GROUPS,normalizeConceptGroups,studyEnabled,FAST_CONCEPT_REMOVALS,curateFastFindings} from '../lib/concepts/controls.js';
+import {CONCEPT_GROUPS,CONCEPT_ITEMS,DEFAULT_CONCEPT_GROUPS,normalizeConceptGroups,studyEnabled,FAST_CONCEPT_REMOVALS,curateFastFindings,conceptEnabled,isFastSelection} from '../lib/concepts/controls.js';
 import {FLAGS} from '../lib/concepts/profile.js';
 import {startConceptRun,runConceptStage,supplementalConcepts,conceptRunSummary,DETECTORS,integrationInput} from '../lib/concepts/runtime.js';
 import {ConceptSession,conceptKey} from '../lib/concepts/session.js';
@@ -23,6 +23,10 @@ test('cost groups cover every implemented stage and legacy flag without enabling
  assert.equal(defaultInput.maxTacticNodes,1);assert.equal(defaultInput.mateDepth,0);assert.equal(defaultInput.forcingTempoTags,false);
  const all=integrationInput({...input,conceptGroups:CONCEPT_GROUPS.map(g=>g.id)});
  assert.equal(all.maxTacticNodes,4000);assert.equal(all.mateDepth,3);assert.equal(all.forcingTempoTags,true);
+ for(const id of ['minor-development','repetition-claim','fifty-move-claim','simplification-material-loss'])assert.equal(conceptEnabled(input,id),true,id);
+ assert.equal(studyEnabled(input,'E096'),false);assert.equal(studyEnabled(input,'E086'),false);
+ const history={...input,conceptGroups:[...DEFAULT_CONCEPT_GROUPS,'history']};assert.equal(studyEnabled(history,'E096'),true);assert.equal(isFastSelection(history),true);
+ for(const item of CONCEPT_ITEMS.filter(i=>i.studies.includes('E091')))assert.equal(item.group,'immediate');
 });
 
 test('fast pipeline returns supported changes without running disabled expensive stages',()=>{
@@ -30,8 +34,21 @@ test('fast pipeline returns supported changes without running disabled expensive
  assert.ok(r.findings.some(f=>f.study==='E083'));assert.ok(r.disabled);
  assert.ok(r.stages.every(s=>studyEnabled(input,s.detector)));
  assert.ok(!r.stages.some(s=>s.detector==='E143'||s.detector==='E100'||s.detector==='E201-panel'));
+ assert.equal(r.stages.filter(s=>s.detector==='E209').length,1,'Actual-turn mate scan is already covered by E201');
+ assert.ok(!r.stages.some(s=>s.detector==='E237'),'Ordinary clocks cannot emit a final-ply deadline');
+ assert.ok(!r.stages.some(s=>['E086','E096'].includes(s.detector)),'History proof searches are opt-in');
+ assert.ok(r.stages.some(s=>s.detector==='E091'),'Keep short exchange proofs in the default');
  const off=run({...input,conceptGroups:[]});assert.deepEqual(off.stages,[]);assert.deepEqual(off.errors,[]);assert.equal(off.change,undefined);
  assert.ok(!off.findings.some(f=>f.study));assert.ok(!off.findings.some(f=>f.event==='legal-input'||f.event==='pawn-phalanx'));
+});
+
+test('Fast still attempts the deadline inspector at its exact clock prerequisite',()=>{
+ const fen='7k/p7/5KQ1/8/8/8/8/8 b - - 149 1';
+ // The legacy parent treats a claimable fifty-move draw as terminal. Exercise
+ // the supplemental gate directly; missing history must still abstain.
+ const job={input:{fen,move:'a7a6',conceptGroups:['immediate']},result:{events:[]},stages:[],errors:[]};
+ supplementalConcepts(job,'fast');
+ assert.ok(job.stages.some(s=>s.detector==='E237'&&s.status==='unavailable'));assert.deepEqual(job.errors,[]);
 });
 
 test('fast successor mate warnings retain ownership for both player colors',()=>{
@@ -61,7 +78,7 @@ test('category changes persist, refresh exact cache keys, preserve perspective a
  const a=app(t),S=loadGame(a,'1. e4 e5 2. Nf3');a.call('computeDerived');a.call('buildUI');a.call('go',3);a.call('toggleSettings');a.dom.window.document.querySelectorAll('.set-tab')[2].click();
  const doc=a.dom.window.document;assert.ok(doc.querySelector('.concepts-panel .set-section.open'));assert.equal(doc.querySelectorAll('.concept-group-row input').length,9);
  const before=conceptKey(a.call('selectedConceptInput'));doc.querySelector('#concept-group-pawns').click();doc.querySelector('#concept-group-history').click();
- assert.ok(!S.settings.conceptGroups.includes('pawns'));assert.ok(!S.settings.conceptGroups.includes('history'));assert.notEqual(conceptKey(a.call('selectedConceptInput')),before);
+ assert.ok(!S.settings.conceptGroups.includes('pawns'));assert.ok(S.settings.conceptGroups.includes('history'));assert.notEqual(conceptKey(a.call('selectedConceptInput')),before);
  assert.deepEqual(Array.from(a.writes.at(-1).settings.conceptGroups),Array.from(S.settings.conceptGroups));
  doc.querySelector('#concept-group-history').focus();a.call('renderSettings');assert.equal(doc.activeElement.id,'concept-group-history');
  const key=conceptKey(a.call('selectedConceptInput'));S.meSide='b';S.flipped=true;assert.equal(conceptKey(a.call('selectedConceptInput')),key);

@@ -35,13 +35,16 @@ test('Fast coach picks concrete attacks and defenses with correct ownership for 
  }
 });
 
-test('Fast stories combine witnessed move effects and suppress overlapping aliases',()=>{
+test('Fast replies select one lesson and keep unrelated effects in the inspector',()=>{
  const support=reply(row('d3')).items[0];
- assert.match(support.text,/pawn on d3 now defends.*pawn on e4.*same move clears d2.*bishop on c1/);
- assert.ok(support.supporting.some(f=>f.event==='opened-bishop-diagonal'));
+ assert.match(support.text,/pawn on d3 now defends.*pawn on e4/);
+ assert.doesNotMatch(support.text,/bishop on c1/);
+ assert.ok(row('d3').result.findings.some(f=>f.event==='opened-bishop-diagonal'));
+ assert.match(support.takeaway,/new defender on e4/);
  const double=reply(row('exd4')).items[0];
- assert.match(double.text,/pawn on d4.*knight on c3.*pawn on e3.*same time.*doubled pawns/);
- assert.ok(double.supporting.some(f=>f.event==='doubled-pawns'));
+ assert.match(double.text,/pawn on d4.*knight on c3.*pawn on e3.*same time/);
+ assert.doesNotMatch(double.text,/doubled pawns/);
+ assert.ok(row('exd4').result.findings.some(f=>f.event==='doubled-pawns'));
  const clearance=reply(row('Nh6')).items[0];
  assert.match(clearance.text,/knight from g4 to h6.*opponent’s bishop on c8.*your pawn on h3/);
  assert.equal(reply(row('Nh6')).items.filter(i=>/c8.*h3/.test(i.text)).length,1);
@@ -51,6 +54,34 @@ test('Fast stories combine witnessed move effects and suppress overlapping alias
   assert.ok(i.supporting.every(f=>f.sourceText));
  }
  assert.equal(reply(row('Kh8')).items.length,0);
+ for(const r of rows)for(const player of ['w','b'])assert.ok(reply(r,player).items.length<=1);
+});
+
+test('Quiet facts abstain and coaching gives a concrete thinking task without claiming best play',()=>{
+ for(const san of ['e4','e5'])assert.deepEqual(reply(row(san)).items,[]);
+ for(const san of ['Nf3','Nc6','d3','h3','exd4'])for(const player of ['w','b']){
+  const answer=reply(row(san),player).items[0];assert.ok(answer.takeaway);
+  assert.doesNotMatch(answer.takeaway,/best move|guaranteed|always|winning/);
+ }
+ assert.match(reply(row('Nh6')).items[0].takeaway,/line it leaves behind/);
+ const contact={event:'direct-attack',name:'Contact',text:'A geometric contact.',context:{actor:'b',evidence:{to:'c5',targets:['e3']}}};
+ const r=row('Bc5');assert.deepEqual(coachReply([contact],{mover:'b',player:'w',input:r.input}).items,[]);
+});
+
+test('Reply tab keeps the lesson readable and diagnostics collapsed, with evidence accessible',t=>{
+ const a=app(t),S=loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');
+ const session=new ConceptSession({demandOnly:true,worker:()=>({postMessage(){},terminate(){}})});t.after(()=>session.stop());a.context.__session=session;a.run('_conceptSession=__session');
+ S.settings.conceptsEnabled=true;S.settings.conceptsView='reply';S.meSide='w';S.playerKnown=true;
+ a.call('go',4);session.entries.set(conceptKey(a.call('selectedConceptInput')),{...row('Nc6').result,status:'complete'});a.call('renderCoachPanel');
+ const doc=a.dom.window.document;
+ assert.equal(doc.querySelectorAll('.coach-insight').length,1);
+ assert.equal(doc.querySelector('.coach-perspective'),null);assert.equal(doc.querySelector('.coach-move-quality'),null);
+ assert.match(doc.querySelector('.coach-takeaway').textContent,/new defender on e5/);
+ const notes=doc.querySelector('.coach-analysis-notes');assert.equal(notes.open,false);
+ assert.ok(notes.textContent.includes('Some groups'));notes.open=true;a.call('renderCoachPanel');assert.equal(doc.querySelector('.coach-analysis-notes').open,true);
+ const details=doc.querySelector('.coach-insight details');assert.equal(details.open,false);assert.equal(details.querySelector('summary').textContent,'Why this reply?');assert.match(details.textContent,/E200 \(provisional\)/);
+ session.entries.get(conceptKey(a.call('selectedConceptInput'))).errors=['Check failed'];a.call('renderCoachPanel');assert.match(doc.querySelector('[role="status"]').textContent,/incomplete/);
+ S.playerKnown=false;a.call('renderCoachPanel');assert.equal(doc.querySelector('.coach-empty'),null);
 });
 
 test('Urgent actual mate outranks development; unknown identity and unsupported claims abstain',()=>{
@@ -92,7 +123,7 @@ test('Coach selection stays inexpensive and deterministic across repeated view a
 
 test('A proven losing capture outweighs an interesting response threat created by the same move',()=>{
  for(const [fen,move,mover,from,to] of [['1r4k1/1b6/8/8/8/8/1Q6/7K w - - 0 1','b2b7','w','b8','b7'],['7k/1q6/8/8/8/8/1B6/1R4K1 b - - 0 1','b7b2','b','b1','b2']]){
-  const input={fen,move,conceptGroups:DEFAULT_CONCEPT_GROUPS,history:{fen,moves:[]}},result=run(input),r={input,result,mover};
+  const input={fen,move,conceptGroups:[...DEFAULT_CONCEPT_GROUPS,'history'],history:{fen,moves:[]}},result=run(input),r={input,result,mover};
   assert.ok(result.findings.some(f=>f.event==='certified-unit-tempo'),'Competing offensive proof must really be present');
   const loss=result.findings.find(f=>f.event==='simplification-material-loss');assert.equal(loss.context.evidence.loss.minimumNetLoss,6);
   for(const player of ['w','b']){

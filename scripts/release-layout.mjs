@@ -179,7 +179,11 @@ try {
   await evaluate(review,"document.querySelector('#concept-view-reply').click()");
   assert.equal(await evaluate(review,"document.querySelector('#concept-view-reply').getAttribute('aria-pressed')"),'true');
   assert.equal(await evaluate(review,"import('./analysis.js').then(m=>m._conceptSession.metrics().timeMs)"),switchCost);
-  assert.ok(await evaluate(review,"document.querySelectorAll('.coach-insight').length<=2"));
+  assert.equal(await evaluate(review,"document.querySelectorAll('.coach-insight').length"),1);
+  assert.equal(await evaluate(review,"document.querySelector('.coach-perspective')"),null);
+  assert.equal(await evaluate(review,"document.querySelector('.coach-move-quality')"),null);
+  assert.equal(await evaluate(review,"document.querySelector('.coach-analysis-notes').open"),false);
+  assert.match(await evaluate(review,"document.querySelector('.coach-takeaway').textContent"),/defenders.*opponent’s reply/);
   assert.match(await evaluate(review,"document.querySelector('.coach-insight > p').textContent"),/Your knight on f3.*attacks your opponent’s pawn on e5/);
   await capture('coach-reply-wide');
   await evaluate(review,"import('./analysis.js').then(m=>m.go(4))");
@@ -211,6 +215,11 @@ try {
     const coachBox=await evaluate(review,"(()=>{const panel=document.querySelector('.coach-insights-panel'),mod=panel.closest('.mod'),body=panel.querySelector('.coach-insights-body');return {panel:panel.getBoundingClientRect().height,module:mod.getBoundingClientRect().height,body:body.clientHeight,scrolls:body.scrollHeight>body.clientHeight}})()");
     assert.ok(coachBox.panel<=coachBox.module+1&&coachBox.body>100&&coachBox.scrolls,`Coach ${width}: list must scroll inside its box`);
     await capture(`coach-${width}`);
+    await evaluate(review,"document.querySelector('#concept-view-reply').click()");
+    const replyBox=await evaluate(review,"(()=>{const body=document.querySelector('.coach-reply-body');return {client:body.clientWidth,scroll:body.scrollWidth}})()");
+    assert.ok(replyBox.scroll<=replyBox.client,`Coach reply ${width}: no horizontal overflow`);
+    await capture(`coach-reply-${width}`);
+    await evaluate(review,"document.querySelector('#concept-view-all').click()");
   }
   await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
   await evaluate(review,"window.scrollTo(0,0)");

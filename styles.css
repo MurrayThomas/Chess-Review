@@ -1076,6 +1076,14 @@ button { font-family: inherit; cursor: pointer; }
 .coach-insight details { font-size: 11px; color: var(--ink-2); }
 .coach-insight summary { cursor: pointer; }
 .coach-insight details p { margin: 6px 0; }
+.coach-reply-body .coach-insights-list { margin: 8px 0 12px; }
+.coach-reply-body .coach-insight { border-top: 0; padding: 4px 0; }
+.coach-reply-body .coach-insight > strong { margin-bottom: 8px; }
+.coach-reply-body .coach-takeaway { padding: 10px 12px; border-left: 2px solid var(--accent); background: rgba(128,128,128,.06); border-radius: 0 6px 6px 0; }
+.coach-takeaway > span { display: block; color: var(--ink-2); font-size: 10px; font-weight: 600; margin-bottom: 4px; }
+.coach-analysis-notes { border-top: 1px solid var(--line); padding-top: 8px; color: var(--ink-2); font-size: 11px; }
+.coach-analysis-notes summary { cursor: pointer; }
+.coach-analysis-notes p { margin: 6px 0; }
 .stage.auto:not(.desktop-layout) .mod[data-mod="concepts"] { height: 420px; min-height: 320px; }
 .mod .moves-panel .ml-scroll { max-height: none; overflow: visible; }
 .mod:not([data-mod="board"]):not([data-mod="controls"]) > .mod-inner > div { height: 100%; display: flex; flex-direction: column; min-height: 0; }

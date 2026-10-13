@@ -3881,10 +3881,10 @@ function renderCoachPanel() {
   _coachPositionKey = signature;
   const mover = hasMove ? selected.color : null;
   const entry = input && _conceptSession?.entries.get(key);
-  const body = el("div", {class: "panel-body coach-insights-body", "aria-labelledby": "conceptsHeading"});
+  const body = el("div", {class: "panel-body coach-insights-body" + (view === "reply" ? " coach-reply-body" : ""), "aria-labelledby": "conceptsHeading"});
   body.append(el("p", {class: "coach-position", "aria-live": "polite"},
     `${!player ? "Player identity unavailable" : player === "w" ? "Playing White" : "Playing Black"} · ${hasMove ? (S.analysisMode ? "Variation · " : "") + (!player ? (mover === "w" ? "White’s " : "Black’s ") : mover === player ? "Your " : "Opponent’s ") + selected.san : S.practice ? "Practice" : "Starting position"}`));
-  if (hasMove && !S.analysisMode && S.classif[S.idx]) {
+  if (view === "all" && hasMove && !S.analysisMode && S.classif[S.idx]) {
     body.append(el("p", {class: "coach-move-quality"}, `Move assessment: ${categoryName(S.classif[S.idx])}`));
   }
   if (S.practice) body.append(el("p", {}, "Use the practice coach above. Position insights return when practice ends."));
@@ -3897,25 +3897,33 @@ function renderCoachPanel() {
     const insights = view === "reply" ? reply.items : coachInsights(entry?.findings || [], {mover, player});
     if (view === "reply" && !player) body.append(el("p", {class:"coach-status"}, "The playing side could not be identified. All concepts remains available with neutral move labels."));
     if (!entry || entry.status !== "complete") body.append(el("p", {class: "coach-status"}, insights.length ? "Observations ready; checking further continuations…" : "Checking this position…"));
-    if (entry?.status === "complete" && !insights.length) body.append(el("p", {}, view === "reply" ? "No meaningful supported coach insight for this move." : "No supported finding within the available inputs and search limits."));
+    if (entry?.status === "complete" && !insights.length && (view === "all" || player)) body.append(el("p", {class:"coach-empty"}, view === "reply" ? "No specific lesson stands out from the checks available for this move." : "No supported finding within the available inputs and search limits."));
     const list = el("ol", {class: "coach-insights-list"});
     for (const finding of insights) {
       const id = JSON.stringify([finding.event, finding.name, finding.sourceText]);
-      const details = el("details", {"data-insight": id, open: open.has(id)}, el("summary", {}, "Evidence and scope"),
+      const details = el("details", {"data-insight": id, open: open.has(id)}, el("summary", {}, view === "reply" ? "Why this reply?" : "Evidence and scope"),
         el("p", {}, finding.kind), el("p", {}, "Detector explanation: " + finding.sourceText),
+        ...(finding.proofNote ? [el("p", {}, finding.proofNote)] : []),
         ...finding.scopes.map(scope => el("p", {}, scope.occurrence + ": " + scope.scope)),
         ...(finding.details ? [el("pre", {class:"concept-evidence-data"}, JSON.stringify(finding.details,null,2))] : []),
         ...(finding.supporting || []).map(f => el("p", {}, f.name + ": " + f.sourceText)),
         ...(finding.studyScopes?.length ? [el("p", {}, "Candidate study scopes (not acceptance or a per-event claim):"), ...finding.studyScopes.map(scope=>el("p", {},scope.id+": "+scope.scope))] : []));
       list.append(el("li", {class: "coach-insight", "data-concept": finding.name},
-        el("strong", {}, finding.name), el("span", {class: "coach-perspective"}, finding.perspective),
-        el("p", {}, finding.text), details));
+        el("strong", {}, finding.name),
+        ...(view === "all" ? [el("span", {class: "coach-perspective"}, finding.perspective)] : []),
+        el("p", {}, finding.text),
+        ...(view === "reply" && finding.takeaway ? [el("p", {class:"coach-takeaway"}, el("span", {}, "Try this next time"), finding.takeaway)] : []), details));
     }
     body.append(list);
-    if (entry?.disabled) body.append(el("p", {class:"coach-status"}, "Fast or custom profile · Some groups or individual concepts are off. Change them in Settings → Concepts."));
     const diagnostics = [...(entry?.errors || []), ...(entry?.unavailable || []), ...(entry?.issues || [])];
-    if (diagnostics.length) body.append(el("p", {class: "coach-status"}, "Some searches or inputs were unavailable. Showing supported findings; details are in Settings → Concepts."));
-    body.append(el("p", {class: "coach-status"}, view === "reply" ? "Selected from the same position findings. Conditions and proof horizons still apply." : `${insights.length} findings · Supported matches from enabled concepts for this move. Provisional implementation does not mean research acceptance.`));
+    const analysisNotes = [];
+    if (entry?.disabled) analysisNotes.push(el("p", {class:"coach-status"}, "Fast or custom profile · Some groups or individual concepts are off. Change them in Settings → Concepts."));
+    if (diagnostics.length) analysisNotes.push(el("p", {class:"coach-status"}, "Some searches or inputs were unavailable. Showing supported findings; details are in Settings → Concepts."));
+    analysisNotes.push(el("p", {class: "coach-status"}, view === "reply" ? "One lesson selected from this move’s findings. Proof details and conditions are available above. A quiet reply does not certify the move is safe." : `${insights.length} findings · Supported matches from enabled concepts for this move. Provisional implementation does not mean research acceptance.`));
+    if (view === "reply") {
+      if(entry?.errors?.length)body.append(el("p", {class:"coach-status", role:"status"}, "Some checks could not finish. This reply may be incomplete."));
+      body.append(el("details", {class:"coach-analysis-notes", "data-insight":"analysis-notes", open:open.has("analysis-notes")}, el("summary", {}, "Analysis details"), ...analysisNotes));
+    } else body.append(...analysisNotes);
   }
   const switcher = el("div", {class:"concept-view-switch", role:"group", "aria-label":"Concept view"},
     ...[["all","All concepts"],["reply","Coach reply"]].map(([value,label])=>el("button", {type:"button", id:"concept-view-"+value, "aria-pressed":view===value?"true":"false", onclick:()=>{S.settings.conceptsView=value;browserAPI.storage.local.set({settings:S.settings});renderCoachPanel();}},label)));

@@ -83,7 +83,7 @@ test('Individual choices remove findings, skip fully disabled study owners, and 
  assert.ok(!filtered.findings.some(f=>disabledConcepts.includes(f.event)));
  assert.notEqual(conceptKey({...source,disabledConcepts}),conceptKey(source));
  assert.deepEqual(detectorInput({...source,disabledConcepts}),{fen:source.fen,move:source.move,history:source.history});
- const off=CONCEPT_ITEMS.filter(item=>item.studies.includes('E096')).map(item=>item.id),input={...row(5).input,disabledConcepts:off};
+ const off=CONCEPT_ITEMS.filter(item=>item.studies.includes('E096')).map(item=>item.id),input={...row(5).input,conceptGroups:[...DEFAULT_CONCEPT_GROUPS,'history'],disabledConcepts:off};
  assert.equal(studyEnabled(input,'E096'),false);assert.ok(!run(input).stages.some(s=>s.detector==='E096'));
  assert.deepEqual(normalizeDisabledConcepts(['direct-attack','not-implemented','direct-attack']),['direct-attack']);
  const ids=new Set(CONCEPT_ITEMS.map(item=>item.id));for(const ply of [2,3,5,7,32,33,34,56,57])for(const f of row(ply).result.findings)assert.ok(ids.has(f.event)||['capture','check','castling'].includes(f.event),'Finding needs a control: '+f.event);
@@ -119,6 +119,13 @@ test('Fast consequence pass remains bounded across the complete supplied game',(
  for(const r of rows){const result=inspectFastConsequences(r.input);nodes+=result.nodes;assert.ok(result.nodes<1024);assert.ok(result.events.every(e=>e.integrationStudy==='P006'&&e.qualityClaim===false));}
  assert.ok(performance.now()-started<6000,'57 local consequence inspections must stay below six seconds');
  console.log('P006 full-game consequence work:',Math.round(performance.now()-started)+' ms,',nodes,'bounded work units');
+});
+
+test('Quiet bishop moves skip knight scans, while relevant pawn chases retain their fork witness',()=>{
+ const quiet=inspectFastConsequences(row(3).input);assert.equal(quiet.nodes,0);
+ assert.ok(!quiet.stages.some(s=>s.detector==='P006-knight'));
+ const chase=inspectFastConsequences(row(33).input);assert.ok(chase.events.some(e=>e.id==='next-knight-fork'));
+ assert.ok(chase.nodes<48,'Scan the relevant knight, not both armies');
 });
 
 

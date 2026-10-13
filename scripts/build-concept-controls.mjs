@@ -33,7 +33,12 @@ for(const match of runtime.matchAll(/add\(\s*['"]([a-z][a-z0-9-]+)['"],[^;]*?['"
  const [,id,study]=match,group=CONCEPT_GROUPS.find(g=>g.studies.includes(study));
  if(group&&!items.has(id))items.set(id,{id,name:CONCEPT_LABELS[id]||id.replaceAll('-',' ').replace(/^./,c=>c.toUpperCase()),group:group.id,cost:group.cost,studies:[study],flags:[]});
 }
-for(const item of items.values())if(item.group==='features'&&/mate|stalemate/.test(item.id)){item.group='immediate';item.cost='Moderate';}
+for(const item of items.values()){
+ // Basic development and draw facts belong to the core checks even when the
+ // optional historical route/response-tempo proof group is switched off.
+ if(['minor-development','minor-development-complete','development-check'].includes(item.id)){item.group='features';item.cost='Fast';}
+ if(['repetition-claim','fifty-move-claim','draw-position'].includes(item.id)||(item.group==='features'&&/mate|stalemate/.test(item.id))){item.group='immediate';item.cost='Moderate';}
+}
 const catalog=[...items.values()].sort((a,b)=>CONCEPT_GROUPS.findIndex(g=>g.id===a.group)-CONCEPT_GROUPS.findIndex(g=>g.id===b.group)||a.name.localeCompare(b.name));
 const output = '// Runtime finding controls. Generated from literal emitted events and scope labels.\n// Shared scans may remain necessary for other enabled findings; these are not acceptance claims.\nexport const CONCEPT_ITEMS = '+'[\n'+catalog.map(item=>'  '+JSON.stringify(item)).join(',\n')+'\n]'+';\n';
 if(process.argv.includes('--check')){
