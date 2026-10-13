@@ -28,3 +28,8 @@ heuristic, with no new benefit or effectiveness claim.
 adds bounded local follow-up patterns, scoped material consequences, purposeful
 opening/development replies and expandable per-finding settings. New observations
 remain provisional; implementation status does not change research acceptance.
+
+[P008: Complete, current scoring evidence](P008-scoring-evidence-integrity.md)
+repairs incomplete accuracy aggregation, stale rating admission and malformed
+cached observations, with unchanged valid scores and a reviewed numerical
+research adoption boundary. Human predictive gains remain unconfirmed.

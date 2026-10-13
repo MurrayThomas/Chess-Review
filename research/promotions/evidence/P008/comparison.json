@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-13",
+  "baseline": "b70ea930ed234ae8e83de2008d79f4b67ca55cf4",
+  "node": "v24.14.1",
+  "scope": "Synthetic input-contract comparison; no human predictive claim",
+  "examples": [
+    {
+      "build": "nnue",
+      "completeAccuracy": 1.0082008049174394,
+      "oldAccuracyWithAdverseDecisionMissing": 1.0998065466732423,
+      "newAccuracyWithAdverseDecisionMissing": null,
+      "oldRatingWithStaleVersion": 920.1595934967274,
+      "newRatingWithStaleVersion": null,
+      "oldMalformedCacheAccepted": true,
+      "newMalformedCacheAccepted": false
+    },
+    {
+      "build": "sf19lite",
+      "completeAccuracy": 16.431348236099595,
+      "oldAccuracyWithAdverseDecisionMissing": 20.069903904496606,
+      "newAccuracyWithAdverseDecisionMissing": null,
+      "oldRatingWithStaleVersion": 961.5359689952132,
+      "newRatingWithStaleVersion": null,
+      "oldMalformedCacheAccepted": true,
+      "newMalformedCacheAccepted": false
+    }
+  ],
+  "hashMode": "UTF-8 with CRLF normalized to LF",
+  "hashes": {
+    "lib/calibrated-review.js": "725e3b37dc691d2e1f116f6236f4ea0f1fe43540cd0e4932fcce32ddf8c9a3ee",
+    "lib/public-scoring.js": "4e2124a1bb1896b3ceaeb499504ca9ae7eba93cf4b701b46a04972546113e706",
+    "lib/chess.js": "a0b289b6530990bb49e78ccfb4ccf8ed18d9a5cb3713c44c433cbfab8725a6f6",
+    "data/calibration.json": "22366593977f4f910c060050ec2c6757b74c002924f8bc33cb8ee78792b55781",
+    "tests/scoring-integrity.test.mjs": "cb6e0b99a8e954e48979984ff7319157335303dcc299c02de2b79414be0d652a"
+  }
+}

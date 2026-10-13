@@ -32,6 +32,17 @@ Both colors stay in one split, and player identities are disjoint across roles.
 Only training observations fit coefficients. Development validation is consumed;
 it does not provide untouched final-test confirmation.
 
+Runtime admission requires current calibration metadata and a recognized engine;
+SF19 observations must use the fixed 20,000-node protocol. Each player's displayed
+whole-game accuracy requires valid observations for every played move. Missing,
+malformed or stale observations do not become an average over an undisclosed
+excerpt. Valid individual move scores remain available. Fixed-node WDL rating
+evidence is admitted separately from display compatibility, so custom SF18
+display settings may still support a moves-only estimate. Cached scoring roots
+must be dense, use one engine, and contain finite CP or signed nonzero integer
+mate observations; invalid caches are reanalyzed. These are correctness guards,
+not new accuracy, rating or human-category validation claims.
+
 The original 2,000-game dataset also has an exact archive-to-game reconstruction,
 including every game's raw PGN locator and pinned sampling/parser dependencies.
 From a repository checkout, run

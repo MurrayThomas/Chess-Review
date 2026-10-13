@@ -1,4 +1,4 @@
-# P007 — Complete, current scoring evidence
+# P008 — Complete, current scoring evidence
 
 Date: 2026-10-13. Production correctness assessment authorized by the user's
 request to research and implement verifiable calibration/category/accuracy
@@ -70,9 +70,61 @@ new regression matrix, existing scoring/annotation/cache checks, `npm test`,
 Retain compact command/results and exact source/fixture hashes here or in the
 adjacent evidence record. A replay checks correctness, not fresh confirmation.
 
-## State
+## Implementation and verification
 
-Planned. Implementation and final validation pending.
+Implemented locally. The plan/source-review commit is `d55a0be`; the record was
+renumbered from P007 to P008 because a concurrent coach task allocated P007.
+No prior evidence or numerical study was renumbered or rewritten.
+
+The frozen-source comparison and hashes are retained in
+[comparison.json](evidence/P008/comparison.json). From the repository root run
+`node research/promotions/evidence/P008/compare.mjs --verify` to independently
+import the original b70ea93 scorer, rebuild an authored legal sequence, and check
+all retained outputs/current input hashes. Outputs go to ignored `scratch/`.
+This needs Git with the baseline revision available and Node 24+, but no game
+data, network, engine, fitting or random seed. Source/fixture hashes normalize
+CRLF to LF. The regression matrix includes all malformed/stale cases rather
+than selecting on the comparison's two illustrative numerical examples.
+
+| Deterministic example | Old behavior | Repaired behavior |
+| --- | --- | --- |
+| SF19: omit the adverse decision | Accuracy rises from 16.431348 to 20.069904 | Whole-game accuracy unavailable; remaining individual scores retained |
+| SF18: same omission | Accuracy rises from 1.008201 to 1.099807 | Whole-game accuracy unavailable |
+| Stale calibration with matching rating-candidate version | Rating 920.159593 / 961.535969 for SF18 / SF19 | Rating unavailable |
+| Cached mate-zero observation | Cache admitted | Cache refused |
+
+Valid complete synthetic output is exactly unchanged for both engines. The
+comparison is a deterministic correctness witness, not an estimate of defect
+prevalence, rating MAE or human-quality improvement.
+
+Checks on Node v24.14.1:
+
+- Original scorer: all 11 new regression tests fail. Repaired scorer: all 11
+  pass, including the stronger adverse-decision fixture.
+- Focused scoring/annotation/cache/public regression: 40/40 pass. Corrected
+  cache fixture plus new regression: 26/26 pass. Final broader numerical,
+  category, engine, reliability and cache selection: 162/162 pass.
+- Offline `node tools/calibration/reproduce-public.mjs`: passed; published
+  models/scores and SF19 context remain exact. This is exposed public evidence,
+  not fresh confirmation. No bundled coefficients changed.
+- `npm run verify:source`: passed. `git diff --check` and scorer syntax pass.
+- First `npm test`: 378/379 pass; the sole failure was a formerly accepted
+  unidentified-engine cache fixture. Updated it to explicitly identify SF18.
+  A second full run during concurrent coach edits reports 377/385, with eight
+  failures in concept cost groups/Fast coaching; all scoring checks pass.
+  A clean full-worktree acceptance is not claimed for those unrelated edits.
+- Root `npm run lint`: five errors (three oversized retained research files,
+  one deliberate malformed research sentinel and a transient concurrent
+  `analysis.js` parse failure). Extension-runtime lint excluding `research/**`,
+  `scratch/**`, `calibration-runs/**`: zero errors, four manifest warnings.
+  The research directory is excluded from extension packages. No unrelated
+  research evidence or UI source was altered to suppress lint.
+- Attempted an isolated headless Chrome renderer check; DevTools
+  `Runtime.evaluate`/`Runtime.enable` repeatedly timed out, including with
+  baseline UI source. No browser success is claimed. DOM/cached-restore
+  regressions pass; manual extension-browser verification remains a limitation.
+
+Implementation commit is recorded in Git history. No push or release.
 
 Next numerical research: preregister an opportunity-aware rating feasibility
 study following F017, with target-free predictors, complete-alternative search

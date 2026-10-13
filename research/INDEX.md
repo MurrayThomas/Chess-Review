@@ -10,6 +10,7 @@ records. Update a row and the active experiment's resume state when work stops.
 
 | ID | Question / record | State | Outcome / evidence | Next action |
 | --- | --- | --- | --- | --- |
+| P008 | [Current, complete scoring evidence](promotions/P008-scoring-evidence-integrity.md) | implemented locally | Missing decisions cannot inflate full-game accuracy; stale ratings and malformed caches refused; 162 scoring/category/engine/cache checks and exact public replay pass; new predictive models not validated | Fresh opportunity-aware rating study and independent category reviews; browser/full-worktree limits recorded |
 | B000 | [Starting extension baseline](BASELINE.md) | Reproduced | Offline replay passes; no fresh confirmation | Use frozen recipe as comparator |
 | D001 | [Public baseline evidence](datasets/D001-public-baseline/README.md) | reconstruction verified | Exact original-fragment-to-game rebuild and raw locators; at least fifty consumed test games | Preserve exposure; replay reconstruction when checking raw origins |
 | E001 | [Evidence and exposure audit](experiments/E001-evidence-audit/RESULT.md) | complete | Integrity gates pass; no model evaluated | Numerical development study |
