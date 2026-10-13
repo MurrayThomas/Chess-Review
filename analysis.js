@@ -2841,7 +2841,32 @@ function alignPlayers() {
 
 /* ---------------- Controls ---------------- */
 function renderControls() {
-  const playing = !!S.autoTimer;
+  const mode = S.practice ? "practice" : S.analysisMode && S.variation ? "variation" : "mainline";
+  let refs = UI.controlRefs;
+  // Progress updates can arrive between mouse-down and mouse-up. Keep the buttons
+  // (and their icons) mounted so clicks, focus and hover survive those updates.
+  if (!refs || refs.mode !== mode) {
+    refs = UI.controlRefs = { mode };
+    if (mode === "practice") {
+      refs.position = el("span", { class: "pos practice-pos" });
+      refs.status = el("span", { class: "practice-status" });
+      UI.controls.replaceChildren(refs.position, refs.status,
+        el("button", { class: "exit-analysis", title: "Exit practice (Esc)", onclick: exitPractice }, el("span", { class: "ea-x" }, "✕"), "Exit"));
+    } else {
+      const variation = mode === "variation";
+      refs.first = el("button", { "aria-label": variation ? "Variation start" : "Start",
+        onclick: variation ? () => gotoVar(0) : () => go(0) }, icon("first"));
+      refs.previous = el("button", { "aria-label": variation ? "Previous move" : "Previous", onclick: navPrev }, icon("prev"));
+      refs.center = variation
+        ? el("button", { class: "exit-analysis", title: "Exit analysis (Esc)", onclick: () => exitAnalysis(S.variation.branchIdx) }, el("span", { class: "ea-x" }, "✕"), "Exit")
+        : el("button", { class: "play", onclick: toggleAuto });
+      refs.next = el("button", { "aria-label": variation ? "Next move" : "Next", onclick: navNext }, icon("next"));
+      // Read the current endpoint on click; the analysis frontier or variation can grow.
+      refs.last = el("button", { "aria-label": variation ? "Variation end" : "End",
+        onclick: variation ? () => gotoVar(S.variation.positions.length - 1) : () => go(S.analyzing ? S.progress : S.total) }, icon("last"));
+      UI.controls.replaceChildren(refs.first, refs.previous, refs.center, refs.next, refs.last);
+    }
+  }
   if (S.practice) {
     const p = S.practice;
     const cur = Math.min(p.i + 1, p.spots.length);
@@ -2849,11 +2874,9 @@ function renderControls() {
       : p.demoing ? "Replaying your move…"
       : p.busy ? "Checking…"
       : p.solving ? "Find a stronger move" : "✓ Correct!";
-    UI.controls.replaceChildren(
-      el("span", { class: "pos practice-pos" }, `Practice ${cur}/${p.spots.length}`),
-      el("span", { class: "practice-status" }, status),
-      el("button", { class: "exit-analysis", title: "Exit practice (Esc)", onclick: exitPractice }, el("span", { class: "ea-x" }, "✕"), "Exit"),
-    );
+    const position = `Practice ${cur}/${p.spots.length}`;
+    if (refs.position.textContent !== position) refs.position.textContent = position;
+    if (refs.status.textContent !== status) refs.status.textContent = status;
     return;
   }
   if (S.analysisMode && S.variation) {
@@ -2861,25 +2884,22 @@ function renderControls() {
     const atEnd = v.idx >= v.positions.length - 1;
     // Same layout as the normal controls — the central green Play slot becomes a red Exit button.
     const atStart = v.idx <= 0;
-    UI.controls.replaceChildren(
-      el("button", { "aria-label": "Variation start", disabled: atStart, onclick: () => gotoVar(0) }, icon("first")),
-      el("button", { "aria-label": "Previous move", onclick: navPrev }, icon("prev")),
-      el("button", { class: "exit-analysis", title: "Exit analysis (Esc)", onclick: () => exitAnalysis(v.branchIdx) }, el("span", { class: "ea-x" }, "✕"), "Exit"),
-      el("button", { "aria-label": "Next move", disabled: atEnd, onclick: navNext }, icon("next")),
-      el("button", { "aria-label": "Variation end", disabled: atEnd, onclick: () => gotoVar(v.positions.length - 1) }, icon("last")),
-    );
+    if (refs.first.disabled !== atStart) refs.first.disabled = atStart;
+    if (refs.next.disabled !== atEnd) refs.next.disabled = atEnd;
+    if (refs.last.disabled !== atEnd) refs.last.disabled = atEnd;
     return;
   }
   // The forward buttons are blocked when at the analysis front (only during analysis).
   const maxPly = S.analyzing ? S.progress : S.total;
   const atEnd = S.idx >= maxPly;
-  UI.controls.replaceChildren(
-    el("button", { "aria-label": "Start", onclick: () => go(0) }, icon("first")),
-    el("button", { "aria-label": "Previous", onclick: navPrev }, icon("prev")),
-    el("button", { class: "play", "aria-label": playing ? "Pause" : "Play", onclick: toggleAuto }, icon(playing ? "pause" : "play")),
-    el("button", { "aria-label": "Next", disabled: atEnd, onclick: navNext }, icon("next")),
-    el("button", { "aria-label": "End", disabled: atEnd, onclick: () => go(maxPly) }, icon("last")),
-  );
+  if (refs.next.disabled !== atEnd) refs.next.disabled = atEnd;
+  if (refs.last.disabled !== atEnd) refs.last.disabled = atEnd;
+  const playing = !!S.autoTimer;
+  const label = playing ? "Pause" : "Play";
+  if (refs.center.getAttribute("aria-label") !== label) {
+    refs.center.setAttribute("aria-label", label);
+    refs.center.replaceChildren(icon(playing ? "pause" : "play"));
+  }
 }
 
 /* ---------------- Insight panel (move commentary + practice coaching) ----------------
