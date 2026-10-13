@@ -2,13 +2,37 @@
 
 ## Implementation tracker
 
-Started 2026-10-14. This file travels with the repository so work can continue on another computer. Learning progress stays local to the browser; this development tracker records implementation progress.
+Completed the initial fully usable learning release on 2026-10-14. This file travels with the repository so development can continue on another computer. Study progress stays local to the browser; this tracker records implementation progress. Local commits are created with the maintainer as author and Codex as co-author; nothing is pushed automatically.
 
-- [ ] Stage 1: Isolated learning workspace, review-state preservation, home and navigation.
-- [ ] Stage 2: Structured lessons, exact-scope validation and exercise feedback. Content and pure validators implemented: 23 lessons, 216 puzzles, 12 opening courses / 24 lines. Content and progress tests pass; UI integration remains in progress.
-- [ ] Stage 3: Verified varied puzzle library, practice, timed challenges and meaningful totals.
-- [ ] Stage 4: Instructional openings, variations, practice from both sides and bookmarks.
-- [ ] Stage 5: Responsive visual review, interaction checks, regression checks and release packaging.
+- [x] Stage 1: Isolated learning workspace, bottom entry beside controls and below Engine, home, navigation, return to the exact review position/orientation and paused playback.
+- [x] Stage 2: 23 complete concept lessons in seven categories, 47 exercises, interactive examples and counterexamples, prerequisites, scoped validation and feedback, completion states and difficult-exercise revisits.
+- [x] Stage 3: 216 distinct offline puzzles across twelve themes and three difficulty bands, all setup/solution moves legally replayed. Filters, mixed/theme practice, hints, retry, reveal, missed-puzzle review and 1/5/10-minute challenges. Timers exclude loading/validation/saving; unique, repeat and assisted completions remain separate.
+- [x] Stage 4: 12 opening courses / 24 variations / 250 individually annotated half-moves. Plans, structures, common mistakes, thematic tactics, practice as either color, automatic replies, exact course-position transpositions, bookmarks and saved study progress.
+- [x] Stage 5: Responsive themed boards, SVG piece preferences, keyboard/click/drag input, legal promotion choices, focus management, reduced motion and loading/empty/error/completion states. Application suite, packaged Chrome/Firefox checks and fifteen Chrome learning layout/interaction audits pass.
+
+## Fully usable now
+
+All published lessons, puzzles and opening courses have a complete path. No unfinished lesson pages or research-named detector variants are exposed as courses. Review scores, original game moves and the research catalog/detectors/proofs are preserved. Repeated or assisted puzzle answers do not inflate unique unaided solves. Concept recognition, exercise objectives and move quality are separate validation fields; exhausted, unavailable or unsupported proofs never become incorrect answers.
+
+The application regression suite passes **407 tests**; all seven final content checks also pass after the instructional text review. The Chrome and Firefox smoke checks exercise both bundled engines plus real learning proof workers, opening practice as Black, hidden puzzle solutions, assisted-progress persistence and unchanged review state. `npm run test:learning-browser` checks fifteen packaged Chrome screenshots/measurements, including 320 px layouts, reduced motion, timed scoring and return to review. Engine hashes, maintained source and reachable history pass verification, and Chrome/Firefox ZIPs build locally. Packaged Firefox lint has zero errors and one existing DOM-helper warning. Repository-wide lint reports four existing research-file errors (one invalid generated JSON and three oversized evidence files), plus research/demo warnings; those research files are outside the shipped extension and are preserved.
+
+## Content and validation limits / next optional expansion
+
+- The 23 authored lessons cover a curated part of the large concept catalog. More advanced catalog topics still need complete instructional text, contrasting board examples and exercises with supported validators before admission. Existing provisional research is retained and is not promoted by this feature.
+- The 24 opening lines teach selected important entry variations, not every branch of opening theory. Transpositions are recognized when a legal move reaches a retained position in the selected course; the offline book also supplies names. New families and deeper branches need original annotations, plans and legal replay checks.
+- Puzzle solutions/themes come from Lichess's Stockfish puzzle pipeline. We verify admission, legal setup/continuation replay and advertised mate endings; we do not claim independent reproduction of the original 40-meganode searches. Any legal checkmate is accepted; other moves follow the supplied unique-solution convention. See `data/learning/SOURCES.md` for licensing, source-row hashes and reproducible selection.
+- Local progress has no account or cross-device synchronization. This development tracker and all content/code are in Git so another computer can continue from the same repository state.
+
+## Where to continue
+
+- Content and course schemas: `lib/learning/content.js`
+- Puzzle source records: `data/learning/puzzles.json` and `data/learning/SOURCES.md`
+- Scoped validation and worker: `lib/learning/validation.js`, `lib/learning/validation-worker.js`
+- Local storage and challenge clock: `lib/learning/progress.js`
+- Workspace/navigation/boards: `lib/learning/workspace.js`; review entry/lifecycle in `analysis.js`; shared styling in `styles.css`
+- Regression coverage: `tests/learning-*.test.mjs`; browser audits: `scripts/learning-browser.mjs`, `scripts/browser-smoke.mjs`
+- Refresh puzzles deliberately with Node 24: `node scripts/import-learning-puzzles.mjs`, then `npm test`. Do not refresh during normal startup or build.
+- Reproduce packaged checks: `npm run verify:source`, `npm run verify:engines`, `npm run build`, `npm run test:browsers`, `npm run test:learning-browser`.
 
 ## Original objective (verbatim)
 
@@ -71,4 +95,3 @@ Use original or suitably licensed content with recorded sources. Do not inflate 
 The intended result is a learning experience where users can understand chess ideas, practise them on the board, and see their progress, all within the familiar Chess Review environment.
 
 Please make sure to do a .md file that both saves this prompt and tracks our progress so that i can continue from other pc's in the future.
-

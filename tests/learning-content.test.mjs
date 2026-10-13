@@ -35,6 +35,8 @@ test('alternative valid moves and square answers are accepted without claiming m
   for(const move of ['c3d4','c3b4','c3f6'])assert.equal(validateExercise(discovery,move).status,'correct');
   const promo=LESSONS.find(l=>l.id==='promotion').exercises[0];
   for(const piece of 'qrbn')assert.equal(validateExercise(promo,'e7e8'+piece).status,'correct');
+  const luft=LESSONS.find(l=>l.id==='back-rank').exercises[2];
+  for(const move of ['h7h6','h7h5','g7g6','f7f6'])assert.equal(validateExercise(luft,move).status,'correct');
 });
 test('unsupported objectives, failed admission and exhausted proofs abstain; legal wrong moves are separate',()=>{
   const fork=LESSONS.find(l=>l.id==='fork').exercises[0];
@@ -78,4 +80,10 @@ test('all opening variations have legal annotated moves and reuse named position
     assert.ok(o.lines.length>=2);assert.deepEqual(o.colors,['w','b']);
     for(const line of o.lines){assert.equal(line.moves.length,line.notes.length);const {positions}=linePositions(line);assert.ok(positions.slice(1).some(fen=>Array.isArray(book[positionKey(fen)])),o.id);for(const fen of positions)legalPosition(fen);}
   }
+});
+test('instructional tactical examples distinguish an uncovered attack from a safe gain and replay the Italian king hunt legally',()=>{
+  const discovery=LESSONS.find(l=>l.id==='discovery').exercises[0],c=new Chess(discovery.fen);
+  playUci(c,'c3d4');assert.equal(c.move('Qxc1+').captured,'r');
+  const italian=new Chess();for(const san of 'e4 e5 Nf3 Nc6 Bc4 Nf6 Ng5 d5 exd5 Nxd5 Nxf7 Kxf7 Qf3+'.split(' '))italian.move(san);
+  assert.ok(italian.isCheck());assert.equal(italian.get('f7').type,'k');
 });

@@ -1,6 +1,6 @@
 # Privacy Policy — Chess Review
 
-_Last updated: 2026-09-30_
+_Last updated: 2026-10-14_
 
 Chess Review is a browser extension that reviews the chess games you play on
 **Chess.com** and **Lichess**. This policy explains exactly what the extension
@@ -30,6 +30,10 @@ The extension stores the following **locally on your device only**, using the
 browser's `chrome.storage.local`:
 
 - Your preferences (board/piece theme, chosen coach, engine settings).
+- Learning progress: lesson/exercise results, opening study progress and bookmarks,
+  puzzle results, unfinished activities, and timed-challenge history and personal bests.
+  Learning content is bundled for offline use. Choosing a source puzzle link opens
+  Lichess in a new tab; progress is not sent with that link.
 - The chess username you enter or that is detected from the page, used to seat
   you on the correct side of the board.
 - A cache of public game/API responses, PGNs, and computed analysis, so

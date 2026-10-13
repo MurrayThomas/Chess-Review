@@ -11,6 +11,7 @@ import {analyseCalibratedPosition} from '../../lib/calibrated-search.js';
 import {CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS, CONCEPT_ITEMS, normalizeDisabledConcepts} from '../../lib/concepts/controls.js';
 import {ConceptSession, conceptKey} from '../../lib/concepts/session.js';
 import {coachInsights,coachReply} from '../../lib/coach-insights.js';
+import {LearningWorkspace} from '../../lib/learning/workspace.js';
 
 // Execute the real application in a DOM, stubbing only browser/engine boundaries.
 // Automatic startup and imports are omitted; production needs no test exports.
@@ -35,7 +36,7 @@ export function app(t, {hardware} = {}) {
     } },
   };
   const context = vm.createContext({
-    window: dom.window, document: dom.window.document, navigator: dom.window.navigator,
+    window: dom.window, document: dom.window.document, navigator: dom.window.navigator, LearningWorkspace,
     location: dom.window.location, Node: dom.window.Node, HTMLElement: dom.window.HTMLElement,
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
     URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,

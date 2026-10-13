@@ -16,6 +16,7 @@ import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { ConceptSession, conceptKey } from "./lib/concepts/session.js";
 import { CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS, CONCEPT_ITEMS, normalizeDisabledConcepts } from "./lib/concepts/controls.js";
 import { coachInsights, coachReply } from "./lib/coach-insights.js";
+import { LearningWorkspace } from "./lib/learning/workspace.js";
 
 /* ---------------- Opening book ----------------
  * Offline lookup table built from lichess-org/chess-openings (bundled in data/book.json).
@@ -360,7 +361,7 @@ const LAYOUT_VERSION = 8;
 const DEFAULT_LAYOUT = {
   board:    { x: 344,  y: 0,   w: 822, h: 934 },
   evalbar:  { x: 288,  y: 58,  w: 30,  h: 816 },
-  controls: { x: 1194, y: 812, w: 310, h: 54  },
+  controls: { x: 1194, y: 928, w: 310, h: 54  },
   coach:    { x: 1570, y: 0,   w: 192, h: 196 },
   review:   { x: 1200, y: 60,  w: 604, h: 136 },
   moves:    { x: 1200, y: 216, w: 300, h: 390 },
@@ -368,6 +369,7 @@ const DEFAULT_LAYOUT = {
   graph:    { x: 1200, y: 620, w: 300, h: 178 },
   engine:   { x: 1510, y: 736, w: 294, h: 178 },
   concepts: { x: 1820, y: 60,  w: 294, h: 854 },
+  learn:    { x: 1510, y: 928, w: 294, h: 54 },
 };
 const GRIP_SVG = `<svg viewBox="0 0 12 12" width="12" height="12"><path d="M11 4 4 11M11 8 8 11" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>`;
 const HANDLE_SVG = `<svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><circle cx="5" cy="4" r="1.3"/><circle cx="11" cy="4" r="1.3"/><circle cx="5" cy="8" r="1.3"/><circle cx="11" cy="8" r="1.3"/><circle cx="5" cy="12" r="1.3"/><circle cx="11" cy="12" r="1.3"/></svg>`;
@@ -1431,6 +1433,8 @@ function buildUI() {
   const statsMount = el("div", { id: "statsMount" });
   const engineMount = el("div", { id: "engineMount" });
   const conceptsMount = el("div", { id: "conceptsMount" });
+  const learnMount = el("div", { class: "learn-entry" },
+    el("button", { class: "learn-entry-button", onclick: openLearning }, icon("book"), "Learn with Chess Review"));
 
   // The stage holds every module. In the automatic layout the side wrappers group the panels into
   // columns (styles.css picks wide / medium / narrow by window size); in the custom layout they are
@@ -1442,7 +1446,7 @@ function buildUI() {
       makeMod("review", reviewMount),
       el("div", { class: "side-cols" },
         el("div", { class: "side-a" }, makeMod("moves", movesPanel), makeMod("graph", graphMount), makeMod("controls", controls)),
-        el("div", { class: "side-b" }, makeMod("accuracy", statsMount), makeMod("engine", engineMount)),
+        el("div", { class: "side-b" }, makeMod("accuracy", statsMount), makeMod("engine", engineMount), makeMod("learn", learnMount)),
       ),
       makeMod("coach", coachMount),
     ),
@@ -1489,6 +1493,39 @@ function buildUI() {
     alignment.observe(UI.review.closest(".mod"));
   }
   window.addEventListener("resize", () => { fitEnginePanel(); growCanvas(); alignPlayers(); positionSettings(); });
+}
+
+let learningWorkspace = null;
+let deferredPracticeAdvance = false;
+async function openLearning() {
+  if (learningWorkspace) return;
+  // Finish an already-started practice animation before freezing its exact board.
+  if (S.practice && (S.practice.rolling || S.practice.demoing || S.practice.busy)) {
+    toast("Let the current practice move finish, then open learning."); return;
+  }
+  const playing = !!S.autoTimer;
+  if (playing) { clearInterval(S.autoTimer); S.autoTimer = null; renderControls(); }
+  const snapshot = {idx:S.idx, flipped:S.flipped, variationIdx:S.variation?.idx, selectedSq:S.selectedSq,
+    lineWalking:S.lineWalking, bestWalking:S.bestWalking};
+  stopLineWalk();
+  learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
+    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK,
+    onClose:()=>{
+      learningWorkspace = null;
+      S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
+      if(S.variation&&snapshot.variationIdx!=null)S.variation.idx=snapshot.variationIdx;
+      if(!S.practice){buildBoard();paintBoard();}
+      renderControls();
+      if(deferredPracticeAdvance){
+        deferredPracticeAdvance=false;
+        const practice=S.practice;
+        setTimeout(()=>{if(S.practice===practice)practiceAdvance();},1300);
+      }
+      if(playing&&!S.practice&&!S.analysisMode)toggleAuto();
+      if(snapshot.bestWalking)playBestMoves();
+      else if(snapshot.lineWalking)startLineWalk();
+    }});
+  await learningWorkspace.open();
 }
 
 /* ---------------- Loading indicator ----------------
@@ -1618,7 +1655,8 @@ function accuracyReflowInfo(layout = S.layout) {
   for (const [k, o] of Object.entries(layout)) {
     if (k === "accuracy") continue;
     const overlapX = o.x < acc.x + acc.w && o.x + o.w > acc.x;
-    if (overlapX && o.y >= acc.y + acc.h - 1) belowKeys.push(k);
+    const followsLearningRow = k === "controls" && layout.learn && o.y === layout.learn.y;
+    if ((overlapX || followsLearningRow) && o.y >= acc.y + acc.h - 1) belowKeys.push(k);
   }
   const concepts = layout.concepts, review = layout.review, engine = layout.engine;
   const conceptsResized = !!(concepts && review && engine && concepts.x >= engine.x + engine.w
@@ -5337,6 +5375,7 @@ function practiceBeginSolve(solvePos) {
   renderControls(); renderReview(); renderEngineCurrent();
 }
 function practiceAdvance() {
+  if (learningWorkspace) { deferredPracticeAdvance = true; return; }
   const p = S.practice; if (!p) return;
   p.i++;
   p.solving = false;
@@ -5721,6 +5760,7 @@ function toggleAuto() {
   renderControls();
 }
 document.addEventListener("keydown", (e) => {
+  if (learningWorkspace) return;
   if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
   // During practice the only shortcut is Escape to exit; nav keys are disabled.
   if (S.practice) { if (e.key === "Escape") exitPractice(); return; }

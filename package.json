@@ -23,7 +23,8 @@
     "start:chrome": "web-ext run --target=chromium --source-dir=.",
     "test": "node --test tests/*.test.mjs",
     "test:browsers": "node scripts/browser-smoke.mjs",
-    "test:layout": "node scripts/release-layout.mjs"
+    "test:layout": "node scripts/release-layout.mjs",
+    "test:learning-browser": "node scripts/learning-browser.mjs"
   },
   "devDependencies": {
     "jsdom": "^26.1.0",

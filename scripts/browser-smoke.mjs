@@ -37,6 +37,7 @@ try {
     // the real tab/window zoom fit separately.
     await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeResponsive=()=>{_zoomTabId=null;UI.canvas.classList.remove("desktop-layout");applyLayout();};\nglobalThis.__smokePreferences=()=>({settings:structuredClone(S.settings),layoutMode:S.layoutMode});\n');
     await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeConcepts=()=>({enabled:S.settings.conceptsEnabled,worker:!!_conceptSession?.worker,metrics:_conceptSession?.metrics(),selectedStatus:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.status,selectedFindings:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.findings.length});\nglobalThis.__smokeCoachGo=idx=>go(idx);\n');
+    await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeLearningReview=()=>({idx:S.idx,flipped:S.flipped,fen:activePos().fen,classif:[...S.classif]});\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onInstalled.addListener(() => browserAPI.tabs.create({url:browserAPI.runtime.getURL("smoke.html")}));\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onMessage.addListener((message,sender,reply)=>{if(message.type!=="smokeReleaseReset")return;resetSettingsForRelease({reason:"update",previousVersion:"0.2.0"}).then(()=>reply({ok:true}),error=>reply({error:error.message}));return true;});\n');
     await fs.writeFile(path.join(sourceDir,'smoke.html'),'<!doctype html><script type="module" src="smoke-client.js"></script>');
@@ -160,6 +161,36 @@ try {
       }
       frame.style.width='1680px';frame.style.height='1000px';await wait(250);
       await report({step:'responsive-layouts',sizes});
+      const reviewBefore=JSON.stringify(frame.contentWindow.__smokeLearningReview());
+      const clickLearning=text=>{
+        const button=[...doc.querySelectorAll('.learning-workspace button')].find(b=>b.textContent===text);
+        if(!button)throw Error('Learning control missing: '+text);button.click();
+      };
+      const waitLearning=async(predicate,label)=>{for(let i=0;i<150;i++){if(predicate())return;await wait(100);}throw Error('Learning timed out: '+label);};
+      doc.querySelector('.learn-entry-button').click();
+      await waitLearning(()=>doc.querySelector('.destinations'),'Home');
+      clickLearning('Chess Concepts');await waitLearning(()=>doc.querySelector('.learn-category'),'Concept library');
+      const forkCard=[...doc.querySelectorAll('.learn-card')].find(card=>card.querySelector('h3').textContent==='Forks and double attacks');
+      forkCard.querySelector('button').click();await waitLearning(()=>doc.querySelector('.learn-tabs'),'Lesson');
+      clickLearning('Practise');await waitLearning(()=>doc.querySelector('.learn-move-input'),'Exercise');
+      doc.querySelector('[data-square=e4]').click();doc.querySelector('[data-square=f6]').click();
+      await waitLearning(()=>doc.querySelector('.learn-feedback.correct'),'Concept proof worker');
+      clickLearning('Openings');await waitLearning(()=>doc.querySelector('[aria-label="Playing color"]'),'Opening library');
+      const italian=[...doc.querySelectorAll('.learn-card')].find(card=>card.querySelector('h3').textContent==='Italian Game');
+      [...italian.querySelectorAll('button')].find(b=>b.textContent==='Study opening').click();await waitLearning(()=>doc.querySelector('[aria-label="Practice color"]'),'Opening course');
+      const color=doc.querySelector('[aria-label="Practice color"]');color.value='b';color.dispatchEvent(new frame.contentWindow.Event('change',{bubbles:true}));await wait(100);
+      clickLearning('Practise this line');await waitLearning(()=>doc.querySelector('.learn-move-input'),'Opening practice');
+      doc.querySelector('[data-square=e7]').click();doc.querySelector('[data-square=e5]').click();
+      await waitLearning(()=>doc.querySelector('[data-square=f3] .piece-img')?.dataset.piece==='wN','Automatic White reply');
+      clickLearning('Puzzles');await waitLearning(()=>doc.querySelector('.learn-practice-actions'),'Puzzle room');
+      clickLearning('Mixed practice');await waitLearning(()=>doc.querySelector('.learn-move-input'),'Puzzle');
+      if(doc.querySelector('.learn-board .annotated')||doc.querySelector('.learn-copy').textContent.includes('Why the solution works'))throw Error('Puzzle leaked solution');
+      clickLearning('Reveal solution');await waitLearning(()=>doc.querySelector('.learn-feedback.revealed'),'Solution reveal');
+      clickLearning('← Back to review');await waitLearning(()=>!doc.querySelector('.learning-workspace'),'Return to review');
+      if(JSON.stringify(frame.contentWindow.__smokeLearningReview())!==reviewBefore)throw Error('Learning changed the review state');
+      const learning=(await browserAPI.storage.local.get('learning:v1'))['learning:v1'];
+      if(!learning?.lessons.fork.exercises[0]?.passed||!Object.values(learning.puzzles).some(p=>p.assisted>0))throw Error('Learning progress not persisted');
+      await report({step:'learning',proofWorker:true,openingBlackReply:true,puzzleSpoilersHidden:true,assistancePersisted:true,reviewPreserved:true});
     }
     const handoff=(await browserAPI.storage.local.get('job:'+id))['job:'+id];
     if(handoff)throw Error('Completed startup left its one-shot handoff behind');

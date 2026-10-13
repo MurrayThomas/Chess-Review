@@ -5,6 +5,16 @@ locally in your browser. One click turns any **Chess.com** or **Lichess** game i
 review — accuracy scores, move-by-move classifications, an evaluation graph, and an estimated
 rating. No account, no server, no manual PGN copying.
 
+**Learn with Chess Review** opens from the button beneath Engine, beside the move
+controls. Its separate learning workspace includes 23 concept lessons with 47
+exercises, 216 offline puzzles, 1/5/10-minute challenges, and 12 opening courses
+with 24 annotated lines. Lessons use move, square-selection and position-reading
+exercises. Opening practice supports both colors and automatic opponent replies.
+Progress and bookmarks stay in your browser, and **Back to review** restores your
+game position and orientation. The [learning objective and progress tracker](docs/LEARN_WITH_CHESS_REVIEW.md)
+preserves the full development brief for work on another computer; [content sources](data/learning/SOURCES.md)
+record licensing and validation scope.
+
 The right-hand Settings panel includes an optional **Concepts** tab after Visual
 and Engine. A separate **Concepts** panel to the right of Accuracy and Engine
 uses those same findings,
