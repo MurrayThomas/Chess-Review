@@ -11,7 +11,11 @@ const record=JSON.parse(await fs.readFile(recordPath));
 const out=await fs.mkdtemp(path.join(path.dirname(recordPath),'learning-audit-'));
 const source=await fs.mkdtemp(path.join(artifacts,'learning-chrome-'));
 await fs.cp(record.packages.find(p=>p.browser==='chrome').sourceDir,source,{recursive:true});
-await fs.appendFile(path.join(source,'analysis.js'),'\nexport {S, learningWorkspace, openLearning, go};\n');
+// Iterate on UI changes against the same packaged engine/assets without rebuilding them.
+if (process.argv.includes('--working-tree')) {
+  for (const file of ['analysis.js','styles.css','lib/learning/workspace.js','lib/learning/morph.js']) await fs.copyFile(path.join(root,file),path.join(source,file));
+}
+await fs.appendFile(path.join(source,'analysis.js'),'\nexport {S, learningWorkspace, openLearning, go, toggleFlip, applyLayoutMode};\n');
 await fs.writeFile(path.join(source,'audit.html'),'<!doctype html><script type="module" src="audit.js"></script>');
 await fs.writeFile(path.join(source,'audit.js'),"import {browserAPI} from './browser-compat.js'; window.api=browserAPI;");
 const profile=await fs.mkdtemp(path.join(artifacts,'learning-profile-'));
@@ -43,11 +47,19 @@ try {
   assert.ok(entry.learn.x>=entry.controls.right-1,'Learning entry is not right of move controls');
   assert.ok(entry.learn.bottom<=entry.height&&entry.scroll<=entry.width,'Review entry overflows');results.push({label:'review-entry',...entry});
   const reviewShot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,'review-entry.png'),Buffer.from(reviewShot.data,'base64'));
-  await evaluate(review,"import('./analysis.js').then(m=>{m.go(2);m.S.flipped=true;})");
+  await evaluate(review,"import('./analysis.js').then(m=>{m.go(2);m.toggleFlip();})");
   const before=await evaluate(review,"import('./analysis.js').then(m=>({idx:m.S.idx,flipped:m.S.flipped,pgn:m.S.pgn,evals:JSON.stringify(m.S.evals),variation:JSON.stringify(m.S.variation)}))");
+  const boardBefore=await evaluate(review,"(()=>{window.auditBoard=document.querySelector('.board');window.auditTopbar=document.querySelector('.topbar');const r=auditBoard.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height};})()");
   await evaluate(review,"document.querySelector('.learn-entry-button').click()");
+  await sleep(220);
+  const morphShot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,'morph-in-progress.png'),Buffer.from(morphShot.data,'base64'));
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace?.ready)",'Learning workspace');
-  assert.equal(await evaluate(review,"document.querySelector('#root>.app').inert"),true);
+  await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace?.transitioning)",'Panel morph');
+  assert.equal(await evaluate(review,"document.querySelector('#root>.app').inert"),false);
+  assert.equal(await evaluate(review,"document.querySelector('.board')===auditBoard && document.querySelector('.topbar')===auditTopbar"),true);
+  const boardAfter=await evaluate(review,"(()=>{const r=auditBoard.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height};})()");
+  for(const key of Object.keys(boardBefore))assert.ok(Math.abs(boardBefore[key]-boardAfter[key])<1,`Board ${key} moved during morph: ${JSON.stringify({boardBefore,boardAfter})}`);
+  assert.equal(await evaluate(review,"!!document.querySelector('.learn-morph-layer')"),false);
   const capture=async label=>{
     await sleep(250);const data=await evaluate(review,"(()=>{const r=document.querySelector('.learning-workspace').getBoundingClientRect(),b=document.querySelector('.learn-board')?.getBoundingClientRect();return {width:innerWidth,height:innerHeight,scroll:document.querySelector('.learning-workspace').scrollWidth,board:b&&{x:b.x,y:b.y,w:b.width,h:b.height,right:b.right},workspace:{x:r.x,right:r.right}}})()");
     assert.ok(data.scroll<=data.width+1,label+': horizontal overflow');if(data.board){assert.ok(Math.abs(data.board.w-data.board.h)<1,label+': non-square board');assert.ok(data.board.x>=0&&data.board.right<=data.width+1,label+': board outside workspace');}
@@ -74,6 +86,12 @@ try {
   await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Audit completed'))");
   const score=await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.result)");assert.equal(score.solved,0);assert.equal(score.assisted,1);await capture('challenge-results');
   await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.navigate('home'))");
+  await evaluate(review,"import('./analysis.js').then(m=>{void m.learningWorkspace.close();})");await sleep(220);
+  assert.equal(await evaluate(review,"document.querySelector('.board')===auditBoard"),true);
+  const returnShot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,'morph-return-in-progress.png'),Buffer.from(returnShot.data,'base64'));
+  await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace)",'Reverse panel morph');
+  assert.equal(await evaluate(review,"!!document.querySelector('.learn-morph-layer')"),false);
+  await evaluate(review,"import('./analysis.js').then(m=>m.openLearning())");
   for(const [width,height]of [[1366,768],[820,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(500);
     await capture('home-'+width);
@@ -85,6 +103,24 @@ try {
   await evaluate(review,"[...document.querySelectorAll('.learn-header button')].find(b=>b.textContent.includes('Back to review')).click()");
   await waitFor(review,"!document.querySelector('.learning-workspace')",'Return to review');
   const after=await evaluate(review,"import('./analysis.js').then(m=>({idx:m.S.idx,flipped:m.S.flipped,pgn:m.S.pgn,evals:JSON.stringify(m.S.evals),variation:JSON.stringify(m.S.variation)}))");assert.deepEqual(after,before);
+  assert.equal(await evaluate(review,"document.querySelector('.board')===auditBoard"),true);
+  await evaluate(review,"import('./analysis.js').then(m=>{m.S.settings.learningTransition='page';return m.openLearning();})");
+  assert.equal(await evaluate(review,"document.querySelector('#root>.app').inert"),true);
+  assert.equal(await evaluate(review,"!!document.querySelector('.learning-embedded')"),false);
+  await capture('legacy-learning-home');
+  await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.startOpening('italian',{practice:true,color:'w'}))");
+  await evaluate(review,"document.querySelector('[data-square=e2]').click();document.querySelector('[data-square=e4]').click()");
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply===2)",'Legacy opening practice');
+  await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.close())");
+  await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
+  await evaluate(review,"import('./analysis.js').then(m=>{m.S.settings.learningTransition='morph';m.S.layoutMode='custom';m.S.layout.board={...m.S.layout.board,x:1200,y:20,w:700,h:800};m.applyLayoutMode();})");await sleep(500);
+  const customBefore=await evaluate(review,"(()=>{const r=auditBoard.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height};})()");
+  await evaluate(review,"import('./analysis.js').then(m=>m.openLearning())");
+  const customAfter=await evaluate(review,"(()=>{const r=auditBoard.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height};})()");
+  for(const key of Object.keys(customBefore))assert.ok(Math.abs(customBefore[key]-customAfter[key])<1,`Custom board ${key} moved: ${JSON.stringify({customBefore,customAfter})}`);
+  assert.equal(await evaluate(review,"!!document.querySelector('.learn-morph-layer')"),false,'Reduced motion must skip the panel morph');
+  await capture('custom-board-right');
+  await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.close())");
   await fs.writeFile(path.join(out,'results.json'),JSON.stringify({passed:true,sourceRecord:recordPath,chromeVersion:await call('Browser.getVersion'),results},null,2));
   console.log(`Learning browser audit passed: ${results.length} screenshots and measurements in ${out}`);
 } finally {clearInterval(keepAlive);ws?.close();chrome.kill();}

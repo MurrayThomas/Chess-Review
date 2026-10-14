@@ -9,6 +9,7 @@ Completed the initial fully usable learning release on 2026-10-14. This file tra
 - [x] Stage 3: 216 distinct offline puzzles across twelve themes and three difficulty bands, all setup/solution moves legally replayed. Filters, mixed/theme practice, hints, retry, reveal, missed-puzzle review and 1/5/10-minute challenges. Timers exclude loading/validation/saving; unique, repeat and assisted completions remain separate.
 - [x] Stage 4: 12 opening courses / 24 variations / 250 individually annotated half-moves. Plans, structures, common mistakes, thematic tactics, practice as either color, automatic replies, exact course-position transpositions, bookmarks and saved study progress.
 - [x] Stage 5: Responsive themed boards, SVG piece preferences, keyboard/click/drag input, legal promotion choices, focus management, reduced motion and loading/empty/error/completion states. Application suite, packaged Chrome/Firefox checks and fifteen Chrome learning layout/interaction audits pass.
+- [x] Presentation update: in-place learning is the default. The actual review board stays anchored while the surrounding panels morph into the shared learning UI, with a matching return transition. Visual → Learning experience retains the original separate-page option. Reduced motion skips the panel animation.
 
 ## Fully usable now
 
@@ -29,7 +30,7 @@ The application regression suite passes **407 tests**; all seven final content c
 - Puzzle source records: `data/learning/puzzles.json` and `data/learning/SOURCES.md`
 - Scoped validation and worker: `lib/learning/validation.js`, `lib/learning/validation-worker.js`
 - Local storage and challenge clock: `lib/learning/progress.js`
-- Workspace/navigation/boards: `lib/learning/workspace.js`; review entry/lifecycle in `analysis.js`; shared styling in `styles.css`
+- Workspace/navigation/boards: `lib/learning/workspace.js`; measured panel transitions in `lib/learning/morph.js`; review entry/lifecycle in `analysis.js`; shared styling in `styles.css`
 - Regression coverage: `tests/learning-*.test.mjs`; browser audits: `scripts/learning-browser.mjs`, `scripts/browser-smoke.mjs`
 - Refresh puzzles deliberately with Node 24: `node scripts/import-learning-puzzles.mjs`, then `npm test`. Do not refresh during normal startup or build.
 - Reproduce packaged checks: `npm run verify:source`, `npm run verify:engines`, `npm run build`, `npm run test:browsers`, `npm run test:learning-browser`.

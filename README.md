@@ -6,7 +6,11 @@ review — accuracy scores, move-by-move classifications, an evaluation graph, a
 rating. No account, no server, no manual PGN copying.
 
 **Learn with Chess Review** opens from the button beneath Engine, beside the move
-controls. Its separate learning workspace includes 23 concept lessons with 47
+controls. By default, the review panels morph into one learning workspace while
+the board and top bar stay in place. **Settings → Visual → Learning experience**
+offers **Morph in place** and the original **Separate page** layout. The transition
+also runs when returning to review and respects reduced-motion preferences.
+The learning workspace includes 23 concept lessons with 47
 exercises, 216 offline puzzles, 1/5/10-minute challenges, and 12 opening courses
 with 24 annotated lines. Lessons use move, square-selection and position-reading
 exercises. Opening practice supports both colors and automatic opponent replies.

@@ -304,6 +304,7 @@ const DEFAULT_SETTINGS = {
   showThreat: false,
   // Move animation (sliding piece on single-step navigation). 1 = slow, 10 = fast.
   moveAnim: true, animSpeed: 7,
+  learningTransition: "morph",
   // Loading animation while the analysis runs (selectable style).
   loaderStyle: "wave",
   // Engine panel: how many candidate lines to show. The batch only searches the single best line
@@ -1508,13 +1509,16 @@ async function openLearning() {
   const snapshot = {idx:S.idx, flipped:S.flipped, variationIdx:S.variation?.idx, selectedSq:S.selectedSq,
     lineWalking:S.lineWalking, bestWalking:S.bestWalking};
   stopLineWalk();
+  UI.settings.hidden = true;
+  hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK,
+    embedded:S.settings.learningTransition === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
       if(S.variation&&snapshot.variationIdx!=null)S.variation.idx=snapshot.variationIdx;
-      if(!S.practice){buildBoard();paintBoard();}
+      if(!S.practice){paintBoard();}
       renderControls();
       if(deferredPracticeAdvance){
         deferredPracticeAdvance=false;
@@ -1926,6 +1930,7 @@ function makePiece(type, side) {
     src: _url(`pieces-img/${setFolder}/${code}.svg`), alt: "", draggable: "false" });
 }
 function buildBoard() {
+  if (learningWorkspace?.embedded) return;
   const files = ["a","b","c","d","e","f","g","h"];
   const ranks = [8,7,6,5,4,3,2,1];
   const rowOrder = S.flipped ? [...ranks].reverse() : ranks;
@@ -1951,6 +1956,7 @@ function buildBoard() {
   paintBoard();
 }
 function paintBoard() {
+  if (learningWorkspace?.embedded) return;
   const pos = activePos();
   const boardEl = UI.boardWrap.querySelector(".board");
   if (boardEl) boardEl.classList.toggle("analysis", S.analysisMode);
@@ -2066,6 +2072,7 @@ function arrowBuild(pts, headLen, headHalf) {
 }
 const arrowFmt = (p) => `${+p.x.toFixed(4)},${+p.y.toFixed(4)}`;
 function renderBestArrow() {
+  if (learningWorkspace?.embedded) return;
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
   let svg = board.querySelector("svg.best-arrow");
@@ -2147,6 +2154,7 @@ function toggleUserArrow(from, to) {
 }
 // preview: temporary arrow during dragging (drawn on top of the saved ones).
 function renderUserArrows(preview) {
+  if (learningWorkspace?.embedded) return;
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
   let svg = board.querySelector("svg.user-arrows");
@@ -2239,6 +2247,7 @@ function threatFen(fen) {
 // "Show the threat": draw the opponent's best move (as if it were their turn) as a yellow arrow.
 let _threatToken = 0;
 async function renderThreatArrow() {
+  if (learningWorkspace?.embedded) return;
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
   let svg = board.querySelector("svg.threat-arrow");
@@ -2252,11 +2261,11 @@ async function renderThreatArrow() {
   if (uci === undefined) {
     const token = ++_threatToken;
     let eng; try { eng = await getHelperEngine(); } catch { return; }
-    if (token !== _threatToken) return;
+    if (token !== _threatToken || learningWorkspace?.embedded) return;
     eng.stop();
     const targetFen = threatFen(fen);
     let res; try { res = await eng.analyse(targetFen, Math.min(14, S.settings.engineDepth), 1, targetFen === fen ? history : null); } catch { return; }
-    if (token !== _threatToken) return;
+    if (token !== _threatToken || learningWorkspace?.embedded) return;
     uci = res && res.bestmove ? res.bestmove : null;
     S.threatCache.set(cacheKey, uci);
     if (activePos().fen !== fen || JSON.stringify(activeSearchHistory()) !== historyKey) return;
@@ -2322,8 +2331,9 @@ function initBoardInput() {
   const wrap = UI.boardWrap;
   wrap.addEventListener("contextmenu", (e) => e.preventDefault());
   // Never let the browser start its own image/element drag on the board (the stray ghost image).
-  wrap.addEventListener("dragstart", (e) => e.preventDefault());
+  wrap.addEventListener("dragstart", (e) => {if (!learningWorkspace?.embedded) e.preventDefault();});
   wrap.addEventListener("pointerdown", (e) => {
+    if (learningWorkspace) return;
     if (e.button === 2) { rightPointerDown(e); return; }
     if (e.button !== 0) return;
     // During practice the board only accepts moves while you're actively solving (not while it's
@@ -4491,7 +4501,7 @@ const VISUAL_SETTING_KEYS = [
   "graphStyle", "barStyle", "insightFont", "showCoords", "coordSize", ...BACKGROUND_SETTING_KEYS,
   "coach", "coachPlain", "boardTheme", "pieceStyle", "boardCustomLight", "boardCustomDark",
   "sound", "soundVolume", "soundFx", ...ARROW_SETTING_KEYS,
-  "moveAnim", "animSpeed", "loaderStyle",
+  "moveAnim", "animSpeed", "loaderStyle", "learningTransition",
 ];
 function resetSettingKeys(keys) {
   for (const key of keys) S.settings[key] = structuredClone(DEFAULT_SETTINGS[key]);
@@ -4606,6 +4616,10 @@ function visualSettings() {
     section("Move animation",
       toggleRow("Animation", "moveAnim"),
       slider("Speed", "animSpeed", 1, 10, 1, { fmt: (v) => (440 - v * 40) + " ms" }),
+    ),
+    section("Learning experience",
+      seg("Open learning", "learningTransition", ["morph", "page"], null, value => value === "morph" ? "Morph in place" : "Separate page"),
+      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Morph in place keeps your board and reassembles the review panels into a shared learning workspace. Separate page opens the original full-screen experience. Reduced motion uses an instant transition.")),
     ),
     section("Layout",
       seg("Eval", "evalView", ["both", "bar", "graph"]),
@@ -4819,7 +4833,8 @@ function positionSettings() {
   // stale panel geometry when the automatic/custom layout was reset.
   UI.settings.style.right = window.innerWidth <= 520 ? "" : "24px";
 }
-function toggleSettings() {
+async function toggleSettings() {
+  if (learningWorkspace?.embedded) await learningWorkspace.close();
   closeArrowColorPicker();
   UI.settings.hidden = !UI.settings.hidden;
   if (!UI.settings.hidden) renderSettings();
@@ -5750,7 +5765,13 @@ function variationStep(delta) {
   renderEvalBar(); renderPlayers(); renderControls(); renderReview(); renderEngineCurrent();
   requestLiveEval();
 }
-function toggleFlip() { S.flipped = !S.flipped; buildBoard(); renderPlayers(); renderEvalBar(); }
+function toggleFlip() {
+  if (learningWorkspace?.embedded) {
+    learningWorkspace.flipBoard();
+    return;
+  }
+  S.flipped = !S.flipped; buildBoard(); renderPlayers(); renderEvalBar();
+}
 function toggleAuto() {
   if (S.autoTimer) { clearInterval(S.autoTimer); S.autoTimer = null; }
   else S.autoTimer = setInterval(() => {
