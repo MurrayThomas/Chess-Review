@@ -149,13 +149,60 @@ test('learning presentation saves under Visual, resets to morph, and retains the
   const doc=a.dom.window.document;
   const section=[...doc.querySelectorAll('.set-section')].find(node=>node.querySelector('.set-sect-head').textContent==='Learning experience');
   assert.ok(section);section.querySelector('.set-sect-head').click();
-  const choices=section.querySelectorAll('.set-seg button');assert.equal(choices[0].textContent,'Morph in place');assert.ok(choices[0].classList.contains('on'));
-  choices[1].click();await settle();assert.equal(a.store.settings.learningTransition,'page');
+  const choices=section.querySelectorAll('.learn-style-option');
+  assert.deepEqual([...choices].map(node=>node.querySelector('strong').textContent),['Morph in place','Studio Morph','Minimal morph','Board morph','Separate page']);
+  assert.equal(choices[0].getAttribute('aria-pressed'),'true');
+  choices[4].click();await settle();assert.equal(a.store.settings.learningTransition,'page');
   await a.call('openLearning');const legacy=a.run('learningWorkspace');assert.equal(legacy.embedded,null);
   assert.equal(doc.querySelector('.app').inert,true);assert.equal(legacy.root.getAttribute('aria-modal'),'true');
   await legacy.close();await a.call('resetVisualSettings');assert.equal(a.store.settings.learningTransition,'morph');
   await a.call('openLearning');assert.ok(a.run('learningWorkspace').embedded);
   await a.call('toggleSettings');assert.equal(a.run('learningWorkspace'),null);assert.equal(doc.querySelector('#settings').hidden,false);
+});
+
+for (const presentation of ['studio','minimal','board']) test(`${presentation} is a distinct selectable design with shared practice and preserved review state`,async t=>{
+  const a=app(t);loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');a.call('renderAll');a.call('go',2);
+  const doc=a.dom.window.document,board=doc.querySelector('.board'),topbar=doc.querySelector('.topbar');
+  a.call('toggleSettings');
+  [...doc.querySelectorAll('.set-sect-head')].find(node=>node.textContent==='Learning experience').click();
+  doc.querySelector(`.learn-style-option[data-presentation="${presentation}"]`).click();await settle();
+  assert.equal(a.store.settings.learningTransition,presentation);
+  await a.call('openLearning');const w=a.run('learningWorkspace');
+  assert.equal(w.presentation,presentation);assert.equal(w.root.dataset.presentation,presentation);
+  assert.equal(doc.querySelector('.board'),board);assert.equal(doc.querySelector('.topbar'),topbar);
+  if(presentation==='minimal')assert.ok(w.root.querySelector('.learn-desk-home'));
+  if(presentation==='board')assert.equal(w.root.querySelectorAll('.studio-destination').length,3);
+  await w.startLesson('outpost');await w.lessonTab('practise');
+  board.querySelector('[data-square=e5]').click();await w.submitExercise(['e5']);assert.equal(w.feedback.status,'correct');
+  await w.startOpening('italian',{practice:true,color:'b'});
+  board.querySelector('[data-square=e7]').click();board.querySelector('[data-square=e5]').click();await settle();assert.equal(w.activity.ply,3);
+  await w.startPuzzleSelection([w.puzzles.find(p=>p.theme==='mateIn1')]);
+  assert.equal(doc.querySelectorAll('.board').length,1);assert.equal(board.querySelectorAll('.annotated').length,0);
+  await w.revealPuzzle();assert.ok(w.attemptRecorded);
+  await w.close();assert.equal(doc.querySelector('.board'),board);assert.equal(a.state.idx,2);assert.equal(a.state.flipped,false);
+  assert.equal(doc.querySelector('.learning-workspace'),null);
+});
+
+test('the four designs keep their distinct timing and motion and migrate old branch preferences',async t=>{
+  assert.equal(LearningWorkspace.presentationFor({learningPresentation:'studio'}),'board');
+  assert.equal(LearningWorkspace.presentationFor({learningLayout:'morph'}),'minimal');
+  assert.equal(LearningWorkspace.presentationFor({learningTransition:'studio'}),'studio');
+  assert.equal(LearningWorkspace.presentationFor({learningLayout:'page'}),'page');
+  assert.equal(LearningWorkspace.presentationFor({learningTransition:'morph',learningLayout:'page'}),'morph');
+  const dom=new JSDOM('<div id="source"></div><div id="target"></div>');t.after(()=>dom.window.close());
+  const doc=dom.window.document,source=doc.querySelector('#source'),target=doc.querySelector('#target');
+  for(const node of [source,target])node.getBoundingClientRect=()=>({x:10,y:20,width:200,height:100});
+  const motions={};
+  for(const variant of ['morph','studio','minimal','board']) {
+    const effects=[];dom.window.Element.prototype.animate=(frames,options)=>{effects.push({frames,options});return {finished:Promise.resolve(),cancel(){}};};
+    await morphPanels(doc,capturePanels([source]),[target],{variant});
+    motions[variant]=effects;
+    assert.equal(doc.querySelector('.learn-morph-layer'),null);
+  }
+  assert.equal(motions.morph[0].options.duration,760);assert.equal(motions.studio[0].options.duration,280);
+  assert.equal(motions.minimal[0].options.duration,280);assert.equal(motions.board[0].options.duration,300);
+  assert.ok(motions.studio.at(-1).frames[0].filter);assert.match(motions.minimal.at(-1).frames[0].transform,/translateY/);
+  assert.match(motions.board.at(-1).frames[0].transform,/translateX/);
 });
 
 test('panel morph respects reduced motion and cleans up all surfaces when resized or finished',async t=>{

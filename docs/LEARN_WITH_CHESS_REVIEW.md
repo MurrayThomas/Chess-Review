@@ -11,6 +11,7 @@ Completed the initial fully usable learning release on 2026-10-14. This file tra
 - [x] Stage 4: 12 opening courses / 24 variations / 250 individually annotated half-moves. Plans, structures, common mistakes, thematic tactics, practice as either color, automatic replies, exact course-position transpositions, bookmarks and saved study progress.
 - [x] Stage 5: Responsive themed boards, SVG piece preferences, keyboard/click/drag input, legal promotion choices, focus management, reduced motion and loading/empty/error/completion states. Application suite, packaged Chrome/Firefox checks and fifteen Chrome learning layout/interaction audits pass.
 - [x] Presentation update: in-place learning is the default. The actual review board stays anchored while the surrounding panels morph into the shared learning UI, with a matching return transition. Visual → Learning experience retains the original separate-page option. Reduced motion skips the panel animation.
+- [x] Combined the four design variants into one Visual → Learning experience selector: Morph in place, Studio Morph, Minimal morph, Board morph, and Separate page. Their distinct home layouts and transition timing share the same learning model and preserve review state. Source designs: `673aaa6`, `e7b24fe`, `ecb3c2c`, and `b5786b0`.
 
 ## Fully usable now
 

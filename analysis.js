@@ -1513,7 +1513,7 @@ async function openLearning() {
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK,
-    embedded:S.settings.learningTransition === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen},
+    embedded:LearningWorkspace.presentationFor(S.settings) === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
@@ -4618,8 +4618,10 @@ function visualSettings() {
       slider("Speed", "animSpeed", 1, 10, 1, { fmt: (v) => (440 - v * 40) + " ms" }),
     ),
     section("Learning experience",
-      seg("Open learning", "learningTransition", ["morph", "page"], null, value => value === "morph" ? "Morph in place" : "Separate page"),
-      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Morph in place keeps your board and reassembles the review panels into a shared learning workspace. Separate page opens the original full-screen experience. Reduced motion uses an instant transition.")),
+      el("div", {class:"learn-style-options", role:"group", "aria-label":"Learning presentation"}, ...LearningWorkspace.presentations.map(({id,label,description})=>
+        el("button", {type:"button",class:"learn-style-option", "data-presentation":id,"aria-pressed":String(S.settings.learningTransition===id),onclick:()=>setSetting("learningTransition",id)},
+          el("span", {class:"learn-style-radio","aria-hidden":"true"}),el("span",{},el("strong",{},label),el("small",{},description))))),
+      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Each morph includes its own layout and animation. Reduced motion uses an instant transition.")),
     ),
     section("Layout",
       seg("Eval", "evalView", ["both", "bar", "graph"]),
@@ -6150,6 +6152,7 @@ async function resetLegacyZoom() {
     const [payload, store] = await Promise.all([loadJob(), browserAPI.storage.local.get(["settings", "username", "layout", "layoutMode", "layoutVersion", "library"])]);
     S.library = Array.isArray(store.library) ? store.library : [];
     S.settings = { ...DEFAULT_SETTINGS, ...(store.settings || {}) };
+    S.settings.learningTransition = LearningWorkspace.presentationFor(store.settings || {});
     const visualAssetsMigrated = migrateVisualAssetSettings(S.settings);
     migrateEngineSettings(S.settings);
     if (visualAssetsMigrated || S.settings.enginePath !== store.settings?.enginePath) {

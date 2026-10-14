@@ -8,7 +8,8 @@ rating. No account, no server, no manual PGN copying.
 **Learn with Chess Review** opens from the button beneath Engine, beside the move
 controls. By default, the review panels morph into one learning workspace while
 the board and top bar stay in place. **Settings → Visual → Learning experience**
-offers **Morph in place** and the original **Separate page** layout. The transition
+offers **Morph in place**, **Studio Morph**, **Minimal morph**, **Board morph**, and
+the original **Separate page** layout. Each morph has its own design and timing. The transition
 also runs when returning to review and respects reduced-motion preferences.
 The learning workspace includes 23 concept lessons with 47
 exercises, 25,000 offline puzzles, 1/5/10-minute challenges, and 12 opening courses
