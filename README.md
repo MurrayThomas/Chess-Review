@@ -11,7 +11,7 @@ the board and top bar stay in place. **Settings → Visual → Learning experien
 offers **Morph in place** and the original **Separate page** layout. The transition
 also runs when returning to review and respects reduced-motion preferences.
 The learning workspace includes 23 concept lessons with 47
-exercises, 216 offline puzzles, 1/5/10-minute challenges, and 12 opening courses
+exercises, 25,000 offline puzzles, 1/5/10-minute challenges, and 12 opening courses
 with 24 annotated lines. Lessons use move, square-selection and position-reading
 exercises. Opening practice supports both colors and automatic opponent replies.
 Progress and bookmarks stay in your browser, and **Back to review** restores your

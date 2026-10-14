@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {Chess} from '../lib/chess.js';
-import {LESSONS, OPENINGS, CATEGORIES, playUci, linePositions, positionKey} from '../lib/learning/content.js';
+import {LESSONS, OPENINGS, CATEGORIES, THEME_NAMES, playUci, linePositions, positionKey} from '../lib/learning/content.js';
 import {legalPosition} from '../lib/concepts/detectors/E020-concepts.mjs';
 import {validateExercise, validatePuzzleMove, validSquares} from '../lib/learning/validation.js';
 import {puzzleExplanation} from '../lib/learning/workspace.js';
@@ -47,23 +47,33 @@ test('unsupported objectives, failed admission and exhausted proofs abstain; leg
   assert.equal(validateExercise(fork,'e4e5').status,'illegal');
   assert.equal(validateExercise(fork,'e4c5').status,'incorrect');
 });
-test('216 distinct licensed puzzles replay legally, have explained continuations, and fit balanced difficulty quotas',()=>{
-  assert.equal(library.schema,1);assert.equal(library.license,'CC0-1.0');assert.ok(library.puzzles.length>=200);
+test('25,000 distinct licensed puzzles replay legally and cover every theme and difficulty, with sampled runtime validation and explanations',()=>{
+  assert.equal(library.schema,1);assert.equal(library.license,'CC0-1.0');assert.equal(library.puzzles.length,25_000);
   assert.equal(new Set(library.puzzles.map(p=>p.id)).size,library.puzzles.length);
   assert.equal(new Set(library.puzzles.map(p=>positionKey(p.fen))).size,library.puzzles.length);
   const quotas={};
   for(const p of library.puzzles){
+    const detailed=(quotas[p.theme+':'+p.difficulty]||0)<3||parseInt(p.id,36)%503===0;
     const c=legalPosition(p.setup.fen);playUci(c,p.setup.move);assert.equal(c.fen(),p.fen);
-    assert.ok(p.solution.length%2===1&&p.source.rowSha256.length===64&&p.source.url.includes(p.id));
+    assert.ok(p.solution.length%2===1&&/^[a-f0-9]{64}$/.test(p.source.rowSha256)&&p.source.url.endsWith('/'+p.id));
+    assert.equal(p.source.license,'CC0-1.0');assert.ok(p.themes.includes(p.theme));
+    assert.equal(p.difficulty,p.rating<1300?'Introductory':p.rating<1850?'Intermediate':'Advanced');
     for(let i=0;i<p.solution.length;i++){
-      if(!(i%2))assert.equal(validatePuzzleMove(p,i,p.solution[i]).status,'correct',p.id+':'+i);
+      // Exercise the runtime validator on a deterministic sample; every move in
+      // every puzzle still receives full legal replay and admission below.
+      if(!(i%2)&&detailed)assert.equal(validatePuzzleMove(p,i,p.solution[i]).status,'correct',p.id+':'+i);
       playUci(c,p.solution[i]);legalPosition(c.fen());
     }
-    if(p.themes.includes('mateIn1')||p.themes.includes('mateIn2'))assert.ok(c.isCheckmate(),p.id);
-    assert.equal(puzzleExplanation(p).length,p.solution.length);
+    if(p.themes.includes('mate'))assert.ok(c.isCheckmate(),p.id);
+    if(detailed)assert.equal(puzzleExplanation(p).length,p.solution.length);
     quotas[p.theme+':'+p.difficulty]=(quotas[p.theme+':'+p.difficulty]||0)+1;
   }
-  assert.equal(Object.keys(quotas).length,36);assert.ok(Object.values(quotas).every(n=>n===6));
+  assert.equal(Object.keys(quotas).length,36);
+  for(const theme of Object.keys(THEME_NAMES))for(const difficulty of ['Introductory','Intermediate','Advanced']){
+    const n=quotas[theme+':'+difficulty];assert.ok(n>=12&&n<=1042,theme+':'+difficulty+' = '+n);
+    assert.equal(library.selection.groups[theme+difficulty],n);
+  }
+  assert.ok(library.selection.compressedBytesRead<=library.selection.maxDownloadBytes);
 });
 test('any legal checkmate wins a mate-in-one puzzle, while illegal moves remain uncounted',()=>{
   const p={fen:'7k/8/5KQ1/8/8/8/8/8 w - - 0 1',solution:['g6g7'],themes:['mateIn1']};

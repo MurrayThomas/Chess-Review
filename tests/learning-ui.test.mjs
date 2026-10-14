@@ -22,7 +22,7 @@ async function workspace(t,options={}) {
 test('home destinations, loading errors, filtered empty states and focus restoration all work',async t=>{
   const {w,dom}=await workspace(t);const doc=dom.window.document;
   assert.ok(doc.querySelector('.learning-workspace'));assert.equal(doc.querySelector('.app').inert,true);
-  assert.match(w.root.textContent,/216 verified positions/);assert.equal(w.root.querySelectorAll('.destinations .learn-card').length,3);
+  assert.ok(w.root.textContent.includes(`${library.puzzles.length} verified positions`));assert.equal(w.root.querySelectorAll('.destinations .learn-card').length,3);
   await w.navigate('concepts');w.filters.search='no such topic';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   w.root.querySelector('.learn-empty button').click();assert.ok(w.root.textContent.includes('Develop your pieces'));
   await w.navigate('openings');w.filters.bookmarks=true;w.render();assert.ok(w.root.querySelector('.learn-empty'));
