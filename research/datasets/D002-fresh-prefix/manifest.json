@@ -1208,6 +1208,30 @@
       "sha256": "fec004a1ca783e5dfefcc31bfd657e709be24cd74f9cb3487df5c9ea86356615",
       "bytes": 33738,
       "uncompressedSha256": "fec004a1ca783e5dfefcc31bfd657e709be24cd74f9cb3487df5c9ea86356615"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/repeat-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/selection-v2.json.gz",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/observations.json.gz",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/results.json",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/run.json"
+      ],
+      "sha256": "1df912ac470b4e0666d765ae7d4bc4898f460c0b0f0f9ba8926ec732fb676563",
+      "bytes": 33725,
+      "uncompressedSha256": "1df912ac470b4e0666d765ae7d4bc4898f460c0b0f0f9ba8926ec732fb676563"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/verification.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/selection-v2.json.gz",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/observations.json.gz",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/results.json",
+        "research/experiments/E274-opportunity-collection-pilot/evidence/run.json"
+      ],
+      "sha256": "e395ceffdf0a7ab57a8df401d555628b388fda466758034fb49f4d89e6ddb36e",
+      "bytes": 34458,
+      "uncompressedSha256": "e395ceffdf0a7ab57a8df401d555628b388fda466758034fb49f4d89e6ddb36e"
     }
   },
   "withdrawnArtifacts": {

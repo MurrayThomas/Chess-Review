@@ -25,13 +25,21 @@ Exact/independent replay and18 focused experiment/data-policy checks pass.
 Stop this fixed radius; do not tune it on the exposed45. Next recommend a
 bounded current-machine collection pilot for rating evidence before bulk compute.
 
+Third checkpoint,2026-10-15: [F020](findings/F020-opportunity-collection-cost.md).
+E274 collects40 complete vectors in132s and passes its operational/variation
+screens; exact/independent replay and19 focused checks pass. Caller timing projects
+roughly32h for E271's original missing-query reference, with explicit input/hardware
+limits. Keep measurement approach, defer bulk collection/fits. Next recommend a
+preregistered draw-aware W/D/L probability comparison against actual human outcomes
+using existing cached roots; no new engine cost or implied accuracy-percentage gain.
+
 | Track | Starting evidence | Current research action | Review decision |
 | --- | --- | --- | --- |
-| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | [E271](experiments/E271-opportunity-feasibility/RESULT.md): 0/600 games have enough measured vectors; ~18.8 historical serial hours for full histories | Next: preregister bounded current-machine pilot; keep bulk collection/fits deferred |
+| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | [E274](experiments/E274-opportunity-collection-pilot/RESULT.md): four-side/40-vector collection feasible; rough32h full-reference cost | Keep input approach; four-side sample cannot support fits; defer bulk and design fresh confirmation |
 | Accuracy | E008 development gain failed E011 confirmation; aggregation independently unvalidated | [E272](experiments/E272-accuracy-aggregation-stress/RESULT.md): OW passes synthetic properties; Tail20 fails padding/replication | Keep OW for coherent-input/external-target study; reject exact Tail20 for this purpose |
 | Ordinary categories | Policy cutoffs lack independent rubric validation; search instability retained | [E273](experiments/E273-category-boundary-abstention/RESULT.md): risk/utility benefit under fixed cost, coverage gate fails; radius not calibrated uncertainty | Stop exact rule; keep abstention idea pending fresh and human evidence |
 | Special categories | E005/E013 blinded packs pending human reviews | Preserve packs; consider separate tactical truth and perceived difficulty/usefulness labels | Independent reviews still required |
-| General calibration | E018 point gain has interval including zero; E019 tail concentration | Preserve negative results; investigate target and information before more utility curves | No retry of stopped exact recipes |
+| General calibration | E018 point gain interval includes zero; E019 target limits; E274 scale/search differences | Next: full human W/D/L outcome calibration with cached roots, separate from scalar mean points | Preregister new target/models/gates; preserve failed CP confirmation; no production promotion |
 
 Ideas for later comparison: information-weighted strength evidence instead of
 move counts; multi-game hierarchical rating with honest uncertainty; uncertainty

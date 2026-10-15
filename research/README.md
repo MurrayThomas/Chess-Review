@@ -15,8 +15,10 @@ its explicit reflection decisions are in [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.
 E271 audits opportunity-aware rating evidence and collection cost; E272 tests
 accuracy aggregation properties on authored fixtures. Neither authorizes a
 production change or establishes improved human validity.
-E273 now records a verified category stability/coverage tradeoff and a failed
-coverage gate; the next recommended question is a bounded collection-cost pilot.
+E273 records a verified category stability/coverage tradeoff and a failed coverage
+gate. E274's bounded collection pilot now passes feasibility/variation screens;
+its measured cost supports deferring bulk collection. The next recommended
+question is draw-aware human outcome calibration with existing cached roots.
 
 ## Start here
 

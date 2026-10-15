@@ -1,6 +1,8 @@
 # E274: opportunity collection pilot — working record
 
-2026-10-15. State: **first offline assessment complete; exact/independent verification pending**.
+2026-10-15. State: **complete collection-feasibility study; exact/independent replay passes**.
+Outcome: operational feasibility and variation screens pass; rating/accuracy
+improvement is unassessed. No production promotion or scientific confirmation.
 Plan `303458f`; collector, offline analysis and independent verifier frozen at
 `9799dbe`, including the prospective E011 cache-inventory correction. Amended
 v2 schema source33218d5 preserves the same selection rule, budgets and gates.
@@ -79,5 +81,64 @@ are registered before replay. The forty vectors sample spread decisions, not
 every decision of either game; whole-game accuracy/prediction validity is not
 established. No model fitting, player-rating/outcome analysis or human labels.
 
-Next: exact offline report reproduction and independent selection/legal/PV/
-timing/consequence-range verification, then reflect before new collection/fits.
+Exact offline main/repeat result bytes match, with zero new engine requests.
+The independent verifier reconstructs all40 selected legal vectors via public
+Chess APIs, all1,288 query keys, all1,285 new records/PVs, caller-time/request
+arithmetic and all40 WDL/CP consequence ranges. Original input/config/source
+hashes match. Nineteen focused experiment/data-policy checks and maintained-source
+verification pass. Clean repository replay is not claimed: only the existing
+dirty application checkout is available, and no development clone was created.
+
+[Repeat receipt](evidence/repeat-run.json) and
+[independent verification](evidence/verification.json) retain the exact replay.
+Reproduce OFFLINE from repo root after D001/D002 preflight:
+`node research/experiments/E274-opportunity-collection-pilot/code/run.mjs evaluate --out research/runs/E274/new-report`.
+To reproduce the verifier's repeat check, create an exact report at
+`research/runs/E274/repeat`, then run
+`node research/experiments/E274-opportunity-collection-pilot/code/run.mjs verify --out research/runs/E274/new-verification`.
+Existing outputs refuse overwrite. Exact working-source bytes and newline
+representations are recorded. Retained data supply the recipe; DO NOT rerun
+the collector for an offline reproduction. Raw compressed evidence183,619 bytes
+is below the2 MiB target. Total retained evidence, including withdrawn originals
+and replay receipts, is627,900 bytes. Frozen v1 remains withdrawn, not an input.
+
+## Reflection checkpoint
+
+**Keep the full-alternative measurement approach as operationally feasible for
+this pilot.** It supplies10 vectors per side within132s, and34/40 have >=.02
+WDL consequence range. This does not prove rating information: only four sides
+were measured, and engine consequence range is not human difficulty. At least
+one vector has zero WDL range although all40 have nonzero CP-curve ranges.
+Six negative unrestricted-root residuals remain; compatible searches need not
+give identical root/played scales. Do not silently repair those observations.
+
+**Defer bulk collection and fitting.** The98.83ms caller mean and32.08-hour rough
+historical-reference projection materially change planning relative to18.79h.
+Within the same new queries, caller time exceeds returned search time because
+it includes resets/readiness/recovery; outside-call overhead adds another5.07s.
+Across old versus new queries, hardware and input mix are confounded. The early
+smoke projection95.42s also understates actual132.07s. No timing confidence or
+whole-cohort guarantee follows. Ten sampled decisions/side are not full-game
+evidence; a future rating study needs a declared sampling/target population,
+refitted comparable baseline, train-only median, player-disjoint development and
+fresh confirmation. Four sides cannot meet E271's300-game readiness gate.
+
+**Recommended next distinct question: draw-aware outcome-probability calibration
+using existing human-game outcomes and cached SF19 WDL roots.** A scalar expected
+point value can represent different win/draw/loss distributions; test that full
+distribution against actual human outcomes before spending more engine time.
+Use a new preregistered development protocol, multiclass proper scores, game
+clustering and mean-point diagnostics. This is a different target from the failed
+CP mean-point curve, not a rescue of its consumed confirmation. No improvement
+of displayed accuracy, categories or rating follows automatically.
+
+Alternatives considered: fit ratings now (reject four-side sample); immediately
+fill the full cohort (defer cost and confirmation design); tune E273's radius
+(stop its exact exposed-case recipe); continue accuracy-weight mechanics
+(retain candidate, but human usefulness remains missing). Choosing an outcome
+target is a deliberate change in research direction, not adoption of a model.
+
+Motivation only: [Kull et al.,2019](https://arxiv.org/abs/1910.12656), abstract
+revisited2026-10-15, describes multiclass calibration in probability space.
+It supplies neither our chess comparison, a validated candidate nor a guarantee.
+STOP new searches/fits at this completed-study checkpoint; preregister next work.
