@@ -18,11 +18,18 @@ No replacement model is confirmed. Retained evidence is 108,103 bytes for E271
 and 9,660 bytes for E272. The next study should be preregistered separately;
 this batch launches no bulk collection, rating fit or production promotion.
 
+Second checkpoint, 2026-10-15: [F019](findings/F019-category-coverage-tradeoff.md)
+retains the category tradeoff. E273 withholds six disagreeing and six stable
+bands; emitted disagreement drops, but 73.33% coverage fails the frozen80% gate.
+Exact/independent replay and18 focused experiment/data-policy checks pass.
+Stop this fixed radius; do not tune it on the exposed45. Next recommend a
+bounded current-machine collection pilot for rating evidence before bulk compute.
+
 | Track | Starting evidence | Current research action | Review decision |
 | --- | --- | --- | --- |
-| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | [E271](experiments/E271-opportunity-feasibility/RESULT.md): 0/600 games have enough measured vectors; ~18.8 historical serial hours for full histories | Keep hypothesis; defer collection/fitting pending pilot |
+| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | [E271](experiments/E271-opportunity-feasibility/RESULT.md): 0/600 games have enough measured vectors; ~18.8 historical serial hours for full histories | Next: preregister bounded current-machine pilot; keep bulk collection/fits deferred |
 | Accuracy | E008 development gain failed E011 confirmation; aggregation independently unvalidated | [E272](experiments/E272-accuracy-aggregation-stress/RESULT.md): OW passes synthetic properties; Tail20 fails padding/replication | Keep OW for coherent-input/external-target study; reject exact Tail20 for this purpose |
-| Ordinary categories | Policy cutoffs lack independent rubric validation; search instability retained | Next: low-budget-only uncertainty-aware boundary labels, assessed on cached budget pairs with coverage AND disagreements | Recommended next distinct study; preregister before evaluation |
+| Ordinary categories | Policy cutoffs lack independent rubric validation; search instability retained | [E273](experiments/E273-category-boundary-abstention/RESULT.md): risk/utility benefit under fixed cost, coverage gate fails; radius not calibrated uncertainty | Stop exact rule; keep abstention idea pending fresh and human evidence |
 | Special categories | E005/E013 blinded packs pending human reviews | Preserve packs; consider separate tactical truth and perceived difficulty/usefulness labels | Independent reviews still required |
 | General calibration | E018 point gain has interval including zero; E019 tail concentration | Preserve negative results; investigate target and information before more utility curves | No retry of stopped exact recipes |
 

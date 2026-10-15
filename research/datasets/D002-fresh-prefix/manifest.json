@@ -1096,6 +1096,32 @@
       "sha256": "38de5254440991d2572c12fc3a51ead4a146efc523bc3ada0f6d89fadae6fbf3",
       "bytes": 33320,
       "uncompressedSha256": "38de5254440991d2572c12fc3a51ead4a146efc523bc3ada0f6d89fadae6fbf3"
+    },
+    "research/experiments/E273-category-boundary-abstention/evidence/repeat-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E273-category-boundary-abstention/evidence/inputs.json.gz",
+        "research/experiments/E273-category-boundary-abstention/evidence/freeze.json",
+        "research/experiments/E273-category-boundary-abstention/evidence/results.json",
+        "research/experiments/E273-category-boundary-abstention/evidence/decisions.json.gz",
+        "research/experiments/E273-category-boundary-abstention/evidence/run.json"
+      ],
+      "sha256": "81c023536e4ad0221d3d832da67fabcc1409ca678d3094627695ef0d79dd655b",
+      "bytes": 33322,
+      "uncompressedSha256": "81c023536e4ad0221d3d832da67fabcc1409ca678d3094627695ef0d79dd655b"
+    },
+    "research/experiments/E273-category-boundary-abstention/evidence/verification.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E273-category-boundary-abstention/evidence/inputs.json.gz",
+        "research/experiments/E273-category-boundary-abstention/evidence/freeze.json",
+        "research/experiments/E273-category-boundary-abstention/evidence/results.json",
+        "research/experiments/E273-category-boundary-abstention/evidence/decisions.json.gz",
+        "research/experiments/E273-category-boundary-abstention/evidence/run.json"
+      ],
+      "sha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4",
+      "bytes": 32243,
+      "uncompressedSha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4"
     }
   }
 }

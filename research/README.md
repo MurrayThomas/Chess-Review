@@ -15,6 +15,8 @@ its explicit reflection decisions are in [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.
 E271 audits opportunity-aware rating evidence and collection cost; E272 tests
 accuracy aggregation properties on authored fixtures. Neither authorizes a
 production change or establishes improved human validity.
+E273 now records a verified category stability/coverage tradeoff and a failed
+coverage gate; the next recommended question is a bounded collection-cost pilot.
 
 ## Start here
 

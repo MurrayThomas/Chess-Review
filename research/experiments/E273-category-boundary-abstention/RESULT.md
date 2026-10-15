@@ -1,7 +1,8 @@
 # E273: ordinary-band abstention — working result
 
-2026-10-15. State: **first development evaluation complete; verification pending**.
-Outcome: **joint gates fail on coverage; selective-utility benefit retained**.
+2026-10-15. State: **complete development experiment; independent replay passes**.
+Outcome: **inconclusive as a replacement; joint coverage gate fails despite
+selective-utility benefit under the declared cost**.
 No promotion or scientific confirmation. Plan `30eb9c3`, candidate code `7af1e42`,
 registered input freeze `a856b53` precede the single decisive evaluation.
 
@@ -44,10 +45,46 @@ Evidence: [frozen inputs](evidence/inputs.json.gz), [protocol](evidence/freeze.j
 [freeze receipt](evidence/freeze-run.json), [results](evidence/results.json),
 [decisions](evidence/decisions.json.gz), [main receipt](evidence/run.json).
 All inputs/results are registered D002 derivatives with original lineage.
-Nine synthetic checks and source verification pass. Exact repeated results,
-raw-input reconstruction and independent BigInt-bootstrap replay are pending.
+Nine synthetic checks plus nine data-policy checks and source verification pass.
+Main/repeat results match exactly. Independent verification reconstructs all
+frozen inputs from their original raw queries, checks 90 score equations,
+45 margin decisions, 25 confusion cells, subgroup counts/gates, all-case cost
+accounting and 20,000 bootstrap replicates using separate BigInt resampling.
+Source/input hashes and exact decision records match. No new candidate trials.
 No clean repository replay or independent human validity is claimed.
+Retained evidence totals 156,765 bytes, below the 250 KiB target. Freeze/main/
+repeat/verification take 22.52/21.76/22.66/22.89 seconds including source admission,
+not engine work. No failed or hidden evaluation attempts in this study.
 
-Current next step: complete the frozen repeat and independent verifier, retain
-their receipts, then record the reflection decision before starting another
-candidate. Do not rerun collection or alter the failed gate.
+Additional evidence: [repeat receipt](evidence/repeat-run.json),
+[independent verification](evidence/verification.json). The latter is generated
+from the retained first-result source revision, not a candidate rescue.
+Commands from repo root after D001/D002 preflight:
+`node research/experiments/E273-category-boundary-abstention/code/run.mjs evaluate --out research/runs/E273/new-run`.
+For verification, generate an exact reproduction at `research/runs/E273/repeat`,
+then run `node research/experiments/E273-category-boundary-abstention/code/run.mjs verify --out research/runs/E273/new-verification`.
+Existing outputs refuse overwrite; retained registered inputs/evidence supply the
+rebuild recipe. Exact source bytes and newline representations are in receipts.
+
+## Reflection checkpoint
+
+**Stop this exact fixed-margin policy.** Passing utility at a declared .1 cost
+does not override failed coverage or validate the cost as a human preference.
+Keep rejection/ambiguity as a research idea, but do not shrink the radius on
+these exposed cases to find a passing point. Four rare-band groups are sparse;
+repeated selector tuning on the same45 is not independent evidence.
+
+**Do not describe the radius as calibrated uncertainty.** Two thirds of observed
+drifts fit inside it, and a higher-budget comparison can itself be wrong.
+Distinguish consequence bands, reliability, perceived difficulty and human
+instructional usefulness. Existing blinded packs remain pending, unchanged.
+
+**Next recommended distinct study: a bounded current-machine collection pilot
+for opportunity-aware rating evidence.** E271's historical 18.8-hour estimate
+needs measurement on this hardware before bulk collection. Preregister a cheap
+smoke, an explicit elapsed-time/search cap, traceable development games and
+whether enough complete decision vectors can be collected within it. Do not fit
+ratings or collect a confirmation cohort as part of that pilot. This changes
+the next question to evidence acquisition, rather than tuning labels on45 cases.
+Alternative considered: uncertainty sets from low-budget root inconsistency;
+defer it until its distinct hypothesis and need for fresh validation are clear.
