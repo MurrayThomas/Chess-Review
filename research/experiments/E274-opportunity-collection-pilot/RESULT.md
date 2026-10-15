@@ -1,6 +1,6 @@
 # E274: opportunity collection pilot — working record
 
-2026-10-15. State: **raw collection complete and registered; offline analysis pending**.
+2026-10-15. State: **first offline assessment complete; exact/independent verification pending**.
 Plan `303458f`; collector, offline analysis and independent verifier frozen at
 `9799dbe`, including the prospective E011 cache-inventory correction. Amended
 v2 schema source33218d5 preserves the same selection rule, budgets and gates.
@@ -57,6 +57,27 @@ CPU/Node environment. Original rejected metadata and successful v2 remain distin
 No reduced budget, altered game selection or changed gate. The single actual
 engine collection is complete; do not rerun searches for offline reproduction.
 
-Next: commit registered raw observations before offline consequence/coverage/cost
-analysis, repeat the report and run independent replay, then reflect here before
-fitting or collecting anything else.
+Offline assessment fromeb2fd6a passes every collection-feasibility gate:40/40
+complete vectors, ten per side, smoke/time/query/request limits and no search
+failures. The separate variation screen also passes:34/40 WDL ranges >=.02,
+with6/9/10/9 qualifying vectors across the four player sides. WDL range mean
+.571438, median.525; CP-curve range mean.514365, minimum.102593. Six vectors have
+negative unrestricted-root-minus-played WDL residuals. These are finite engine
+consequences, not human difficulty or measured rating information.
+
+Engine-returned mean73.6582ms versus caller mean98.8345ms; medians52.4059 versus
+75.5715ms, p95s158.7598 versus187.2635ms. Caller sum127.002s plus5.070s outside
+calls accounts for the132.073s collection (startup.404s included). Applying mean
+caller time to E271's original missing count gives32.077h;32.041h after this
+pilot's1,285 new keys. Additional E011 cache hits within the pilot:zero. Other
+possible E011 matches outside these games were not censused. This is a rough
+two-game/input-mix extrapolation, not a pure hardware comparison, confidence
+bound, guaranteed whole-pipeline runtime or permission to run bulk collection.
+
+[Offline result](evidence/results.json) and [assessment receipt](evidence/run.json)
+are registered before replay. The forty vectors sample spread decisions, not
+every decision of either game; whole-game accuracy/prediction validity is not
+established. No model fitting, player-rating/outcome analysis or human labels.
+
+Next: exact offline report reproduction and independent selection/legal/PV/
+timing/consequence-range verification, then reflect before new collection/fits.
