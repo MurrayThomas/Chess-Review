@@ -1122,6 +1122,27 @@
       "sha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4",
       "bytes": 32243,
       "uncompressedSha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/selection.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E011-outcome-confirmation/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "bc55346d2ffdc647404e0efa6edd8c483697810c4defdc99a4ecb9cca6ed0181",
+      "bytes": 111470,
+      "uncompressedSha256": "30425b8d5646b7a23b85995c2b9f9f8c0350fa91b3d4f24985a74c5a01384517"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/freeze-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/selection.json.gz"
+      ],
+      "sha256": "bb5f07fa6eab8d5b780387d9db43885573217c0c52208e7e745fa760d83da512",
+      "bytes": 32740,
+      "uncompressedSha256": "bb5f07fa6eab8d5b780387d9db43885573217c0c52208e7e745fa760d83da512"
     }
   }
 }
