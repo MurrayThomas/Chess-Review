@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Chess} from '../../../../lib/chess.js';
 import {SPEC,spread,select,mergeCaches,smokeDecision,stopReason,validateObservation} from './protocol.mjs';
-import {sha256} from '../../../data-policy.mjs';
+import {sha256,verifyOrigins} from '../../../data-policy.mjs';
 import {assess} from './method.mjs';
 import {independentAudit} from './audit.mjs';
 const moves=['e2e4','e7e5','g1f3','b8c6','f1c4','g8f6','d2d3','f8c5','c2c3','d7d6','e1g1','e8g8','f1e1','a7a6','c4b3','c5a7','b1d2','h7h6','d2f1','c8e6'];
@@ -29,6 +29,17 @@ test('selection is score/outcome free, train-only and deterministically deduplic
   const f=fixture(),other=f.games.map(g=>({...g,rating:9999,result:'irrelevant'}));other.push({id:'reserved',split:'test'});
   assert.deepEqual(select(other,f.config,new Set()),f.selection);assert.equal(f.selection.positions.length,40);
   assert.equal(f.selection.queries.length*2,f.selection.positions.reduce((n,p)=>n+1+p.legalMoves.length,0));
+});
+test('selected summary cohort is admitted by unchanged origin checker; v1 schema is rejected',()=>{
+  const f=fixture(),games=f.games.map((g,i)=>({...g,id:'Authrd0'+(i+1),source:'https://lichess.org/Authrd0'+(i+1),sourceMonth:'2026-06',date:'2026.06.01'}));
+  const selection=select(games,f.config,new Set()),url='https://data.example/lichess_db_standard_rated_2026-06.pgn.zst';
+  const manifest={sourceIds:['authored'],sourceRecord:'source',normalized:'games',originFormat:'lichess-month-v1',provenance:{status:'legacy-partial'},artifacts:{summary:{kind:'summary'}}};
+  const registry={sources:[{id:'authored',exports:[url],termsUrl:'https://data.example/'}]},source={license:'CC0-1.0',licenseUrl:'https://data.example/',
+    sources:[{url,license:'CC0-1.0',month:'2026-06',frames:[{url,start:0,end:9,bytes:10,sha256:'a'.repeat(64),retrievedAt:'2026-10-15',verification:'Authored mechanics fixture'}]}]};
+  const records=new Map([['source',source],['games',games],['summary',selection]]);
+  assert.equal(verifyOrigins(manifest,registry,records).gameCount,2);
+  const rejected=structuredClone(selection);rejected.games.forEach(g=>delete g.id);records.set('summary',rejected);
+  assert.throws(()=>verifyOrigins(manifest,registry,records),/unknown summary cohort origin/);
 });
 test('exact compatible cache keys are reused without adding or removing vectors',()=>{
   const f=fixture(),keys=new Set(f.selection.queries.slice(0,12).map(q=>q.key)),r=select(f.games,f.config,keys);

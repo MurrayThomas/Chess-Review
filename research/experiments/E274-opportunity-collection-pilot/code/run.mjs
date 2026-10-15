@@ -21,12 +21,12 @@ const receipt={schema:'research-run-v1',experiment:'E274',date:'2026-10-15',mode
 await mkdir(out,{recursive:true});
 async function write(name,value,gz=false){const b=Buffer.from(JSON.stringify(value,null,gz?0:2)+'\n'),bytes=gz?gzipSync(b):b;await writeFile(path.join(out,name),bytes,{flag:'wx'});return sha256(bytes);}
 if(mode==='freeze'){
-  const outputs={'selection.json.gz':await write('selection.json.gz',selection,true)};
-  await write('freeze-run.json',{...receipt,engineSearches:0,outputs,elapsedMs:performance.now()-started});
+  const outputs={'selection-v2.json.gz':await write('selection-v2.json.gz',selection,true)};
+  await write('freeze-v2-run.json',{...receipt,engineSearches:0,outputs,elapsedMs:performance.now()-started});
   console.log(JSON.stringify({frozen:true,games:2,vectors:selection.positions.length,uniqueQueries:selection.queries.length,newQueries:selection.newQueries,reusedQueries:selection.reusedQueries,engineSearches:0}));
 }else{
-  assert.deepEqual(selection,await access.readJson(prefix+'evidence/selection.json.gz'));
-  const frozen=await access.readJson(prefix+'evidence/freeze-run.json'),collected=await access.readJson(prefix+'evidence/collection-run.json');
+  assert.deepEqual(selection,await access.readJson(prefix+'evidence/selection-v2.json.gz'));
+  const frozen=await access.readJson(prefix+'evidence/freeze-v2-run.json'),collected=await access.readJson(prefix+'evidence/collection-run.json');
   for(const record of [frozen,collected])for(const k of ['codeSha256','sharedCodeSha256','sharedSourceRepresentation'])assert.deepEqual(record[k],deps[k]);
   const raw=await access.readJson(prefix+'evidence/observations.json.gz');assert.equal(raw.selectionHash,receipt.selectionHash);
   const calcStart=performance.now(),result=assess(selection,raw,cached,historical);

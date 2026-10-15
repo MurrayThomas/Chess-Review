@@ -45,7 +45,7 @@ export function select(dataset,config,cachedKeys){
       if(!seen.has(key)){seen.add(key);queries.push({key,positionIndex:i,restricted,cached:cachedKeys.has(key)});}
     }
   }
-  return {schema:'E274-selection-v1',spec:SPEC,config,configHash,games:games.map(g=>({gameId:g.id,split:g.split})),sides:counts,positions,queries,
+  return {schema:'E274-selection-v2',spec:SPEC,config,configHash,games:games.map(g=>({id:g.id,gameId:g.id,split:g.split})),sides:counts,positions,queries,
     newQueries:queries.filter(q=>!q.cached).length,reusedQueries:queries.filter(q=>q.cached).length};
 }
 export function validateObservation(row,selection){

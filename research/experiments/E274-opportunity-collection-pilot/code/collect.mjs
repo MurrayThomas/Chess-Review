@@ -11,7 +11,7 @@ import {captureSourceHashes} from '../../../replay-hashes.mjs';
 import {prefix,PARENTS,SPEC,select,mergeCaches,validateObservation,smokeDecision,stopReason} from './protocol.mjs';
 const args=process.argv.slice(2);if(args.length!==2||args[0]!=='--out')throw Error('Use --out research/runs/E274/unique-collection');
 const root=fileURLToPath(new URL('../../../../',import.meta.url)),out=path.resolve(root,args[1]);if(!out.startsWith(path.join(root,'research','runs','E274')+path.sep))throw Error('Unsafe output');
-const access=await openResearchData(['D001','D002'],{purpose:'collect'}),selection=await access.readJson(prefix+'evidence/selection.json.gz'),freeze=await access.readJson(prefix+'evidence/freeze-run.json');
+const access=await openResearchData(['D001','D002'],{purpose:'collect'}),selection=await access.readJson(prefix+'evidence/selection-v2.json.gz'),freeze=await access.readJson(prefix+'evidence/freeze-v2-run.json');
 const deps=await captureSourceHashes(root,prefix+'code',['protocol.mjs','collect.mjs','method.mjs','run.mjs','audit.mjs'],['tools/calibration/engine-host.cjs']);
 for(const k of ['codeSha256','sharedCodeSha256','sharedSourceRepresentation'])assert.deepEqual(deps[k],freeze[k]);
 const dataset=await access.readJson(PARENTS[0]),cached=await access.readJson(PARENTS[1]),extra=await access.readJson(PARENTS[3]),file=path.join(root,'engine/stockfish-19-lite-single.js'),config=await engineConfig(file,{kind:'nodes',value:SPEC.nodes});

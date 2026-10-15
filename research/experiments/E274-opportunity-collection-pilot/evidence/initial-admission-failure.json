@@ -1,0 +1,15 @@
+{
+  "schema": "E274-admission-failure-v1",
+  "date": "2026-10-15",
+  "sourceRevision": "44a1404",
+  "command": "node research/experiments/E274-opportunity-collection-pilot/code/collect.mjs --out research/runs/E274/main-collection",
+  "exitCode": 1,
+  "error": "Research data prohibited: unknown summary cohort origin: research/experiments/E274-opportunity-collection-pilot/evidence/selection.json.gz",
+  "stackStage": "verifyOrigins -> openResearchData -> collect.mjs:14:14",
+  "engineStarted": false,
+  "newSearches": 0,
+  "outputDirectoryCreated": false,
+  "cause": "Selection-v1 games entries used gameId without required id. Original bytes retained and registration explicitly withdrawn; never used as collection input.",
+  "guardChanged": false,
+  "scientificGatesChanged": false
+}

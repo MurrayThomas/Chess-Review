@@ -124,3 +124,21 @@ Keep selection seeds, two-game/40-vector scope, all node/options settings and
 every stage/resource/variation gate unchanged. Record additional matching E011
 reuse separately when relating counts to E271's E008-only historical reference.
 No selection, new search or pilot performance result existed before this amendment.
+
+## Admission-schema amendment, before any engine search, 2026-10-15
+
+Collection command at44a1404 exits1 in `openResearchData` before creating an
+output directory or engine child: selection-v1's `games` entries contain
+`gameId`, but the unchanged summary-origin checker requires `games[].id`.
+This is a registration/schema failure, not missing source permission or a
+collection result. Preserve original selection/freeze bytes and their withdrawn
+registration entries in metadata; do not load that rejected derivative again.
+Withdraw the two invalid entries from the active admitted-artifact map, keeping
+an explicit withdrawal record and Git history. Do not change the guard, license
+evidence or older valid entries. Regenerate selection-v2 and its freeze receipt
+from the ORIGINAL guarded parents with the required id field (gameId remains
+for explicit references). Version the new paths instead of overwriting evidence.
+Add a direct synthetic `verifyOrigins` check of the summary schema, freeze changed
+code, then register/commit/re-admit v2 before the first engine measurement.
+Selection seeds/algorithm, queries,40-vector scope, search budget and all gates
+stay unchanged. No scientific result was exposed; stage1 has not started.
