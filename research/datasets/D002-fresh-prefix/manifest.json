@@ -1021,6 +1021,16 @@
       "sha256": "cb493a64aba7d07f022eaee046df3b0b35099e5312904f2e8b7d69d9c806f279",
       "bytes": 25497,
       "uncompressedSha256": "cb493a64aba7d07f022eaee046df3b0b35099e5312904f2e8b7d69d9c806f279"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/verification.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E271-opportunity-feasibility/evidence/run.json"
+      ],
+      "sha256": "21bcc8639f47a89583b96451012ae3b144ed97150a2a24c944a2543e7d6af633",
+      "bytes": 25862,
+      "uncompressedSha256": "21bcc8639f47a89583b96451012ae3b144ed97150a2a24c944a2543e7d6af633"
     }
   }
 }

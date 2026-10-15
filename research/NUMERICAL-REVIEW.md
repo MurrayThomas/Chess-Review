@@ -10,11 +10,19 @@ Before a large collection, compare its information value and cost with alternati
 Before confirmation, freeze one candidate and obtain genuinely untouched evidence.
 Before implementation, review the accumulated candidates with the user.
 
+First checkpoint completed 2026-10-15: [F018](findings/F018-aggregation-and-evidence.md)
+records the keep/reject/defer decisions. Twenty-one focused experiment/data-policy
+checks and maintained-source verification pass. Both reports repeat exactly;
+E271 has independent census/cost/lineage checks, E272 a portable pure-source replay.
+No replacement model is confirmed. Retained evidence is 108,103 bytes for E271
+and 9,660 bytes for E272. The next study should be preregistered separately;
+this batch launches no bulk collection, rating fit or production promotion.
+
 | Track | Starting evidence | Current research action | Review decision |
 | --- | --- | --- | --- |
-| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | E271 cached full-game feasibility, no new fits | Pending |
-| Accuracy | E008 development gain failed E011 confirmation; aggregation independently unvalidated | E272 controlled aggregation tradeoffs | Pending |
-| Ordinary categories | Policy cutoffs lack independent rubric validation; search instability retained | Next candidate: uncertainty-aware boundary labels, report stability AND abstention/coverage | Defer selection until first checkpoint |
+| Moves-only rating | E002 practical gain failed; E006 intervals broad; E019 proposes opportunities | [E271](experiments/E271-opportunity-feasibility/RESULT.md): 0/600 games have enough measured vectors; ~18.8 historical serial hours for full histories | Keep hypothesis; defer collection/fitting pending pilot |
+| Accuracy | E008 development gain failed E011 confirmation; aggregation independently unvalidated | [E272](experiments/E272-accuracy-aggregation-stress/RESULT.md): OW passes synthetic properties; Tail20 fails padding/replication | Keep OW for coherent-input/external-target study; reject exact Tail20 for this purpose |
+| Ordinary categories | Policy cutoffs lack independent rubric validation; search instability retained | Next: low-budget-only uncertainty-aware boundary labels, assessed on cached budget pairs with coverage AND disagreements | Recommended next distinct study; preregister before evaluation |
 | Special categories | E005/E013 blinded packs pending human reviews | Preserve packs; consider separate tactical truth and perceived difficulty/usefulness labels | Independent reviews still required |
 | General calibration | E018 point gain has interval including zero; E019 tail concentration | Preserve negative results; investigate target and information before more utility curves | No retry of stopped exact recipes |
 

@@ -50,6 +50,9 @@ is not untouched scientific confirmation or a clean repository checkout.
 `npm run verify:source` and research diff checks pass. Actual calculation takes
 milliseconds; no network, fits or searches. Small retained JSON evidence includes
 main/repeat run identities and portable source hashes.
+Retained evidence totals 9,660 bytes, below the 100 KiB target. The final combined
+check passes twelve experiment tests and nine data-policy tests; the additional
+E271 legal-traversal equivalence test was added after this study's main run.
 
 - [Full deterministic panel](evidence/results.json)
 - [Main run and exact source hashes](evidence/run.json)
