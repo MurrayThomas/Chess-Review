@@ -1122,6 +1122,51 @@
       "sha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4",
       "bytes": 32243,
       "uncompressedSha256": "c0a36444051b17af59937f20035fc3a5fc96bc67b775eed129379c74f4a4cfc4"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/initial-admission-failure.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E011-outcome-confirmation/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "0eb1c073416e0792b40efe43cdda9be11bf3a0754c0fa51e482b44256ef28919",
+      "bytes": 787,
+      "uncompressedSha256": "0eb1c073416e0792b40efe43cdda9be11bf3a0754c0fa51e482b44256ef28919"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/withdrawn-registration.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E011-outcome-confirmation/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "ffb986a39c7d0c23d68171b2b572f57d082f0bb315fb5985dea15eaa2bf0d476",
+      "bytes": 1611,
+      "uncompressedSha256": "ffb986a39c7d0c23d68171b2b572f57d082f0bb315fb5985dea15eaa2bf0d476"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/selection-v2.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E011-outcome-confirmation/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "accc757e67c0bd8cc2cd8ead162d16ad2765c7e95a0044149c692c419b21688e",
+      "bytes": 111485,
+      "uncompressedSha256": "873cda9595d97e9a31e07e0a0320a28f9adc0d15ab2d966d4d6fe095965bf659"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/freeze-v2-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/selection-v2.json.gz"
+      ],
+      "sha256": "df31b43fe65ef8ede72790ff361dcd69dee1bdcaaa37a5ec548a644e2a07ea1a",
+      "bytes": 32754,
+      "uncompressedSha256": "df31b43fe65ef8ede72790ff361dcd69dee1bdcaaa37a5ec548a644e2a07ea1a"
     }
   },
   "withdrawnArtifacts": {
