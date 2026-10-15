@@ -1,6 +1,8 @@
 # Research index
 
-Updated: 2026-10-11. Coach expansion follows the approved [easier-first queue](concepts/ACTIVE-QUEUE.md); numerical goal remains paused.
+Updated: 2026-10-15. Numerical research resumed; production changes excluded.
+The [numerical review checkpoints](NUMERICAL-REVIEW.md) track the new batch and
+reflection decisions. Coach expansion retains its separate approved queue.
 Baseline: [B000](BASELINE.md). New CP gain is development evidence, not confirmed.
 
 This is the routing and decision index. Detailed evidence lives in linked
@@ -13,6 +15,8 @@ records. Update a row and the active experiment's resume state when work stops.
 | P008 | [Current, complete scoring evidence](promotions/P008-scoring-evidence-integrity.md) | implemented locally | Missing decisions cannot inflate full-game accuracy; stale ratings and malformed caches refused; 162 scoring/category/engine/cache checks and exact public replay pass; new predictive models not validated | Fresh opportunity-aware rating study and independent category reviews; browser/full-worktree limits recorded |
 | P007 | [Focused coach lessons and smaller default profile](promotions/P007-focused-coach-lessons.md) | implemented locally | One supported lesson with a thinking prompt; diagnostics collapsed, route/tempo proofs optional, short exchange and mate checks retained; 385 production tests, 42 packaged layout cases and real-engine Firefox smoke pass; research acceptance unchanged | Gather user feedback on lesson relevance; preserve original source scopes |
 | B000 | [Starting extension baseline](BASELINE.md) | Reproduced | Offline replay passes; no fresh confirmation | Use frozen recipe as comparator |
+| E271 | [Opportunity-aware rating feasibility](experiments/E271-opportunity-feasibility/plan.md) | preregistered | Guarded cached-evidence census and collection cost; no fit | Complete feasibility then reflect before acquisition |
+| E272 | [Accuracy aggregation stress](experiments/E272-accuracy-aggregation-stress/plan.md) | preregistered | Synthetic padding, invariance and weight-sensitivity panel | Compare candidate tradeoffs; no production adoption |
 | D001 | [Public baseline evidence](datasets/D001-public-baseline/README.md) | reconstruction verified | Exact original-fragment-to-game rebuild and raw locators; at least fifty consumed test games | Preserve exposure; replay reconstruction when checking raw origins |
 | E001 | [Evidence and exposure audit](experiments/E001-evidence-audit/RESULT.md) | complete | Integrity gates pass; no model evaluated | Numerical development study |
 | F001 | [Evidence and exposure finding](findings/F001-evidence-and-exposure.md) | recorded | Development use supported; confirmation requires fresh evidence | Preserve exposure history |
