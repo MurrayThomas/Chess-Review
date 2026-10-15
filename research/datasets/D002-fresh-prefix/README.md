@@ -13,6 +13,16 @@ No promotion has been made on this data.
 Numeric recorded ratings are retained, but provisional status is unavailable;
 do not describe this as established strength or a nonprovisional-only cohort.
 
+2026-10-15 E271 reuse: train/validation only, 600 games; full-history legal-choice
+and player-component census using E008's exact SF19 20k observations. No rating
+or outcome target analysis, fitting, searches, acquisitions, human labels or test
+target use. Initial census exceeded its CPU budget; amended equivalent legal
+traversal completes. Main/repeat reports match; independent normalization-side,
+cost and lineage verification is registered separately. Cached vectors cover
+only one decision per game, insufficient for the registered game-level rating
+study. Historical time/storage extrapolations do not establish current hardware
+cost or representative population precision. Existing exposure is unchanged.
+
 ## Files and admission
 
 [manifest.json](manifest.json) binds every artifact and dependency. Raw standard

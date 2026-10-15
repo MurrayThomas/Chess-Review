@@ -10,6 +10,12 @@ in [`tools/calibration/`](../tools/calibration/README.md), the runtime in `lib/`
 and `analysis.js`, and the bundled model in `data/calibration.json`. Research
 results do not become extension behavior automatically.
 
+Numerical research resumed on 2026-10-15. The current research-only batch and
+its explicit reflection decisions are in [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.md).
+E271 audits opportunity-aware rating evidence and collection cost; E272 tests
+accuracy aggregation properties on authored fixtures. Neither authorizes a
+production change or establishes improved human validity.
+
 ## Start here
 
 1. Read [INDEX.md](INDEX.md) for current state, prior findings and the next task.
@@ -82,7 +88,7 @@ Nineteen studies/tasks are complete. The separate [E020 coach-concept prototype]
 verifies bounded mechanics on synthetic positions, with an exhaustive concept
 tracker and browsable demo. Human usefulness and real-game precision remain
 unresolved. [P001](promotions/P001-concepts-tab.md) integrates the E080 verified
-scopes in an optional Concepts tab; the numerical goal stays paused.
+scopes in an optional Concepts tab; numerical research later resumed on 2026-10-15.
 [P002](promotions/P002-position-coach.md) presents every supported finding in a
 move-following Concepts panel with player perspective and stable relevance ordering.
 

@@ -971,6 +971,56 @@
       "bytes": 932,
       "sha256": "361ac3431aec3df6b94f3db693ef8c04119d9c9c9d439c5136eb7db2e45203a0",
       "uncompressedSha256": "361ac3431aec3df6b94f3db693ef8c04119d9c9c9d439c5136eb7db2e45203a0"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/results.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "29f177597dc00dac6d77f548a169316bc734ec6e365e826ec6b1dda10970b59f",
+      "bytes": 2502,
+      "uncompressedSha256": "29f177597dc00dac6d77f548a169316bc734ec6e365e826ec6b1dda10970b59f"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "aa9f8b89c722654d16af1a9547df0939b06c954aee64e40d8d9ec6d58019695f",
+      "bytes": 25506,
+      "uncompressedSha256": "aa9f8b89c722654d16af1a9547df0939b06c954aee64e40d8d9ec6d58019695f"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/repeat-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "1d014893578dfbab4783f44bedaf922c1b7569eefc4ae965ec02e06b3d37e480",
+      "bytes": 25501,
+      "uncompressedSha256": "1d014893578dfbab4783f44bedaf922c1b7569eefc4ae965ec02e06b3d37e480"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/smoke-results.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "f1a26efea61db9e322430e780ef35f25c348f37f5fddf93d318a519cb6328525",
+      "bytes": 2439,
+      "uncompressedSha256": "f1a26efea61db9e322430e780ef35f25c348f37f5fddf93d318a519cb6328525"
+    },
+    "research/experiments/E271-opportunity-feasibility/evidence/smoke-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "cb493a64aba7d07f022eaee046df3b0b35099e5312904f2e8b7d69d9c806f279",
+      "bytes": 25497,
+      "uncompressedSha256": "cb493a64aba7d07f022eaee046df3b0b35099e5312904f2e8b7d69d9c806f279"
     }
   }
 }

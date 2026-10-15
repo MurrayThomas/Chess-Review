@@ -1,0 +1,87 @@
+{
+  "schema": "E271-feasibility-v1",
+  "role": "exposed development feasibility; no fits or performance evaluation",
+  "games": 600,
+  "splits": {
+    "train": 450,
+    "validation": 150
+  },
+  "sides": 1200,
+  "nonforcedDecisions": 41371,
+  "legalAlternatives": 1227294,
+  "completeVectors": 600,
+  "availablePerSide": {
+    "min": 0,
+    "max": 1
+  },
+  "gamesWithTenVectorsBothSides": 0,
+  "eligibleSides": 1200,
+  "branching": {
+    "selectedMean": 32.265,
+    "fullGameMean": 29.665562833869135,
+    "fullGameP95": 45
+  },
+  "plies": {
+    "mean": 69.58666666666667,
+    "max": 225
+  },
+  "playerComponents": {
+    "players": 1200,
+    "components": 600,
+    "largest": 1,
+    "largestFraction": 0.0016666666666666668,
+    "independentGraphCheck": true
+  },
+  "queries": {
+    "fullUnique": 1191939,
+    "compatibleReusedUnique": 23560,
+    "missingUnique": 1168379,
+    "existingCached": 23584
+  },
+  "cost": {
+    "cachedMeanMs": 57.90170825559654,
+    "cachedMedianMs": 59.39950000005774,
+    "cachedP95Ms": 83.7259999999078,
+    "missingSerialHoursMean": 18.79198333054601,
+    "missingSerialHoursP95Reference": 27.173250042747856,
+    "cachedMeanJsonBytes": 875.380342605156,
+    "missingUncompressedGiB": 0.95253438624802,
+    "interpretation": "Planning extrapolation from historical cached selected/outcome searches; machine, phase, branching and recovery costs may differ; p95 is not a bound."
+  },
+  "engineConfig": {
+    "version": "Stockfish 19 (identity verified at UCI startup)",
+    "majorVersion": 19,
+    "build": "stockfish.js lite single-threaded",
+    "network": "nn-61e7af4bb97d.nnue",
+    "loaderSha256": "d3344124ab067fb0b90ee77873bb8e9fbf5fc01bc525fe714b0f942581e889e6",
+    "wasmSha256": "57ac2d72312aba346760e3f173f687a8c211208e97a87268436f7f0e10bb5387",
+    "budget": {
+      "kind": "nodes",
+      "value": 20000
+    },
+    "options": {
+      "Threads": 1,
+      "Hash": 32,
+      "MultiPV": 1,
+      "Skill Level": 20,
+      "UCI_LimitStrength": false,
+      "UCI_ShowWDL": true,
+      "UCI_Chess960": false
+    },
+    "reset": "ucinewgame + Clear Hash + isready before every search",
+    "tablebases": "none",
+    "perspective": "side to move at root",
+    "position": "startpos with full move history"
+  },
+  "gates": {
+    "enoughCompleteGameEvidence": false,
+    "completeVectorBindings": true,
+    "playerComponents": true
+  },
+  "passed": false,
+  "modelFits": 0,
+  "engineSearches": 0,
+  "newAcquisitions": 0,
+  "humanLabels": 0,
+  "confirmationGamesUsed": 0
+}
