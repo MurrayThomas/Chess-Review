@@ -1,0 +1,345 @@
+{
+  "schema": "E273-policy-result-v1",
+  "spec": {
+    "boundaries": [
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "labels": [
+      "excellent",
+      "good",
+      "inacc",
+      "mistake",
+      "blunder"
+    ],
+    "radius": 0.01,
+    "numericTolerance": 1e-12,
+    "abstentionCost": 0.1,
+    "minimumGain": 0.02,
+    "minimumCoverage": 0.8,
+    "subgroupMinimum": 10,
+    "subgroupCoverage": 0.6,
+    "subgroupRiskIncrease": 0.05,
+    "bootstrapIterations": 20000,
+    "seed": 20261015
+  },
+  "role": "exposed 45-game development comparison against higher-budget ordinary consequence bands; no human ground truth",
+  "summary": {
+    "games": 45,
+    "emitted": 33,
+    "withheld": 12,
+    "coverage": 0.7333333333333333,
+    "baselineDisagreements": 10,
+    "retainedDisagreements": 4,
+    "withheldDisagreements": 6,
+    "withheldStable": 6,
+    "baselineRisk": 0.2222222222222222,
+    "candidateRisk": 0.12121212121212122,
+    "riskReduction": 0.101010101010101,
+    "baselinePolicyLoss": 0.2222222222222222,
+    "candidatePolicyLoss": 0.11555555555555556,
+    "policyGain": 0.10666666666666665,
+    "retainedAgreementInterval": {
+      "successes": 29,
+      "n": 33,
+      "estimate": 0.8787878787878788,
+      "lower": 0.7267449482892476,
+      "upper": 0.9518383869058644,
+      "level": 0.95,
+      "method": "Wilson score; one fixed focal choice per disjoint game"
+    },
+    "breakEvenAbstentionCost": 0.5
+  },
+  "interval": {
+    "estimate": 0.10666666666666666,
+    "lower": 0.024444444444444435,
+    "upper": 0.20666666666666672,
+    "level": 0.95,
+    "iterations": 20000,
+    "seed": 20261015,
+    "unit": "one focal choice per player-disjoint game",
+    "method": "paired percentile bootstrap; exposed development operational policy"
+  },
+  "groups": [
+    {
+      "name": "role/train",
+      "games": 30,
+      "sparse": false,
+      "summary": {
+        "games": 30,
+        "emitted": 21,
+        "withheld": 9,
+        "coverage": 0.7,
+        "baselineDisagreements": 7,
+        "retainedDisagreements": 3,
+        "withheldDisagreements": 4,
+        "withheldStable": 5,
+        "baselineRisk": 0.23333333333333334,
+        "candidateRisk": 0.14285714285714285,
+        "riskReduction": 0.09047619047619049,
+        "baselinePolicyLoss": 0.23333333333333334,
+        "candidatePolicyLoss": 0.13,
+        "policyGain": 0.10333333333333333,
+        "retainedAgreementInterval": {
+          "successes": 18,
+          "n": 21,
+          "estimate": 0.8571428571428571,
+          "lower": 0.6536393971937906,
+          "upper": 0.9501898750027473,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": 0.4444444444444444
+      },
+      "passed": true
+    },
+    {
+      "name": "role/validation",
+      "games": 15,
+      "sparse": false,
+      "summary": {
+        "games": 15,
+        "emitted": 12,
+        "withheld": 3,
+        "coverage": 0.8,
+        "baselineDisagreements": 3,
+        "retainedDisagreements": 1,
+        "withheldDisagreements": 2,
+        "withheldStable": 1,
+        "baselineRisk": 0.2,
+        "candidateRisk": 0.08333333333333333,
+        "riskReduction": 0.11666666666666668,
+        "baselinePolicyLoss": 0.2,
+        "candidatePolicyLoss": 0.08666666666666667,
+        "policyGain": 0.11333333333333334,
+        "retainedAgreementInterval": {
+          "successes": 11,
+          "n": 12,
+          "estimate": 0.9166666666666666,
+          "lower": 0.646120088858883,
+          "upper": 0.9851349055950829,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": 0.6666666666666666
+      },
+      "passed": true
+    },
+    {
+      "name": "band/excellent",
+      "games": 29,
+      "sparse": false,
+      "summary": {
+        "games": 29,
+        "emitted": 24,
+        "withheld": 5,
+        "coverage": 0.8275862068965517,
+        "baselineDisagreements": 2,
+        "retainedDisagreements": 1,
+        "withheldDisagreements": 1,
+        "withheldStable": 4,
+        "baselineRisk": 0.06896551724137931,
+        "candidateRisk": 0.041666666666666664,
+        "riskReduction": 0.027298850574712645,
+        "baselinePolicyLoss": 0.06896551724137931,
+        "candidatePolicyLoss": 0.05172413793103448,
+        "policyGain": 0.017241379310344827,
+        "retainedAgreementInterval": {
+          "successes": 23,
+          "n": 24,
+          "estimate": 0.9583333333333334,
+          "lower": 0.7975819352134406,
+          "upper": 0.9926065438344942,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": 0.2
+      },
+      "passed": true
+    },
+    {
+      "name": "band/good",
+      "games": 4,
+      "sparse": true,
+      "summary": {
+        "games": 4,
+        "emitted": 0,
+        "withheld": 4,
+        "coverage": 0,
+        "baselineDisagreements": 3,
+        "retainedDisagreements": 0,
+        "withheldDisagreements": 3,
+        "withheldStable": 1,
+        "baselineRisk": 0.75,
+        "candidateRisk": null,
+        "riskReduction": null,
+        "baselinePolicyLoss": 0.75,
+        "candidatePolicyLoss": 0.1,
+        "policyGain": 0.65,
+        "retainedAgreementInterval": null,
+        "breakEvenAbstentionCost": 0.75
+      },
+      "passed": null
+    },
+    {
+      "name": "band/inacc",
+      "games": 7,
+      "sparse": true,
+      "summary": {
+        "games": 7,
+        "emitted": 4,
+        "withheld": 3,
+        "coverage": 0.5714285714285714,
+        "baselineDisagreements": 4,
+        "retainedDisagreements": 2,
+        "withheldDisagreements": 2,
+        "withheldStable": 1,
+        "baselineRisk": 0.5714285714285714,
+        "candidateRisk": 0.5,
+        "riskReduction": 0.0714285714285714,
+        "baselinePolicyLoss": 0.5714285714285714,
+        "candidatePolicyLoss": 0.32857142857142857,
+        "policyGain": 0.24285714285714283,
+        "retainedAgreementInterval": {
+          "successes": 2,
+          "n": 4,
+          "estimate": 0.5,
+          "lower": 0.15003898915214947,
+          "upper": 0.8499610108478506,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": 0.6666666666666666
+      },
+      "passed": null
+    },
+    {
+      "name": "band/mistake",
+      "games": 1,
+      "sparse": true,
+      "summary": {
+        "games": 1,
+        "emitted": 1,
+        "withheld": 0,
+        "coverage": 1,
+        "baselineDisagreements": 1,
+        "retainedDisagreements": 1,
+        "withheldDisagreements": 0,
+        "withheldStable": 0,
+        "baselineRisk": 1,
+        "candidateRisk": 1,
+        "riskReduction": 0,
+        "baselinePolicyLoss": 1,
+        "candidatePolicyLoss": 1,
+        "policyGain": 0,
+        "retainedAgreementInterval": {
+          "successes": 0,
+          "n": 1,
+          "estimate": 0,
+          "lower": 0,
+          "upper": 0.7934506856227626,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": null
+      },
+      "passed": null
+    },
+    {
+      "name": "band/blunder",
+      "games": 4,
+      "sparse": true,
+      "summary": {
+        "games": 4,
+        "emitted": 4,
+        "withheld": 0,
+        "coverage": 1,
+        "baselineDisagreements": 0,
+        "retainedDisagreements": 0,
+        "withheldDisagreements": 0,
+        "withheldStable": 0,
+        "baselineRisk": 0,
+        "candidateRisk": 0,
+        "riskReduction": 0,
+        "baselinePolicyLoss": 0,
+        "candidatePolicyLoss": 0,
+        "policyGain": 0,
+        "retainedAgreementInterval": {
+          "successes": 4,
+          "n": 4,
+          "estimate": 1,
+          "lower": 0.5101091635454027,
+          "upper": 1,
+          "level": 0.95,
+          "method": "Wilson score; one fixed focal choice per disjoint game"
+        },
+        "breakEvenAbstentionCost": null
+      },
+      "passed": null
+    }
+  ],
+  "confusionMatrix": {
+    "excellent": {
+      "excellent": 27,
+      "good": 2,
+      "inacc": 0,
+      "mistake": 0,
+      "blunder": 0
+    },
+    "good": {
+      "excellent": 3,
+      "good": 1,
+      "inacc": 0,
+      "mistake": 0,
+      "blunder": 0
+    },
+    "inacc": {
+      "excellent": 0,
+      "good": 2,
+      "inacc": 3,
+      "mistake": 2,
+      "blunder": 0
+    },
+    "mistake": {
+      "excellent": 0,
+      "good": 0,
+      "inacc": 1,
+      "mistake": 0,
+      "blunder": 0
+    },
+    "blunder": {
+      "excellent": 0,
+      "good": 0,
+      "inacc": 0,
+      "mistake": 0,
+      "blunder": 4
+    }
+  },
+  "diagnostics": {
+    "driftWithinRadius": 30,
+    "maximumDrift": 0.061297464800327606,
+    "topStatusChanges": 4,
+    "mateInfluenced": 1,
+    "sparseGroups": [
+      "band/good",
+      "band/inacc",
+      "band/mistake",
+      "band/blunder"
+    ],
+    "interpretation": "Radius is a fixed tolerance, not calibrated confidence; higher budget can also be wrong."
+  },
+  "gates": {
+    "practical": true,
+    "interval": true,
+    "coverage": false,
+    "subgroups": true
+  },
+  "passed": false,
+  "modelFits": 0,
+  "engineSearches": 0,
+  "humanLabels": 0,
+  "confirmation": false,
+  "promoted": false
+}
