@@ -1031,6 +1031,42 @@
       "sha256": "21bcc8639f47a89583b96451012ae3b144ed97150a2a24c944a2543e7d6af633",
       "bytes": 25862,
       "uncompressedSha256": "21bcc8639f47a89583b96451012ae3b144ed97150a2a24c944a2543e7d6af633"
+    },
+    "research/experiments/E273-category-boundary-abstention/evidence/inputs.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E009-search-stability/evidence/sf19-observations.json.gz",
+        "research/experiments/E009-search-stability/evidence/results.json",
+        "research/experiments/E009-search-stability/evidence/verification.json",
+        "research/experiments/E009-search-stability/evidence/clean-replay.json"
+      ],
+      "sha256": "024ac60358364968803a988894119ac1d7b7f5d54a95f3f90537a17fb2a7851f",
+      "bytes": 8957,
+      "uncompressedSha256": "655d959399ede59241cdb5886ad537b97daabae7a0eebe5de8c308230e707205"
+    },
+    "research/experiments/E273-category-boundary-abstention/evidence/freeze.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E009-search-stability/evidence/sf19-observations.json.gz",
+        "research/experiments/E009-search-stability/evidence/results.json",
+        "research/experiments/E009-search-stability/evidence/verification.json",
+        "research/experiments/E009-search-stability/evidence/clean-replay.json"
+      ],
+      "sha256": "8e6fba40b4319ee9e68de7017a05a9d19ec5af9b3112b09ce05941278d575546",
+      "bytes": 6820,
+      "uncompressedSha256": "8e6fba40b4319ee9e68de7017a05a9d19ec5af9b3112b09ce05941278d575546"
+    },
+    "research/experiments/E273-category-boundary-abstention/evidence/freeze-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E273-category-boundary-abstention/evidence/inputs.json.gz",
+        "research/experiments/E273-category-boundary-abstention/evidence/freeze.json"
+      ],
+      "sha256": "906fd4237cf3b5999141155c82a547a654381e9344e173911bf5d4470f982712",
+      "bytes": 30981,
+      "uncompressedSha256": "906fd4237cf3b5999141155c82a547a654381e9344e173911bf5d4470f982712"
     }
   }
 }

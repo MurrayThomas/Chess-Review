@@ -1,0 +1,317 @@
+{
+  "schema": "E273-input-freeze-v1",
+  "spec": {
+    "boundaries": [
+      0.02,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "labels": [
+      "excellent",
+      "good",
+      "inacc",
+      "mistake",
+      "blunder"
+    ],
+    "radius": 0.01,
+    "numericTolerance": 1e-12,
+    "abstentionCost": 0.1,
+    "minimumGain": 0.02,
+    "minimumCoverage": 0.8,
+    "subgroupMinimum": 10,
+    "subgroupCoverage": 0.6,
+    "subgroupRiskIncrease": 0.05,
+    "bootstrapIterations": 20000,
+    "seed": 20261015
+  },
+  "configurations": [
+    {
+      "version": "Stockfish 19 (identity verified at UCI startup)",
+      "majorVersion": 19,
+      "build": "stockfish.js lite single-threaded",
+      "network": "nn-61e7af4bb97d.nnue",
+      "loaderSha256": "d3344124ab067fb0b90ee77873bb8e9fbf5fc01bc525fe714b0f942581e889e6",
+      "wasmSha256": "57ac2d72312aba346760e3f173f687a8c211208e97a87268436f7f0e10bb5387",
+      "budget": {
+        "kind": "nodes",
+        "value": 20000
+      },
+      "options": {
+        "Threads": 1,
+        "Hash": 32,
+        "MultiPV": 1,
+        "Skill Level": 20,
+        "UCI_LimitStrength": false,
+        "UCI_ShowWDL": true,
+        "UCI_Chess960": false
+      },
+      "reset": "ucinewgame + Clear Hash + isready before every search",
+      "tablebases": "none",
+      "perspective": "side to move at root",
+      "position": "startpos with full move history"
+    },
+    {
+      "version": "Stockfish 19 (identity verified at UCI startup)",
+      "majorVersion": 19,
+      "build": "stockfish.js lite single-threaded",
+      "network": "nn-61e7af4bb97d.nnue",
+      "loaderSha256": "d3344124ab067fb0b90ee77873bb8e9fbf5fc01bc525fe714b0f942581e889e6",
+      "wasmSha256": "57ac2d72312aba346760e3f173f687a8c211208e97a87268436f7f0e10bb5387",
+      "budget": {
+        "kind": "nodes",
+        "value": 80000
+      },
+      "options": {
+        "Threads": 1,
+        "Hash": 32,
+        "MultiPV": 1,
+        "Skill Level": 20,
+        "UCI_LimitStrength": false,
+        "UCI_ShowWDL": true,
+        "UCI_Chess960": false
+      },
+      "reset": "ucinewgame + Clear Hash + isready before every search",
+      "tablebases": "none",
+      "perspective": "side to move at root",
+      "position": "startpos with full move history"
+    }
+  ],
+  "inputSha256": {
+    "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz": "d9cd050453878ebbadb330f54516b9ab71e58df4bc44ece5a7bdc79e48336ecf",
+    "research/experiments/E009-search-stability/evidence/sf19-observations.json.gz": "1c0d772c3c6bd03d959fc528027a2b6a1c5feafa5f68865493902452aa8409bb",
+    "research/experiments/E009-search-stability/evidence/results.json": "ca372a8754192dc7d4417633bed5c5e308dd3f0518ba78138a4f904eef60bdeb",
+    "research/experiments/E009-search-stability/evidence/verification.json": "d86f6ace4198d45ee89a0e18a42f91bbe5b97196e805bd3e62b2f53e8fc42f26",
+    "research/experiments/E009-search-stability/evidence/clean-replay.json": "8351dcf0a1f4a44262475a1130eaeef8a1e0354533073e8c6bc7431a3da86a85"
+  },
+  "cohort": [
+    {
+      "gameId": "NZownEaj",
+      "split": "train",
+      "ply": 41
+    },
+    {
+      "gameId": "07sDmwgW",
+      "split": "train",
+      "ply": 45
+    },
+    {
+      "gameId": "WWkXR9Xz",
+      "split": "train",
+      "ply": 20
+    },
+    {
+      "gameId": "E0nRzRyk",
+      "split": "train",
+      "ply": 59
+    },
+    {
+      "gameId": "87PZBdRd",
+      "split": "train",
+      "ply": 52
+    },
+    {
+      "gameId": "aDJJOvyO",
+      "split": "train",
+      "ply": 75
+    },
+    {
+      "gameId": "1ziAkAhB",
+      "split": "train",
+      "ply": 69
+    },
+    {
+      "gameId": "UhAyJbXr",
+      "split": "train",
+      "ply": 44
+    },
+    {
+      "gameId": "TtWBC399",
+      "split": "train",
+      "ply": 27
+    },
+    {
+      "gameId": "OypcnXEs",
+      "split": "train",
+      "ply": 61
+    },
+    {
+      "gameId": "hFgCloIy",
+      "split": "train",
+      "ply": 20
+    },
+    {
+      "gameId": "0uyT8KFm",
+      "split": "train",
+      "ply": 27
+    },
+    {
+      "gameId": "ZtaRsTxD",
+      "split": "train",
+      "ply": 34
+    },
+    {
+      "gameId": "o9ANDF2f",
+      "split": "train",
+      "ply": 39
+    },
+    {
+      "gameId": "vbOIU1yl",
+      "split": "train",
+      "ply": 31
+    },
+    {
+      "gameId": "cfBoshiO",
+      "split": "train",
+      "ply": 40
+    },
+    {
+      "gameId": "KlqlZLy3",
+      "split": "train",
+      "ply": 62
+    },
+    {
+      "gameId": "NoaXUASy",
+      "split": "train",
+      "ply": 64
+    },
+    {
+      "gameId": "lWKzzdc0",
+      "split": "train",
+      "ply": 38
+    },
+    {
+      "gameId": "NioKxUef",
+      "split": "train",
+      "ply": 28
+    },
+    {
+      "gameId": "g13eiJLN",
+      "split": "train",
+      "ply": 28
+    },
+    {
+      "gameId": "v1kFlZ0q",
+      "split": "train",
+      "ply": 49
+    },
+    {
+      "gameId": "k7j2HNII",
+      "split": "train",
+      "ply": 26
+    },
+    {
+      "gameId": "yKxFGFfA",
+      "split": "train",
+      "ply": 35
+    },
+    {
+      "gameId": "OltFPwJq",
+      "split": "train",
+      "ply": 44
+    },
+    {
+      "gameId": "GBhSl3aw",
+      "split": "train",
+      "ply": 15
+    },
+    {
+      "gameId": "iyHrQ3lK",
+      "split": "train",
+      "ply": 48
+    },
+    {
+      "gameId": "Sc600s6i",
+      "split": "train",
+      "ply": 67
+    },
+    {
+      "gameId": "zYKF5o8M",
+      "split": "train",
+      "ply": 31
+    },
+    {
+      "gameId": "yoqFko4G",
+      "split": "train",
+      "ply": 11
+    },
+    {
+      "gameId": "6ZfKnfuQ",
+      "split": "validation",
+      "ply": 35
+    },
+    {
+      "gameId": "755Pl4j7",
+      "split": "validation",
+      "ply": 71
+    },
+    {
+      "gameId": "RG2eaC19",
+      "split": "validation",
+      "ply": 17
+    },
+    {
+      "gameId": "xlwVkAYG",
+      "split": "validation",
+      "ply": 13
+    },
+    {
+      "gameId": "rdtvlp3G",
+      "split": "validation",
+      "ply": 39
+    },
+    {
+      "gameId": "2YtStT5N",
+      "split": "validation",
+      "ply": 63
+    },
+    {
+      "gameId": "uLVSnZ4r",
+      "split": "validation",
+      "ply": 45
+    },
+    {
+      "gameId": "jF7o7W4Y",
+      "split": "validation",
+      "ply": 24
+    },
+    {
+      "gameId": "Rqd31FLF",
+      "split": "validation",
+      "ply": 22
+    },
+    {
+      "gameId": "w0KEuHAA",
+      "split": "validation",
+      "ply": 13
+    },
+    {
+      "gameId": "IhHKcsVu",
+      "split": "validation",
+      "ply": 16
+    },
+    {
+      "gameId": "LYVFbYLk",
+      "split": "validation",
+      "ply": 36
+    },
+    {
+      "gameId": "JVNYiiqL",
+      "split": "validation",
+      "ply": 23
+    },
+    {
+      "gameId": "zyyMQlLv",
+      "split": "validation",
+      "ply": 33
+    },
+    {
+      "gameId": "qnqeuoba",
+      "split": "validation",
+      "ply": 74
+    }
+  ],
+  "newSearches": 0,
+  "fits": 0,
+  "bandEvaluations": 0
+}
