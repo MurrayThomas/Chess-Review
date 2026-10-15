@@ -1,6 +1,6 @@
 # E274: opportunity collection pilot — working record
 
-2026-10-15. State: **v2 selection frozen and registered; first engine measurement pending**.
+2026-10-15. State: **raw collection complete and registered; offline analysis pending**.
 Plan `303458f`; collector, offline analysis and independent verifier frozen at
 `9799dbe`, including the prospective E011 cache-inventory correction. Amended
 v2 schema source33218d5 preserves the same selection rule, budgets and gates.
@@ -42,7 +42,21 @@ bypass or permission change.
 Regenerated v2 again has1,288 keys/three reused/1,285 missing and40 vectors.
 Original v1 selection/freeze bytes are retained solely as withdrawn evidence.
 
-Next: admit corrected selection-v2, then execute its32-query smoke
-and600-second watchdog, preserve complete/partial output and errors, register
-raw observations before offline analysis. No automatic retry, reduced budget,
-game substitution, fitting or bulk collection. Continue result/reflection here.
+Admitted v2 collection fromdc8e1e5 completes in132.073 seconds, with1,285 new
+queries/1,287 requests, two exact recoveries and no engine/integrity errors.
+The32-query smoke mean caller time74.2556ms projects95.419 seconds and passes the
+480-second gate; its queries are retained in the completed cache, never repeated.
+Raw compressed observations are183,619 bytes. Startup/reset/serialization costs
+and CP/WDL-vector coverage/variation will be assessed only after this raw freeze.
+No scientific rating/accuracy performance metric has been evaluated.
+
+[Raw observations](evidence/observations.json.gz) and
+[collection receipt](evidence/collection-run.json) retain every new query, caller
+and returned timing, selected/final-node diagnostics, source/config identity and
+CPU/Node environment. Original rejected metadata and successful v2 remain distinct.
+No reduced budget, altered game selection or changed gate. The single actual
+engine collection is complete; do not rerun searches for offline reproduction.
+
+Next: commit registered raw observations before offline consequence/coverage/cost
+analysis, repeat the report and run independent replay, then reflect here before
+fitting or collecting anything else.

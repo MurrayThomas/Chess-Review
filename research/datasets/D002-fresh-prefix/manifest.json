@@ -1167,6 +1167,28 @@
       "sha256": "df31b43fe65ef8ede72790ff361dcd69dee1bdcaaa37a5ec548a644e2a07ea1a",
       "bytes": 32754,
       "uncompressedSha256": "df31b43fe65ef8ede72790ff361dcd69dee1bdcaaa37a5ec548a644e2a07ea1a"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/observations.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/selection-v2.json.gz",
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E271-opportunity-feasibility/evidence/results.json",
+        "research/experiments/E011-outcome-confirmation/evidence/sf19-observations.json.gz"
+      ],
+      "sha256": "6ba589c151ec4e7f397285015d266be7fb832e2add19b63bc042f193ab988202",
+      "bytes": 183619,
+      "uncompressedSha256": "953222e71e15176636bd3e62417dc26af4f0d45373fa888a078be582c5d27f35"
+    },
+    "research/experiments/E274-opportunity-collection-pilot/evidence/collection-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E274-opportunity-collection-pilot/evidence/observations.json.gz"
+      ],
+      "sha256": "1abbce01f6207a28c0eb515100558799f49d505d062d5816b08d495cd1b7a3ad",
+      "bytes": 34435,
+      "uncompressedSha256": "1abbce01f6207a28c0eb515100558799f49d505d062d5816b08d495cd1b7a3ad"
     }
   },
   "withdrawnArtifacts": {
