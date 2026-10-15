@@ -109,3 +109,18 @@ prospectively designed rating comparison, a distinct measurement study or
 coherent-input accuracy research. Pilot success alone never authorizes bulk
 collection, fitting or production promotion. Record negative/incomplete results
 with the same evidence and do not rerun merely to get a passing gate.
+
+## Source-inventory amendment, before selection or collection, 2026-10-15
+
+The initial claim that E008 was the only compatible20k observation source was
+wrong: E011 also collected20k roots for its already consumed confirmation panel.
+Inspection of collector source, not case scores or targets, established this.
+Merge exact matching20k root keys from its registered raw artifact into the cache
+inventory, preferring the original E008 observation for identical duplicates and
+rejecting conflicting duplicate score/query records. Read no E011 game outcomes
+or ratings. Only keys matching the frozen train-game histories may supply scores
+to this pilot; no test target is analyzed and existing consumption is unchanged.
+Keep selection seeds, two-game/40-vector scope, all node/options settings and
+every stage/resource/variation gate unchanged. Record additional matching E011
+reuse separately when relating counts to E271's E008-only historical reference.
+No selection, new search or pilot performance result existed before this amendment.
