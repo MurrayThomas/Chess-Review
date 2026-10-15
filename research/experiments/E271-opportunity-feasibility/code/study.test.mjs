@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {Chess} from '../../../../lib/chess.js';
 import {queryKey} from '../../E008-human-quality-curves/code/queries.mjs';
-import {components,audit} from './audit.mjs';
+import {components,audit,legalRecords} from './audit.mjs';
 function fixture(){
   const board=new Chess(), history=[], configHash='a'.repeat(64), searches=[], positions=[];
   const game={id:'synthetic',split:'train',players:[{id:'authored-white'},{id:'authored-black'}],moves:['e2e4','e7e5']};
@@ -34,4 +34,19 @@ test('missing alternatives and wrong histories fail closed',()=>{
 test('reserved roles and malformed timing cannot enter census',()=>{
   const f=fixture();f.games[0].split='test';assert.throws(()=>audit(f.games,f.evidence));
   const q=fixture();q.evidence.searches[0].elapsedMs=-1;assert.throws(()=>audit(q.games,q.evidence));
+});
+test('fast legal generation and transitions match public APIs including special moves',()=>{
+  const fixtures=[
+    {fen:undefined,moves:['e2e4','e7e5','g1f3','b8c6','f1c4','g8f6','e1g1']},
+    {fen:undefined,moves:['e2e4','a7a6','e4e5','d7d5','e5d6']},
+    {fen:'7k/P7/8/8/8/8/8/7K w - - 0 1',moves:['a7a8n']},
+    {fen:'4k3/8/8/8/8/8/4r3/4K3 w - - 0 1',moves:['e1e2']},
+  ];
+  for(const f of fixtures){const fast=new Chess(f.fen),reference=new Chess(f.fen);
+    for(const u of f.moves){const rows=legalRecords(fast);
+      assert.deepEqual(rows.map(r=>r.uci),reference.moves({verbose:true}).map(m=>m.from+m.to+(m.promotion||'')).sort());
+      const chosen=rows.find(r=>r.uci===u);assert.ok(chosen);fast._makeMove(chosen.move);
+      reference.move({from:u.slice(0,2),to:u.slice(2,4),promotion:u[4]});assert.equal(fast.fen(),reference.fen());
+    }
+  }
 });

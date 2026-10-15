@@ -1,0 +1,25 @@
+{
+  "schema": "research-run-v1",
+  "experiment": "E272",
+  "date": "2026-10-15",
+  "sourceRevision": "60017b3a06a16deb14d4751ddfec06cf7056fe9d",
+  "codeSha256": {
+    "research/experiments/E272-accuracy-aggregation-stress/code/run.mjs": "057ef1d1713e7cef7b381a8527445e09f3c9008e7b2207f5a49dbaaa8921f52a",
+    "research/experiments/E272-accuracy-aggregation-stress/code/stress.mjs": "eaf99af607a255b87a12e8fb75aa7d3b60ec7f419c366e0701a4a30d487b73d9",
+    "lib/public-scoring.js": "de158d2fd2708b9f37b1692508eed10db57fc12f41c33d101a6da772b0b42c54"
+  },
+  "command": "node research/experiments/E272-accuracy-aggregation-stress/code/run.mjs --out research/runs/E272/repeat",
+  "seed": null,
+  "dataEligibility": {
+    "datasets": [],
+    "scope": "Wholly authored synthetic fixture; no game-derived inputs or fitted parameters"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "evaluationRole": "authored synthetic mechanical panel; no human or real-game validity claim",
+  "outputSha256": "bb7e9e8e6e163c08c433b1a349008b337eecbb10b6e28799488b25c424fad802",
+  "elapsedMs": 97.49860000000001
+}

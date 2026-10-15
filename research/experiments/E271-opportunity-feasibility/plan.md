@@ -64,3 +64,19 @@ and alternatives; do not launch it in this batch. Research-only commits may use
 the current checkout (the E270 current-main/no-new-clone workflow); its dirty
 application changes and staged video are excluded from every research commit.
 No checkout switching, push, integration, reset or stash.
+
+## Amendment, 2026-10-15, before a second full attempt
+
+The original full attempt at source `60017b3` exceeded the 120-second analysis
+budget and exited 1 before producing a census or cost report. The two-game smoke
+had completed. Preserve the failed attempt in `evidence/initial-failure.json`.
+No fit, complete-data gate result, rating, outcome or confirmation assessment was
+exposed. Replace expensive pretty-move/SAN creation with the SAME chess library's
+legal internal move generation and validated internal transitions. Explicitly
+cross-check legal sets and resulting FENs against public APIs on authored normal,
+castling, en-passant, underpromotion and check-evasion histories before retry.
+Position-repetition counters are not used for legal moves; no draw/terminal or
+history rule is inferred from the fast traversal. Full original history still
+binds every cache key. Preserve the 120-second analysis limit, every game/query,
+all feasibility gates, engine protocol and the original failure. Freeze changed
+code before rerunning to a distinct output directory; no search-budget rescue.

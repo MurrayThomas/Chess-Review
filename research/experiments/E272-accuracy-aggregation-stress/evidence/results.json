@@ -1,0 +1,282 @@
+{
+  "schema": "E272-stress-v1",
+  "role": "authored synthetic mechanical panel; no human or real-game validity claim",
+  "datasets": [],
+  "seed": null,
+  "qualities": "Authored independently of score curves",
+  "baseDecisions": 10,
+  "methods": {
+    "sf18Arithmetic": {
+      "base": 87.5,
+      "padding": [
+        {
+          "range": 0,
+          "added": 10,
+          "score": 93.75,
+          "shift": 6.25
+        },
+        {
+          "range": 0,
+          "added": 50,
+          "score": 97.91666666666667,
+          "shift": 10.416666666666671
+        },
+        {
+          "range": 0,
+          "added": 200,
+          "score": 99.4047619047619,
+          "shift": 11.904761904761898
+        },
+        {
+          "range": 0.001,
+          "added": 10,
+          "score": 93.75,
+          "shift": 6.25
+        },
+        {
+          "range": 0.001,
+          "added": 50,
+          "score": 97.91666666666667,
+          "shift": 10.416666666666671
+        },
+        {
+          "range": 0.001,
+          "added": 200,
+          "score": 99.4047619047619,
+          "shift": 11.904761904761898
+        }
+      ],
+      "replications": [
+        {
+          "factor": 2,
+          "shift": 0
+        },
+        {
+          "factor": 5,
+          "shift": 0
+        }
+      ],
+      "worstReplication": {
+        "shift": 0
+      },
+      "harmfulMaxShift": -1,
+      "weightMaxShift": 0,
+      "narrowErrorScore": 87.5,
+      "forcedShift": 0,
+      "zeroOpportunityScore": 87.5,
+      "gates": {
+        "padding": false,
+        "baseReplication": true,
+        "exhaustiveReplication": true,
+        "monotonic": true,
+        "weightSensitivity": true,
+        "forcedPadding": true
+      }
+    },
+    "sf19Combined": {
+      "base": 78.29545454545453,
+      "padding": [
+        {
+          "range": 0,
+          "added": 10,
+          "score": 87.73521505376343,
+          "shift": 9.439760508308893
+        },
+        {
+          "range": 0,
+          "added": 50,
+          "score": 95.48894557823127,
+          "shift": 17.193491032776734
+        },
+        {
+          "range": 0,
+          "added": 200,
+          "score": 98.65943616710491,
+          "shift": 20.36398162165038
+        },
+        {
+          "range": 0.001,
+          "added": 10,
+          "score": 87.73521505376343,
+          "shift": 9.439760508308893
+        },
+        {
+          "range": 0.001,
+          "added": 50,
+          "score": 95.48894557823127,
+          "shift": 17.193491032776734
+        },
+        {
+          "range": 0.001,
+          "added": 200,
+          "score": 98.65943616710491,
+          "shift": 20.36398162165038
+        }
+      ],
+      "replications": [
+        {
+          "factor": 2,
+          "shift": 1.4210854715202004e-14
+        },
+        {
+          "factor": 5,
+          "shift": 0
+        }
+      ],
+      "worstReplication": {
+        "shift": 0
+      },
+      "harmfulMaxShift": -0.7930685433336464,
+      "weightMaxShift": 0,
+      "narrowErrorScore": 78.29545454545453,
+      "forcedShift": 0,
+      "zeroOpportunityScore": 78.29545454545453,
+      "gates": {
+        "padding": false,
+        "baseReplication": true,
+        "exhaustiveReplication": true,
+        "monotonic": true,
+        "weightSensitivity": true,
+        "forcedPadding": true
+      }
+    },
+    "opportunityWeighted": {
+      "base": 87.5,
+      "padding": [
+        {
+          "range": 0,
+          "added": 10,
+          "score": 87.5,
+          "shift": 0
+        },
+        {
+          "range": 0,
+          "added": 50,
+          "score": 87.5,
+          "shift": 0
+        },
+        {
+          "range": 0,
+          "added": 200,
+          "score": 87.5,
+          "shift": 0
+        },
+        {
+          "range": 0.001,
+          "added": 10,
+          "score": 87.52495009980039,
+          "shift": 0.024950099800392422
+        },
+        {
+          "range": 0.001,
+          "added": 50,
+          "score": 87.62376237623756,
+          "shift": 0.12376237623756481
+        },
+        {
+          "range": 0.001,
+          "added": 200,
+          "score": 87.98076923076897,
+          "shift": 0.4807692307689706
+        }
+      ],
+      "replications": [
+        {
+          "factor": 2,
+          "shift": 0
+        },
+        {
+          "factor": 5,
+          "shift": 0
+        }
+      ],
+      "worstReplication": {
+        "shift": 0
+      },
+      "harmfulMaxShift": -1,
+      "weightMaxShift": 0.1352705410821642,
+      "narrowErrorScore": 94.98333703621418,
+      "forcedShift": 0,
+      "zeroOpportunityScore": null,
+      "gates": {
+        "padding": true,
+        "baseReplication": true,
+        "exhaustiveReplication": true,
+        "monotonic": true,
+        "weightSensitivity": true,
+        "forcedPadding": true
+      }
+    },
+    "tail20": {
+      "base": 57.5,
+      "padding": [
+        {
+          "range": 0,
+          "added": 10,
+          "score": 76.25,
+          "shift": 18.75
+        },
+        {
+          "range": 0,
+          "added": 50,
+          "score": 89.58333333333333,
+          "shift": 32.08333333333333
+        },
+        {
+          "range": 0,
+          "added": 200,
+          "score": 97.02380952380952,
+          "shift": 39.52380952380952
+        },
+        {
+          "range": 0.001,
+          "added": 10,
+          "score": 76.25,
+          "shift": 18.75
+        },
+        {
+          "range": 0.001,
+          "added": 50,
+          "score": 89.58333333333333,
+          "shift": 32.08333333333333
+        },
+        {
+          "range": 0.001,
+          "added": 200,
+          "score": 97.02380952380952,
+          "shift": 39.52380952380952
+        }
+      ],
+      "replications": [
+        {
+          "factor": 2,
+          "shift": 0
+        },
+        {
+          "factor": 5,
+          "shift": 0
+        }
+      ],
+      "worstReplication": {
+        "length": 11,
+        "factor": 5,
+        "shift": -3.6363636363636367
+      },
+      "harmfulMaxShift": -5,
+      "weightMaxShift": 0,
+      "narrowErrorScore": 57.5,
+      "forcedShift": 0,
+      "zeroOpportunityScore": 57.5,
+      "gates": {
+        "padding": false,
+        "baseReplication": true,
+        "exhaustiveReplication": false,
+        "monotonic": true,
+        "weightSensitivity": true,
+        "forcedPadding": true
+      }
+    }
+  },
+  "modelFits": 0,
+  "engineSearches": 0
+}

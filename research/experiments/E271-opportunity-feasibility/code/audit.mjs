@@ -2,7 +2,10 @@ import assert from 'node:assert/strict';
 import {Chess} from '../../../../lib/chess.js';
 import {queryKey, validateSearch} from '../../E008-human-quality-curves/code/queries.mjs';
 
-const moveKey = m => m.from + m.to + (m.promotion || '');
+const square = n => 'abcdefgh'[n & 15] + (8 - (n >> 4));
+export function legalRecords(board) {
+  return board._moves().map(move => ({move,uci:square(move.from)+square(move.to)+(move.promotion||'')})).sort((a,b)=>a.uci<b.uci?-1:a.uci>b.uci?1:0);
+}
 const sum = xs => xs.reduce((a, b) => a + b, 0);
 function quantile(xs, p) { const s = [...xs].sort((a,b) => a-b); return s[Math.floor((s.length-1)*p)] ?? null; }
 
@@ -53,7 +56,7 @@ export function audit(games, evidence) {
     const board=new Chess(), history=[], counts={w:0,b:0}, available={w:0,b:0};
     for(let i=0;i<game.moves.length;i++) {
       if(performance.now()-started>120000) throw Error('Analysis time budget exceeded');
-      const legal=board.moves({verbose:true}).map(moveKey).sort(), color=board.turn(), ply=i+1;
+      const records=legalRecords(board), legal=records.map(r=>r.uci), color=board.turn(), ply=i+1;
       assert.ok(legal.includes(game.moves[i]),'Illegal played move');
       const p=vectors.get(game.id+':'+ply);
       if(p) {
@@ -70,7 +73,7 @@ export function audit(games, evidence) {
           const k=queryKey(evidence.configHash,history,restricted); allKeys.add(k); if(queries.has(k)) reusedKeys.add(k);
         }
       }
-      const u=game.moves[i]; board.move({from:u.slice(0,2),to:u.slice(2,4),promotion:u[4]}); history.push(u);
+      const u=game.moves[i]; board._makeMove(records.find(r=>r.uci===u).move); history.push(u);
     }
     lengths.push(game.moves.length);
     sides.push(...['w','b'].map(color=>({gameId:game.id,color,required:counts[color],available:available[color]})));

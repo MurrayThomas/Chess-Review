@@ -1,0 +1,19 @@
+{
+  "schema": "E272-portable-verification-v1",
+  "passed": true,
+  "exactResultBytes": true,
+  "sourceRevision": "60017b3a06a16deb14d4751ddfec06cf7056fe9d",
+  "sourceHashes": {
+    "research/experiments/E272-accuracy-aggregation-stress/code/stress.mjs": "eaf99af607a255b87a12e8fb75aa7d3b60ec7f419c366e0701a4a30d487b73d9",
+    "lib/public-scoring.js": "de158d2fd2708b9f37b1692508eed10db57fc12f41c33d101a6da772b0b42c54",
+    "package.json": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+  },
+  "outputSha256": "bb7e9e8e6e163c08c433b1a349008b337eecbb10b6e28799488b25c424fad802",
+  "command": "node research/experiments/E272-accuracy-aggregation-stress/code/portable.mjs --out research/runs/E272/portable",
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "scope": "Initially empty export containing two frozen modules and package metadata; no Git, games, engine, fitted model or dependencies required. Not a clean repository checkout or scientific confirmation."
+}
