@@ -1330,6 +1330,48 @@
       "sha256": "9f2bac85fb707bc34cb4423d1c2d13a55d5c23547d5b5a9a1aacf43837df39c7",
       "bytes": 894,
       "uncompressedSha256": "9f2bac85fb707bc34cb4423d1c2d13a55d5c23547d5b5a9a1aacf43837df39c7"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/repeat-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/results.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/predictions.json.gz",
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json"
+      ],
+      "sha256": "265749dbdf724473b38b83fb9f8773249f7b990fb9431e79b76d060a618293e5",
+      "bytes": 37945,
+      "uncompressedSha256": "265749dbdf724473b38b83fb9f8773249f7b990fb9431e79b76d060a618293e5"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/repeat-execution.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/repeat-run.json"
+      ],
+      "sha256": "596f21d76e94a98cd89c9bf4f617c57350dcd6000df5b0d2ce65d38e4f4ebe6d",
+      "bytes": 896,
+      "uncompressedSha256": "596f21d76e94a98cd89c9bf4f617c57350dcd6000df5b0d2ce65d38e4f4ebe6d"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/verification.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/inputs.json.gz",
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/results.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/predictions.json.gz",
+        "research/experiments/E275-draw-aware-calibration/evidence/repeat-run.json"
+      ],
+      "sha256": "0e85310adfaf058b73b188fa7902daee4e9785410177abaf32c82ac98d8a490c",
+      "bytes": 36511,
+      "uncompressedSha256": "0e85310adfaf058b73b188fa7902daee4e9785410177abaf32c82ac98d8a490c"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/verification-execution.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/verification.json"
+      ],
+      "sha256": "9e483dc0497d2c14e082a96b453150562f2717a694e195d2ace20f6e043c0de7",
+      "bytes": 898,
+      "uncompressedSha256": "9e483dc0497d2c14e082a96b453150562f2717a694e195d2ace20f6e043c0de7"
     }
   },
   "withdrawnArtifacts": {

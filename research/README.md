@@ -17,8 +17,11 @@ accuracy aggregation properties on authored fixtures. Neither authorizes a
 production change or establishes improved human validity.
 E273 records a verified category stability/coverage tradeoff and a failed coverage
 gate. E274's bounded collection pilot now passes feasibility/variation screens;
-its measured cost supports deferring bulk collection. The next recommended
-question is draw-aware human outcome calibration with existing cached roots.
+its measured cost supports deferring bulk collection. E275 tests draw-aware human
+outcome calibration with cached roots; exact/independent replay verifies a failed
+joint screen. [F021](findings/F021-draw-calibration-controls.md) records the strong-
+control and rare-draw limitations. Checkpoint four compares the next directions;
+no replacement model is confirmed or implemented.
 
 ## Start here
 

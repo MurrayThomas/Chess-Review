@@ -1,6 +1,6 @@
 # E275: draw-aware calibration — working record
 
-Updated2026-10-16. State: **first comparison complete; verification pending**.
+Updated2026-10-16. State: **complete; exact and independent verification pass**.
 Outcome: **inconclusive against stronger controls; joint screen fails**.
 Plan df50362 and code d424fca precede any new fit or categorical performance look.
 No production changes. Current-main research exception; dirty application work
@@ -45,7 +45,8 @@ no tolerance, penalty, bound or family change. No failed numerical attempts.
 code/input hashes and actual UTC dates. The scientific entry point's date is the
 October15 registration date, as prospectively documented; the launcher records
 theOctober16 execution separately. Neither omitted-fold nor validation metrics
-have been assessed. No searches, human annotations or production updates.
+had been assessed at that training-only boundary. No searches, human annotations
+or production updates.
 
 Fitted-model commit1536bc0 precedes the single development comparison. All150
 development games/896 roots retain coverage. Multiclass NLL (lower better):
@@ -65,7 +66,17 @@ cross-fit guard fails. Mean-point, subgroup, coverage, convergence/interior and
 45-root stability guards pass. Candidate Brier .522375 versus CP .530751; mean
 point MSE .232227 versus CP-distribution .236432. Better multiclass loss does
 not by itself establish displayed accuracy, move consequence or rating validity.
-Exact cross-fit/class-specific details remain in the retained first report.
+Across450 cross-fit games/2,744 roots, candidate NLL .777532 versus CP .784412,
+but candidate Brier .484190 is WORSE than CP .477888 by .006302. This fails the
+frozen cross-fit guard despite a small NLL gain .006880 (descriptive95% interval
+[-.016100,.032908]). Overlapping training fits are not fresh confirmation.
+
+Only18 training and six validation games are draws. Mean predicted draw mass
+.041839 versus observed .04 and draw ECE .001839 look close, but all predicted
+draw probabilities occupy the same0–.2 bin. This is no demonstration of conditional
+draw calibration. The six registered CP/ply subgroups all have enough games;
+that subgroup coverage does not repair the rare-draw limitation. Both mover
+perspectives and repeated roots are clustered by game, not independent outcomes.
 
 The candidate mean total-variation drift is .006421 on45 configured20k/80k root
 pairs, versus temperature .005577 and raw .047119; candidate maximum .031815.
@@ -75,5 +86,35 @@ not an independent human-calibration or choice-vector stability test.
 [First report](evidence/results.json), [all predictions](evidence/predictions.json.gz),
 [assessment receipt](evidence/run.json), [actual execution](evidence/main-execution.json)
 retain the unchanged joint failure. No rescue tuning, new searches, test targets
-or production model changes. Next: commit registered report, exact offline repeat,
-independent raw-target/probability/KKT/bootstrap replay, then reflect on scope.
+or production model changes.
+
+[Repeat receipt](evidence/repeat-run.json) and [actual repeat execution](evidence/repeat-execution.json)
+retain a second output directory with identical report and prediction hashes.
+[Independent verification](evidence/verification.json) passes in77.378 seconds
+including admission; [UTC execution](evidence/verification-execution.json) confirms
+successful completion onOctober16. Frozen inputs reconstructed from original
+parents; all18 fits and six constant controls reproduced exactly. Separate
+target/probability/NLL/Brier/KKT/RNG arithmetic checks3,640 human target mappings,
+18,200 outcome vectors,450 stability vectors,120,000 bootstrap replicates and
+all group/point metrics and gates. No clean-checkout replay or scientific
+confirmation is claimed. The retained650,269 evidence bytes are below2MiB;
+duplicate bulk predictions need not be retained because their exact hashes match.
+Final checks:22/22 focused experiment/data-policy tests, guarded D001/D002 reuse
+preflight (185 registered artifacts), maintained-source verification and research
+diff checks pass. Scientific source, inputs and fitted parameters are unchanged.
+
+Reflection: stop this exact log-WDL temperature plus draw-bias candidate. Its
+large advantage over raw engine WDL or temperature alone does not establish an
+advantage over the stronger CP and constant controls. Preserve those comparators;
+neither is promoted by this failed comparison. A full W/D/L forecast and its mean
+can rank models differently, so this experiment cannot justify an accuracy,
+move-loss, category or rating change. Do not retrofit the gate or tune on these
+exposed600 games.
+
+Next distinct question: can a CP-anchored draw-allocation model add conditional
+information while preserving the existing expected-score curve? Start with a
+separate design/protocol and train-only information audit before fitting; require
+matched controls and genuinely untouched confirmation before any promotion.
+This is a hypothesis, not an accepted improvement. Review alternatives and rare-
+draw evidence needs at [checkpoint four](../../NUMERICAL-REVIEW.md) before committing
+to further empirical work or the roughly32-hour rating collection.
