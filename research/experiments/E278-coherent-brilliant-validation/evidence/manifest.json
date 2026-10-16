@@ -1,0 +1,78 @@
+{
+  "schema": "E278-research-evidence-v1",
+  "createdUtc": "2026-10-16T10:42:01.654Z",
+  "sourceRevision": "a760d5dc7127d06178881f925f7ceac0f8847800",
+  "scope": "Synthetic fixture correction plus guarded metadata of exactly two user-supplied cases/continuations. No public dataset, new searches, fitting or population precision.",
+  "contractPassed": true,
+  "originalE277FailureRetained": true,
+  "wholeReportByteReplay": false,
+  "scientificReplayExcludedField": "natural.elapsedMs",
+  "artifacts": {
+    "case-preservation.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "e59138386edf63172a2be2be6bbada4c4c68171973f05d397196765fdae76dad",
+      "bytes": 2300
+    },
+    "freeze.json": {
+      "parents": [
+        "inputs.json"
+      ],
+      "sha256": "448d1b30d33f9db24e9fb933769b68f2571b4d3e2fa0bb55ef249993f73abfe7",
+      "bytes": 5908
+    },
+    "inputs.json": {
+      "parents": [],
+      "sha256": "158fdca45993848d20d8bd25ebd6cfb01b0773db4b9c69b549aca7c374afb6f0",
+      "bytes": 4798
+    },
+    "repeat-run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "6d014c6f45ad8456bf56c8e3cba4bd2e8b116727b70959ef2fefcb6833232f4e",
+      "bytes": 5963
+    },
+    "results.json.gz": {
+      "parents": [
+        "freeze.json"
+      ],
+      "sha256": "cd2b95df0010b48758121a8b3a13cd2cfe37bf74d11bda0e7c016628659903ac",
+      "bytes": 71511,
+      "uncompressedSha256": "a49b80cc20512b026abeb039d9fb3af2fd295129a62d3e5800657e8f7cbcde49"
+    },
+    "run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "7421003de905d3a7c70f7f8c0520196a4ceb0373b72711b2673625d676cca4c9",
+      "bytes": 5944
+    },
+    "verification.json": {
+      "parents": [
+        "results.json.gz",
+        "repeat-run.json"
+      ],
+      "sha256": "2652c75c5ed3bc82af8ce30be92ec9aee12e7b8b1286c0260cab9817360db122",
+      "bytes": 2000
+    }
+  },
+  "externalParents": {
+    "research/experiments/E277-brilliant-evidence-admission/evidence/freeze.json": "0d3e5b7398807c66604717f6835d46084ce0e2729b67e0f1a214f89d6fbddfbf",
+    "research/experiments/E277-brilliant-evidence-admission/evidence/results.json.gz": "e1982ef83ebf9b7401b87f61fbf9a75b479b044c8db70e3df2bd29a7a6a0dc47",
+    "research/experiments/E277-brilliant-evidence-admission/code/candidate.mjs": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+    "research/experiments/E276-reported-brilliant-cases/evidence/manifest.json": "a716a7d26e274c4afc59ef7755ea5bb2202587a5f170c8efd9474230e1765ba1",
+    "research/experiments/E276-reported-brilliant-cases/evidence/observations.json.gz": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+    "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228"
+  },
+  "codeSha256": {
+    "audit.mjs": "42f9bd12162fca4fc3842030e23a8cb0460c60867a2f9b6c5dfdc1eccb7c27cc",
+    "matrix.mjs": "f4c5d50fe9325bb4a013921d6c3107b0882229df946bd749e57fde91b2c93b12",
+    "preserve-cases.mjs": "f976607fe2de91a34a811aad645fc7326ffc94f11aeaeafb015b0d3013745400",
+    "run.mjs": "810123dad5160e6e888546b8ad535c581610a1364a0b0434bb0d959eaef0f24a",
+    "traffic.mjs": "ef2b598599d76732d67b663b567b245ee91615815ec957b002224271ae22ea44"
+  },
+  "payloadBytes": 98424,
+  "manifestSelfExcluded": true
+}

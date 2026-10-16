@@ -1,0 +1,63 @@
+{
+  "schema": "E278-independent-audit-v1",
+  "passed": true,
+  "contractScreen": true,
+  "originalFailurePreserved": true,
+  "unchangedCandidateSha256": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+  "nonOverlayRowsUnchanged": 168,
+  "changedOverlayRows": 8,
+  "overlayCoherenceChecks": 252,
+  "reconstructedTrafficFrames": 984,
+  "alternativeInspections": 655,
+  "nativeFinals": 54,
+  "excludedHistoryRecords": 4,
+  "trafficSummary": {
+    "frames": 984,
+    "logicalProgress": 930,
+    "final": 54,
+    "streamsWithSecondaryIssues": 24,
+    "candidateInspections": 655,
+    "rejected": 631,
+    "topSupportedInspections": 647,
+    "topSupportedSecondaryIssues": 623,
+    "boundedInTopSupported": 6,
+    "depthMismatchInTopSupported": 617,
+    "duplicates": 14,
+    "empty": 0,
+    "illegal": 0,
+    "byContext": {
+      "19:logical-progress": {
+        "frames": 446,
+        "inspections": 292,
+        "topSupportedSecondaryIssues": 292
+      },
+      "19:final": {
+        "frames": 24,
+        "inspections": 18,
+        "topSupportedSecondaryIssues": 3
+      },
+      "18:logical-progress": {
+        "frames": 484,
+        "inspections": 324,
+        "topSupportedSecondaryIssues": 324
+      },
+      "18:final": {
+        "frames": 30,
+        "inspections": 21,
+        "topSupportedSecondaryIssues": 4
+      }
+    }
+  },
+  "scientificRepeatSha256": "b01be276d4048702377caef5c9db909b007d604dce2cbb0950f96016257f370e",
+  "onlyIgnoredRepeatField": "natural.elapsedMs",
+  "wallClockTimingsRetained": [
+    2396.2451,
+    2410.271099999998
+  ],
+  "wholeReportByteEquality": false,
+  "codeSha256": "42f9bd12162fca4fc3842030e23a8cb0460c60867a2f9b6c5dfdc1eccb7c27cc",
+  "inputSha256": "cd2b95df0010b48758121a8b3a13cd2cfe37bf74d11bda0e7c016628659903ac",
+  "elapsedMs": 2953.2059,
+  "completedUtc": "2026-10-16T10:36:51.612Z",
+  "limitations": "Contract pass and real metadata emission, not real Brilliant error prevalence or human utility; progress timestamps are absent."
+}

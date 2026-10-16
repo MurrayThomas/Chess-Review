@@ -1,0 +1,75 @@
+{
+  "schema": "E278-existing-case-preservation-v1",
+  "passed": true,
+  "rows": [
+    {
+      "case": "A",
+      "engine": 18,
+      "baseline": "brilliant",
+      "candidate": "brilliant",
+      "unchanged": true
+    },
+    {
+      "case": "A",
+      "engine": 19,
+      "baseline": "brilliant",
+      "candidate": "brilliant",
+      "unchanged": true
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "baseline": "best",
+      "candidate": "best",
+      "unchanged": true
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "baseline": "best",
+      "candidate": "best",
+      "unchanged": true
+    }
+  ],
+  "sourceAuthorization": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "codeSha256": "f976607fe2de91a34a811aad645fc7326ffc94f11aeaeafb015b0d3013745400",
+  "candidateSha256": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+  "trafficDenominators": {
+    "fullStreams": 54,
+    "multiPvStreams": 24,
+    "singlePvStreams": 30,
+    "streamsWithSecondaryIssues": 24,
+    "phase": {
+      "logical-progress": {
+        "frames": 930,
+        "alternatives": 616,
+        "topSupportedAlternatives": 616,
+        "secondaryIssues": 616
+      },
+      "final": {
+        "frames": 54,
+        "alternatives": 39,
+        "topSupportedAlternatives": 31,
+        "secondaryIssues": 7
+      }
+    }
+  },
+  "completedUtc": "2026-10-16T10:38:50.115Z",
+  "limitations": "Four exposed paired-case adapter checks, not new full-app acceptance or human validation; traffic progress timings are missing."
+}

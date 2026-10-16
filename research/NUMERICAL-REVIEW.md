@@ -66,6 +66,18 @@ research, defer implementation; prospectively correct fixture routing with uncha
 candidate and census compatible authorized saved traffic for naturally emitted
 states. Human precision and original screenshot cause remain unproved.
 
+Seventh checkpoint,2026-10-16: [F024](findings/F024-brilliant-coherence-coverage.md).
+E278 repairs only overlay fixture evidence; unchanged C/gates pass252 rows with
+84 positives/132 abstentions/36 preserved negatives,168 other rows exact. Original
+E277 failure remains. Guarded saved two-case traffic yields984 frames: all616
+logical-progress secondary alternative inspections are incompatible, versus7/31
+supported-top final inspections. Independent parser/fixture/scientific replay and
+four exposed-case checks pass; no fresh searches. Keep C's source contract but
+defer implementation because provisional coverage can suffer. Next distinct
+question: can coherent MultiPV iteration emission improve eligibility/freshness
+without changing scores or weakening evidence? Replay saved traffic first; human
+precision, UI timing and original report cause remain open.
+
 First checkpoint completed 2026-10-15: [F018](findings/F018-aggregation-and-evidence.md)
 records the keep/reject/defer decisions. Twenty-one focused experiment/data-policy
 checks and maintained-source verification pass. Both reports repeat exactly;

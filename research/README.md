@@ -30,6 +30,10 @@ E277/F023 find a current secondary-line admission gap in synthetic native UCI/
 variation replay. The selective guard remains research-only: the fixed screen
 fails eight shared positive-control fixtures. Preserve that failure and validate
 coherent child-preview controls and natural engine traffic before promotion.
+E278/F024 correct those fixture inputs with unchanged candidate/gates and pass
+the contract screen. Real saved traffic exposes the cost of stale secondary
+iterations during progress. Next test coherent MultiPV emission; production
+selection and human validity remain open.
 
 ## Start here
 
