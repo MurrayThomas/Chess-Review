@@ -42,6 +42,18 @@ Before a large collection, compare its information value and cost with alternati
 Before confirmation, freeze one candidate and obtain genuinely untouched evidence.
 Before implementation, review the accumulated candidates with the user.
 
+User priority update2026-10-16: investigate Brilliant complaints before the queued
+CP-anchored draw design. Fifth checkpoint [F022](findings/F022-brilliant-reported-cases.md)
+retains E276's different verdicts: Qg3 is a sound new-threat knight offer; Ke8
+avoids mate but remains losing and should be ordinary Best. Current source agrees
+across14 case/engine/budget rows and four full-app replays; an old rule reproduces
+a bad Ke8 label with synthetic preceding-error context.58 searches, four cold
+repeats, exact report replay, independent legality/exchange/mate audits,30 focused
+checks and source verification pass. No new runtime fix or precision claim.
+Original app/cache/full history remain unresolved. Next distinct question: can
+current stored/streamed/variation paths bypass mover-relative soundness or stale-
+score gates? Preserve both reported cases and legitimate defensive sacrifices.
+
 First checkpoint completed 2026-10-15: [F018](findings/F018-aggregation-and-evidence.md)
 records the keep/reject/defer decisions. Twenty-one focused experiment/data-policy
 checks and maintained-source verification pass. Both reports repeat exactly;

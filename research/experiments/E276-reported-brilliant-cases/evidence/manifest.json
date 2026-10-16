@@ -1,0 +1,149 @@
+{
+  "schema": "E276-specific-user-diagnostic-evidence-v1",
+  "experiment": "E276",
+  "publicDatasetAdmission": false,
+  "purpose": "Only the two explicitly user-supplied Brilliant complaint cases and diagnostic continuations; not population/training/confirmation evidence.",
+  "createdUtc": "2026-10-16T10:02:02.829Z",
+  "codeRevision": "5ad4591c9ccfd79b6062a269efca23874361bbb7",
+  "codeSha256": {
+    "audit-tactics.mjs": "cc36d5def093035aa973e895d3f3d8ecbb18eeda25e9450b93e7c3693833445f",
+    "audit.mjs": "89a96866aab85a4dc1708f0f8c85dc7834ecf3f241c8cc3eca80a77147015a98",
+    "cases.mjs": "57e92f6c1d2dfc39f8dfeb0991cfd0bbf46f47eb0fcac363d930072e466efe66",
+    "classifier.mjs": "461b0351cad5c540e75bbf4dba9de92bb3ee7f98f9a80565d35931939976d936",
+    "engine.mjs": "9035fd126000cc84c754f4290f5aa58c5e2acb6667cd5405aef078944af858a1",
+    "integration.mjs": "c4587490b7b7f3e82ce7a941e44abcc77e9c0a7c23dd486e34276a0756a5a12c",
+    "regression.test.mjs": "46a6ccc4f2e37d9730dc4d5ad565963d6a04bc8f6a52a1ad0941c1276fd71405",
+    "replay-saved.mjs": "994e6e5f186b3091114d7fa8f26653efa5faeac948f8b7341915f5f1a7beb199",
+    "run.mjs": "83df04c03deec8f7c91c00bcc1151433101ab5315d3be3c33b0c2b15b0b0c922",
+    "study.test.mjs": "ba8c0b3e6b6daebf4e9847fc322629094da77836196c2cff767fb3857ca515f2",
+    "tactics.mjs": "cf32cd8adf8e9ca3b9a84a8b0be4992e0a0b997524a15a7283a6c0d127e80fa6"
+  },
+  "artifacts": {
+    "case-a.png": {
+      "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0",
+      "bytes": 172006,
+      "parents": []
+    },
+    "case-b.png": {
+      "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636",
+      "bytes": 241447,
+      "parents": []
+    },
+    "cases.json": {
+      "sha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+      "bytes": 2448,
+      "parents": [
+        "case-a.png",
+        "case-b.png"
+      ]
+    },
+    "classifier-declarations.js.gz": {
+      "sha256": "ac3a2d15016c4fc52ba6705738ed7307fd853dfe80a76bdd252af959ffc98f6b",
+      "bytes": 5296,
+      "parents": [
+        "freeze.json"
+      ],
+      "uncompressedSha256": "4a56ee8427d8670f460097dcf9b946754463693bfa4ebb4941cdf018fb632f47"
+    },
+    "classifier-snapshot.json": {
+      "sha256": "ef94a4a5e9c841aa366ca18e4bb06240ff13e008f0718922a1f9216e8ad281b2",
+      "bytes": 3948,
+      "parents": [
+        "classifier-declarations.js.gz",
+        "freeze.json"
+      ]
+    },
+    "collection-run.json": {
+      "sha256": "76cb4d7e564ad0570671aa0f03506914b1594bb9ed9d6ae3a8ad86af846ff22d",
+      "bytes": 4845,
+      "parents": [
+        "observations.json.gz"
+      ]
+    },
+    "freeze.json": {
+      "sha256": "bd97134bae7e3adb2f526d4457a55796f3a1b24cb24f2edd8fca527b00f31ff6",
+      "bytes": 4632,
+      "parents": [
+        "cases.json"
+      ]
+    },
+    "integration.json": {
+      "sha256": "f4a4fd58b3b1457ae9774b0e72ac2adfdd43db049f8aa5c287b804beb784704c",
+      "bytes": 3051,
+      "parents": [
+        "results.json"
+      ]
+    },
+    "observations.json.gz": {
+      "sha256": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+      "bytes": 45293,
+      "parents": [
+        "freeze.json"
+      ],
+      "uncompressedSha256": "11361e8441b219c7c65ab7f7cbd95d6b9a1ebf8abb3b8f965bbed03c9a19209d"
+    },
+    "repeat-run.json": {
+      "sha256": "eeec3bd6186a6d6c672b718896c056cba45b9ccb28ef350a96a6ba478b8ba4d4",
+      "bytes": 4749,
+      "parents": [
+        "results.json"
+      ]
+    },
+    "report-run.json": {
+      "sha256": "4f9b6aa5b1133974885d9df7aa7871bd9f1313ba38c8699197984a04aaecd2f4",
+      "bytes": 4741,
+      "parents": [
+        "results.json"
+      ]
+    },
+    "results.json": {
+      "sha256": "8da4d992df9866f74acca05ee89473d829606c9c0c15956afdc5e36b7380fad7",
+      "bytes": 60696,
+      "parents": [
+        "observations.json.gz",
+        "freeze.json"
+      ]
+    },
+    "saved-replay.json": {
+      "sha256": "a31ad871178246fced836fd8add5920518ae980e231da1ac399500597e381490",
+      "bytes": 1371,
+      "parents": [
+        "classifier-snapshot.json",
+        "results.json"
+      ]
+    },
+    "tactics-run.json": {
+      "sha256": "8dfbf857ab33ab5914e939f8277c717c9ca9ba17a0bba9c5a7b96003da6fabd3",
+      "bytes": 1726,
+      "parents": [
+        "tactics.json.gz"
+      ]
+    },
+    "tactics-verification.json": {
+      "sha256": "97d9b1ebee3f7834da9b0565227fa5678c79e68afaff083c1be46ac2d454af0a",
+      "bytes": 6258,
+      "parents": [
+        "tactics-run.json"
+      ]
+    },
+    "tactics.json.gz": {
+      "sha256": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+      "bytes": 15293,
+      "parents": [
+        "results.json",
+        "freeze.json"
+      ],
+      "uncompressedSha256": "c74a3fcfc37c32adb87e850a63e59ea0a0291c9f48e5369e4d8e7367b64cf8c0"
+    },
+    "verification.json": {
+      "sha256": "b4d54e4dbb2210143d495e68a6a35d492d7ebd014435426fe862c7fbbd43755f",
+      "bytes": 3484,
+      "parents": [
+        "observations.json.gz",
+        "collection-run.json"
+      ]
+    }
+  },
+  "payloadBytes": 581284,
+  "manifestSelfExcluded": true
+}

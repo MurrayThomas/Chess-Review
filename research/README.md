@@ -22,6 +22,10 @@ outcome calibration with cached roots; exact/independent replay verifies a faile
 joint screen. [F021](findings/F021-draw-calibration-controls.md) records the strong-
 control and rare-draw limitations. Checkpoint four compares the next directions;
 no replacement model is confirmed or implemented.
+User-supplied Brilliant complaints take priority from2026-10-16. E276/F022 retain
+dual-engine analysis: Qg3 remains supported; losing Ke8 is Best in current source.
+A historical false-label mechanism is reproduced separately. Both cases are saved
+regression guards. Next audit current annotation evidence paths.
 
 ## Start here
 

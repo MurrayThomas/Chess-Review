@@ -1,0 +1,28 @@
+{
+  "schema": "E276-saved-declaration-replay-v1",
+  "passed": true,
+  "rows": 28,
+  "caseEligibility": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "inputSha256": "8da4d992df9866f74acca05ee89473d829606c9c0c15956afdc5e36b7380fad7",
+  "snapshotSha256": "ac3a2d15016c4fc52ba6705738ed7307fd853dfe80a76bdd252af959ffc98f6b",
+  "codeSha256": "994e6e5f186b3091114d7fa8f26653efa5faeac948f8b7341915f5f1a7beb199",
+  "completedUtc": "2026-10-16T10:01:10.053Z",
+  "liveAnalysisFileRead": false,
+  "claim": "Exact archived scientific declaration replay; full app and clean-checkout reproduction remain separate."
+}

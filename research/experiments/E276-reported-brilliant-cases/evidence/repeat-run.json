@@ -1,0 +1,103 @@
+{
+  "schema": "E276-run-v1",
+  "mode": "report",
+  "revision": "46972a8270648690a032f582610aa038238eeb54",
+  "startedUtc": "2026-10-16T09:54:14.788Z",
+  "sources": {
+    "research/experiments/E276-reported-brilliant-cases/code/cases.mjs": "57e92f6c1d2dfc39f8dfeb0991cfd0bbf46f47eb0fcac363d930072e466efe66",
+    "research/experiments/E276-reported-brilliant-cases/code/engine.mjs": "9035fd126000cc84c754f4290f5aa58c5e2acb6667cd5405aef078944af858a1",
+    "research/experiments/E276-reported-brilliant-cases/code/classifier.mjs": "461b0351cad5c540e75bbf4dba9de92bb3ee7f98f9a80565d35931939976d936",
+    "research/experiments/E276-reported-brilliant-cases/code/run.mjs": "83df04c03deec8f7c91c00bcc1151433101ab5315d3be3c33b0c2b15b0b0c922",
+    "research/experiments/E276-reported-brilliant-cases/code/study.test.mjs": "ba8c0b3e6b6daebf4e9847fc322629094da77836196c2cff767fb3857ca515f2",
+    "analysis.js": "337d1cb4014ea6370edf696b42925575e0e21c5816ecf0b1c3bb5efe441f14e1",
+    "lib/chess.js": "2f346e1ba9ad3addee7a98fe23edcf98129347608de35de3d6c00c7c5e6dc27c",
+    "lib/public-scoring.js": "de158d2fd2708b9f37b1692508eed10db57fc12f41c33d101a6da772b0b42c54",
+    "data/calibration.json": "89b58ec7bcf3275141ec84a1af6c148602dc11ffa196c14d2e7d023088f2c5ed",
+    "tools/calibration/engine.mjs": "bdabbbd34fd625ab9f946a3caac59a8f8275c4fe3d7ad5bb1a66d8b1cc911afe",
+    "tools/calibration/engine-host.cjs": "550a0ecd1a13ab12401ddc3c979b2aadc6a0c2d2efebda9f2f4816e742e3b95c",
+    "node_modules/acorn/dist/acorn.mjs": "953573b8fdab71599749ea5f2b33d3e760c2116178f9423ee7458dbe39d59453"
+  },
+  "caseEligibility": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "configs": {
+    "18": {
+      "file": "engine/stockfish-nnue.js",
+      "version": "Stockfish 18 (identity verified at UCI startup)",
+      "majorVersion": 18,
+      "build": "stockfish.js lite single-threaded",
+      "network": "nn-9067e33176e8.nnue",
+      "loaderSha256": "2278005057f381491f1c9bb3e44c9f5920b3a00bef9759e33cc6582769a1f1fe",
+      "wasmSha256": "a8fbc05ec6920b56d7485826dcb02c5ffd2826bcbf751cf973046f237a9096f1",
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "options": {
+        "Threads": 1,
+        "Hash": 32,
+        "MultiPV": 1,
+        "Skill Level": 20,
+        "UCI_LimitStrength": false,
+        "UCI_ShowWDL": true,
+        "UCI_Chess960": false
+      },
+      "reset": "ucinewgame + Clear Hash + isready before every search",
+      "tablebases": "none",
+      "perspective": "side to move at root",
+      "position": "Explicit user-transcribed FEN; full history unavailable/not authenticated"
+    },
+    "19": {
+      "file": "engine/stockfish-19-lite-single.js",
+      "version": "Stockfish 19 (identity verified at UCI startup)",
+      "majorVersion": 19,
+      "build": "stockfish.js lite single-threaded",
+      "network": "nn-61e7af4bb97d.nnue",
+      "loaderSha256": "d3344124ab067fb0b90ee77873bb8e9fbf5fc01bc525fe714b0f942581e889e6",
+      "wasmSha256": "57ac2d72312aba346760e3f173f687a8c211208e97a87268436f7f0e10bb5387",
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "options": {
+        "Threads": 1,
+        "Hash": 32,
+        "MultiPV": 1,
+        "Skill Level": 20,
+        "UCI_LimitStrength": false,
+        "UCI_ShowWDL": true,
+        "UCI_Chess960": false
+      },
+      "reset": "ucinewgame + Clear Hash + isready before every search",
+      "tablebases": "none",
+      "perspective": "side to move at root",
+      "position": "Explicit user-transcribed FEN; full history unavailable/not authenticated"
+    }
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "command": [
+    "C:\\Users\\thoma\\Documents\\GitHub\\Chess-Review\\research\\experiments\\E276-reported-brilliant-cases\\code\\run.mjs",
+    "report",
+    "research/runs/E276/repeat-report"
+  ],
+  "elapsedMs": 1163.1328,
+  "outputHash": "8da4d992df9866f74acca05ee89473d829606c9c0c15956afdc5e36b7380fad7"
+}

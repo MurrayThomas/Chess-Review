@@ -1,0 +1,228 @@
+{
+  "schema": "E276-tactical-audit-v1",
+  "passed": true,
+  "completedUtc": "2026-10-16T09:52:59.736Z",
+  "codeSha256": "cc36d5def093035aa973e895d3f3d8ecbb18eeda25e9450b93e7c3693833445f",
+  "inputSha256": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+  "caseEligibility": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "observations": 12,
+  "legalPvLines": 394,
+  "legalPvMoves": 4008,
+  "rows": [
+    {
+      "engine": 19,
+      "name": "after-hxg4",
+      "rootTurn": "b",
+      "score": {
+        "cp": 21,
+        "wdl": [
+          25,
+          971,
+          4
+        ]
+      },
+      "bestmove": "h6g4",
+      "pv": "h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1e2 e3d1 e2d1 c8g4 d1e1 f8a8 b1d2 a8e8 e1f1",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 19,
+      "name": "after-hxg4-Nxg4",
+      "rootTurn": "w",
+      "score": {
+        "cp": -108,
+        "wdl": [
+          0,
+          405,
+          595
+        ]
+      },
+      "bestmove": "f1f3",
+      "pv": "f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 b5c7 e5f4 c7a8 f8e8 d3e4 h2h1 f1e2 h1g2 e2e1 g2h1 e1e2",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 19,
+      "name": "unsafe-later-Qxg4",
+      "rootTurn": "w",
+      "score": {
+        "cp": -400,
+        "wdl": [
+          0,
+          0,
+          1000
+        ]
+      },
+      "bestmove": "d1g4",
+      "pv": "d1g4 g3g4 b5c7 g4g3 d3h7 g8h7 b1d2 g3e3 f1f2 a8a4 c3c4 a4a5 c7b5 a5b5 d2f3 h7g8 a1e1 e3c5",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 19,
+      "name": "immediate-Qxg4",
+      "rootTurn": "b",
+      "score": {
+        "cp": 593,
+        "wdl": [
+          1000,
+          0,
+          0
+        ]
+      },
+      "bestmove": "h6g4",
+      "pv": "h6g4 d3h7 g8h7 h3g4 g3e3 f1f2 e3c1 f2f1 c1b2 b1a3 a8a3 a1b1 b2a2 b5a3 a2a3 f1f3 g7g6",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 19,
+      "name": "inferred-history-before",
+      "rootTurn": "b",
+      "score": {
+        "cp": 14,
+        "wdl": [
+          21,
+          973,
+          6
+        ]
+      },
+      "bestmove": "h4g3",
+      "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h1 f3f1 h1h4 e1d2 f8e8",
+      "transcript": "maintained harness selected exact and final info only"
+    },
+    {
+      "engine": 19,
+      "name": "inferred-history-after",
+      "rootTurn": "w",
+      "score": {
+        "cp": -10,
+        "wdl": [
+          7,
+          976,
+          17
+        ]
+      },
+      "bestmove": "h3g4",
+      "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 h2h4 g2g3 h4e7 e5e6 f7e6 b1d2 e6e5 d3c4 g8h8 d1e2",
+      "transcript": "maintained harness selected exact and final info only"
+    },
+    {
+      "engine": 18,
+      "name": "after-hxg4",
+      "rootTurn": "b",
+      "score": {
+        "cp": 96,
+        "wdl": [
+          444,
+          556,
+          0
+        ]
+      },
+      "bestmove": "h6g4",
+      "pv": "h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 f3h3 h2f4 f1g1 f4f2 g1h1 g4f6 h3f3 f2h4 h1g1 c8g4 b5c7 a8d8 d1a4 d8d6",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 18,
+      "name": "after-hxg4-Nxg4",
+      "rootTurn": "w",
+      "score": {
+        "cp": -113,
+        "wdl": [
+          0,
+          336,
+          664
+        ]
+      },
+      "bestmove": "f1f3",
+      "pv": "f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 f3h3 h2h3 g2h3 g4e3 f1f2 e3d1 a1d1 f8d8 d2c4 c8f5 c4e5 c7c6 b5c7",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 18,
+      "name": "unsafe-later-Qxg4",
+      "rootTurn": "w",
+      "score": {
+        "cp": -279,
+        "wdl": [
+          0,
+          0,
+          1000
+        ]
+      },
+      "bestmove": "d1g4",
+      "pv": "d1g4 g3g4 b5c7 g4g3 d3b5 a8a5 c3c4 g3e3 g1h1 e3c5 b2b4 c5c7 b4a5 d7d6 b1c3 d6e5 c3d5 c7c5 a5b6 c8e6 a2a4 e5f4 f1f4 e6d5 c4d5 c5b6 f4c4 f8d8",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 18,
+      "name": "immediate-Qxg4",
+      "rootTurn": "b",
+      "score": {
+        "cp": 440,
+        "wdl": [
+          1000,
+          0,
+          0
+        ]
+      },
+      "bestmove": "g3e3",
+      "pv": "g3e3 f1f2 h6g4 h3g4 e3d3 b1a3 a8a5 f2f3 d3d5 c3c4 d5c5 g1h2 a5a3 f3a3 c5f2 b5c7 f2f4 h2g1 f4c4 a3a8 c4c7",
+      "transcript": "all returned UCI lines"
+    },
+    {
+      "engine": 18,
+      "name": "inferred-history-before",
+      "rootTurn": "b",
+      "score": {
+        "cp": 62,
+        "wdl": [
+          145,
+          855,
+          0
+        ]
+      },
+      "bestmove": "h4g3",
+      "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a7 b1d2 e5f4 d1e2 a7a5 f3h3 h2g1 d2f1 g7g6 d3b5 c8f5",
+      "transcript": "maintained harness selected exact and final info only"
+    },
+    {
+      "engine": 18,
+      "name": "inferred-history-after",
+      "rootTurn": "w",
+      "score": {
+        "cp": -45,
+        "wdl": [
+          1,
+          930,
+          69
+        ]
+      },
+      "bestmove": "h3g4",
+      "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 a8a5 b2b4 a5b5 d3b5 d6e5 b1d2 e5f4 d1e2 g4e3 e2f2",
+      "transcript": "maintained harness selected exact and final info only"
+    }
+  ],
+  "mateProof": {
+    "afterQxe6LegalReplies": [
+      "Kc7"
+    ],
+    "finalCheckmate": true
+  },
+  "limitations": "Same engines and selected complaints; inferred history remains unverified; no human agreement or population claim."
+}
