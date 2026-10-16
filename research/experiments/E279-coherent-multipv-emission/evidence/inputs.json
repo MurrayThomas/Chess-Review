@@ -1,0 +1,930 @@
+{
+  "schema": "E279-fixed-replay-v1",
+  "parentResultSha256": "cd2b95df0010b48758121a8b3a13cd2cfe37bf74d11bda0e7c016628659903ac",
+  "trafficEligibility": {
+    "schema": "E278-E276-specific-traffic-admission-v1",
+    "caseAuthorization": {
+      "schema": "E276-specific-user-authorization-v1",
+      "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+      "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+      "images": [
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+          "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+        },
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+          "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+        }
+      ],
+      "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+      "cases": 2
+    },
+    "parentManifestSha256": "a716a7d26e274c4afc59ef7755ea5bb2202587a5f170c8efd9474230e1765ba1",
+    "archives": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/observations.json.gz",
+        "sha256": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+        "observations": 46
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "sha256": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+        "observations": 12
+      }
+    ],
+    "fullStreams": 54,
+    "excluded": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 4,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 5,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 10,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 11,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      }
+    ],
+    "scope": "Exactly the two explicitly user-supplied cases/continuations. No public-dataset admission or population sample."
+  },
+  "pilot": [
+    "observations.json.gz:38:raw",
+    "observations.json.gz:6:raw",
+    "observations.json.gz:28:raw",
+    "observations.json.gz:0:raw"
+  ],
+  "streams": [
+    {
+      "id": "observations.json.gz:0:raw",
+      "rawSha256": "6d723e6788fd95b9f8731d4f4dd756639196503bd7f2c9c32d4d352f70c2cfad",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:1:raw",
+      "rawSha256": "f8b20631b00466f6e878a6a1741b96e59ffe0fb0fae3fdf81061c6f1bc069b9f",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:2:raw",
+      "rawSha256": "d6bcbad1d8e0685a6779604e1b123f9468a0bd814ef8ea2d4501bc7725e5f213",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:3:raw",
+      "rawSha256": "a35c2c22837a9b236ece4529fb1c1be8aaf639badfac79803051665d7dabd41a",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:4:raw",
+      "rawSha256": "407e022c8d654704848f15521770650d9ab055f8c75ccbe7c7c59b77df231124",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:5:raw",
+      "rawSha256": "dfc4ac78aca56f89577b143f530fc1990f349d9f0ce8f081e27d857ba0e09035",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:6:raw",
+      "rawSha256": "4f1fd5e60a2e699a3918ce4c5cae0aef6abbc437b1d437b4930cfddeb2f9c775",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:7:raw",
+      "rawSha256": "4d9b641236989b64c07c84cc9984891678b7e0c808fc0ee61a4aeac9bafedfed",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:8:raw",
+      "rawSha256": "4644b24cb9815cf1f253a4ddf43862776bf4081af0768f0413dbf9ed70014166",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:9:raw",
+      "rawSha256": "e2bf27c6a802f3ed32bf8da08ad2f892a2ac3379e1ec26e8939e5118e3924ce2",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:10:raw",
+      "rawSha256": "86efb9a5a309b9e3ea4e09aa22cd28cb07bec968636b2562ace7d47983fea955",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:11:raw",
+      "rawSha256": "03824a3154c2ea0a2ebdbe99dfe3966e121a4f5d565a1d9e030773807152cff5",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 200000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:12:raw",
+      "rawSha256": "cc47662856cc355b422d09c8952ba885dfdc4f834a6c9a6618f9450e5e686453",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:13:raw",
+      "rawSha256": "c48a54a74c8f0f02f5059f4779f0222c2357b0993fc97235341eb72f05b188de",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:14:raw",
+      "rawSha256": "a0c7f39ee64de982cea889cb49a3b84408f00263e6aa5bd7af8ac4d3d5679dea",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:15:raw",
+      "rawSha256": "a22fa2aa4d6e5eaf50d35aae0b3b02b7768521b6d6747a7bb10957ff84a74d24",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:16:raw",
+      "rawSha256": "0466284822d962d55798934acb23839590c86ad4d889423877a9a71199faa0e5",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:17:raw",
+      "rawSha256": "74dcc5244adfa143ca4b0c19dbaa1bbbddf5bd54e463e07c9b8dec19d0a13120",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:18:raw",
+      "rawSha256": "1f28de4a932db8b560475ca56ffec56affd504d7d395a6c7b7932a61015adcd9",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:19:raw",
+      "rawSha256": "3f5cf8dcf37e0c19e3630369d5ccb6ea5e7484b0ed01118cbd07529de8a89da4",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:20:raw",
+      "rawSha256": "c6256b9b814b284a351390d2697de3731bc13fe4fb0d5de73c7b96262ce79094",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:21:raw",
+      "rawSha256": "b2a41aab289b4d14d2201bf9536f6862d1f7eb1a3d6ac3d5a20d56230ca6796d",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:22:raw",
+      "rawSha256": "8a7d3a1124a2619652a831b01cf0fcbd62b3759bd37ae20bde63b2ee034c7b61",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:23:raw",
+      "rawSha256": "05d4aff91ab8cb2976b69a6d96585d03e8522dd498ce9b054d4070c3dcdf5538",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:24:raw",
+      "rawSha256": "41951ccffa2dbc99fee2dcc919aac71f9b347898ab84660f7cc9b8177d5a4e5b",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:25:raw",
+      "rawSha256": "6e3fdf4474f4825ff5dbefc6262452c08cdd4a9242b4f1e67c70444dcfbd4f84",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:26:raw",
+      "rawSha256": "f7f0bf7a3b09f5a66d8af30b1689cd94104d0828f906f7264e5bc31dd33da51a",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:27:raw",
+      "rawSha256": "bcf7dae5c60e0ab728179a4db3bb0b81c3feb0c1996d5fa23830320859d99341",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:28:raw",
+      "rawSha256": "2671691ae814c8f680fb48169294777952beaa45d66e85919d5a58021f226806",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:29:raw",
+      "rawSha256": "996f798e800e710843aef973928ee25c71807687cecdf026ae2688dc31b41889",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:30:raw",
+      "rawSha256": "0637002db79176fa9d2551e3ede8fb868233658fd7444ba01926be841f2af051",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:31:raw",
+      "rawSha256": "809442d5dc2cc92ff2ba52549139a713749d21c17624732b01b82ef3c0338669",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:32:raw",
+      "rawSha256": "d130ae51f4bf36258e9f597004f37a0f87ea7d4aa8548dc0fe4ed4df5664a0f5",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:33:raw",
+      "rawSha256": "da995d5e1703a8bab64620e71907acc8da29107d510b805400f3e8a7955f67f8",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:34:raw",
+      "rawSha256": "02c025d0d68ffb1743505c2ac186e79b0f85e8fb15765d91efa037c8c4934d7a",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:35:raw",
+      "rawSha256": "95beba297f08eda3665da2fd3cea4534db7396467d10eb247731d974fc79f4bd",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "nodes",
+          "value": 8000000
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:36:raw",
+      "rawSha256": "dc2f8876ceece252a337f3488fc1f364344c4084254b86237c0e2e1a62d1c67f",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:37:raw",
+      "rawSha256": "b7f0059029371e54887acacfa4d1f4393caa2de341efcc9ea64cdd7833f79149",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "played",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 1,
+        "restricted": "h4g3"
+      }
+    },
+    {
+      "id": "observations.json.gz:38:raw",
+      "rawSha256": "7f9322913fec0d024cfe66662c94aa0af8e5c838a5cdcdbc3414bb7e385bfa8d",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "after",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:39:raw",
+      "rawSha256": "76eca1b0412679a95e0ffc57d67b8f838871f828c5f9ea4cdb7bcbf60b5cd567",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:40:raw",
+      "rawSha256": "3ced8328590831f088333b7fb1f55a6ab7307fb97aa63e8063d87fcdfdb195a9",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "played",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 1,
+        "restricted": "d7e8"
+      }
+    },
+    {
+      "id": "observations.json.gz:41:raw",
+      "rawSha256": "f531beaea6a5900ce3ecf8463a761b3677796373d0a4559b44949b26f06e4388",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "after",
+        "fen": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+        "budget": {
+          "kind": "depth",
+          "value": 16
+        },
+        "multipv": 1,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:42:raw",
+      "rawSha256": "6a38ddf9ff1d3d4b0dc7c0d6c631126927843a2f8a33d07398b9bbdd30ebe771",
+      "query": {
+        "engine": 19,
+        "case": "A",
+        "role": "repeat-best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:43:raw",
+      "rawSha256": "d0deb7898176e8a366a2e1650e7b14774855f29a9798a55808b34cc0bb2a0c0e",
+      "query": {
+        "engine": 19,
+        "case": "B",
+        "role": "repeat-best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:44:raw",
+      "rawSha256": "b3d25b0b73a2dbfbd001640bd6f1cf2061097a883468e144ffb5caa293ba7c40",
+      "query": {
+        "engine": 18,
+        "case": "A",
+        "role": "repeat-best",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "observations.json.gz:45:raw",
+      "rawSha256": "2344da6d07e4fcd923824c92d9c7cf9d3ab073e31957bbf6e15e79a88a29e11b",
+      "query": {
+        "engine": 18,
+        "case": "B",
+        "role": "repeat-best",
+        "fen": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        },
+        "multipv": 3,
+        "restricted": null
+      }
+    },
+    {
+      "id": "tactics.json.gz:0:raw",
+      "rawSha256": "c7a4c3cd6bb9840d022cfb7f24eb2fe73c7f5df8c9a8cd42bb81aa4eb57c3649",
+      "query": {
+        "name": "after-hxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5PP1/2PB2q1/PP4P1/RN1Q1RK1 b - - 0 14",
+        "multipv": 3,
+        "engine": 19,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:1:raw",
+      "rawSha256": "c5cd17931088c7b0e274ed09ccca9f39253dcc0117270e36c45a6a71a0422e4b",
+      "query": {
+        "name": "after-hxg4-Nxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p6/1N2P3/5Pn1/2PB2q1/PP4P1/RN1Q1RK1 w - - 0 15",
+        "multipv": 3,
+        "engine": 19,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:2:raw",
+      "rawSha256": "c2aba02f6d0d8c0b22b8b7bf408992d62219d46bca6d1827a503eb2088bcb0cc",
+      "query": {
+        "name": "unsafe-later-Qxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p6/1N2P3/5Pn1/2PB2q1/PP4P1/RN1Q1RK1 w - - 0 15",
+        "multipv": 1,
+        "restricted": "d1g4",
+        "engine": 19,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:3:raw",
+      "rawSha256": "eb8ffe20112bd70ff920b70b1ccd86ddf828eb4bd2b31f92d080365352720df9",
+      "query": {
+        "name": "immediate-Qxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5PQ1/2PB2qP/PP4P1/RN3RK1 b - - 0 14",
+        "multipv": 3,
+        "engine": 19,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:6:raw",
+      "rawSha256": "f4fef73bd04b61acd00ed56e0c617207cc521419dea2260f1a84d05200317853",
+      "query": {
+        "name": "after-hxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5PP1/2PB2q1/PP4P1/RN1Q1RK1 b - - 0 14",
+        "multipv": 3,
+        "engine": 18,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:7:raw",
+      "rawSha256": "e78f25876d8bbda14bf6522e25b5cf06669c9f4e13332c420c531b2716909d7b",
+      "query": {
+        "name": "after-hxg4-Nxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p6/1N2P3/5Pn1/2PB2q1/PP4P1/RN1Q1RK1 w - - 0 15",
+        "multipv": 3,
+        "engine": 18,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:8:raw",
+      "rawSha256": "a3988b0ca245c225041e02a690d84d2f6f912d6299b3e636936f1508fb8d7385",
+      "query": {
+        "name": "unsafe-later-Qxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p6/1N2P3/5Pn1/2PB2q1/PP4P1/RN1Q1RK1 w - - 0 15",
+        "multipv": 1,
+        "restricted": "d1g4",
+        "engine": 18,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    },
+    {
+      "id": "tactics.json.gz:9:raw",
+      "rawSha256": "086d3e669acc487d0220d679e6341c9b4fb0f733701a9b3ce0ad930526f30236",
+      "query": {
+        "name": "immediate-Qxg4",
+        "fen": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5PQ1/2PB2qP/PP4P1/RN3RK1 b - - 0 14",
+        "multipv": 3,
+        "engine": 18,
+        "budget": {
+          "kind": "nodes",
+          "value": 2000000
+        }
+      }
+    }
+  ],
+  "gates": {
+    "minCoveredMulti": 22,
+    "minEligibleSecondary": 493,
+    "minWithinOneDepth": 20,
+    "invalidAllowed": 0
+  },
+  "dataRole": "Exposed two-case diagnostic metadata; no population/human validity."
+}
