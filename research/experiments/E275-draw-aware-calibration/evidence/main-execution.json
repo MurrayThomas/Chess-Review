@@ -1,0 +1,21 @@
+{
+  "schema": "E275-execution-time-v1",
+  "studyRegistrationDate": "2026-10-15",
+  "startedUtc": "2026-10-16T09:12:10.579Z",
+  "endedUtc": "2026-10-16T09:12:42.801Z",
+  "clientTimezone": "Europe/Copenhagen",
+  "mode": "evaluate",
+  "command": [
+    "C:\\Users\\thoma\\AppData\\Local\\Programs\\node-v24.20.0-win-x64\\node.exe",
+    "C:\\Users\\thoma\\Documents\\GitHub\\Chess-Review\\research\\experiments\\E275-draw-aware-calibration\\code\\run.mjs",
+    "evaluate",
+    "--out",
+    "research/runs/E275/main"
+  ],
+  "sourceRevision": "1536bc0a57a5c9f42477425908d83051dcd5114c",
+  "launcherSha256": "b539155ddb47c0a7dfd711daac028bef3cbf16ea0e60a41fc50ead8d70626942",
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "interpretation": "Child receipt date identifies the study registration; these UTC timestamps record actual execution. No scientific code, inputs or parameters changed."
+}

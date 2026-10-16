@@ -1,0 +1,1860 @@
+{
+  "schema": "E275-human-wdl-result-v1",
+  "spec": {
+    "epsilon": 0.0005,
+    "penalty": 0.001,
+    "maxIterations": 200,
+    "gradientTolerance": 1e-9,
+    "aBounds": [
+      0,
+      20
+    ],
+    "bBounds": [
+      -20,
+      20
+    ],
+    "cpIterations": 100,
+    "cpWidth": 1e-12,
+    "folds": 5,
+    "foldSeed": "E275-fold-v1:",
+    "iterations": 20000,
+    "primarySeeds": [
+      20261021,
+      20261022,
+      20261023
+    ],
+    "crossFitSeeds": [
+      20261031,
+      20261032,
+      20261033
+    ],
+    "controls": [
+      "cpDraw",
+      "temperature",
+      "constant"
+    ],
+    "minimumGain": 0.01,
+    "meanPointTolerance": 0.002,
+    "stabilityTolerance": 0.01
+  },
+  "roles": {
+    "validation": {
+      "metrics": {
+        "candidate": {
+          "games": 150,
+          "observations": 896,
+          "nll": 0.8208439593397416,
+          "brier": 0.5223748599087856,
+          "meanMse": 0.23222651141772738,
+          "pointNll": 0.6780800708148405
+        },
+        "cpDraw": {
+          "games": 150,
+          "observations": 896,
+          "nll": 0.8471957565331417,
+          "brier": 0.5307510477049551,
+          "meanMse": 0.2364317715370213,
+          "pointNll": 0.7051942212601743
+        },
+        "temperature": {
+          "games": 150,
+          "observations": 896,
+          "nll": 1.0953339008084617,
+          "brier": 0.6608558983502415,
+          "meanMse": 0.22914746404151207,
+          "pointNll": 0.6712042962094968
+        },
+        "constant": {
+          "games": 150,
+          "observations": 896,
+          "nll": 0.8334024332235488,
+          "brier": 0.5376252178175293,
+          "meanMse": 0.24001189662817932,
+          "pointNll": 0.6931709739034186
+        },
+        "raw": {
+          "games": 150,
+          "observations": 896,
+          "nll": 3.389685265876378,
+          "brier": 1.1576939868877492,
+          "meanMse": 0.2908028947090221,
+          "pointNll": 1.4271029229573877
+        }
+      },
+      "originalCp": {
+        "games": 150,
+        "meanMse": 0.2364317715370213,
+        "pointNll": 0.7051942212601743
+      },
+      "comparisons": {
+        "cpDraw": {
+          "interval": {
+            "estimate": 0.026351797193400434,
+            "lower": -0.018969729132474373,
+            "upper": 0.07879576368257232,
+            "level": 0.9833333333333333,
+            "seed": 20261021,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "paired percentile; Bonferroni three fixed comparisons; conditional exposed development"
+          },
+          "gates": {
+            "practical": true,
+            "interval": false,
+            "brier": true
+          },
+          "passed": false
+        },
+        "temperature": {
+          "interval": {
+            "estimate": 0.27448994146872085,
+            "lower": 0.16416490913026127,
+            "upper": 0.35970969621994925,
+            "level": 0.9833333333333333,
+            "seed": 20261022,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "paired percentile; Bonferroni three fixed comparisons; conditional exposed development"
+          },
+          "gates": {
+            "practical": true,
+            "interval": true,
+            "brier": true
+          },
+          "passed": true
+        },
+        "constant": {
+          "interval": {
+            "estimate": 0.01255847388380999,
+            "lower": -0.036311135899275516,
+            "upper": 0.06081821099537501,
+            "level": 0.9833333333333333,
+            "seed": 20261023,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "paired percentile; Bonferroni three fixed comparisons; conditional exposed development"
+          },
+          "gates": {
+            "practical": true,
+            "interval": false,
+            "brier": true
+          },
+          "passed": false
+        }
+      },
+      "calibration": {
+        "candidate": {
+          "classRootCounts": [
+            426,
+            48,
+            422
+          ],
+          "gamesWithClass": [
+            144,
+            6,
+            144
+          ],
+          "meanPredicted": [
+            0.4974359045786369,
+            0.04183947819565249,
+            0.46072461722570907
+          ],
+          "observed": [
+            0.4829841269841282,
+            0.03999999999999996,
+            0.4770158730158742
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.3396825396825399,
+                "meanPredicted": 0.30615133073170425,
+                "observed": 0.36876168224299044,
+                "games": 142
+              },
+              {
+                "bin": 2,
+                "weight": 0.29102380952380974,
+                "meanPredicted": 0.4968596566429915,
+                "observed": 0.4745970710954754,
+                "games": 114
+              },
+              {
+                "bin": 3,
+                "weight": 0.36929365079365134,
+                "meanPredicted": 0.6738368028228366,
+                "observed": 0.5946573252240435,
+                "games": 145
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.0000000000000036,
+                "meanPredicted": 0.04183947819565234,
+                "observed": 0.03999999999999982,
+                "games": 150
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.44691269841269987,
+                "meanPredicted": 0.3072517691629705,
+                "observed": 0.36131484079487025,
+                "games": 148
+              },
+              {
+                "bin": 2,
+                "weight": 0.264579365079365,
+                "meanPredicted": 0.4889793576147031,
+                "observed": 0.5457599664036954,
+                "games": 116
+              },
+              {
+                "bin": 3,
+                "weight": 0.28850793650793677,
+                "meanPredicted": 0.6725501362318975,
+                "observed": 0.5931998239436616,
+                "games": 136
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.056987064018050565,
+            0.0018394781956525275,
+            0.06207764550924216
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "cpDraw": {
+          "classRootCounts": [
+            426,
+            48,
+            422
+          ],
+          "gamesWithClass": [
+            144,
+            6,
+            144
+          ],
+          "meanPredicted": [
+            0.503901889586497,
+            0.03797939442347303,
+            0.45811871599002907
+          ],
+          "observed": [
+            0.4829841269841282,
+            0.03999999999999996,
+            0.4770158730158742
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0.12996825396825398,
+                "meanPredicted": 0.11100352218378383,
+                "observed": 0.22960429897410833,
+                "games": 86
+              },
+              {
+                "bin": 1,
+                "weight": 0.11692857142857137,
+                "meanPredicted": 0.3186752492923254,
+                "observed": 0.4829294780424896,
+                "games": 81
+              },
+              {
+                "bin": 2,
+                "weight": 0.4845952380952395,
+                "meanPredicted": 0.48737092756106326,
+                "observed": 0.4700699323605021,
+                "games": 135
+              },
+              {
+                "bin": 3,
+                "weight": 0.10899206349206339,
+                "meanPredicted": 0.6909670915679476,
+                "observed": 0.5467122988422051,
+                "games": 73
+              },
+              {
+                "bin": 4,
+                "weight": 0.15951587301587306,
+                "meanPredicted": 0.8822015735280135,
+                "observed": 0.6851584655953025,
+                "games": 97
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.0000000000000036,
+                "meanPredicted": 0.037979394423472895,
+                "observed": 0.03999999999999982,
+                "games": 150
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.1770793650793652,
+                "meanPredicted": 0.11320967080004932,
+                "observed": 0.26949623520975224,
+                "games": 103
+              },
+              {
+                "bin": 1,
+                "weight": 0.15154761904761896,
+                "meanPredicted": 0.32755543877507826,
+                "observed": 0.4715894213144803,
+                "games": 96
+              },
+              {
+                "bin": 2,
+                "weight": 0.46820634920635046,
+                "meanPredicted": 0.4802941802738747,
+                "observed": 0.4841509306031108,
+                "games": 139
+              },
+              {
+                "bin": 3,
+                "weight": 0.08415079365079357,
+                "meanPredicted": 0.6945659997663459,
+                "observed": 0.5185324908044896,
+                "games": 61
+              },
+              {
+                "bin": 4,
+                "weight": 0.11901587301587298,
+                "meanPredicted": 0.8831284855857088,
+                "observed": 0.7352627367297941,
+                "games": 81
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.09015845899752199,
+            0.002020605576526932,
+            0.08372061838085702
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "temperature": {
+          "classRootCounts": [
+            426,
+            48,
+            422
+          ],
+          "gamesWithClass": [
+            144,
+            6,
+            144
+          ],
+          "meanPredicted": [
+            0.33758011249639486,
+            0.343553674189501,
+            0.31886621331410725
+          ],
+          "observed": [
+            0.4829841269841282,
+            0.03999999999999996,
+            0.4770158730158742
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.721492063492066,
+                "meanPredicted": 0.2875429386018367,
+                "observed": 0.4288071456857471,
+                "games": 150
+              },
+              {
+                "bin": 2,
+                "weight": 0.2785079365079366,
+                "meanPredicted": 0.46720451134531354,
+                "observed": 0.6233329533796876,
+                "games": 131
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.5954682539682555,
+                "meanPredicted": 0.29770601663545365,
+                "observed": 0.041983766277039404,
+                "games": 144
+              },
+              {
+                "bin": 2,
+                "weight": 0.40453174603174685,
+                "meanPredicted": 0.41104114546968595,
+                "observed": 0.037079908183084424,
+                "games": 128
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.7796111111111138,
+                "meanPredicted": 0.277587772668056,
+                "observed": 0.43509686351558985,
+                "games": 150
+              },
+              {
+                "bin": 2,
+                "weight": 0.22038888888888886,
+                "meanPredicted": 0.46488596566752405,
+                "observed": 0.6253015953041159,
+                "games": 119
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.14540401448773357,
+            0.3035536741894993,
+            0.1581496597017672
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "constant": {
+          "classRootCounts": [
+            426,
+            48,
+            422
+          ],
+          "gamesWithClass": [
+            144,
+            6,
+            144
+          ],
+          "meanPredicted": [
+            0.4779359805937857,
+            0.04097452934662267,
+            0.4810894900595832
+          ],
+          "observed": [
+            0.4829841269841282,
+            0.03999999999999996,
+            0.4770158730158742
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 1.0000000000000036,
+                "meanPredicted": 0.477935980593784,
+                "observed": 0.48298412698412646,
+                "games": 150
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.0000000000000036,
+                "meanPredicted": 0.040974529346622525,
+                "observed": 0.03999999999999982,
+                "games": 150
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 1.0000000000000036,
+                "meanPredicted": 0.48108949005958146,
+                "observed": 0.4770158730158725,
+                "games": 150
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.005048146390342456,
+            0.0009745293466227115,
+            0.004073617043708955
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "raw": {
+          "classRootCounts": [
+            426,
+            48,
+            422
+          ],
+          "gamesWithClass": [
+            144,
+            6,
+            144
+          ],
+          "meanPredicted": [
+            0.3179389551452415,
+            0.4368273928373969,
+            0.24523365201736202
+          ],
+          "observed": [
+            0.4829841269841282,
+            0.03999999999999996,
+            0.4770158730158742
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0.649761904761907,
+                "meanPredicted": 0.022265158365794815,
+                "observed": 0.428349822889946,
+                "games": 150
+              },
+              {
+                "bin": 1,
+                "weight": 0.03494444444444443,
+                "meanPredicted": 0.29615574724561416,
+                "observed": 0.427662957074722,
+                "games": 29
+              },
+              {
+                "bin": 2,
+                "weight": 0.02472222222222222,
+                "meanPredicted": 0.49023598313202965,
+                "observed": 0.26966292134831465,
+                "games": 18
+              },
+              {
+                "bin": 3,
+                "weight": 0.018174603174603177,
+                "meanPredicted": 0.6796187059308775,
+                "observed": 0.6724890829694323,
+                "games": 15
+              },
+              {
+                "bin": 4,
+                "weight": 0.2723968253968254,
+                "meanPredicted": 0.9862500481828667,
+                "observed": 0.6271196317230932,
+                "games": 128
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.482507936507938,
+                "meanPredicted": 0.014792701340966132,
+                "observed": 0.03972300809263754,
+                "games": 131
+              },
+              {
+                "bin": 1,
+                "weight": 0.03884920634920633,
+                "meanPredicted": 0.3179809482388532,
+                "observed": 0.08580183861082742,
+                "games": 25
+              },
+              {
+                "bin": 2,
+                "weight": 0.03611111111111111,
+                "meanPredicted": 0.5073092684427016,
+                "observed": 0.04615384615384616,
+                "games": 26
+              },
+              {
+                "bin": 3,
+                "weight": 0.06438888888888886,
+                "meanPredicted": 0.71837876531967,
+                "observed": 0.012942191544434866,
+                "games": 43
+              },
+              {
+                "bin": 4,
+                "weight": 0.37814285714285767,
+                "meanPredicted": 0.9328785961193935,
+                "observed": 0.03966754816773701,
+                "games": 125
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.7283809523809552,
+                "meanPredicted": 0.015440958762418366,
+                "observed": 0.4275627615062748,
+                "games": 150
+              },
+              {
+                "bin": 1,
+                "weight": 0.029444444444444443,
+                "meanPredicted": 0.26255782014653056,
+                "observed": 0.5754716981132075,
+                "games": 23
+              },
+              {
+                "bin": 2,
+                "weight": 0.012222222222222223,
+                "meanPredicted": 0.503430103130253,
+                "observed": 0.45454545454545453,
+                "games": 11
+              },
+              {
+                "bin": 3,
+                "weight": 0.019841269841269844,
+                "meanPredicted": 0.6866966516741628,
+                "observed": 0.39199999999999996,
+                "games": 12
+              },
+              {
+                "bin": 4,
+                "weight": 0.21011111111111114,
+                "meanPredicted": 0.9827082126636815,
+                "observed": 0.6439903301352266,
+                "games": 116
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.37186241116857355,
+            0.4208855345719148,
+            0.3870082719519127
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        }
+      }
+    },
+    "crossFit": {
+      "metrics": {
+        "candidate": {
+          "games": 450,
+          "observations": 2744,
+          "nll": 0.7775319114010989,
+          "brier": 0.4841901651991767,
+          "meanMse": 0.2132551536271088,
+          "pointNll": 0.6378959043206847
+        },
+        "cpDraw": {
+          "games": 450,
+          "observations": 2744,
+          "nll": 0.7844116561241855,
+          "brier": 0.4778880987849149,
+          "meanMse": 0.2100353492780094,
+          "pointNll": 0.642929958136504
+        },
+        "temperature": {
+          "games": 450,
+          "observations": 2744,
+          "nll": 1.0686518826952602,
+          "brier": 0.6423440873607408,
+          "meanMse": 0.21916540210331883,
+          "pointNll": 0.6509283727043762
+        },
+        "constant": {
+          "games": 450,
+          "observations": 2744,
+          "nll": 0.8339628222340091,
+          "brier": 0.5376749779223875,
+          "meanMse": 0.24000319815276427,
+          "pointNll": 0.6931535769623516
+        },
+        "raw": {
+          "games": 450,
+          "observations": 2744,
+          "nll": 3.0295600043027027,
+          "brier": 1.0691927865754898,
+          "meanMse": 0.24179363893785036,
+          "pointNll": 1.0967063849142538
+        }
+      },
+      "originalCp": {
+        "games": 450,
+        "meanMse": 0.21003598862164946,
+        "pointNll": 0.6443960090320632
+      },
+      "comparisons": {
+        "cpDraw": {
+          "interval": {
+            "estimate": 0.006879744723085503,
+            "lower": -0.016099744884192097,
+            "upper": 0.032907794442460454,
+            "level": 0.95,
+            "seed": 20261031,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "descriptive paired cross-fit percentile; overlapping fits not independent confirmation"
+          },
+          "gates": {
+            "practical": true,
+            "interval": true,
+            "brier": false
+          },
+          "passed": false
+        },
+        "temperature": {
+          "interval": {
+            "estimate": 0.2911199712941601,
+            "lower": 0.2427145182308032,
+            "upper": 0.3350164586980881,
+            "level": 0.95,
+            "seed": 20261032,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "descriptive paired cross-fit percentile; overlapping fits not independent confirmation"
+          },
+          "gates": {
+            "practical": true,
+            "interval": true,
+            "brier": true
+          },
+          "passed": true
+        },
+        "constant": {
+          "interval": {
+            "estimate": 0.05643091083290865,
+            "lower": 0.03576512801411915,
+            "upper": 0.07718127431874815,
+            "level": 0.95,
+            "seed": 20261033,
+            "iterations": 20000,
+            "unit": "game",
+            "method": "descriptive paired cross-fit percentile; overlapping fits not independent confirmation"
+          },
+          "gates": {
+            "practical": true,
+            "interval": true,
+            "brier": true
+          },
+          "passed": true
+        }
+      },
+      "calibration": {
+        "candidate": {
+          "classRootCounts": [
+            1297,
+            143,
+            1304
+          ],
+          "gamesWithClass": [
+            432,
+            18,
+            432
+          ],
+          "meanPredicted": [
+            0.49542961845447525,
+            0.04250479150721004,
+            0.46206559003831016
+          ],
+          "observed": [
+            0.4784179894179805,
+            0.03999999999999997,
+            0.4815820105820015
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.3460714285714238,
+                "meanPredicted": 0.3087042374739144,
+                "observed": 0.28356839811948553,
+                "games": 416
+              },
+              {
+                "bin": 2,
+                "weight": 0.2887724867724846,
+                "meanPredicted": 0.49520715481031813,
+                "observed": 0.4851863388178418,
+                "games": 334
+              },
+              {
+                "bin": 3,
+                "weight": 0.3651560846560794,
+                "meanPredicted": 0.6725718418605446,
+                "observed": 0.6577313463112885,
+                "games": 429
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.000000000000012,
+                "meanPredicted": 0.04250479150720953,
+                "observed": 0.039999999999999494,
+                "games": 450
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.43709259259258515,
+                "meanPredicted": 0.30675141774550646,
+                "observed": 0.32164192203170794,
+                "games": 442
+              },
+              {
+                "bin": 2,
+                "weight": 0.2829232804232783,
+                "meanPredicted": 0.49249407007303225,
+                "observed": 0.5146477161157635,
+                "games": 364
+              },
+              {
+                "bin": 3,
+                "weight": 0.27998412698412495,
+                "meanPredicted": 0.673783838078434,
+                "observed": 0.6978570213730965,
+                "games": 390
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.017011629036488243,
+            0.002504791507210065,
+            0.019516420543697427
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "cpDraw": {
+          "classRootCounts": [
+            1297,
+            143,
+            1304
+          ],
+          "gamesWithClass": [
+            432,
+            18,
+            432
+          ],
+          "meanPredicted": [
+            0.4986744140814224,
+            0.03826998923611181,
+            0.4630555966824642
+          ],
+          "observed": [
+            0.4784179894179805,
+            0.03999999999999997,
+            0.4815820105820015
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0.13029100529100526,
+                "meanPredicted": 0.09634839229097975,
+                "observed": 0.17297461928934013,
+                "games": 250
+              },
+              {
+                "bin": 1,
+                "weight": 0.11311640211640216,
+                "meanPredicted": 0.3242268178472708,
+                "observed": 0.3280789559848449,
+                "games": 236
+              },
+              {
+                "bin": 2,
+                "weight": 0.5050291005290909,
+                "meanPredicted": 0.4879762606545028,
+                "observed": 0.4748325048061641,
+                "games": 420
+              },
+              {
+                "bin": 3,
+                "weight": 0.10562433862433872,
+                "meanPredicted": 0.6884355685437811,
+                "observed": 0.6200220407754342,
+                "games": 227
+              },
+              {
+                "bin": 4,
+                "weight": 0.1459391534391532,
+                "meanPredicted": 0.8927552846923112,
+                "observed": 0.7775582343877473,
+                "games": 274
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.000000000000012,
+                "meanPredicted": 0.03826998923611135,
+                "observed": 0.039999999999999494,
+                "games": 450
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.15847883597883566,
+                "meanPredicted": 0.10291409484845014,
+                "observed": 0.19782989733745115,
+                "games": 284
+              },
+              {
+                "bin": 1,
+                "weight": 0.16077777777777735,
+                "meanPredicted": 0.32731305179430864,
+                "observed": 0.3658472373054273,
+                "games": 300
+              },
+              {
+                "bin": 2,
+                "weight": 0.48260052910052004,
+                "meanPredicted": 0.4806495807371092,
+                "observed": 0.5012361379869945,
+                "games": 424
+              },
+              {
+                "bin": 3,
+                "weight": 0.07535185185185188,
+                "meanPredicted": 0.6883356613192805,
+                "observed": 0.6856721553207171,
+                "games": 181
+              },
+              {
+                "bin": 4,
+                "weight": 0.12279100529100542,
+                "meanPredicted": 0.8982100651980359,
+                "observed": 0.7968544651513514,
+                "games": 243
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.04109532097113641,
+            0.001730010763888165,
+            0.043818926161576746
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "temperature": {
+          "classRootCounts": [
+            1297,
+            143,
+            1304
+          ],
+          "gamesWithClass": [
+            432,
+            18,
+            432
+          ],
+          "meanPredicted": [
+            0.3351824920095968,
+            0.3464878273381399,
+            0.31832968065226025
+          ],
+          "observed": [
+            0.4784179894179805,
+            0.03999999999999997,
+            0.4815820105820015
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.7304735449735456,
+                "meanPredicted": 0.28724201366822555,
+                "observed": 0.3970136064522877,
+                "games": 450
+              },
+              {
+                "bin": 2,
+                "weight": 0.2695264550264531,
+                "meanPredicted": 0.4651113005130664,
+                "observed": 0.699041038073834,
+                "games": 387
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.5925211640211597,
+                "meanPredicted": 0.3013594484650027,
+                "observed": 0.034423792153518706,
+                "games": 422
+              },
+              {
+                "bin": 2,
+                "weight": 0.4074788359788294,
+                "meanPredicted": 0.41210968844921053,
+                "observed": 0.048108448518766916,
+                "games": 388
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0.7902830687830713,
+                "meanPredicted": 0.2789235098965188,
+                "observed": 0.4110508926210166,
+                "games": 450
+              },
+              {
+                "bin": 2,
+                "weight": 0.20971693121693036,
+                "meanPredicted": 0.46682522354013795,
+                "observed": 0.7473666948393546,
+                "games": 342
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.1432354974083886,
+            0.3064878273381405,
+            0.1632523299297457
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "constant": {
+          "classRootCounts": [
+            1297,
+            143,
+            1304
+          ],
+          "gamesWithClass": [
+            432,
+            18,
+            432
+          ],
+          "meanPredicted": [
+            0.477815978396895,
+            0.041217150760719246,
+            0.48096687084238293
+          ],
+          "observed": [
+            0.4784179894179805,
+            0.03999999999999997,
+            0.4815820105820015
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 1.000000000000012,
+                "meanPredicted": 0.4778159783968893,
+                "observed": 0.4784179894179748,
+                "games": 450
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 1.000000000000012,
+                "meanPredicted": 0.04121715076071875,
+                "observed": 0.039999999999999494,
+                "games": 450
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 1,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 2,
+                "weight": 1.000000000000012,
+                "meanPredicted": 0.48096687084237716,
+                "observed": 0.48158201058199573,
+                "games": 450
+              },
+              {
+                "bin": 3,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              },
+              {
+                "bin": 4,
+                "weight": 0,
+                "meanPredicted": null,
+                "observed": null,
+                "games": 0
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.0006020110210855356,
+            0.0012171507607192725,
+            0.0006151397396185754
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        },
+        "raw": {
+          "classRootCounts": [
+            1297,
+            143,
+            1304
+          ],
+          "gamesWithClass": [
+            432,
+            18,
+            432
+          ],
+          "meanPredicted": [
+            0.307069847051687,
+            0.4528082556238598,
+            0.24012189732446224
+          ],
+          "observed": [
+            0.4784179894179805,
+            0.03999999999999997,
+            0.4815820105820015
+          ],
+          "classwiseBins": [
+            [
+              {
+                "bin": 0,
+                "weight": 0.6547407407407386,
+                "meanPredicted": 0.020670954109262202,
+                "observed": 0.37911932506909346,
+                "games": 449
+              },
+              {
+                "bin": 1,
+                "weight": 0.037986772486772465,
+                "meanPredicted": 0.28418494958941604,
+                "observed": 0.5187687164844351,
+                "games": 92
+              },
+              {
+                "bin": 2,
+                "weight": 0.025060846560846544,
+                "meanPredicted": 0.4838603605407267,
+                "observed": 0.662936767655442,
+                "games": 57
+              },
+              {
+                "bin": 3,
+                "weight": 0.026891534391534373,
+                "meanPredicted": 0.6968719280300829,
+                "observed": 0.4786030496802758,
+                "games": 59
+              },
+              {
+                "bin": 4,
+                "weight": 0.2553201058201042,
+                "meanPredicted": 0.9865049826045297,
+                "observed": 0.7089243713151886,
+                "games": 378
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.45679629629628743,
+                "meanPredicted": 0.012500493115773418,
+                "observed": 0.03405359387035377,
+                "games": 386
+              },
+              {
+                "bin": 1,
+                "weight": 0.04072751322751321,
+                "meanPredicted": 0.3020529358575017,
+                "observed": 0.05553751217927901,
+                "games": 81
+              },
+              {
+                "bin": 2,
+                "weight": 0.04797089947089948,
+                "meanPredicted": 0.5112147331727617,
+                "observed": 0.03557050681078696,
+                "games": 93
+              },
+              {
+                "bin": 3,
+                "weight": 0.06572751322751316,
+                "meanPredicted": 0.7154578501049342,
+                "observed": 0.03863956530489036,
+                "games": 128
+              },
+              {
+                "bin": 4,
+                "weight": 0.3887777777777718,
+                "meanPredicted": 0.9343319927462767,
+                "observed": 0.04613563058833204,
+                "games": 386
+              }
+            ],
+            [
+              {
+                "bin": 0,
+                "weight": 0.7340370370370379,
+                "meanPredicted": 0.016786068131747815,
+                "observed": 0.3991516077645514,
+                "games": 450
+              },
+              {
+                "bin": 1,
+                "weight": 0.027740740740740732,
+                "meanPredicted": 0.28313351068124165,
+                "observed": 0.5360480640854475,
+                "games": 66
+              },
+              {
+                "bin": 2,
+                "weight": 0.022910052910052898,
+                "meanPredicted": 0.4931139753448914,
+                "observed": 0.5352193995381065,
+                "games": 54
+              },
+              {
+                "bin": 3,
+                "weight": 0.014854497354497356,
+                "meanPredicted": 0.705493201751751,
+                "observed": 0.7043633125556544,
+                "games": 35
+              },
+              {
+                "bin": 4,
+                "weight": 0.20045767195767117,
+                "meanPredicted": 0.9885825381214508,
+                "observed": 0.7532498383329173,
+                "games": 336
+              }
+            ]
+          ],
+          "classwiseEce": [
+            0.32483113455980095,
+            0.43249900882064224,
+            0.3358421713999416
+          ],
+          "interpretation": "Descriptive fixed bins; class game counts overlap for decisive games with both movers; not a calibration guarantee."
+        }
+      }
+    }
+  },
+  "groups": [
+    {
+      "label": "cpMean:.1-.9",
+      "games": 150,
+      "sparse": false,
+      "candidate": {
+        "games": 150,
+        "observations": 792,
+        "nll": 0.8326723017800169,
+        "brier": 0.5320584176582134,
+        "meanMse": 0.23697221022314519,
+        "pointNll": 0.6880406043608112
+      },
+      "control": {
+        "games": 150,
+        "observations": 792,
+        "nll": 0.8426571774289981,
+        "brier": 0.5367908534797814,
+        "meanMse": 0.2393696290093646,
+        "pointNll": 0.6991328054502
+      },
+      "passed": true
+    },
+    {
+      "label": "cpMean:<.1",
+      "games": 36,
+      "sparse": false,
+      "candidate": {
+        "games": 36,
+        "observations": 45,
+        "nll": 0.6851737431976178,
+        "brier": 0.4177022772267855,
+        "meanMse": 0.1885750145215859,
+        "pointNll": 0.5801814494526244
+      },
+      "control": {
+        "games": 36,
+        "observations": 45,
+        "nll": 0.8456275643873953,
+        "brier": 0.48313135291057,
+        "meanMse": 0.22106705078459374,
+        "pointNll": 0.7342023870811488
+      },
+      "passed": true
+    },
+    {
+      "label": "cpMean:>.9",
+      "games": 46,
+      "sparse": false,
+      "candidate": {
+        "games": 46,
+        "observations": 59,
+        "nll": 0.6360627403201573,
+        "brier": 0.38349572524959813,
+        "meanMse": 0.17579760500738537,
+        "pointNll": 0.5499084743461187
+      },
+      "control": {
+        "games": 46,
+        "observations": 59,
+        "nll": 0.8548531124828892,
+        "brier": 0.42904458446238214,
+        "meanMse": 0.1984706338240804,
+        "pointNll": 0.7656346641724778
+      },
+      "passed": true
+    },
+    {
+      "label": "ply:21-50",
+      "games": 136,
+      "sparse": false,
+      "candidate": {
+        "games": 136,
+        "observations": 369,
+        "nll": 0.8114193446977104,
+        "brier": 0.5115916807798369,
+        "meanMse": 0.22434276185404647,
+        "pointNll": 0.6640544619180403
+      },
+      "control": {
+        "games": 136,
+        "observations": 369,
+        "nll": 0.8486438091635246,
+        "brier": 0.525209395051637,
+        "meanMse": 0.23122670975840126,
+        "pointNll": 0.7033775688452429
+      },
+      "passed": true
+    },
+    {
+      "label": "ply:<=20",
+      "games": 150,
+      "sparse": false,
+      "candidate": {
+        "games": 150,
+        "observations": 300,
+        "nll": 0.831994656546281,
+        "brier": 0.5349632302024567,
+        "meanMse": 0.2385918024707864,
+        "pointNll": 0.6907408637565517
+      },
+      "control": {
+        "games": 150,
+        "observations": 300,
+        "nll": 0.8289397715492011,
+        "brier": 0.5318766789607358,
+        "meanMse": 0.23707944252274832,
+        "pointNll": 0.688146596556584
+      },
+      "passed": true
+    },
+    {
+      "label": "ply:>50",
+      "games": 100,
+      "sparse": false,
+      "candidate": {
+        "games": 100,
+        "observations": 227,
+        "nll": 0.8204694656240656,
+        "brier": 0.4924242260046757,
+        "meanMse": 0.20336261600980066,
+        "pointNll": 0.6282201959715747
+      },
+      "control": {
+        "games": 100,
+        "observations": 227,
+        "nll": 0.8650204868180742,
+        "brier": 0.5066905933338444,
+        "meanMse": 0.21034104106490412,
+        "pointNll": 0.6709257051044424
+      },
+      "passed": true
+    }
+  ],
+  "stability": {
+    "games": 45,
+    "matePairs": 0,
+    "meanTv": {
+      "candidate": 0.006421351204988773,
+      "cpDraw": 0.009343111056634868,
+      "temperature": 0.0055767362566464624,
+      "constant": 0,
+      "raw": 0.04711882946305736
+    },
+    "meanPointDrift": {
+      "candidate": 0.005827947604422702,
+      "cpDraw": 0.008831363906341285,
+      "temperature": 0.003102491015169295,
+      "constant": 3.469446951953614e-18,
+      "raw": 0.023676086948200895
+    },
+    "maxTv": {
+      "candidate": 0.03181478350327896,
+      "cpDraw": 0.031074060181291732,
+      "temperature": 0.027310481435766656,
+      "constant": 0,
+      "raw": 0.4117941029485258
+    }
+  },
+  "gates": {
+    "primaryComparisons": false,
+    "crossFit": false,
+    "meanPoint": true,
+    "subgroups": true,
+    "stability": true,
+    "coverage": true,
+    "interior": true,
+    "convergence": true
+  },
+  "passed": false,
+  "sparseGroups": [],
+  "rawDiagnostics": {
+    "games": 600,
+    "outcomeRoots": 3640,
+    "excludedMates": 54,
+    "choicePositions": 600,
+    "uniqueSearches": 23584,
+    "earlierExactScores": 8372,
+    "finalBoundScores": 8372,
+    "exactRecoveries": 122,
+    "selectedNodes": [
+      245,
+      20106
+    ],
+    "finalNodes": [
+      245,
+      20106
+    ]
+  },
+  "excludedRoots": 54,
+  "modelFits": 18,
+  "confirmation": false,
+  "promoted": false,
+  "interpretation": "Exposed development full human outcome forecast; no displayed accuracy, move-label, rating or counterfactual validation."
+}

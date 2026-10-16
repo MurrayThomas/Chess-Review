@@ -1291,6 +1291,45 @@
       "sha256": "ff79352729ae9acab54beef8c4416839692dec923f3038301b095d4188105e01",
       "bytes": 789,
       "uncompressedSha256": "ff79352729ae9acab54beef8c4416839692dec923f3038301b095d4188105e01"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/predictions.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/inputs.json.gz",
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json"
+      ],
+      "sha256": "dd2e9699457744a7e296a9255b2761dcec5de63b617f781dfe553a4c3c69d7b8",
+      "bytes": 345569,
+      "uncompressedSha256": "9d0eec75f2740b7789ed23e4442e74dd9cf9969f5c1b74e1d0bf51eb5f756b2f"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/results.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/predictions.json.gz"
+      ],
+      "sha256": "29a9e609d59f1d16b2b8381e072f8fffbd03b39e51eb31e6a8a2fff6036f2d84",
+      "bytes": 53331,
+      "uncompressedSha256": "29a9e609d59f1d16b2b8381e072f8fffbd03b39e51eb31e6a8a2fff6036f2d84"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/results.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json"
+      ],
+      "sha256": "0693eaef52643062dc241504fafdafddb2f7dbca942f3729878ded0e0b875420",
+      "bytes": 37349,
+      "uncompressedSha256": "0693eaef52643062dc241504fafdafddb2f7dbca942f3729878ded0e0b875420"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/main-execution.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/results.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json"
+      ],
+      "sha256": "9f2bac85fb707bc34cb4423d1c2d13a55d5c23547d5b5a9a1aacf43837df39c7",
+      "bytes": 894,
+      "uncompressedSha256": "9f2bac85fb707bc34cb4423d1c2d13a55d5c23547d5b5a9a1aacf43837df39c7"
     }
   },
   "withdrawnArtifacts": {

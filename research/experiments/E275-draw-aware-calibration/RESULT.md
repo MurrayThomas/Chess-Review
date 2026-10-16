@@ -1,6 +1,7 @@
 # E275: draw-aware calibration — working record
 
-Updated2026-10-16. State: **training-only models fitted/registered; performance not evaluated**.
+Updated2026-10-16. State: **first comparison complete; verification pending**.
+Outcome: **inconclusive against stronger controls; joint screen fails**.
 Plan df50362 and code d424fca precede any new fit or categorical performance look.
 No production changes. Current-main research exception; dirty application work
 and staged video remain excluded, no push/new development checkout.
@@ -46,5 +47,33 @@ October15 registration date, as prospectively documented; the launcher records
 theOctober16 execution separately. Neither omitted-fold nor validation metrics
 have been assessed. No searches, human annotations or production updates.
 
-Next: commit registered fitted models, perform the single fixed development/
-cross-fit/stability comparison, preserve every gate and then independently replay.
+Fitted-model commit1536bc0 precedes the single development comparison. All150
+development games/896 roots retain coverage. Multiclass NLL (lower better):
+candidate .820844, CP-mean-preserving control .847196, temperature1.095334,
+constant .833402, raw engine3.389685. The controls are distinct research forecasts;
+the extension does not already expose a full CP-based W/D/L distribution.
+
+| Control minus candidate NLL | Point gain | Nominal simultaneous98.333% interval | Gate |
+| --- | ---: | --- | --- |
+| CP mean preserved, fitted draw split | .026352 | [-.018970,.078796] | Interval fails |
+| WDL temperature only | .274490 | [.164165,.359710] | Pass |
+| Training-only constant class frequencies | .012558 | [-.036311,.060818] | Interval fails |
+
+Every practical point-gain threshold passes, and all three development multiclass
+Brier guards pass. The uncertainty gates against CP and constant fail, and the
+cross-fit guard fails. Mean-point, subgroup, coverage, convergence/interior and
+45-root stability guards pass. Candidate Brier .522375 versus CP .530751; mean
+point MSE .232227 versus CP-distribution .236432. Better multiclass loss does
+not by itself establish displayed accuracy, move consequence or rating validity.
+Exact cross-fit/class-specific details remain in the retained first report.
+
+The candidate mean total-variation drift is .006421 on45 configured20k/80k root
+pairs, versus temperature .005577 and raw .047119; candidate maximum .031815.
+This passes the frozen .01 deterioration allowance relative to temperature,
+not an independent human-calibration or choice-vector stability test.
+
+[First report](evidence/results.json), [all predictions](evidence/predictions.json.gz),
+[assessment receipt](evidence/run.json), [actual execution](evidence/main-execution.json)
+retain the unchanged joint failure. No rescue tuning, new searches, test targets
+or production model changes. Next: commit registered report, exact offline repeat,
+independent raw-target/probability/KKT/bootstrap replay, then reflect on scope.
