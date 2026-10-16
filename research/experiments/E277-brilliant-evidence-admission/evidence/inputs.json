@@ -1,0 +1,141 @@
+{
+  "schema": "E277-authored-contract-inputs-v1",
+  "scenarios": [
+    {
+      "id": "valid-exact",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-rank3",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-no-candidate",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-no-lines",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-unused-bound",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-paired-top",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-paired-other",
+      "expectation": "retain"
+    },
+    {
+      "id": "paired-losing",
+      "expectation": "reject"
+    },
+    {
+      "id": "paired-missing",
+      "expectation": "reject"
+    },
+    {
+      "id": "used-upperbound",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-lowerbound",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-stale-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-missing-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-missing-rank",
+      "expectation": "withhold"
+    },
+    {
+      "id": "top-mismatch",
+      "expectation": "withhold"
+    },
+    {
+      "id": "illegal-top",
+      "expectation": "withhold"
+    },
+    {
+      "id": "missing-bestmove",
+      "expectation": "withhold"
+    },
+    {
+      "id": "zero-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "duplicate-rank1",
+      "expectation": "withhold"
+    },
+    {
+      "id": "exact-losing",
+      "expectation": "reject"
+    },
+    {
+      "id": "used-missing-bound",
+      "expectation": "withhold"
+    }
+  ],
+  "colors": [
+    "w",
+    "b"
+  ],
+  "builds": [
+    "nnue",
+    "sf19lite"
+  ],
+  "paths": [
+    "raw",
+    "overlay",
+    "variation"
+  ],
+  "fixtures": [
+    {
+      "color": "w",
+      "fen": "7k/8/4p3/8/8/8/8/K2Q4 w - - 0 1",
+      "offer": {
+        "color": "w",
+        "from": "d1",
+        "to": "d5",
+        "piece": "q",
+        "flags": "n",
+        "san": "Qd5",
+        "lan": "d1d5",
+        "before": "7k/8/4p3/8/8/8/8/K2Q4 w - - 0 1",
+        "after": "7k/8/4p3/3Q4/8/8/8/K7 b - - 1 1"
+      },
+      "safe": "a1a2",
+      "other": "a1b1",
+      "unused": "d1e1"
+    },
+    {
+      "color": "b",
+      "fen": "k2q4/8/8/8/8/4P3/8/7K b - - 0 1",
+      "offer": {
+        "color": "b",
+        "from": "d8",
+        "to": "d4",
+        "piece": "q",
+        "flags": "n",
+        "san": "Qd4",
+        "lan": "d8d4",
+        "before": "k2q4/8/8/8/8/4P3/8/7K b - - 0 1",
+        "after": "k7/8/8/8/3q4/4P3/8/7K w - - 1 2"
+      },
+      "safe": "a8a7",
+      "other": "a8b8",
+      "unused": "d8e8"
+    }
+  ],
+  "target": "Synthetic source-admission contract only; no real games, searches, training, independent human labels or population validity."
+}
