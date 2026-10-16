@@ -6,6 +6,14 @@ Brilliant awards, with compute authorized. This takes priority over the queued
 draw-allocation design. Preserve research-only scope; no runtime change in this
 study. Future implementation needs a concrete reviewed promotion decision.
 
+Replay extension, before reading the full primary report: add separate independent
+raw-UCI/legal-PV/local-exchange audit and full-app integration. Also inspect exact
+historical pre-soundness-gate functions at52be78c^, using clearly synthetic prior-
+label contexts to test the discovered rule mechanism. This is source diagnosis,
+not an assertion that the screenshot ran that revision or new candidate selection.
+Keep the original frozen primary sources/grid unchanged; bind audit/integration
+code hashes separately and retain any failed verification attempts.
+
 Inputs are exactly the two explicitly supplied images and transcribed boards,
 not a public dataset or a sample for measuring population precision. The user's
 specific instruction authorizes inspection, engine analysis and retention of
