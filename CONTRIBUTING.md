@@ -75,6 +75,16 @@ your pull request. When changing bundled engines or third-party assets, include
 their source, version, and license information and update
 [ATTRIBUTIONS.md](ATTRIBUTIONS.md) and relevant engine documentation.
 
+## Commit attribution
+
+For commits made together by T-Julsgaard and Codex, use the existing human author
+identity `T-Julsgaard <T.Julsgaard@proton.me>` and include this commit-message
+trailer so both contributors receive credit:
+
+```text
+Co-authored-by: Codex <noreply@openai.com>
+```
+
 ## Submit a pull request
 
 Open a pull request against `main`. Explain the problem, resulting behavior,
