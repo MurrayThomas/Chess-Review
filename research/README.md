@@ -34,6 +34,10 @@ E278/F024 correct those fixture inputs with unchanged candidate/gates and pass
 the contract screen. Real saved traffic exposes the cost of stale secondary
 iterations during progress. Next test coherent MultiPV emission; production
 selection and human validity remain open.
+E279/F025 pass the coherent-progress replay with618 eligible secondary source
+inspections and unchanged completed results. A weak same-depth cache ties on the
+corpus but fails an authored causal control. Next bound real callback/throttle
+timing in a small pilot before reviewing P+C for possible implementation.
 
 ## Start here
 

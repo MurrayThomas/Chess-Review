@@ -78,6 +78,16 @@ question: can coherent MultiPV iteration emission improve eligibility/freshness
 without changing scores or weakening evidence? Replay saved traffic first; human
 precision, UI timing and original report cause remain open.
 
+Eighth checkpoint,2026-10-16: [F025](findings/F025-coherent-progress-producer.md).
+E279's fresh-group producer passes fixed gates:618 eligible secondary inspections,
+24/24 MultiPV streams served,18 at deepest depth/six within1, all30 single-PV latest
+and54 completed results unchanged. Q ties the observed corpus; only the authored
+same-depth causal counterexample distinguishes it.12 controls, exact repeat,
+independent prefix oracle and source verification pass. Keep P+C without claiming
+human precision, callback frequency or real latency. Next small timestamped
+callback/throttle pilot, then consolidate Brilliant candidates for user review;
+no further threshold sweep or automatic implementation.
+
 First checkpoint completed 2026-10-15: [F018](findings/F018-aggregation-and-evidence.md)
 records the keep/reject/defer decisions. Twenty-one focused experiment/data-policy
 checks and maintained-source verification pass. Both reports repeat exactly;

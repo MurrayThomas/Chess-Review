@@ -1,0 +1,111 @@
+{
+  "schema": "E279-run-v1",
+  "mode": "evaluate",
+  "revision": "ed25b70d9d2f805419472feab2c9a898e8deb5c7",
+  "sourceHashes": {
+    "research/experiments/E277-brilliant-evidence-admission/code/spec.mjs": "36193e5fe0628c0ddaa5c1e4cbeeb16c41ac74112156d27c92bb165ab69a2741",
+    "research/experiments/E277-brilliant-evidence-admission/code/candidate.mjs": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+    "research/experiments/E277-brilliant-evidence-admission/code/matrix.mjs": "54d196978925322846c2e64c784f947c1803768db00f1db787f433f1b95892b8",
+    "research/experiments/E277-brilliant-evidence-admission/code/routes.mjs": "44f123c6772239c7c0ce3474db4b65ac42f0ca7d85a459fe5ce05aaaf34e0a89",
+    "research/experiments/E277-brilliant-evidence-admission/code/run.mjs": "64e040f43d9e6a29a3b4ff0262bd4d685634cfec160c1dfce59edc1d38ed76d5",
+    "analysis.js": "337d1cb4014ea6370edf696b42925575e0e21c5816ecf0b1c3bb5efe441f14e1",
+    "engine/uci.js": "53ae9732c4f5b146f9a286123d4fb588cd4cde220090501168283f6c0ec8b9cb",
+    "browser-compat.js": "33b1fb02dd8ade3b003eb5880512ea5c84b0dd4fc5814040ac6273e2e7f5d40a",
+    "tests/helpers/app.mjs": "3b390d67378187e90605f04a8d5bd91981c1ee25200e351a0f0d9da118c5de7d",
+    "data/calibration.json": "89b58ec7bcf3275141ec84a1af6c148602dc11ffa196c14d2e7d023088f2c5ed",
+    "lib/chess.js": "2f346e1ba9ad3addee7a98fe23edcf98129347608de35de3d6c00c7c5e6dc27c",
+    "lib/public-scoring.js": "de158d2fd2708b9f37b1692508eed10db57fc12f41c33d101a6da772b0b42c54",
+    "lib/calibrated-review.js": "18c0e4a0d251af8de8554a7588fe38fa76c67f04bd277d1c077e407ff942b90b",
+    "lib/calibrated-search.js": "d1d13d1683d9bcab82e15274ef0fe1bdd640c74ec32a3fd1d9a3eb953a12f8fa",
+    "package-lock.json": "dd3abed8e4c12cb16ba40e561cfb15cf59b37db94712a6c900f1c253ba27f03a",
+    "node_modules/acorn/dist/acorn.mjs": "953573b8fdab71599749ea5f2b33d3e760c2116178f9423ee7458dbe39d59453",
+    "research/experiments/E278-coherent-brilliant-validation/code/matrix.mjs": "f4c5d50fe9325bb4a013921d6c3107b0882229df946bd749e57fde91b2c93b12",
+    "research/experiments/E278-coherent-brilliant-validation/code/traffic.mjs": "ef2b598599d76732d67b663b567b245ee91615815ec957b002224271ae22ea44",
+    "research/experiments/E278-coherent-brilliant-validation/code/run.mjs": "810123dad5160e6e888546b8ad535c581610a1364a0b0434bb0d959eaef0f24a",
+    "research/experiments/E276-reported-brilliant-cases/code/cases.mjs": "57e92f6c1d2dfc39f8dfeb0991cfd0bbf46f47eb0fcac363d930072e466efe66",
+    "research/experiments/E279-coherent-multipv-emission/code/producer.mjs": "8056c448abf9cf5c37aa2b30bedfad473bffbf0a2d9d7ac8d8ca6dc312bfe54e",
+    "research/experiments/E279-coherent-multipv-emission/code/method.mjs": "cd81d85fd270d6649f3ca25a721151686d87d3f71b52db2a17da8858db8d3488",
+    "research/experiments/E279-coherent-multipv-emission/code/producer.test.mjs": "b5bdc8e30f2cf533f1520e825495280dc2468b232788edefcc35599c36969d68",
+    "research/experiments/E279-coherent-multipv-emission/code/run.mjs": "af633905d827cf541cff5cd1db5a17687811404ead439b3fa51d4bab5c5ff412"
+  },
+  "parentResultSha256": "cd2b95df0010b48758121a8b3a13cd2cfe37bf74d11bda0e7c016628659903ac",
+  "trafficEligibility": {
+    "schema": "E278-E276-specific-traffic-admission-v1",
+    "caseAuthorization": {
+      "schema": "E276-specific-user-authorization-v1",
+      "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+      "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+      "images": [
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+          "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+        },
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+          "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+        }
+      ],
+      "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+      "cases": 2
+    },
+    "parentManifestSha256": "a716a7d26e274c4afc59ef7755ea5bb2202587a5f170c8efd9474230e1765ba1",
+    "archives": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/observations.json.gz",
+        "sha256": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+        "observations": 46
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "sha256": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+        "observations": 12
+      }
+    ],
+    "fullStreams": 54,
+    "excluded": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 4,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 5,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 10,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 11,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      }
+    ],
+    "scope": "Exactly the two explicitly user-supplied cases/continuations. No public-dataset admission or population sample."
+  },
+  "command": [
+    "C:\\Users\\thoma\\Documents\\GitHub\\Chess-Review\\research\\experiments\\E279-coherent-multipv-emission\\code\\run.mjs",
+    "evaluate",
+    "research/runs/E279/repeat"
+  ],
+  "startedUtc": "2026-10-16T10:52:06.814Z",
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "engineSearches": 0,
+  "outputs": {
+    "results.json.gz": "db18b58e18da3372c2f1f9eff39ae565c8328b4ba0f5ae83851a887378c02db8"
+  },
+  "smokeMs": 284.28679999999997,
+  "elapsedMs": 5335.1948,
+  "nativeReplayMs": 1187.4529000000002
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "E279-development-replay-evidence-v1",
+  "createdUtc": "2026-10-16T10:58:38.229Z",
+  "sourceRevision": "f6d27285174672bcbc2f743e5dd210429b240b4c",
+  "contractPassed": true,
+  "exactCompressedReportRepeat": true,
+  "scope": "Authorized two-case metadata replay plus authored controls; no new engine searches, human or population claims.",
+  "artifacts": {
+    "depth-summary.json": {
+      "parents": [
+        "results.json.gz",
+        "verification.json"
+      ],
+      "sha256": "213ff111f23a6a4cc53f0f6a60251ada5642dd3e65116217567e759e42f9c3e9",
+      "bytes": 478
+    },
+    "freeze.json": {
+      "parents": [
+        "inputs.json"
+      ],
+      "sha256": "1ee3139c3d02a39289e67588aeee96e407940a5c03f2b0166fd065e5f4284619",
+      "bytes": 6302
+    },
+    "inputs.json": {
+      "parents": [],
+      "sha256": "47ccc31d2c0e8ece5ae3cc61c9b6db3d8217971bc79770db0348c4657eb42455",
+      "bytes": 27347
+    },
+    "repeat-run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "c5e49b3a77fef0f847a981d099286ffa211bbb811b9eff67d689e5a1e4cff303",
+      "bytes": 6389
+    },
+    "results.json.gz": {
+      "parents": [
+        "freeze.json"
+      ],
+      "sha256": "db18b58e18da3372c2f1f9eff39ae565c8328b4ba0f5ae83851a887378c02db8",
+      "bytes": 129177,
+      "uncompressedSha256": "9a2ff0dbcb1aac5b8c61ccb0b813e142c8ebb098858cfc2af6b24ec4181e34bf"
+    },
+    "run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "45961293d0db073069124b79d5b18c4ab146e74f00c72167a481cceef4270ea9",
+      "bytes": 6377
+    },
+    "verification.json": {
+      "parents": [
+        "results.json.gz",
+        "repeat-run.json"
+      ],
+      "sha256": "9023a3f415c94fcc8f7c7456759a6ac356a6cfbcaa164c650f2c77a195b64b2b",
+      "bytes": 864
+    }
+  },
+  "codeSha256": {
+    "audit.mjs": "f93cc696d9614dbc5b420f37d0b80618563e16485f7fd4cda19405bde3b8566c",
+    "method.mjs": "cd81d85fd270d6649f3ca25a721151686d87d3f71b52db2a17da8858db8d3488",
+    "producer.mjs": "8056c448abf9cf5c37aa2b30bedfad473bffbf0a2d9d7ac8d8ca6dc312bfe54e",
+    "producer.test.mjs": "b5bdc8e30f2cf533f1520e825495280dc2468b232788edefcc35599c36969d68",
+    "run.mjs": "af633905d827cf541cff5cd1db5a17687811404ead439b3fa51d4bab5c5ff412"
+  },
+  "externalParents": {
+    "research/experiments/E278-coherent-brilliant-validation/evidence/manifest.json": "5a9356b08418c60660cb8606271b557c7b68dc1b9cbe259314517fd65f136c82",
+    "research/experiments/E278-coherent-brilliant-validation/evidence/results.json.gz": "cd2b95df0010b48758121a8b3a13cd2cfe37bf74d11bda0e7c016628659903ac",
+    "research/experiments/E276-reported-brilliant-cases/evidence/manifest.json": "a716a7d26e274c4afc59ef7755ea5bb2202587a5f170c8efd9474230e1765ba1"
+  },
+  "payloadBytes": 176934,
+  "manifestSelfExcluded": true
+}

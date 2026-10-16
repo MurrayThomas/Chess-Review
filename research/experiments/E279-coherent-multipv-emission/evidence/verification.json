@@ -1,0 +1,26 @@
+{
+  "schema": "E279-independent-prefix-audit-v1",
+  "passed": true,
+  "jointScreen": true,
+  "exactCompressedReportRepeat": true,
+  "producerFrames": 924,
+  "depthOnlyFrames": 924,
+  "prefixOracleStreams": 54,
+  "nativeFinalChecks": 54,
+  "singleLatest": 30,
+  "allGates": {
+    "validSources": true,
+    "causal": true,
+    "streamCoverage": true,
+    "usableRecovery": true,
+    "finalDepth": true,
+    "singleLatest": true,
+    "nativeFinals": true
+  },
+  "independentSourceIndexAndEligibilityChecks": true,
+  "codeSha256": "f93cc696d9614dbc5b420f37d0b80618563e16485f7fd4cda19405bde3b8566c",
+  "inputSha256": "db18b58e18da3372c2f1f9eff39ae565c8328b4ba0f5ae83851a887378c02db8",
+  "elapsedMs": 314.3275,
+  "completedUtc": "2026-10-16T10:54:22.689Z",
+  "limits": "Exposed diagnostic traffic; source-event lag is not latency or user-visible annotation recovery."
+}

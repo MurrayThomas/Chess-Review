@@ -1,0 +1,18 @@
+{
+  "schema": "E279-depth-and-event-summary-v1",
+  "inputSha256": "db18b58e18da3372c2f1f9eff39ae565c8328b4ba0f5ae83851a887378c02db8",
+  "multiStreams": 24,
+  "multiFinalDepthLags": {
+    "0": 18,
+    "1": 6
+  },
+  "multiEmissions": 396,
+  "multiEventLag": {
+    "min": 1,
+    "median": 2,
+    "p95": 2,
+    "max": 2
+  },
+  "PequalsQObservedFrames": true,
+  "limit": "Event lag is not wall-clock latency; weak Q remains invalid under the authored repeated-top counterexample."
+}
