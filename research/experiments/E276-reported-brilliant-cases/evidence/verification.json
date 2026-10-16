@@ -1,0 +1,141 @@
+{
+  "schema": "E276-independent-audit-v1",
+  "passed": true,
+  "caseEligibility": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "observations": 46,
+  "legalPvLines": 1474,
+  "legalPvMoves": 14673,
+  "codeSha256": "89a96866aab85a4dc1708f0f8c85dc7834ecf3f241c8cc3eca80a77147015a98",
+  "inputSha256": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+  "command": [
+    "C:\\Users\\thoma\\Documents\\GitHub\\Chess-Review\\research\\experiments\\E276-reported-brilliant-cases\\code\\audit.mjs",
+    "research/runs/E276/verification"
+  ],
+  "completedUtc": "2026-10-16T09:48:50.791Z",
+  "independentExchangeComparisons": 9,
+  "exchangeRows": [
+    {
+      "case": "A",
+      "target": "g4",
+      "type": "n",
+      "after": 2,
+      "beforeOpponent": 2,
+      "visiblePrior": 0
+    },
+    {
+      "case": "B",
+      "target": "b8",
+      "type": "n",
+      "after": 0,
+      "beforeOpponent": 3
+    },
+    {
+      "case": "B",
+      "target": "c8",
+      "type": "b",
+      "after": 3,
+      "beforeOpponent": 0
+    },
+    {
+      "case": "B",
+      "target": "h8",
+      "type": "r",
+      "after": 5,
+      "beforeOpponent": 5
+    }
+  ],
+  "captures": [
+    {
+      "case": "A",
+      "legal": [
+        {
+          "san": "Nxc7",
+          "uci": "b5c7",
+          "captured": "p"
+        },
+        {
+          "san": "Bxh7+",
+          "uci": "d3h7",
+          "captured": "p"
+        },
+        {
+          "san": "hxg4",
+          "uci": "h3g4",
+          "captured": "n"
+        },
+        {
+          "san": "Qxg4",
+          "uci": "d1g4",
+          "captured": "n"
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "legal": [
+        {
+          "san": "Nxh8",
+          "uci": "f7h8",
+          "captured": "r"
+        },
+        {
+          "san": "Qxb8",
+          "uci": "e5b8",
+          "captured": "n"
+        },
+        {
+          "san": "Qxe7+",
+          "uci": "e5e7",
+          "captured": "p"
+        },
+        {
+          "san": "Qxh8",
+          "uci": "e5h8",
+          "captured": "r"
+        },
+        {
+          "san": "Qxf4",
+          "uci": "e5f4",
+          "captured": "p"
+        },
+        {
+          "san": "Bxc8",
+          "uci": "f5c8",
+          "captured": "b"
+        },
+        {
+          "san": "Bxh7",
+          "uci": "f5h7",
+          "captured": "p"
+        },
+        {
+          "san": "Nxf4",
+          "uci": "d3f4",
+          "captured": "p"
+        },
+        {
+          "san": "hxg3",
+          "uci": "h2g3",
+          "captured": "p"
+        }
+      ]
+    }
+  ],
+  "limitations": "Independent transcript/legality/local-exchange replay, not independent engine truth, original-version reproduction or human aesthetic agreement."
+}

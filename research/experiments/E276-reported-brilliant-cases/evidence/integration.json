@@ -1,0 +1,85 @@
+{
+  "schema": "E276-integration-historical-mechanism-v1",
+  "passed": true,
+  "completedUtc": "2026-10-16T09:48:51.127Z",
+  "inputSha256": "8da4d992df9866f74acca05ee89473d829606c9c0c15956afdc5e36b7380fad7",
+  "caseEligibility": {
+    "schema": "E276-specific-user-authorization-v1",
+    "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+    "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+    "images": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+        "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+        "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+      }
+    ],
+    "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+    "cases": 2
+  },
+  "sources": {
+    "research/experiments/E276-reported-brilliant-cases/code/integration.mjs": "c4587490b7b7f3e82ce7a941e44abcc77e9c0a7c23dd486e34276a0756a5a12c",
+    "tests/helpers/app.mjs": "3b390d67378187e90605f04a8d5bd91981c1ee25200e351a0f0d9da118c5de7d",
+    "lib/calibrated-review.js": "18c0e4a0d251af8de8554a7588fe38fa76c67f04bd277d1c077e407ff942b90b",
+    "lib/calibrated-search.js": "d1d13d1683d9bcab82e15274ef0fe1bdd640c74ec32a3fd1d9a3eb953a12f8fa",
+    "package-lock.json": "dd3abed8e4c12cb16ba40e561cfb15cf59b37db94712a6c900f1c253ba27f03a"
+  },
+  "integration": [
+    {
+      "case": "A",
+      "engine": 18,
+      "category": "brilliant",
+      "sacrifice": true,
+      "sameAsExtracted": true
+    },
+    {
+      "case": "A",
+      "engine": 19,
+      "category": "brilliant",
+      "sacrifice": true,
+      "sameAsExtracted": true
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "category": "best",
+      "sacrifice": true,
+      "sameAsExtracted": true
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "category": "best",
+      "sacrifice": true,
+      "sameAsExtracted": true
+    }
+  ],
+  "historical": {
+    "revision": "5b170eb110df20b277f25bda4b32af68d4844e5d",
+    "analysisGitBlob": "e41f04e38bde50abdb950be51b3a3ee11eb3f732",
+    "sourceSha256": "d4cf6db51c5d609c5d20fced11adfe2d047460f91d728ff7d99e0ef244c11c54",
+    "names": [
+      "_opp",
+      "getAttackersDefenders",
+      "couldBeSaved",
+      "isSacrifice",
+      "scoreToCp",
+      "_evalPawnsWhite",
+      "_evalPawns",
+      "_isMateEval",
+      "_mateFor",
+      "_isCheckmate",
+      "classifyMove",
+      "_forcedAt"
+    ],
+    "sacrifice": true,
+    "syntheticWhiteCp": 593,
+    "withoutPriorError": "best",
+    "withSyntheticPriorInaccuracy": "brilliant",
+    "limitation": "Exact historical functions on the reported legal board with explicitly synthetic preceding-label context; not reconstruction of the unknown original application revision, cache or full game."
+  },
+  "productionChanges": false
+}

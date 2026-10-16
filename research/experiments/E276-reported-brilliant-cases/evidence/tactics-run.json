@@ -1,0 +1,21 @@
+{
+  "outputHash": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+  "sources": {
+    "research/experiments/E276-reported-brilliant-cases/code/cases.mjs": "57e92f6c1d2dfc39f8dfeb0991cfd0bbf46f47eb0fcac363d930072e466efe66",
+    "research/experiments/E276-reported-brilliant-cases/code/engine.mjs": "9035fd126000cc84c754f4290f5aa58c5e2acb6667cd5405aef078944af858a1",
+    "research/experiments/E276-reported-brilliant-cases/code/classifier.mjs": "461b0351cad5c540e75bbf4dba9de92bb3ee7f98f9a80565d35931939976d936",
+    "research/experiments/E276-reported-brilliant-cases/code/run.mjs": "83df04c03deec8f7c91c00bcc1151433101ab5315d3be3c33b0c2b15b0b0c922",
+    "research/experiments/E276-reported-brilliant-cases/code/study.test.mjs": "ba8c0b3e6b6daebf4e9847fc322629094da77836196c2cff767fb3857ca515f2",
+    "analysis.js": "337d1cb4014ea6370edf696b42925575e0e21c5816ecf0b1c3bb5efe441f14e1",
+    "lib/chess.js": "2f346e1ba9ad3addee7a98fe23edcf98129347608de35de3d6c00c7c5e6dc27c",
+    "lib/public-scoring.js": "de158d2fd2708b9f37b1692508eed10db57fc12f41c33d101a6da772b0b42c54",
+    "data/calibration.json": "89b58ec7bcf3275141ec84a1af6c148602dc11ffa196c14d2e7d023088f2c5ed",
+    "tools/calibration/engine.mjs": "bdabbbd34fd625ab9f946a3caac59a8f8275c4fe3d7ad5bb1a66d8b1cc911afe",
+    "tools/calibration/engine-host.cjs": "550a0ecd1a13ab12401ddc3c979b2aadc6a0c2d2efebda9f2f4816e742e3b95c",
+    "node_modules/acorn/dist/acorn.mjs": "953573b8fdab71599749ea5f2b33d3e760c2116178f9423ee7458dbe39d59453",
+    "research/experiments/E276-reported-brilliant-cases/code/tactics.mjs": "cf32cd8adf8e9ca3b9a84a8b0be4992e0a0b997524a15a7283a6c0d127e80fa6"
+  },
+  "complete": true,
+  "error": null,
+  "elapsedMs": 52718.662599999996
+}
