@@ -1,0 +1,87 @@
+{
+  "schema": "E277-independent-audit-v1",
+  "passed": true,
+  "scientificJointScreen": false,
+  "exactReportRepeat": true,
+  "sourceAndInputHashes": true,
+  "rawMetadataChecks": 84,
+  "parserFrames": 16,
+  "defaultFalseAwards": 8,
+  "cacheRows": 40,
+  "sourceRoleCounts": {
+    "rows": 252,
+    "positive": 84,
+    "invalidUsed": 132,
+    "negative": 36,
+    "baselineInvalidBrilliant": 132,
+    "candidateInvalidAdmitted": 0,
+    "candidatePositiveLost": 8,
+    "candidateNegativeChanged": 0,
+    "bluntPositiveLost": 60,
+    "unchangedNumerics": true
+  },
+  "observedBaselinePositive": 208,
+  "observedCandidatePositiveLost": 132,
+  "sharedPositiveFailures": [
+    {
+      "id": "valid-no-candidate",
+      "color": "w",
+      "build": "nnue",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-candidate",
+      "color": "w",
+      "build": "sf19lite",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-candidate",
+      "color": "b",
+      "build": "nnue",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-candidate",
+      "color": "b",
+      "build": "sf19lite",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-lines",
+      "color": "w",
+      "build": "nnue",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-lines",
+      "color": "w",
+      "build": "sf19lite",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-lines",
+      "color": "b",
+      "build": "nnue",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    },
+    {
+      "id": "valid-no-lines",
+      "color": "b",
+      "build": "sf19lite",
+      "path": "overlay",
+      "sharedCategory": "blunder"
+    }
+  ],
+  "codeSha256": "d9d9f59ba17cb50537586bfcaa66acb757f2198bcac4e3edb56a829362f0f517",
+  "inputSha256": "e1982ef83ebf9b7401b87f61fbf9a75b479b044c8db70e3df2bd29a7a6a0dc47",
+  "completedUtc": "2026-10-16T10:18:33.362Z",
+  "limitations": "Synthetic protocol reachability and label admission; no live-engine frequency, real-game precision or independent human validity. Audit verifies the unchanged failed screen."
+}

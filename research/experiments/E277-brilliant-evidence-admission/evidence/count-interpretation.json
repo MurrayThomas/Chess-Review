@@ -1,0 +1,18 @@
+{
+  "schema": "E277-count-interpretation-v1",
+  "primaryOutputSha256": "e1982ef83ebf9b7401b87f61fbf9a75b479b044c8db70e3df2bd29a7a6a0dc47",
+  "declaredPositiveRows": 84,
+  "baselineBrilliantOnDeclaredPositive": 76,
+  "candidateBrilliantOnDeclaredPositive": 76,
+  "bluntBrilliantOnDeclaredPositive": 24,
+  "candidateSuppressesBaselineBrilliantOnDeclaredPositive": 0,
+  "sharedDeclaredPositiveFailure": 8,
+  "invalidRows": 132,
+  "baselineInvalidBrilliant": 132,
+  "candidateInvalidBrilliant": 0,
+  "candidateInvalidAbstentions": 132,
+  "negativeRows": 36,
+  "negativeCategoriesAndGradesUnchanged": true,
+  "primaryGateStillFailed": true,
+  "interpretation": "Descriptive disaggregation of the retained failed gate. The frozen candidatePositiveLost8 counts shared B/C positive-control failures; it is not replaced or redefined. This record does not rescue the candidate or certify population accuracy."
+}

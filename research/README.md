@@ -26,6 +26,10 @@ User-supplied Brilliant complaints take priority from2026-10-16. E276/F022 retai
 dual-engine analysis: Qg3 remains supported; losing Ke8 is Best in current source.
 A historical false-label mechanism is reproduced separately. Both cases are saved
 regression guards. Next audit current annotation evidence paths.
+E277/F023 find a current secondary-line admission gap in synthetic native UCI/
+variation replay. The selective guard remains research-only: the fixed screen
+fails eight shared positive-control fixtures. Preserve that failure and validate
+coherent child-preview controls and natural engine traffic before promotion.
 
 ## Start here
 

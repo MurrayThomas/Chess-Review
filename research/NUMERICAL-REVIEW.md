@@ -54,6 +54,18 @@ Original app/cache/full history remain unresolved. Next distinct question: can
 current stored/streamed/variation paths bypass mover-relative soundness or stale-
 score gates? Preserve both reported cases and legitimate defensive sacrifices.
 
+Sixth checkpoint,2026-10-16: [F023](findings/F023-brilliant-secondary-evidence.md).
+E277 reproduces a current unpaired secondary-source admission gap through native
+UCI/variation replay with synthetic traffic. Selective C removes132 invalid-source
+Brilliant labels, retaining76 observed positives and36 negative categories/grades;
+blanket suppression loses52 observed positives. The registered screen still FAILS:
+eight declared overlay positives are losing under BOTH arms due to absent child
+preview evidence. Original gate/fixtures retained, no rescue. Exact/independent
+replay,40 cache probes,65 focused checks and source verification pass. Keep C for
+research, defer implementation; prospectively correct fixture routing with unchanged
+candidate and census compatible authorized saved traffic for naturally emitted
+states. Human precision and original screenshot cause remain unproved.
+
 First checkpoint completed 2026-10-15: [F018](findings/F018-aggregation-and-evidence.md)
 records the keep/reject/defer decisions. Twenty-one focused experiment/data-policy
 checks and maintained-source verification pass. Both reports repeat exactly;

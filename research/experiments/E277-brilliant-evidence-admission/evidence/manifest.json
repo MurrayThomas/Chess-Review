@@ -1,0 +1,77 @@
+{
+  "schema": "E277-synthetic-evidence-v1",
+  "createdUtc": "2026-10-16T10:23:42.022Z",
+  "sourceRevision": "49ccd70973bc1adb15ea73f692c8d9b890188cd2",
+  "dataUse": "Authored synthetic contract fixtures/transcripts only; runtime calibration fixed as source context; no real games, searches or population validation.",
+  "jointScreenPassed": false,
+  "independentReplayPassed": true,
+  "artifacts": {
+    "count-interpretation.json": {
+      "parents": [
+        "results.json.gz",
+        "verification.json"
+      ],
+      "sha256": "2c24b0320ebc914fbf47ffd97c2b0efeeb0b0b6d003671b2c828fb6379974efe",
+      "bytes": 902
+    },
+    "declarations.json.gz": {
+      "parents": [],
+      "sha256": "da16c4c474f5b2121a71408f0046d5203a05bfba1e29a91d7d22888abfb8af94",
+      "bytes": 4168,
+      "uncompressedSha256": "2bc486e207e6b5b3b0e39d34514b637f52c3e5ca76107841403786bf294d42dd"
+    },
+    "freeze.json": {
+      "parents": [
+        "inputs.json",
+        "declarations.json.gz"
+      ],
+      "sha256": "0d3e5b7398807c66604717f6835d46084ce0e2729b67e0f1a214f89d6fbddfbf",
+      "bytes": 2614
+    },
+    "inputs.json": {
+      "parents": [],
+      "sha256": "aae0455332ee15ba19fad219dbbbfcd506005bd1ac3f3824151fe619742eed2c",
+      "bytes": 2808
+    },
+    "repeat-run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "6ba3fbf293fe74d9310b4a623c3d30b932d418d4b42e394566da8e3cee45ed41",
+      "bytes": 2674
+    },
+    "results.json.gz": {
+      "parents": [
+        "freeze.json"
+      ],
+      "sha256": "e1982ef83ebf9b7401b87f61fbf9a75b479b044c8db70e3df2bd29a7a6a0dc47",
+      "bytes": 13917,
+      "uncompressedSha256": "41d686fcf5aec0226c1bcce14b947780156044edabc980bb2e2f6b80e0db847d"
+    },
+    "run.json": {
+      "parents": [
+        "results.json.gz"
+      ],
+      "sha256": "40be02e602c6d9d198534a3490151290b4d84713671da3f3e29f7167835b6204",
+      "bytes": 2662
+    },
+    "verification.json": {
+      "parents": [
+        "results.json.gz",
+        "repeat-run.json"
+      ],
+      "sha256": "9176f5c0355e32ddaf9f0b6bb66a3dd5accda213a2a682dd6afe8f529454f59b",
+      "bytes": 2270
+    }
+  },
+  "codeSha256": {
+    "audit.mjs": "d9d9f59ba17cb50537586bfcaa66acb757f2198bcac4e3edb56a829362f0f517",
+    "candidate.mjs": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+    "matrix.mjs": "54d196978925322846c2e64c784f947c1803768db00f1db787f433f1b95892b8",
+    "routes.mjs": "44f123c6772239c7c0ce3474db4b65ac42f0ca7d85a459fe5ce05aaaf34e0a89",
+    "run.mjs": "64e040f43d9e6a29a3b4ff0262bd4d685634cfec160c1dfce59edc1d38ed76d5",
+    "spec.mjs": "36193e5fe0628c0ddaa5c1e4cbeeb16c41ac74112156d27c92bb165ab69a2741"
+  },
+  "payloadBytes": 32015,
+  "manifestSelfExcluded": true
+}
