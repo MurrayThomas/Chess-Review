@@ -1232,6 +1232,27 @@
       "sha256": "e395ceffdf0a7ab57a8df401d555628b388fda466758034fb49f4d89e6ddb36e",
       "bytes": 34458,
       "uncompressedSha256": "e395ceffdf0a7ab57a8df401d555628b388fda466758034fb49f4d89e6ddb36e"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/inputs.json.gz": {
+      "kind": "summary",
+      "parents": [
+        "research/datasets/D002-fresh-prefix/games.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/sf19-observations.json.gz",
+        "research/experiments/E009-search-stability/evidence/sf19-observations.json.gz",
+        "research/experiments/E008-human-quality-curves/evidence/verification.json"
+      ],
+      "sha256": "15f1d321e3ed6391b079aad75a3edd026d87763112fc8eff6bd2377b7f2edf03",
+      "bytes": 53770,
+      "uncompressedSha256": "94b811e7a9f4fad2f35e04d13de3b1783927affcf1ce25f7dd2b31d76dbc4773"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/freeze-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/inputs.json.gz"
+      ],
+      "sha256": "3ad8c9980f61281c04e811583174251287d86af3c9ca7e12d65bce18c0c66ea4",
+      "bytes": 34445,
+      "uncompressedSha256": "3ad8c9980f61281c04e811583174251287d86af3c9ca7e12d65bce18c0c66ea4"
     }
   },
   "withdrawnArtifacts": {
