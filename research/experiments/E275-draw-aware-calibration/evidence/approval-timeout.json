@@ -1,0 +1,13 @@
+{
+  "schema": "E275-approval-deadline-v1",
+  "observedOn": "2026-10-16",
+  "execCell": "124",
+  "action": "Local research-only input-freeze Git commit; subsequent fit had not been dispatched",
+  "reviewMessage": "The automatic permission approval review did not finish before its deadline. Do not assume the action is unsafe based on the timeout alone. You may retry once, or ask the user for guidance or explicit approval.",
+  "verifiedHeadBeforeRetry": "d424fca",
+  "fitDirectoryPresent": false,
+  "fitHandleLaunched": false,
+  "permittedRetryCommit": "3985423",
+  "scientificFitsBeforeResume": 0,
+  "interpretation": "Permission-review timeout resolved by its permitted retry; not a scientific failure, policy rejection or unsafe-action finding. Scientific code and gates unchanged."
+}

@@ -138,3 +138,18 @@ regularization, controls and gates above are OUR design, not its validated chess
 method. [Stockfish WDL model](https://github.com/official-stockfish/WDL_model)
 documents self-play calibration; that motivates testing human outcomes rather
 than assuming engine probabilities are already human forecasts.
+
+## Execution-date amendment,2026-10-16, before fitting
+
+The local input-freeze commit's automatic permission review missed its deadline
+while the app was unavailable. Authoritative status onOctober16 shows the staged
+freeze still atd424fca, no fit directory and no launched fit handle. The permitted
+single retry succeeds as3985423. Preserve the timeout metadata; it is neither a
+scientific failed fit nor an unsafe-action finding. Resume without duplicate work.
+The hash-frozen run.mjs date field is the originalOctober15 study date. Add a
+provenance-only execute.mjs launcher that records actual UTC start/end, command,
+revision, exit and its own hash, while invoking the UNCHANGED guarded entry point.
+Use this launcher for remaining stages and retain its metadata with each receipt.
+No scientific source hash, input, target, model, regularization, bound, seed, gate
+or exposure rule changes. Re-admit the registered data before fitting. No model
+parameters or categorical performance results were available before amendment.

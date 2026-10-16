@@ -1,6 +1,6 @@
 # E275: draw-aware calibration — working record
 
-2026-10-15. State: **inputs frozen/registered; fitting not started**.
+Updated2026-10-16. State: **inputs committed; fitting not started**.
 Plan df50362 and code d424fca precede any new fit or categorical performance look.
 No production changes. Current-main research exception; dirty application work
 and staged video remain excluded, no push/new development checkout.
@@ -22,6 +22,15 @@ gates and multiplicity before fitting. Full-distribution prediction is distinct
 from mean points, move consequences, displayed accuracy, rating or human labels.
 Existing label exposure remains development; successful replay cannot confirm
 the scientific claim or repair E011's failed confirmation.
+
+Input-freeze commit3985423 completes after an automatic permission-review deadline
+expired on the original attempt. Authoritative Git status/no fit directory confirm
+that the initial commit and fit never ran; one permitted commit retry succeeds.
+No unsafe-action decision or duplicate fit. [Timeout metadata](evidence/approval-timeout.json)
+and a prospective plan amendment preserve this. The original scientific code and
+October15 study-date receipts remain unchanged. A provenance-only launcher records
+actual UTC execution dates for stages resumedOctober16; its hash accompanies each
+execution record. Re-run data admission before the first fit.
 
 Next: commit the registered input freeze, run the18 training-only numerical fits
 and six constant controls, register/commit fitted models before the single fixed
