@@ -82,3 +82,17 @@ implement a candidate only under this research folder and test mechanism-matched
 negative/positive controls before recommending production work. No acceptance
 based solely on changing these two selected outputs. Commit all results locally
 with the human author and Codex co-author; no push. Respect10%/99% usage sleep.
+
+## Tactical follow-up amendment, after the fixed primary report
+
+The primary46 searches finish with zero errors;14 classifier rows retain Brilliant
+forA and Best forB. No new candidate or threshold is selected. Before more searches,
+register12 bounded2m-node follow-ups: for each engine, caseA after hxg4 (best3),
+after hxg4 Nxg4 (best3), the latter root restricted to Qxg4 (1), and after the
+immediate Qxg4 (best3). These diagnose acceptance and unsafe queen recaptures,
+not population precision. Four additional single-PV full-startpos-history queries
+(A before/after x two engines) check sensitivity to the explicitly INFERRED opening
+history. Total12 queries,5min stage cap,120s per search. Keep full raw records and
+exact hashes. No altered primary evaluation or claim of authentic full history.
+Also prove the e6 Qxe6+ Kc7 Qxc8# branch by complete legal-reply enumeration;
+this is a deterministic mate witness, not a new engine forecast or human label.
