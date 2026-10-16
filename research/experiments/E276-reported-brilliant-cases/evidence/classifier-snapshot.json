@@ -1,0 +1,134 @@
+{
+  "schema": "E276-exact-scientific-declarations-v1",
+  "parentAnalysisSha256": "337d1cb4014ea6370edf696b42925575e0e21c5816ecf0b1c3bb5efe441f14e1",
+  "snapshotSha256": "ac3a2d15016c4fc52ba6705738ed7307fd853dfe80a76bdd252af959ffc98f6b",
+  "spans": [
+    {
+      "name": "scoreToCp",
+      "start": 53636,
+      "end": 53949,
+      "sha256": "3af3474c19d4b512ff98bbfe3152f599e88620d356a9b1ffea0abc6f285abad5"
+    },
+    {
+      "name": "winPct",
+      "start": 55780,
+      "end": 55916,
+      "sha256": "27605b89605bce0078c4af6a267ea454c4ab3ddf0aa6adead1a3b4d4f56affd1"
+    },
+    {
+      "name": "moverWin",
+      "start": 55918,
+      "end": 56022,
+      "sha256": "6bc522fef5b7e58c93fe7cd7a650af70b9e3d60e4a4e40ba3e6254823980e760"
+    },
+    {
+      "name": "annotationOutcome",
+      "start": 56024,
+      "end": 56224,
+      "sha256": "fbeeee6b02990e326c4ec3fd9779196e233e5636e5faae057f3b4ae3cff2c1a2"
+    },
+    {
+      "name": "annotationPoints",
+      "start": 56226,
+      "end": 56372,
+      "sha256": "99f14d67e39817b56f46d0553cee40845e7dc3f5c466d3d2e8a619351d1c1085"
+    },
+    {
+      "name": "annotationPair",
+      "start": 56536,
+      "end": 57635,
+      "sha256": "c387771a68e91795531f3fff8dd90bdde1cc125c5c9a2034acfe7b2117f0d845"
+    },
+    {
+      "name": "decisionScore",
+      "start": 57637,
+      "end": 57916,
+      "sha256": "63418fed9222211f7462b242f2b56802833e76ee6359b1dc547a67c41d9543f9"
+    },
+    {
+      "name": "decisionPawns",
+      "start": 57918,
+      "end": 58074,
+      "sha256": "ed735010403e5c65994b36a9ec466b22805c238027375728370609a5b2254cd5"
+    },
+    {
+      "name": "decisionMate",
+      "start": 58076,
+      "end": 58189,
+      "sha256": "f4cad9a6f3632824d898d5df2c24e0dccb84bb3f48bc32a07de76046508332b9"
+    },
+    {
+      "name": "exchangeGain",
+      "start": 59517,
+      "end": 60664,
+      "sha256": "156af250b912b92c904ed2c1a18cf9f74f924e473beed39a5f2c5a1cac64330a"
+    },
+    {
+      "name": "couldBeSaved",
+      "start": 60855,
+      "end": 61580,
+      "sha256": "aaf97eb3b92e30603f084493ea8add64bf62f82e518989e339cd990733ebb5ea"
+    },
+    {
+      "name": "isSacrifice",
+      "start": 61980,
+      "end": 64734,
+      "sha256": "de310f5ee0b57182b884a78e3c3749d28f7859fbc4ed0b4b58f877bcd545e0c6"
+    },
+    {
+      "name": "brilliantEligible",
+      "start": 64904,
+      "end": 66818,
+      "sha256": "923406d87b0e7b21d259524ead34fd1f9cac201e6486273416574ab03b7f6960"
+    },
+    {
+      "name": "onlyGoodReply",
+      "start": 67092,
+      "end": 68693,
+      "sha256": "8c840e3b631a7bd60efaa2ae58df8e1e994074a9641771cbccbebdb0ee0e8281"
+    },
+    {
+      "name": "_isCheckmate",
+      "start": 68695,
+      "end": 68822,
+      "sha256": "f837877c1770a825d59a950b5cdd60b226e6d4a8ee5b078efd443c4a6b57221a"
+    },
+    {
+      "name": "getStandardRating",
+      "start": 69187,
+      "end": 69507,
+      "sha256": "62ea161e24f0669e56f4f2f9bbcc55ead9f5952d8b90799e88aeba4f44a63e68"
+    },
+    {
+      "name": "classifyMove",
+      "start": 69707,
+      "end": 75481,
+      "sha256": "88b1c16c163add7102d68690546f1781e5ba83fa56bf341d53ddd51a54745cb6"
+    },
+    {
+      "name": "_forcedAt",
+      "start": 78423,
+      "end": 78679,
+      "sha256": "5925b6d4ac5f9a8b8197718e17ff8e657f206a1420d3391d12da1b2626f5bd66"
+    },
+    {
+      "name": "_opp",
+      "start": 59074,
+      "end": 59124,
+      "sha256": "106b1b6ffabf11bff32ce1b9d3a47f066607afe5e993077a61e7b2adccd572bb"
+    },
+    {
+      "name": "SAC_VAL",
+      "start": 59017,
+      "end": 59072,
+      "sha256": "a4ee2b2daf193893f234913b9a39bf4e1702aec68c1167d4c089d04aad3b3123"
+    },
+    {
+      "name": "BRILLIANT_POLICY",
+      "start": 64829,
+      "end": 64902,
+      "sha256": "936791ba045799bd9a986549502500eb890fb4f2fe33f07bc4a65b44ee0b3dcc"
+    }
+  ],
+  "explanation": "Exact relevant declarations only. No unrelated dirty application/UI work is copied. Pure classifier replay, not the full original app environment."
+}
