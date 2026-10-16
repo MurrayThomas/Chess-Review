@@ -3,6 +3,38 @@
 Resumed 2026-10-15 by the user; updated2026-10-16. Research and experiments only; implementation
 requires the user's later selection. Current baseline and frozen evidence remain.
 
+## Usage conservation policy, user-requested2026-10-16
+
+Before each numerical-research work block and before starting a costly stage,
+read the account usage limits. Select the relevant Codex300-minute window from
+rateLimitsByLimitId when available. usedPercent is consumption; remaining is
+100 minus usedPercent. This policy concerns the five-hour window, not the weekly
+window, purchased credits or rate-limit reset credits. Never spend a reset credit
+or change billing/model settings to bypass this policy.
+
+At10% remaining or less, save a resumable checkpoint and set conservation mode in
+ignored scratch/numerical-research/usage-state.json, including check time, observed
+remaining percentage, reset timestamp and next research action. Start no new
+research, analysis, tests or engine jobs. Avoid polling loops and sleeping shell
+processes. An hourly heartbeat attached to this chat checks usage once per hour.
+While conserving, stay asleep until a verified reading reaches99% remaining or
+more; partial replenishment and a passed reset timestamp alone are insufficient.
+Unknown usage means defer work and retry at the next hourly check.
+
+Use cooperative sleep with the existing goal active: no exposed tool resumes a
+native paused goal. After entering sleep, ordinary automatic goal continuations
+must make no tool calls and do no work; the documented no-tool continuation stop
+prevents a busy loop. Only the scheduled hourly usage-check message (or explicit
+user direction) checks again. At verified99–100% remaining, clear conservation
+mode and continue the SAME research goal and saved next action. Respect a later
+manual user pause/stop; do not resurrect a completed or cancelled goal.
+
+The heartbeat stays quiet when nothing meaningful changes. Report entering sleep,
+resuming, failures or required user action only. This is a checkpoint policy, not
+a hard cap: a single work block or other chats can consume allowance between
+checks. Small hourly checks themselves consume some allowance. Local scheduling
+requires the computer awake and app running.
+
 Each completed study must record: what improved, effect/denominators/uncertainty,
 what failed, reproducibility status, validity limits, cost, and keep/reject/defer.
 Then reflect on the next question instead of automatically sweeping parameters.
