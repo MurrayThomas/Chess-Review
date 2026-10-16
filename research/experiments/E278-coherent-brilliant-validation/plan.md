@@ -84,3 +84,9 @@ digest and verify the omission explicitly. No candidate, row, gate, metadata fra
 score or coverage item may be omitted. This is an administrative serialization
 clarification; whole compressed report byte equality is not claimed. Source and
 original failed E277 evidence remain unchanged.
+
+Secondary preservation check, before running it: replay E276's four already
+exposed2m case/build rows through its exact classifier adapter with unchanged C
+wrapped around annotationPair. Verify Qg3 stays Brilliant and Ke8 stays Best.
+This is a scoped existing-case regression, not fresh tactical or human evidence.
+Use the same guarded E276 parents; no new search or primary-gate modification.
