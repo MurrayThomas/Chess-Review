@@ -74,3 +74,13 @@ unchanged E277 regression passes when hashes match, add focused fixture/traffic
 checks and source verification. No full coach/application regression. Soft2MiB
 storage budget; census<=120s. Stop at reflection, compare further annotation
 evidence work with the other numerical tracks, and do not promote or push.
+
+## Repeat receipt clarification, after first assessment, before any repeat
+
+The first result embeds natural.elapsedMs (wall time) inside the census object.
+Retain the original bytes and timing in BOTH reports. Exact scientific repeat
+compares every other field, omitting ONLY that one clock field; bind its canonical
+digest and verify the omission explicitly. No candidate, row, gate, metadata frame,
+score or coverage item may be omitted. This is an administrative serialization
+clarification; whole compressed report byte equality is not claimed. Source and
+original failed E277 evidence remain unchanged.
