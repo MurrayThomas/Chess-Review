@@ -1,0 +1,2473 @@
+{
+  "schema": "E276-diagnostic-report-v1",
+  "rows": [
+    {
+      "case": "A",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "root": {
+        "score": {
+          "cp": 104,
+          "wdl": [
+            543,
+            457,
+            0
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 d1e1 f8d8 f3h3 h2f4 f1g1 d8d3 h3d3 f4h2 g1f1 h2h1 f1e2 h1g2 e2d1 c8f5 d3f3 g7g6 d1c1",
+        "lines": [
+          {
+            "score": {
+              "cp": 104,
+              "wdl": [
+                543,
+                457,
+                0
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 d1e1 f8d8 f3h3 h2f4 f1g1 d8d3 h3d3 f4h2 g1f1 h2h1 f1e2 h1g2 e2d1 c8f5 d3f3 g7g6 d1c1",
+            "depth": 14,
+            "multipv": 1,
+            "nodes": 200004,
+            "bound": "exact",
+            "raw": "info depth 14 seldepth 43 multipv 1 score cp 104 wdl 543 457 0 nodes 200004 nps 357150 hashfull 35 time 560 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 d1e1 f8d8 f3h3 h2f4 f1g1 d8d3 h3d3 f4h2 g1f1 h2h1 f1e2 h1g2 e2d1 c8f5 d3f3 g7g6 d1c1"
+          },
+          {
+            "score": {
+              "cp": -179,
+              "wdl": [
+                0,
+                29,
+                971
+              ]
+            },
+            "pv": "d7d6 d1e1",
+            "depth": 14,
+            "multipv": 2,
+            "nodes": 200004,
+            "bound": "upperbound",
+            "raw": "info depth 14 seldepth 8 multipv 2 score cp -179 upperbound wdl 0 29 971 nodes 200004 nps 357150 hashfull 35 time 560 pv d7d6 d1e1"
+          },
+          {
+            "score": {
+              "cp": -183,
+              "wdl": [
+                0,
+                23,
+                977
+              ]
+            },
+            "pv": "c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 b1a3 a8a4 g2g3 d7d6 e5d6 c8d7 a3b5 g7g6 a1d1 f8d8",
+            "depth": 14,
+            "multipv": 3,
+            "nodes": 200004,
+            "bound": "exact",
+            "raw": "info depth 14 seldepth 21 multipv 3 score cp -183 wdl 0 23 977 nodes 200004 nps 357150 hashfull 35 time 560 pv c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 b1a3 a8a4 g2g3 d7d6 e5d6 c8d7 a3b5 g7g6 a1d1 f8d8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 123,
+          "wdl": [
+            733,
+            267,
+            0
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 c8d7 b5c7 a8d8 b1d2 d6e5 d2f1 h2h4 g2g3"
+      },
+      "after": {
+        "score": {
+          "cp": -115,
+          "wdl": [
+            0,
+            337,
+            663
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 d1e1 f8d8 b5c7 a8a4 d2e4 h2h1 f1e2 h1g2 e4f2"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 104,
+          "wdl": [
+            543,
+            457,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 104,
+          "wdl": [
+            543,
+            457,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 104,
+          "wdl": [
+            543,
+            457,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 104,
+          "wdl": [
+            543,
+            457,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 2000000
+      },
+      "root": {
+        "score": {
+          "cp": 0,
+          "wdl": [
+            11,
+            978,
+            11
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5f4 c7a8 f8e8 e1d2 h2g2 d2c1 g4e5 a8c7 e8d8 d3h7 g8h7 d1d8 g2f3",
+        "lines": [
+          {
+            "score": {
+              "cp": 0,
+              "wdl": [
+                11,
+                978,
+                11
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5f4 c7a8 f8e8 e1d2 h2g2 d2c1 g4e5 a8c7 e8d8 d3h7 g8h7 d1d8 g2f3",
+            "depth": 17,
+            "multipv": 1,
+            "nodes": 2000511,
+            "bound": "exact",
+            "raw": "info depth 17 seldepth 51 multipv 1 score cp 0 wdl 11 978 11 nodes 2000511 nps 385677 hashfull 357 time 5187 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5f4 c7a8 f8e8 e1d2 h2g2 d2c1 g4e5 a8c7 e8d8 d3h7 g8h7 d1d8 g2f3"
+          },
+          {
+            "score": {
+              "cp": -233,
+              "wdl": [
+                0,
+                3,
+                997
+              ]
+            },
+            "pv": "c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 d7d5 e5d6 c8g4 b1a3 f8d8 a3b5 g8f8 a2a3 g7g6 e1e7 g4d7 a1d1 d7c6",
+            "depth": 17,
+            "multipv": 2,
+            "nodes": 2000511,
+            "bound": "exact",
+            "raw": "info depth 17 seldepth 33 multipv 2 score cp -233 wdl 0 3 997 nodes 2000511 nps 385677 hashfull 357 time 5187 pv c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 d7d5 e5d6 c8g4 b1a3 f8d8 a3b5 g8f8 a2a3 g7g6 e1e7 g4d7 a1d1 d7c6"
+          },
+          {
+            "score": {
+              "cp": -304,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7d6 d1e1",
+            "depth": 17,
+            "multipv": 3,
+            "nodes": 2000511,
+            "bound": "upperbound",
+            "raw": "info depth 17 seldepth 30 multipv 3 score cp -304 upperbound wdl 0 0 1000 nodes 2000511 nps 385677 hashfull 357 time 5187 pv d7d6 d1e1"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 34,
+          "wdl": [
+            48,
+            949,
+            3
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4d3 d8d5 d2c2 d5d8 d3c4 g8h8 b1a3 f8e8 e2d2 d8d2 c2d2"
+      },
+      "after": {
+        "score": {
+          "cp": -10,
+          "wdl": [
+            7,
+            976,
+            17
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 h2h4 g2g3 h4e7 e5e6 f7e6 b1d2 e6e5 d3c4 g8h8 d1e2"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 0,
+          "wdl": [
+            11,
+            978,
+            11
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 0,
+          "wdl": [
+            11,
+            978,
+            11
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 0,
+          "wdl": [
+            11,
+            978,
+            11
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 0,
+          "wdl": [
+            11,
+            978,
+            11
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 8000000
+      },
+      "root": {
+        "score": {
+          "cp": 11,
+          "wdl": [
+            18,
+            975,
+            7
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1e2 e3d1 e2d1 c8g4 d1e1 b6b5",
+        "lines": [
+          {
+            "score": {
+              "cp": 11,
+              "wdl": [
+                18,
+                975,
+                7
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1e2 e3d1 e2d1 c8g4 d1e1 b6b5",
+            "depth": 23,
+            "multipv": 1,
+            "nodes": 8000175,
+            "bound": "exact",
+            "raw": "info depth 23 seldepth 47 multipv 1 score cp 11 wdl 18 975 7 nodes 8000175 nps 378491 hashfull 915 time 21137 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1e2 e3d1 e2d1 c8g4 d1e1 b6b5"
+          },
+          {
+            "score": {
+              "cp": -315,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 g7g6 h3g4 c8g4 d3e2 d8e7 f4e5 f8e8 e2g4 h6g4 d1d4 g4e5 d4e4 a8d8 b5d4 c7c5 f1f2",
+            "depth": 23,
+            "multipv": 2,
+            "nodes": 8000175,
+            "bound": "exact",
+            "raw": "info depth 23 seldepth 49 multipv 2 score cp -315 wdl 0 0 1000 nodes 8000175 nps 378491 hashfull 915 time 21137 pv d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 g7g6 h3g4 c8g4 d3e2 d8e7 f4e5 f8e8 e2g4 h6g4 d1d4 g4e5 d4e4 a8d8 b5d4 c7c5 f1f2"
+          },
+          {
+            "score": {
+              "cp": -373,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "c7c6 b5d6 g4e3 d1e1 h4e1 f1e1 e3d5 g2g3 f7f6 e5f6 h6f7 f6g7 g8g7 d6f7 f8f7 b1d2 d7d6 g1h2 c8d7 d2f3 h7h6",
+            "depth": 23,
+            "multipv": 3,
+            "nodes": 8000175,
+            "bound": "exact",
+            "raw": "info depth 23 seldepth 44 multipv 3 score cp -373 wdl 0 0 1000 nodes 8000175 nps 378491 hashfull 915 time 21137 pv c7c6 b5d6 g4e3 d1e1 h4e1 f1e1 e3d5 g2g3 f7f6 e5f6 h6f7 f6g7 g8g7 d6f7 f8f7 b1d2 d7d6 g1h2 c8d7 d2f3 h7h6"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 20,
+          "wdl": [
+            27,
+            968,
+            5
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1g1 e3d1 a8b6 d1b2 b1d2 b2d3 b6c8 f8c8 g2g3 c8c3 d2e4 c3c1 a1c1 d3c1 e4d6 b7b6 a2a3 c1e2 g1f2 e2c3 f2e3 c3a4 e3d3 g8f8 d3c4 f8e7 d6f5 e7f6 f5e3 h7h5"
+      },
+      "after": {
+        "score": {
+          "cp": -25,
+          "wdl": [
+            4,
+            962,
+            34
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 e5e4 d3e4 h2h4 e1e2 h4e7 c7a8 e7e4 e2f1 e4e3 f3e3 g4e3 f1g1 e3d1 a8b6 d1b2 b1a3 b2d3 g2g3 c8g4 a3c2 f8e8 b6d5 g4f3 c2e3 f3e4 d5c7 e8d8 c7b5 h7h5 a1d1"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 11,
+          "wdl": [
+            18,
+            975,
+            7
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 11,
+          "wdl": [
+            18,
+            975,
+            7
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 11,
+          "wdl": [
+            18,
+            975,
+            7
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 11,
+          "wdl": [
+            18,
+            975,
+            7
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "root": {
+        "score": {
+          "cp": 116,
+          "wdl": [
+            680,
+            320,
+            0
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b5c7 d6e5 f1e1 e5e4 d3e4 h2g1 f3f1 g1e3 d1e2 e3c1 e2d1 c1b2 c7a8",
+        "lines": [
+          {
+            "score": {
+              "cp": 116,
+              "wdl": [
+                680,
+                320,
+                0
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b5c7 d6e5 f1e1 e5e4 d3e4 h2g1 f3f1 g1e3 d1e2 e3c1 e2d1 c1b2 c7a8",
+            "depth": 13,
+            "multipv": 1,
+            "nodes": 95206,
+            "bound": "exact",
+            "raw": "info depth 13 seldepth 24 multipv 1 score cp 116 wdl 680 320 0 nodes 95206 nps 537887 hashfull 10 time 177 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b5c7 d6e5 f1e1 e5e4 d3e4 h2g1 f3f1 g1e3 d1e2 e3c1 e2d1 c1b2 c7a8"
+          },
+          {
+            "score": {
+              "cp": -86,
+              "wdl": [
+                0,
+                656,
+                344
+              ]
+            },
+            "pv": "c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 f7f6 b5c4 g8h8 b1d2 f6e5 f4e5",
+            "depth": 13,
+            "multipv": 2,
+            "nodes": 200187,
+            "bound": "exact",
+            "raw": "info depth 13 seldepth 20 multipv 2 score cp -86 wdl 0 656 344 nodes 200187 nps 517279 hashfull 26 time 387 pv c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 f7f6 b5c4 g8h8 b1d2 f6e5 f4e5"
+          },
+          {
+            "score": {
+              "cp": -189,
+              "wdl": [
+                0,
+                14,
+                986
+              ]
+            },
+            "pv": "d7d6 d1e1 h4d8 h3g4 d6e5 e1g3 e5f4 f1f4 g7g5 f4f1 h6g4 b5d4",
+            "depth": 13,
+            "multipv": 3,
+            "nodes": 200187,
+            "bound": "exact",
+            "raw": "info depth 13 seldepth 24 multipv 3 score cp -189 wdl 0 14 986 nodes 200187 nps 517279 hashfull 26 time 387 pv d7d6 d1e1 h4d8 h3g4 d6e5 e1g3 e5f4 f1f4 g7g5 f4f1 h6g4 b5d4"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 120,
+          "wdl": [
+            719,
+            281,
+            0
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 b5c7 e5f4 c7a8 h2h1 f1e2 f8e8 d2e4 h1g2 e2e1 f7f5 d1a4 e8e5 a1d1 g7g5 a4d4 g8g7 f3f1 f5e4 d3c4 f4f3"
+      },
+      "after": {
+        "score": {
+          "cp": -122,
+          "wdl": [
+            0,
+            259,
+            741
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 f3h3 h2f4 f1g1 f4f2 g1h1 g4f6 h3f3 f2h4 h1g1 c8g4 d1e2 g4f3 d2f3 h4h6 f3e5 a8d8"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 116,
+          "wdl": [
+            680,
+            320,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 116,
+          "wdl": [
+            680,
+            320,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 116,
+          "wdl": [
+            680,
+            320,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 116,
+          "wdl": [
+            680,
+            320,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 2000000
+      },
+      "root": {
+        "score": {
+          "cp": 65,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1 d5c6 c2b3 g8h8 b1a3 h5h2 a3c2 f8e8 e2f1 c8e6",
+        "lines": [
+          {
+            "score": {
+              "cp": 65,
+              "wdl": [
+                159,
+                841,
+                0
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1 d5c6 c2b3 g8h8 b1a3 h5h2 a3c2 f8e8 e2f1 c8e6",
+            "depth": 18,
+            "multipv": 1,
+            "nodes": 1298982,
+            "bound": "exact",
+            "raw": "info depth 18 seldepth 35 multipv 1 score cp 65 wdl 159 841 0 nodes 1298982 nps 606151 hashfull 207 time 2143 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1 d5c6 c2b3 g8h8 b1a3 h5h2 a3c2 f8e8 e2f1 c8e6"
+          },
+          {
+            "score": {
+              "cp": -149,
+              "wdl": [
+                0,
+                89,
+                911
+              ]
+            },
+            "pv": "c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 d7d6 e5d6 c8e6 b1a3 f8d8 a1d1 g4f6 d1d4 h7h5 b5c4 e6c4 a3c4 a8a2 e1e7",
+            "depth": 18,
+            "multipv": 2,
+            "nodes": 2000473,
+            "bound": "exact",
+            "raw": "info depth 18 seldepth 31 multipv 2 score cp -149 wdl 0 89 911 nodes 2000473 nps 601646 hashfull 338 time 3325 pv c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 d7d6 e5d6 c8e6 b1a3 f8d8 a1d1 g4f6 d1d4 h7h5 b5c4 e6c4 a3c4 a8a2 e1e7"
+          },
+          {
+            "score": {
+              "cp": -215,
+              "wdl": [
+                0,
+                4,
+                996
+              ]
+            },
+            "pv": "d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 d8e7 h3g4 h6g4 f4e5 e7g5 b5c7 g4e3 d1d2 c8h3 f1f2 a8d8 a3c4 d8d3 d2d3 e3g2 e1e4",
+            "depth": 18,
+            "multipv": 3,
+            "nodes": 2000473,
+            "bound": "exact",
+            "raw": "info depth 18 seldepth 31 multipv 3 score cp -215 wdl 0 4 996 nodes 2000473 nps 601646 hashfull 338 time 3325 pv d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 d8e7 h3g4 h6g4 f4e5 e7g5 b5c7 g4e3 d1d2 c8h3 f1f2 a8d8 a3c4 d8d3 d2d3 e3g2 e1e4"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 75,
+          "wdl": [
+            238,
+            762,
+            0
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 h2g2 d1e2 g2g1 e1d2 d6e5 f4e5 g4h2 f3f2 c8g4 f2g2 g4e2 g2g1 h2f3 d2e2 f3g1 e2f2"
+      },
+      "after": {
+        "score": {
+          "cp": -45,
+          "wdl": [
+            1,
+            930,
+            69
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 a8a5 b2b4 a5b5 d3b5 d6e5 b1d2 e5f4 d1e2 g4e3 e2f2"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 65,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 65,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 65,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 65,
+          "wdl": [
+            159,
+            841,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 8000000
+      },
+      "root": {
+        "score": {
+          "cp": 44,
+          "wdl": [
+            67,
+            932,
+            1
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 f8e8",
+        "lines": [
+          {
+            "score": {
+              "cp": 44,
+              "wdl": [
+                67,
+                932,
+                1
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 f8e8",
+            "depth": 24,
+            "multipv": 1,
+            "nodes": 8000335,
+            "bound": "exact",
+            "raw": "info depth 24 seldepth 46 multipv 1 score cp 44 wdl 67 932 1 nodes 8000335 nps 610712 hashfull 906 time 13100 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 f8e8"
+          },
+          {
+            "score": {
+              "cp": -179,
+              "wdl": [
+                0,
+                23,
+                977
+              ]
+            },
+            "pv": "c7c6 b5d6",
+            "depth": 24,
+            "multipv": 2,
+            "nodes": 8000335,
+            "bound": "upperbound",
+            "raw": "info depth 24 seldepth 44 multipv 2 score cp -179 upperbound wdl 0 23 977 nodes 8000335 nps 610712 hashfull 906 time 13100 pv c7c6 b5d6"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 39,
+          "wdl": [
+            52,
+            947,
+            1
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 g4f6 b1d2 e5f4 d2f1 h2h4 e1d2 a8a5 d2c2 h4g5 d1e2 a5c5 e2e7 c8g4 a1d1 c5e5 e7d6 g4f3 g2f3 f8c8"
+      },
+      "after": {
+        "score": {
+          "cp": -35,
+          "wdl": [
+            2,
+            954,
+            44
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h1 f3f1 h1h4 e1d2 h4d8 c7d5 f8e8 c3c4 c8f5 b1c3 f5e4 a1e1"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 44,
+          "wdl": [
+            67,
+            932,
+            1
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 44,
+          "wdl": [
+            67,
+            932,
+            1
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 44,
+          "wdl": [
+            67,
+            932,
+            1
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 44,
+          "wdl": [
+            67,
+            932,
+            1
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "A",
+      "engine": 18,
+      "budget": {
+        "kind": "depth",
+        "value": 16
+      },
+      "root": {
+        "score": {
+          "cp": 70,
+          "wdl": [
+            193,
+            807,
+            0
+          ]
+        },
+        "bestmove": "h4g3",
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1",
+        "lines": [
+          {
+            "score": {
+              "cp": 70,
+              "wdl": [
+                193,
+                807,
+                0
+              ]
+            },
+            "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1",
+            "depth": 16,
+            "multipv": 1,
+            "nodes": 766037,
+            "bound": "exact",
+            "raw": "info depth 16 seldepth 40 multipv 1 score cp 70 wdl 193 807 0 nodes 766037 nps 643188 hashfull 123 time 1191 pv h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 a8a5 b2b4 e5e4 d3e4 a5h5 d1e2 h2h4 e1d2 h4d8 c7d5 f7f5 e4c2 d8d5 d2c1"
+          },
+          {
+            "score": {
+              "cp": -143,
+              "wdl": [
+                0,
+                115,
+                885
+              ]
+            },
+            "pv": "c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 f7f6 b1d2 g7g5 d2c4 g5f4 e5f6 f8f6 e1e8 f6f8 a1e1",
+            "depth": 16,
+            "multipv": 2,
+            "nodes": 766037,
+            "bound": "exact",
+            "raw": "info depth 16 seldepth 25 multipv 2 score cp -143 wdl 0 115 885 nodes 766037 nps 642648 hashfull 123 time 1192 pv c7c6 d1e1 h4e1 f1e1 c6b5 h3g4 h6g4 d3b5 f7f6 b1d2 g7g5 d2c4 g5f4 e5f6 f8f6 e1e8 f6f8 a1e1"
+          },
+          {
+            "score": {
+              "cp": -206,
+              "wdl": [
+                0,
+                6,
+                994
+              ]
+            },
+            "pv": "d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 d8e7 h3g4 e7c5 e1f2 c5f2 f1f2 h6g4 f2e2 c7c6 b5d6 e5f4 a3c4",
+            "depth": 16,
+            "multipv": 3,
+            "nodes": 766037,
+            "bound": "exact",
+            "raw": "info depth 16 seldepth 30 multipv 3 score cp -206 wdl 0 6 994 nodes 766037 nps 642648 hashfull 123 time 1192 pv d7d6 d1e1 h4d8 b1a3 d6e5 a1d1 d8e7 h3g4 e7c5 e1f2 c5f2 f1f2 h6g4 f2e2 c7c6 b5d6 e5f4 a3c4"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": 120,
+          "wdl": [
+            719,
+            281,
+            0
+          ]
+        },
+        "pv": "h4g3 h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 b1d2 d6e5 b5c7 e5f4 c7a8 h2h1 f1e2 f8e8 d2e4 h1g2 e2e1 f7f5 d1a4 e8e5 a1d1 g7g5 a4d4 g8g7 f3f1 f5e4 d3c4 f4f3"
+      },
+      "after": {
+        "score": {
+          "cp": -81,
+          "wdl": [
+            0,
+            709,
+            291
+          ]
+        },
+        "bestmove": "h3g4",
+        "pv": "h3g4 h6g4 f1f3 g3h2 g1f1 d7d6 f1e1 d6e5 b5c7 h2h4 e1e2 a8a5 b2b4 a5a7 d1e1 h4d8 e1h1 g7g6 c7b5 e5e4 d3e4"
+      },
+      "current": {
+        "category": "brilliant",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 70,
+          "wdl": [
+            193,
+            807,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 70,
+          "wdl": [
+            193,
+            807,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": true
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": false,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": 70,
+          "wdl": [
+            193,
+            807,
+            0
+          ]
+        },
+        "playedMoverScore": {
+          "cp": 70,
+          "wdl": [
+            193,
+            807,
+            0
+          ]
+        },
+        "brilliantEligibility": true,
+        "legalChoices": [
+          "Rb8",
+          "Ra7",
+          "Ra6",
+          "Ra5",
+          "Ra4",
+          "Ra3",
+          "Rxa2",
+          "Re8",
+          "Rd8",
+          "Kh8",
+          "c6",
+          "c5",
+          "d6",
+          "d5",
+          "f6",
+          "f5",
+          "g6",
+          "g5",
+          "Nf5",
+          "Nxe5",
+          "Nf6",
+          "Nh2",
+          "Nf2",
+          "Ne3",
+          "Qg5",
+          "Qf6",
+          "Qe7",
+          "Qd8",
+          "Qh5",
+          "Qxh3",
+          "Qg3",
+          "Qf2+",
+          "Qe1"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "root": {
+        "score": {
+          "cp": -1323,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f5c8 f4f3 d3f4 g3h2 g1h2 b6b4 g2g3 b8a6 f7h8 a8c8 e5h5 e8d7 h5f5 d7c7",
+        "lines": [
+          {
+            "score": {
+              "cp": -1323,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f5c8 f4f3 d3f4 g3h2 g1h2 b6b4 g2g3 b8a6 f7h8 a8c8 e5h5 e8d7 h5f5 d7c7",
+            "depth": 20,
+            "multipv": 1,
+            "nodes": 200143,
+            "bound": "exact",
+            "raw": "info depth 20 seldepth 23 multipv 1 score cp -1323 wdl 0 0 1000 nodes 200143 nps 385631 hashfull 47 time 519 pv d7e8 f5c8 f4f3 d3f4 g3h2 g1h2 b6b4 g2g3 b8a6 f7h8 a8c8 e5h5 e8d7 h5f5 d7c7"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 20,
+            "multipv": 2,
+            "nodes": 200143,
+            "bound": "exact",
+            "raw": "info depth 20 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 200143 nps 385631 hashfull 47 time 519 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -1254,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 c6c5 f7h8 b8c6 e5h5 e8d8 c1b2 c5c4 c8e6 c4d3 h8f7 d8c7 b2e5 c6e5 h5e5 b6d6"
+      },
+      "after": {
+        "score": {
+          "cp": 1307,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 b8d7 c8d7 e8d7 c1b2 c6c5 f2g3 e7e6 f1f4 g8h6 e5h8 c5c4 h8d4 d7e8 d4b6 a7b6 e1e6 f8e7"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1323,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1323,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1323,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1323,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 2000000
+      },
+      "root": {
+        "score": {
+          "cp": -1466,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6b4 e6f7 e8d8 f4e6 d8d7 f2g3 f8h6 h2h3 a8h8 e6c5 b6c5 e5c5",
+        "lines": [
+          {
+            "score": {
+              "cp": -1466,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6b4 e6f7 e8d8 f4e6 d8d7 f2g3 f8h6 h2h3 a8h8 e6c5 b6c5 e5c5",
+            "depth": 26,
+            "multipv": 1,
+            "nodes": 2000329,
+            "bound": "exact",
+            "raw": "info depth 26 seldepth 34 multipv 1 score cp -1466 wdl 0 0 1000 nodes 2000329 nps 369609 hashfull 433 time 5412 pv d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6b4 e6f7 e8d8 f4e6 d8d7 f2g3 f8h6 h2h3 a8h8 e6c5 b6c5 e5c5"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 26,
+            "multipv": 2,
+            "nodes": 2000329,
+            "bound": "exact",
+            "raw": "info depth 26 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 2000329 nps 369609 hashfull 433 time 5412 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -1428,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 g3h2 g1h1 f4f3 g2g3 c6c5 f7h8 g8f6 c1b2 c5c4 d3f4 b8d7 c8d7 e8d7 h8f7 d7e8 f7d6 e8d8 f4e6 d8d7"
+      },
+      "after": {
+        "score": {
+          "cp": 1470,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 g3h2 g1h1 f4f3 g2g3 c6c5 d3f4 g8f6 f7d6 b6d6 e5d6 b8d7 c8d7 f6d7 d6e6 c5c4 d2d4 c4d3 f4d3 d7f6"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1466,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1466,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1466,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1466,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "budget": {
+        "kind": "nodes",
+        "value": 8000000
+      },
+      "root": {
+        "score": {
+          "cp": -1619,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6c7 f2g3 b6d6 e5g5 d6d4 g1h1 c7e6 f4e6 d4b4 g5f5 f8h6 e6c7 e8d8 h8f7 d8c7 e1e7 c7b6 f5f6 b6a5",
+        "lines": [
+          {
+            "score": {
+              "cp": -1619,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6c7 f2g3 b6d6 e5g5 d6d4 g1h1 c7e6 f4e6 d4b4 g5f5 f8h6 e6c7 e8d8 h8f7 d8c7 e1e7 c7b6 f5f6 b6a5",
+            "depth": 30,
+            "multipv": 1,
+            "nodes": 8000342,
+            "bound": "exact",
+            "raw": "info depth 30 seldepth 35 multipv 1 score cp -1619 wdl 0 0 1000 nodes 8000342 nps 355128 hashfull 954 time 22528 pv d7e8 f5c8 c6c5 d3f4 b8a6 c8e6 g8f6 f7h8 a6c7 f2g3 b6d6 e5g5 d6d4 g1h1 c7e6 f4e6 d4b4 g5f5 f8h6 e6c7 e8d8 h8f7 d8c7 e1e7 c7b6 f5f6 b6a5"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 30,
+            "multipv": 2,
+            "nodes": 8000342,
+            "bound": "exact",
+            "raw": "info depth 30 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 8000342 nps 355113 hashfull 954 time 22529 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -1503,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 b8d7 c8d7 e8d7 c1b2 g8h6 e5e6 d7e8 f7h6 c6c5 e6f7 e8d7 h6g4 a8d8 b2h8 d7c8 h8e5 f4f3 f7f3 c5c4 d3f4 g3f2 g4f2"
+      },
+      "after": {
+        "score": {
+          "cp": 1661,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 g3h2 g1h1 f4f3 g2g3 c6c5 d3f4 e8f7 e5h5 b6g6 f4g6 h7g6 h5h8 g8f6 h8h3 b7b6 c8e6 f7e8 e1e3 b8c6 e3f3 c6d4 f3f6 e7f6"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1619,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1619,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -1619,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -1619,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 200000
+      },
+      "root": {
+        "score": {
+          "cp": -597,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f7d6 e8d8 d3f4 g3f2 f1f2 c8f5 e5f5 e7d6 f5f8 d8c7 f8f7 g8e7 e1e7 b8d7 f4e6",
+        "lines": [
+          {
+            "score": {
+              "cp": -597,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f7d6 e8d8 d3f4 g3f2 f1f2 c8f5 e5f5 e7d6 f5f8 d8c7 f8f7 g8e7 e1e7 b8d7 f4e6",
+            "depth": 18,
+            "multipv": 1,
+            "nodes": 200025,
+            "bound": "exact",
+            "raw": "info depth 18 seldepth 30 multipv 1 score cp -597 wdl 0 0 1000 nodes 200025 nps 600675 hashfull 43 time 333 pv d7e8 f7d6 e8d8 d3f4 g3f2 f1f2 c8f5 e5f5 e7d6 f5f8 d8c7 f8f7 g8e7 e1e7 b8d7 f4e6"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 18,
+            "multipv": 2,
+            "nodes": 200025,
+            "bound": "exact",
+            "raw": "info depth 18 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 200025 nps 600675 hashfull 43 time 333 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -632,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 b8a6 f7h8 a6b4 d3f4 g3f2 f1f2 a8c8 e5h5 e8d8 f4e6 d8d7"
+      },
+      "after": {
+        "score": {
+          "cp": 633,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 b8a6 f7h8 a8c8 e5h5 e8d8 h5f7 g3f2 f1f2 f8h6 f7g8 d8c7 g8e6 h6f8 g1h1 a6b4 e6e5 c7d8 h8f7 d8e8 e5f4 b4c2"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -597,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -597,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -597,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -597,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 2000000
+      },
+      "root": {
+        "score": {
+          "cp": -725,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 c6c5 h8g8 b6d6 g8f8 d8c7 d2d4 b8c6 f8a8 d7f5 f2g3 d6d4 c1e3 d4e4 e3c5 e4c2",
+        "lines": [
+          {
+            "score": {
+              "cp": -725,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 c6c5 h8g8 b6d6 g8f8 d8c7 d2d4 b8c6 f8a8 d7f5 f2g3 d6d4 c1e3 d4e4 e3c5 e4c2",
+            "depth": 21,
+            "multipv": 1,
+            "nodes": 2000156,
+            "bound": "exact",
+            "raw": "info depth 21 seldepth 41 multipv 1 score cp -725 wdl 0 0 1000 nodes 2000156 nps 586384 hashfull 435 time 3411 pv d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 c6c5 h8g8 b6d6 g8f8 d8c7 d2d4 b8c6 f8a8 d7f5 f2g3 d6d4 c1e3 d4e4 e3c5 e4c2"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 21,
+            "multipv": 2,
+            "nodes": 2000156,
+            "bound": "exact",
+            "raw": "info depth 21 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 2000156 nps 586384 hashfull 435 time 3411 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -714,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 f4f3 h2g3 c6c5 d3f4 b8a6 e5h5 a8c8 f7h8 e8d7 h5f5 e7e6 e1e6 b6d8 f5h7 f8e7 f1e1 d7c7 e6e7 g8e7 e1e7 d8e7 h7e7 c7b8"
+      },
+      "after": {
+        "score": {
+          "cp": 735,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 g3h2 g1h1 c6c5 d3f4 b8d7 c8d7 e8d7 f7h8 a8e8 h8f7 b6f6 e5d5 d7c8"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -725,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -725,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -725,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -725,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "budget": {
+        "kind": "nodes",
+        "value": 8000000
+      },
+      "root": {
+        "score": {
+          "cp": -790,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 b6b4 h8g8 b4f4 g8f8 d8c7 h2g3 f4d6 e1e7 b8a6 f8f7 a6c5 d2d3 d6d5 c1f4 c7b6 f7d5 c6d5 f5d7 c5d7 e7d7 b6c6",
+        "lines": [
+          {
+            "score": {
+              "cp": -790,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 b6b4 h8g8 b4f4 g8f8 d8c7 h2g3 f4d6 e1e7 b8a6 f8f7 a6c5 d2d3 d6d5 c1f4 c7b6 f7d5 c6d5 f5d7 c5d7 e7d7 b6c6",
+            "depth": 23,
+            "multipv": 1,
+            "nodes": 8000730,
+            "bound": "exact",
+            "raw": "info depth 23 seldepth 49 multipv 1 score cp -790 wdl 0 0 1000 nodes 8000730 nps 576213 hashfull 959 time 13885 pv d7e8 f7d6 e8d8 d3f4 c8d7 e5h8 b6b4 h8g8 b4f4 g8f8 d8c7 h2g3 f4d6 e1e7 b8a6 f8f7 a6c5 d2d3 d6d5 c1f4 c7b6 f7d5 c6d5 f5d7 c5d7 e7d7 b6c6"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 23,
+            "multipv": 2,
+            "nodes": 8000730,
+            "bound": "exact",
+            "raw": "info depth 23 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 8000730 nps 576213 hashfull 959 time 13885 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -769,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 g3h2 g1h1 f4f3 e5h8 f3g2 h1g2 e8f7 d3e5 f7e8 h8g8 b6d4 c8e6 d4h4 g8f7 e8d8 f7f8 d8c7 f8c8 c7b6"
+      },
+      "after": {
+        "score": {
+          "cp": 739,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 b8d7 c8d7 e8d7 f7h8 a8d8 h8f7 g3h2 g1h1 f4f3 g2g3 g8f6 e5f5 d7e8 f7d8 e8d8 d3e5 f8h6 e5f7 d8e8 f7h6"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -790,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -790,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -790,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -790,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "budget": {
+        "kind": "depth",
+        "value": 16
+      },
+      "root": {
+        "score": {
+          "cp": -584,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "bestmove": "d7e8",
+        "pv": "d7e8 f7h8 b8d7 e5f4 g3f2 d3f2 d7f6 f5c8 f8h6 f4f5 h6g7 g1h1 g7h8 f2e4 h8g7",
+        "lines": [
+          {
+            "score": {
+              "cp": -584,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "d7e8 f7h8 b8d7 e5f4 g3f2 d3f2 d7f6 f5c8 f8h6 f4f5 h6g7 g1h1 g7h8 f2e4 h8g7",
+            "depth": 16,
+            "multipv": 1,
+            "nodes": 50900,
+            "bound": "exact",
+            "raw": "info depth 16 seldepth 22 multipv 1 score cp -584 wdl 0 0 1000 nodes 50900 nps 578409 hashfull 11 time 88 pv d7e8 f7h8 b8d7 e5f4 g3f2 d3f2 d7f6 f5c8 f8h6 f4f5 h6g7 g1h1 g7h8 f2e4 h8g7"
+          },
+          {
+            "score": {
+              "mate": -2,
+              "wdl": [
+                0,
+                0,
+                1000
+              ]
+            },
+            "pv": "e7e6 e5e6 d7c7 e6c8",
+            "depth": 16,
+            "multipv": 2,
+            "nodes": 50900,
+            "bound": "exact",
+            "raw": "info depth 16 seldepth 5 multipv 2 score mate -2 wdl 0 0 1000 nodes 50900 nps 578409 hashfull 11 time 88 pv e7e6 e5e6 d7c7 e6c8"
+          }
+        ]
+      },
+      "played": {
+        "score": {
+          "cp": -627,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "pv": "d7e8 f5c8 g3f2 f1f2 b8a6 f7h8 a8c8 e5h5 e8d8 h5f7 g8f6 f7f8 d8c7 f8e7 c7b8 e7f6"
+      },
+      "after": {
+        "score": {
+          "cp": 634,
+          "wdl": [
+            1000,
+            0,
+            0
+          ]
+        },
+        "bestmove": "f5c8",
+        "pv": "f5c8 g3f2 f1f2 b8a6 f7h8 a8c8 e5f4 f8h6 f4f7 e8d7 f7f5 d7c7"
+      },
+      "current": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -584,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -584,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      },
+      "withoutHistory": {
+        "category": "best",
+        "sacrifice": true,
+        "standard": "excellent",
+        "lossPawns": 0,
+        "expectedPointDrop": 0,
+        "bestMoverScore": {
+          "cp": -584,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "playedMoverScore": {
+          "cp": -584,
+          "wdl": [
+            0,
+            0,
+            1000
+          ]
+        },
+        "brilliantEligibility": false,
+        "legalChoices": [
+          "Ke8",
+          "e6"
+        ],
+        "historyIncluded": false
+      }
+    }
+  ],
+  "repeated": [
+    {
+      "case": "A",
+      "engine": 19,
+      "exactCore": true
+    },
+    {
+      "case": "B",
+      "engine": 19,
+      "exactCore": true
+    },
+    {
+      "case": "A",
+      "engine": 18,
+      "exactCore": true
+    },
+    {
+      "case": "B",
+      "engine": 18,
+      "exactCore": true
+    }
+  ],
+  "extractedNames": [
+    "scoreToCp",
+    "winPct",
+    "moverWin",
+    "annotationOutcome",
+    "annotationPoints",
+    "annotationPair",
+    "decisionScore",
+    "decisionPawns",
+    "decisionMate",
+    "exchangeGain",
+    "couldBeSaved",
+    "isSacrifice",
+    "brilliantEligible",
+    "onlyGoodReply",
+    "_isCheckmate",
+    "getStandardRating",
+    "classifyMove",
+    "_forcedAt",
+    "_opp",
+    "SAC_VAL",
+    "BRILLIANT_POLICY"
+  ],
+  "productionChanges": false,
+  "populationValidity": false,
+  "originalScreenshotReplay": false
+}
