@@ -1,0 +1,47 @@
+{
+  "schema": "E276-user-reported-cases-v1",
+  "authorization": {
+    "date": "2026-10-16",
+    "basis": "Explicit user request to analyze these two attached positions thoroughly and investigate incorrect Brilliant categorization; derived diagnostic evidence retained locally. Not a public dataset license or general ingestion permission.",
+    "publicDatasetEligible": false,
+    "scope": "Only these two reported positions and legal hypothetical continuations; no ratings/names used as targets."
+  },
+  "images": [
+    {
+      "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+      "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0",
+      "bytes": 172006,
+      "original": "C:/Users/thoma/AppData/Local/Temp/codex-clipboard-7d3de29b-98c0-48cd-8e30-8b0231ab3314.png"
+    },
+    {
+      "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+      "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636",
+      "bytes": 241447,
+      "original": "C:/Users/thoma/Desktop/665800047-410f4d5b-0057-48fb-aac8-719a539f92f5.png"
+    }
+  ],
+  "cases": [
+    {
+      "id": "A",
+      "reportedMove": "13...Qg3",
+      "image": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+      "before": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB3P/PP4P1/RN1Q1RK1 b - - 0 13",
+      "after": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pn1/2PB2qP/PP4P1/RN1Q1RK1 w - - 1 14",
+      "uci": "h4g3",
+      "visiblePrior": "r1b2rk1/1ppp1ppp/1p5n/1N2P3/5Pnq/2PB4/PP4PP/RN1Q1RK1 w - - 1 13",
+      "visiblePrecedingMove": "h2h3",
+      "inferredPgn": "1. e4 e5 2. Nf3 Qf6 3. d4 exd4 4. Nxd4 Bc5 5. Be3 Nc6 6. c3 Nh6 7. Bd3 Ne5 8. Nb5 Bb6 9. O-O O-O 10. f4 Neg4 11. Bxb6 axb6 12. e5 Qh4 13. h3 Qg3",
+      "historyLimitation": "Plies1-2 inferred from opening and matching board; primary analysis uses FEN, not authenticated full-game history."
+    },
+    {
+      "id": "B",
+      "reportedMove": "19...Ke8",
+      "image": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+      "before": "rnb2bnr/pp1kpN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 b - - 1 19",
+      "after": "rnb1kbnr/pp2pN1p/1qp5/4QB2/5p2/3N2p1/P1PP1PPP/2B1RRK1 w - - 2 20",
+      "uci": "d7e8",
+      "visiblePrior": null,
+      "historyLimitation": "Full history unavailable. Source kingd7/previous Bf5+ visible; counters reconstructed, no repetition claim."
+    }
+  ]
+}
