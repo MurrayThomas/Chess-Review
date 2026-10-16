@@ -1253,6 +1253,44 @@
       "sha256": "3ad8c9980f61281c04e811583174251287d86af3c9ca7e12d65bce18c0c66ea4",
       "bytes": 34445,
       "uncompressedSha256": "3ad8c9980f61281c04e811583174251287d86af3c9ca7e12d65bce18c0c66ea4"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/models.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/inputs.json.gz"
+      ],
+      "sha256": "19b53e071db2901a2ec7626298480718caa011b5e8c3dd6bae4e860076ad0e01",
+      "bytes": 12236,
+      "uncompressedSha256": "19b53e071db2901a2ec7626298480718caa011b5e8c3dd6bae4e860076ad0e01"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/fit-run.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/models.json"
+      ],
+      "sha256": "75de4f731b37e264b10affa051e9f1a0ae9bdbd1d548f992eac25d1c4e70df9d",
+      "bytes": 34753,
+      "uncompressedSha256": "75de4f731b37e264b10affa051e9f1a0ae9bdbd1d548f992eac25d1c4e70df9d"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/fit-execution.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/freeze-run.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/fit-run.json"
+      ],
+      "sha256": "5966d25e5c47f5eef5f7e9b71da58b75b1915e12de65628246e39afc68ad8349",
+      "bytes": 883,
+      "uncompressedSha256": "5966d25e5c47f5eef5f7e9b71da58b75b1915e12de65628246e39afc68ad8349"
+    },
+    "research/experiments/E275-draw-aware-calibration/evidence/approval-timeout.json": {
+      "kind": "summary",
+      "parents": [
+        "research/experiments/E275-draw-aware-calibration/evidence/freeze-run.json",
+        "research/experiments/E275-draw-aware-calibration/evidence/fit-run.json"
+      ],
+      "sha256": "ff79352729ae9acab54beef8c4416839692dec923f3038301b095d4188105e01",
+      "bytes": 789,
+      "uncompressedSha256": "ff79352729ae9acab54beef8c4416839692dec923f3038301b095d4188105e01"
     }
   },
   "withdrawnArtifacts": {

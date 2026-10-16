@@ -1,0 +1,439 @@
+{
+  "schema": "E275-models-v1",
+  "spec": {
+    "epsilon": 0.0005,
+    "penalty": 0.001,
+    "maxIterations": 200,
+    "gradientTolerance": 1e-9,
+    "aBounds": [
+      0,
+      20
+    ],
+    "bBounds": [
+      -20,
+      20
+    ],
+    "cpIterations": 100,
+    "cpWidth": 1e-12,
+    "folds": 5,
+    "foldSeed": "E275-fold-v1:",
+    "iterations": 20000,
+    "primarySeeds": [
+      20261021,
+      20261022,
+      20261023
+    ],
+    "crossFitSeeds": [
+      20261031,
+      20261032,
+      20261033
+    ],
+    "controls": [
+      "cpDraw",
+      "temperature",
+      "constant"
+    ],
+    "minimumGain": 0.01,
+    "meanPointTolerance": 0.002,
+    "stabilityTolerance": 0.01
+  },
+  "final": {
+    "trainingGames": 450,
+    "trainingGameHash": "011ccbb0cb6beb3db307ac175c278eeb57fa99d8a4c0cc33bec14a39ac8a6247",
+    "models": {
+      "candidate": {
+        "kind": "candidate",
+        "a": 0.1146858304308056,
+        "b": -2.553800888692175,
+        "diagnostics": {
+          "converged": true,
+          "iterations": 7,
+          "projectedGradient": 9.944227385982884e-10,
+          "objective": 0.7800600050697122,
+          "nll": 0.7764071649907497,
+          "penalty": 0.0036528400789624673,
+          "trainingGames": 450,
+          "boundary": false
+        }
+      },
+      "temperature": {
+        "kind": "temperature",
+        "a": 0.08018372248471506,
+        "b": 0,
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "projectedGradient": 7.012168623532489e-13,
+          "objective": 1.0687665844186551,
+          "nll": 1.068343553426464,
+          "penalty": 0.00042303099219103785,
+          "trainingGames": 450,
+          "boundary": false
+        }
+      },
+      "cpDraw": {
+        "kind": "cpDraw",
+        "r": 0.05794655907295737,
+        "diagnostics": {
+          "converged": true,
+          "boundary": null,
+          "iterations": 40,
+          "projectedGradient": 3.695363459677026e-12,
+          "objective": 0.7838263823698479,
+          "trainingGames": 450
+        }
+      },
+      "constant": {
+        "kind": "constant",
+        "probabilities": [
+          0.4779359805937862,
+          0.04097452934662237,
+          0.4810894900595878
+        ],
+        "diagnostics": {
+          "trainingGames": 450,
+          "weightedCounts": [
+            215.28809523809448,
+            18,
+            216.7119047619039
+          ],
+          "smoothing": 0.5
+        }
+      }
+    }
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "trainingGames": 360,
+      "trainingGameHash": "55ad1f2239e8576274c995ce6b700b1c8643446bb80a02ded86c3675949209f5",
+      "models": {
+        "candidate": {
+          "kind": "candidate",
+          "a": 0.11407437285279137,
+          "b": -2.515278279888331,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 9,
+            "projectedGradient": 6.702971511174383e-15,
+            "objective": 0.7848477895087024,
+            "nll": 0.7812920449876453,
+            "penalty": 0.003555744521057088,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "temperature": {
+          "kind": "temperature",
+          "a": 0.0791478006855702,
+          "b": 0,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 4,
+            "projectedGradient": 5.879879916292907e-13,
+            "objective": 1.0696792412339604,
+            "nll": 1.0692552568474694,
+            "penalty": 0.0004239843864911112,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "cpDraw": {
+          "kind": "cpDraw",
+          "r": 0.06018303784859244,
+          "diagnostics": {
+            "converged": true,
+            "boundary": null,
+            "iterations": 40,
+            "projectedGradient": 3.272535020748535e-12,
+            "objective": 0.7922378758510024,
+            "trainingGames": 360
+          }
+        },
+        "constant": {
+          "kind": "constant",
+          "probabilities": [
+            0.4772508726865568,
+            0.04287690179806363,
+            0.4798722255153785
+          ],
+          "diagnostics": {
+            "trainingGames": 360,
+            "weightedCounts": [
+              172.0261904761903,
+              15.000000000000004,
+              172.97380952380934
+            ],
+            "smoothing": 0.5
+          }
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "trainingGames": 360,
+      "trainingGameHash": "2490702d86119a3ee5ce6dab9f232955de7cdae4b724fc9bd521d819b8921eef",
+      "models": {
+        "candidate": {
+          "kind": "candidate",
+          "a": 0.10926355746613511,
+          "b": -2.5027123312186315,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 6,
+            "projectedGradient": 4.5496939549138915e-12,
+            "objective": 0.7886204569072995,
+            "nll": 0.7850919666958537,
+            "penalty": 0.003528490211445841,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "temperature": {
+          "kind": "temperature",
+          "a": 0.07718025022432132,
+          "b": 0,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 4,
+            "projectedGradient": 4.869021852371702e-13,
+            "objective": 1.0708697738098434,
+            "nll": 1.0704439756645554,
+            "penalty": 0.0004257981452880231,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "cpDraw": {
+          "kind": "cpDraw",
+          "r": 0.06050336507300608,
+          "diagnostics": {
+            "converged": true,
+            "boundary": null,
+            "iterations": 40,
+            "projectedGradient": 1.1515094433534045e-13,
+            "objective": 0.7927366487358798,
+            "trainingGames": 360
+          }
+        },
+        "constant": {
+          "kind": "constant",
+          "probabilities": [
+            0.4763287887769212,
+            0.042876901798063624,
+            0.4807943094250144
+          ],
+          "diagnostics": {
+            "trainingGames": 360,
+            "weightedCounts": [
+              171.692857142857,
+              15,
+              173.3071428571427
+            ],
+            "smoothing": 0.5
+          }
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "trainingGames": 360,
+      "trainingGameHash": "9a3c3ab93e728773cd1c0ef0656bca7ecf869bf25b71fc6f21214a4607e4a669",
+      "models": {
+        "candidate": {
+          "kind": "candidate",
+          "a": 0.1115185890135478,
+          "b": -2.6352005579668982,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 7,
+            "projectedGradient": 1.4087397914863686e-11,
+            "objective": 0.7722733806393461,
+            "nll": 0.7684065400401574,
+            "penalty": 0.0038668405991887644,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "temperature": {
+          "kind": "temperature",
+          "a": 0.08143982644096222,
+          "b": 0,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 4,
+            "projectedGradient": 9.755946051015485e-13,
+            "objective": 1.067394295245648,
+            "nll": 1.0669724188494236,
+            "penalty": 0.00042187639622440475,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "cpDraw": {
+          "kind": "cpDraw",
+          "r": 0.05258319237814929,
+          "diagnostics": {
+            "converged": true,
+            "boundary": null,
+            "iterations": 40,
+            "projectedGradient": 8.003042673010441e-13,
+            "objective": 0.7822286410914878,
+            "trainingGames": 360
+          }
+        },
+        "constant": {
+          "kind": "constant",
+          "probabilities": [
+            0.48107752091154515,
+            0.037344398340248976,
+            0.4815780807482045
+          ],
+          "diagnostics": {
+            "trainingGames": 360,
+            "weightedCounts": [
+              173.40952380952356,
+              13.000000000000004,
+              173.59047619047593
+            ],
+            "smoothing": 0.5
+          }
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "trainingGames": 360,
+      "trainingGameHash": "de49af3c6b496d15c2cc0bc3a5f6a38c32b1387eb70107169479867112966d8f",
+      "models": {
+        "candidate": {
+          "kind": "candidate",
+          "a": 0.1193647585684695,
+          "b": -2.603561776854994,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 7,
+            "projectedGradient": 6.938893903907228e-17,
+            "objective": 0.774360088453163,
+            "nll": 0.7705830622759872,
+            "penalty": 0.0037770261771757525,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "temperature": {
+          "kind": "temperature",
+          "a": 0.07831616680660035,
+          "b": 0,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 4,
+            "projectedGradient": 3.9544756358367295e-13,
+            "objective": 1.070556744599529,
+            "nll": 1.070131994055344,
+            "penalty": 0.00042475054418503926,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "cpDraw": {
+          "kind": "cpDraw",
+          "r": 0.055955816038000636,
+          "diagnostics": {
+            "converged": true,
+            "boundary": null,
+            "iterations": 40,
+            "projectedGradient": 1.749170253084742e-12,
+            "objective": 0.7615226092355009,
+            "trainingGames": 360
+          }
+        },
+        "constant": {
+          "kind": "constant",
+          "probabilities": [
+            0.4783837186326806,
+            0.0401106500691563,
+            0.48150563129816154
+          ],
+          "diagnostics": {
+            "trainingGames": 360,
+            "weightedCounts": [
+              172.43571428571403,
+              14.000000000000004,
+              173.5642857142854
+            ],
+            "smoothing": 0.5
+          }
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "trainingGames": 360,
+      "trainingGameHash": "ef906435d9ef1068dbf9783670136e73a52300c053f7f2bf980a9b7247112f83",
+      "models": {
+        "candidate": {
+          "kind": "candidate",
+          "a": 0.11950905256130805,
+          "b": -2.5203666067888535,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 7,
+            "projectedGradient": 5.551115123125783e-16,
+            "objective": 0.7795739486456416,
+            "nll": 0.7760101925750726,
+            "penalty": 0.0035637560705689226,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "temperature": {
+          "kind": "temperature",
+          "a": 0.08480325542741925,
+          "b": 0,
+          "diagnostics": {
+            "converged": true,
+            "iterations": 4,
+            "projectedGradient": 1.3908318940991649e-12,
+            "objective": 1.0651615225817546,
+            "nll": 1.0647427300411165,
+            "penalty": 0.0004187925406381248,
+            "trainingGames": 360,
+            "boundary": false
+          }
+        },
+        "cpDraw": {
+          "kind": "cpDraw",
+          "r": 0.06049814079983251,
+          "diagnostics": {
+            "converged": true,
+            "boundary": null,
+            "iterations": 40,
+            "projectedGradient": 4.895597816023667e-13,
+            "objective": 0.7900840537716876,
+            "trainingGames": 360
+          }
+        },
+        "constant": {
+          "kind": "constant",
+          "probabilities": [
+            0.47603899097675,
+            0.04287690179806363,
+            0.48108410722518574
+          ],
+          "diagnostics": {
+            "trainingGames": 360,
+            "weightedCounts": [
+              171.58809523809512,
+              15.000000000000002,
+              173.41190476190465
+            ],
+            "smoothing": 0.5
+          }
+        }
+      }
+    }
+  ],
+  "numericalFits": 18,
+  "constantControls": 6
+}

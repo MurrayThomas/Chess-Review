@@ -1,6 +1,6 @@
 # E275: draw-aware calibration — working record
 
-Updated2026-10-16. State: **inputs committed; fitting not started**.
+Updated2026-10-16. State: **training-only models fitted/registered; performance not evaluated**.
 Plan df50362 and code d424fca precede any new fit or categorical performance look.
 No production changes. Current-main research exception; dirty application work
 and staged video remain excluded, no push/new development checkout.
@@ -32,6 +32,19 @@ October15 study-date receipts remain unchanged. A provenance-only launcher recor
 actual UTC execution dates for stages resumedOctober16; its hash accompanies each
 execution record. Re-run data admission before the first fit.
 
-Next: commit the registered input freeze, run the18 training-only numerical fits
-and six constant controls, register/commit fitted models before the single fixed
-development evaluation. Record all failed attempts and do not tune the protocol.
+Training-only stage from3453ec6 onOctober16 completes18 numerical fits and six
+constant controls. All converge; all six candidate fits are interior. Final
+candidate a=.1146858304,b=-2.5538008887; temperature a=.0801837225; CP draw
+r=.0579465591. These are training parameters/diagnostics, not held-out evidence.
+The final candidate projected gradient9.94423e-10 meets the frozen1e-9 threshold;
+no tolerance, penalty, bound or family change. No failed numerical attempts.
+
+[Models](evidence/models.json), [fit receipt](evidence/fit-run.json) and
+[actual fit execution](evidence/fit-execution.json) retain all six training sets,
+code/input hashes and actual UTC dates. The scientific entry point's date is the
+October15 registration date, as prospectively documented; the launcher records
+theOctober16 execution separately. Neither omitted-fold nor validation metrics
+have been assessed. No searches, human annotations or production updates.
+
+Next: commit registered fitted models, perform the single fixed development/
+cross-fit/stability comparison, preserve every gate and then independently replay.
