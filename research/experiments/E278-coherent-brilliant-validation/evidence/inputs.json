@@ -1,0 +1,166 @@
+{
+  "schema": "E278-fixture-correction-v1",
+  "parentInputSha256": "aae0455332ee15ba19fad219dbbbfcd506005bd1ac3f3824151fe619742eed2c",
+  "candidateSha256": "8b57b4471905b5df97d586ed638ff7a3241dedc02b4f572737e232bb05d243cb",
+  "scenarios": [
+    {
+      "id": "valid-exact",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-rank3",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-no-candidate",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-no-lines",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-unused-bound",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-paired-top",
+      "expectation": "retain"
+    },
+    {
+      "id": "valid-paired-other",
+      "expectation": "retain"
+    },
+    {
+      "id": "paired-losing",
+      "expectation": "reject"
+    },
+    {
+      "id": "paired-missing",
+      "expectation": "reject"
+    },
+    {
+      "id": "used-upperbound",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-lowerbound",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-stale-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-missing-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "used-missing-rank",
+      "expectation": "withhold"
+    },
+    {
+      "id": "top-mismatch",
+      "expectation": "withhold"
+    },
+    {
+      "id": "illegal-top",
+      "expectation": "withhold"
+    },
+    {
+      "id": "missing-bestmove",
+      "expectation": "withhold"
+    },
+    {
+      "id": "zero-depth",
+      "expectation": "withhold"
+    },
+    {
+      "id": "duplicate-rank1",
+      "expectation": "withhold"
+    },
+    {
+      "id": "exact-losing",
+      "expectation": "reject"
+    },
+    {
+      "id": "used-missing-bound",
+      "expectation": "withhold"
+    }
+  ],
+  "colors": [
+    "w",
+    "b"
+  ],
+  "builds": [
+    "nnue",
+    "sf19lite"
+  ],
+  "paths": [
+    "raw",
+    "overlay",
+    "variation"
+  ],
+  "correction": "All overlays: coherent completed losing child plus explicit legal exact child preview with the declared scenario score. No candidate/gate/other-path change.",
+  "trafficEligibility": {
+    "schema": "E278-E276-specific-traffic-admission-v1",
+    "caseAuthorization": {
+      "schema": "E276-specific-user-authorization-v1",
+      "caseFile": "research/experiments/E276-reported-brilliant-cases/evidence/cases.json",
+      "caseSha256": "fbdf4671bcdeced572c2fdcc25acfafcdd8644cb5497520b79b2e0aff4134f1c",
+      "images": [
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-a.png",
+          "sha256": "169d8c2d0ce01ccb5efebb34e53d5749c7e825d317f512ff7c71040f12a93fd0"
+        },
+        {
+          "file": "research/experiments/E276-reported-brilliant-cases/evidence/case-b.png",
+          "sha256": "95051e551e64558626deabbfec7e5139c0f0ea12596121d74b3c09437cba4636"
+        }
+      ],
+      "authorizedUse": "User-directed diagnosis of exactly two supplied images; not public-data-v1 admission, population validation or training permission.",
+      "cases": 2
+    },
+    "parentManifestSha256": "a716a7d26e274c4afc59ef7755ea5bb2202587a5f170c8efd9474230e1765ba1",
+    "archives": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/observations.json.gz",
+        "sha256": "85013a22e7f92b8b75146074f965285ca6fc8454ecf927bb13bc9eead4811bdb",
+        "observations": 46
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "sha256": "d0f9344776ae5a2a2f6ebd48971af6e199d5d67ed114685493293aa2e9c2d228",
+        "observations": 12
+      }
+    ],
+    "fullStreams": 54,
+    "excluded": [
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 4,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 5,
+        "engine": 19,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 10,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      },
+      {
+        "file": "research/experiments/E276-reported-brilliant-cases/evidence/tactics.json.gz",
+        "index": 11,
+        "engine": 18,
+        "reason": "Selected-info-only inferred-history record; no full UCI sequence"
+      }
+    ],
+    "scope": "Exactly the two explicitly user-supplied cases/continuations. No public-dataset admission or population sample."
+  }
+}
