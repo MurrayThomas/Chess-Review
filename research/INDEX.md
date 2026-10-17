@@ -1,6 +1,7 @@
 # Research index
 
-Updated: 2026-10-16. Numerical research resumed; production changes excluded.
+Updated: 2026-10-18. Numerical research is paused; P009 records the separately
+authorized production implementation. The usage-monitor schedule is cancelled.
 The [numerical review checkpoints](NUMERICAL-REVIEW.md) track the new batch and
 reflection decisions. Coach expansion retains its separate approved queue.
 Baseline: [B000](BASELINE.md). New CP gain is development evidence, not confirmed.
@@ -12,6 +13,7 @@ records. Update a row and the active experiment's resume state when work stops.
 
 | ID | Question / record | State | Outcome / evidence | Next action |
 | --- | --- | --- | --- | --- |
+| P009 | [Coherent Brilliant evidence](promotions/P009-brilliant-evidence-coherence.md) | implemented locally |495/495 tests;252 fixture rows/54 final results/924 progress snapshots preserved; four real-Chrome case/build checks and exact public replay pass | No model/threshold changes or automatic research; unchanged baseline lint errors recorded |
 | P008 | [Current, complete scoring evidence](promotions/P008-scoring-evidence-integrity.md) | implemented locally | Missing decisions cannot inflate full-game accuracy; stale ratings and malformed caches refused; 162 scoring/category/engine/cache checks and exact public replay pass; new predictive models not validated | Fresh opportunity-aware rating study and independent category reviews; browser/full-worktree limits recorded |
 | P007 | [Focused coach lessons and smaller default profile](promotions/P007-focused-coach-lessons.md) | implemented locally | One supported lesson with a thinking prompt; diagnostics collapsed, route/tempo proofs optional, short exchange and mate checks retained; 385 production tests, 42 packaged layout cases and real-engine Firefox smoke pass; research acceptance unchanged | Gather user feedback on lesson relevance; preserve original source scopes |
 | B000 | [Starting extension baseline](BASELINE.md) | Reproduced | Offline replay passes; no fresh confirmation | Use frozen recipe as comparator |
@@ -32,7 +34,7 @@ records. Update a row and the active experiment's resume state when work stops.
 | F024 | [Brilliant coherence and coverage](findings/F024-brilliant-coherence-coverage.md) | recorded | Natural serial MultiPV updates expose provisional coverage cost; no false-label prevalence claim | Compare coherent iteration emissions using retained traffic, no fresh searches |
 | E279 | [Coherent MultiPV emission](experiments/E279-coherent-multipv-emission/RESULT.md) | complete | All gates pass:618 eligible secondary inspections,24/24 MultiPV streams served,54 finals unchanged; Q ties observed frames but fails authored same-depth causality control; exact/independent replay passes | Keep P+C; small timestamped callback/throttle pilot, then user-review shortlist; no implementation |
 | F025 | [Coherent progress producer](findings/F025-coherent-progress-producer.md) | recorded | Fresh groups restore source eligibility offline; timing/human precision unknown | Bound missing integration/timing evidence before promotion |
-| E280 | [Timestamped progress pilot](experiments/E280-timestamped-progress-pilot/RESULT.md) | setup; quota sleep | Fixed P/C; source/inputs frozen, no engine searches; two authorized cases | Resume at>=99% allowance; smoke cost, collect and independently replay, then reflect |
+| E280 | [Timestamped progress pilot](experiments/E280-timestamped-progress-pilot/RESULT.md) | deferred; registered run unexecuted | Fixed P/C setup frozen; no E280 engine searches; separate production checks in P009 | Do not restart automatically; user selected P009 implementation, not further research |
 | D001 | [Public baseline evidence](datasets/D001-public-baseline/README.md) | reconstruction verified | Exact original-fragment-to-game rebuild and raw locators; at least fifty consumed test games | Preserve exposure; replay reconstruction when checking raw origins |
 | E001 | [Evidence and exposure audit](experiments/E001-evidence-audit/RESULT.md) | complete | Integrity gates pass; no model evaluated | Numerical development study |
 | F001 | [Evidence and exposure finding](findings/F001-evidence-and-exposure.md) | recorded | Development use supported; confirmation requires fresh evidence | Preserve exposure history |

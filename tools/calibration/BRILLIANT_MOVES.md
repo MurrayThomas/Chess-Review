@@ -67,6 +67,15 @@ and mate transitions; an independent after-position search does not replace that
 evidence. The UCI client retains bound metadata and obtains a restricted exact
 observation if its final best move differs from the retained exact PV.
 
+An unpaired annotation that uses a matching root line also checks that specific
+line's bound, depth, rank and legal move identity against the top line. Unsupported
+used evidence leaves the annotation and grade unavailable until it can be checked;
+unrelated unused lines do not invalidate independent after-position evidence.
+Provisional UCI updates wait for a fresh group of exact, common-depth, distinct
+legal MultiPV lines. Every new top line starts a group, including repeated tops
+at the same depth. Updates retain the 120 ms throttle; completed engine results
+are kept separately and are never replaced with an older coherent preview.
+
 The -0.5/+5 policy thresholds are conservative, independently chosen annotation
 rules. They are not estimates of a published service's hidden thresholds. Root
 MultiPV scores use the mover's perspective; stored position evaluations use White's

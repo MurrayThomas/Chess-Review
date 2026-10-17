@@ -13,7 +13,7 @@ class WorkerStub {
 test('search progress is throttled, exact-only and isolated from final results', async t => {
   t.mock.timers.enable({ apis: ['Date', 'setTimeout'], now: 1000 });
   const eng=engine(t), updates=[];
-  const pending=eng.analyse('position',12,1,null,snapshot=>{updates.push(snapshot);snapshot.score.cp=999;snapshot.lines[0].score.cp=999;});
+  const pending=eng.analyse(new Chess().fen(),12,1,null,snapshot=>{updates.push(snapshot);snapshot.score.cp=999;snapshot.lines[0].score.cp=999;});
   await Promise.resolve();
   eng.worker.line('info depth 3 score cp 5 pv e2e4');
   eng.worker.line('info depth 4 score cp 8 lowerbound pv e2e4');
@@ -27,6 +27,45 @@ test('search progress is throttled, exact-only and isolated from final results',
   eng.worker.line('bestmove e2e4');const result=await pending;
   assert.equal(result.score.cp,30);assert.equal(result.lines[0].score.cp,30);
   eng.worker.line('info depth 7 score cp 40 pv e2e4');assert.equal(updates.length,2);
+});
+
+test('MultiPV progress waits for fresh common-depth ranks, including repeated tops at the same depth', async t => {
+  t.mock.timers.enable({apis:['Date','setTimeout'],now:0});
+  const eng=engine(t),updates=[];
+  const pending=eng.analyse(new Chess().fen(),16,2,null,snapshot=>{
+    updates.push(structuredClone(snapshot));snapshot.score.cp=9999;
+    snapshot.score.wdl?.fill(9999);snapshot.lines[0].pv='a1a1';
+  });
+  await Promise.resolve();
+  const line=(rank,depth,score,pv,bound='')=>eng.worker.line(`info depth ${depth} multipv ${rank} score cp ${score} ${bound} wdl 200 600 200 pv ${pv}`);
+  line(2,8,10,'d2d4');line(1,8,40,'e2e4');assert.equal(updates.length,0);
+  line(2,8,20,'d2d4');assert.equal(updates.length,1);
+  t.mock.timers.tick(119);line(1,9,60,'e2e4');line(2,9,30,'d2d4');assert.equal(updates.length,1);
+  t.mock.timers.tick(1);line(1,10,70,'e2e4');line(2,10,50,'d2d4');assert.equal(updates.length,2);
+  t.mock.timers.tick(120);line(1,10,72,'g1f3');assert.equal(updates.length,2,'same depth must not borrow the old rank 2');
+  line(2,10,60,'g1f3');line(2,9,60,'d2d4');line(2,10,60,'d2d4','lowerbound');
+  assert.equal(updates.length,2,'duplicated, stale and bounded alternatives cannot complete a group');
+  line(2,10,60,'d2d4');assert.equal(updates.length,3);assert.equal(updates[2].bestmove,'g1f3');
+  t.mock.timers.tick(120);line(1,9,40,'e2e4');line(2,9,10,'d2d4');assert.equal(updates.length,3,'progress cannot regress in depth');
+  line(1,12,300,'e2e4','lowerbound');line(2,12,30,'d2d4');assert.equal(updates.length,3);
+  eng.worker.line('bestmove e2e4');const result=await pending;
+  assert.deepEqual(result.score,{cp:300,wdl:[200,600,200]});
+  assert.equal(result.lines[0].bound,'lowerbound','final results retain the native result, not an older coherent preview');
+  assert.equal(result.lines[0].pv,'e2e4');
+});
+
+test('progress rejects illegal PVs and handles fewer legal moves than requested ranks', async t => {
+  const eng=engine(t),updates=[];
+  let pending=eng.analyse(new Chess().fen(),8,2,null,s=>updates.push(s));await Promise.resolve();
+  eng.worker.line('info depth 8 multipv 1 score cp 20 pv e2e5');
+  eng.worker.line('info depth 8 multipv 2 score cp 10 pv d2d4');assert.equal(updates.length,0);
+  eng.worker.line('info depth 8 multipv 1 score cp 20 pv e2e4');
+  eng.worker.line('info depth 8 multipv 2 score mate 0 pv d2d4');assert.equal(updates.length,0);
+  eng.worker.line('bestmove e2e4');await pending;
+  const fen='k5rr/8/8/8/8/3B4/8/7K w - - 0 1';
+  pending=eng.analyse(fen,8,3,null,s=>updates.push(s));await Promise.resolve();
+  eng.worker.line('info depth 8 score cp -500 pv d3h7');assert.equal(updates.length,1);
+  assert.equal(updates[0].lines.length,1);eng.worker.line('bestmove d3h7');await pending;
 });
 
 function engine(t,options={}) {

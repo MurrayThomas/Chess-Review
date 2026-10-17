@@ -4,6 +4,7 @@
 
 import { browserAPI } from "../browser-compat.js";
 import { Chess } from "../lib/chess.js";
+import { CoherentProgress } from "./progress.js";
 
 // Validate and snapshot history before a queued search starts. Setup-FEN games use their own
 // initial board; requiring the replayed FEN to match prevents mixing a branch with its mainline.
@@ -191,16 +192,12 @@ export class Engine {
           this.current.lastScore = score;
           if (pv) this.current.lastPv = pv;
         }
-        // Only exact, useful-depth PVs feed provisional UI grades. Snapshot the
-        // lines so an observer cannot mutate the search that eventually resolves.
-        const job = this.current, now = Date.now();
-        if (job.onProgress && bound === "exact" && pv && depth >= 4 && mpv === 1
-          && (!job.progressAt || now - job.progressAt >= 120)) {
-          job.progressAt = now;
-          const lines = Object.keys(job.lines).sort((a, b) => +a - +b).map(k => ({ ...job.lines[k], score: { ...job.lines[k].score } }));
-          try { job.onProgress({ bestmove: pv.split(" ")[0], score: { ...score }, pv, lines }); }
-          catch (error) { console.error("Search progress observer failed", error); }
-        }
+      }
+      const job = this.current, snapshot = job.progress?.observe(line), now = Date.now();
+      if (snapshot && (job.progressAt == null || now - job.progressAt >= 120)) {
+        job.progressAt = now;
+        try { job.onProgress(snapshot); }
+        catch (error) { console.error("Search progress observer failed", error); }
       }
       return;
     }
@@ -285,9 +282,10 @@ export class Engine {
     }
     await this._ready;
     if (this.dead) throw new Error("engine is no longer running");
+    const progress = onProgress ? new CoherentProgress(fen, multipv) : null;
     return new Promise((resolve, reject) => {
       this.queue.push({ fen, positionCommand: command, depth, multipv, resolve, reject, onProgress,
-        searchMove, budget, cold, requireExact, lastScore: null, lastPv: "", lines: {} });
+        searchMove, budget, cold, requireExact, progress, progressAt: null, lastScore: null, lastPv: "", lines: {} });
       this._pump();
     });
   }

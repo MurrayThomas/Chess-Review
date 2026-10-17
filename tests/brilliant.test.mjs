@@ -64,7 +64,8 @@ test('bounded, stale or metadata-free alternatives do not certify competitive re
   S.bests[0].lines[1].bound = 'upperbound';
   a.call('computeDerived'); assert.equal(S.classif[1], 'best');
   S.bests[0].lines = S.bests[0].lines.map(({ score, pv }) => ({ score, pv }));
-  a.call('computeDerived'); assert.equal(S.classif[1], 'best');
+  // The played score itself now lacks admission metadata: withhold the grade.
+  a.call('computeDerived'); assert.equal(S.classif[1], null);
 });
 
 test('an explicitly bounded score cannot certify a brilliant in an undecided position', t => {

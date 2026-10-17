@@ -1,0 +1,61 @@
+{
+  "schema": "P009-implementation-validation-v1",
+  "baseline": "62dd162c",
+  "sourceSha256Lf": {
+    "analysis.js": "ca78615920ab2fa57ce87ed370327875c2eab8bb1f5c8ea4996e45a0d64c819f",
+    "engine/uci.js": "dd112074ae66096a0aed84a73617b03fe76b5492b7654bbe5b0d71101f3e356f",
+    "engine/progress.js": "6a757163a46e552f93bbd05690ddd5864afdb053e45727fb728c7df762f0e1b1",
+    "tests/annotation-evidence.test.mjs": "db557724a5d99ff1ddf6df035bbe11e074fccf3bde8e38ac08bccd8c7e7323bc",
+    "tests/engine.test.mjs": "8df25c400ad498ac0b2a884818f81102770fc493a59e8e5daa1439a1f0ed7feb",
+    "tests/brilliant.test.mjs": "7a646f9358f95944fc445b9aadacb45c1a5f3f89e0b914ea7c93b09fe19c3672",
+    "research/promotions/evidence/P009/verify.mjs": "2fba7375be9fe905467689761f5e5d2ded7da67364c23da89db2ed3237dd212d"
+  },
+  "fullSuite": {
+    "tests": 495,
+    "pass": 495,
+    "fail": 0,
+    "concurrency": 1
+  },
+  "focused": {
+    "tests": 57,
+    "pass": 57
+  },
+  "publicReproduction": {
+    "checks": {
+      "outcome": true,
+      "choice": true,
+      "context": true,
+      "scores": true,
+      "runtimeAccuracy": true,
+      "sf19Context": true,
+      "sf18Rating": true,
+      "sf18Protocol": true,
+      "sf18Predictions": true,
+      "sf19Rating": true,
+      "sf19Protocol": true,
+      "sf19Predictions": true,
+      "contextPredictions": true
+    },
+    "publicSides": 250,
+    "passed": true
+  },
+  "sourceVerificationPassed": true,
+  "diffCheckPassed": true,
+  "lint": {
+    "errors": 5,
+    "warnings": 64,
+    "errorDetailsIdenticalToBaseline": true
+  },
+  "artifacts": {
+    "replaySha256": "4294bed2132579b384824f81e51b74e17454d6bde436d422aeaf1c03017cdad3",
+    "browserSha256": "7699db55642aa0a7584d131847e0d23efbcb4786106d0f8655070985975592c0"
+  },
+  "commands": [
+    "node --test --test-concurrency=1 tests/*.test.mjs",
+    "node research/promotions/evidence/P009/verify.mjs",
+    "node tools/calibration/reproduce-public.mjs",
+    "npm run verify:source",
+    "npm run lint"
+  ],
+  "browserLimit": "Actual Chrome and bundled WASM, mocked extension storage/APIs; installed extension and Firefox unverified."
+}

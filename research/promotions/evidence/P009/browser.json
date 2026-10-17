@@ -1,0 +1,93 @@
+{
+  "browser": "148.0.7778.217",
+  "results": [
+    {
+      "id": "A",
+      "engine": 18,
+      "identity": "Stockfish 18 Lite WASM",
+      "category": "brilliant",
+      "callbacks": 7,
+      "depth": 18,
+      "maxCallbackLatencyMs": 0.4000000001396984,
+      "callbackCategories": [
+        "brilliant"
+      ],
+      "finalScore": {
+        "cp": 55,
+        "wdl": [
+          105,
+          894,
+          1
+        ]
+      },
+      "completedEvidencePreserved": true
+    },
+    {
+      "id": "A",
+      "engine": 19,
+      "identity": "Stockfish 19 Lite WASM",
+      "category": "brilliant",
+      "callbacks": 6,
+      "depth": 16,
+      "maxCallbackLatencyMs": 0.10000000009313226,
+      "callbackCategories": [
+        "best",
+        "brilliant"
+      ],
+      "finalScore": {
+        "cp": 0,
+        "wdl": [
+          11,
+          978,
+          11
+        ]
+      },
+      "completedEvidencePreserved": true
+    },
+    {
+      "id": "B",
+      "engine": 18,
+      "identity": "Stockfish 18 Lite WASM",
+      "category": "best",
+      "callbacks": 6,
+      "depth": 21,
+      "maxCallbackLatencyMs": 0.30000000004656613,
+      "callbackCategories": [
+        "best"
+      ],
+      "finalScore": {
+        "cp": -725,
+        "wdl": [
+          0,
+          0,
+          1000
+        ]
+      },
+      "completedEvidencePreserved": true
+    },
+    {
+      "id": "B",
+      "engine": 19,
+      "identity": "Stockfish 19 Lite WASM",
+      "category": "best",
+      "callbacks": 11,
+      "depth": 26,
+      "maxCallbackLatencyMs": 0.4000000001396984,
+      "callbackCategories": [
+        "best"
+      ],
+      "finalScore": {
+        "cp": -1466,
+        "wdl": [
+          0,
+          0,
+          1000
+        ]
+      },
+      "completedEvidencePreserved": true
+    }
+  ],
+  "errors": [],
+  "complete": true,
+  "scope": "Headless real Chrome; production modules and both bundled WASM engines. Local mocked extension storage/API. Not installed-extension or Firefox proof."
+}

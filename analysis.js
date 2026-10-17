@@ -938,6 +938,19 @@ function annotationPair(i, state) {
   const relative = score => score.mate != null ? {mate: score.mate * sign} : {cp: score.cp * sign};
   const lines = root?.lines || [], top = lines.find(line => line.multipv === 1) || lines[0];
   const actual = lines.find(line => (line.pv || "").split(" ")[0] === played);
+  // Check the line actually supplying the played score, including in variations.
+  // A valid root top does not make an older or bounded secondary score exact.
+  if (actual) {
+    const first = (top?.pv || "").split(" ")[0];
+    if (!top || top.bound !== "exact" || actual.bound !== "exact"
+      || !Number.isInteger(top.depth) || top.depth <= 0 || actual.depth !== top.depth
+      || top.multipv !== 1 || !root.bestmove || first !== root.bestmove
+      || !Number.isInteger(actual.multipv) || (played === first ? actual.multipv !== 1 : actual.multipv < 2)) return null;
+    try {
+      const legal = new Chess(state.positions[i - 1].fen).moves({ verbose: true }).map(move => move.lan);
+      if (!legal.includes(first) || !legal.includes(played)) return null;
+    } catch { return null; }
+  }
   const best = top?.score || relative(state.evals[i - 1]);
   const after = actual?.score || relative(state.evals[i]);
   return valid(best) && valid(after) ? {best, played: after, paired: false} : null;
