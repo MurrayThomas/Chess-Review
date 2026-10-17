@@ -10,34 +10,12 @@ in [`tools/calibration/`](../tools/calibration/README.md), the runtime in `lib/`
 and `analysis.js`, and the bundled model in `data/calibration.json`. Research
 results do not become extension behavior automatically.
 
-Numerical research resumed on 2026-10-15. The current research-only batch and
-its explicit reflection decisions are in [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.md).
-E271 audits opportunity-aware rating evidence and collection cost; E272 tests
-accuracy aggregation properties on authored fixtures. Neither authorizes a
-production change or establishes improved human validity.
-E273 records a verified category stability/coverage tradeoff and a failed coverage
-gate. E274's bounded collection pilot now passes feasibility/variation screens;
-its measured cost supports deferring bulk collection. E275 tests draw-aware human
-outcome calibration with cached roots; exact/independent replay verifies a failed
-joint screen. [F021](findings/F021-draw-calibration-controls.md) records the strong-
-control and rare-draw limitations. Checkpoint four compares the next directions;
-no replacement model is confirmed or implemented.
-User-supplied Brilliant complaints take priority from2026-10-16. E276/F022 retain
-dual-engine analysis: Qg3 remains supported; losing Ke8 is Best in current source.
-A historical false-label mechanism is reproduced separately. Both cases are saved
-regression guards. Next audit current annotation evidence paths.
-E277/F023 find a current secondary-line admission gap in synthetic native UCI/
-variation replay. The selective guard remains research-only: the fixed screen
-fails eight shared positive-control fixtures. Preserve that failure and validate
-coherent child-preview controls and natural engine traffic before promotion.
-E278/F024 correct those fixture inputs with unchanged candidate/gates and pass
-the contract screen. Real saved traffic exposes the cost of stale secondary
-iterations during progress. Next test coherent MultiPV emission; production
-selection and human validity remain open.
-E279/F025 pass the coherent-progress replay with618 eligible secondary source
-inspections and unchanged completed results. A weak same-depth cache ties on the
-corpus but fails an authored causal control. Next bound real callback/throttle
-timing in a small pilot before reviewing P+C for possible implementation.
+Current routing is in [INDEX.md](INDEX.md). Numerical research is paused;
+[E280's registered timing run](experiments/E280-timestamped-progress-pilot/RESULT.md)
+remains deferred. [P009](promotions/P009-brilliant-evidence-coherence.md) records
+the separately authorized annotation-evidence implementation. The historical
+numerical decisions remain in [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.md).
+No replacement accuracy or rating model is confirmed.
 
 ## Start here
 
@@ -51,7 +29,7 @@ timing in a small pilot before reviewing P+C for possible implementation.
 | Location | Purpose |
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Scoped instructions for efficient, resumable research. |
-| [concepts/](concepts/README.md) | Conservative duplicate-row cleanup and proposed coach-concept order; not an active schedule or replacement evidence tracker. |
+| [concepts/](concepts/README.md) | Frozen catalog review plus approved scheduling and build-first policies; canonical evidence stays in experiment trackers. |
 | [INDEX.md](INDEX.md) | Compact experiment register, decisions and backlog. |
 | [BASELINE.md](BASELINE.md) | Pinned starting implementation and known evidence limits. |
 | [PROTOCOL.md](PROTOCOL.md) | Measurement, validation and promotion requirements. |
@@ -103,59 +81,27 @@ Reuse the existing development and clean verification
 checkouts under the safeguards in [AGENTS.md](AGENTS.md); do not accumulate new
 branches or working clones. Source verification excludes local `research/runs/`
 outputs and copies, checks maintained research/evidence, and rejects tracking
-generated run files. Extension linting also excludes that local run folder and
-the already ignored `scratch/` and `calibration-runs/` working artifacts.
+generated run files. Extension linting follows the packaging allowlist and
+validates all shipped JSON directly; historical research archives and negative
+fixtures stay outside that extension-specific check.
 Reachable-history checks reject those generated paths.
 
-Nineteen studies/tasks are complete. The separate [E020 coach-concept prototype](experiments/E020-coach-concepts/RESULT.md)
-verifies bounded mechanics on synthetic positions, with an exhaustive concept
-tracker and browsable demo. Human usefulness and real-game precision remain
-unresolved. [P001](promotions/P001-concepts-tab.md) integrates the E080 verified
-scopes in an optional Concepts tab; numerical research later resumed on 2026-10-15.
-[P002](promotions/P002-position-coach.md) presents every supported finding in a
-move-following Concepts panel with player perspective and stable relevance ordering.
+## Evidence and open work
 
-The [E021 structural expansion](experiments/E021-structural-concepts/RESULT.md)
-adds short pawn, file, battery, blockade and piece-placement comments. The latest
-[E081 direct pawn and piece attacks](experiments/E081-direct-attacks/RESULT.md)
-names cover-pawn advances that block a complete prior hypothetical mating
-capture and leave no opponent mate in one. Coverage reaches 322 verified names;
-enduring king safety, bishop liberation, reciprocal protection and broader
-strategic assessments remain partial.
-Its [cumulative tracker](experiments/E081-direct-attacks/evidence/concept-status.md)
-records verified mechanics and partial interpretations against the original
-list; its [demo](experiments/E081-direct-attacks/evidence/demo.html) is runnable
-without the extension. Further coach research continues. The user cancelled the
-usage cutoff and PC shutdown; the shutdown automation was deleted.
+The latest accepted coach lineage ends at [E082](experiments/E082-rook-ending-facts/RESULT.md).
+Use its [cumulative tracker](experiments/E082-rook-ending-facts/evidence/concept-status.md)
+and `npm run research:status` for current accepted mechanics; provisional build
+coverage is separate. [E270](experiments/E270-combined-validation/RESULT.md) retains
+the combined regression and the ongoing independent semantic audit. Real-game
+precision, broad strategic meanings and teaching usefulness remain open.
 
-A new 900-game cohort has fully traceable raw
-frames and exact clean reconstruction. A CP curve improves fresh development
-prediction; its clean replay passes, but the unchanged curve fails its frozen
-300-game confirmation gates. Smaller point gains have intervals including zero.
-Higher-budget studies retain overall and choice-vector stability failures,
-while focal CP root points meet tolerance. Outcome and choice adoption remain
-separate; the full root-budget panel also misses its stability gate. The reserved
-cohort is consumed; revised candidates need fresh confirmation evidence.
-A blinded 24-case category pack awaits later annotation. Its tactical audit
-finds the capture-offer heuristic insufficient. A separate 16-case net-offer pack
-passes prospective operational support/stability checks with independent local
-material witnesses; human annotation remains pending. Both packs are preserved.
-The restricted-chosen-move consistency study fails joint gates: SF19 mean
-errors improve, SF18 mean errors increase, and both miss stability. Choice temperature using recorded rating has a tiny unresolved development gain and
-misses both primary gates; exact fits/predictions and independent clean replay
-verify. Linear CP choice utilities then worsen human prediction and calibration
-despite lower search-vector drift; independent/exact/clean replay verifies that
-negative result. Signed-log context scaling then has a small unresolved point
-gain, failing primary, cross-fit and subgroup guards; full independent/exact/
-clean replay passes. Both exact utility recipes stop. The subsequent fixed-component choice mixture
-clears the practical point-gain threshold but fails its comparator interval
-gate. Cross-fit prediction and descriptive calibration improve, while search-
-budget vector drift worsens; all independent/exact/clean replay checks pass.
-Stop this exact mixture and review precision/cohort/input limitations before
-a distinct numerical study. A subsequent independent precision/target audit
-retains strong tail variation and an explicitly hypothetical ~2,000-game
-reference for .02-nat half-width. It changes no prior gate or model claim.
-Next is a preregistered opportunity-aware game-level rating evidence/feasibility
-question, with traceable new data and cost checks before fitting.
-The index retains failed experiments and provenance/target limits.
-No new model is confirmed or promoted; current scoring is B000.
+[Promotion decisions](promotions/README.md) record what is implemented in the
+extension, including usable provisional observations. Implementation availability
+does not advance research acceptance. The numerical calibration baseline is
+[B000](BASELINE.md); production correctness fixes have their own promotion records.
+
+[Findings](INDEX.md) retain the negative and inconclusive numerical outcomes,
+consumed confirmation panels and pending blinded human reviews. Preserve those
+records before proposing fresh experiments. The [maintenance review](../docs/RESEARCH-MAINTENANCE.md)
+explains which apparent duplicates are required evidence and which decisions
+remain open. Do not refresh frozen hashes or delete failed runs during cleanup.

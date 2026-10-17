@@ -53,3 +53,6 @@ Repository metadata lives in `.git/`.
 
 Tracked files should support runtime, maintained tooling, reproduction or
 documentation and be linked from the appropriate guide.
+
+The [research maintenance review](RESEARCH-MAINTENANCE.md) records the 2026-10-18
+cleanup, evidence that must be preserved, and research decisions still open.

@@ -17,6 +17,13 @@ records. Update a row and the active experiment's resume state when work stops.
 | P008 | [Current, complete scoring evidence](promotions/P008-scoring-evidence-integrity.md) | implemented locally | Missing decisions cannot inflate full-game accuracy; stale ratings and malformed caches refused; 162 scoring/category/engine/cache checks and exact public replay pass; new predictive models not validated | Fresh opportunity-aware rating study and independent category reviews; browser/full-worktree limits recorded |
 | P007 | [Focused coach lessons and smaller default profile](promotions/P007-focused-coach-lessons.md) | implemented locally | One supported lesson with a thinking prompt; diagnostics collapsed, route/tempo proofs optional, short exchange and mate checks retained; 385 production tests, 42 packaged layout cases and real-engine Firefox smoke pass; research acceptance unchanged | Gather user feedback on lesson relevance; preserve original source scopes |
 | B000 | [Starting extension baseline](BASELINE.md) | Reproduced | Offline replay passes; no fresh confirmation | Use frozen recipe as comparator |
+## Numerical studies
+
+Register numerical follow-up studies here so coach status and test selection keep
+them separate from the coach lineage, even when their E-number is higher.
+
+| ID | Question / record | State | Outcome / evidence | Next action |
+| --- | --- | --- | --- | --- |
 | E271 | [Opportunity-aware rating feasibility](experiments/E271-opportunity-feasibility/RESULT.md) | complete | 0/600 games have enough complete vectors; 1,168,379 missing queries; historical ~18.8h estimate; exact/independent census checks pass | Defer fitting/collection; pilot cost/information first |
 | E272 | [Accuracy aggregation stress](experiments/E272-accuracy-aggregation-stress/RESULT.md) | complete | OW passes synthetic gates; Tail20 fails padding/replication; exact repeat/portable replay pass; no real-game validity | Keep OW for research, reject exact Tail20; category uncertainty next |
 | F018 | [Aggregation and rating evidence](findings/F018-aggregation-and-evidence.md) | recorded | Mechanical gains and evidence gaps kept separate; no predictive improvement/promotion | First reflection checkpoint saved in numerical review |
@@ -35,6 +42,10 @@ records. Update a row and the active experiment's resume state when work stops.
 | E279 | [Coherent MultiPV emission](experiments/E279-coherent-multipv-emission/RESULT.md) | complete | All gates pass:618 eligible secondary inspections,24/24 MultiPV streams served,54 finals unchanged; Q ties observed frames but fails authored same-depth causality control; exact/independent replay passes | Keep P+C; small timestamped callback/throttle pilot, then user-review shortlist; no implementation |
 | F025 | [Coherent progress producer](findings/F025-coherent-progress-producer.md) | recorded | Fresh groups restore source eligibility offline; timing/human precision unknown | Bound missing integration/timing evidence before promotion |
 | E280 | [Timestamped progress pilot](experiments/E280-timestamped-progress-pilot/RESULT.md) | deferred; registered run unexecuted | Fixed P/C setup frozen; no E280 engine searches; separate production checks in P009 | Do not restart automatically; user selected P009 implementation, not further research |
+## Registers (continued)
+
+| ID | Question / record | State | Outcome / evidence | Next action |
+| --- | --- | --- | --- | --- |
 | D001 | [Public baseline evidence](datasets/D001-public-baseline/README.md) | reconstruction verified | Exact original-fragment-to-game rebuild and raw locators; at least fifty consumed test games | Preserve exposure; replay reconstruction when checking raw origins |
 | E001 | [Evidence and exposure audit](experiments/E001-evidence-audit/RESULT.md) | complete | Integrity gates pass; no model evaluated | Numerical development study |
 | F001 | [Evidence and exposure finding](findings/F001-evidence-and-exposure.md) | recorded | Development use supported; confirmation requires fresh evidence | Preserve exposure history |
@@ -85,6 +96,13 @@ records. Update a row and the active experiment's resume state when work stops.
 
 | P001 | [Optional Concepts tab](promotions/P001-concepts-tab.md) | implemented | E080 exact verified scopes, opt-in worker and inspectable findings; scoring unchanged | Assess real-game precision/usefulness separately |
 | P002 | [Player-aware position coach](promotions/P002-position-coach.md) | implemented | Every P001 finding retained in standalone Concepts panel aligned beside commentary/Engine; stable relevance ordering and player perspective; scoring unchanged | Assess relevance and educational usefulness separately |
+| P003 | [Expanded Concepts integration](promotions/P003-concept-integration.md) | implemented locally | Accepted E081/E082 and usable provisional observations integrated with exact scopes; research acceptance unchanged | Preserve source admission and finish independent semantic validation separately |
+| P004 | [Demand-driven Concepts performance](promotions/P004-concept-performance.md) | implemented locally | Selected-move execution, caching and optional cost groups | Assess performance and availability without changing evidence scope |
+| P005 | [Fast curation and move-story coaching](promotions/P005-fast-coach-curation.md) | implemented locally | Routine outputs omitted from Fast; shared findings support concise replies | Gather teaching feedback; retain full inspector and research records |
+| P006 | [Consequence witnesses and individual controls](promotions/P006-fast-consequences-controls.md) | implemented locally | Seven provisional local witness types and per-finding controls | Assess relevance; longer compensation and human usefulness remain open |
+| FRIEND-01 | [Four-versus-three contributor study](experiments/FRIEND-01-four-versus-three/RESULT.md) | contributor result retained | Narrow synthetic mechanics and three-run evidence retained under original temporary ID; E082 independently covers C0681 | Preserve provenance; no extra accepted-count credit or renumbering during cleanup |
+| FRIEND-02 | [Symmetrical-pawn contributor study](experiments/FRIEND-02-symmetrical-position/RESULT.md) | contributor result retained | Narrow pawn symmetry evidence; broader whole-position meaning remains partial | Combined integration and original-scope acceptance remain separate |
+| FRIEND-03 | [Pawn-wedge contributor study](experiments/FRIEND-03-pawn-wedge/RESULT.md) | contributor result retained | Narrow supported pawn/king-restriction evidence; broader positional meaning remains partial | Combined integration and original-scope acceptance remain separate |
 | E021 | [Short structural coach concepts](experiments/E021-structural-concepts/RESULT.md) | complete | 206 cumulative tests; 190 synthetic cases; 68 verified names plus partial scopes; 17-word longest comment; exact repeat/clean replay | Continue E022 concrete move facts and bounded tactical motifs; usage cutoff active |
 
 | E022 | [Concrete move facts and bounded tactics](experiments/E022-move-tactics/RESULT.md) | complete | 286 cumulative tests; 268 synthetic cases; 78 verified names; 80 certificate event replays; exact repeat/clean source and outputs | Continue E023 certified fork types and line motifs; usage cutoff active |
@@ -146,10 +164,15 @@ records. Update a row and the active experiment's resume state when work stops.
 
 | E062 | [Causal pawn space and king destinations](experiments/E062-pawn-space/RESULT.md) | complete | 2,939 cumulative tests; 2,700 synthetic cases; 287 verified names; complete before/actual/removed-pawn legal king sets, denied territory, every reply including captures/terminal, EP and castling; exact repeat/clean; full proofs3.58MB within5MB | E063 investigate distinct pawn advances toward a history-verified castled king's flank; no successful-attack inference; continue isolated; cutoff cancelled |
 
-Allocate the next unused ID in each series: `E063`, `D003`, `F018`, `P003`.
-Use relative links here; append rows rather than reusing IDs.
+Allocate the next unused ID by checking this register and the corresponding
+directory first. At the 2026-10-18 maintenance boundary these are `E281`, `D003`,
+`F026`, `P010`; tablebase datasets use their separate `T###` series.
+Use relative links here; append rows rather than reusing IDs. Never renumber
+retained studies or their evidence just to close a numbering gap.
 
-Experiment states: `planned`, `running`, `complete`, `blocked`.
+Experiment states include `planned`, `running`, `complete`, `blocked`, `deferred`,
+`prototype`, `inconclusive` and `semantic validation in progress`. Prototype and
+contributor records do not advance accepted coach counts.
 Completed outcomes: `improved`, `no-improvement`, `inconclusive`, `invalid`.
 Evidence maturity: `exploratory`, `development`, `confirmed` (see the protocol).
 Promotion states: `proposed`, `deferred`, `rejected`, `accepted`, `implemented`.
@@ -172,7 +195,27 @@ Cross-cutting checks: mate and forced moves, history/setup positions, openings,
 short games, rating/skill bands, time controls, winning/lost positions, engine
 stability, latency, unavailable evidence and fallback behavior.
 
-## Next session
+## Current routing
+
+Numerical research is paused. [P009](promotions/P009-brilliant-evidence-coherence.md)
+records the separately selected annotation implementation; [E280](experiments/E280-timestamped-progress-pilot/RESULT.md)
+remains deferred with its registered run unexecuted. Do not restart it or the
+cancelled usage monitor automatically. Read [NUMERICAL-REVIEW.md](NUMERICAL-REVIEW.md)
+for the historical checkpoints and alternatives if numerical work is requested.
+
+Coach acceptance remains at E082. [E270](experiments/E270-combined-validation/RESULT.md)
+contains the current independent semantic-validation boundary and next E061 work.
+Use `npm run research:status` for accepted counts and `npm run research:build-status`
+for current dependency admission. Historical build counts in results describe
+their recorded source revision and are not current hash-match guarantees.
+
+See the [maintenance review](../docs/RESEARCH-MAINTENANCE.md) for cleanup decisions
+and open questions. This housekeeping does not resume either research track.
+
+### Historical numerical routing through E019
+
+The following retained notes predate E271–E280 and are background, not the next
+session's instructions. Later studies and P009 supersede their scheduling.
 
 Before any research goal starts/resumes or game data is used, follow
 [DATA_POLICY.md](DATA_POLICY.md) and run
@@ -213,10 +256,15 @@ stability gates. D002's 300 reserved games are consumed and keep their `test`
 role; revised candidates need a fresh registered confirmation cohort. Use both
 D001/D002 for D002 admission and retain E007's source/target limitations.
 Do not retry F002/F003/F004/F005 without a changed premise. No candidate is confirmed.
-The research goal is paused at the user-authorized usage-monitor stop.
-Do not resume automatically. E018/E019 are verified and complete; next action
-is the next unused experiment's opportunity-aware rating evidence/feasibility protocol after the
-user explicitly resumes. The extension remains at B000.
+At this historical boundary E018/E019 were complete and the numerical goal was
+paused. E271 later performed the opportunity-aware feasibility audit. The
+numerical calibration baseline remains B000; subsequent production correctness
+and coach integrations are documented separately in the promotion register.
+
+## Later coach records
+
+| ID | Question / record | State | Outcome / evidence | Next action |
+| --- | --- | --- | --- | --- |
 
 | E063 | [History-confirmed connected pawn storms](experiments/E063-pawn-storm/RESULT.md) | complete | 3,047 cumulative tests; 2,800 synthetic cases; 288 verified names; legal castle/advance history, distinct connected pawns, every reply including pawn captures/terminal/EP; exact repeat/clean; full proofs3.38MB within5MB | E064 investigate actual newly completed pawn walls with full legal pawn mobility and all-reply next-turn witnesses; continue isolated; cutoff cancelled |
 

@@ -9,4 +9,6 @@ prevent repeated dead ends. Update the index with outcome and evidence maturity.
 When later evidence changes a conclusion, append a dated revision and link the
 superseding finding. Preserve the original result and the reason for the change.
 
-Recorded: [F001 evidence and test exposure](F001-evidence-and-exposure.md).
+Use the [research index](../INDEX.md) for the complete findings register and
+current routing. The individual finding records preserve their original claims
+and dated revisions; this guide does not maintain a second progress list.

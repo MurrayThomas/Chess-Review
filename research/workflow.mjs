@@ -6,6 +6,11 @@ import {spawn} from 'node:child_process';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 
+function numericalStudyIds(index) {
+  const section = index.split(/^## Numerical studies\r?$/m)[1]?.split(/^## /m)[0] ?? '';
+  return new Set([...section.matchAll(/^\| (E\d{3}) \|/gm)].map(row => row[1]));
+}
+
 export function parseTracker(text, original) {
   const names = [...original.matchAll(/^- (.+)$/gm)].map(row => row[1].split(' — ')[0].replaceAll('*', '').trim());
   const rows = [...text.matchAll(/^- \[([ x])\] C(\d{4}) \*\*([^*]+)\*\* — (.+)$/gm)];
@@ -36,8 +41,9 @@ export function parseTracker(text, original) {
 
 export async function latestCoachStatus(workspace = root) {
   const index = await readFile(path.join(workspace, 'research/INDEX.md'), 'utf8');
+  const numerical = numericalStudyIds(index);
   const completed = [...index.matchAll(/^\| (E\d{3}) \| .*?\]\((experiments\/E\d{3}-[a-z0-9-]+\/RESULT\.md)\) \| complete \|/gm)]
-    .filter(row => Number(row[1].slice(1)) >= 20).sort((a, b) => b[1].localeCompare(a[1]));
+    .filter(row => Number(row[1].slice(1)) >= 20 && !numerical.has(row[1])).sort((a, b) => b[1].localeCompare(a[1]));
   if (!completed.length) throw Error('No completed coach experiment in the index');
   const latest = completed[0];
   const folder = path.dirname(latest[2]);
@@ -56,9 +62,10 @@ export async function coachTestFiles(workspace = root, requested = []) {
   if (requested.some(id => !(/^FRIEND-\d{2}$/.test(id) || /^E\d{3}$/.test(id) && Number(id.slice(1)) >= 20)))
     throw Error('Use coach experiment IDs such as E065 or FRIEND-01');
   const experiments = path.join(workspace, 'research/experiments');
+  const numerical = numericalStudyIds(await readFile(path.join(workspace, 'research/INDEX.md'), 'utf8'));
   const folders = (await readdir(experiments, {withFileTypes: true})).filter(entry => entry.isDirectory()
     && (/^FRIEND-\d{2}-/.test(entry.name) || /^E\d{3}-/.test(entry.name)
-      && Number(entry.name.slice(1, 4)) >= 20)).sort((a, b) => a.name.localeCompare(b.name));
+      && Number(entry.name.slice(1, 4)) >= 20 && !numerical.has(entry.name.slice(0, 4)))).sort((a, b) => a.name.localeCompare(b.name));
   for (const id of requested) {
     if (folders.filter(entry => entry.name.startsWith(id + '-')).length !== 1) throw Error('Missing or ambiguous experiment: ' + id);
   }

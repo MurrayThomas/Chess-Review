@@ -1,5 +1,12 @@
 # Numerical research review checkpoints
 
+Current status, 2026-10-18: numerical research is paused and its usage-monitor
+schedule is cancelled. [E280](experiments/E280-timestamped-progress-pilot/RESULT.md)
+remains deferred; [P009](promotions/P009-brilliant-evidence-coherence.md) records
+the separately authorized implementation. The conservation policy and next-action
+notes below are historical checkpoints, not instructions to restart work or
+recreate an automation. Use [INDEX.md](INDEX.md) for current routing.
+
 Resumed 2026-10-15 by the user; updated2026-10-16. Research and experiments only; implementation
 requires the user's later selection. Current baseline and frozen evidence remain.
 

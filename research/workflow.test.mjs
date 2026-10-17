@@ -27,7 +27,12 @@ test('status reports completed evidence rather than a newer draft; test selectio
     const target = path.join(root, name); await mkdir(path.dirname(target), {recursive: true}); await writeFile(target, contents);
   };
   await put('research/INDEX.md', '| E020 | [Concepts](experiments/E020-coach-concepts/RESULT.md) | complete | evidence |\n' +
-    '| E021 | [Draft](experiments/E021-draft/RESULT.md) | running | pending |\n');
+    '| E021 | [Draft](experiments/E021-draft/RESULT.md) | running | pending |\n' +
+    '## Numerical studies\n\n' +
+    '| E279 | [Numerical](experiments/E279-numerical/RESULT.md) | complete | evidence |\n' +
+    '| E280 | [Deferred](experiments/E280-numerical/RESULT.md) | deferred | pending |\n' +
+    '## Registers (continued)\n\n' +
+    '| E022 | [Coach draft](experiments/E022-empty/RESULT.md) | planned | pending |\n');
   await put('research/experiments/E020-coach-concepts/CONCEPTS.md', original);
   await put('research/experiments/E020-coach-concepts/RESULT.md', 'Completed.');
   await put('research/experiments/E020-coach-concepts/evidence/concept-status.md', tracker);
@@ -35,11 +40,17 @@ test('status reports completed evidence rather than a newer draft; test selectio
   await put('research/experiments/E021-draft/code/new.test.mjs');
   await put('research/experiments/E019-numerical/code/numeric.test.mjs');
   await put('research/experiments/FRIEND-01-candidate/code/friend.test.mjs');
+  await put('research/experiments/E279-numerical/RESULT.md', 'Complete numerical research; no coach tracker.');
+  await put('research/experiments/E279-numerical/code/numeric.test.mjs');
+  await put('research/experiments/E280-numerical/code/deferred.test.mjs');
   assert.equal((await latestCoachStatus(root)).experiment, 'E020');
+  assert.equal((await latestCoachStatus(root)).completedStudies, 1);
   assert.equal((await coachTestFiles(root)).length, 3);
   assert.deepEqual(await coachTestFiles(root, ['FRIEND-01']), [path.join(root, 'research/experiments/FRIEND-01-candidate/code/friend.test.mjs')]);
   assert.deepEqual(await coachTestFiles(root, ['E021']), [path.join(root, 'research/experiments/E021-draft/code/new.test.mjs')]);
   await assert.rejects(coachTestFiles(root, ['E022']), /Missing/);
+  await assert.rejects(coachTestFiles(root, ['E279']), /Missing/);
+  await assert.rejects(coachTestFiles(root, ['E280']), /Missing/);
   await assert.rejects(coachTestFiles(root, ['../E020']), /experiment IDs/);
   await put('research/experiments/E022-empty/plan.md');
   await assert.rejects(coachTestFiles(root, ['E022']), /No tests/);
