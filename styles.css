@@ -199,6 +199,87 @@
 .learn-morph-surface { pointer-events: none; contain: layout paint; will-change: transform, opacity; box-shadow: 0 12px 32px -20px #0006; }
 .learn-morph-surface * { animation: none !important; }
 
+/* Morph 4 keeps the exact review rectangle and puts the working controls beside it. */
+.learning-workspace.learning-embedded[data-presentation="morph4"] {
+  position: fixed; inset: 60px 0 0; min-height: 0; overflow: auto;
+  overscroll-behavior: contain;
+}
+.learning-embedded[data-presentation="morph4"] .board-wrap { height: var(--learn-board-height); }
+.learning-embedded[data-presentation="morph4"] .learn-shell {
+  display: flex; flex-direction: column; padding: 0; max-height: var(--learn-panel-height);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  overflow: hidden; scrollbar-gutter: auto; container-type: inline-size;
+}
+.learning-embedded[data-presentation="morph4"] .learn-header {
+  flex: none; min-height: 62px; padding: 16px 22px 12px; gap: 12px; align-items: center;
+}
+.learning-embedded[data-presentation="morph4"] .learn-brand { font-size: 14px; font-weight: 650; letter-spacing: -.2px; }
+.learning-embedded[data-presentation="morph4"] .learn-header > .learn-button {
+  border: 0; background: transparent; color: var(--ink-2); padding: 8px 0; font-size: 11px;
+}
+.learning-embedded[data-presentation="morph4"] .learn-nav {
+  flex: none; gap: 24px; padding: 0 22px; background: transparent;
+  border: 0; border-bottom: 1px solid var(--line); border-radius: 0; overflow: visible;
+}
+.learning-embedded[data-presentation="morph4"] .learn-nav .learn-button {
+  flex: none; padding: 12px 0 14px; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  font-size: 13px; font-weight: 550; background: transparent; color: var(--ink-2);
+}
+.learning-embedded[data-presentation="morph4"] .learn-nav [aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.learning-embedded[data-presentation="morph4"] .learn-main {
+  flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-gutter: stable; padding: 24px 22px;
+}
+.learning-embedded[data-presentation="morph4"] .learn-main h2 { font-size: 25px; font-weight: 650; letter-spacing: -.6px; }
+.learning-embedded[data-presentation="morph4"] .learn-main h3 { font-size: 15px; font-weight: 650; margin: 0 0 6px; }
+.learning-embedded[data-presentation="morph4"] .learn-main p { font-size: 14px; line-height: 1.6; }
+.learning-embedded[data-presentation="morph4"] .learn-button { font-size: 13px; border-radius: 6px; min-height: 40px; font-weight: 550; }
+.learning-embedded[data-presentation="morph4"] .learn-eyebrow { color: var(--ink-3); letter-spacing: .2px; font-size: 11px; font-weight: 500; }
+.study-page-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; }
+.learning-embedded[data-presentation="morph4"] .study-page-title h2 { margin: 0; }
+.study-page-title > span, .study-library-heading > span { font-size: 11px; color: var(--ink-3); }
+.study-resume { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding: 0 0 16px; margin-bottom: 20px; font-size: 12px; color: var(--ink-2); }
+.study-practice { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 20px; border-radius: 6px; background: var(--panel-2); border: 1px solid var(--line); }
+.study-practice > div { flex: 1 0 100%; }
+.learning-embedded[data-presentation="morph4"] .study-practice p { margin: 0 0 6px; }
+.study-disclosure { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.study-disclosure > summary { display: flex; justify-content: space-between; gap: 12px; align-items: center; list-style: none; cursor: pointer; font-size: 12px; font-weight: 550; min-height: 24px; }
+.study-disclosure > summary::-webkit-details-marker { display: none; }
+.study-disclosure > summary::after { content: '+'; font-size: 18px; font-weight: 400; color: var(--ink-3); }
+.study-disclosure[open] > summary::after { content: '−'; }
+.study-disclosure > p { margin-top: 12px; }
+.study-library { margin-top: 28px; }
+.study-library-heading { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 14px; }
+.study-library > input { width: 100%; }
+.study-selection { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; }
+.learning-embedded[data-presentation="morph4"] .study-selection p { font-size: 11px; margin: 0; }
+.learning-embedded[data-presentation="morph4"] .learn-cards { display: flex; flex-direction: column; gap: 0; margin: 0 0 18px; }
+.learning-embedded[data-presentation="morph4"] .study-library-row {
+  display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 18px;
+  padding: 16px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent;
+}
+.study-row-copy { min-width: 0; }
+.learning-embedded[data-presentation="morph4"] .study-library-row h3 { margin: 5px 0; font-size: 16px; }
+.learning-embedded[data-presentation="morph4"] .study-library-row p { margin: 0; font-size: 13px; }
+.learning-embedded[data-presentation="morph4"] .study-library-row > .learn-button { flex: none; width: auto; margin: 0; padding: 9px 12px; }
+.learning-embedded[data-presentation="morph4"] .study-row-copy > .learn-button { width: auto; margin-top: 10px; font-size: 11px; min-height: 30px; background: transparent; }
+.learning-embedded[data-presentation="morph4"] .learn-category { margin: 24px 0; }
+.learning-embedded[data-presentation="morph4"] .learn-category > h3 { padding: 8px 0; color: var(--ink-2); font-size: 12px; }
+.learning-embedded[data-presentation="morph4"] .learn-filter { flex-basis: 125px; }
+.learning-embedded[data-presentation="morph4"] .learn-filters input { flex-basis: 100%; }
+.learning-embedded[data-presentation="morph4"] .learn-panel { padding: 0; border: 0; border-radius: 0; background: transparent; }
+.learning-embedded[data-presentation="morph4"] .learn-dock-info { padding-top: 18px; }
+.learning-embedded[data-presentation="morph4"].learn-stacked .learn-shell { max-height: none; overflow: visible; margin-bottom: 24px; }
+.learning-embedded[data-presentation="morph4"].learn-stacked .learn-main { overflow: visible; }
+@container (max-width: 420px) {
+  .learning-embedded[data-presentation="morph4"] .learn-header { flex-wrap: wrap; gap: 2px 16px; }
+  .learning-embedded[data-presentation="morph4"] .learn-header,
+  .learning-embedded[data-presentation="morph4"] .learn-main { padding-left: 16px; padding-right: 16px; }
+  .learning-embedded[data-presentation="morph4"] .learn-nav { padding-left: 16px; gap: 22px; }
+  .learning-embedded[data-presentation="morph4"] .study-library-row { align-items: start; gap: 12px; }
+  .study-selection { flex-wrap: wrap; }
+}
+
 /* Morph in place 2 keeps the board whole and gives the scene its own viewport. */
 .has-learning-morph2 .topbar { z-index: 70; }
 .learning-workspace.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) {

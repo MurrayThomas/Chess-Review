@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
 import {centeredLearningLayout, fullSizeLearningLayout, newWayLearningLayout, boardSwoopFrames, centeredMorph, reflowCentered} from '../lib/learning/centered-morph.js';
 import {capturePanels} from '../lib/learning/morph.js';
+import {anchoredLearningLayout} from '../lib/learning/anchored-study.js';
 import {app, loadGame} from './helpers/app.mjs';
 
 test('centered learning reserves the settings width on both sides of a wide desktop',()=>{
@@ -86,6 +87,35 @@ function scene(t) {
   dom.window.Element.prototype.animate=function(frames,options){const a={target:this,frames,options,cancelled:false,finished:new Promise(()=>{}),cancel(){this.cancelled=true;}};animations.push(a);return a;};
   return {dom,doc,source,board,target,animations};
 }
+
+test('Morph 4 keeps every board coordinate and dimension with Settings, a custom board, and narrow windows',()=>{
+  for(const [width,height,board] of [
+    [1920,1080,{x:92,y:142,width:868}], [1366,768,{x:78,y:118,width:520}],
+    [1920,1080,{x:1200,y:104,width:650,height:678}], [390,844,{x:26,y:140,width:340}],
+    [320,640,{x:16,y:120,width:288}],
+  ]) for(const settingsOpen of [false,true]) {
+    const p=anchoredLearningLayout({width,height,board,settingsOpen});
+    assert.equal(p.boardX,board.x);assert.equal(p.boardY+60,board.y);assert.equal(p.boardSize,board.width);
+    assert.equal(p.boardHeight,board.height||board.width);
+    assert.ok(p.panelWidth>0&&p.panelX>=0&&p.panelX+p.panelWidth<=width);
+    if(p.stacked)assert.ok(p.panelY>p.boardY+p.boardSize);
+    else assert.ok(p.panelX>=board.x+board.width+24||p.panelX+p.panelWidth<=board.x-24);
+    if(settingsOpen&&width>=760)assert.ok(p.panelX+p.panelWidth<=width-310);
+  }
+});
+
+test('Morph 4 never animates, scales or changes the transform origin of the board on entry or return',async t=>{
+  const {dom,doc,source,board,target,animations}=scene(t);
+  for(const exiting of [false,true]) {
+    const controller=new dom.window.AbortController();
+    const pending=centeredMorph(doc,capturePanels([source]),[target],{board,fromBoard:board.getBoundingClientRect(),variant:'morph4',exiting,signal:controller.signal});
+    assert.ok(animations.length>0);
+    assert.ok(animations.every(a=>a.target!==board&&!board.contains(a.target)));
+    assert.equal(board.style.transformOrigin,'');assert.equal(board.closest('.learn-swoop-anchor'),null);
+    controller.abort();await pending;
+    assert.equal(doc.querySelector('.learn-scene-layer'),null);
+  }
+});
 
 test('the scene moves the real board as one surface and releases it synchronously on interruption',async t=>{
   const {dom,doc,source,board,target,animations}=scene(t),child=board.firstChild,square=child.firstChild;

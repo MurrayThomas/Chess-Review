@@ -44,6 +44,10 @@ try {
   await waitFor(review,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.analyzing)",'Review');
   const {windowId}=await call('Browser.getWindowForTarget',{targetId:review.targetId});
   await call('Browser.setWindowBounds',{windowId,bounds:{width:1920,height:1080}});await sleep(400);
+  if (process.argv.includes('--morph4')) {
+    const {auditAnchoredLearning}=await import('./anchored-learning-audit.mjs');
+    await auditAnchoredLearning({review,call,evaluate,waitFor,sleep,out});
+  } else {
   const entry=await evaluate(review,"(()=>{const rect=sel=>{const r=document.querySelector(sel).getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,bottom:r.bottom}};return {learn:rect('.learn-entry-button'),engine:rect('#engineMount'),controls:rect('#controls'),width:innerWidth,height:innerHeight,scroll:document.documentElement.scrollWidth}})()");
   assert.ok(entry.learn.y>=entry.engine.bottom-1,'Learning entry is not beneath the engine');
   assert.ok(entry.learn.x>=entry.controls.right-1,'Learning entry is not right of move controls');
@@ -118,7 +122,7 @@ try {
   await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]},review.sessionId);await sleep(500);
   await evaluate(review,"document.querySelector('[aria-label=Settings]').click();[...document.querySelectorAll('.set-sect-head')].find(b=>b.textContent==='Learning experience').click()");
   const labels=await evaluate(review,"[...document.querySelectorAll('.learn-style-option strong')].map(n=>n.textContent)");
-  assert.deepEqual(labels,['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','New way','Separate page']);
+  assert.deepEqual(labels,['Morph in place','Morph in place 2','Morph in place 3','Morph in place 4','Studio Morph','Minimal morph','Board morph','New way','Separate page']);
   const settingsShot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,'learning-style-options.png'),Buffer.from(settingsShot.data,'base64'));
   for(const style of ['studio','minimal','board','newway']) {
     await evaluate(review,`document.querySelector('.learn-style-option[data-presentation="${style}"]').click();document.querySelector('.learn-entry-button').click()`);
@@ -153,4 +157,5 @@ try {
   await evaluate(review,"import('./analysis.js').then(m=>m.learningWorkspace.close())");
   await fs.writeFile(path.join(out,'results.json'),JSON.stringify({passed:true,sourceRecord:recordPath,chromeVersion:await call('Browser.getVersion'),results},null,2));
   console.log(`Learning browser audit passed: ${results.length} screenshots and measurements in ${out}`);
+  }
 } finally {clearInterval(keepAlive);ws?.close();chrome.kill();}
