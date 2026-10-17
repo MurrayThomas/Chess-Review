@@ -4990,7 +4990,7 @@ function positionSettings() {
   UI.settings.style.right = window.innerWidth <= 520 ? "" : "24px";
 }
 async function toggleSettings() {
-  if (learningWorkspace?.embedded && !["morph2","morph3"].includes(learningWorkspace.presentation)) await learningWorkspace.close();
+  if (learningWorkspace?.embedded && !["morph2","morph3","newway"].includes(learningWorkspace.presentation)) await learningWorkspace.close();
   closeArrowColorPicker();
   UI.settings.hidden = !UI.settings.hidden;
   if (!UI.settings.hidden) renderSettings();

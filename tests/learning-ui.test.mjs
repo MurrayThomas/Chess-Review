@@ -150,7 +150,7 @@ test('learning presentation saves under Visual, resets to morph, and retains the
   const section=[...doc.querySelectorAll('.set-section')].find(node=>node.querySelector('.set-sect-head').textContent==='Learning experience');
   assert.ok(section);section.querySelector('.set-sect-head').click();
   const choices=section.querySelectorAll('.learn-style-option');
-  assert.deepEqual([...choices].map(node=>node.querySelector('strong').textContent),['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','Separate page']);
+  assert.deepEqual([...choices].map(node=>node.querySelector('strong').textContent),['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','New way','Separate page']);
   assert.equal(choices[0].getAttribute('aria-pressed'),'true');
   section.querySelector('[data-presentation="page"]').click();await settle();assert.equal(a.store.settings.learningTransition,'page');
   await a.call('openLearning');const legacy=a.run('learningWorkspace');assert.equal(legacy.embedded,null);
@@ -160,7 +160,7 @@ test('learning presentation saves under Visual, resets to morph, and retains the
   await a.call('toggleSettings');assert.equal(a.run('learningWorkspace'),null);assert.equal(doc.querySelector('#settings').hidden,false);
 });
 
-for (const presentation of ['morph2','morph3','studio','minimal','board']) test(`${presentation} is a distinct selectable design with shared practice and preserved review state`,async t=>{
+for (const presentation of ['morph2','morph3','studio','minimal','board','newway']) test(`${presentation} is a distinct selectable design with shared practice and preserved review state`,async t=>{
   const a=app(t);loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');a.call('renderAll');a.call('go',2);
   const doc=a.dom.window.document,board=doc.querySelector('.board'),topbar=doc.querySelector('.topbar');
   a.call('toggleSettings');
@@ -181,6 +181,28 @@ for (const presentation of ['morph2','morph3','studio','minimal','board']) test(
   await w.revealPuzzle();assert.ok(w.attemptRecorded);
   await w.close();assert.equal(doc.querySelector('.board'),board);assert.equal(a.state.idx,2);assert.equal(a.state.flipped,false);
   assert.equal(doc.querySelector('.learning-workspace'),null);
+});
+
+test('New way features a real position without changing progress, and resumes saved learning',async t=>{
+  const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  a.state.settings.learningTransition='newway';
+  await a.call('openLearning');const w=a.run('learningWorkspace'),doc=a.dom.window.document;
+  assert.equal(w.root.querySelectorAll('.newway-route').length,3);
+  assert.equal(w.root.querySelectorAll('.newway-masthead').length,1);
+  assert.equal(w.root.querySelectorAll('.learn-square').length,64);
+  await a.call('toggleSettings');assert.equal(a.run('learningWorkspace'),w);assert.equal(doc.querySelector('#settings').hidden,false);
+  doc.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(doc.querySelector('#settings').hidden,true);assert.equal(a.run('learningWorkspace'),w);
+  assert.equal(w.store.value.resume,null);assert.deepEqual(w.store.value.puzzles,{});
+  const featured=w.featuredPuzzle;
+  w.root.querySelector('[data-focus="featured-puzzle"]').click();await settle();
+  assert.equal(w.activity.id,featured.id);assert.equal(w.activity.kind,'puzzle');
+  await w.navigate('home');
+  assert.equal(w.featuredPuzzle,featured);assert.ok(w.root.querySelector('.newway-resume'));
+  assert.equal(w.root.querySelectorAll('.newway-masthead').length,1);
+  w.root.querySelector('.newway-resume button').click();await settle();assert.equal(w.activity.id,featured.id);
+  await w.navigate('home');w.root.querySelector('[data-focus="newway-02"]').click();await settle();
+  assert.equal(w.page,'concepts');assert.ok(doc.querySelector('.learn-filters'));
+  await w.close();assert.equal(doc.querySelector('.newway-masthead'),null);assert.equal(doc.body.style.overflow,'');
 });
 
 test('the four designs keep distinct motion, use compositor-friendly morphs, and migrate old branch preferences',async t=>{

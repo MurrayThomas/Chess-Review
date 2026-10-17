@@ -13,7 +13,9 @@ const source=await fs.mkdtemp(path.join(artifacts,'learning-chrome-'));
 await fs.cp(record.packages.find(p=>p.browser==='chrome').sourceDir,source,{recursive:true});
 // Iterate on UI changes against the same packaged engine/assets without rebuilding them.
 if (process.argv.includes('--working-tree')) {
-  for (const file of ['analysis.js','styles.css','lib/learning/workspace.js','lib/learning/morph.js','lib/learning/centered-morph.js','lib/learning/presentations.js']) await fs.copyFile(path.join(root,file),path.join(source,file));
+  for (const file of ['analysis.js','styles.css']) await fs.copyFile(path.join(root,file),path.join(source,file));
+  // Keep the workspace and its progress/input dependencies from the same revision.
+  await fs.cp(path.join(root,'lib'),path.join(source,'lib'),{recursive:true});
 }
 await fs.appendFile(path.join(source,'analysis.js'),'\nexport {S, learningWorkspace, openLearning, go, toggleFlip, applyLayoutMode};\n');
 await fs.writeFile(path.join(source,'audit.html'),'<!doctype html><script type="module" src="audit.js"></script>');
@@ -116,13 +118,13 @@ try {
   await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]},review.sessionId);await sleep(500);
   await evaluate(review,"document.querySelector('[aria-label=Settings]').click();[...document.querySelectorAll('.set-sect-head')].find(b=>b.textContent==='Learning experience').click()");
   const labels=await evaluate(review,"[...document.querySelectorAll('.learn-style-option strong')].map(n=>n.textContent)");
-  assert.deepEqual(labels,['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','Separate page']);
+  assert.deepEqual(labels,['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','New way','Separate page']);
   const settingsShot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,'learning-style-options.png'),Buffer.from(settingsShot.data,'base64'));
-  for(const style of ['studio','minimal','board']) {
+  for(const style of ['studio','minimal','board','newway']) {
     await evaluate(review,`document.querySelector('.learn-style-option[data-presentation="${style}"]').click();document.querySelector('.learn-entry-button').click()`);
     await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace?.ready)",style+' ready');
     const timing=await evaluate(review,"document.getAnimations().map(a=>a.effect.getTiming().duration)");
-    assert.ok(timing.some(duration=>duration===280||duration===300),style+': distinct morph animation missing');
+    assert.ok(timing.some(duration=>duration===(style==='newway'?680:280)||duration===300),style+': distinct morph animation missing');
     await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace?.transitioning)",style+' transition');
     assert.equal(await evaluate(review,`document.querySelector('.learning-workspace').dataset.presentation==='${style}' && document.querySelector('.board')===auditBoard`),true);
     await capture(style+'-home');

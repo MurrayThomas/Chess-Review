@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
-import {centeredLearningLayout, fullSizeLearningLayout, boardSwoopFrames, centeredMorph, reflowCentered} from '../lib/learning/centered-morph.js';
+import {centeredLearningLayout, fullSizeLearningLayout, newWayLearningLayout, boardSwoopFrames, centeredMorph, reflowCentered} from '../lib/learning/centered-morph.js';
 import {capturePanels} from '../lib/learning/morph.js';
 import {app, loadGame} from './helpers/app.mjs';
 
@@ -27,6 +27,17 @@ test('settings reflow preserves working sizes on laptop windows and bounds narro
     assert.ok(p.panelX>=0&&p.panelX+p.panelWidth<=width);
     assert.ok(p.panelWidth>0);
     if(settingsOpen&&width>=760)assert.ok(p.panelX+p.panelWidth<=width-334);
+  }
+});
+
+test('New way bounds its board and library and leaves room for open settings',()=>{
+  for(const width of [320,390,600,760,960,1366,1440,1920,2560])for(const settingsOpen of [false,true]) {
+    const p=newWayLearningLayout({width,height:768,settingsOpen});
+    assert.ok(p.boardX>=0&&p.boardX+p.boardSize<=width);
+    assert.ok(p.panelWidth>0&&p.panelX>=0&&p.panelX+p.panelWidth<=width);
+    if(settingsOpen&&width>=760)assert.ok(p.panelX+p.panelWidth<=width-310);
+    if(p.stacked)assert.ok(p.panelY>p.boardY+p.boardSize+100);
+    else assert.ok(p.panelX>p.boardX+p.boardSize);
   }
 });
 
