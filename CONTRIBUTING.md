@@ -62,6 +62,13 @@ npm run verify:source
 npm run lint
 ```
 
+`npm run lint` uses the same extension input allowlist as packaging. It validates
+every shipped JSON file directly, including the puzzle library that exceeds
+web-ext's 5 MiB parser limit, then runs web-ext on the remaining shipped files.
+Research archives, deliberately invalid test fixtures and marketing tooling are
+checked through source verification and their focused tests, outside extension
+lint. Keep historical evidence bytes unchanged during formatting or cleanup.
+
 Add a regression test when fixing behavior that the test suite can exercise.
 Manually check the affected flow in a browser too: automated tests do not cover
 every extension API, rendering behavior, or interaction with chess websites.

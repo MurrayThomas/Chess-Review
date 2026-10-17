@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { JSDOM } from 'jsdom';
 import { BADGE_FONTS, gradeSvg, gradeText } from '../move-grades.js';
 import { app, loadGame, settle } from './helpers/app.mjs';
+import {directories} from '../scripts/package-inputs.mjs';
 
 function review(t) {
   const a = app(t); loadGame(a, '1. e4 e5 2. Nf3'); a.call('computeDerived');
@@ -39,7 +40,7 @@ test('sixteen local font choices ship with licenses and unsafe font names fall b
   for (const font of ['unknown', '__proto__', '<script>']) {
     assert.equal(numeral(gradeSvg('best', 9, 'Best', false, { badgeFont: font })).getAttribute('font-family'), BADGE_FONTS.spacemono.family);
   }
-  assert.match(fs.readFileSync(new URL('../scripts/package.mjs', import.meta.url), 'utf8'), /'fonts'/);
+  assert.ok(directories.includes('fonts'));
 });
 
 test('hover labels default off while accessible score labels remain', t => {

@@ -6,6 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { cmd } from 'web-ext';
 import './verify-engines.mjs';
 import {verifySource} from './verify-source.mjs';
+import {files, directories, pieceSets} from './package-inputs.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 await verifySource(root);
@@ -18,14 +19,6 @@ if (lock.version !== pkg.version || lock.packages[''].version !== pkg.version) {
   throw new Error('Package lock and manifest versions differ');
 }
 
-// Explicit allowlist: development files, old ZIPs, and node_modules can never ship.
-const files = ['analysis.html', 'analysis.js', 'analyze-flow.js', 'background.js',
-  'browser-compat.js', 'release-settings.js', 'chesscom.js', 'content.js', 'content-button.css', 'flags.js', 'gamecache.js',
-  'lichess-content.js', 'lichess.js', 'move-grades.js', 'popup.html', 'popup.js', 'styles.css',
-  'LICENSE', 'ATTRIBUTIONS.md', 'THIRD_PARTY_NOTICES.md', 'PRIVACY.md', 'README.md', 'RELEASE.md'];
-const directories = ['backgrounds', 'data', 'engine', 'flags', 'fonts', 'icons', 'lib', 'pieces-img', 'sounds'];
-// Explicitly retain only the two selectable GPLv2+ piece sets.
-const pieceSets = ['cburnett', 'merida'];
 async function copyInputs(from, to, entries) {
   for (const file of entries) {
     if (file === 'pieces-img') {

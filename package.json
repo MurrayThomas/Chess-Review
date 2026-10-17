@@ -18,7 +18,7 @@
     "research:backlog": "node research/build-workflow.mjs backlog",
     "research:coach-tests": "node research/workflow.mjs test",
     "test:research": "node --test research/*.test.mjs research/experiments/*/code/*.test.mjs",
-    "lint": "web-ext lint --source-dir=. --ignore-files=research/runs/** scratch/** calibration-runs/**",
+    "lint": "node scripts/lint.mjs",
     "start:firefox": "web-ext run --target=firefox-desktop --source-dir=.",
     "start:chrome": "web-ext run --target=chromium --source-dir=.",
     "test": "node --test tests/*.test.mjs",
