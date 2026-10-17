@@ -89,7 +89,7 @@ test('Individual choices remove findings, skip fully disabled study owners, and 
  const ids=new Set(CONCEPT_ITEMS.map(item=>item.id));for(const ply of [2,3,5,7,32,33,34,56,57])for(const f of row(ply).result.findings)assert.ok(ids.has(f.event)||['capture','check','castling'].includes(f.event),'Finding needs a control: '+f.event);
 });
 
-test('Settings groups expand independently, preserve rapid item changes, and reset only concept customizations',t=>{
+test('Settings groups expand independently, preserve rapid item changes, and reset only concept customizations',async t=>{
  const a=app(t),S=loadGame(a,'1. d4 c6 2. Bf4');a.call('buildUI');a.call('go',3);S.settings.conceptsEnabled=true;S.settings.conceptsView='reply';a.call('toggleSettings');a.dom.window.document.querySelectorAll('.set-tab')[2].click();
  const doc=a.dom.window.document,expand=id=>{const d=doc.querySelector('[data-concept-detail="group:'+id+'"]');d.open=true;d._populateConceptItems();return d;};
  assert.equal(doc.querySelectorAll('.concept-item-row').length,0,'Closed groups do not build hundreds of inputs');
@@ -103,7 +103,7 @@ test('Settings groups expand independently, preserve rapid item changes, and res
  const before=a.call('selectedConceptInput');S.meSide='b';S.flipped=true;assert.equal(conceptKey(a.call('selectedConceptInput')),conceptKey(before));
  branch(a,1,1);assert.notEqual(conceptKey(a.call('selectedConceptInput')),conceptKey(before));
  doc.querySelector('#conceptsReset').click();assert.deepEqual(Array.from(S.settings.disabledConcepts),[]);assert.deepEqual(Array.from(S.settings.conceptGroups),DEFAULT_CONCEPT_GROUPS);assert.equal(S.settings.conceptsEnabled,true);assert.equal(S.settings.conceptsView,'reply');
- assert.equal(a.writes.at(-1).settings.disabledConcepts.length,0);
+ await a.run('_settingsWriteQueue');assert.equal(a.writes.at(-1).settings.disabledConcepts.length,0);
 });
 
 test('Old async replies cannot repopulate the result after an individual control change',()=>{

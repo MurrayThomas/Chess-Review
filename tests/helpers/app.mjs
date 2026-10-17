@@ -55,7 +55,7 @@ export function app(t, {hardware} = {}) {
   const state = run('S');
   Object.assign(state.settings, { sound: false, moveAnim: false, coach: '', showThreat: false, engineDepth: 4 });
   context.__publicCalibration = JSON.parse(fs.readFileSync(new URL('../../data/calibration.json', import.meta.url), 'utf8'));
-  run('BOOK = {}; CALIB = { ...__publicCalibration, quality: { ...__publicCalibration.quality, outcome: { slopePerPawn: 0.3 } } };');
+  run('BOOK = {}; CALIB = { ...__publicCalibration, quality: { ...__publicCalibration.quality, outcome: { ...__publicCalibration.quality.outcome, slopePerPawn: 0.3 } } };');
   const replace = (name, fn) => { context.__replacement = fn; run(`${name} = __replacement`); delete context.__replacement; };
   t.after(() => { for (const id of timers) clearTimeout(id); dom.window.close(); });
   return { run, state, context, dom, store, writes, replace,

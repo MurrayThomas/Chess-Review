@@ -12,6 +12,9 @@ Completed the initial fully usable learning release on 2026-10-14. This file tra
 - [x] Stage 5: Responsive themed boards, SVG piece preferences, keyboard/click/drag input, legal promotion choices, focus management, reduced motion and loading/empty/error/completion states. Application suite, packaged Chrome/Firefox checks and fifteen Chrome learning layout/interaction audits pass.
 - [x] Presentation update: in-place learning is the default. The actual review board stays anchored while the surrounding panels morph into the shared learning UI, with a matching return transition. Visual → Learning experience retains the original separate-page option. Reduced motion skips the panel animation.
 - [x] Combined the four design variants into one Visual → Learning experience selector: Morph in place, Studio Morph, Minimal morph, Board morph, and Separate page. Their distinct home layouts and transition timing share the same learning model and preserve review state. Source designs: `673aaa6`, `e7b24fe`, `ecb3c2c`, and `b5786b0`.
+- [x] Added Morph in place 2 as a separate setting: a slower, continuous board swoop, centered board and learning composition, desktop clearance for Settings, and a matching return to review. The real board moves as one surface; all previous presentations and the default remain available. Settings can open during learning, appearance changes preserve exercises, and reduced motion skips the spatial animation.
+
+- [x] Added Morph in place 3: preserves the measured review board size, clears outgoing text before revealing the study panel, and uses a 680 ms board glide (520 ms on return). Embedded practice shares the review pointer drag handler, including immediate lift, legal targets, wrong-side snapback and cancellation; right-click arrows/marks and explicit promotion choices preserve familiar board input. Removed the introductory caption beneath the idle board.
 
 ## Fully usable now
 

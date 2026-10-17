@@ -74,12 +74,12 @@ test('demand session never queues unvisited moves and preempts stale foreground 
  s.stop();
 });
 
-test('category changes persist, refresh exact cache keys, preserve perspective and rapid checkbox changes',t=>{
+test('category changes persist, refresh exact cache keys, preserve perspective and rapid checkbox changes',async t=>{
  const a=app(t),S=loadGame(a,'1. e4 e5 2. Nf3');a.call('computeDerived');a.call('buildUI');a.call('go',3);a.call('toggleSettings');a.dom.window.document.querySelectorAll('.set-tab')[2].click();
- const doc=a.dom.window.document;assert.ok(doc.querySelector('.concepts-panel .set-section.open'));assert.equal(doc.querySelectorAll('.concept-group-row input').length,9);
+ const doc=a.dom.window.document;assert.ok(doc.querySelector('.concepts-panel .set-section.open'));assert.equal(doc.querySelectorAll('.concept-group-row input:not(#showConcepts)').length,9);
  const before=conceptKey(a.call('selectedConceptInput'));doc.querySelector('#concept-group-pawns').click();doc.querySelector('#concept-group-history').click();
  assert.ok(!S.settings.conceptGroups.includes('pawns'));assert.ok(S.settings.conceptGroups.includes('history'));assert.notEqual(conceptKey(a.call('selectedConceptInput')),before);
- assert.deepEqual(Array.from(a.writes.at(-1).settings.conceptGroups),Array.from(S.settings.conceptGroups));
+ await a.run('_settingsWriteQueue');assert.deepEqual(Array.from(a.writes.at(-1).settings.conceptGroups),Array.from(S.settings.conceptGroups));
  doc.querySelector('#concept-group-history').focus();a.call('renderSettings');assert.equal(doc.activeElement.id,'concept-group-history');
  const key=conceptKey(a.call('selectedConceptInput'));S.meSide='b';S.flipped=true;assert.equal(conceptKey(a.call('selectedConceptInput')),key);
  branch(a,1,1);assert.notEqual(conceptKey(a.call('selectedConceptInput')),key);
@@ -129,5 +129,5 @@ test('Concept settings keep excluded findings discoverable without changing rese
  assert.ok(panel.textContent.includes('Temporarily removed / not calculated'));
  for(const item of FAST_CONCEPT_REMOVALS)assert.ok(panel.textContent.includes(item.name)&&panel.textContent.includes(item.reason));
  assert.match(panel.textContent,/not changes to research acceptance/);
- assert.equal(panel.querySelectorAll('input').length,9);
+ assert.equal(panel.querySelectorAll('input').length,10);assert.ok(panel.querySelector('#showConcepts'));
 });

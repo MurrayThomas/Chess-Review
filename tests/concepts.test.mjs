@@ -131,7 +131,7 @@ test('native timer callbacks are invoked without the session as their receiver',
   session.configure([], false); session.setTimer(() => {}, 0); session.stop();
 });
 
-test('Concepts appends after Visual and Engine, uses selected resulting move/history, and disables immediately', t => {
+test('Concepts appends after Visual and Engine, uses selected resulting move/history, and disables immediately', async t => {
   const a = app(t); loadGame(a, '1. e4 e5 2. Nf3'); a.call('computeDerived'); a.call('buildUI');
   a.call('toggleSettings');
   assert.deepEqual([...a.dom.window.document.querySelectorAll('.set-tab')].map(n => n.textContent), ['Visual','Engine','Concepts']);
@@ -149,6 +149,6 @@ test('Concepts appends after Visual and Engine, uses selected resulting move/his
   assert.equal(a.dom.window.document.activeElement.id, 'conceptsEnabled');
   a.dom.window.document.querySelector('#conceptsEnabled').click();
   assert.equal(a.state.settings.conceptsEnabled, false); assert.equal(a.run('_conceptSession.enabled'), false);
-  assert.equal(a.writes.at(-1).settings.conceptsEnabled, false);
+  await a.run('_settingsWriteQueue');assert.equal(a.writes.at(-1).settings.conceptsEnabled, false);
   a.call('go', 1); assert.ok(a.state.evals.every(e => e.cp === 0));
 });

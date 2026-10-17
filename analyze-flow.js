@@ -4,18 +4,41 @@
 import { findGameById, gameMeta, parseFlip, parseGameId } from "./chesscom.js";
 import { parseLichessGameId, parseLichessFlip, fetchGamePgn as fetchLichessPgn } from "./lichess.js";
 import { browserAPI } from "./browser-compat.js";
+import {createImportRequest, checkImport, importDelay, waitImport} from "./lib/import-request.js";
 
 /** Save the analysis payload and open analysis.html in a new tab. */
-export async function openAnalysisTab(payload) {
+export async function openAnalysisTab(payload, {signal} = {}) {
+  const request = createImportRequest(signal);
+  signal = request.signal;
   // The popup, keyboard shortcut, and in-page button can all launch a review. A timestamp
   // alone collides when two of those arrive in the same millisecond, causing one tab to read
   // the other tab's payload. UUIDs keep each storage handoff independent.
   const jobId = globalThis.crypto?.randomUUID?.()
     || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  await browserAPI.storage.local.set({ [`job:${jobId}`]: payload });
-  await browserAPI.tabs.create({
-    url: browserAPI.runtime.getURL(`analysis.html#${jobId}`),
-  });
+  let tab;
+  const removeJob = async () => {try {await browserAPI.storage.local.remove(`job:${jobId}`);} catch {}};
+  try {
+    checkImport(signal);
+    const storing = browserAPI.storage.local.set({ [`job:${jobId}`]: payload }).then(async () => {
+      if(signal.aborted)await removeJob();
+    });
+    await waitImport(storing, signal);
+    checkImport(signal);
+    const opening = browserAPI.tabs.create({url:browserAPI.runtime.getURL(`analysis.html#${jobId}`)}).then(async opened => {
+      // Browser APIs cannot be aborted: clean up our own late result after cancellation.
+      if(signal.aborted && opened?.id != null && browserAPI.tabs.remove) {
+        try {await browserAPI.tabs.remove(opened.id);} catch {}
+        await removeJob();
+      }
+      return opened;
+    });
+    tab = await waitImport(opening, signal);
+    checkImport(signal); return tab;
+  } catch (error) {
+    if (signal?.aborted && tab?.id != null && browserAPI.tabs.remove) {try {await browserAPI.tabs.remove(tab.id);} catch {}}
+    void removeJob();
+    throw error;
+  } finally {request.dispose();}
 }
 
 async function getActiveTab() {
@@ -30,14 +53,18 @@ export function isSupportedChessUrl(url) {
 
 // Reload the active chess tab, wait for it to finish loading, let the SPA settle, then analyze again.
 // Used as a one-shot retry when the just-finished game hasn't been exposed by the page SPA yet.
-export async function reloadActiveAndAnalyze(username, tabId = null) {
-  const tab = tabId == null ? await getActiveTab() : await browserAPI.tabs.get(tabId);
+export async function reloadActiveAndAnalyze(username, tabId = null, {signal} = {}) {
+  checkImport(signal);
+  const tab = await waitImport(tabId == null ? getActiveTab() : browserAPI.tabs.get(tabId), signal);
   if (!tab || tab.id == null) throw new Error("No active tab");
   if (!isSupportedChessUrl(tab.url)) throw new Error("Not a supported chess site");
   await new Promise((resolve, reject) => {
+    let finished = false;
     const finish = (err) => {
+      if(finished)return;finished=true;
       browserAPI.tabs.onUpdated.removeListener(onUpdated);
       clearTimeout(timer);
+      signal?.removeEventListener("abort", abort);
       if (err) reject(err); else resolve();
     };
     const onUpdated = (id, info) => {
@@ -45,21 +72,25 @@ export async function reloadActiveAndAnalyze(username, tabId = null) {
         finish();
       }
     };
+    const abort = () => finish(signal.reason);
     const timer = setTimeout(() => {
       finish(new Error("reload timed out"));
     }, 12000);
     browserAPI.tabs.onUpdated.addListener(onUpdated);
+    signal?.addEventListener("abort", abort, {once:true});
+    if(signal?.aborted){abort();return;}
     Promise.resolve().then(() => browserAPI.tabs.reload(tab.id)).catch(finish);
   });
-  await new Promise((r) => setTimeout(r, 900)); // let the chess.com SPA hydrate the game page
-  await analyzeActiveTab(username, tab.id);
+  await importDelay(900, signal);
+  await analyzeActiveTab(username, tab.id, {signal});
 }
 
 /** Ask the content script in a tab for the game ID, etc. */
-async function getGameInfoFromTab(tabId) {
+async function getGameInfoFromTab(tabId, signal) {
   try {
-    return await browserAPI.tabs.sendMessage(tabId, { type: "getGameInfo" });
+    return await waitImport(browserAPI.tabs.sendMessage(tabId, { type: "getGameInfo" }), signal);
   } catch {
+    checkImport(signal);
     return null; // no content script on the page (not chess.com)
   }
 }
@@ -68,25 +99,30 @@ async function getGameInfoFromTab(tabId) {
  * Primary flow: use the active tab's game ID, fetch the PGN from the API, and open
  * the analysis. Throws an error with a user-friendly message if something is missing.
  */
-export async function analyzeActiveTab(username, tabId = null) {
-  const tab = tabId == null ? await getActiveTab() : await browserAPI.tabs.get(tabId);
-  if (!tab) throw new Error("Could not find the active tab.");
+export async function analyzeActiveTab(username, tabId = null, {signal} = {}) {
+  const request = createImportRequest(signal);
   try {
-    await analyzeTab(tab, username);
-  } catch (err) {
-    // Keep retries attached to this game even if the user changes the active tab.
-    err.tabId = tab.id;
-    throw err;
-  }
+    checkImport(request.signal);
+    const tab = await waitImport(tabId == null ? getActiveTab() : browserAPI.tabs.get(tabId), request.signal);
+    if (!tab) throw new Error("Could not find the active tab.");
+    try {
+      await waitImport(analyzeTab(tab, username, request.signal), request.signal);
+    } catch (err) {
+      // Keep retries attached to this game even if the user changes the active tab.
+      err.tabId = tab.id;
+      throw err;
+    }
+  } finally {request.dispose();}
 }
 
-async function analyzeTab(tab, username) {
-  const info = (await getGameInfoFromTab(tab.id)) || {};
+async function analyzeTab(tab, username, signal) {
+  checkImport(signal);
+  const info = (await getGameInfoFromTab(tab.id, signal)) || {};
 
   // Lichess: the content script reports site:"lichess" (or we recognise the URL). Lichess gives us
   // the full PGN directly from a game id — no username/archive search needed.
   const isLichess = (info && info.site === "lichess") || /:\/\/(www\.)?lichess\.org\//i.test(tab.url || "");
-  if (isLichess) return analyzeLichessTab(info, tab.url || "");
+  if (isLichess) return analyzeLichessTab(info, tab.url || "", signal);
 
   // Game id: prefer the content script's real-time location.pathname (authoritative for SPA navigation
   // where tab.url may lag behind history.pushState), then fall back to the tab URL. The content script
@@ -132,21 +168,24 @@ async function analyzeTab(tab, username) {
   // Try each candidate's archive; the first one that actually contains the game wins. A bad handle
   // (404) or transient network error on one candidate just falls through to the next. findGameById is
   // cache-first (a previously fetched game costs no request) then fast-then-deep: the current/prev
-  // month in parallel resolves a just-finished game in ~one hop, and only an older game opened from a
+  // month checks resolve a just-finished game in ~one hop, and only an older game opened from a
   // review URL falls through to the serial page-back.
   let game = null;
+  let lookupError = null;
   for (const user of candidates) {
     try {
-      const hit = await findGameById(user, gameId);
+      const hit = await findGameById(user, gameId, {signal});
       if (hit && hit.pgn) { game = hit; break; }
-    } catch { /* invalid user / network error for this candidate → try the next */ }
+    } catch (error) {checkImport(signal);lookupError ||= error;}
   }
   if (!game || !game.pgn) {
+    if(lookupError)throw new Error("Some game archives could not be loaded. Retry or paste the PGN.", {cause:lookupError});
     throw new Error(
       "Couldn't find this game in either player's public archive (a game that just finished can take a few seconds to appear). Try again, or paste the PGN."
     );
   }
 
+  checkImport(signal);
   // Remember the user's OWN handle for next time — but never overwrite it with an opponent's name
   // picked up from someone else's game. Only persist an explicitly typed handle, or seed an empty
   // store with the page's POV player on first run.
@@ -154,6 +193,7 @@ async function analyzeTab(tab, username) {
     await browserAPI.storage.local.set({ username: provided });
   } else {
     const { username: stored } = await browserAPI.storage.local.get("username");
+    checkImport(signal);
     if (!stored && detected[0]) await browserAPI.storage.local.set({ username: detected[0] });
   }
 
@@ -166,7 +206,7 @@ async function analyzeTab(tab, username) {
   // Country flags: the API knows WHO is white/black; the page knows each player's country id. Match
   // them by username so the right flag lands on the right side (analysis.js resolves id → flag art).
   attachCountries(meta, info && info.countries);
-  await openAnalysisTab({ pgn: game.pgn, meta, source: "active-tab" });
+  await openAnalysisTab({ pgn: game.pgn, meta, source: "active-tab" }, {signal});
 }
 
 // Stamp the scraped { usernameLower: countryId } map onto meta.white/black by matching usernames.
@@ -189,7 +229,7 @@ function attachCountries(meta, countries) {
  * extension was reloaded) — no page reload needed. The content script, when present, only adds the
  * board orientation and a DOM move-list fallback. The PGN's own tags carry players/result.
  */
-async function analyzeLichessTab(info, tabUrl) {
+async function analyzeLichessTab(info, tabUrl, signal) {
   const fromUrl = parseLichessGameId(tabUrl);
   const gameId = (info && info.gameId) || (fromUrl && fromUrl.id) || null;
   if (!gameId) {
@@ -200,8 +240,9 @@ async function analyzeLichessTab(info, tabUrl) {
   }
   let pgn = null;
   try {
-    pgn = await fetchLichessPgn(gameId);
+    pgn = await fetchLichessPgn(gameId, {signal});
   } catch (err) {
+    checkImport(signal);
     // API unreachable → use the moves scraped from the page, if the content script found any.
     const fallback = info && info.movetext ? info.movetext.trim() : "";
     if (fallback) pgn = fallback;
@@ -216,5 +257,5 @@ async function analyzeLichessTab(info, tabUrl) {
     pgn,
     meta: { url: `https://lichess.org/${gameId}`, gameId, flip },
     source: "active-tab-lichess",
-  });
+  }, {signal});
 }

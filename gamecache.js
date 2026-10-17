@@ -12,6 +12,13 @@ import { browserAPI } from "./browser-compat.js";
 const DATA_PREFIX = "gamecache:";
 const INDEX_KEY = "gamecache:index"; // array of data keys, oldest → newest (eviction order)
 const MAX_ENTRIES = 1000;
+const writeQueues = new Map();
+function withCacheLock(key, commit) {
+  if (globalThis.navigator?.locks?.request) return globalThis.navigator.locks.request("chess-review-" + key, commit);
+  const pending = (writeQueues.get(key) || Promise.resolve()).catch(() => {}).then(commit);
+  writeQueues.set(key, pending);
+  return pending.finally(() => { if (writeQueues.get(key) === pending) writeQueues.delete(key); });
+}
 
 function hasStorage() {
   return !!(browserAPI && browserAPI.storage && browserAPI.storage.local);
@@ -35,14 +42,15 @@ export async function setCachedGame(site, id, data) {
   if (!hasStorage() || !id || data == null) return;
   const k = keyFor(site, id);
   try {
-    const got = await browserAPI.storage.local.get(INDEX_KEY);
-    await browserAPI.storage.local.set({ [k]: { t: Date.now(), data } });
-    // Move-to-newest in the index, then evict the oldest once over the cap.
-    let index = Array.isArray(got[INDEX_KEY]) ? got[INDEX_KEY].filter((x) => x !== k) : [];
-    index.push(k);
-    const evict = index.length > MAX_ENTRIES ? index.splice(0, index.length - MAX_ENTRIES) : [];
-    await browserAPI.storage.local.set({ [INDEX_KEY]: index });
-    if (evict.length) await browserAPI.storage.local.remove(evict);
+    await withCacheLock(INDEX_KEY, async () => {
+      const got = await browserAPI.storage.local.get(INDEX_KEY);
+      // Move-to-newest in the index, then evict the oldest once over the cap.
+      let index = Array.isArray(got[INDEX_KEY]) ? got[INDEX_KEY].filter((x) => x !== k) : [];
+      index.push(k);
+      const evict = index.length > MAX_ENTRIES ? index.splice(0, index.length - MAX_ENTRIES) : [];
+      await browserAPI.storage.local.set({ [k]: { t: Date.now(), data }, [INDEX_KEY]: index });
+      if (evict.length) await browserAPI.storage.local.remove(evict);
+    });
   } catch {
     /* a full/unavailable store just means no caching — the fetch already succeeded */
   }
@@ -77,13 +85,14 @@ export async function setCachedMonth(archiveUrl, games) {
   if (!hasStorage() || !archiveUrl || !Array.isArray(games) || !games.length) return;
   const k = MONTH_PREFIX + archiveUrl;
   try {
-    const got = await browserAPI.storage.local.get(MONTH_INDEX_KEY);
-    await browserAPI.storage.local.set({ [k]: { t: Date.now(), games } });
-    let index = Array.isArray(got[MONTH_INDEX_KEY]) ? got[MONTH_INDEX_KEY].filter((x) => x !== k) : [];
-    index.push(k);
-    const evict = index.length > MAX_MONTHS ? index.splice(0, index.length - MAX_MONTHS) : [];
-    await browserAPI.storage.local.set({ [MONTH_INDEX_KEY]: index });
-    if (evict.length) await browserAPI.storage.local.remove(evict);
+    await withCacheLock(MONTH_INDEX_KEY, async () => {
+      const got = await browserAPI.storage.local.get(MONTH_INDEX_KEY);
+      let index = Array.isArray(got[MONTH_INDEX_KEY]) ? got[MONTH_INDEX_KEY].filter((x) => x !== k) : [];
+      index.push(k);
+      const evict = index.length > MAX_MONTHS ? index.splice(0, index.length - MAX_MONTHS) : [];
+      await browserAPI.storage.local.set({ [k]: { t: Date.now(), games }, [MONTH_INDEX_KEY]: index });
+      if (evict.length) await browserAPI.storage.local.remove(evict);
+    });
   } catch {
     /* a full/unavailable store just means no caching — the fetch already succeeded */
   }

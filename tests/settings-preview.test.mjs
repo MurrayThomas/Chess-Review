@@ -60,12 +60,13 @@ test('opening a settings section collapses the previous one and keeps its header
   assert.equal(section('Theme').classList.contains('open'), true);
 });
 
-test('badge size lives in Category badges and saves and applies the existing scale preference', t => {
+test('badge size lives in Category badges and saves and applies the existing scale preference', async t => {
   const { a, doc, section, open } = settings(t);
   assert.equal(section('Move list').querySelector('input[type="range"]'), null);
   const slider = open('Category badges').querySelector('input[type="range"]');
   assert.equal(slider.closest('.set-ctrl').querySelector('.set-lbl').textContent, 'Badge size');
   slider.value = '1.25'; slider.dispatchEvent(new a.dom.window.Event('input'));
+  await a.run('_settingsWriteQueue');
   assert.equal(a.store.settings.badgeScale, 1.25);
   assert.equal(doc.documentElement.style.getPropertyValue('--badge-scale'), '1.25');
   assert.equal(slider.closest('.set-ctrl').querySelector('b').textContent, '125 %');
@@ -88,6 +89,7 @@ test('custom accent and arrow buttons open pickers and update their framed swatc
     input.value = '#123456'; input.dispatchEvent(new a.dom.window.Event('input'));
     input.dispatchEvent(new a.dom.window.Event('change'));
     await settle();
+    await a.run('_settingsWriteQueue');
     assert.equal(chip.querySelector('.chip-swatch').style.background, 'rgb(18, 52, 86)');
     assert.equal(chip.style.background, '');
     assert.equal(a.store.settings[key], '#123456');
@@ -100,7 +102,7 @@ test('custom board picker keeps its button mounted and previews both square colo
   const { a, doc, section, open } = settings(t);
   open('Board / Pieces');
   const chip = section('Board / Pieces').querySelector('.chip-custom');
-  chip.click(); await settle();
+  chip.click(); await settle(); await a.run('_settingsWriteQueue');
   assert.equal(a.store.settings.boardTheme, 'custom');
   assert.equal(section('Board / Pieces').querySelector('.chip-custom'), chip);
   const input = doc.querySelector('[role="dialog"] .cpick-hexin');
@@ -110,7 +112,7 @@ test('custom board picker keeps its button mounted and previews both square colo
   };
   edit('#123456');
   [...doc.querySelectorAll('.cpick-target')].find(b => b.textContent === 'Dark').click();
-  edit('#654321'); await settle();
+  edit('#654321'); await settle(); await a.run('_settingsWriteQueue');
   assert.equal(chip.querySelector('.chip-swatch').style.background, 'rgb(18, 52, 86)');
   assert.equal(chip.querySelector('.chip-swatch .half.r').style.background, 'rgb(101, 67, 33)');
   assert.equal(a.store.settings.boardCustomLight, '#123456');

@@ -14,14 +14,14 @@ test('modal action follows primary-action width through resize without replacing
   </div></div>`, { url: 'https://www.chess.com/game/live/12345678', runScripts: 'outside-only' });
   t.after(() => dom.window.close());
   const w = dom.window, sent = [], timers = [];
-  let width = 288;
+  let width = 288, finish;
   Object.defineProperty(w.document.querySelector('.game-over-modal-shell-buttons a'), 'offsetWidth', { get: () => width });
   w.console = { log() {}, info() {}, warn() {} };
   w.setTimeout = (callback, delay) => { timers.push({ callback, delay }); return timers.length; };
   w.clearTimeout = () => {};
   w.chrome = { runtime: {
     getURL: path => `chrome-extension://test/${path}`,
-    sendMessage: async message => { sent.push(message); },
+    sendMessage: message => { sent.push(message);return new Promise(resolve=>{finish=resolve;}); },
     onMessage: { addListener() {} },
   } };
   w.eval(source);
@@ -44,7 +44,8 @@ test('modal action follows primary-action width through resize without replacing
   assert.equal(modal.style.getPropertyValue('--chess-review-modal-width'), '224px');
   assert.equal(modal.disabled, true);
   assert.equal(modal.textContent, 'Opening review…');
-  timers.find(timer => timer.delay === 5000).callback();
+  assert.equal(timers.some(timer => timer.delay === 5000),false);
+  finish({ok:true});await Promise.resolve();
   assert.equal(modal.disabled, false);
   assert.equal(modal.textContent, 'Analyze with Chess Review');
 });

@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {JSDOM} from 'jsdom';
+import {LearningWorkspace} from '../lib/learning/workspace.js';
+import {ChallengeClock} from '../lib/learning/progress.js';
+const puzzle=JSON.parse(await fs.readFile(new URL('../data/learning/puzzles.json',import.meta.url),'utf8')).puzzles.find(p=>p.themes.includes('mateIn1'));
+for(const action of ['reveal','skip'])for(const elapsed of [59999,60000])test(`${action} ${elapsed<60000?'before':'at'} challenge deadline`,async t=>{
+  const dom=new JSDOM('<div id="root"><div class="app"></div></div>',{url:'https://extension.test'}),data={};
+  t.mock.method(globalThis,'fetch',async()=>({ok:true,json:async()=>({schema:1,puzzles:[puzzle]})}));
+  const storage={async get(key){return {[key]:structuredClone(data[key])};},async set(values){Object.assign(data,structuredClone(values));}};
+  const w=new LearningWorkspace({document:dom.window.document,storage,makePiece:()=>dom.window.document.createElement('span')});
+  t.after(async()=>{await w.close();dom.window.close();});await w.open();await w.startChallenge(60);clearInterval(w.ticker);
+  let now=0;w.run.clock=new ChallengeClock(60,()=>now);w.run.clock.ready();now=elapsed;
+  if(action==='reveal')await w.revealPuzzle();else await w.skipPuzzle();
+  if(w.run)await w.finishChallenge('Finished');
+  assert.equal(w.result.assisted,elapsed<60000&&action==='reveal'?1:0);
+  assert.equal(w.result.skips,elapsed<60000&&action==='skip'?1:0);
+  assert.equal(!!data['learning:v1'].puzzles[puzzle.id],elapsed<60000);
+});

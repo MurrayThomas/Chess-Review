@@ -3,9 +3,25 @@ import { openAnalysisTab, analyzeActiveTab, reloadActiveAndAnalyze, isSupportedC
 import { findGameById, parseGameId, parseFlip, gameMeta } from "./chesscom.js";
 import { parseLichessGameId, parseLichessFlip, fetchGamePgn as fetchLichessPgn } from "./lichess.js";
 import { browserAPI } from "./browser-compat.js";
+import {createImportRequest} from "./lib/import-request.js";
 
 const $ = (id) => document.getElementById(id);
 const statusEl = $("status");
+let activeImport = null;
+function beginImport() {
+  activeImport?.request.cancel();
+  const operation = {request:createImportRequest()}; activeImport = operation;
+  for(const id of ["analyzeCurrent","analyzeManual","saveUser"])$(id).disabled=true;
+  $("username").readOnly=true;$("cancelImport").hidden=false;
+  return operation;
+}
+function finishImport(operation) {
+  operation.request.dispose();
+  if(activeImport!==operation)return;
+  activeImport=null;for(const id of ["analyzeCurrent","analyzeManual","saveUser"])$(id).disabled=false;
+  $("username").readOnly=false;$("cancelImport").hidden=true;
+}
+const importCurrent = operation => activeImport === operation && !operation.request.signal.aborted;
 
 function setStatus(msg, isError = false) {
   statusEl.textContent = msg || "";
@@ -24,24 +40,26 @@ function looksLikePgn(s) {
 // anywhere else it shows the menu so you can paste a URL/PGN. The "Analyze this game" button re-runs
 // the same flow.
 async function runCurrentAnalysis() {
-  const btn = $("analyzeCurrent");
-  btn.disabled = true;
+  const operation=beginImport(),signal=operation.request.signal;
   setStatus("Fetching game …");
   try {
     // An empty field is fine: analyzeActiveTab auto-detects and saves the username.
-    await analyzeActiveTab($("username").value.trim());
+    await analyzeActiveTab($("username").value.trim(),null,{signal});
+    if(!importCurrent(operation))return;
     setStatus("Opening analysis …");
-    window.close();
+    finishImport(operation);window.close();
   } catch (err) {
+    if(activeImport!==operation)return;
     if (err.code === "NO_GAME") {
       // The chess SPA may not have exposed the just-finished game yet → reload once and retry.
       try {
         setStatus("Loading the game page …");
-        await reloadActiveAndAnalyze($("username").value.trim(), err.tabId);
+        await reloadActiveAndAnalyze($("username").value.trim(), err.tabId, {signal});
+        if(!importCurrent(operation))return;
         setStatus("Opening analysis …");
-        window.close();
+        finishImport(operation);window.close();
         return;
-      } catch (err2) { err = err2; }
+      } catch (err2) { if(activeImport!==operation)return;err = err2; }
     }
     setStatus(err.message, true);
     // Couldn't find the username? Expand the manual section and focus the field,
@@ -49,7 +67,7 @@ async function runCurrentAnalysis() {
     $("manual").open = true;
     if (err.code === "NO_USERNAME") $("username").focus();
   } finally {
-    btn.disabled = false;
+    finishImport(operation);
   }
 }
 
@@ -91,25 +109,29 @@ $("saveUser").addEventListener("click", async () => {
 });
 
 $("analyzeCurrent").addEventListener("click", runCurrentAnalysis);
+$("cancelImport").addEventListener("click",()=>{
+  if(!activeImport)return;
+  const operation=activeImport;operation.request.cancel();finishImport(operation);
+  setStatus("Import canceled. You can retry or paste another game.");
+});
 
 $("analyzeManual").addEventListener("click", async () => {
-  const btn = $("analyzeManual");
   const raw = $("manualInput").value.trim();
   if (!raw) return setStatus("Paste a URL or PGN.", true);
-  btn.disabled = true;
+  const operation=beginImport(),signal=operation.request.signal;
   try {
     // Order matters: pasted PGN text can contain site URLs in its tags, so detect those by
     // shape BEFORE any URL handling, or a chess.com PGN gets misrouted into an archive lookup.
     if (looksLikePgn(raw)) {
       // Full PGN (or bare movetext) → analyse directly, no username/archive needed.
-      await openAnalysisTab({ pgn: raw, meta: {}, source: "pgn" });
+      await openAnalysisTab({ pgn: raw, meta: {}, source: "pgn" }, {signal});
     } else if (/lichess\.org/i.test(raw)) {
       // Lichess URL → fetch the PGN straight from Lichess's public API (no username needed).
       const li = parseLichessGameId(raw);
       if (!li) throw new Error("Couldn't read a game ID from that Lichess URL.");
       setStatus("Fetching game from Lichess …");
-      const pgn = await fetchLichessPgn(li.id);
-      await openAnalysisTab({ pgn, meta: { url: `https://lichess.org/${li.id}`, gameId: li.id, flip: parseLichessFlip(raw) }, source: "url-lichess" });
+      const pgn = await fetchLichessPgn(li.id, {signal});
+      await openAnalysisTab({ pgn, meta: { url: `https://lichess.org/${li.id}`, gameId: li.id, flip: parseLichessFlip(raw) }, source: "url-lichess" }, {signal});
     } else if (parseGameId(raw) || /chess\.com|^https?:/i.test(raw)) {
       // chess.com URL → look it up via the API by game ID. Manual paste is an explicit "older game"
       // request, so search far back (the active-tab flow stays shallow for speed).
@@ -118,18 +140,18 @@ $("analyzeManual").addEventListener("click", async () => {
       if (!username) throw new Error("Set a username to fetch via URL.");
       if (!parsed) throw new Error("Couldn't read a game ID from the URL.");
       setStatus("Searching your archive …");
-      const game = await findGameById(username, parsed.id, { monthsBack: 18 });
+      const game = await findGameById(username, parsed.id, { monthsBack: 18, signal });
       if (!game || !game.pgn) throw new Error("Couldn't find this game in the last 18 months of " + username + "'s archive. Paste the PGN instead.");
-      await openAnalysisTab({ pgn: game.pgn, meta: { ...gameMeta(game), flip: parseFlip(raw) }, source: "url" });
+      await openAnalysisTab({ pgn: game.pgn, meta: { ...gameMeta(game), flip: parseFlip(raw) }, source: "url" }, {signal});
     } else {
       // Unrecognised → last-ditch, treat as PGN so a stray paste still gets a chance.
-      await openAnalysisTab({ pgn: raw, meta: {}, source: "pgn" });
+      await openAnalysisTab({ pgn: raw, meta: {}, source: "pgn" }, {signal});
     }
-    window.close();
+    if(importCurrent(operation)){finishImport(operation);window.close();}
   } catch (err) {
-    setStatus(err.message, true);
+    if(activeImport===operation)setStatus(err.message, true);
   } finally {
-    btn.disabled = false;
+    finishImport(operation);
   }
 });
 

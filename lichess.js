@@ -10,6 +10,7 @@
 // /analysis segment — we always reduce to the canonical 8-char base id.
 
 import { getCachedGame, setCachedGame } from "./gamecache.js";
+import {fetchImport, checkImport} from "./lib/import-request.js";
 
 const SITE = "https://lichess.org";
 
@@ -51,14 +52,16 @@ export function parseLichessFlip(urlOrPath) {
  * Fetch the PGN for a Lichess game by id. Clocks/evals/literate annotations are turned off so
  * the movetext stays clean for the analyzer. Returns the PGN string (throws on failure).
  */
-export async function fetchGamePgn(gameId) {
+export async function fetchGamePgn(gameId, {signal} = {}) {
+  checkImport(signal);
   const id = String(gameId || "").slice(0, 8);
   if (!/^[A-Za-z0-9]{8}$/.test(id)) throw new Error("Invalid Lichess game id.");
   // Cache first: a finished game's PGN is immutable, so a re-analysis costs no API call.
   const cached = await getCachedGame("lichess", id);
+  checkImport(signal);
   if (typeof cached === "string" && cached.trim()) return cached;
   const url = `${SITE}/game/export/${encodeURIComponent(id)}?clocks=false&evals=false&literate=false`;
-  const res = await fetch(url, { headers: { Accept: "application/x-chess-pgn" } });
+  const res = await fetchImport(url, { headers: { Accept: "application/x-chess-pgn" }, signal });
   if (!res.ok) throw new Error(`Lichess returned HTTP ${res.status} for game ${id}.`);
   const pgn = (await res.text()).trim();
   if (!pgn) throw new Error("Lichess returned an empty PGN.");

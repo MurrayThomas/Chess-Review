@@ -7,10 +7,10 @@
 // Each game has, among other fields, { url, pgn, white, black, end_time, time_class, ... }
 
 import { getCachedGame, setCachedGame, getCachedMonth, setCachedMonth } from "./gamecache.js";
+import {fetchImport, checkImport, importDelay} from "./lib/import-request.js";
 
 const API = "https://api.chess.com/pub";
 
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // Canonical chess.com game-id parser. This is the SINGLE source of truth for the URL shapes we
 // recognise — content.js carries a byte-for-byte copy of GAME_ID_RE (it runs as a plain content
@@ -54,18 +54,19 @@ export function parseFlip(urlOrPath) {
 
 // Shared fetch with retry for 429/5xx. Returns parsed JSON or throws on permanent error.
 // 404 is treated as a permanent error here (unlike month fetches where 404 = empty).
-async function fetchWithRetry(url, { retries = 2, treat404asError = true } = {}) {
+async function fetchWithRetry(url, { retries = 2, treat404asError = true, signal } = {}) {
   for (let attempt = 0; ; attempt++) {
-    const res = await fetch(url, { headers: { Accept: "application/json" } });
+    checkImport(signal);
+    const res = await fetchImport(url, { headers: { Accept: "application/json" }, signal });
     if (res.ok) return res.json();
     if (res.status === 429 && attempt < retries) {
       const ra = parseInt(res.headers.get("Retry-After") || "", 10);
       const waitMs = Number.isFinite(ra) ? ra * 1000 : 1000 * (attempt + 1);
-      await sleep(Math.min(waitMs, 8000));
+      await importDelay(Math.min(waitMs, 8000), signal);
       continue;
     }
     if (res.status >= 500 && res.status < 600 && attempt < retries) {
-      await sleep(1000 * (attempt + 1));
+      await importDelay(1000 * (attempt + 1), signal);
       continue;
     }
     if (res.status === 404 && !treat404asError) return { games: [] };
@@ -74,14 +75,14 @@ async function fetchWithRetry(url, { retries = 2, treat404asError = true } = {})
 }
 
 /** List of monthly archive URLs (oldest → newest). */
-export async function fetchArchives(username) {
-  const data = await fetchWithRetry(`${API}/player/${encodeURIComponent(username.toLowerCase())}/games/archives`);
+export async function fetchArchives(username, {signal} = {}) {
+  const data = await fetchWithRetry(`${API}/player/${encodeURIComponent(username.toLowerCase())}/games/archives`, {signal});
   return data.archives || [];
 }
 
 /** Fetch all games in a given monthly archive. 404 = empty month (not an error). */
-export async function fetchMonthGames(archiveUrl) {
-  const data = await fetchWithRetry(archiveUrl, { treat404asError: false });
+export async function fetchMonthGames(archiveUrl, {signal} = {}) {
+  const data = await fetchWithRetry(archiveUrl, { treat404asError: false, signal });
   return data.games || [];
 }
 
@@ -96,18 +97,18 @@ function monthArchiveUrl(username, date) {
 /**
  * Find a specific game by its game ID. Tuned for snappy "analyze the game I'm on":
  *   1) Fast path — a just-finished game lives in the current (or previous) UTC-month archive, whose
- *      URL is deterministic. We fetch both directly and in PARALLEL, skipping the archives-index
- *      round-trip entirely. That's the overwhelmingly common case, now ~1 network hop.
+ *      URL is deterministic. Use cached previous-month matches, then fetch months serially.
  *   2) Slow path — only if that misses (an older game, opened from its review URL) do we pull the
- *      archives index and page back, newest → oldest, in small PARALLEL batches (one round-trip per
- *      batch instead of one per month). Stops at the first batch that contains the game.
+ *      archives index and page back, newest → oldest, serially until the game is found.
  * Returns the game object (incl. .pgn) or null.
  */
 export async function findGameById(username, gameId, opts = {}) {
+  checkImport(opts.signal);
   const want = String(gameId);
   // Cache first: a game's PGN is immutable, so if we've fetched this id before (from either player's
   // archive, in any session) we return it with zero API calls.
   const cached = await getCachedGame("chesscom", want);
+  checkImport(opts.signal);
   if (cached && cached.pgn) return cached;
 
   const game = await searchGameById(username, want, opts);
@@ -116,23 +117,24 @@ export async function findGameById(username, gameId, opts = {}) {
 }
 
 // The actual archive search behind findGameById's cache.
-async function searchGameById(username, want, { monthsBack = 18 } = {}) {
+async function searchGameById(username, want, { monthsBack = 18, signal } = {}) {
   const matchIn = (games) => (games || []).find((g) => { const p = parseGameId(g.url); return p && p.id === want; }) || null;
 
   // Fetch a month with proper error handling: retry 429/5xx, rethrow other errors.
   // Returns { games: [], error: null } on success, or throws on permanent failure.
   async function fetchMonthWithRetry(url) {
     for (let attempt = 0; ; attempt++) {
-      const res = await fetch(url, { headers: { Accept: "application/json" } });
+      checkImport(signal);
+      const res = await fetchImport(url, { headers: { Accept: "application/json" }, signal });
       if (res.ok) return { games: (await res.json()).games || [], error: null };
       if (res.status === 429 && attempt < 2) {
         const ra = parseInt(res.headers.get("Retry-After") || "", 10);
         const waitMs = Number.isFinite(ra) ? ra * 1000 : 1000 * (attempt + 1);
-        await sleep(Math.min(waitMs, 8000));
+        await importDelay(Math.min(waitMs, 8000), signal);
         continue;
       }
       if (res.status >= 500 && res.status < 600 && attempt < 2) {
-        await sleep(1000 * (attempt + 1));
+        await importDelay(1000 * (attempt + 1), signal);
         continue;
       }
       // 404 = empty month, treat as no games (not an error)
@@ -149,16 +151,21 @@ async function searchGameById(username, want, { monthsBack = 18 } = {}) {
   const prev = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 1));
   const curUrl = monthArchiveUrl(username, now);
   const prevUrl = monthArchiveUrl(username, prev);
+  const cachedPrev = await getCachedMonth(prevUrl);
+  checkImport(signal);
+  const cachedHit = matchIn(cachedPrev);
+  if (cachedHit) return cachedHit;
+  const errors = [];
   
   // Fetch current month first
   let curResult;
-  try { curResult = await fetchMonthWithRetry(curUrl); } catch { return null; }
+  try { curResult = await fetchMonthWithRetry(curUrl); } catch (error) { checkImport(signal); errors.push(error); curResult = {games:[]}; }
   let hit = matchIn(curResult.games);
   if (hit) return hit;
   
   // Then fetch previous month
   let prevResult;
-  try { prevResult = await fetchMonthWithRetry(prevUrl); } catch { return null; }
+  try { prevResult = cachedPrev?.length ? {games:cachedPrev} : await fetchMonthWithRetry(prevUrl); } catch (error) { checkImport(signal); errors.push(error); prevResult = {games:[]}; }
   if (prevResult.games.length) setCachedMonth(prevUrl, prevResult.games); // immutable → safe; fire-and-forget
   hit = matchIn(prevResult.games);
   if (hit) return hit;
@@ -167,28 +174,30 @@ async function searchGameById(username, want, { monthsBack = 18 } = {}) {
   //    Every month here is OLDER than the current one, hence immutable — so we read the
   //    month cache first (a hit costs no API call) and cache any month we do fetch.
   let archives;
-  try { archives = await fetchArchives(username); } catch { return null; }
+  try { archives = await fetchArchives(username, {signal}); } catch (error) { checkImport(signal); throw errors[0] || error; }
   const done = new Set([curUrl, prevUrl]);
   const toSearch = archives.slice(-Math.max(1, monthsBack)).reverse().filter((u) => !done.has(u));
   for (const url of toSearch) {
+    checkImport(signal);
     let games = await getCachedMonth(url);
     if (games == null) {
       let result;
-      try { result = await fetchMonthWithRetry(url); } catch { continue; } // skip this month on permanent error
+      try { result = await fetchMonthWithRetry(url); } catch (error) { checkImport(signal); errors.push(error); continue; }
       games = result.games;
       if (games.length) setCachedMonth(url, games); // immutable past month → cache forever
     }
     const m = matchIn(games);
     if (m) return m;
   }
+  if (errors.length) throw errors[0];
   return null;
 }
 
 /** Fetch the most recent game for a user (newest archive, last game). */
-export async function fetchLatestGame(username) {
-  const archives = await fetchArchives(username);
+export async function fetchLatestGame(username, {signal} = {}) {
+  const archives = await fetchArchives(username, {signal});
   if (!archives.length) return null;
-  const games = await fetchMonthGames(archives[archives.length - 1]);
+  const games = await fetchMonthGames(archives[archives.length - 1], {signal});
   if (!games.length) return null;
   return games[games.length - 1];
 }

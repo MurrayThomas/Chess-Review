@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 
 // The API facade is captured at import time, just as it is in an extension page.
 globalThis.chrome = {};
-const { analyzeActiveTab, reloadActiveAndAnalyze } = await import('../analyze-flow.js');
+const { analyzeActiveTab, reloadActiveAndAnalyze, openAnalysisTab } = await import('../analyze-flow.js');
+import {createImportRequest} from '../lib/import-request.js';
+import {deferred,settle} from './helpers/app.mjs';
 
 function setup(t, url = 'https://www.chess.com/game/live/12345678') {
   const store = {}, opened = [], listeners = new Set();
@@ -92,4 +94,19 @@ test('a closed original tab never falls back to the active tab', async t => {
   s.tabs.delete(1); s.activeId = 2;
   await assert.rejects(reloadActiveAndAnalyze('', 1), /Tab closed/);
   assert.equal(s.opened.length, 0);
+});
+
+test('canceling a pending storage handoff cannot open a late analysis tab',async t=>{
+  const s=setup(t),pending=deferred(),request=createImportRequest();t.after(()=>request.dispose());
+  const set=chrome.storage.local.set;t.mock.method(chrome.storage.local,'set',async data=>{await pending.promise;await set(data);});
+  const opening=openAnalysisTab({pgn:'1. e4'},{signal:request.signal});request.cancel();
+  await assert.rejects(opening,error=>error.code==='IMPORT_CANCELLED');pending.resolve();await settle();
+  assert.equal(s.opened.length,0);assert.equal(s.payload(),undefined);
+});
+test('canceling tab creation closes only that operation\'s late tab',async t=>{
+  const s=setup(t),pending=deferred(),request=createImportRequest(),removed=[];t.after(()=>request.dispose());
+  t.mock.method(chrome.tabs,'create',()=>pending.promise);chrome.tabs.remove=async id=>removed.push(id);
+  const opening=openAnalysisTab({pgn:'1. e4'},{signal:request.signal});await settle();request.cancel();
+  await assert.rejects(opening,error=>error.code==='IMPORT_CANCELLED');pending.resolve({id:99});await settle();
+  assert.deepEqual(removed,[99]);assert.equal(s.payload(),undefined);
 });

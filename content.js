@@ -171,21 +171,25 @@ function b64decode(b64) {
   const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
   return new TextDecoder().decode(bytes);
 }
-function handleShareFragment() {
+const sharedInFlight = new Set();
+async function handleShareFragment() {
   const m = location.hash.match(/[#&]gambit=([^&]+)/);
-  if (!m) return;
+  if (!m || sharedInFlight.has(m[1])) return;
+  const fragment = location.hash;
+  sharedInFlight.add(m[1]);
   try {
     const payload = JSON.parse(b64decode(decodeURIComponent(m[1])));
     if (!payload || !payload.pgn) return;
-    // clear the fragment so a reload doesn't open it again
-    history.replaceState(null, "", location.pathname + location.search);
-    browserAPI.runtime.sendMessage({ type: "openShared", payload });
+    const result = await browserAPI.runtime.sendMessage({ type: "openShared", payload });
+    if (result?.ok && location.hash === fragment) {
+      history.replaceState(history.state, "", location.pathname + location.search);
+    }
   } catch (e) {
-    console.warn("[Chess Analyzer] invalid share link", e);
-  }
+    console.warn("[Chess Review] share link retained; retry by reloading the page", e);
+  } finally { sharedInFlight.delete(m[1]); }
 }
 handleShareFragment();
-// chess.com is an SPA; check again shortly after in case of a late hash update.
+window.addEventListener("hashchange", handleShareFragment);
 setTimeout(handleShareFragment, 1200);
 
 // ---- Inject "Analyze with Chess Review" buttons ----
@@ -266,26 +270,21 @@ function buildReviewButton(placement, mt = 14, mb = 3) {
   label.className = "chess-analyzer-free-review-label";
   label.textContent = FREE_REVIEW_LABEL;
   btn.append(mark, label);
-  let resetTimer = null;
 
   btn.addEventListener("click", () => {
     btn.disabled = true;
-    // Visual cue that the click registered: change text + disable (dims the button). Kept visible for
-    // a fixed moment, then restored unconditionally so it can never get stuck. (Don't reset on the
-    // background's reply — that fires almost instantly and made the cue flash by too fast to see.)
+    // Stay busy until the bounded background operation settles.
     label.textContent = "Opening review…";
-    clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => resetFreeReviewButton(btn, label), 5000);
     try {
       // After an extension reload the old content script loses its context — sendMessage throws
       // (Chrome) or rejects (Firefox), depending on when the context is invalidated.
-      browserAPI.runtime.sendMessage({ type: "freeGameReview" }).catch(() => {
-        clearTimeout(resetTimer);
+      browserAPI.runtime.sendMessage({ type: "freeGameReview", gameKey: location.origin + location.pathname + location.search }).then(() => {
+        resetFreeReviewButton(btn, label);
+      }).catch(() => {
         btn.disabled = false;
         label.textContent = "Reload the page ↻";
       });
     } catch (e) {
-      clearTimeout(resetTimer);
       btn.disabled = false;
       label.textContent = "Reload the page ↻";
       // An existing content script is detached when the extension is reloaded. It cannot

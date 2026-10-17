@@ -80,7 +80,8 @@ test('superseded batch startup cannot overwrite or terminate the newer batch',as
   let saved=0;a.replace('saveToLibrary',()=>saved++);
   const oldStart=deferred(),newStart=deferred(),search=deferred();let calls=0;
   a.replace('createEngine',()=>calls++===0?oldStart.promise:newStart.promise);
-  const oldRun=a.call('startAnalysis'),newRun=a.call('startAnalysis');
+  const oldRun=a.call('startAnalysis');await settle();
+  const newRun=a.call('startAnalysis');
   const current=fakeEngine(()=>search.promise);newStart.resolve(current);await settle();
   const obsolete=fakeEngine();oldStart.resolve(obsolete);await oldRun;
   assert.equal(obsolete.dead,true);assert.equal(current.dead,false);assert.equal(S.evalEngines[0],current);

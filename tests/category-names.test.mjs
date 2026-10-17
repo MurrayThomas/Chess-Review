@@ -17,13 +17,14 @@ function key(a, input, value) {
   input.dispatchEvent(new a.dom.window.KeyboardEvent('keydown', { key: value, bubbles: true }));
 }
 
-test('click-to-rename persists a display alias without altering classification or scores', t => {
+test('click-to-rename persists a display alias without altering classification or scores', async t => {
   const a = review(t);
   const before = JSON.stringify({ classif: a.state.classif, acc: a.state.acc, counts: a.state.counts });
   const input = edit(a, 'brilliant');
   assert.equal(a.dom.window.document.activeElement, input);
   input.value = '  Inspired   move  ';
   key(a, input, 'Enter');
+  await a.run('_settingsWriteQueue');
   assert.equal(a.store.settings.categoryNames.brilliant, 'Inspired move');
   assert.equal(a.dom.window.document.querySelector('[data-category="brilliant"] .nm').textContent, 'Inspired move');
   assert.equal(JSON.stringify({ classif: a.state.classif, acc: a.state.acc, counts: a.state.counts }), before);
@@ -33,7 +34,7 @@ test('click-to-rename persists a display alias without altering classification o
   assert.equal(reopened.dom.window.document.querySelector('[data-category="brilliant"] .nm').textContent, 'Inspired move');
 });
 
-test('Escape cancels, blur saves, and the reset control restores the default', t => {
+test('Escape cancels, blur saves, and the reset control restores the default', async t => {
   const a = review(t);
   let input = edit(a, 'blunder'); input.value = 'Oops'; key(a, input, 'Escape');
   assert.equal(a.call('categoryName', 'blunder'), 'Blunder');
@@ -46,6 +47,7 @@ test('Escape cancels, blur saves, and the reset control restores the default', t
   assert.equal(a.dom.window.document.activeElement, reset);
   assert.equal(a.call('categoryName', 'blunder'), 'Oops');
   reset.click();
+  await a.run('_settingsWriteQueue');
   assert.equal(a.call('categoryName', 'blunder'), 'Blunder');
   assert.equal(Object.hasOwn(a.store.settings.categoryNames, 'blunder'), false);
 });

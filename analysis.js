@@ -42,11 +42,33 @@ async function loadBook() {
  * Published evidence, fitting definitions and reproduction commands live in
  * tools/calibration. Annotations are independent of numerical accuracy/rating. */
 let CALIB = null;
+let _calibrationPromise = null;
+function validCalibration(data) {
+  return data?.schema === "chess-review-public-calibration-v1" && typeof data.version === "string" && !!data.version
+    && data.quality?.outcome?.schema === "human-outcome-v1" && Number.isFinite(data.quality.outcome.slopePerPawn) && data.quality.outcome.slopePerPawn > 0
+    && data.quality?.choice?.schema === "human-choice-v1" && !!data.quality.candidateVersion
+    && data.context?.model?.schema === "fullgame-equivalent-context-v1" && !!data.context.candidateVersion
+    && data.context?.sf19?.model?.schema === "fullgame-equivalent-context-v1" && !!data.context.sf19.candidateVersion
+    && ["sf18","sf19"].every(build => data.movesOnly?.[build]?.model && !!data.movesOnly[build].candidateVersion)
+    && ["good","inacc","mistake","blunder"].every(key => Number.isFinite(data.clsWp?.[key]));
+}
 async function loadCalibration() {
-  if (CALIB) return CALIB;
-  try { CALIB = await (await fetch(browserAPI.runtime.getURL("data/calibration.json"))).json(); }
-  catch { CALIB = {}; }
-  return CALIB;
+  if (validCalibration(CALIB)) return CALIB;
+  if (!_calibrationPromise) _calibrationPromise = (async () => {
+    try {
+      const response = await fetch(browserAPI.runtime.getURL("data/calibration.json"));
+      if (!response.ok) throw Error("Analysis data resource failed");
+      const data = await response.json();
+      if (!validCalibration(data)) throw Error("Analysis data is invalid");
+      CALIB = data; return data;
+    } catch (cause) {
+      CALIB = null;
+      const error = Error("Required analysis data could not be loaded. Please retry analysis.");
+      error.code = "CALIBRATION_DATA"; error.cause = cause; throw error;
+    }
+  })();
+  const pending = _calibrationPromise;
+  try {return await pending;} finally {if(_calibrationPromise === pending)_calibrationPromise = null;}
 }
 
 /* ---------------- Configuration ---------------- */
@@ -262,6 +284,7 @@ function engineWorkerCount(requested = null, positions = Infinity,
 }
 
 const DEFAULT_SETTINGS = {
+  showConcepts: true,
   conceptsEnabled: false,
   conceptGroups: DEFAULT_CONCEPT_GROUPS,
   disabledConcepts: [],
@@ -517,7 +540,7 @@ function setFx(ev, field, val) {
   const fx = { ...(S.settings.soundFx || {}) };
   fx[ev] = { ...fxConfig(ev), [field]: val };
   S.settings.soundFx = fx;
-  browserAPI.storage.local.set({ settings: S.settings });
+  writeSettings({ soundFx: { [ev]: { [field]: val } } });
 }
 // Resolve an event's chosen sound to a packaged URL.
 function fxUrl(ev) {
@@ -689,7 +712,7 @@ const S = {
   // biggest-swing ply for the "turning point" line.
   coach: null, _turnPly: null,
   // Mistake-practice session (null when inactive). "Show the threat" helper engine + cache.
-  practice: null, helperEngine: null, threatCache: new Map(),
+  practice: null, helperEngine: null, helperEnginePromise: null, helperEngineGeneration: 0, threatCache: new Map(),
   // Practice hint squares (the engine's best move) — shown after 3 failed attempts.
   practiceHint: null,
   // Library (left hover-sidebar): the saved games + the active sort/filter selection.
@@ -829,7 +852,7 @@ function deriveOpening(h) {
 }
 function derivePlayers(h, meta, username) {
   const res = h.Result || meta.result || "";
-  const me = (meta.myName || username || "").toLowerCase();
+  const me = meta.playerKnown === false ? "" : (meta.myName || username || "").toLowerCase();
   // country = flag basename ("US", "GB_ENG") resolved from the chess.com country id the page
   // scraped, or null when we have no flag for it → the avatar falls back to the username initial.
   // countryName labels the flag's hover tooltip.
@@ -1456,24 +1479,33 @@ function buildUI() {
 
   const settings = el("div", { class: "settings-pop", id: "settings", hidden: true });
 
-  // Library sidebar — a thin strip on the far left that slides open on hover (pure CSS :hover
-  // on the rail, which also covers the panel since it's a descendant). Lives outside the canvas
+  // Library sidebar — a thin strip on the far left, opened by hover or its native button.
+  // Hidden panel controls are inert. Lives outside the canvas
   // so it overlays the board cluster without disturbing the movable-module layout.
   const libCount = el("span", { class: "count", id: "libCount" }, "0");
   const libControls = el("div", { class: "lib-controls", id: "libControls" });
   const libList = el("div", { class: "lib-list", id: "libList" });
   const libRail = el("aside", { class: "library-rail", id: "libraryRail" },
-    el("div", { class: "lib-tab" }, icon("library"), el("span", { class: "lib-tab-txt" }, "Library")),
-    el("div", { class: "lib-panel" },
+    el("button", { type:"button", class: "lib-tab", tabindex:"-1", "aria-label":"Saved games", "aria-controls":"savedLibraryPanel", "aria-expanded":"false", onclick:()=>setLibraryOpen(!S.libraryOpen) }, icon("library"), el("span", { class: "lib-tab-txt" }, "Library")),
+    el("div", { class: "lib-panel", id:"savedLibraryPanel" },
       el("div", { class: "lib-head" }, el("h3", {}, "Your games"), libCount),
       libControls, libList),
   );
+  libRail.addEventListener("mouseenter", () => setLibraryOpen(true));
+  libRail.addEventListener("mouseleave", () => {if(!libRail.contains(document.activeElement))setLibraryOpen(false);});
+  // Rerendering a focused card briefly blurs it before restoring its replacement.
+  libRail.addEventListener("focusout", () => {Promise.resolve().then(()=>{
+    if(!libRail.contains(document.activeElement)&&!libRail.matches(":hover"))setLibraryOpen(false);
+  });});
+  libRail.addEventListener("keydown", e => {if(e.key==="Escape"){e.preventDefault();e.stopPropagation();setLibraryOpen(false);libRail.querySelector(".lib-tab").focus();}});
   // Close any open library dropdown when clicking elsewhere.
   document.addEventListener("mousedown", (e) => {
+    if (!libRail.contains(e.target)) setLibraryOpen(false);
     if (!e.target.closest(".lib-dd-field")) document.querySelectorAll(".lib-dd-field.open").forEach((d) => d.classList.remove("open"));
   });
 
-  root.append(el("div", { class: "app" }, topbar, canvas, settings, libRail,
+  const saveStatus = el("div", {class:"review-save-status", hidden:true, "aria-live":"polite"});
+  root.append(el("div", { class: "app" }, topbar, canvas, settings, libRail, saveStatus,
     feedbackLink("feedback-floating", el("span", {}, "Feedback"))));
 
   UI = {
@@ -1481,13 +1513,15 @@ function buildUI() {
     playerTop, playerBot, controls, coach: coachMount, evalbar: evalbarMount,
     review: reviewMount, movesBody, movesCount, movesFoot,
     graph: graphMount, stats: statsMount, engine: engineMount, concepts: conceptsMount,
-    libRail, libControls, libList, libCount,
+    libRail, libControls, libList, libCount, libPanel:libRail.querySelector(".lib-panel"), saveStatus,
   };
 
   applyLayoutMode();
   initBoardInput();
   renderCoachAvatar();     // mount the animated coach portrait for the active personality
   renderLibrary();
+  setLibraryOpen(false);
+  renderReviewSaveStatus();
   if (typeof ResizeObserver !== "undefined") {
     const alignment = new ResizeObserver(() => alignConceptPanel());
     alignment.observe(UI.engine.closest(".mod"));
@@ -1499,6 +1533,8 @@ function buildUI() {
 let learningWorkspace = null;
 let deferredPracticeAdvance = false;
 async function openLearning() {
+  _cancelPromotion?.();
+  _cancelBoardDrag?.();
   if (learningWorkspace) return;
   // Finish an already-started practice animation before freezing its exact board.
   if (S.practice && (S.practice.rolling || S.practice.demoing || S.practice.busy)) {
@@ -1513,7 +1549,7 @@ async function openLearning() {
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK,
-    embedded:LearningWorkspace.presentationFor(S.settings) === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen},
+    embedded:LearningWorkspace.presentationFor(S.settings) === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag, drawArrow:(from,to,flipped)=>{const a=arrowXY(from,flipped),b=arrowXY(to,flipped);const {shaft,head}=arrowBuild(arrowWaypoints(a,b),S.settings.arrowHead,S.settings.arrowHead*.70);return arrowNode(shaft,head,USER_ARROW_COLOR);}},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
@@ -1587,7 +1623,14 @@ function applyLayoutMode() {
   if (custom) UI.canvas.classList.remove("desktop-layout");
   applyLayout(); growCanvas();
 }
+function syncConceptPanelVisibility() {
+  const hidden = S.settings.showConcepts === false;
+  UI.canvas?.classList.toggle("no-concepts", hidden);
+  const mod = UI.concepts?.closest(".mod");
+  if(mod)mod.hidden = hidden;
+}
 function applyLayout() {
+  syncConceptPanelVisibility();
   const custom = isCustomLayout();
   const desktop = !custom && UI.canvas.classList.contains("desktop-layout");
   const collapse = desktop && !S.qbreakExpanded ? accuracyReflowInfo(DEFAULT_LAYOUT) : null;
@@ -1636,7 +1679,7 @@ const CANVAS_MARGIN = 12;
 // Right and bottom edge of a module layout (px), floored at 600 so a near-empty canvas keeps a sane size.
 function layoutExtent(layout) {
   let maxB = 600, maxR = 600;
-  for (const b of Object.values(layout)) { maxB = Math.max(maxB, b.y + b.h); maxR = Math.max(maxR, b.x + b.w); }
+  for (const [key, b] of Object.entries(layout)) { if(key === "concepts" && S.settings.showConcepts === false)continue; maxB = Math.max(maxB, b.y + b.h); maxR = Math.max(maxR, b.x + b.w); }
   return { maxR, maxB };
 }
 function growCanvas() {
@@ -1930,6 +1973,7 @@ function makePiece(type, side) {
     src: _url(`pieces-img/${setFolder}/${code}.svg`), alt: "", draggable: "false" });
 }
 function buildBoard() {
+  _cancelBoardDrag?.();
   if (learningWorkspace?.embedded) return;
   const files = ["a","b","c","d","e","f","g","h"];
   const ranks = [8,7,6,5,4,3,2,1];
@@ -2030,10 +2074,10 @@ function paintBoard() {
 /* ---------------- Best-move arrow ----------------
    Coordinate space: an 8×8 SVG over the board. The arrow starts near the outgoing
    edge of its origin square so its tail does not cover the piece. Respects S.flipped. */
-function arrowXY(sq) {
+function arrowXY(sq, flipped = S.flipped) {
   const f = sq.charCodeAt(0) - 97;          // a..h -> 0..7
   const r = parseInt(sq.slice(1), 10) - 1;  // 1..8 -> 0..7
-  return S.flipped
+  return flipped
     ? { x: (7 - f) + 0.5, y: r + 0.5 }      // black at the bottom
     : { x: f + 0.5, y: (7 - r) + 0.5 };     // white at the bottom
 }
@@ -2228,10 +2272,31 @@ function activeEngineName() {
 // Shared on-demand engine for the lightweight extras (threat preview + practice judging),
 // kept separate from the analysis batch + the analysis-mode live engine.
 async function getHelperEngine() {
-  if (!S.helperEngine) {
-    S.helperEngine = await createEngine({ Hash: S.settings.engineHash, "Skill Level": S.settings.engineSkill });
+  if (S.helperEngine?.dead) resetHelperEngine();
+  if (S.helperEngine) return S.helperEngine;
+  if (!S.helperEnginePromise) {
+    const generation = S.helperEngineGeneration;
+    S.helperEnginePromise = (async () => {
+      const engine = await createEngine({ Hash: S.settings.engineHash, "Skill Level": S.settings.engineSkill });
+      if (generation !== S.helperEngineGeneration) {
+        engine.terminate();
+        throw new Error("Helper analysis cancelled");
+      }
+      S.helperEngine = engine;
+      return engine;
+    })();
   }
-  return S.helperEngine;
+  const pending = S.helperEnginePromise;
+  try { return await pending; }
+  finally { if (S.helperEnginePromise === pending) S.helperEnginePromise = null; }
+}
+function resetHelperEngine() {
+  S.helperEngineGeneration++;
+  S.helperEnginePromise = null;
+  try { S.helperEngine?.terminate(); } catch {}
+  S.helperEngine = null;
+  S.threatCache.clear();
+  ++_threatToken;
 }
 // FEN with the OPPONENT (the side that isn't yours) to move: if it's already their turn this is
 // the position itself (their best reply); otherwise it's a "pass" (null move) — what they'd play
@@ -2247,6 +2312,8 @@ function threatFen(fen) {
 // "Show the threat": draw the opponent's best move (as if it were their turn) as a yellow arrow.
 let _threatToken = 0;
 async function renderThreatArrow() {
+  if (S.helperEngine?.dead) resetHelperEngine();
+  const token = ++_threatToken;
   if (learningWorkspace?.embedded) return;
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
@@ -2259,16 +2326,15 @@ async function renderThreatArrow() {
   const history = activeSearchHistory(), historyKey = JSON.stringify(history), cacheKey = fen + historyKey;
   let uci = S.threatCache.get(cacheKey);
   if (uci === undefined) {
-    const token = ++_threatToken;
     let eng; try { eng = await getHelperEngine(); } catch { return; }
-    if (token !== _threatToken || learningWorkspace?.embedded) return;
+    if (token !== _threatToken || learningWorkspace?.embedded || !S.settings.showThreat) return;
     eng.stop();
     const targetFen = threatFen(fen);
     let res; try { res = await eng.analyse(targetFen, Math.min(14, S.settings.engineDepth), 1, targetFen === fen ? history : null); } catch { return; }
-    if (token !== _threatToken || learningWorkspace?.embedded) return;
+    if (token !== _threatToken || learningWorkspace?.embedded || !S.settings.showThreat) return;
     uci = res && res.bestmove ? res.bestmove : null;
     S.threatCache.set(cacheKey, uci);
-    if (activePos().fen !== fen || JSON.stringify(activeSearchHistory()) !== historyKey) return;
+    if (activePos().fen !== fen || JSON.stringify(activeSearchHistory()) !== historyKey || UI.boardWrap.querySelector(".board") !== board) return;
     svg = board.querySelector("svg.threat-arrow"); // (board may have been rebuilt)
   }
   if (!uci || uci.length < 4) { clear(); return; }
@@ -2327,6 +2393,27 @@ function renderSelection() {
 }
 
 /* ---------------- Board input: moves (click + drag) + right-click arrows/marks ---------------- */
+let _cancelBoardDrag = null;
+let _cancelPromotion = null;
+function requestPromotion(from, to, animate) {
+  _cancelPromotion?.();
+  const fen = activePos().fen, pgn = S.pgn, practice = S.practice, previous = document.activeElement;
+  const app = document.querySelector(".app"), wasInert = !!app.inert;
+  const close = () => { overlay.remove(); app.inert = wasInert; document.removeEventListener("keydown", key, true); _cancelPromotion = null; previous?.focus(); };
+  const key = e => {
+    if(e.key === "Escape"){e.preventDefault();e.stopImmediatePropagation();close();}
+    else if(e.key === "Tab") {const nodes=[...card.querySelectorAll("button")];if(e.shiftKey&&document.activeElement===nodes[0]){e.preventDefault();nodes[nodes.length-1].focus();}else if(!e.shiftKey&&document.activeElement===nodes[nodes.length-1]){e.preventDefault();nodes[0].focus();}}
+    else if(e.key.startsWith("Arrow")||["Home","End","f"].includes(e.key))e.stopImmediatePropagation();
+  };
+  const card = el("div", {class:"promotion-picker", role:"dialog", "aria-modal":"true", "aria-label":"Choose promotion piece"},
+    el("h3", {}, "Promote pawn"),
+    el("div", {class:"promotion-options"}, ...[["q","Queen"],["r","Rook"],["b","Bishop"],["n","Knight"]].map(([piece,label]) =>
+      el("button", {type:"button", onclick:()=>{close();if(S.pgn===pgn&&activePos().fen===fen&&S.practice===practice)applyUserMove(from,to,animate,piece);}}, makePiece(piece,sideToMove(fen)), el("span",{},label)))),
+    el("button", {type:"button", class:"promotion-cancel", onclick:close}, "Cancel"));
+  const overlay = el("div", {class:"promotion-overlay"}, card);
+  document.body.append(overlay); app.inert = true; _cancelPromotion = close;
+  document.addEventListener("keydown",key,true);card.querySelector("button").focus();
+}
 function initBoardInput() {
   const wrap = UI.boardWrap;
   wrap.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -2339,6 +2426,7 @@ function initBoardInput() {
     // During practice the board only accepts moves while you're actively solving (not while it's
     // rolling to the next mistake or checking your answer).
     if (S.practice && (!S.practice.solving || S.practice.busy)) { e.preventDefault(); return; }
+    _cancelBoardDrag?.();
     // Any left-click clears the user's own arrows and square marks.
     clearUserMarkup();
     const sq = squareFromEvent(e);
@@ -2368,25 +2456,42 @@ function initBoardInput() {
   });
 }
 function rightPointerDown(e) {
+  _cancelBoardDrag?.();
   const from = squareFromEvent(e);
   if (!from) return;
   e.preventDefault();
   // No live preview during the drag: the arrow is only drawn when the user releases
   // (i.e. once the decision about where the arrow should point has been made).
-  const up = (ev) => {
+  const cleanup = () => {
     window.removeEventListener("pointerup", up);
+    window.removeEventListener("pointercancel", cancelled);
+    window.removeEventListener("blur", cleanup);
+    if (_cancelBoardDrag === cleanup) _cancelBoardDrag = null;
+  };
+  const cancelled = ev => { if (ev.pointerId === e.pointerId) cleanup(); };
+  const up = (ev) => {
+    if (ev.pointerId !== e.pointerId) return;
+    cleanup();
     const sq = squareFromEvent(ev);
     if (sq && sq !== from) toggleUserArrow(from, sq);   // drag → arrow
     else if (sq === from) toggleMark(from);             // click on a single square → mark
   };
+  _cancelBoardDrag = cleanup;
   window.addEventListener("pointerup", up);
+  window.addEventListener("pointercancel", cancelled);
+  window.addEventListener("blur", cleanup);
 }
 // Drag: a floating piece clone follows the mouse; release on a legal square → move.
-function startDrag(e, from) {
+function startDrag(e, from, input = null) {
+  const squares = input?.squares || sqByName;
+  const fen = () => input?.fen || activePos().fen;
+  const squareAt = input?.squareAt || squareFromEvent;
+  const deselect = () => {if(input)input.deselect();else {S.selectedSq=null;renderSelection();}};
+  _cancelBoardDrag?.();
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
   const cell = board.getBoundingClientRect().width / 8;
-  const orig = sqByName[from] && sqByName[from].querySelector(".piece, .piece-svg, .piece-img");
+  const orig = squares[from] && squares[from].querySelector(".piece, .piece-svg, .piece-img");
   const ghost = el("div", { class: "drag-piece ps-" + S.settings.pieceStyle });
   if (orig) ghost.append(orig.cloneNode(true));
   ghost.style.width = ghost.style.height = cell + "px";
@@ -2396,8 +2501,8 @@ function startDrag(e, from) {
   if (orig) orig.style.visibility = "hidden";
   let moved = false, lastHover = null, done = false;
   const setHover = (sq) => {
-    if (lastHover && sqByName[lastHover]) sqByName[lastHover].classList.remove("drag-over");
-    if (sq && sqByName[sq] && isLegalTarget(activePos().fen, from, sq)) { sqByName[sq].classList.add("drag-over"); lastHover = sq; }
+    if (lastHover && squares[lastHover]) squares[lastHover].classList.remove("drag-over");
+    if (sq && squares[sq] && isLegalTarget(fen(), from, sq)) { squares[sq].classList.add("drag-over"); lastHover = sq; }
     else lastHover = null;
   };
   // Shared cleanup (idempotent): remove listeners + ghost, show the original piece again.
@@ -2405,33 +2510,43 @@ function startDrag(e, from) {
     if (done) return; done = true;
     window.removeEventListener("pointermove", move);
     window.removeEventListener("pointerup", up);
+    window.removeEventListener("pointercancel", onCancel);
+    window.removeEventListener("blur", cancel);
     window.removeEventListener("contextmenu", onCtx);
+    if (_cancelBoardDrag === cancel) _cancelBoardDrag = null;
     ghost.remove();
     if (orig) orig.style.visibility = "";
-    if (lastHover && sqByName[lastHover]) sqByName[lastHover].classList.remove("drag-over");
+    if (lastHover && squares[lastHover]) squares[lastHover].classList.remove("drag-over");
   };
   // Cancel: put the piece back where it was picked up, and deselect.
-  const cancel = () => { if (done) return; finish(); S.selectedSq = null; renderSelection(); };
+  const cancel = () => { if (done) return; finish(); deselect(); };
+  const onCancel = ev => { if (ev.pointerId === e.pointerId) cancel(); };
+  _cancelBoardDrag = cancel;
   // Right-click while dragging → cancel (both via contextmenu and the button bitmask).
   const onCtx = (ev) => { ev.preventDefault(); cancel(); };
   const move = (ev) => {
+    if (ev.pointerId !== e.pointerId) return;
     if (ev.buttons & 2) { cancel(); return; }
-    moved = true; place(ev); setHover(squareFromEvent(ev));
+    moved = true; place(ev); setHover(squareAt(ev));
   };
   const up = (ev) => {
+    if (ev.pointerId !== e.pointerId) return;
     if (done) return;                 // already cancelled via right-click
     finish();
-    const target = squareFromEvent(ev);
+    const target = squareAt(ev);
     if (moved) {
-      if (target && target !== from && isLegalTarget(activePos().fen, from, target)) {
-        S.selectedSq = null; applyUserMove(from, target, false);   // drag → no animation
-      } else { S.selectedSq = null; renderSelection(); }   // drag without a legal target → deselect
+      if (target && target !== from && isLegalTarget(fen(), from, target)) {
+        if(input)input.move(from,target);else {S.selectedSq = null; applyUserMove(from, target, false);}   // drag → no animation
+      } else { deselect(); }   // drag without a legal target → deselect
     }
     // pure click (not moved) → keep the selection for click-to-move
   };
   window.addEventListener("pointermove", move);
   window.addEventListener("pointerup", up);
+  window.addEventListener("pointercancel", onCancel);
+  window.addEventListener("blur", cancel);
   window.addEventListener("contextmenu", onCtx);
+  return cancel;
 }
 
 /* ---------------- Analysis mode: moves, variations, live engine ---------------- */
@@ -2441,13 +2556,17 @@ function playSanSound(san) {
 }
 // Make a user move from the shown position. Starts/extends a variation (analysis mode),
 // unless the move on the mainline is simply the next mainline move.
-function applyUserMove(from, to, animate = true) {
+function applyUserMove(from, to, animate = true, promotion = null) {
+  if (S.practice && (!S.practice.solving || S.practice.busy)) return;
+  if (promotion == null && new Chess(activePos().fen).moves({verbose:true}).some(move=>move.from===from&&move.to===to&&move.promotion)) {
+    requestPromotion(from,to,animate);return;
+  }
   // During mistake practice a move is an answer attempt, not a variation — route it there.
-  if (S.practice) { if (S.practice.solving && !S.practice.busy) practiceAttempt(from, to); return; }
+  if (S.practice) return practiceAttempt(from, to, promotion || "q");
   stopLineWalk();
   const fen = activePos().fen;
   let c, mv;
-  try { c = new Chess(fen); mv = c.move({ from, to, promotion: "q" }); } catch { mv = null; }
+  try { c = new Chess(fen); mv = c.move({ from, to, promotion: promotion || "q" }); } catch { mv = null; }
   if (!mv) { S.selectedSq = null; renderSelection(); return; }
   const node = { fen: c.fen(), san: mv.san, from: mv.from, to: mv.to, color: mv.color, promotion: mv.promotion || "", captured: mv.captured || "", eval: null, best: null };
   if (!S.analysisMode) {
@@ -2455,7 +2574,7 @@ function applyUserMove(from, to, animate = true) {
     // mainline move, just stay on the mainline.
     const nextMain = S.positions[S.idx + 1];
     const reachable = !S.analyzing || S.idx < S.progress;
-    if (reachable && nextMain && nextMain.from === from && nextMain.to === to) {
+    if (reachable && nextMain && nextMain.from === from && nextMain.to === to && (nextMain.promotion || "") === (mv.promotion || "")) {
       S.selectedSq = null; go(S.idx + 1); return;
     }
     S.variation = { 
@@ -2676,6 +2795,8 @@ function invalidateVariationEvals() {
 }
 
 function resetLiveEngine() {
+  S._lastEngineLines = null;
+  S._panelCache = null;
   S.liveToken++; S.panelToken++; S.liveEngineGeneration++;
   S.liveEngine?.terminate();
   S.liveEngine = null; S.liveEnginePromise = null; S.liveError = null;
@@ -3037,7 +3158,7 @@ async function loadCoach(id) {
 // new voice — a seamless mid-game hand-off (no jump, no reset of where you are in the game).
 async function setCoach(id) {
   S.settings.coach = id;
-  await browserAPI.storage.local.set({ settings: S.settings });
+  await writeSettings({ coach: id });
   // The avatar always reflects the chosen coach; the reply bank is only loaded when special replies are on.
   S.coach = S.settings.coachPlain ? null : await loadCoach(id);
   _ipSig = null;                                   // force a fresh pick + re-type in the new voice
@@ -3050,7 +3171,7 @@ async function setCoach(id) {
 // reactions) stay; only the narration switches between the coach's own voice and neutral plain lines.
 async function setCoachPlain(plain) {
   S.settings.coachPlain = plain;
-  await browserAPI.storage.local.set({ settings: S.settings });
+  await writeSettings({ coachPlain: plain });
   S.coach = plain ? null : await loadCoach(S.settings.coach);
   _ipSig = null;                                   // re-pick + re-type in the new voice
   if (S.practice) S.practice.coachTyped = false;
@@ -3575,7 +3696,7 @@ function setCategoryName(cls, value) {
   if (!name || name === QUALITY[cls].name) delete names[cls];
   else names[cls] = name;
   S.settings.categoryNames = names;
-  browserAPI.storage.local.set({ settings: S.settings });
+  writeSettings({ categoryNames: { [cls]: names[cls] } });
   hideQTip(); hideBoardBadgeTip();
   _movesSig = null; _ipSig = null;
   if (S.practice) { S.practice.coachLine = null; S.practice.coachTyped = false; }
@@ -3851,11 +3972,16 @@ function highlightCurrentMove(forceScroll = false) {
 let _movesSig = null;
 let _movesClassSig = null;
 function renderMoves() {
-  const nMoves = Math.ceil(S.total / 2);
+  const rows = [];
+  for (let ply = 1; ply <= S.total; ply++) {
+    const number = Number(S.positions[ply - 1].fen.split(" ")[5]);
+    if (!rows.length || rows[rows.length - 1].number !== number) rows.push({number, w:0, b:0});
+    rows[rows.length - 1][S.positions[ply].color] = ply;
+  }
   const ml = S.settings.mlStyle;
   // Keep move cells mounted while classifications arrive. Replacing the list during analysis
   // drops the hovered element and makes its hover state flicker; only changed badges need updates.
-  const sig = ml + "|" + S.settings.badgeStyle + "|" + S.total + "|" + (S.analysisMode ? 1 : 0);
+  const sig = ml + "|" + S.settings.badgeStyle + "|" + S.total + "|" + (S.analysisMode ? 1 : 0) + "|" + S.pgn;
   const classSig = JSON.stringify([S.classif, S.moveGrades]);
   if (sig === _movesSig && UI.movesBody.firstChild) {
     if (classSig !== _movesClassSig) {
@@ -3880,10 +4006,10 @@ function renderMoves() {
   let list;
   if (ml === "compact") {
     list = el("div", { class: "movelist ml-compact ml-scroll" });
-    for (let n = 1; n <= nMoves; n++) list.append(el("span", { class: "ml-num" }, n + "."), moveCell(n * 2 - 1), moveCell(n * 2));
+    for (const row of rows) list.append(el("span", { class: "ml-num" }, row.number + (row.w ? "." : "...")), moveCell(row.w), moveCell(row.b));
   } else {
     list = el("div", { class: "movelist " + (ml === "cards" ? "ml-cards" : "ml-rows") + " ml-scroll" });
-    for (let n = 1; n <= nMoves; n++) list.append(el("div", { class: "ml-pair" }, el("span", { class: "ml-num" }, n), moveCell(n * 2 - 1), moveCell(n * 2)));
+    for (const row of rows) list.append(el("div", { class: "ml-pair" }, el("span", { class: "ml-num" }, row.number), moveCell(row.w), moveCell(row.b)));
   }
   UI.movesBody.style.padding = ml === "rows" ? "0" : "var(--pad)";
   UI.movesBody.replaceChildren(list);
@@ -3900,7 +4026,7 @@ let _coachPositionKey = null;
 
 function alignConceptPanel() {
   const mod = UI.concepts?.closest(".mod"), review = UI.review?.closest(".mod"), engine = UI.engine?.closest(".mod");
-  if (!mod || !review || !engine || isCustomLayout()) return;
+  if (!mod || mod.hidden || !review || !engine || isCustomLayout()) return;
   if (UI.canvas.classList.contains("desktop-layout")) {
     const top = parseFloat(review.style.top), bottom = parseFloat(engine.style.top) + parseFloat(engine.style.height);
     mod.style.top = top + "px";
@@ -3974,7 +4100,7 @@ function renderCoachPanel() {
     } else body.append(...analysisNotes);
   }
   const switcher = el("div", {class:"concept-view-switch", role:"group", "aria-label":"Concept view"},
-    ...[["all","All concepts"],["reply","Coach reply"]].map(([value,label])=>el("button", {type:"button", id:"concept-view-"+value, "aria-pressed":view===value?"true":"false", onclick:()=>{S.settings.conceptsView=value;browserAPI.storage.local.set({settings:S.settings});renderCoachPanel();}},label)));
+    ...[["all","All concepts"],["reply","Coach reply"]].map(([value,label])=>el("button", {type:"button", id:"concept-view-"+value, "aria-pressed":view===value?"true":"false", onclick:()=>{S.settings.conceptsView=value;writeSettings({ conceptsView: value });renderCoachPanel();}},label)));
   mount.replaceChildren(el("div", {class: "panel coach-insights-panel"},
     el("div", {class: "panel-head"}, el("h3", {id: "conceptsHeading"}, "Concepts")), switcher, body));
   body.scrollTop = scroll;
@@ -3987,8 +4113,9 @@ function renderEnginePractice() {
   UI.engine.replaceChildren(el("div", { class: "panel" },
     el("div", { class: "panel-head" }, el("h3", {}, "Engine"), el("span", { class: "count" }, "Practice")),
     el("div", { class: "panel-body engine-body" },
-      el("div", { class: "engine-empty" }, "Find a stronger move — engine lines are hidden until you solve it.")),
+      el("div", { class: "engine-empty", role:"status" }, S.practice?.checkError || "Find a stronger move — engine lines are hidden until you solve it.")),
   ));
+  fitEnginePanel();
 }
 // Choose the source of the engine lines for the shown position and draw the panel.
 function renderEngineCurrent() {
@@ -4062,11 +4189,13 @@ function fitEnginePanel() {
 function renderEngine(lines, padFromCache = false) {
   const curFen = activePos().fen;
   const historyKey = JSON.stringify(activeSearchHistory());
+  const configKey = JSON.stringify([S.settings.enginePath, S.activeEngineBuild, S.engineFallbackBuild,
+    S.settings.engineDepth, S.settings.engineHash, S.settings.engineSkill, S.settings.classifyLines]);
   const want = S.settings.engineLines;
   // The last full set of real lines we rendered, kept (with the fen they were computed for, so the
   // SAN stays correct) to fill slots that the new position hasn't searched yet — and to hold the
   // panel steady while the engine re-computes (lines === null, e.g. "Play best moves from here").
-  const cached = S._lastEngineLines?.fen === curFen && S._lastEngineLines?.historyKey === historyKey ? S._lastEngineLines : null;
+  const cached = S._lastEngineLines?.fen === curFen && S._lastEngineLines?.historyKey === historyKey && S._lastEngineLines?.configKey === configKey ? S._lastEngineLines : null;
   let body;
   if (S.analysisMode && S.liveError) {
     body = el("div", { class: "engine-empty" }, S.liveError);
@@ -4089,7 +4218,7 @@ function renderEngine(lines, padFromCache = false) {
     }
     // Only overwrite the cache with a complete fresh set, so partial (single-line) batch renders
     // don't wipe the previous second line we still want to show.
-    if (cur.length >= want) S._lastEngineLines = { lines: cur, fen: curFen, historyKey };
+    if (cur.length >= want) S._lastEngineLines = { lines: cur, fen: curFen, historyKey, configKey };
     body = el("div", {},
       ...slots.map((slot) => {
         // Empty slot (a forced move with no second line, etc.) → a blank row of the same height so
@@ -4100,7 +4229,7 @@ function renderEngine(lines, padFromCache = false) {
         const evTxt = wr.mate != null ? evalText(wr) : (cp >= 0 ? "+" : "") + (cp / 100).toFixed(2);
         const toks = uciLineToSan(fen, (l.pv || "").split(/\s+/).filter(Boolean), 6);
         // Click a line → play the whole line out as a variation (analysis mode).
-        return el("div", { class: "engine-line clickable", onclick: () => playLine(l.pv) },
+        return el("button", { type:"button", class: "engine-line clickable", tabindex:"-1", "aria-label":"Play variation " + toks.join(" ") + ", evaluation " + evTxt, onclick: () => playLine(l.pv) },
           el("span", { class: "ev " + (cp >= 0 ? "pos" : "neg") }, evTxt),
           el("span", { class: "moves" }, ...toks.map((t) => /^\d/.test(t) ? el("b", {}, t + " ") : el("span", {}, t + " "))),
         );
@@ -4172,7 +4301,7 @@ function seg(label, key, options, info, fmt = (value) => value) {
   return el("div", { class: "set-row" },
     setLabel(label, info),
     el("div", { class: "set-seg" },
-      ...options.map((o) => el("button", { class: S.settings[key] === o ? "on" : "", onclick: () => setSetting(key, o) }, fmt(o)))),
+      ...options.map((o) => el("button", { type:"button", "data-setting":key, "data-value":String(o), class: S.settings[key] === o ? "on" : "", onclick: () => setSetting(key, o) }, fmt(o)))),
   );
 }
 // Generic slider. opts: { fmt(v)→text, onChange(v) }. Updates + saves live
@@ -4183,12 +4312,12 @@ function slider(label, key, min, max, step, opts = {}) {
   return el("div", { class: "set-ctrl" },
     el("div", { class: "set-ctrl-top" }, setLabel(label, opts.info), out),
     el("input", {
-      type: "range", min, max, step, value: S.settings[key],
+      type: "range", "data-setting":key, min, max, step, value: S.settings[key],
       oninput: (e) => {
         const v = +e.target.value;
         out.textContent = fmt(v);
         S.settings[key] = v;
-        browserAPI.storage.local.set({ settings: S.settings });
+        writeSettings({ [key]: v });
         opts.onChange?.(v);
       },
     }),
@@ -4230,12 +4359,13 @@ let _accentPickCleanup = null;
 function openAccentColorPicker(anchor) {
   if (_accentPickCleanup) _accentPickCleanup();
   S.settings.accent = "custom";
+  writeSettings({ accent: "custom" });
   applySettings();
   anchor.parentElement.querySelectorAll(".set-chip").forEach((chip) => chip.classList.toggle("on", chip === anchor));
   const picker = buildColorPicker(S.settings.accentCustom || DEFAULT_SETTINGS.accentCustom,
     (hex) => { S.settings.accentCustom = hex; paintColorPickerChip(anchor, [hex]); applySettings(); },
     (hex) => { S.settings.accentCustom = hex; paintColorPickerChip(anchor, [hex]);
-      browserAPI.storage.local.set({ settings: S.settings }); },
+      writeSettings({ accentCustom: S.settings.accentCustom }); },
   );
   const pop = el("div", { class: "board-cpick", role: "dialog", "aria-label": "Custom accent color" },
     el("div", { class: "cpick-title" }, "Custom accent"), picker.el);
@@ -4249,7 +4379,7 @@ function openAccentColorPicker(anchor) {
     document.removeEventListener("pointerdown", onDown);
     document.removeEventListener("keydown", onKey);
     pop.remove(); _accentPickCleanup = null;
-    browserAPI.storage.local.set({ settings: S.settings });
+    writeSettings({ accentCustom: S.settings.accentCustom });
   };
   setTimeout(() => document.addEventListener("pointerdown", onDown), 0);
   document.addEventListener("keydown", onKey);
@@ -4352,7 +4482,7 @@ function openArrowColorPicker(anchor) {
     paintColorPickerChip(anchor, [hex]);
     refreshArrows();
   };
-  const save = () => browserAPI.storage.local.set({ settings: S.settings });
+  const save = () => writeSettings({ bestArrowColor: S.settings.bestArrowColor });
   const picker = buildColorPicker(S.settings.bestArrowColor || ARROW_COLOR, update, save);
   const pop = el("div", { class: "board-cpick", role: "dialog", "aria-label": "Best-move arrow color" },
     el("div", { class: "cpick-title" }, "Best-move arrow"), picker.el);
@@ -4386,7 +4516,7 @@ function openBoardColorPicker(anchor) {
   // Select custom without replacing the button that anchors the open picker.
   S.settings.boardTheme = "custom";
   applySettings();
-  browserAPI.storage.local.set({ settings: S.settings });
+  writeSettings({ boardTheme: "custom" });
   anchor.parentElement.querySelectorAll(".set-chip").forEach((chip) => chip.classList.toggle("on", chip === anchor));
   let target = "boardCustomLight"; // which square colour is being edited
   const swL = el("button", { class: "cpick-target on" }), swD = el("button", { class: "cpick-target" });
@@ -4398,7 +4528,7 @@ function openBoardColorPicker(anchor) {
   };
   const picker = buildColorPicker(S.settings[target],
     (hex) => { S.settings[target] = hex; applySettings(); paint(); },         // live
-    (hex) => { S.settings[target] = hex; browserAPI.storage.local.set({ settings: S.settings }); }, // commit
+    (hex) => { S.settings[target] = hex; writeSettings({ [target]: hex }); }, // commit
   );
   const setActive = (key, btn) => {
     target = key;
@@ -4438,8 +4568,8 @@ function toggleRow(label, key, onSet = setSetting, info) {
   return el("div", { class: "set-row" },
     setLabel(label, info),
     el("div", { class: "set-seg" },
-      el("button", { class: S.settings[key] ? "on" : "", onclick: () => onSet(key, true) }, "On"),
-      el("button", { class: !S.settings[key] ? "on" : "", onclick: () => onSet(key, false) }, "Off"),
+      el("button", { type:"button", "data-setting":key, "data-value":"true", class: S.settings[key] ? "on" : "", onclick: () => onSet(key, true) }, "On"),
+      el("button", { type:"button", "data-setting":key, "data-value":"false", class: !S.settings[key] ? "on" : "", onclick: () => onSet(key, false) }, "Off"),
     ),
   );
 }
@@ -4448,7 +4578,7 @@ function engineSeg(label, key, options, fmt, info) {
   return el("div", { class: "set-row" },
     setLabel(label, info),
     el("div", { class: "set-seg" },
-      ...options.map((o) => el("button", { class: S.settings[key] === o ? "on" : "", onclick: () => setEngineSetting(key, o) }, fmt ? fmt(o) : String(o)))),
+      ...options.map((o) => el("button", { type:"button", "data-setting":key, "data-value":String(o), class: S.settings[key] === o ? "on" : "", onclick: () => setEngineSetting(key, o) }, fmt ? fmt(o) : String(o)))),
   );
 }
 function engineSlider(label, key, min, max, step, opts = {}) {
@@ -4457,17 +4587,17 @@ function engineSlider(label, key, min, max, step, opts = {}) {
   return el("div", { class: "set-ctrl" },
     el("div", { class: "set-ctrl-top" }, setLabel(label, opts.info), out),
     el("input", {
-      type: "range", min, max, step, value: S.settings[key],
+      type: "range", "data-setting":key, min, max, step, value: S.settings[key],
       oninput: (e) => {
         const v = +e.target.value;
         out.textContent = fmt(v);
         if (key === "engineDepth") return; // preview while dragging; confirm once on release
         S.settings[key] = v;
-        browserAPI.storage.local.set({ settings: S.settings });
+        writeSettings({ [key]: v });
         S.engineFallbackBuild = null; S.activeEngineBuild = null;
         resetLiveEngine();
         invalidateVariationEvals();
-        if (S.helperEngine) { try { S.helperEngine.terminate(); } catch {} S.helperEngine = null; }
+        resetHelperEngine();
         S.threatCache.clear();
         scheduleReanalyze();
       },
@@ -4484,10 +4614,10 @@ async function resetEngineSettings() {
   for (const k of ENGINE_SETTING_KEYS) S.settings[k] = DEFAULT_SETTINGS[k];
   S.engineFallbackBuild = null;
   S.activeEngineBuild = null;
-  await browserAPI.storage.local.set({ settings: S.settings });
+  await writeSettings(Object.fromEntries(ENGINE_SETTING_KEYS.map(key => [key, S.settings[key]])), ENGINE_SETTING_KEYS);
   resetLiveEngine();
   invalidateVariationEvals();
-  if (S.helperEngine) { try { S.helperEngine.terminate(); } catch {} S.helperEngine = null; }
+  resetHelperEngine();
   S.threatCache.clear();
   scheduleReanalyze();
   if (UI.settings && !UI.settings.hidden) renderSettings();
@@ -4505,7 +4635,7 @@ const VISUAL_SETTING_KEYS = [
 ];
 function resetSettingKeys(keys) {
   for (const key of keys) S.settings[key] = structuredClone(DEFAULT_SETTINGS[key]);
-  return browserAPI.storage.local.set({ settings: S.settings });
+  return writeSettings(Object.fromEntries(keys.map(key => [key, S.settings[key]])), keys);
 }
 function resetArrowSettings() {
   closeArrowColorPicker();
@@ -4810,6 +4940,12 @@ function renderSettings() {
   const focusedSection = UI.settings.contains(document.activeElement) && document.activeElement.closest(".set-sect-head")?.querySelector("span")?.textContent;
   const openConceptDetails = new Set([...UI.settings.querySelectorAll(".concepts-panel details[open]")].map(node => node.dataset.conceptDetail));
   const focusedConceptToggle = UI.settings.contains(document.activeElement) && document.activeElement.id?.startsWith("concept") ? document.activeElement.id : null;
+  const activeSetting = UI.settings.contains(document.activeElement) ? document.activeElement.dataset.setting : null;
+  const activeValue = document.activeElement?.dataset.value;
+  const focusContext = node => ({section:node.closest(".set-section")?.querySelector(".set-sect-head span")?.textContent,
+    row:node.closest(".set-row,.set-ctrl")?.querySelector(".set-lbl")?.textContent, text:node.textContent,
+    kind:node.className.replace(/\bon\b/g, "").trim()});
+  const activeButton = UI.settings.contains(document.activeElement) && document.activeElement.tagName === "BUTTON" ? focusContext(document.activeElement) : null;
   const tabs = el("div", { class: "set-tabs" },
     el("button", { class: "set-tab" + (S.settingsTab === "visual" ? " on" : ""), onclick: () => { S.settingsTab = "visual"; renderSettings(); } }, "Visual"),
     el("button", { class: "set-tab" + (S.settingsTab === "engine" ? " on" : ""), onclick: () => { S.settingsTab = "engine"; renderSettings(); } }, "Engine"),
@@ -4826,6 +4962,11 @@ function renderSettings() {
   if (focusedSection) [...UI.settings.querySelectorAll(".set-sect-head")].find(head => head.querySelector("span")?.textContent === focusedSection)?.focus({ preventScroll: true });
   for (const detail of UI.settings.querySelectorAll(".concepts-panel details")) { detail.open = openConceptDetails.has(detail.dataset.conceptDetail); if(detail.open) detail._populateConceptItems?.(); }
   if (focusedConceptToggle) UI.settings.querySelector("#" + focusedConceptToggle)?.focus({preventScroll: true});
+  if (activeSetting) [...UI.settings.querySelectorAll("[data-setting]")].find(node => node.dataset.setting === activeSetting && node.dataset.value === activeValue)?.focus({preventScroll:true});
+  else if (activeButton && !UI.settings.contains(document.activeElement)) {
+    const matches = [...UI.settings.querySelectorAll("button")].filter(node => JSON.stringify(focusContext(node)) === JSON.stringify(activeButton));
+    if(matches.length === 1)matches[0].focus({preventScroll:true});
+  }
   positionSettings();
 }
 function positionSettings() {
@@ -4836,10 +4977,11 @@ function positionSettings() {
   UI.settings.style.right = window.innerWidth <= 520 ? "" : "24px";
 }
 async function toggleSettings() {
-  if (learningWorkspace?.embedded) await learningWorkspace.close();
+  if (learningWorkspace?.embedded && !["morph2","morph3"].includes(learningWorkspace.presentation)) await learningWorkspace.close();
   closeArrowColorPicker();
   UI.settings.hidden = !UI.settings.hidden;
   if (!UI.settings.hidden) renderSettings();
+  learningWorkspace?.settingsLayoutChanged();
 }
 
 /* ---------------- Optional, isolated concept analysis ---------------- */
@@ -4884,12 +5026,15 @@ function refreshConcepts() {
 }
 function setConceptEnabled(enabled) {
   S.settings.conceptsEnabled = enabled;
-  browserAPI.storage.local.set({settings: S.settings});
+  writeSettings({ conceptsEnabled: enabled });
   refreshConcepts();
 }
 function setConceptGroups(groups) {
   S.settings.conceptGroups = normalizeConceptGroups(groups);
-  browserAPI.storage.local.set({settings: S.settings});
+  writeSettings({ conceptGroups: S.settings.conceptGroups });
+  refreshConceptSettings();
+}
+function refreshConceptSettings() {
   refreshConcepts();
   renderCoachPanel();
   if (!_conceptRenderTimer) _conceptRenderTimer = setTimeout(() => {
@@ -4904,11 +5049,14 @@ function setConceptGroup(id, enabled) {
 function setConceptItem(id, enabled) {
   const disabled = normalizeDisabledConcepts(S.settings.disabledConcepts);
   S.settings.disabledConcepts = normalizeDisabledConcepts(enabled ? disabled.filter(value=>value!==id) : [...disabled,id]);
-  setConceptGroups(S.settings.conceptGroups);
+  writeSettings({disabledConcepts:S.settings.disabledConcepts});
+  refreshConceptSettings();
 }
 function resetConceptDefaults() {
   S.settings.disabledConcepts = [];
-  setConceptGroups(DEFAULT_CONCEPT_GROUPS);
+  S.settings.conceptGroups = [...DEFAULT_CONCEPT_GROUPS];
+  writeSettings({disabledConcepts:[],conceptGroups:S.settings.conceptGroups});
+  refreshConceptSettings();
   renderSettings();
 }
 function conceptSettings() {
@@ -4917,6 +5065,9 @@ function conceptSettings() {
   const checkbox = el("input", {type: "checkbox", id: "conceptsEnabled", checked: enabled,
     onchange: event => setConceptEnabled(event.target.checked)});
   const panel = el("div", {class: "concepts-panel"},
+    el("label", {class:"set-row concept-group-row"}, el("span", {class:"set-lbl"}, "Show Concepts panel"),
+      el("input", {type:"checkbox", id:"showConcepts", checked:S.settings.showConcepts !== false, onchange:event=>setSetting("showConcepts",event.target.checked)})),
+    note("Show or hide the Concepts panel in your review layout."),
     el("label", {class: "set-row concept-group-row"}, el("span", {class: "set-lbl"}, "Concept analysis"), checkbox),
     note("Analyzes the selected move locally. Navigation cancels unfinished work for other moves; completed results are reused."));
   if (S.setOpen["Concept groups"] == null) S.setOpen["Concept groups"] = true;
@@ -5033,10 +5184,19 @@ const CONTRIBUTORS = [
   { name: "T-Julsgaard", username: "T-Julsgaard", role: "Maintainer" },
 ];
 const REPO_URL = "https://github.com/T-Julsgaard/Chess-Review";
+let _closeCredits = null;
 function openCredits() {
-  document.querySelector(".credits-overlay")?.remove();
-  const close = () => { overlay.remove(); document.removeEventListener("keydown", onKey); };
-  const onKey = (e) => { if (e.key === "Escape") close(); };
+  _closeCredits?.();
+  const previousFocus = document.activeElement, app = document.querySelector(".app"), previousInert = !!app.inert;
+  const close = () => { overlay.remove(); document.removeEventListener("keydown", onKey, true); app.inert = previousInert; _closeCredits = null; if(previousFocus?.isConnected)previousFocus.focus(); };
+  const onKey = e => {
+    if (e.key === "Escape") { e.preventDefault(); e.stopImmediatePropagation(); close(); }
+    else if (e.key === "Tab") {
+      const nodes = [...card.querySelectorAll("button,a[href]")], first = nodes[0], last = nodes[nodes.length-1];
+      if (e.shiftKey && (document.activeElement === first || !card.contains(document.activeElement))) {e.preventDefault();last.focus();}
+      else if (!e.shiftKey && document.activeElement === last) {e.preventDefault();first.focus();}
+    } else if (e.key.startsWith("Arrow") || ["Home","End","f"].includes(e.key)) e.stopImmediatePropagation();
+  };
 
   const contributors = el("section", { class: "credits-team", "aria-label": "Contributors & Maintainers" },
     el("h4", {}, "Contributors & Maintainers"),
@@ -5067,10 +5227,10 @@ function openCredits() {
     icon("share"),
   );
 
-  const card = el("div", { class: "credits-card", role: "dialog", "aria-label": "Credits and attributions" },
+  const card = el("div", { class: "credits-card", role: "dialog", "aria-modal":"true", "aria-label": "Credits and attributions" },
     el("div", { class: "credits-head" },
       el("h3", {}, "Credits & attributions"),
-      el("button", { class: "icon-btn", title: "Close", onclick: close }, icon("close")),
+      el("button", { type:"button", class: "icon-btn", "aria-label": "Close credits", onclick: close }, icon("close")),
     ),
     sourceRow,
     el("p", { class: "credits-disclaimer" },
@@ -5090,13 +5250,42 @@ function openCredits() {
 
   const overlay = el("div", { class: "credits-overlay", onclick: (e) => { if (e.target === overlay) close(); } }, card);
   document.body.append(overlay);
-  document.addEventListener("keydown", onKey);
+  app.inert = true; _closeCredits = close;
+  document.addEventListener("keydown", onKey, true); card.querySelector("button").focus();
+}
+let _settingsWriteQueue = Promise.resolve();
+function mergeSettingsPatch(base, patch, replaceKeys = [], path = "") {
+  const result = { ...(base || {}) };
+  for (const [key, value] of Object.entries(patch)) {
+    if (["__proto__", "constructor", "prototype"].includes(key)) continue;
+    const field = path ? path + "." + key : key;
+    if (value === undefined) delete result[key];
+    else if (value && typeof value === "object" && !Array.isArray(value) && !replaceKeys.includes(field)) {
+      result[key] = mergeSettingsPatch(result[key], value, replaceKeys, field);
+    } else result[key] = structuredClone(value);
+  }
+  return result;
+}
+// Persist only the user's deliberate edit. Other open reviews retain their active
+// configuration until reloaded, so their cached analysis remains tied to that configuration.
+function writeSettings(patch, replaceKeys = []) {
+  patch = structuredClone(patch);
+  const commit = async () => {
+    const stored = await browserAPI.storage.local.get("settings");
+    await browserAPI.storage.local.set({ settings: mergeSettingsPatch(stored.settings, patch, replaceKeys) });
+  };
+  const pending = navigator.locks?.request
+    ? navigator.locks.request("chess-review-settings", commit)
+    : (_settingsWriteQueue = _settingsWriteQueue.catch(() => {}).then(commit));
+  pending.catch(error => console.warn("Settings save failed", error));
+  return pending;
 }
 async function setSetting(key, value) {
   if (key === "badgeTooltip") value = badgeLabelStyle(value);
   S.settings[key] = value;
-  await browserAPI.storage.local.set({ settings: S.settings });
+  await writeSettings({ [key]: value });
   applySettings();
+  if (key === "showConcepts") {applyLayout();growCanvas();if(_zoomTabId != null)await fitTabZoom();}
   if (key === "pieceStyle") buildBoard();
   if (key === "mlStyle" || key === "badgeStyle") renderMoves();
   if (key === "evalView" || key === "graphStyle" || key === "barStyle") { renderEvalBar(); renderGraph(); }
@@ -5152,12 +5341,12 @@ async function setEngineSetting(key, value) {
   S.settings[key] = value;
   S.engineFallbackBuild = null;
   S.activeEngineBuild = null;
-  await browserAPI.storage.local.set({ settings: S.settings });
+  await writeSettings({ [key]: value });
   resetLiveEngine();
   invalidateVariationEvals();
   // The helper engine (threat preview / practice judging) must also be rebuilt with the new
   // build/options, and any cached threat arrows recomputed.
-  if (S.helperEngine) { try { S.helperEngine.terminate(); } catch {} S.helperEngine = null; }
+  resetHelperEngine();
   S.threatCache.clear();
   // In analysis mode: reset the variation's cached evals, so they're recomputed with new options.
   if (S.analysisMode && S.variation) {
@@ -5196,6 +5385,8 @@ function applySettings() {
   r.classList.toggle("hide-coords", S.settings.showCoords === false);
   clearBoardArt(UI.boardWrap && UI.boardWrap.querySelector(".board"));
   applyBackground();
+  syncConceptPanelVisibility();
+  learningWorkspace?.refreshSettings();
 }
 // Bundled background presets (relative to the extension's analysis page).
 const BG_PRESETS = { slate: "backgrounds/bg-slate.webp" };
@@ -5247,7 +5438,7 @@ function uploadBackground() {
     rd.onload = async () => {
       S.settings.bgCustom = String(rd.result);
       S.settings.bg = "custom";
-      await browserAPI.storage.local.set({ settings: S.settings });
+      await writeSettings({ bgCustom: S.settings.bgCustom, bg: S.settings.bg });
       applySettings();
       if (UI.settings && !UI.settings.hidden) renderSettings();
     };
@@ -5305,6 +5496,8 @@ function removeMoveCallout() {
 }
 function exitPractice() {
   if (!S.practice) return;
+  S.practice.cancelCheck?.();
+  _cancelPromotion?.();
   if (S.practice.rollT) clearTimeout(S.practice.rollT);
   clearDemoTimers();
   S.practice = null;
@@ -5444,31 +5637,74 @@ function renderPracticeHint() {
 // Pass if it's the engine's top move, delivers mate, or loses ≤2% winning chance (Excellent or
 // better). A move that isn't among the searched top lines is, by definition, worse than every
 // line we kept → it can't be Excellent, so it fails immediately.
-function judgePass(solvePos, userUci, fenAfter) {
+function judgePass(solvePos, userUci, fenAfter, verifiedScore = null) {
   const best = S.bests[solvePos];
-  if (!best || !best.lines || !best.lines.length) return true;        // no data → be lenient
-  if ((best.bestmove || "").slice(0, 4) === userUci.slice(0, 4)) return true; // the top move
+  if (best?.bestmove === userUci) return true;
   const mover = sideToMove(S.positions[solvePos].fen);
-  const term = terminalScore(fenAfter);                               // checkmate/stalemate?
-  if (term && moverWin(term, mover) >= 99) return true;               // forcing mate is always best
-  const winBefore = winPct(scoreToCp(best.lines[0].score));           // mover's POV
-  for (const ln of best.lines) {                                      // measured in the same search
-    if ((ln.pv || "").split(" ")[0] === userUci) {
-      return Math.max(0, winBefore - winPct(scoreToCp(ln.score))) <= 2;
-    }
-  }
-  return false;                                                       // not a top line → not Excellent
+  const term = terminalScore(fenAfter);
+  if (term?.mate && ((term.mate > 0) === (mover === "w"))) return true;
+  const winBefore = annotationPoints(best?.score || best?.lines?.[0]?.score, solvePos + 1, S);
+  const line = best?.lines?.find(ln => (ln.pv || "").split(/\s+/)[0] === userUci);
+  const score = verifiedScore || (term?.cp === 0 ? {cp:0} : line?.score);
+  if (!score || winBefore == null) return null;
+  const winAfter = annotationPoints(score, solvePos + 1, S);
+  return winAfter == null ? null : Math.max(0, winBefore - winAfter) <= 2;
 }
-function practiceAttempt(from, to) {
+async function createPracticeEngine(build, options) {
+  if (!Object.hasOwn(ENGINE_BUILDS, build)) throw Error("Unsupported practice engine");
+  const engine = new Engine(ENGINE_BUILDS[build]);
+  try {
+    await engine.setOptions(options);
+    if (engine.identity && !new RegExp("^Stockfish " + (build === "sf19lite" ? 19 : 18) + "\\b").test(engine.identity)) throw Error("Practice engine differs");
+    return engine;
+  } catch (error) { engine.terminate(); throw error; }
+}
+async function verifyPracticeMove(p, solvePos, userUci) {
+  const root = S.bests[solvePos], settings = {...(S.analyzedSettings || S.settings)}, key = analysisSettingsKey();
+  const history = searchHistory(S.positions, solvePos), fen = S.positions[solvePos].fen;
+  const cached = p.verifiedMoves?.get(solvePos + userUci);
+  if (cached?.root === root) return cached.score;
+  if (!root || (root.calibration && root.calibration.version !== CALIB.version)) throw Error("Practice evidence unavailable");
+  const build = root.calibration?.build || S.activeEngineBuild || settings.enginePath, sf19 = build === "sf19lite";
+  let engine, cancelled = false, timer, rejectCancellation;
+  const valid = () => S.practice === p && S.bests[solvePos] === root && S.positions[solvePos]?.fen === fen && analysisSettingsKey() === key;
+  const cancellation = new Promise((_, reject) => {rejectCancellation = reject;});
+  const cancel = () => {cancelled = true;engine?.terminate();rejectCancellation(Error("Practice check cancelled"));};
+  p.cancelCheck = cancel;
+  const work = (async () => {
+    engine = await createPracticeEngine(build, {Hash:sf19 ? 32 : settings.engineHash, "Skill Level":sf19 ? 20 : settings.engineSkill,
+      UCI_ShowWDL:true, UCI_LimitStrength:false, UCI_Chess960:false});
+    if(cancelled || !valid()){engine.terminate();throw Error("Practice check cancelled");}
+    const result = await engine.analyse(fen, settings.engineDepth, 1, history, null,
+      {cold:true, requireExact:true, searchMove:userUci, budget:sf19 ? {kind:"nodes",value:20000} : {kind:"depth",value:settings.engineDepth}});
+    if(!valid() || result.bestmove !== userUci || !(Number.isFinite(result.score?.cp) || (Number.isInteger(result.score?.mate) && result.score.mate !== 0))) throw Error("Practice check incomplete");
+    return result.score;
+  })();
+  try {
+    const score = await Promise.race([work, cancellation, new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error("Practice check timed out")),15000);})]);
+    (p.verifiedMoves ||= new Map()).set(solvePos + userUci, {root,score});return score;
+  } finally {cancelled=true;clearTimeout(timer);engine?.terminate();if(p.cancelCheck===cancel)p.cancelCheck=null;}
+}
+async function practiceAttempt(from, to, promotion = "q") {
   const p = S.practice;
-  if (!p || !p.solving) return;
+  if (!p || !p.solving || p.busy) return;
   const solvePos = p.spots[p.i] - 1;
   const fen = S.positions[solvePos].fen;
   let c, mv;
-  try { c = new Chess(fen); mv = c.move({ from, to, promotion: "q" }); } catch { mv = null; }
+  try { c = new Chess(fen); mv = c.move({ from, to, promotion }); } catch { mv = null; }
   if (!mv) { S.selectedSq = null; renderSelection(); return; }
   const userUci = mv.from + mv.to + (mv.promotion || "");
-  if (judgePass(solvePos, userUci, c.fen())) {
+  p.checkError = null;
+  let passed = judgePass(solvePos, userUci, c.fen());
+  if (passed == null) {
+    p.busy = true;renderControls();renderReview();renderEngineCurrent();
+    try {passed = judgePass(solvePos,userUci,c.fen(),await verifyPracticeMove(p,solvePos,userUci));}
+    catch {if(S.practice===p)p.checkError="Couldn't verify that move. Please try again.";return;}
+    finally {if(S.practice===p){p.busy=false;renderControls();renderReview();renderEngineCurrent();}}
+    if (S.practice !== p || p.spots[p.i] - 1 !== solvePos || S.positions[solvePos]?.fen !== fen) return;
+    if (passed == null) {p.checkError="Couldn't verify that move. Please try again.";renderEngineCurrent();return;}
+  }
+  if (passed) {
     p.solving = false;              // lock out further attempts until the next spot
     S.practiceHint = null;
     // Visually play the correct move so the piece lands on its square and STAYS there for a beat
@@ -5477,7 +5713,8 @@ function practiceAttempt(from, to) {
     if (fromSq && toSq) {
       const pieceEl = fromSq.querySelector(".piece, .piece-svg, .piece-img");
       toSq.querySelectorAll(".piece, .piece-svg, .piece-img, .sq-badge").forEach((n) => n.remove());
-      if (pieceEl) toSq.append(pieceEl);   // place it instantly on the square you dropped it on (no slide)
+      if (mv.promotion) {pieceEl?.remove();toSq.append(makePiece(mv.promotion,mv.color));}
+      else if (pieceEl) toSq.append(pieceEl);
       // Castling: the king lands on its square above, but the rook must move too — slide both so
       // the full castle plays out instead of leaving the rook stranded.
       const isCastle = /[kq]/.test(mv.flags || "") || /^[O0]-[O0]/.test(mv.san);
@@ -5541,7 +5778,7 @@ function gameType() {
   return "";
 }
 function currentGameId() {
-  return (S.meta && S.meta.gameId) || ("pgn:" + simpleHash(S.pgn || ""));
+  return (S.meta && (S.meta.gameId || S.meta.libraryId)) || ("pgn:" + simpleHash(S.pgn || ""));
 }
 
 function analysisSettingsKey() {
@@ -5563,17 +5800,58 @@ function canRestoreAnalysis(saved) {
 }
 
 let _libraryWriteQueue = Promise.resolve();
+const _libraryCleanup = new Set();
+const _pendingReviewSaves = new Map();
+const _savingReviewSnapshots = new WeakMap();
+let _reviewSaveRetry = null;
+let _reviewSaveWarning = false;
+function warnUnsavedReview(event) { if (_pendingReviewSaves.size) { event.preventDefault(); event.returnValue = ""; } }
+function renderReviewSaveStatus() {
+  if (_pendingReviewSaves.size && !_reviewSaveWarning) { window.addEventListener("beforeunload", warnUnsavedReview); _reviewSaveWarning = true; }
+  if (!_pendingReviewSaves.size && _reviewSaveWarning) { window.removeEventListener("beforeunload", warnUnsavedReview); _reviewSaveWarning = false; }
+  if (!UI.saveStatus) return;
+  const failures = [..._pendingReviewSaves.values()].filter(snapshot => snapshot.failed);
+  const hadFocus = UI.saveStatus.contains(document.activeElement);
+  UI.saveStatus.hidden = failures.length === 0;
+  if (!failures.length) {
+    UI.saveStatus.replaceChildren();
+    if (hadFocus) UI.controls?.querySelector("button")?.focus({preventScroll:true});
+    return;
+  }
+  const busy = !!_reviewSaveRetry || failures.some(snapshot => _savingReviewSnapshots.has(snapshot));
+  if (!UI.saveStatus.firstChild) UI.saveStatus.append(el("span"), el("button", {type:"button", onclick:retryReviewSaves}));
+  UI.saveStatus.firstChild.textContent = failures.length === 1 ? "1 review has not been saved." : failures.length + " reviews have not been saved.";
+  const retry = UI.saveStatus.querySelector("button");
+  retry.textContent = busy ? "Saving…" : "Retry saving";
+  retry.setAttribute("aria-disabled", String(busy));
+}
+async function retryReviewSaves() {
+  if (_reviewSaveRetry) return _reviewSaveRetry;
+  _reviewSaveRetry = (async () => { for (const snapshot of [..._pendingReviewSaves.values()]) await persistReviewSnapshot(snapshot); })();
+  renderReviewSaveStatus();
+  try { await _reviewSaveRetry; } finally { _reviewSaveRetry = null; renderReviewSaveStatus(); }
+}
 function updateLibrary(update, analysisWrites = {}) {
   const commit = async () => {
     const stored = await browserAPI.storage.local.get("library");
     const current = Array.isArray(stored.library) ? stored.library : S.library;
-    const next = update(current);
+    const change = update(current);
+    const next = Array.isArray(change) ? change : change.library;
+    const writes = Array.isArray(change) ? analysisWrites : change.analysisWrites;
     const dropped = next.slice(300);
     const library = next.slice(0, 300);
-    await browserAPI.storage.local.set({ ...analysisWrites, library });
-    if (dropped.length) await browserAPI.storage.local.remove(dropped.map(rec => "analysis:" + rec.id));
+    await browserAPI.storage.local.set({ ...writes, library });
     S.library = library;
     renderLibrary();
+    for (const rec of dropped) _libraryCleanup.add("analysis:" + rec.id);
+    const retained = new Set(library.map(rec => "analysis:" + rec.id));
+    for (const key of retained) _libraryCleanup.delete(key);
+    const cleanup = [..._libraryCleanup];
+    if (cleanup.length) {
+      try { await browserAPI.storage.local.remove(cleanup); cleanup.forEach(key => _libraryCleanup.delete(key)); }
+      catch (error) { console.warn("Library cleanup will be retried", error); }
+    }
+    return true;
   };
   // Every analysis tab shares storage. Serialize read/modify/write across the
   // extension origin so an older tab cannot overwrite games or favorites saved
@@ -5581,7 +5859,33 @@ function updateLibrary(update, analysisWrites = {}) {
   const task = navigator.locks?.request
     ? navigator.locks.request("chess-review-library", commit)
     : (_libraryWriteQueue = _libraryWriteQueue.catch(() => {}).then(commit));
-  return task.catch(error => console.warn("library save failed", error));
+  return task.catch(error => { console.warn("library save failed", error); return false; });
+}
+function persistReviewSnapshot(snapshot) {
+  if (_savingReviewSnapshots.has(snapshot)) return _savingReviewSnapshots.get(snapshot);
+  const pending = (async () => {
+    let resolvedId = snapshot.id;
+    const saved = await updateLibrary(library => {
+      if (!snapshot.rec.meta.gameId) {
+        const same = library.find(game => game.pgn === snapshot.rec.pgn && (game.id === snapshot.id || (typeof game.id === "string" && game.id.startsWith(snapshot.id + ":"))));
+        resolvedId = same?.id || snapshot.id;
+        let suffix = 1;
+        while (library.some(game => game.id === resolvedId && game.pgn !== snapshot.rec.pgn)) resolvedId = snapshot.id + ":" + suffix++;
+      }
+      const prev = library.find(game => game.id === resolvedId);
+      const rec = {...snapshot.rec, id:resolvedId, meta:{...snapshot.rec.meta, libraryId:resolvedId}, fav:!!prev?.fav, solved:snapshot.noMistakes || !!prev?.solved};
+      return {library:[rec, ...library.filter(game => game.id !== resolvedId)], analysisWrites:{["analysis:" + resolvedId]:snapshot.analysis}};
+    });
+    snapshot.failed = !saved;
+    if (saved) {
+      if (_pendingReviewSaves.get(snapshot.pendingKey) === snapshot) _pendingReviewSaves.delete(snapshot.pendingKey);
+      if (S.pgn === snapshot.rec.pgn && !S.meta.gameId) { S.meta.libraryId = resolvedId; rememberReviewJob(); }
+    }
+    return saved;
+  })();
+  _savingReviewSnapshots.set(snapshot, pending);
+  pending.finally(() => { _savingReviewSnapshots.delete(snapshot); renderReviewSaveStatus(); });
+  return pending;
 }
 function saveToLibrary() {
   try {
@@ -5593,7 +5897,7 @@ function saveToLibrary() {
     const noMistakes = practiceSpots().length === 0;
     const rec = {
       id, savedAt: Date.now(), pgn: S.pgn, meta: S.meta || {},
-      meSide: S.meSide,
+      meSide: S.meSide, playerKnown: S.playerKnown === true,
       myName: S.players[S.meSide].name, opName: S.players[opSide].name,
       myAcc: S.acc[S.meSide], opAcc: S.acc[opSide],
       myRating: parseInt(S.players[S.meSide].rating, 10) || null,
@@ -5605,27 +5909,34 @@ function saveToLibrary() {
     };
     // The heavy analysis (evals + engine lines) is stored under its own key so the library list
     // stays light, and so re-opening a saved game can render instantly WITHOUT re-analyzing.
-    const writes = { ["analysis:" + id]: {
+    const analysis = {
       pgn: S.pgn, settingsKey: analysisSettingsKey(), engineBuild: S.activeEngineBuild,
       evals: S.evals, bests: S.bests, multipv: S.analyzedMultipv,
-    } };
-    return updateLibrary(library => {
-      const prev = library.find(game => game.id === id);
-      return [{ ...rec, fav: !!prev?.fav, solved: noMistakes || !!prev?.solved }, ...library.filter(game => game.id !== id)];
-    }, writes);
+    };
+    // Before library collision resolution, distinct PGNs may share the short ID.
+    const pendingKey = S.meta.gameId ? "game:" + id : "pgn:" + S.pgn;
+    const snapshot = structuredClone({id, pendingKey, rec, analysis, noMistakes, failed:false});
+    _pendingReviewSaves.set(pendingKey, snapshot);
+    renderReviewSaveStatus();
+    return persistReviewSnapshot(snapshot);
   } catch (e) { console.warn("library save failed", e); }
 }
+let _librarySelection = 0;
 async function openLibraryGame(rec) {
+  const selection = ++_librarySelection;
   if (rec.id === currentGameId()) return;   // already open
   // Pull the stored analysis so the re-opened game shows up already analyzed (no re-run).
   let analysis = null;
   try { const s = await browserAPI.storage.local.get("analysis:" + rec.id); analysis = s["analysis:" + rec.id] || null; } catch {}
+  if (selection !== _librarySelection) return;
   // Switch in place — no page reload, no black flash. The sidebar stays open (it only closes when
   // the mouse leaves the library area), so you can pick another game right away. Reproduce the exact
   // perspective the game was saved with: prefer a stored flip hint, else the saved meSide — so a
   // re-opened game is never seated the wrong way up regardless of the current stored username.
   const flip = (rec.meta && rec.meta.flip != null) ? rec.meta.flip : (rec.meSide === "b");
-  applyGame({ pgn: rec.pgn, meta: { ...(rec.meta || {}), flip }, source: "library", analysis });
+  const known = rec.playerKnown === true || (rec.playerKnown == null && !!rec.myName && (rec.meSide === "b" || rec.myName.toLowerCase() === S.username.toLowerCase()));
+  const meta = {...(rec.meta || {}), libraryId:rec.id, flip, playerKnown:known, myName:known ? rec.myName : ""};
+  return applyGame({ pgn: rec.pgn, meta, source: "library", analysis });
 }
 // Toggle a game's favorite flag and persist it.
 function toggleFav(id) {
@@ -5666,22 +5977,37 @@ function ddField(value, options, onChange, renderOption = (_value, label) => lab
 function libDropdown(label, value, options, onChange) {
   return el("div", { class: "lib-dd" }, el("span", { class: "lib-dd-lbl" }, label), ddField(value, options, onChange));
 }
+function setLibraryOpen(open) {
+  S.libraryOpen = open;
+  if (!UI.libRail) return;
+  UI.libRail.classList.toggle("open", open);
+  UI.libPanel.inert = !open;
+  UI.libRail.querySelector(".lib-tab").setAttribute("aria-expanded", String(open));
+}
 function libCard(r) {
   const curId = currentGameId();
   const rLetter = r.result === "win" ? "W" : r.result === "loss" ? "L" : r.result === "draw" ? "D" : "·";
-  return el("div", { class: "lib-card" + (r.id === curId ? " active" : ""), onclick: () => openLibraryGame(r) },
-    el("button", { class: "lc-fav" + (r.fav ? " on" : ""), title: r.fav ? "Remove favorite" : "Favorite",
+  return el("div", { class: "lib-card" + (r.id === curId ? " active" : ""), "data-game-id":r.id },
+    el("button", { tabindex:"-1", class: "lc-fav" + (r.fav ? " on" : ""), title: r.fav ? "Remove favorite" : "Favorite",
       onclick: (e) => { e.stopPropagation(); toggleFav(r.id); } }, r.fav ? "★" : "☆"),
+    el("button", {type:"button", class:"lc-open", tabindex:"-1", "aria-label":"Open game against " + (r.opName || "unknown player"), onclick:()=>openLibraryGame(r)},
     el("div", { class: "lc-top" },
       el("span", { class: "lc-result lc-" + (r.result || "none") }, rLetter),
       el("span", { class: "lc-opp" }, "vs " + (r.opName || "?")),
       r.type ? el("span", { class: "lc-type" }, r.type) : null),
     el("div", { class: "lc-bot" },
       el("span", { class: "lc-acc" }, r.myAcc == null ? "—" : r.myAcc.toFixed(1), el("i", {}, "%")),
-      el("span", { class: "lc-status " + (r.solved ? "solved" : "unsolved") }, r.solved ? "Solved" : "Unsolved")));
+      el("span", { class: "lc-status " + (r.solved ? "solved" : "unsolved") }, r.solved ? "Solved" : "Unsolved"))));
 }
 function renderLibrary() {
   if (!UI.libList) return;
+  const active = document.activeElement, focusedCard = active.closest(".lib-card"), focusedFilter = active.closest(".lib-dd");
+  const restore = () => {
+    if (focusedCard) {
+      const card = [...UI.libList.querySelectorAll(".lib-card")].find(node => node.dataset.gameId === focusedCard.dataset.gameId);
+      (card?.querySelector(active.classList.contains("lc-fav") ? ".lc-fav" : ".lc-open") || UI.libControls.querySelector("button"))?.focus({preventScroll:true});
+    } else if (focusedFilter) [...UI.libControls.querySelectorAll(".lib-dd")].find(node => node.querySelector(".lib-dd-lbl").textContent === focusedFilter.querySelector(".lib-dd-lbl").textContent)?.querySelector("button")?.focus({preventScroll:true});
+  };
   const recs = libRecords();
   if (UI.libCount) UI.libCount.textContent = String(S.library.length);
 
@@ -5698,13 +6024,17 @@ function renderLibrary() {
   if (!recs.length) {
     UI.libList.replaceChildren(el("div", { class: "lib-empty" },
       S.library.length ? "No games match these filters." : "Analyzed games are saved here automatically. Analyze a game to start your library."));
+    restore();
     return;
   }
   UI.libList.replaceChildren(...recs.map(libCard));
+  restore();
 }
 
 /* ---------------- Navigation ---------------- */
 function go(to) {
+  _cancelPromotion?.();
+  _cancelBoardDrag?.();
   const prev = S.idx;
   // During analysis you can't go further than the move that HAS been analyzed (S.progress).
   // When the analysis is done, the whole game (S.total) is free.
@@ -5784,6 +6114,10 @@ function toggleAuto() {
 }
 document.addEventListener("keydown", (e) => {
   if (learningWorkspace) return;
+  if (e.key === "Tab" && !e.target?.closest?.('#settings,[role="dialog"],[role="alertdialog"]')) {
+    e.preventDefault(); return;
+  }
+  if (UI.settings?.contains(e.target) || UI.libRail?.contains(e.target)) return;
   if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
   // During practice the only shortcut is Escape to exit; nav keys are disabled.
   if (S.practice) { if (e.key === "Escape") exitPractice(); return; }
@@ -5829,6 +6163,9 @@ function requestProgress(gen) {
   setTimeout(() => flushProgress(gen), Math.max(0, 140 - (Date.now() - _progLast)));
 }
 async function startAnalysis() {
+  if (S.practice) exitPractice();
+  S._lastEngineLines = null;
+  S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
   const gen = ++S.batchGen;
   S.engineFallbackBuild = null;
   S.activeEngineBuild = null;
@@ -5845,6 +6182,14 @@ async function startAnalysis() {
   computeDerived();
   renderControls(); renderReview(); renderStats(); renderGraph(); renderMoves();
   if (!S.analysisMode) { renderEvalBar(); renderBestArrow(); renderEngineCurrent(); }
+
+  try { await loadCalibration(); }
+  catch (error) {
+    if (gen !== S.batchGen) return;
+    S.analyzing = false; S.analysisError = error.message;
+    computeDerived(); renderControls(); renderReview(); renderStats(); renderEngineCurrent(); return;
+  }
+  if (gen !== S.batchGen) return;
 
   // Batch analysis defaults to MultiPV=1. Extra lines provide root alternatives for
   // annotations and inspection; the engine panel fills its lines on demand.
@@ -5963,6 +6308,10 @@ function renderAll() {
 async function applyGame(payload) {
   const positions = buildPositions(payload.pgn);
   if (positions.length < 2) throw new Error("Load a game with moves to review. Standalone positions are not supported.");
+  ++_librarySelection;
+  S.practice?.cancelCheck?.();
+  _cancelPromotion?.();
+  _cancelBoardDrag?.();
 
   // Tear down anything tied to the previous game.
   clearTimeout(_reanalyzeT);
@@ -5971,7 +6320,7 @@ async function applyGame(payload) {
   S.engineFallbackBuild = null;
   S.activeEngineBuild = null;
   terminateEngines();
-  if (S.helperEngine) { try { S.helperEngine.terminate(); } catch {} S.helperEngine = null; }
+  resetHelperEngine();
   S.threatCache.clear();
   if (S.autoTimer) { clearInterval(S.autoTimer); S.autoTimer = null; }
   stopLineWalk();
@@ -6015,6 +6364,7 @@ async function applyGame(payload) {
   }
   const restored = canRestoreAnalysis(saved);
   if (restored) {
+    S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
     S.evals = saved.evals;
     S.bests = saved.bests;
     S.analyzedMultipv = saved.multipv || null;
@@ -6148,16 +6498,14 @@ async function resetLegacyZoom() {
     // and the calibration file are only consumed once scoring/opening refinement runs, so we load
     // them in parallel and don't block the first paint on them — buildUI() can run as soon as the
     // job and settings are in, while the book is still downloading.
-    const dataReady = Promise.all([loadBook(), loadCalibration()]);
+    const dataReady = Promise.all([loadBook(), loadCalibration().catch(error => {console.warn(error);return null;})]);
     const [payload, store] = await Promise.all([loadJob(), browserAPI.storage.local.get(["settings", "username", "layout", "layoutMode", "layoutVersion", "library"])]);
     S.library = Array.isArray(store.library) ? store.library : [];
     S.settings = { ...DEFAULT_SETTINGS, ...(store.settings || {}) };
+    const loadedSettings = structuredClone(S.settings);
     S.settings.learningTransition = LearningWorkspace.presentationFor(store.settings || {});
-    const visualAssetsMigrated = migrateVisualAssetSettings(S.settings);
+    migrateVisualAssetSettings(S.settings);
     migrateEngineSettings(S.settings);
-    if (visualAssetsMigrated || S.settings.enginePath !== store.settings?.enginePath) {
-      await browserAPI.storage.local.set({ settings: S.settings });
-    }
     delete S.settings.wrongSound; // older selectable mistake cues were removed
     { const lm = { prikker: "dots", hop: "bounce", "bølge": "wave" }; if (lm[S.settings.loaderStyle]) S.settings.loaderStyle = lm[S.settings.loaderStyle]; } // migrate renamed loader keys
     if (S.settings.bg === "default" || S.settings.bg === "ember") S.settings.bg = "color";
@@ -6170,7 +6518,6 @@ async function resetLegacyZoom() {
         S.settings.coach = "old_soviet"; S.settings.coachPlain = true;
       }
       S.settings.coachDefaulted = true;
-      browserAPI.storage.local.set({ settings: S.settings });
     }
     // The avatar always reflects the chosen coach; the reply bank loads only when special replies are on.
     S.coach = S.settings.coachPlain ? null : await loadCoach(S.settings.coach);
@@ -6179,10 +6526,14 @@ async function resetLegacyZoom() {
     if (!S.settings.depthBumped) {
       if ((store.settings?.engineDepth ?? 12) <= 12) S.settings.engineDepth = Math.max(S.settings.engineDepth, 16);
       S.settings.depthBumped = true;
-      browserAPI.storage.local.set({ settings: S.settings });
     }
     // The 5-line option was removed — clamp any stored value to the new max.
-    if (S.settings.engineLines > ENGINE_MAX_LINES) { S.settings.engineLines = ENGINE_MAX_LINES; browserAPI.storage.local.set({ settings: S.settings }); }
+    if (S.settings.engineLines > ENGINE_MAX_LINES) S.settings.engineLines = ENGINE_MAX_LINES;
+    const migration = {};
+    for (const key of new Set([...Object.keys(loadedSettings), ...Object.keys(S.settings)])) {
+      if (JSON.stringify(loadedSettings[key]) !== JSON.stringify(S.settings[key])) migration[key] = S.settings[key];
+    }
+    if (Object.keys(migration).length) await writeSettings(migration, Object.keys(migration));
     // Use the saved layout if it matches the current version; otherwise the new default.
     const useStored = store.layoutVersion === LAYOUT_VERSION && store.layout;
     S.layout = useStored ? { ...structuredClone(DEFAULT_LAYOUT), ...store.layout } : structuredClone(DEFAULT_LAYOUT);
@@ -6202,7 +6553,7 @@ async function resetLegacyZoom() {
     if (!("analysis" in payload)) {
       let saved = null;
       try {
-        const k = "analysis:" + ((payload.meta && payload.meta.gameId) || ("pgn:" + simpleHash(payload.pgn || "")));
+        const k = "analysis:" + ((payload.meta && (payload.meta.gameId || payload.meta.libraryId)) || ("pgn:" + simpleHash(payload.pgn || "")));
         const s = await browserAPI.storage.local.get(k);
         saved = s[k] || null;
       } catch {}

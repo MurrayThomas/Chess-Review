@@ -108,6 +108,10 @@
 .learn-square.annotated::after { content: ''; position: absolute; inset: 3px; border: 3px solid #edb44f; border-radius: 3px; pointer-events: none; }
 .learn-square.last-move { background-image: linear-gradient(#f0df4a55,#f0df4a55); }
 .learn-square .piece-img { width: 88%; height: 88%; object-fit: contain; position: static; z-index: 1; pointer-events: auto; user-select: none; animation: learn-piece .16s ease-out; }
+.learning-embedded .learn-square { touch-action: none; }
+.learning-embedded .learn-square .piece-img { width: 94%; height: 94%; animation: none; }
+.learn-promotion { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; background: #0007; pointer-events: auto; }
+.learn-entry-button:active { transform: translateY(1px) scale(.985); }
 .learn-coordinate { position: absolute; font-size: clamp(9px,1.1vw,13px); font-weight: 700; line-height: 1; z-index: 2; pointer-events: none; }
 .learn-coordinate.rank { top: 4px; left: 4px; }
 .learn-coordinate.file { bottom: 3px; right: 4px; }
@@ -192,8 +196,42 @@
 .learning-embedded.learn-stacked .learn-shell { max-height: none; padding-right: 0; overflow: visible; }
 .learning-embedded .learn-board-dock, .learning-embedded .learn-shell { scroll-margin-top: 80px; }
 .learn-morph-layer { position: fixed; inset: 0; z-index: 1900; pointer-events: none; overflow: hidden; perspective: 1200px; }
-.learn-morph-surface { pointer-events: none; will-change: transform, opacity; box-shadow: 0 12px 32px -20px #0006; }
+.learn-morph-surface { pointer-events: none; contain: layout paint; will-change: transform, opacity; box-shadow: 0 12px 32px -20px #0006; }
 .learn-morph-surface * { animation: none !important; }
+
+/* Morph in place 2 keeps the board whole and gives the scene its own viewport. */
+.has-learning-morph2 .topbar { z-index: 70; }
+.learning-workspace.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) {
+  position: fixed; inset: 60px 0 0; overflow: auto; overscroll-behavior: contain;
+  scrollbar-gutter: stable; min-height: 0;
+}
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-shell {
+  max-height: var(--learn-panel-height); padding: 0 8px 0 0; scrollbar-gutter: stable;
+}
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-header { min-height: 50px; padding-bottom: 18px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-main { padding-top: 24px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-hero { padding: 28px; margin: 0; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-hero h1 { font-size: clamp(28px, 2.5vw, 42px); margin: 12px 0 16px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-hero > p { font-size: 14px; line-height: 1.65; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card { padding: 18px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card h3 { font-size: 17px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card p { font-size: 13px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card .learn-button { padding: 10px 8px; font-size: 11px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-dock-info { padding-top: 22px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]).learn-stacked .learn-shell { max-height: none; overflow: visible; padding-bottom: 24px; }
+.learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]).learn-stacked .learn-cards { grid-template-columns: 1fr; }
+.learn-scene-layer { position: fixed; inset: 60px 0 0; z-index: 25; pointer-events: none; overflow: hidden; }
+.learn-scene-ghost { position: fixed; overflow: hidden; pointer-events: none; contain: layout paint; will-change: transform, opacity; }
+.learn-scene-ghost, .learn-scene-ghost * { animation: none !important; transition: none !important; }
+.learn-swoop-anchor { position: relative; z-index: 40 !important; will-change: transform; }
+@media (min-width: 760px) and (max-width: 1550px) {
+  .learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-cards { grid-template-columns: 1fr; }
+  .learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card { display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 16px; }
+  .learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card > :not(.learn-button) { grid-column: 1; }
+  .learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card > .learn-button { grid-column: 2; grid-row: 1 / span 3; align-self: center; margin-top: 0; width: auto; }
+  .learning-embedded:is([data-presentation="morph2"], [data-presentation="morph3"]) .learn-card p { margin-bottom: 0; }
+}
 @media (max-width: 480px) {
   .learning-embedded .learn-header { flex-wrap: wrap; }
   .learning-embedded .learn-brand { font-size: 16px; }
@@ -1763,7 +1801,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .lib-tab svg { width: 17px; height: 17px; }
 .lib-tab-txt { writing-mode: vertical-rl; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.library-rail:hover .lib-tab { color: var(--ink); background: color-mix(in oklab, var(--accent) 16%, var(--panel)); opacity: 0; }
+.library-rail.open .lib-tab { color: var(--ink); background: color-mix(in oklab, var(--accent) 16%, var(--panel)); opacity: 0; }
+.library-rail.open .lib-tab:focus-visible { opacity:1; }
 .lib-panel {
   position: absolute; left: 0; top: 0; bottom: 0; width: 258px;
   background: color-mix(in oklab, var(--panel) 96%, transparent);
@@ -1772,7 +1811,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; flex-direction: column;
   transform: translateX(-100%); transition: transform .26s cubic-bezier(.4,0,.2,1);
 }
-.library-rail:hover .lib-panel { transform: translateX(0); }
+.library-rail.open .lib-panel { transform: translateX(0); }
 .lib-head {
   display: flex; align-items: center; gap: 10px;
   padding: 15px 18px 12px; border-bottom: 1px solid var(--line-soft); flex: none;
@@ -1973,3 +2012,37 @@ button { font-family: inherit; cursor: pointer; }
 .concept-excluded > summary { font-weight:600; color:var(--ink-2); }
 .concept-excluded > strong { display:block; margin-top:10px; }
 .concept-reset { border:1px solid var(--line); border-radius:6px; padding:6px 10px; background:var(--panel); color:var(--ink-2); cursor:pointer; }
+.review-save-status { position:fixed; z-index:120; bottom:18px; left:18px; display:flex; align-items:center; gap:12px; max-width:min(430px,calc(100vw - 36px)); padding:12px 14px; color:var(--ink); background:var(--panel); border:1px solid var(--line); border-radius:12px; font-size:13px; }
+.review-save-status[hidden] { display:none; }
+.review-save-status button { flex:none; color:var(--ink); background:var(--panel-2,var(--panel)); border:1px solid var(--line); border-radius:6px; padding:7px 10px; cursor:pointer; }
+.review-save-status button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.engine-line.clickable { width:100%; text-align:left; font:inherit; color:inherit; background:transparent; border:0; border-radius:0; }
+.lib-tab { font:inherit; cursor:pointer; }
+.lc-open { display:block; width:100%; text-align:left; font:inherit; color:inherit; background:transparent; padding:0; border:0; cursor:pointer; }
+.lc-open:focus-visible, .lc-fav:focus-visible, .lib-tab:focus-visible, .engine-line:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.promotion-overlay { position:fixed; inset:0; z-index:200; display:grid; place-items:center; background:rgba(0,0,0,.45); padding:16px; }
+.promotion-picker { max-width:100%; padding:20px; background:var(--panel); border:1px solid var(--line); border-radius:12px; color:var(--ink); }
+.promotion-picker button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; color:var(--ink); background:var(--panel-2); font:inherit; cursor:pointer; }
+.promotion-picker button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.promotion-picker h3 { margin:0 0 16px; font-size:18px; }
+.promotion-options { display:flex; gap:8px; flex-wrap:wrap; }
+.promotion-options button { display:flex; flex-direction:column; align-items:center; gap:6px; min-width:60px; font-size:12px; }
+.promotion-options img { width:40px; height:40px; }
+.promotion-cancel { margin-top:16px; }
+
+/* A hidden Concepts panel also releases its automatic-layout column/row. */
+.stage .mod[data-mod="concepts"][hidden] { display:none !important; }
+@media (min-width:1100px) and (min-height:600px) {
+  .stage.auto:not(.desktop-layout) .side-b .mod[data-mod="learn"] { flex:0 0 var(--controls-h); }
+  .stage.auto.no-concepts:not(.desktop-layout) {
+    --board-wmax:calc(100vw - var(--sb) - var(--pad-l) - var(--gap) - var(--eb-w) - var(--side-w) - 2 * var(--gap));
+    grid-template-columns:var(--eb-w) var(--board) var(--side-w);
+    grid-template-areas:"eval board side";
+  }
+}
+@media (min-width:820px) and (max-width:1099.98px), (min-width:1100px) and (max-height:599.98px) {
+  .stage.auto.no-concepts:not(.desktop-layout) { grid-template-areas:"eval board review" "eval board moves" "eval board controls" "graph graph graph" "acc acc engine" "learn learn learn"; }
+}
+@media (max-width:819.98px) {
+  .stage.auto.no-concepts:not(.desktop-layout) { grid-template-areas:"eval board" "controls controls" "review review" "moves moves" "graph graph" "acc acc" "engine engine" "learn learn"; }
+}

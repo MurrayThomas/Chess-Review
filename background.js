@@ -10,6 +10,21 @@
 import { analyzeActiveTab, openAnalysisTab, reloadActiveAndAnalyze } from "./analyze-flow.js";
 import { browserAPI } from "./browser-compat.js";
 import { resetSettingsForRelease } from "./release-settings.js";
+import {createImportRequest, checkImport, waitImport} from "./lib/import-request.js";
+
+const pendingReviews = new Map();
+function reviewForTab(tabId, gameKey) {
+  const previous = pendingReviews.get(tabId);
+  if (previous?.gameKey === gameKey) return previous.promise;
+  previous?.request.cancel();
+  const entry = {gameKey, request:createImportRequest()};
+  entry.promise = runAnalyze(stashError, tabId, entry.request.signal).finally(() => {
+    entry.request.dispose();
+    if(pendingReviews.get(tabId) === entry)pendingReviews.delete(tabId);
+  });
+  pendingReviews.set(tabId, entry);
+  return entry.promise;
+}
 
 browserAPI.runtime.onInstalled.addListener(details =>
   resetSettingsForRelease(details).catch(err => {
@@ -21,12 +36,15 @@ browserAPI.runtime.onInstalled.addListener(details =>
 // "Free game review" button injected into the chess.com game-over modal → same flow as the popup.
 browserAPI.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg && msg.type === "openShared" && msg.payload && msg.payload.pgn) {
-    openAnalysisTab(msg.payload);
+    openAnalysisTab(msg.payload).then(() => sendResponse({ok:true}), error => {
+      stashError(error);sendResponse({ok:false,error:error.message});
+    });
+    return true;
   }
   if (msg && msg.type === "freeGameReview") {
-    // Reply once the flow finishes (analysis tab opened, or fell back) so the in-page button can
-    // drop its "Opening review…" cue immediately instead of waiting out its 5s hard cap.
-    runAnalyze(stashError, sender.tab?.id).finally(() => { try { sendResponse({ done: true }); } catch {} });
+    reviewForTab(sender.tab?.id, msg.gameKey || sender.tab?.url || "").then(result => {
+      try {sendResponse(result);} catch {}
+    });
     return true; // keep the message channel open for the async sendResponse
   }
 });
@@ -36,22 +54,27 @@ browserAPI.commands.onCommand.addListener((command) => {
   if (command === "analyze-current") runAnalyze(showBadgeError);
 });
 
-async function runAnalyze(onFail, tabId = null) {
+async function runAnalyze(onFail, tabId = null, signal) {
+  const request = createImportRequest(signal);
   let username;
   try {
-    ({ username } = await browserAPI.storage.local.get("username"));
-    await analyzeActiveTab(username, tabId);
+    ({ username } = await waitImport(browserAPI.storage.local.get("username"),request.signal));
+    checkImport(request.signal);
+    await analyzeActiveTab(username, tabId, {signal:request.signal});
+    return {ok:true};
   } catch (err) {
     // Only a "can't see the game on the page" failure is worth a reload (the SPA hasn't exposed
     // the finished game yet). Username/archive/network errors won't be fixed by reloading.
-    if (err.code !== "NO_GAME") { onFail(err); return; }
+    if (err.code !== "NO_GAME") { if(!request.signal.aborted)onFail(err); return {ok:false,error:err.message}; }
     try {
-      await reloadActiveAndAnalyze(username, err.tabId);
+      await reloadActiveAndAnalyze(username, err.tabId, {signal:request.signal});
+      return {ok:true};
     } catch (err2) {
       console.warn("[Chess Analyzer] couldn't analyze active game:", (err2 && err2.message) || err.message);
-      onFail(err2 || err);
+      if(!request.signal.aborted)onFail(err2 || err);
+      return {ok:false,error:(err2 || err).message};
     }
-  }
+  } finally {request.dispose();}
 }
 
 // Stash the failure reason so the popup can surface it (with the paste box open) next time it opens.

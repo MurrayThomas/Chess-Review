@@ -150,9 +150,9 @@ test('learning presentation saves under Visual, resets to morph, and retains the
   const section=[...doc.querySelectorAll('.set-section')].find(node=>node.querySelector('.set-sect-head').textContent==='Learning experience');
   assert.ok(section);section.querySelector('.set-sect-head').click();
   const choices=section.querySelectorAll('.learn-style-option');
-  assert.deepEqual([...choices].map(node=>node.querySelector('strong').textContent),['Morph in place','Studio Morph','Minimal morph','Board morph','Separate page']);
+  assert.deepEqual([...choices].map(node=>node.querySelector('strong').textContent),['Morph in place','Morph in place 2','Morph in place 3','Studio Morph','Minimal morph','Board morph','Separate page']);
   assert.equal(choices[0].getAttribute('aria-pressed'),'true');
-  choices[4].click();await settle();assert.equal(a.store.settings.learningTransition,'page');
+  section.querySelector('[data-presentation="page"]').click();await settle();assert.equal(a.store.settings.learningTransition,'page');
   await a.call('openLearning');const legacy=a.run('learningWorkspace');assert.equal(legacy.embedded,null);
   assert.equal(doc.querySelector('.app').inert,true);assert.equal(legacy.root.getAttribute('aria-modal'),'true');
   await legacy.close();await a.call('resetVisualSettings');assert.equal(a.store.settings.learningTransition,'morph');
@@ -160,7 +160,7 @@ test('learning presentation saves under Visual, resets to morph, and retains the
   await a.call('toggleSettings');assert.equal(a.run('learningWorkspace'),null);assert.equal(doc.querySelector('#settings').hidden,false);
 });
 
-for (const presentation of ['studio','minimal','board']) test(`${presentation} is a distinct selectable design with shared practice and preserved review state`,async t=>{
+for (const presentation of ['morph2','morph3','studio','minimal','board']) test(`${presentation} is a distinct selectable design with shared practice and preserved review state`,async t=>{
   const a=app(t);loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');a.call('renderAll');a.call('go',2);
   const doc=a.dom.window.document,board=doc.querySelector('.board'),topbar=doc.querySelector('.topbar');
   a.call('toggleSettings');
@@ -183,7 +183,7 @@ for (const presentation of ['studio','minimal','board']) test(`${presentation} i
   assert.equal(doc.querySelector('.learning-workspace'),null);
 });
 
-test('the four designs keep their distinct timing and motion and migrate old branch preferences',async t=>{
+test('the four designs keep distinct motion, use compositor-friendly morphs, and migrate old branch preferences',async t=>{
   assert.equal(LearningWorkspace.presentationFor({learningPresentation:'studio'}),'board');
   assert.equal(LearningWorkspace.presentationFor({learningLayout:'morph'}),'minimal');
   assert.equal(LearningWorkspace.presentationFor({learningTransition:'studio'}),'studio');
@@ -199,7 +199,10 @@ test('the four designs keep their distinct timing and motion and migrate old bra
     motions[variant]=effects;
     assert.equal(doc.querySelector('.learn-morph-layer'),null);
   }
-  assert.equal(motions.morph[0].options.duration,760);assert.equal(motions.studio[0].options.duration,280);
+  assert.equal(motions.morph[0].options.duration,560);assert.equal(motions.studio[0].options.duration,280);
+  for(const effect of motions.morph) for(const frame of effect.frames) {
+    assert.ok(!('width' in frame || 'height' in frame || 'borderRadius' in frame),'The default morph must not relayout or repaint panel geometry on every frame');
+  }
   assert.equal(motions.minimal[0].options.duration,280);assert.equal(motions.board[0].options.duration,300);
   assert.ok(motions.studio.at(-1).frames[0].filter);assert.match(motions.minimal.at(-1).frames[0].transform,/translateY/);
   assert.match(motions.board.at(-1).frames[0].transform,/translateX/);
@@ -214,6 +217,9 @@ test('panel morph respects reduced motion and cleans up all surfaces when resize
   dom.window.matchMedia=()=>({matches:true});
   await morphPanels(doc,capturePanels([old]),[next]);assert.equal(animations.length,0);assert.equal(doc.querySelector('.learn-morph-layer'),null);
   dom.window.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});
+  const workspace=new LearningWorkspace({document:doc,storage:{},settings:()=>({moveAnim:false}),embedded:{}});
+  await workspace.transitionPanels(capturePanels([old]),[next]);
+  assert.equal(animations.length,0,'The default presentation must also honor the animation toggle');
   const pending=morphPanels(doc,capturePanels([old]),[next]);assert.equal(animations.length,3);
   assert.equal(doc.querySelector('.learn-morph-layer').getAttribute('aria-hidden'),'true');assert.equal(doc.querySelectorAll('#old').length,1);
   dom.window.dispatchEvent(new dom.window.Event('resize'));await pending;
@@ -221,4 +227,26 @@ test('panel morph respects reduced motion and cleans up all surfaces when resize
   animations.length=0;
   dom.window.Element.prototype.animate=function(){const animation={finished:Promise.resolve(),cancelled:false,cancel(){this.cancelled=true;}};animations.push(animation);return animation;};
   await morphPanels(doc,capturePanels([old]),[next]);assert.ok(animations.every(a=>a.cancelled));assert.equal(doc.querySelector('.learn-morph-layer'),null);
+});
+
+test('learning keeps review panels mounted until loading finishes and can close before mounting',async t=>{
+  const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  const doc=a.dom.window.document,board=doc.querySelector('.board'),wrap=doc.querySelector('#boardWrap'),parent=wrap.parentNode;
+  const originalFetch=globalThis.fetch;let release;
+  globalThis.fetch=()=>new Promise(resolve=>{release=()=>resolve({ok:true,json:async()=>structuredClone(library)});});
+  t.after(()=>{globalThis.fetch=originalFetch;});
+  const opening=a.call('openLearning'),w=a.run('learningWorkspace');
+  assert.equal(doc.querySelector('.learning-active'),null);
+  assert.equal(w.shell,undefined);assert.equal(wrap.parentNode,parent);
+  assert.ok([...doc.querySelectorAll('.mod')].every(node=>!node.inert));
+  release();await opening;
+  assert.ok(doc.querySelector('.learning-active'));assert.equal(doc.querySelector('.board'),board);
+  await w.close();assert.equal(wrap.parentNode,parent);
+
+  const canceledOpening=a.call('openLearning'),canceled=a.run('learningWorkspace');
+  await canceled.close();release();await canceledOpening;
+  assert.equal(a.run('learningWorkspace'),null);
+  assert.equal(doc.querySelector('.learning-workspace'),null);
+  assert.equal(doc.querySelector('.learn-board-placeholder'),null);
+  assert.equal(doc.querySelector('.board'),board);assert.equal(wrap.parentNode,parent);
 });
