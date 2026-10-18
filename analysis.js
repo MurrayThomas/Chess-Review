@@ -1561,7 +1561,7 @@ async function openLearning() {
   UI.settings.hidden = true;
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
-    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK,
+    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound,
     embedded:LearningWorkspace.presentationFor(S.settings) === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag, drawArrow:(from,to,flipped)=>{const a=arrowXY(from,flipped),b=arrowXY(to,flipped);const {shaft,head}=arrowBuild(arrowWaypoints(a,b),S.settings.arrowHead,S.settings.arrowHead*.70);return arrowNode(shaft,head,USER_ARROW_COLOR);}},
     onClose:()=>{
       learningWorkspace = null;

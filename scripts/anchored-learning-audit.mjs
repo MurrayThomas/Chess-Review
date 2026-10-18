@@ -9,6 +9,7 @@ export async function auditAnchoredLearning({review,call,evaluate,waitFor,sleep,
     for(const key of Object.keys(before))assert.ok(Math.abs(before[key]-after[key])<.6,`${label}: board ${key} changed: ${JSON.stringify({before,after})}`);
   };
   const screenshot=async label=>{
+    await sleep(180);
     const metrics=await run("(()=>{const w=document.querySelector('.learning-workspace'),s=w.querySelector('.learn-shell').getBoundingClientRect(),b=w.querySelector('.board').getBoundingClientRect();return {width:innerWidth,height:innerHeight,scroll:w.scrollWidth,rootScroll:w.scrollTop,panel:{x:s.x,y:s.y,width:s.width,right:s.right,bottom:s.bottom},board:{x:b.x,y:b.y,width:b.width,height:b.height},stacked:w.classList.contains('learn-stacked')}})()");
     assert.ok(metrics.scroll<=metrics.width+1,label+': horizontal overflow');
     assert.ok(metrics.panel.x>=0&&metrics.panel.right<=metrics.width+1,label+': panel outside viewport');
@@ -41,6 +42,23 @@ export async function auditAnchoredLearning({review,call,evaluate,waitFor,sleep,
   await run("document.querySelector('[data-focus=study-start]').click()");
   await waitFor(review,"!!document.querySelector('.learn-square')",'Puzzle board');same(desktop,await run(rect),'Puzzle activity');
   await screenshot('morph4-puzzle');
+  const initialElo=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
+  const findWrong="Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(([m,{Chess}])=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id);return new Chess(w.currentFen()).moves({verbose:true}).find(move=>move.lan!==p.solution[w.activity.step]&&!move.promotion&&!new Chess(move.after).isCheckmate()).lan;})";
+  const wrong=await run(findWrong);
+  await run(`document.querySelector('[data-square=${wrong.slice(0,2)}]').click();document.querySelector('[data-square=${wrong.slice(2,4)}]').click()`);
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.feedback?.status==='incorrect'&&!m.learningWorkspace.busy)",'Wrong puzzle move');
+  const lostElo=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
+  assert.ok(lostElo<initialElo);same(desktop,await run(rect),'Wrong answer');await screenshot('morph4-wrong-elo');
+  await run(`import('./analysis.js').then(m=>m.learningWorkspace.submitPuzzle('${wrong}'))`);
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)"),lostElo);
+  const solve="import('./analysis.js').then(async m=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id);while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);})";
+  await run(solve);
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)"),lostElo);
+  await screenshot('morph4-completed-after-mistake');
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.nextPuzzle())");await run(solve);
+  assert.ok(await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)")>lostElo);
+  await screenshot('morph4-clean-solve-elo');
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.nextPuzzle())");
   await run("import('./analysis.js').then(m=>m.learningWorkspace.revealPuzzle())");
   await screenshot('morph4-solution');
   for(const page of ['openings','concepts','puzzles']) {
@@ -65,6 +83,13 @@ export async function auditAnchoredLearning({review,call,evaluate,waitFor,sleep,
   for(const [width,height] of [[1366,768],[820,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(350);
     const before=await open('morph4-'+width);
+    if(width===390){
+      await run("import('./analysis.js').then(m=>m.learningWorkspace.startRatedPuzzles())");
+      const wrong=await run(findWrong);await run(`import('./analysis.js').then(m=>m.learningWorkspace.submitPuzzle('${wrong}'))`);
+      same(before,await run(rect),'Mobile wrong answer');
+      assert.equal(await run("getComputedStyle(document.querySelector('.puzzle-board-status')).display"),'flex');
+      await screenshot('morph4-mobile-wrong-elo');
+    }
     await close(before,String(width));
   }
   await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);await sleep(350);

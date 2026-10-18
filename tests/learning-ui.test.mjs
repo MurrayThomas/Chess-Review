@@ -196,10 +196,11 @@ test('Morph 4 opens to puzzles, keeps three ordered destinations, and uses the r
   w.filters.difficulty='Introductory';w.render();
   assert.equal(w.root.querySelector('[data-focus="difficulty"]').closest('details').open,true);
   w.filters.difficulty='All';w.render();
-  assert.equal(w.root.querySelector('[data-focus="study-start"]').textContent,'Start practice');
+  assert.equal(w.root.querySelector('[data-focus="study-start"]').textContent,'Play at my level');
   assert.equal(w.store.value.resume,null,'Browsing must not start an attempt');
   w.root.querySelector('[data-focus="study-start"]').click();await settle();
-  assert.equal(w.activity.kind,'puzzle');assert.equal(w.queue.length,w.puzzles.length);
+  assert.equal(w.activity.kind,'puzzle');assert.equal(w.activity.adaptive,true);assert.equal(w.queue.length,1);
+  assert.ok(Math.abs(w.puzzles.find(p=>p.id===w.activity.id).rating-w.store.value.puzzleRating.elo)<=200);
   await w.navigate('openings');assert.deepEqual(destinations(),['Puzzles','Openings','Concepts']);
   assert.ok(w.root.querySelector('.study-library-row'));
   await w.navigate('home');assert.equal(w.page,'puzzles');

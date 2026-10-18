@@ -199,6 +199,37 @@
 .learn-morph-surface { pointer-events: none; contain: layout paint; will-change: transform, opacity; box-shadow: 0 12px 32px -20px #0006; }
 .learn-morph-surface * { animation: none !important; }
 
+/* Puzzle feedback stays on the squares; the review board never shakes or moves. */
+.learn-square.puzzle-wrong::after { content: ''; position: absolute; inset: 0; border: 3px solid var(--q-mistake); background: color-mix(in srgb,var(--q-mistake) 26%,transparent); pointer-events: none; }
+.learn-feedback > strong { display: block; margin-bottom: 4px; color: var(--ink); }
+.puzzle-elo-panel { display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 7px; padding: 16px 18px; margin: 20px 0; }
+.puzzle-elo-number { display: grid; gap: 3px; flex: none; }
+.puzzle-elo-number > span { font-size: 12px; color: var(--ink-2); }
+.puzzle-elo-number > strong { font-size: 30px; font-variant-numeric: tabular-nums; letter-spacing: -.8px; line-height: 1.2; }
+.puzzle-elo-number > small { font-size: 11px; color: var(--ink-3); }
+.puzzle-elo-copy { max-width: 360px; }
+.learning-workspace .puzzle-elo-copy p { font-size: 12px; margin: 0 0 6px; }
+.puzzle-elo-copy details { font-size: 11px; color: var(--ink-2); }
+.puzzle-elo-copy summary { cursor: pointer; }
+.learning-workspace .puzzle-elo-copy details p { margin-top: 10px; }
+.puzzle-elo-change { display: grid; gap: 5px; text-align: right; font-variant-numeric: tabular-nums; }
+.puzzle-elo-change > strong { font-size: 19px; }
+.puzzle-elo-change.gain > strong { color: var(--accent); }
+.puzzle-elo-change.loss > strong { color: var(--q-mistake); }
+.puzzle-elo-change > span { font-size: 12px; }
+.puzzle-elo-change > small { font-size: 11px; color: var(--ink-2); }
+.puzzle-task-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--ink-2); margin-bottom: 16px; }
+.puzzle-played-line { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 16px 0; font: 13px var(--font-mono); color: var(--ink-2); }
+.puzzle-next-actions { padding: 4px 0 12px; }
+.puzzle-explanation { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; }
+.puzzle-explanation > summary { cursor: pointer; font-weight: 600; }
+.puzzle-explanation > .learn-button { margin-right: 14px; }
+.puzzle-board-status { display: none; }
+.learning-embedded.learn-stacked .puzzle-board-status { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; font-size: 12px; line-height: 18px; }
+.puzzle-board-status.incorrect { color: var(--q-mistake); }
+.puzzle-board-status.completed { color: var(--accent); }
+@media (max-width: 480px) { .puzzle-elo-panel { gap: 12px; padding: 14px; flex-wrap: wrap; } .puzzle-elo-copy { flex: 1 1 130px; } }
+
 /* Morph 4 keeps the exact review rectangle and puts the working controls beside it. */
 .learning-workspace.learning-embedded[data-presentation="morph4"] {
   position: fixed; inset: 60px 0 0; min-height: 0; overflow: auto;
