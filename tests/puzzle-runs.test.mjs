@@ -23,13 +23,15 @@ const current=w=>w.puzzles.find(p=>p.id===w.activity.id);
 const solve=async w=>{const id=w.activity.id;while(w.activity?.id===id)await w.submitPuzzle(current(w).solution[w.activity.step]);};
 const wrong=async w=>{const p=current(w),c=new Chess(w.currentFen());await w.submitPuzzle(c.moves({verbose:true}).find(m=>m.lan!==p.solution[w.activity.step]&&!new Chess(m.after).isCheckmate()).lan);};
 
-test('three aligned mode buttons show independent records and only normal play follows filters',async t=>{
+test('three aligned mode buttons show independent records and disable empty selections',async t=>{
   const {w}=await setup(t);
   await w.persist(p=>{p.bests.timeAttack=12;p.bests.knockout=7;p.puzzles.old={clean:1};});w.puzzleRange=[9000,9100];w.render();
   assert.deepEqual([...w.root.querySelectorAll('.puzzle-mode-name')].map(n=>n.textContent),['Solve a puzzle','Time attack','Knockout']);
   assert.deepEqual([...w.root.querySelectorAll('.puzzle-mode-record strong')].map(n=>n.textContent),['1','12','7']);
   assert.equal(w.root.querySelector('[data-focus=solve-puzzle]').disabled,true);
-  assert.equal(w.root.querySelector('[data-focus=timeAttack]').disabled,false);
+  assert.equal(w.root.querySelector('[data-focus=timeAttack]').disabled,true);
+  assert.equal(w.root.querySelector('[data-focus=knockout]').disabled,true);
+  w.puzzleRange=w.puzzleRatingBounds();w.render();
   w.root.querySelector('[data-focus=timeAttack]').click();
   for(let i=0;i<30;i++)await Promise.resolve();
   assert.equal(w.run.mode,'timeAttack');assert.ok(w.activity);
@@ -190,4 +192,48 @@ test('a filtered run without an existing best never creates a record, including 
   await solve(w);await w.finishChallenge('Ended early');await w.store.load();
   assert.equal(w.result.personalBest,false);assert.equal(w.store.value.bests.knockout,undefined);
   assert.equal(data['learning:v1'].bests.knockout,undefined);
+});
+
+for(const mode of ['timeAttack','knockout'])for(const range of [[450,850],[650,1650],[650,850]])test(`${mode} with Elo ${range.join('–')} counts solves without setting records`,async t=>{
+  const {w,data}=await setup(t);await w.persist(p=>{p.bests[mode]=1;});
+  w.puzzleRange=[...range];w.render();
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+  const starting=w.startPuzzleRun(mode),notice=w.root.querySelector('.puzzle-run-notice-card');
+  assert.match(notice.textContent,/limited the puzzle Elo range/);
+  assert.match(notice.textContent,/Puzzles solved will still count/);
+  assert.equal(w.run,null);
+  notice.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  assert.equal(w.run.bestEligible,false);
+  assert.ok(w.run.puzzles.every(p=>p.rating>=range[0]&&p.rating<=range[1]));
+  w.puzzleRange=null; // Changing settings cannot change the active run's eligibility or pool.
+  await solve(w);await solve(w);
+  assert.equal(w.root.querySelector('[data-run-score]').textContent,'2');
+  assert.equal(data['learning:v1'].bests[mode],1);
+  await w.finishChallenge('Ended early');
+  assert.equal(w.result.solved,2);assert.equal(w.result.personalBest,false);
+  assert.equal(data['learning:v1'].challenges.at(-1).solved,2);
+  assert.equal(data['learning:v1'].bests[mode],1);
+  await w.navigate('puzzles');w.puzzleRange=w.puzzleRatingBounds();w.render();
+  await w.startPuzzleRun(mode);
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);assert.equal(w.run.bestEligible,true);
+  await solve(w);await solve(w);await w.finishChallenge('Ended early');
+  assert.equal(data['learning:v1'].bests[mode],2);assert.equal(w.result.personalBest,true);
+});
+
+test('Elo slider changes are quiet until run entry and normal filtered puzzles still count as solved',async t=>{
+  const {w,dom,data}=await setup(t);
+  w.root.querySelector('[data-focus=theme-mateIn1]').click();
+  const maximum=w.root.querySelector('[data-focus=elo-1]');maximum.value=850;
+  maximum.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+  assert.deepEqual(w.puzzleRange,[450,850]);
+  await w.startRatedPuzzles();while(!w.attemptRecorded)await w.submitPuzzle(current(w).solution[w.activity.step]);
+  assert.equal(Object.values(data['learning:v1'].puzzles).filter(p=>p.clean>0).length,1);
+  await w.navigate('puzzles');
+  assert.equal(w.root.querySelector('[data-focus=solve-puzzle]').closest('.puzzle-mode').querySelector('.puzzle-mode-record strong').textContent,'1');
+  w.puzzleThemes.clear();w.render();
+  const full=w.root.querySelector('[data-focus=elo-1]');full.value=full.max;
+  full.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
+  await w.startPuzzleRun('timeAttack');assert.equal(w.run.bestEligible,true);
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
 });
