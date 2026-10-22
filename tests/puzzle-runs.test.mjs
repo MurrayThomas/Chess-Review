@@ -54,6 +54,8 @@ test('difficulty stays easy for eight puzzles then climbs without repeats in the
 test('Time attack starts at three minutes, advances on success or failure, and ends on third mistake',async t=>{
   const {w,data}=await setup(t);await w.startPuzzleRun('timeAttack');
   assert.equal(w.root.querySelector('#learn-clock').textContent,'3:00');assert.equal(w.run.lives,3);
+  assert.equal(w.root.querySelector('.puzzle-practice-actions, .puzzle-run-lives, [data-focus=end-run]'),null);
+  assert.ok(!w.root.textContent.includes('Find the full continuation'));
   assert.equal(w.root.querySelector('[data-focus=puzzle-hint]'),null);
   await solve(w);assert.equal(w.run.solved,1);assert.equal(data['learning:v1'].bests.timeAttack,1);
   const first=w.run.results[0].id;await wrong(w);
@@ -68,6 +70,8 @@ test('Time attack starts at three minutes, advances on success or failure, and e
 test('Knockout has no timer and ends immediately on its first wrong move with its own best',async t=>{
   const {w,data}=await setup(t);await w.startPuzzleRun('knockout');
   assert.equal(w.run.clock,null);assert.equal(w.root.querySelector('[role=timer]'),null);
+  assert.equal(w.root.querySelector('.puzzle-practice-actions, .puzzle-run-lives, [data-focus=end-run]'),null);
+  assert.ok(!w.root.textContent.includes('Find the full continuation'));
   await solve(w);await solve(w);assert.equal(w.run.lives,1);await wrong(w);
   assert.equal(w.run,null);assert.equal(w.result.solved,2);assert.equal(w.result.results.at(-1).correct,false);
   assert.equal(data['learning:v1'].bests.knockout,2);assert.equal(data['learning:v1'].bests.timeAttack,undefined);
