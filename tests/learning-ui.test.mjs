@@ -73,7 +73,7 @@ test('puzzles hide solution information, persist intermediate steps and distingu
   assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,p.fen.split(' ')[1]==='w'?'White to move':'Black to move');
   assert.equal(w.root.querySelector('.puzzle-practice-status').classList.contains('puzzle-quiet-status'),false);
   await w.submitPuzzle(p.solution[0]);assert.equal(w.activity.step,2);assert.equal(data['learning:v1'].resume.step,2);
-  const resume=structuredClone(data['learning:v1'].resume);await w.navigate('home');await w.resume(resume);assert.equal(w.activity.step,2);
+  const resume=structuredClone(data['learning:v1'].resume);await w.navigate('home');await w.resume(resume);assert.equal(w.activity.step,0);assert.equal(w.currentFen(),p.fen);
   while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);assert.equal(w.store.value.puzzles[p.id].clean,1);
   assert.equal(w.root.querySelector('.puzzle-explanation, .puzzle-completion'),null);assert.equal(w.root.textContent.includes('View solution'),false);
   await w.preparePuzzle(p);await w.hintPuzzle();assert.equal(w.activity.assisted,true);assert.equal(w.root.querySelectorAll('.puzzle-hint-square').length,1);
@@ -89,11 +89,11 @@ test('the puzzle header returns to the library, preserves the attempt and then r
   const back=()=>w.root.querySelector('.learn-header [data-focus="review"]');
   assert.equal(back().textContent,'← Back to review');
   await w.startPuzzleSelection([p],null,{adaptive:true});await w.submitPuzzle(p.solution[0]);
-  const step=w.activity.step,fen=w.currentFen(),elo=w.store.value.puzzleRating.elo;
+  const step=w.activity.step,elo=w.store.value.puzzleRating.elo;
   assert.equal(back().textContent,'← Back to puzzles');assert.equal(w.root.querySelector('.puzzle-practice-heading button, .puzzle-back'),null);
   back().click();await settle();assert.equal(w.closed,false);assert.equal(w.activity,null);assert.equal(w.page,'puzzles');assert.equal(back().textContent,'← Back to review');
   assert.equal(w.store.value.puzzleResume.step,step);assert.equal(w.store.value.puzzleRating.elo,elo);
-  await w.startRatedPuzzles();assert.equal(w.activity.id,p.id);assert.equal(w.currentFen(),fen);assert.equal(back().textContent,'← Back to puzzles');
+  await w.startRatedPuzzles();assert.equal(w.activity.id,p.id);assert.equal(w.activity.step,0);assert.equal(w.currentFen(),p.fen);assert.equal(w.lastMove,p.setup.move);assert.equal(back().textContent,'← Back to puzzles');
   back().click();await settle();back().click();await settle();assert.equal(w.closed,true);assert.equal(w.root.isConnected,false);
 });
 

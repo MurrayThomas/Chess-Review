@@ -29,10 +29,15 @@ test('fresh puzzles show and animate the recorded opponent move before enabling 
   assert.equal(w.store.value.puzzleRating.played,0);
 });
 
-test('resuming a puzzle at its first solver move does not replay its introduction',async t=>{
-  const {w,sounds}=await setup(t);t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected intro');});
-  await w.startPuzzleSelection([puzzle],{id:puzzle.id,step:0});
-  assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,false);assert.deepEqual(sounds,[]);
+for(const step of [0,2])test(`resuming a puzzle from step ${step} replays the introduction and restarts the full line`,async t=>{
+  const {w,sounds,data}=await setup(t);let showMove;
+  t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{showMove=()=>resolve(true);}));
+  const opening=w.startPuzzleSelection([puzzle],{id:puzzle.id,step,assisted:true,mistakes:2,rated:true});await settle();
+  assert.equal(w.currentFen(),puzzle.setup.fen);assert.equal(w.activity.step,0);assert.equal(w.busy,true);assert.deepEqual(w.puzzleMoves,[]);
+  assert.equal(w.activity.assisted,true);assert.equal(w.activity.mistakes,2);
+  showMove();await opening;
+  assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,false);assert.deepEqual(sounds,['d5']);
+  assert.equal(data['learning:v1'].puzzleResume.step,0);assert.equal(w.store.value.puzzleRating.played,1);
 });
 
 test('closing during the introductory pause cancels it and preserves a stable solver resume',async t=>{
@@ -62,10 +67,11 @@ test('reduced motion applies the setup without a pause or sliding animation',asy
   await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.lastMove,'d7d5');assert.equal(w.busy,false);
 });
 
-test('a previously attempted puzzle skips its setup without awarding another result',async t=>{
+test('a previously attempted puzzle replays its setup without awarding another result',async t=>{
   const {w,sounds}=await setup(t);await w.persist(p=>{p.puzzles[puzzle.id]={attempts:1,clean:1};});
-  t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected intro');});
-  await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.activity.rated,false);assert.deepEqual(sounds,[]);
+  t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.activity.rated,false);assert.deepEqual(sounds,['d5']);
+  assert.equal(w.store.value.puzzleRating.played,0);assert.equal(w.store.value.puzzles[puzzle.id].attempts,1);
 });
 
 test('a castling setup animates both the king and rook',async t=>{

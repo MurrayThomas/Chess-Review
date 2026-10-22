@@ -81,7 +81,8 @@ test('analysis preserves the recorded solution after rejecting an alternative ma
   await w.submitPuzzle(alternative.lan);assert.equal(w.activity.step,0);assert.deepEqual(w.puzzleMoves,[]);
   await w.submitPuzzle(p.solution[0]);await explore(w);assert.deepEqual(w.puzzleAnalysis.line,p.solution);
   const second={...p,id:'history-resume',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3']};w.puzzles.push(second);
-  await w.preparePuzzle(second,{step:2});await w.submitPuzzle('g1f3');await explore(w);
+  await w.preparePuzzle(second,{step:2});assert.equal(w.activity.step,0);assert.deepEqual(w.puzzleMoves,[]);
+  await w.submitPuzzle('e2e4');await w.submitPuzzle('g1f3');await explore(w);
   assert.deepEqual(w.puzzleAnalysis.line,second.solution);
 });
 

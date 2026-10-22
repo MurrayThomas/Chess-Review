@@ -54,17 +54,18 @@ test('older progress gains a provisional rating without erasing lessons, resumes
   assert.deepEqual(normalizePuzzleRating({elo:NaN,wins:-1,losses:'3'}),p.puzzleRating);
 });
 
-test('Solve a puzzle resumes the saved solver turn across reloads, courses and changed filters',async t=>{
+test('Solve a puzzle restarts the saved puzzle across reloads, courses and changed filters',async t=>{
   const {w,make}=await setup(t);
   await w.startPuzzleSelection([line],null,{adaptive:true});await w.submitPuzzle(line.solution[0]);
-  const expected=w.currentFen(),step=w.activity.step;
+  assert.equal(w.activity.step,2);
   await w.startOpening('italian');await w.close();
   const reopened=make();await reopened.open();reopened.puzzleRange=[9000,9100];reopened.render();
   assert.equal(reopened.root.textContent.includes('Continue puzzle'),false);
   assert.equal(reopened.root.querySelector('[data-focus="solve-puzzle"]').disabled,false);
   reopened.updatePuzzleSelection();assert.equal(reopened.root.querySelector('[data-focus="solve-puzzle"]').disabled,false);
   await reopened.startRatedPuzzles();
-  assert.equal(reopened.activity.id,line.id);assert.equal(reopened.activity.step,step);assert.equal(reopened.currentFen(),expected);
+  assert.equal(reopened.activity.id,line.id);assert.equal(reopened.activity.step,0);assert.equal(reopened.currentFen(),line.fen);
+  assert.equal(reopened.lastMove,line.setup.move);assert.deepEqual(reopened.puzzleMoves,[]);
   assert.equal(reopened.adaptivePuzzles,true);assert.equal(reopened.activity.rated,true);
 });
 
