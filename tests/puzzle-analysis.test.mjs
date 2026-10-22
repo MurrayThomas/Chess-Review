@@ -99,23 +99,34 @@ test('stale analysis results cannot replace a newer position or reappear after l
   assert.equal(w.puzzleAnalysis,null);assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);assert.equal(board.parentElement.querySelector('.puzzle-analysis-evalbar'),null);
 });
 
-test('evaluation updates retain the bar, fill and board squares, and pending moves hold the previous fill',async t=>{
+test('only completed searches update the bar and arrow; early score swings leave the previous fill intact',async t=>{
   const jobs=[];
-  const {w,p,board,a}=await setup(t,{analyse:(...args)=>{const job=deferred();jobs.push({...job,progress:args[4]});return job.promise;}});
+  const {w,p,board,a}=await setup(t,{analyse:(...args)=>{const job=deferred();jobs.push({...job,progress:preview=>args[4]?.(preview)});return job.promise;}});
   await complete(w,p);w.startPuzzleAnalysis();const first=w.analysisRequest;await settle();
   const bar=w.analysisBar,fill=bar.querySelector('.white-fill'),square=board.querySelector('[data-square=e2]');
   const changes=[],observer=new a.dom.window.MutationObserver(records=>changes.push(...records));observer.observe(bar.parentElement,{childList:true,subtree:true});
   assert.equal(fill.style.height,'50%');
-  jobs[0].progress({score:{cp:240},pv:'e2e4'});
-  assert.equal(fill.style.height,'68.4%');assert.equal(w.analysisBar,bar);assert.equal(board.querySelector('[data-square=e2]'),square);
+  for(const score of [{cp:900},{cp:-900},{mate:3},{cp:240}]){
+    jobs[0].progress({score,pv:'e2e4'});
+    assert.equal(fill.style.height,'50%');assert.equal(w.puzzleAnalysis.score,null);
+    assert.equal(bar.querySelector('.score.bot').textContent,'…');assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);
+  }
+  assert.equal(w.analysisBar,bar);assert.equal(board.querySelector('[data-square=e2]'),square);
   jobs[0].resolve({score:{cp:240},bestmove:'e2e4'});await first;
+  assert.equal(fill.style.height,'68.4%');assert.equal(bar.querySelector('.score.bot').textContent,'2.40');
+  assert.equal(board.querySelector('.puzzle-analysis-arrow').dataset.move,'e2e4');
   w.submitMove('d2d4');const second=w.analysisRequest;await settle();
   assert.equal(w.analysisBar,bar);assert.equal(bar.querySelector('.white-fill'),fill);assert.equal(fill.style.height,'68.4%');
   assert.equal(bar.getAttribute('aria-label'),'Evaluation pending');assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);
   const blackSquare=board.querySelector('[data-square=d7]');
-  jobs[1].progress({score:{cp:120},pv:'d7d5'});assert.equal(fill.style.height,'40.8%');
+  for(const score of [{mate:-2},{cp:-800},{cp:700},{cp:120}]){
+    jobs[1].progress({score,pv:'d7d5'});assert.equal(fill.style.height,'68.4%');
+    assert.equal(bar.querySelector('.score.bot').textContent,'2.40');assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);
+  }
   assert.equal(board.querySelector('[data-square=d7]'),blackSquare);
   jobs[1].resolve({score:{cp:120},bestmove:'d7d5'});await second;
+  assert.equal(fill.style.height,'40.8%');assert.equal(bar.querySelector('.score.top').textContent,'1.20');
+  assert.equal(board.querySelector('.puzzle-analysis-arrow').dataset.move,'d7d5');
   w.flipBoard();assert.equal(w.analysisBar,bar);assert.equal(bar.querySelector('.white-fill'),fill);assert.ok(bar.classList.contains('flipped'));
   const removed=[...changes,...observer.takeRecords()].flatMap(record=>[...record.removedNodes]);observer.disconnect();
   assert.ok(!removed.some(node=>node===bar||node===fill||node.contains?.(bar)),'Bar and fill must stay mounted throughout evaluation and navigation');
