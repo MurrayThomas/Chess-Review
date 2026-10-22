@@ -526,7 +526,7 @@ const PUZZLE_SUCCESS_SOUNDS = [
   ["warm-marimba", "Warm Marimba", "sounds/success/01-warm-marimba.wav"],
   ["crystal-chime", "Crystal Chime", "sounds/success/02-crystal-chime.wav"],
   ["gentle-piano", "Gentle Piano", "sounds/success/03-gentle-piano.wav"],
-  ["soft-retro", "Soft Retro", "sounds/success/04-soft-retro.wav"],
+  ["soft-retro", "Soft Retro", "sounds/success/04-soft-retro.wav", .25],
   ["airy-bloom", "Airy Bloom", "sounds/success/05-airy-bloom.wav"],
 ];
 function puzzleSuccessChoice() {
@@ -647,14 +647,14 @@ function triggerFx(ev) {
   const cfg = fxConfig(ev);
   triggerAudio(fxUrl(ev), cfg.pitch, cfg.speed);
 }
-function triggerAudio(url, pitch = 0, speed = 1) {
+function triggerAudio(url, pitch = 0, speed = 1, volume = 1) {
   const ctx = audioCtx();
   if (!ctx) return;
   if (ctx.state === "suspended") ctx.resume().catch(() => {});
   processedFx(url, pitch, speed).then((fx) => {
     const src = ctx.createBufferSource(), gain = ctx.createGain();
     src.buffer = fx.buffer; src.playbackRate.value = fx.rate;
-    gain.gain.value = masterVol();
+    gain.gain.value = masterVol() * volume;
     src.connect(gain).connect(ctx.destination);
     src.start();
   }).catch(() => {});
@@ -662,7 +662,7 @@ function triggerAudio(url, pitch = 0, speed = 1) {
 function playPuzzleSuccess(preview = false) {
   if (!preview && !S.settings.sound) return;
   const choice = puzzleSuccessChoice();
-  if (choice) triggerAudio(_url(choice[2]));
+  if (choice) triggerAudio(_url(choice[2]), 0, 1, choice[3] ?? 1);
 }
 // Fast-scrub feel (holding ←/→): nav events fire quicker than a click can ring out. Throttle the cue
 // to a tidy cadence; Web Audio is naturally polyphonic so overlapping plays don't garble.

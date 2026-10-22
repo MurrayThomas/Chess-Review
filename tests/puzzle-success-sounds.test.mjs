@@ -44,7 +44,7 @@ test('success choices resolve to bundled WAVs, with a safe default and an indepe
   assert.match(played.pop(), /05-airy-bloom\.wav$/);
 });
 
-test('success audio uses the shared master volume and unchanged pitch and speed', async t => {
+test('success audio respects master volume and Soft Retro plays at 25% of its original level', async t => {
   const a = app(t), requests = [], sources = [], gains = [];
   const destination = {}, buffer = {};
   a.state.settings.sound = true; a.state.settings.soundVolume = 27;
@@ -59,6 +59,10 @@ test('success audio uses the shared master volume and unchanged pitch and speed'
   a.call('playPuzzleSuccess'); await settle();
   assert.deepEqual(requests, [['https://extension.test/sounds/success/01-warm-marimba.wav', 0, 1]]);
   assert.equal(gains[0].gain.value, .27);assert.equal(sources[0].buffer, buffer);assert.equal(sources[0].started, true);
+  a.state.settings.puzzleSuccessSound = 'soft-retro';
+  a.call('playPuzzleSuccess');await settle();
+  assert.deepEqual(requests[1], ['https://extension.test/sounds/success/04-soft-retro.wav', 0, 1]);
+  assert.equal(gains[1].gain.value, .27 * .25);
 });
 
 test('Sound settings save and preview each choice, support Off without a preview button, and reset to default', async t => {
