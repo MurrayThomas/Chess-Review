@@ -61,7 +61,7 @@ test('success audio uses the shared master volume and unchanged pitch and speed'
   assert.equal(gains[0].gain.value, .27);assert.equal(sources[0].buffer, buffer);assert.equal(sources[0].started, true);
 });
 
-test('Sound settings save and preview each choice, support replay and Off, and reset to default', async t => {
+test('Sound settings save and preview each choice, support Off without a preview button, and reset to default', async t => {
   const {a, played} = setup(t);
   a.call('toggleSettings');
   const doc = a.dom.window.document;
@@ -77,13 +77,53 @@ test('Sound settings save and preview each choice, support replay and Off, and r
     assert.equal(controls().querySelector('.lib-dd-cur').textContent, label);
     assert.equal(played.length, 1);played.length = 0;
   }
-  controls().querySelector('.set-reset').click();assert.equal(played.length, 1);played.length = 0;
+  assert.equal(controls().querySelector('.set-reset'), null);
+  assert.equal(doc.body.textContent.includes('Preview sound'), false);
   [...controls().querySelectorAll('.lib-dd-opt')].find(b => b.textContent === 'Off').click();
   await settle();await a.run('_settingsWriteQueue');await settle();
-  assert.equal(a.store.settings.puzzleSuccessSound, 'none');assert.equal(controls().querySelector('.set-reset').disabled, true);
+  assert.equal(a.store.settings.puzzleSuccessSound, 'none');
   assert.deepEqual(played, []);
   await a.call('resetSettingKeys', a.run('VISUAL_SETTING_KEYS'));
   assert.equal(a.store.settings.puzzleSuccessSound, 'warm-marimba');
+});
+
+test('incorrect sounds can be muted independently in puzzles and practice and reset in Sound settings', async t => {
+  const a = app(t), played = [];
+  a.context.Audio = class {
+    constructor(url) { this.url = url; }
+    play() { played.push(this.url);return Promise.resolve(); }
+  };
+  loadGame(a, '1. e4 e5');
+  a.state.bests[0] = {bestmove:'e2e4',score:{cp:40},lines:[]};
+  a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  a.state.settings.sound = true;
+  a.call('toggleSettings');
+  const doc = a.dom.window.document;
+  const select = async value => {
+    doc.querySelector(`[data-setting="puzzleIncorrectSound"][data-value="${value}"]`).click();
+    await settle();await a.run('_settingsWriteQueue');await settle();
+    assert.equal(a.store.settings.puzzleIncorrectSound, value);
+  };
+  await select(false);
+  a.state.practice = {spots:[1],i:0,solving:true,busy:false};
+  await a.call('practiceAttempt', 'd2', 'd4');assert.deepEqual(played, []);
+  await select(true);
+  await a.call('practiceAttempt', 'd2', 'd4');assert.equal(played.length, 1);
+  assert.match(played[0], /Wrong\/Incorrect\.mp3$/);
+  a.state.practice = null;
+  const p = {id:'incorrect-sound',fen:new Chess().fen(),solution:['e2e4'],rating:1200,themes:[],source:{url:'https://lichess.org/training'}};
+  t.mock.method(globalThis, 'fetch', async () => ({ok:true,json:async () => ({schema:1,puzzles:[p]})}));
+  await a.call('openLearning');const w = a.run('learningWorkspace');t.after(() => w.close());
+  await w.startPuzzleSelection([p]);
+  await a.call('setSetting', 'puzzleIncorrectSound', false);
+  await w.submitPuzzle('d2d4');assert.equal(played.length, 1);
+  await a.call('setSetting', 'puzzleIncorrectSound', true);
+  await w.submitPuzzle('d2d4');assert.equal(played.length, 2);
+  a.state.settings.sound = false;
+  await w.submitPuzzle('d2d4');assert.equal(played.length, 2);
+  await a.call('setSetting', 'puzzleIncorrectSound', false);
+  await a.call('resetSettingKeys', a.run('VISUAL_SETTING_KEYS'));
+  assert.equal(a.store.settings.puzzleIncorrectSound, true);
 });
 
 test('practice plays success once for an accepted answer and stays silent for wrong or illegal answers', async t => {

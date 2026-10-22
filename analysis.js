@@ -314,6 +314,7 @@ const DEFAULT_SETTINGS = {
   // Master volume (0–100) applied to every sound the extension plays.
   soundVolume: 50,
   puzzleSuccessSound: "warm-marimba",
+  puzzleIncorrectSound: true,
   // Custom board colours (used when boardTheme === "custom" — the colour-picker chip, shown first).
   boardCustomLight: "#f9f9f9", boardCustomDark: "#e1a652",
   // Per-event sound mapping + knobs (see FX_SOUNDS / SOUND_EVENTS). snd = an FX_SOUNDS id or "default"
@@ -694,10 +695,10 @@ function playMoveSound(ply) {
   if (!S.settings.sound || ply < 1 || !S.positions[ply]) return;
   playEvent(sanSound(S.positions[ply].san));
 }
-// The practice mistake cue is fixed to Incorrect.
+// Puzzles and practice share an independently switchable Incorrect cue.
 let _wrongAudio = null;
 function playWrongSound() {
-  if (!S.settings.sound) return;
+  if (!S.settings.sound || S.settings.puzzleIncorrectSound === false) return;
   if (!_wrongAudio) _wrongAudio = new Audio(_url("sounds/Wrong/Incorrect.mp3"));
   try { _wrongAudio.volume = masterVol(); _wrongAudio.currentTime = 0; _wrongAudio.play().catch(() => {}); } catch {}
 }
@@ -4700,7 +4701,7 @@ const VISUAL_SETTING_KEYS = [
   ...BADGE_SETTING_KEYS,
   "graphStyle", "barStyle", "insightFont", "showCoords", "coordSize", ...BACKGROUND_SETTING_KEYS,
   "coach", "coachPlain", "boardTheme", "pieceStyle", "boardCustomLight", "boardCustomDark",
-  "sound", "soundVolume", "soundFx", "puzzleSuccessSound", ...ARROW_SETTING_KEYS,
+  "sound", "soundVolume", "soundFx", "puzzleSuccessSound", "puzzleIncorrectSound", ...ARROW_SETTING_KEYS,
   "moveAnim", "animSpeed", "loaderStyle", "learningTransition",
 ];
 function resetSettingKeys(keys) {
@@ -4853,9 +4854,9 @@ function visualSettings() {
       toggleRow("Sound effects", "sound"),
       slider("Volume", "soundVolume", 0, 100, 1, { fmt: (v) => v + " %" }),
       puzzleSuccessControls(),
+      toggleRow("Incorrect sound", "puzzleIncorrectSound", setSetting, "Play the Incorrect cue for a wrong puzzle or practice move."),
       el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Pick a sound for each board event, then shape it with the pitch and speed knobs. Changes preview as you make them.")),
       ...SOUND_EVENTS.map(([key, label]) => fxEventControls(key, label)),
-      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "A missed practice move plays the Incorrect cue.")),
     ),
     el("button", { class: "set-reset", onclick: resetVisualSettings }, "Reset to default"),
   );
@@ -4869,7 +4870,6 @@ function puzzleSuccessControls() {
         playPuzzleSuccess(true);
       })),
     el("span", { class: "set-note" }, "Plays when you solve a practice position or finish a puzzle."),
-    el("button", { class: "set-reset", disabled: !choice, onclick: () => playPuzzleSuccess(true) }, "Preview sound"),
   );
 }
 // Coach dropdown — only coaches that have a built animated character. Uses the
