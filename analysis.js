@@ -2504,15 +2504,15 @@ function rightPointerDown(e) {
 }
 // Drag: a floating piece clone follows the mouse; release on a legal square → move.
 function startDrag(e, from, input = null) {
-  const squares = input?.squares || sqByName;
-  const fen = () => input?.fen || activePos().fen;
+  let squares = input?.squares || sqByName;
+  const fen = () => typeof input?.fen === 'function' ? input.fen() : input?.fen || activePos().fen;
   const squareAt = input?.squareAt || squareFromEvent;
   const deselect = () => {if(input)input.deselect();else {S.selectedSq=null;renderSelection();}};
   _cancelBoardDrag?.();
   const board = UI.boardWrap.querySelector(".board");
   if (!board) return;
   const cell = board.getBoundingClientRect().width / 8;
-  const orig = squares[from] && squares[from].querySelector(".piece, .piece-svg, .piece-img");
+  let orig = squares[from] && squares[from].querySelector(".piece, .piece-svg, .piece-img");
   const ghost = el("div", { class: "drag-piece ps-" + S.settings.pieceStyle });
   if (orig) ghost.append(orig.cloneNode(true));
   ghost.style.width = ghost.style.height = cell + "px";
@@ -2541,6 +2541,19 @@ function startDrag(e, from, input = null) {
   };
   // Cancel: put the piece back where it was picked up, and deselect.
   const cancel = () => { if (done) return; finish(); deselect(); };
+  // Learning can paint the opponent's reply while the solver holds a piece.
+  // Keep the pointer session and ghost, and hide the newly painted original.
+  cancel.active = () => !done;
+  cancel.refresh = next => {
+    if (done) return;
+    if (orig) orig.style.visibility = '';
+    if (lastHover) squares[lastHover]?.classList.remove('drag-over');
+    squares = next;
+    orig = squares[from]?.querySelector('.piece, .piece-svg, .piece-img');
+    if (!orig || orig.dataset.piece !== ghost.firstElementChild?.dataset.piece) {cancel();return;}
+    orig.style.visibility = 'hidden';
+    if (lastHover) setHover(lastHover);
+  };
   const onCancel = ev => { if (ev.pointerId === e.pointerId) cancel(); };
   _cancelBoardDrag = cancel;
   // Right-click while dragging → cancel (both via contextmenu and the button bitmask).

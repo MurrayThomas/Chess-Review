@@ -202,7 +202,7 @@
 /* Puzzle feedback stays on the squares; the review board never shakes or moves. */
 .learn-square.puzzle-wrong::after { content: ''; position: absolute; inset: 0; z-index: 0; border: 3px solid rgba(255,58,78,.9); background: rgba(239,50,65,.48); pointer-events: none; }
 .learn-feedback > strong { display: block; margin-bottom: 4px; color: var(--ink); }
-.puzzle-elo-panel { display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 7px; padding: 16px 18px; margin: 20px 0; }
+.puzzle-elo-panel { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 7px; padding: 16px 18px; margin: 20px 0; }
 .puzzle-elo-number { display: grid; gap: 3px; flex: none; }
 .puzzle-elo-number > span { font-size: 12px; color: var(--ink-2); }
 .puzzle-elo-number > strong { font-size: 30px; font-variant-numeric: tabular-nums; letter-spacing: -.8px; line-height: 1.2; }
@@ -290,6 +290,11 @@
 .learn-board > svg.puzzle-hint-arrow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 8; }
 .learn-board[data-puzzle-board] .piece-img { animation: none; }
 .learn-square.puzzle-reply-target { z-index: 5; }
+.learn-board.puzzle-arranging { position: relative; }
+.learn-board.puzzle-arranging > .sq .piece-img { visibility: hidden; }
+.puzzle-piece-transition { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 8; border-radius: inherit; }
+.puzzle-transition-piece { position: absolute; width: 12.5%; height: 12.5%; display: grid; place-items: center; }
+.puzzle-transition-piece .piece-img { width: 94%; height: 94%; animation: none; pointer-events: none; }
 .puzzle-completion .puzzle-explanation { margin-top: 12px; }
 .learning-workspace .puzzle-session > .puzzle-elo-panel { margin: -8px 0 24px; gap: 12px 20px; }
 .puzzle-session [data-puzzle-elo] { font-size: 32px; font-variant-numeric: tabular-nums; transform-origin: left center; }

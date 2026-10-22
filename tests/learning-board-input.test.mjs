@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {app,loadGame,settle} from './helpers/app.mjs';
+import {Chess} from '../lib/chess.js';
 
 async function setup(t) {
   const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
@@ -83,4 +84,40 @@ test('learning promotion requires an explicit choice and Escape cancels without 
   down('a7');up('a7');down('a8');up('a8');
   doc.querySelector('[aria-label="Promote to rook"]').click();assert.deepEqual(moves,['a7a8r']);
   await w.close();assert.ok(board);
+});
+
+test('a picked-up solver piece survives the opponent introduction and reply without accepting early drops',async t=>{
+  const {a,w,doc,board,down,up,event}=await setup(t);
+  const before=new Chess();before.move('e4');const after=new Chess(before.fen());after.move('d5');
+  const puzzle={id:'pickup-intro',fen:after.fen(),setup:{fen:before.fen(),move:'d7d5'},solution:['e4d5','d8d5','b1c3'],rating:1200,themes:[],theme:'fork',source:{url:'https://lichess.org/training'}};
+  w.puzzles=[puzzle];a.state.settings.moveAnim=true;
+  let advance,finishSlide;
+  t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{advance=()=>resolve(true);}));
+  a.dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finishSlide=resolve;}),cancel(){finishSlide?.();}});
+  const opening=w.startPuzzleSelection([puzzle]);await settle();
+  down('e4');assert.ok(board.querySelector('[data-square=e4].sel'));assert.ok(doc.querySelector('.drag-piece'));
+  a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');
+  assert.equal(w.activity.step,0);assert.equal(w.store.value.puzzleRating.played,0);assert.equal(doc.querySelector('.drag-piece'),null);
+  down('e4');const ghost=doc.querySelector('.drag-piece');advance();await settle();
+  assert.equal(doc.querySelector('.drag-piece'),ghost);assert.equal(board.querySelector('[data-square=e4] img').style.visibility,'hidden');
+  finishSlide();await opening;assert.equal(doc.querySelector('.drag-piece'),ghost);
+  assert.equal(w.selected,'e4');assert.equal(w.busy,false);
+  a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');await settle();
+  assert.equal(w.activity.step,1);assert.equal(w.busy,true);assert.equal(doc.querySelector('.drag-piece'),null);
+  down('b1');const knight=doc.querySelector('.drag-piece');assert.ok(knight);advance();await settle();
+  assert.equal(doc.querySelector('.drag-piece'),knight);assert.equal(w.activity.step,2);
+  finishSlide();await settle();assert.equal(w.busy,false);assert.equal(doc.querySelector('.drag-piece'),knight);
+  a.dom.window.dispatchEvent(event('pointermove','c3'));up('c3');await settle();
+  assert.equal(w.feedback.status,'completed');assert.equal(w.store.value.puzzleRating.played,1);
+  assert.equal(doc.querySelector('.drag-piece'),null);await w.close();
+});
+
+test('a solver piece captured by the opponent cancels its pickup cleanly',async t=>{
+  const {a,w,doc,down}=await setup(t);
+  const before=new Chess();before.move('e4');before.move('d5');const after=new Chess(before.fen());after.move('exd5');
+  const puzzle={id:'captured-pickup',fen:after.fen(),setup:{fen:before.fen(),move:'e4d5'},solution:['d8d5'],rating:1200,themes:[],theme:'fork',source:{url:'https://lichess.org/training'}};
+  w.puzzles=[puzzle];a.state.settings.moveAnim=true;let advance;
+  t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{advance=()=>resolve(true);}));
+  const opening=w.startPuzzleSelection([puzzle]);await settle();down('d5');assert.ok(doc.querySelector('.drag-piece'));
+  advance();await opening;assert.equal(doc.querySelector('.drag-piece'),null);assert.equal(w.selected,null);assert.equal(w.store.value.puzzleRating.played,0);
 });
