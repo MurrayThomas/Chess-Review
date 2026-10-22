@@ -1,0 +1,63 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {JSDOM} from 'jsdom';
+import {Chess} from '../lib/chess.js';
+import {LearningWorkspace} from '../lib/learning/workspace.js';
+
+const before=new Chess();before.move('e4');const after=new Chess(before.fen());after.move('d5');
+const puzzle={id:'intro',fen:after.fen(),setup:{fen:before.fen(),move:'d7d5'},solution:['e4d5','d8d5','b1c3'],rating:1200,themes:['fork'],theme:'fork',source:{url:'https://lichess.org/training'}};
+const settle=async()=>{for(let i=0;i<30;i++)await Promise.resolve();};
+async function setup(t,{settings={moveAnim:true},item=puzzle}={}) {
+  const dom=new JSDOM('<div id="root"><div class="app"></div></div>',{url:'https://extension.test'}),data={},sounds=[];
+  t.mock.method(globalThis,'fetch',async()=>({ok:true,json:async()=>({schema:1,puzzles:[item]})}));
+  const storage={async get(key){return {[key]:structuredClone(data[key])};},async set(values){Object.assign(data,structuredClone(values));}};
+  const w=new LearningWorkspace({document:dom.window.document,storage,settings:()=>settings,onPuzzleMove:san=>sounds.push(san),makePiece:()=>dom.window.document.createElement('img')});
+  t.after(async()=>{await w.close();dom.window.close();});await w.open();return {w,dom,data,sounds};
+}
+
+test('fresh puzzles show and animate the recorded opponent move before enabling the solver',async t=>{
+  const {w,dom,data,sounds}=await setup(t);let showMove,finishMove;
+  t.mock.method(w,'waitForPuzzleReply',delay=>{assert.equal(delay,450);return new Promise(resolve=>{showMove=()=>resolve(true);});});
+  dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finishMove=resolve;}),cancel(){finishMove?.();}});
+  const opening=w.startPuzzleSelection([puzzle]);await settle();
+  assert.equal(w.currentFen(),puzzle.setup.fen);assert.equal(w.busy,true);assert.equal(w.activity.step,0);
+  assert.ok(w.root.querySelector('[data-focus="puzzle-hint"]').disabled);
+  await w.submitPuzzle(puzzle.solution[0]);await w.hintPuzzle();assert.equal(w.store.value.puzzleRating.played,0);
+  showMove();await settle();assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,true);assert.deepEqual(sounds,['d5']);
+  finishMove();await opening;
+  assert.equal(w.busy,false);assert.equal(w.lastMove,'d7d5');assert.equal(data['learning:v1'].resume.step,0);
+  assert.equal(w.store.value.puzzleRating.played,0);
+});
+
+test('resuming a puzzle at its first solver move does not replay its introduction',async t=>{
+  const {w,sounds}=await setup(t);t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected intro');});
+  await w.startPuzzleSelection([puzzle],{id:puzzle.id,step:0});
+  assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,false);assert.deepEqual(sounds,[]);
+});
+
+test('closing during the introductory pause cancels it and preserves a stable solver resume',async t=>{
+  const {w,data,sounds}=await setup(t);
+  const opening=w.startPuzzleSelection([puzzle]);await settle();assert.equal(w.replyPending,true);
+  await w.close();await opening;assert.equal(w.replyTimer,null);assert.deepEqual(sounds,[]);
+  assert.equal(data['learning:v1'].resume.step,0);assert.equal(w.store.value.puzzleRating.played,0);
+});
+
+test('the challenge clock waits until the opponent introduction is complete',async t=>{
+  const {w}=await setup(t);let release;
+  t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{release=()=>resolve(true);}));
+  const starting=w.startChallenge(60);await settle();assert.equal(w.run.clock.started,false);
+  release();await starting;assert.equal(w.run.clock.started,true);clearInterval(w.ticker);
+  assert.equal(w.store.value.puzzleRating.played,0);
+});
+
+for(const item of [{...puzzle,setup:null},{...puzzle,setup:{fen:before.fen(),move:'a1a8'}}])test('missing or invalid setup data opens directly to the solver position',async t=>{
+  const {w,sounds}=await setup(t,{item});t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected intro');});
+  await w.startPuzzleSelection([item]);assert.equal(w.currentFen(),item.fen);assert.equal(w.busy,false);assert.deepEqual(sounds,[]);
+});
+
+test('reduced motion applies the setup without a pause or sliding animation',async t=>{
+  const {w,dom}=await setup(t);dom.window.matchMedia=()=>({matches:true});
+  t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected delay');});
+  dom.window.HTMLImageElement.prototype.animate=()=>{throw Error('Unexpected animation');};
+  await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.lastMove,'d7d5');assert.equal(w.busy,false);
+});
