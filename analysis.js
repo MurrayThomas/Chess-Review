@@ -2444,12 +2444,13 @@ function requestPromotion(from, to, animate) {
   const key = e => {
     if(e.key === "Escape"){e.preventDefault();e.stopImmediatePropagation();close();}
     else if(e.key === "Tab") {const nodes=[...card.querySelectorAll("button")];if(e.shiftKey&&document.activeElement===nodes[0]){e.preventDefault();nodes[nodes.length-1].focus();}else if(!e.shiftKey&&document.activeElement===nodes[nodes.length-1]){e.preventDefault();nodes[0].focus();}}
+    else if(e.key === 'ArrowUp' || e.key === 'ArrowDown') {e.preventDefault();e.stopImmediatePropagation();const nodes=[...card.querySelectorAll('.promotion-options button')],index=nodes.indexOf(document.activeElement);nodes[(index+(e.key==='ArrowUp'?-1:1)+nodes.length)%nodes.length].focus();}
     else if(e.key.startsWith("Arrow")||["Home","End","f"].includes(e.key))e.stopImmediatePropagation();
   };
   const card = el("div", {class:"promotion-picker", role:"dialog", "aria-modal":"true", "aria-label":"Choose promotion piece"},
-    el("h3", {}, "Promote pawn"),
+    el("h3", {}, "Promote to"),
     el("div", {class:"promotion-options"}, ...[["q","Queen"],["r","Rook"],["b","Bishop"],["n","Knight"]].map(([piece,label]) =>
-      el("button", {type:"button", onclick:()=>{close();if(S.pgn===pgn&&activePos().fen===fen&&S.practice===practice)applyUserMove(from,to,animate,piece);}}, makePiece(piece,sideToMove(fen)), el("span",{},label)))),
+      el("button", {type:"button", 'aria-label':'Promote to '+label.toLowerCase(), title:label, onclick:()=>{close();if(S.pgn===pgn&&activePos().fen===fen&&S.practice===practice)applyUserMove(from,to,animate,piece);}}, makePiece(piece,sideToMove(fen))))),
     el("button", {type:"button", class:"promotion-cancel", onclick:close}, "Cancel"));
   const overlay = el("div", {class:"promotion-overlay"}, card);
   document.body.append(overlay); app.inert = true; _cancelPromotion = close;

@@ -15,11 +15,22 @@ test('promotion picker supports cancellation and explicit rook selection',t=>{
   const a=review(t,'[SetUp "1"]\n[FEN "8/k1P5/2K5/8/8/8/8/8 w - - 0 1"]\n\n1. Kb5'),doc=a.dom.window.document;
   a.call('applyUserMove','c7','c8',false);assert.ok(doc.querySelector('.promotion-picker'));assert.equal(doc.querySelector('.app').inert,true);
   doc.querySelector('.promotion-cancel').click();assert.equal(a.state.analysisMode,false);assert.equal(doc.querySelector('.promotion-picker'),null);
-  a.call('applyUserMove','c7','c8',false);[...doc.querySelectorAll('.promotion-options button')].find(n=>n.textContent==='Rook').click();assert.equal(a.state.variation.positions[1].promotion,'r');assert.equal(doc.querySelector('.app').inert,false);
+  a.call('applyUserMove','c7','c8',false);
+  const options=[...doc.querySelectorAll('.promotion-options button')];assert.equal(options.length,4);
+  assert.deepEqual(options.map(n=>n.querySelector('img').dataset.piece),['wQ','wR','wB','wN']);assert.ok(options.every(n=>n.textContent===''));
+  options[0].dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true,cancelable:true}));assert.equal(doc.activeElement,options[1]);
+  doc.querySelector('[aria-label="Promote to rook"]').click();assert.equal(a.state.variation.positions[1].promotion,'r');assert.equal(doc.querySelector('.app').inert,false);
 });
 test('different promotion does not silently replay the recorded mainline',t=>{
   const a=review(t,'[SetUp "1"]\n[FEN "7k/P7/8/8/8/8/8/7K w - - 0 1"]\n\n1. a8=N');
   a.call('applyUserMove','a7','a8',false,'q');assert.equal(a.state.analysisMode,true);assert.equal(a.state.variation.positions[1].promotion,'q');
+});
+
+test('Black promotion uses only Black queen, rook, bishop and knight images',t=>{
+  const a=review(t,'[SetUp "1"]\n[FEN "7k/8/8/8/8/8/p7/7K b - - 0 1"]\n\n1... a1=Q'),doc=a.dom.window.document;
+  a.call('applyUserMove','a2','a1',false);
+  assert.deepEqual([...doc.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['bQ','bR','bB','bN']);
+  doc.querySelector('[aria-label="Promote to knight"]').click();assert.equal(a.state.variation.positions[1].promotion,'n');
 });
 test('library toggle, game buttons, favorite focus and Escape form one keyboard workflow',async t=>{
   const a=review(t),doc=a.dom.window.document;const rec={id:'saved',pgn:'1. d4 d5',meta:{gameId:'saved'},myAcc:90,opName:'Opponent',fav:false};a.state.library=[rec];a.store.library=[structuredClone(rec)];a.call('renderLibrary');

@@ -2004,14 +2004,16 @@ button { font-family: inherit; cursor: pointer; }
 .lc-open { display:block; width:100%; text-align:left; font:inherit; color:inherit; background:transparent; padding:0; border:0; cursor:pointer; }
 .lc-open:focus-visible, .lc-fav:focus-visible, .lib-tab:focus-visible, .engine-line:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
 .promotion-overlay { position:fixed; inset:0; z-index:200; display:grid; place-items:center; background:rgba(0,0,0,.45); padding:16px; }
-.promotion-picker { max-width:100%; padding:20px; background:var(--panel); border:1px solid var(--line); border-radius:12px; color:var(--ink); }
+.promotion-picker { max-width:100%; padding:12px; background:var(--panel); border:1px solid var(--line); border-radius:12px; color:var(--ink); box-shadow:0 16px 48px #0006; }
 .promotion-picker button { border:1px solid var(--line); border-radius:6px; padding:7px 10px; color:var(--ink); background:var(--panel-2); font:inherit; cursor:pointer; }
 .promotion-picker button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-.promotion-picker h3 { margin:0 0 16px; font-size:18px; }
-.promotion-options { display:flex; gap:8px; flex-wrap:wrap; }
-.promotion-options button { display:flex; flex-direction:column; align-items:center; gap:6px; min-width:60px; font-size:12px; }
-.promotion-options img { width:40px; height:40px; }
-.promotion-cancel { margin-top:16px; }
+.promotion-picker h3 { margin:0 0 10px; font-size:12px; font-weight:600; text-align:center; color:var(--ink-2); }
+.promotion-options { display:flex; flex-direction:column; gap:4px; }
+.promotion-options button { display:grid; place-items:center; width:72px; height:72px; padding:6px; border-color:transparent; background:var(--panel-2); }
+.promotion-options button:hover, .promotion-options button:focus-visible { background:color-mix(in srgb,var(--accent) 22%,var(--panel-2)); border-color:var(--accent); }
+.promotion-options .piece-img { width:56px; height:56px; object-fit:contain; pointer-events:none; animation:none; }
+.promotion-picker .promotion-cancel { width:100%; margin-top:10px; font-size:12px; }
+@media (max-height:480px) { .promotion-options button { width:56px; height:56px; } .promotion-options .piece-img { width:44px; height:44px; } }
 
 /* A hidden Concepts panel also releases its automatic-layout column/row. */
 .stage .mod[data-mod="concepts"][hidden] { display:none !important; }

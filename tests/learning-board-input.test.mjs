@@ -78,6 +78,8 @@ test('learning promotion requires an explicit choice and Escape cancels without 
   const moves=[];w.submitMove=move=>moves.push(move);
   down('a7');up('a7');down('a8');up('a8');
   assert.equal(doc.querySelectorAll('.learn-promotion .promotion-options button').length,4);
+  assert.deepEqual([...doc.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['wQ','wR','wB','wN']);
+  assert.ok([...doc.querySelectorAll('.promotion-options button')].every(n=>n.textContent===''));
   assert.deepEqual(moves,[]);
   doc.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
   assert.equal(doc.querySelector('.learn-promotion'),null);assert.equal(w.closed,false);
@@ -110,6 +112,15 @@ test('a picked-up solver piece survives the opponent introduction and reply with
   a.dom.window.dispatchEvent(event('pointermove','c3'));up('c3');await settle();
   assert.equal(w.feedback.status,'completed');assert.equal(w.store.value.puzzleRating.played,1);
   assert.equal(doc.querySelector('.drag-piece'),null);await w.close();
+});
+
+test('puzzle promotion uses the graphical picker and submits the selected underpromotion',async t=>{
+  const {w,doc,board,down,up}=await setup(t);
+  const puzzle={id:'promote',fen:'7k/P7/8/8/8/8/8/7K w - - 0 1',solution:['a7a8r'],rating:1200,themes:[],theme:'promotion',source:{url:'https://lichess.org/training'}};
+  w.puzzles=[puzzle];await w.startPuzzleSelection([puzzle]);down('a7');up('a7');down('a8');up('a8');
+  assert.equal(w.activity.step,0);assert.deepEqual([...doc.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['wQ','wR','wB','wN']);
+  doc.querySelector('[aria-label="Promote to rook"]').click();await settle();
+  assert.equal(w.feedback.status,'completed');assert.equal(board.querySelector('[data-square=a8] img').dataset.piece,'wR');
 });
 
 test('a solver piece captured by the opponent cancels its pickup cleanly',async t=>{
