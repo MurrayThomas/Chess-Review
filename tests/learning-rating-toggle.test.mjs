@@ -29,9 +29,12 @@ test('Elo is enabled for old progress and an unrated preference survives normali
 
 test('the small Elo switch persists across closing, reopening and resuming a puzzle',async t=>{
   const {w,make,data}=await setup(t),button=()=>w.root.querySelector('[data-focus=puzzle-rating-toggle]');
+  assert.equal(button(),null);
+  assert.equal(w.root.querySelector('.puzzle-elo-panel, .puzzle-solved-count'),null);
+  await w.startRatedPuzzles();
   assert.equal(button().getAttribute('role'),'switch');assert.equal(button().getAttribute('aria-checked'),'true');
   assert.ok(button().closest('.puzzle-elo-summary').querySelector('[data-puzzle-elo]'));
-  await w.startRatedPuzzles();await w.togglePuzzleRating();
+  await w.togglePuzzleRating();
   assert.equal(button().textContent,'Rating Off');assert.equal(w.activity.rated,false);
   assert.equal(data['learning:v1'].puzzleRatingEnabled,false);assert.equal(data['learning:v1'].puzzleResume.rated,false);
   const resume=structuredClone(data['learning:v1'].puzzleResume);await w.close();
