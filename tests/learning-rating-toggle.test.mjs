@@ -55,6 +55,32 @@ test('unrated mistakes, hints, skips and solves still save progress and leave El
   assert.equal(w.store.value.puzzles.one.ratingResult,undefined);
 });
 
+test('toggling Elo preserves the live view and usable controls even while storage is slow',async t=>{
+  const {w}=await setup(t);await w.startRatedPuzzles();
+  const main=w.root.querySelector('.learn-main'),board=w.root.querySelector('.learn-board');
+  const region=w.root.querySelector('.puzzle-rating-region'),toggle=w.ratingToggle;
+  const controls=[...w.root.querySelectorAll('button')].filter(n=>n!==toggle);
+  const disabled=controls.map(n=>n.disabled);
+  let release;const waiting=new Promise(resolve=>{release=resolve;}),update=w.store.update.bind(w.store);
+  t.mock.method(w.store,'update',async change=>{await waiting;return update(change);});
+  const saving=w.togglePuzzleRating();
+  assert.equal(w.busy,false);assert.equal(region.dataset.enabled,'false');
+  assert.equal(region.getAttribute('aria-hidden'),'true');assert.equal(region.hasAttribute('inert'),true);
+  assert.equal(toggle.getAttribute('aria-checked'),'false');
+  assert.ok(controls.every(n=>n.isConnected));assert.deepEqual(controls.map(n=>n.disabled),disabled);
+  release();await saving;
+  await w.togglePuzzleRating();
+  assert.equal(w.root.querySelector('.learn-main'),main);assert.equal(w.root.querySelector('.learn-board'),board);
+  assert.equal(w.root.querySelector('.puzzle-rating-region'),region);
+  assert.equal(region.dataset.enabled,'true');assert.equal(region.getAttribute('aria-hidden'),'false');
+  assert.equal(region.hasAttribute('inert'),false);assert.ok(controls.every(n=>n.isConnected));
+  assert.equal(w.activity.rated,false);
+  await w.submitPuzzle('e2e4');
+  const analyse=w.root.querySelector('[data-focus=puzzle-analyse]');
+  assert.ok(analyse);await w.togglePuzzleRating();
+  assert.equal(w.root.querySelector('[data-focus=puzzle-analyse]'),analyse);assert.equal(analyse.disabled,false);
+});
+
 test('reenabling Elo never rates the current unrated attempt and applies to the next puzzle',async t=>{
   const {w,puzzles}=await setup(t);await w.startPuzzleSelection(puzzles);
   await w.togglePuzzleRating();await w.submitPuzzle('d2d4');await w.togglePuzzleRating();

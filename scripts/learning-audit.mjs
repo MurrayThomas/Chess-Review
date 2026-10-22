@@ -186,6 +186,36 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.deepEqual(puzzleActions[0],puzzleActions[1],'Hint and Skip must share neutral styling');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to puzzles');
   assert.equal(await run("!!document.querySelector('.puzzle-practice-heading button:not(.puzzle-rating-toggle), .puzzle-back')"),false);
+  const checkRatingCollapse=async label=>{
+    for(const enabled of [false,true]){
+      const motion=await run(`import('./analysis.js').then(async m=>{
+        const w=m.learningWorkspace,region=document.querySelector('.puzzle-rating-region');
+        const selectors=['.puzzle-practice-actions','.puzzle-practice-status','.puzzle-analyse'].filter(s=>document.querySelector(s));
+        const controls=[...document.querySelectorAll('.learning-workspace button')].filter(n=>!n.matches('.puzzle-rating-toggle'));
+        const disabled=controls.map(n=>n.disabled),frames=[];
+        const frame=()=>({height:region.getBoundingClientRect().height,tops:selectors.map(s=>document.querySelector(s).getBoundingClientRect().top)});
+        frames.push(frame());const start=performance.now(),saving=w.togglePuzzleRating();
+        let stable=true;
+        await new Promise(resolve=>{function tick(){
+          stable&&=controls.every((n,i)=>n.isConnected&&n.disabled===disabled[i]);frames.push(frame());
+          if(performance.now()-start<650)requestAnimationFrame(tick);else resolve();
+        }requestAnimationFrame(tick);});await saving;
+        const style=getComputedStyle(w.ratingToggle);
+        return {frames,stable,hidden:region.getAttribute('aria-hidden'),inert:region.hasAttribute('inert'),visibility:getComputedStyle(region).visibility,
+          toggleBorder:style.borderTopWidth,toggleBackground:style.backgroundColor};
+      })`);
+      assert.equal(motion.stable,true,label+': toggling must preserve every other button and its enabled state');
+      assert.equal(motion.hidden,String(!enabled));assert.equal(motion.inert,!enabled);
+      assert.equal(motion.visibility,enabled?'visible':'hidden');
+      assert.equal(motion.toggleBorder,'0px');assert.equal(motion.toggleBackground,'rgba(0, 0, 0, 0)');
+      const first=motion.frames[0],last=motion.frames.at(-1),height=Math.max(first.height,last.height);
+      assert.ok(height>20);assert.ok((enabled?first:last).height<1,label+': hidden Elo must occupy no space');
+      assert.ok(motion.frames.some(f=>f.height>2&&f.height<height-2),label+': collapse must pass through intermediate heights');
+      first.tops.forEach((top,i)=>assert.ok(Math.abs((last.tops[i]-top)-(last.height-first.height))<2,label+': all lower controls must follow the collapsing Elo'));
+      for(let i=1;i<motion.frames.length;i++)assert.ok((motion.frames[i].height-motion.frames[i-1].height)*(enabled?1:-1)>=-1,label+': motion must be gradual and monotonic');
+    }
+  };
+  await checkRatingCollapse('Puzzle practice');
   await run("import('./analysis.js').then(m=>{window.savedPuzzle={id:m.learningWorkspace.activity.id,step:m.learningWorkspace.activity.step};document.querySelector('.learn-header [data-focus=review]').click();})");
   await waitFor(review,"!!document.querySelector('[data-focus=solve-puzzle]')",'Back to puzzle library');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to review');
@@ -265,6 +295,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const earned=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
   assert.ok(completionFrames.some(f=>f.elo>completionFrames[0].elo&&f.elo<earned),'Elo must visibly tick through intermediate values');
   await capture('puzzle-earned-elo');
+  await checkRatingCollapse('Completed puzzle');
   assert.equal(await run("document.querySelectorAll('.puzzle-correct').length"),2);
   assert.match(await run("getComputedStyle(document.querySelector('.puzzle-correct'),'::after').backgroundColor"),/129, 182, 76, 0\.14/,'Correct feedback must use faint green');
   await checkResultBadge('correct');
