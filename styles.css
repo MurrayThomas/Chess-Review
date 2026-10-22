@@ -168,11 +168,16 @@
 .learn-opening-moves .learn-button { text-align: left; border-color: transparent; background: transparent; padding: 10px 12px; }
 .learn-opening-moves [aria-current="step"] { background: color-mix(in oklab,var(--accent) 14%,transparent); color: var(--accent); }
 .learn-opening-moves .learn-button:hover { background: var(--panel); }
-.learn-notice-overlay { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; padding: 24px; background: #0009; pointer-events: auto; }
+.learn-notice-overlay { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; box-sizing: border-box; padding: 16px; background: #0009; pointer-events: auto; }
 .learning-workspace:has(.learn-notice-overlay) { z-index: 2200; }
-.learn-notice-card { width: min(100%,440px); box-sizing: border-box; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: 0 20px 80px #0005; }
-.learn-notice-card h2 { margin: 0 0 14px; font-size: 23px; }
-.learn-notice-card p { color: var(--ink-2); line-height: 1.7; margin: 0 0 24px; }
+.learn-notice-card { width: min(100%,540px); max-height: calc(100dvh - 32px); overflow: auto; box-sizing: border-box; padding: clamp(20px,4vw,36px); border: 1px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: 0 20px 80px #0005; text-align: center; }
+.learn-notice-card h2 { margin: 0 auto 16px; max-width: 380px; font-size: 25px; line-height: 1.25; text-wrap: balance; }
+.learn-notice-card p { color: var(--ink-2); line-height: 1.7; margin: 0 auto; max-width: 440px; min-height: 6.8em; text-wrap: pretty; }
+.learn-notice-actions { position: relative; height: 140px; margin-top: 12px; }
+.learn-notice-actions .learn-button { position: absolute; bottom: 0; white-space: nowrap; touch-action: manipulation; }
+.learn-notice-accept { left: 0; z-index: 1; }
+.learn-notice-reject { right: 0; will-change: transform; }
+@media (max-width: 400px) { .learn-notice-actions { height: 170px; } .learn-notice-actions .learn-button { padding-inline: 12px; font-size: 13px; } }
 .learn-rules { border-top: 1px solid var(--line); padding-top: 18px; }
 .learn-storage-error { padding: 16px; margin: 0 0 24px; border: 1px solid var(--q-mistake); border-radius: 10px; }
 @keyframes learn-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

@@ -141,13 +141,25 @@ test('Concept Learn opens a focused in-progress dialog without starting a lesson
   const {w,dom,data}=await workspace(t);await w.navigate('concepts');
   const learn=w.root.querySelector('.learn-library-row > button');learn.focus();learn.click();
   const notice=w.root.querySelector('.learn-notice-card');assert.equal(notice.getAttribute('aria-modal'),'true');
+  assert.deepEqual([...notice.querySelectorAll('button')].map(n=>n.textContent),['Fair enough','Unacceptable']);
   assert.match(notice.textContent,/one-person project/);assert.match(notice.textContent,/still working on these lessons/);
   assert.equal(w.activity,null);assert.equal(data['learning:v1']?.lessons?.fork,undefined);
   assert.equal(notice.contains(dom.window.document.activeElement),true);
   const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
-  key('Tab');assert.equal(notice.contains(dom.window.document.activeElement),true);
+  key('Tab');assert.equal(dom.window.document.activeElement.textContent,'Unacceptable');
+  key('Tab');assert.equal(dom.window.document.activeElement.textContent,'Fair enough');
   key('Escape');assert.equal(w.conceptNotice,null);assert.equal(w.closed,false);assert.equal(dom.window.document.activeElement,learn);
   learn.click();w.conceptNotice.querySelector('button').click();assert.equal(w.conceptNotice,null);assert.equal(dom.window.document.activeElement,learn);
+});
+
+test('catching Unacceptable reveals the bullet joke, stops dodging and keeps dismissal easy',async t=>{
+  const {w,dom}=await workspace(t);await w.navigate('concepts');
+  w.root.querySelector('.learn-library-row > button').click();const runner=w.root.querySelector('.learn-notice-reject');
+  runner.focus();runner.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}));
+  assert.equal(w.root.querySelector('#learn-notice-copy').textContent,'Whoa, your mouse speed is insane. Do you play a lot of bullet?');
+  assert.equal(runner.disabled,true);assert.equal(w.disposeConceptDodge,null);
+  assert.equal(dom.window.document.activeElement.textContent,'Fair enough');
+  w.root.querySelector('.learn-notice-accept').click();assert.equal(w.conceptNotice,null);
 });
 
 test('puzzles hide solution information, persist intermediate steps and distinguish assisted and repeat solves',async t=>{
