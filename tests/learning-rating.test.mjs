@@ -50,7 +50,42 @@ test('older progress gains a provisional rating without erasing lessons, resumes
   const old={schema:1,lessons:{fork:{status:'completed'}},puzzles:{old:{clean:2,attempts:2}},resume:{kind:'puzzle',id:'x',step:2}};
   const p=normalizeProgress(old);assert.deepEqual(p.puzzleRating,{elo:1200,played:0,wins:0,losses:0});
   assert.deepEqual(p.lessons,old.lessons);assert.deepEqual(p.resume,old.resume);assert.equal(canRatePuzzle(p,{id:'old'}),false);
+  assert.deepEqual(p.puzzleResume,old.resume);
   assert.deepEqual(normalizePuzzleRating({elo:NaN,wins:-1,losses:'3'}),p.puzzleRating);
+});
+
+test('Solve a puzzle resumes the saved solver turn across reloads, courses and changed filters',async t=>{
+  const {w,make}=await setup(t);
+  await w.startPuzzleSelection([line],null,{adaptive:true});await w.submitPuzzle(line.solution[0]);
+  const expected=w.currentFen(),step=w.activity.step;
+  await w.startOpening('italian');await w.close();
+  const reopened=make();await reopened.open();reopened.puzzleRange=[9000,9100];reopened.render();
+  assert.equal(reopened.root.textContent.includes('Continue puzzle'),false);
+  assert.equal(reopened.root.querySelector('[data-focus="solve-puzzle"]').disabled,false);
+  reopened.updatePuzzleSelection();assert.equal(reopened.root.querySelector('[data-focus="solve-puzzle"]').disabled,false);
+  await reopened.startRatedPuzzles();
+  assert.equal(reopened.activity.id,line.id);assert.equal(reopened.activity.step,step);assert.equal(reopened.currentFen(),expected);
+  assert.equal(reopened.adaptivePuzzles,true);assert.equal(reopened.activity.rated,true);
+});
+
+test('automatically resumed assistance preserves its Elo loss and clears the saved puzzle on completion',async t=>{
+  const {w,make}=await setup(t);await w.startRatedPuzzles();const id=w.activity.id;
+  await w.hintPuzzle();const elo=w.store.value.puzzleRating.elo;await w.close();
+  const reopened=make();await reopened.open();await reopened.startRatedPuzzles();
+  assert.equal(reopened.activity.id,id);assert.equal(reopened.activity.assisted,true);assert.equal(reopened.store.value.puzzleRating.elo,elo);
+  const item=reopened.puzzles.find(p=>p.id===id);
+  while(!reopened.attemptRecorded)await reopened.submitPuzzle(item.solution[reopened.activity.step]);
+  assert.equal(reopened.store.value.puzzleResume,null);assert.equal(reopened.store.value.puzzleRating.elo,elo);
+  await reopened.navigate('puzzles');await reopened.startRatedPuzzles();assert.notEqual(reopened.activity.id,id);
+});
+
+test('missing or invalid saved puzzles fall back to a fresh eligible puzzle',async t=>{
+  const {w}=await setup(t);
+  for(const resume of [{kind:'puzzle',id:'removed',step:0},{kind:'puzzle',id:mate.id,step:1},{kind:'puzzle',id:mate.id,step:mate.solution.length}]){
+    await w.persist(p=>{p.puzzleResume=resume;});await w.startRatedPuzzles();
+    assert.equal(w.activity.step,0);assert.ok(w.puzzles.some(p=>p.id===w.activity.id));
+    await w.navigate('puzzles');
+  }
 });
 
 test('pairing prefers unseen puzzles within 200 Elo, adapts to rating, and falls back to nearest available puzzles',()=>{
