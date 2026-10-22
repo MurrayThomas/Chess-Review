@@ -59,6 +59,18 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("document.querySelector('.learn-puzzle-start .primary').textContent"),'Solve a puzzle');
   assert.equal(await run("!!document.querySelector('[aria-label=Phase], [aria-label=Progress], .learn-style-option')"),false);
   await capture('puzzles-desktop');
+  await run("window.auditNav=document.querySelector('.learn-nav');import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('concepts');const a=m.learningWorkspace.navAnimation;a.pause();a.currentTime=220;})");
+  const swoop=await run("(()=>{const n=document.querySelector('.learn-nav-indicator').getBoundingClientRect(),b=document.querySelector('.learn-nav [aria-current]').getBoundingClientRect();return {same:document.querySelector('.learn-nav')===auditNav,width:n.width,targetWidth:b.width,height:n.height,targetHeight:b.height};})()");
+  assert.ok(swoop.same&&swoop.width>swoop.targetWidth*1.15&&swoop.height<swoop.targetHeight,'Tab highlight must stretch and soften while swooping');
+  await capture('tabs-liquid-swoop');
+  const redirected=await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,indicator=w.navIndicator,before=indicator.getBoundingClientRect();await w.navigate('openings');w.navAnimation.pause();w.navAnimation.currentTime=0;const after=indicator.getBoundingClientRect();return Math.abs(before.x-after.x)<1&&Math.abs(before.width-after.width)<1;})");
+  assert.ok(redirected,'Rapid tab changes must continue from the painted highlight');
+  await run("import('./analysis.js').then(m=>{m.learningWorkspace.navAnimation.currentTime=260;})");
+  await capture('tabs-liquid-redirect');
+  await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,a=w.navAnimation;a.play();await a.finished;w.render();window.auditNavRetained=w.nav===auditNav&&w.navAnimation===a;})");
+  assert.ok(await run('auditNavRetained'),'Routine renders must preserve the tab bar without restarting its animation');
+  assert.ok(await run("(()=>{const i=document.querySelector('.learn-nav-indicator').getBoundingClientRect(),b=document.querySelector('.learn-nav [aria-current]').getBoundingClientRect();return Math.abs(i.x-b.x)<1&&Math.abs(i.width-b.width)<1;})()"),'Highlight must settle exactly under the selected tab');
+  await run("import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('puzzles');await m.learningWorkspace.navAnimation.finished;})");
   const point=async sq=>run(`(()=>{const r=document.querySelector('[data-square="${sq}"]').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()`);
   for(const sq of ['e2','e4','e7','e5']){
     const p=await point(sq);
@@ -317,6 +329,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("import('./analysis.js').then(m=>m.openLearning())");
   assert.equal(await run("!!document.querySelector('.learn-scene-layer')"),false);
   await capture('puzzles-reduced-motion');
+  assert.ok(await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace;await w.navigate('concepts');return !w.navAnimation;})"),'Reduced motion must switch the tab highlight instantly');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.close())");
   assert.equal(await run("import('./analysis.js').then(m=>m.S.settings.showConcepts===false&&m.S.settings.conceptsEnabled===false)"),true);
   await fs.writeFile(path.join(out,'results.json'),JSON.stringify({passed:true,frames,sliderFrames,reverseFrames,completionFrames,results},null,2));

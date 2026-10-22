@@ -56,6 +56,14 @@
 .learn-nav { display: flex; gap: 8px; padding: 12px clamp(16px,4vw,64px); border-bottom: 1px solid var(--line); overflow-x: auto; background: var(--panel); }
 .learn-nav button { white-space: nowrap; font-size: 15px; }
 .learn-nav [aria-current="page"] { background: color-mix(in srgb,var(--accent) 18%,var(--panel)); border-color: var(--accent); color: var(--accent); }
+.learn-nav[data-fluid] { position: relative; isolation: isolate; }
+.learn-nav[data-fluid] .learn-button { position: relative; z-index: 1; background: transparent; border-color: transparent; transition: color .2s; }
+.learning-workspace .learn-nav[data-fluid] [aria-current="page"] { background: transparent; border-color: transparent; }
+.learn-nav-indicator { position: absolute; z-index: 0; pointer-events: none; visibility: hidden; border-radius: 9px;
+  background: radial-gradient(ellipse at 24% 0%,#ffffff0d,transparent 65%),linear-gradient(115deg,color-mix(in oklab,var(--accent) 22%,var(--panel)),color-mix(in oklab,var(--accent) 12%,var(--panel)));
+  box-shadow: inset 0 1px 0 #ffffff12,inset 0 -1px 0 #00000014; }
+.learn-nav[data-ready="true"] .learn-nav-indicator { visibility: visible; }
+.learning-workspace[data-motion="off"] .learn-nav .learn-button { transition: none; }
 .learn-main { width: min(1360px,100%); margin: 0 auto; padding: clamp(20px,4vw,52px); }
 .learn-main h1 { font-size: clamp(30px,4vw,52px); line-height: 1.1; letter-spacing: -1.3px; margin: 16px 0 20px; }
 .learn-main h2 { font-size: clamp(24px,3vw,34px); line-height: 1.2; letter-spacing: -.5px; margin: 0 0 16px; }
@@ -157,7 +165,7 @@
 @keyframes learn-piece { from { opacity: .75; } to { opacity: 1; } }
 @media (max-width: 900px) { .learn-study { grid-template-columns: 1fr; } .learn-board-column { position: static; max-width: 560px; margin: 0 auto; } .learn-header { align-items: start; } .learn-header .learn-button { white-space: nowrap; } }
 @media (max-width: 480px) { .learn-main { padding: 20px 16px; } .learn-header { padding: 14px 16px; flex-wrap: wrap; } .learn-brand { font-size: 17px; } .learn-card { padding: 20px; } .learn-stats { grid-template-columns: repeat(2,1fr); padding: 18px; gap: 16px; } .learn-nav { padding: 10px 16px; } .learn-nav .learn-button { padding: 10px 12px; font-size: 13px; } .learn-move-nav { gap: 5px; } .learn-move-nav .learn-button { padding: 10px; } }
-@media (prefers-reduced-motion: reduce) { .learning-workspace,.learn-feedback,.learn-square .piece-img { animation: none; } .learn-button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .learning-workspace,.learn-feedback,.learn-square .piece-img { animation: none; } .learn-button,.learn-nav[data-fluid] .learn-button { transition: none; } }
 
 /* The review's board remains anchored while the surrounding surfaces reassemble. */
 .stage.learning-active { position: relative; }
