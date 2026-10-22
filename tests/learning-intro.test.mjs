@@ -18,14 +18,24 @@ async function setup(t,{settings={moveAnim:true},item=puzzle}={}) {
 
 test('fresh puzzles show and animate the recorded opponent move before enabling the solver',async t=>{
   const {w,dom,data,sounds}=await setup(t);let showMove,finishMove;
+  const cues=[];
+  dom.window.HTMLElement.prototype.animate=function(frames,options){
+    if(this.classList.contains('puzzle-turn-cue'))cues.push({frames,options});
+    return {finished:Promise.resolve(),cancel(){}};
+  };
   t.mock.method(w,'waitForPuzzleReply',delay=>{assert.equal(delay,450);return new Promise(resolve=>{showMove=()=>resolve(true);});});
   dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finishMove=resolve;}),cancel(){finishMove?.();}});
   const opening=w.startPuzzleSelection([puzzle]);await settle();
   assert.equal(w.currentFen(),puzzle.setup.fen);assert.equal(w.busy,true);assert.equal(w.activity.step,0);
+  const cue=w.root.querySelector('.puzzle-turn-cue');
+  assert.equal(cue.textContent,'White to move','The solver cue appears during the preceding black move');
   assert.ok(w.root.querySelector('[data-focus="puzzle-hint"]').disabled);
   await w.submitPuzzle(puzzle.solution[0]);await w.hintPuzzle();assert.equal(w.store.value.puzzleRating.played,0);
   showMove();await settle();assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,true);assert.deepEqual(sounds,['d5']);
   finishMove();await opening;
+  assert.equal(w.root.querySelector('.puzzle-turn-cue'),cue,'The cue stays mounted through introduction renders');
+  assert.equal(cues.length,1,'The cue scoops in once, without restarting during the introduction');
+  assert.equal(cues[0].options.duration,300);
   assert.equal(w.busy,false);assert.equal(w.lastMove,'d7d5');assert.equal(data['learning:v1'].resume.step,0);
   assert.equal(w.store.value.puzzleRating.played,0);
 });

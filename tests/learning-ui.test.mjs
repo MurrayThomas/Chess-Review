@@ -186,7 +186,7 @@ test('the puzzle header returns to the library, preserves the attempt and then r
   assert.equal(back().textContent,'← Back to review');
   await w.startPuzzleSelection([p],null,{adaptive:true});await w.submitPuzzle(p.solution[0]);
   const step=w.activity.step,elo=w.store.value.puzzleRating.elo;
-  assert.equal(back().textContent,'← Back to puzzles');assert.equal(w.root.querySelector('.puzzle-practice-heading button, .puzzle-back'),null);
+  assert.equal(back().textContent,'← Back to puzzles');assert.equal(w.root.querySelector('.puzzle-practice-heading button:not(.puzzle-rating-toggle), .puzzle-back'),null);
   back().click();await settle();assert.equal(w.closed,false);assert.equal(w.activity,null);assert.equal(w.page,'puzzles');assert.equal(back().textContent,'← Back to review');
   assert.equal(w.store.value.puzzleResume.step,step);assert.equal(w.store.value.puzzleRating.elo,elo);
   await w.startRatedPuzzles();assert.equal(w.activity.id,p.id);assert.equal(w.activity.step,0);assert.equal(w.currentFen(),p.fen);assert.equal(w.lastMove,p.setup.move);assert.equal(back().textContent,'← Back to puzzles');

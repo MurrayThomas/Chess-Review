@@ -27,15 +27,18 @@ test('Elo is enabled for old progress and an unrated preference survives normali
   assert.equal(progress.puzzleRating.elo,1200);assert.equal(progress.puzzleRating.played,0);
 });
 
-test('the small Elo switch persists across closing, reopening and resuming a puzzle',async t=>{
+test('the heading Elo switch persists across closing, reopening and resuming a puzzle',async t=>{
   const {w,make,data}=await setup(t),button=()=>w.root.querySelector('[data-focus=puzzle-rating-toggle]');
   assert.equal(button(),null);
   assert.equal(w.root.querySelector('.puzzle-elo-panel, .puzzle-solved-count'),null);
   await w.startRatedPuzzles();
   assert.equal(button().getAttribute('role'),'switch');assert.equal(button().getAttribute('aria-checked'),'true');
-  assert.ok(button().closest('.puzzle-elo-summary').querySelector('[data-puzzle-elo]'));
+  assert.ok(button().closest('.puzzle-practice-heading').querySelector('h2'));
+  assert.equal(w.root.querySelector('.puzzle-solved-count'),null);
+  const control=button();
   await w.togglePuzzleRating();
-  assert.equal(button().textContent,'Rating Off');assert.equal(w.activity.rated,false);
+  assert.equal(button(),control);assert.equal(button().textContent,'Rating');
+  assert.equal(button().getAttribute('aria-checked'),'false');assert.equal(w.activity.rated,false);
   assert.equal(data['learning:v1'].puzzleRatingEnabled,false);assert.equal(data['learning:v1'].puzzleResume.rated,false);
   const resume=structuredClone(data['learning:v1'].puzzleResume);await w.close();
   const next=make();await next.open();await next.resume(resume);

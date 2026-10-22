@@ -185,7 +185,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const puzzleActions=await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>{const s=getComputedStyle(n);return {color:s.color,background:s.backgroundColor,border:s.borderColor}})");
   assert.deepEqual(puzzleActions[0],puzzleActions[1],'Hint and Skip must share neutral styling');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to puzzles');
-  assert.equal(await run("!!document.querySelector('.puzzle-practice-heading button, .puzzle-back')"),false);
+  assert.equal(await run("!!document.querySelector('.puzzle-practice-heading button:not(.puzzle-rating-toggle), .puzzle-back')"),false);
   await run("import('./analysis.js').then(m=>{window.savedPuzzle={id:m.learningWorkspace.activity.id,step:m.learningWorkspace.activity.step};document.querySelector('.learn-header [data-focus=review]').click();})");
   await waitFor(review,"!!document.querySelector('[data-focus=solve-puzzle]')",'Back to puzzle library');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to review');
@@ -246,8 +246,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("document.querySelector('.learn-square').focus()");
   for(const key of ['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'])await call('Input.dispatchKeyEvent',{type:'keyDown',key},review.sessionId);
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return !document.activeElement.closest('.learn-square')&&!w.selected&&!w.marked.size&&!w.boardMarks?.size;})"),true,'Puzzle arrow keys must not focus or select squares');
-  const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-solved-count'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
-  assert.equal(eloAlignment.alignment,'baseline');assert.ok(Math.max(...eloAlignment.bottoms)-Math.min(...eloAlignment.bottoms)<4,'Solved count and Elo change should align with the Elo label');
+  const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
+  assert.equal(eloAlignment.alignment,'baseline');assert.ok(Math.max(...eloAlignment.bottoms)-Math.min(...eloAlignment.bottoms)<4,'Elo change should align with the Elo label');
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.eloFrame==null)",'Loss counter');
   await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-drag-finish',setup:null,rating:w.store.value.puzzleRating.elo};w.puzzles.push(p);await w.startPuzzleSelection([p]);window.solveFrom=p.solution[0].slice(0,2);window.solveTo=p.solution[0].slice(2,4);window.eloBefore=w.store.value.puzzleRating.elo;const original=w.store.update.bind(w.store);window.restoreAuditSave=()=>{w.store.update=original;};w.store.update=async change=>{await new Promise(r=>setTimeout(r,220));return original(change);};})");
   const squarePoint=async name=>run("(()=>{const r=document.querySelector('[data-square=\"'+"+name+"+'\"]').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()");
@@ -277,7 +277,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   };
   await run("import('./analysis.js').then(m=>{window.analysisProgress=JSON.stringify(m.learningWorkspace.store.value);window.analysisReview=JSON.stringify(m.S.positions);document.querySelector('[data-focus=puzzle-analyse]').click();})");
   await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.puzzleAnalysis?.score&&!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Puzzle analysis engine');
-  assert.equal(await run("document.querySelector('.puzzle-practice-heading').textContent"),'Puzzle practice');
+  assert.equal(await run("document.querySelector('.puzzle-practice-heading h2').textContent"),'Puzzle practice');
   assert.equal(await run("(()=>{const b=document.querySelector('[data-focus=puzzle-analyse]');return b.textContent==='Analysing'&&b.disabled&&!!document.querySelector('.puzzle-practice-actions .primary')&&!document.querySelector('.puzzle-analysis-session, .puzzle-analysis-controls');})()"),true,'Analysis must stay in puzzle practice with a disabled Analysing button and Next puzzle');
   await run("window.stableAnalysisBar=document.querySelector('.puzzle-analysis-evalbar');window.stableAnalysisFill=stableAnalysisBar.querySelector('.white-fill');window.analysisBarRemovals=0;window.analysisBarObserver=new MutationObserver(records=>{for(const record of records)for(const node of record.removedNodes)if(node===stableAnalysisBar||node===stableAnalysisFill||node.contains?.(stableAnalysisBar))analysisBarRemovals++;});analysisBarObserver.observe(stableAnalysisBar.parentElement,{childList:true,subtree:true});");
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return w.currentFen()===w.puzzles.find(p=>p.id===w.activity.id).fen})"),true,'Analyse must start at the solver position');

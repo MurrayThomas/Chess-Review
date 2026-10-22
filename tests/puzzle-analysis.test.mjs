@@ -30,7 +30,7 @@ test('Analyse stays in puzzle practice with a disabled Analysing button and allo
   const button=w.root.querySelector('[data-focus=puzzle-analyse]');assert.equal(button.textContent,'Analyse');
   assert.ok(w.root.querySelector('.puzzle-practice-status').compareDocumentPosition(button)&4);
   await explore(w);assert.equal(w.currentFen(),p.fen);assert.equal(board.querySelector('.puzzle-result-badge'),null);
-  assert.equal(w.root.querySelector('.puzzle-practice-heading').textContent,'Puzzle practice');
+  assert.equal(w.root.querySelector('.puzzle-practice-heading h2').textContent,'Puzzle practice');
   assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,status);assert.equal(w.root.querySelector('.puzzle-elo-panel').textContent,rating);
   const analysing=w.root.querySelector('[data-focus=puzzle-analyse]');assert.equal(analysing.textContent,'Analysing');assert.equal(analysing.disabled,true);
   assert.equal(w.root.querySelector('.puzzle-analysis-session, .puzzle-analysis-controls'),null);
