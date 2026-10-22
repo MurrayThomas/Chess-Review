@@ -200,6 +200,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   };
   await run("import('./analysis.js').then(m=>{window.analysisProgress=JSON.stringify(m.learningWorkspace.store.value);window.analysisReview=JSON.stringify(m.S.positions);document.querySelector('[data-focus=puzzle-analyse]').click();})");
   await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.puzzleAnalysis?.score&&!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Puzzle analysis engine');
+  await run("window.stableAnalysisBar=document.querySelector('.puzzle-analysis-evalbar');window.stableAnalysisFill=stableAnalysisBar.querySelector('.white-fill');window.analysisBarRemovals=0;window.analysisBarObserver=new MutationObserver(records=>{for(const record of records)for(const node of record.removedNodes)if(node===stableAnalysisBar||node===stableAnalysisFill||node.contains?.(stableAnalysisBar))analysisBarRemovals++;});analysisBarObserver.observe(stableAnalysisBar.parentElement,{childList:true,subtree:true});");
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return w.currentFen()===w.puzzles.find(p=>p.id===w.activity.id).fen})"),true,'Analyse must start at the solver position');
   assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.puzzleAnalysis.line)===JSON.stringify(m.learningWorkspace.puzzleMoves))"),true,'Analysis must retain the moves actually played while solving');
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'End'},review.sessionId);
@@ -207,6 +208,12 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Home'},review.sessionId);
   await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Analysis returned to start');
   await capture('puzzle-analysis-desktop');await checkAnalysisBar();
+  // Drive a known change through the same painter, then inspect real CSS frames.
+  await run("import('./analysis.js').then(m=>{window.restoreAnalysisScore=m.learningWorkspace.puzzleAnalysis.score;window.oldAnalysisShare=parseFloat(stableAnalysisFill.style.height);m.learningWorkspace.puzzleAnalysis.score={cp:oldAnalysisShare<50?300:-300};m.learningWorkspace.paintPuzzleAnalysis();window.targetAnalysisShare=parseFloat(stableAnalysisFill.style.height);})");
+  await sleep(100);
+  const fillMotion=await run("({old:oldAnalysisShare,target:targetAnalysisShare,current:stableAnalysisFill.getBoundingClientRect().height/stableAnalysisBar.getBoundingClientRect().height*100})");
+  assert.ok(fillMotion.current>Math.min(fillMotion.old,fillMotion.target)+.1&&fillMotion.current<Math.max(fillMotion.old,fillMotion.target)-.1,'Evaluation fill should interpolate through intermediate heights: '+JSON.stringify(fillMotion));
+  await run("import('./analysis.js').then(m=>{m.learningWorkspace.puzzleAnalysis.score=restoreAnalysisScore;m.learningWorkspace.paintPuzzleAnalysis();})");
   await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(([m,{Chess}])=>{window.analysisMove=new Chess(m.learningWorkspace.currentFen()).moves({verbose:true})[0].lan;})");
   const analysisFrom=await squarePoint('analysisMove.slice(0,2)'),analysisTo=await squarePoint('analysisMove.slice(2,4)');
   for(const pt of [analysisFrom,analysisTo]){
@@ -216,6 +223,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.puzzleAnalysis.index===1&&!m.learningWorkspace.puzzleAnalysis.pending)",'Free puzzle analysis move');
   assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.store.value)===analysisProgress&&JSON.stringify(m.S.positions)===analysisReview)"),true,'Exploring must preserve puzzle progress and review');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.flipBoard())");await checkAnalysisBar();await capture('puzzle-analysis-flipped');
+  assert.equal(await run("document.querySelector('.puzzle-analysis-evalbar')===stableAnalysisBar&&stableAnalysisBar.querySelector('.white-fill')===stableAnalysisFill&&analysisBarRemovals===0"),true,'Evaluation bar must remain mounted across engine updates, moves and flips');
+  await run('analysisBarObserver.disconnect()');
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);await checkAnalysisBar();await capture('puzzle-analysis-mobile');
   await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.returnToCompletedPuzzle())");
