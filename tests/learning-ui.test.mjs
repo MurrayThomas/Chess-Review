@@ -22,6 +22,8 @@ async function workspace(t,options={}) {
 test('puzzle entry, loading errors, filtered empty states and focus restoration all work',async t=>{
   const {w,dom}=await workspace(t);const doc=dom.window.document;
   assert.ok(doc.querySelector('.learning-workspace'));assert.equal(doc.querySelector('.app').inert,true);
+  assert.equal(w.root.querySelector('.learn-brand'),null);
+  assert.equal(w.root.querySelector('.learn-header').textContent,'← Back to review');
   assert.equal(w.page,'puzzles');assert.deepEqual([...w.root.querySelectorAll('.learn-nav button')].map(n=>n.textContent),['Puzzles','Concepts','Openings']);
   await w.navigate('concepts');w.filters.search='no such topic';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   w.root.querySelector('.learn-empty button').click();assert.ok(w.root.textContent.includes('Develop your pieces'));
