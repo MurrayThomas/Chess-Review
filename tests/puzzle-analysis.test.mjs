@@ -55,6 +55,35 @@ test('analysis navigation retains history, allows a new branch and resets to the
   w.root.querySelector('[data-focus="button-Reset position"]').click();await w.analysisRequest;assert.equal(w.currentFen(),p.fen);
 });
 
+test('puzzle arrows never focus adjacent squares; analysis arrows replay the accepted solve from its start',async t=>{
+  const p={id:'history-line',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3'],rating:1200,themes:[],source:{url:'https://lichess.org/training'}};
+  const {a,w,board,doc}=await setup(t,{puzzle:p});
+  const key=value=>doc.activeElement.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:value,bubbles:true,cancelable:true}));
+  const square=board.querySelector('[data-square=e2]');square.focus();
+  const fen=w.currentFen();for(const value of ['ArrowRight','ArrowLeft','ArrowUp','ArrowDown'])key(value);
+  assert.equal(w.currentFen(),fen);assert.equal(w.selected,null);assert.equal(w.marked.size,0);assert.equal(w.boardMarks?.size||0,0);
+  assert.equal(doc.activeElement.closest('.learn-square'),null);
+  await w.submitPuzzle('d2d4');await w.submitPuzzle('e2e4');await w.submitPuzzle('g1f3');
+  const completed=w.currentFen(),progress=JSON.stringify(w.store.value);await explore(w);
+  assert.deepEqual(w.puzzleAnalysis.line,p.solution);assert.equal(w.currentFen(),p.fen);
+  key('ArrowLeft');assert.equal(w.puzzleAnalysis.index,0);
+  key('ArrowRight');await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,1);
+  key('End');await w.analysisRequest;assert.equal(w.currentFen(),completed);
+  key('Home');await w.analysisRequest;assert.equal(w.currentFen(),p.fen);
+  w.flipBoard();key('ArrowRight');await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,1);
+  assert.equal(JSON.stringify(w.store.value),progress);
+});
+
+test('analysis preserves the actual accepted alternative mate and the prefix of a resumed solve',async t=>{
+  const p={id:'history-mate',fen:'7k/5Q2/6K1/8/8/8/8/8 w - - 0 1',solution:['f7g7'],rating:1200,themes:[],source:{url:'https://lichess.org/training'}};
+  const {w}=await setup(t,{puzzle:p});
+  const alternative=new Chess(p.fen).moves({verbose:true}).find(m=>m.lan!==p.solution[0]&&new Chess(m.after).isCheckmate());
+  await w.submitPuzzle(alternative.lan);await explore(w);assert.deepEqual(w.puzzleAnalysis.line,[alternative.lan]);
+  const second={...p,id:'history-resume',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3']};w.puzzles.push(second);
+  await w.preparePuzzle(second,{step:2});await w.submitPuzzle('g1f3');await explore(w);
+  assert.deepEqual(w.puzzleAnalysis.line,second.solution);
+});
+
 test('stale analysis results cannot replace a newer position or reappear after leaving',async t=>{
   const jobs=[];
   const {w,p,board,engines}=await setup(t,{analyse:()=>{const job=deferred();jobs.push(job);return job.promise;}});

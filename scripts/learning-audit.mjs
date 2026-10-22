@@ -166,6 +166,9 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await checkResultBadge('incorrect');
   assert.equal(await run("document.querySelector('.puzzle-practice-status').textContent"),'Wrong move');
   assert.match(wrongColor,/239, 50, 65, 0\.12/,'Wrong feedback must use faint red');await capture('puzzle-red-feedback');
+  await run("document.querySelector('.learn-square').focus()");
+  for(const key of ['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'])await call('Input.dispatchKeyEvent',{type:'keyDown',key},review.sessionId);
+  assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return !document.activeElement.closest('.learn-square')&&!w.selected&&!w.marked.size&&!w.boardMarks?.size;})"),true,'Puzzle arrow keys must not focus or select squares');
   const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-solved-count'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
   assert.equal(eloAlignment.alignment,'baseline');assert.ok(Math.max(...eloAlignment.bottoms)-Math.min(...eloAlignment.bottoms)<4,'Solved count and Elo change should align with the Elo label');
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.eloFrame==null)",'Loss counter');
@@ -198,6 +201,11 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("import('./analysis.js').then(m=>{window.analysisProgress=JSON.stringify(m.learningWorkspace.store.value);window.analysisReview=JSON.stringify(m.S.positions);document.querySelector('[data-focus=puzzle-analyse]').click();})");
   await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.puzzleAnalysis?.score&&!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Puzzle analysis engine');
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return w.currentFen()===w.puzzles.find(p=>p.id===w.activity.id).fen})"),true,'Analyse must start at the solver position');
+  assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.puzzleAnalysis.line)===JSON.stringify(m.learningWorkspace.puzzleMoves))"),true,'Analysis must retain the moves actually played while solving');
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'End'},review.sessionId);
+  assert.equal(await run("import('./analysis.js').then(m=>{const a=m.learningWorkspace.puzzleAnalysis;return a.index===a.line.length&&a.chess.isCheckmate()})"),true,'End must replay the completed solve');
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Home'},review.sessionId);
+  await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Analysis returned to start');
   await capture('puzzle-analysis-desktop');await checkAnalysisBar();
   await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(([m,{Chess}])=>{window.analysisMove=new Chess(m.learningWorkspace.currentFen()).moves({verbose:true})[0].lan;})");
   const analysisFrom=await squarePoint('analysisMove.slice(0,2)'),analysisTo=await squarePoint('analysisMove.slice(2,4)');
