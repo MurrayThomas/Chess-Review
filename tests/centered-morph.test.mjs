@@ -19,6 +19,10 @@ test('learning reserves Settings without moving and bounds the square board at a
   }
   const board={x:92,y:142,width:700};const p=fullSizeLearningLayout({width:1920,height:1080,board});
   assert.ok(p.boardSize>board.width);assert.ok(p.boardX<board.x);assert.equal(p.boardY+60,board.y);
+  assert.equal(p.boardX+p.boardSize,board.x+board.width);
+  assert.ok(board.x-p.boardX<=32);assert.equal(p.panelX,board.x+board.width+32);
+  const tight=fullSizeLearningLayout({width:1366,height:1080,board:{x:350,y:70,width:800}});
+  assert.equal(tight.boardX+tight.boardSize,1150);assert.equal(tight.boardY+60,70);
 });
 
 test('board expands uniformly on a straight path with no upward arc or overshoot',()=>{
