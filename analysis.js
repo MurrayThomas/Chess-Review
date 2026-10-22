@@ -4182,7 +4182,7 @@ function renderEnginePractice() {
   UI.engine.replaceChildren(el("div", { class: "panel" },
     el("div", { class: "panel-head" }, el("h3", {}, "Engine"), el("span", { class: "count" }, "Practice")),
     el("div", { class: "panel-body engine-body" },
-      el("div", { class: "engine-empty", role:"status" }, S.practice?.checkError || "Find a stronger move — engine lines are hidden until you solve it.")),
+      el("div", { class: "engine-empty", role:"status" }, "Find the best move — engine lines are hidden until you solve it.")),
   ));
   fitEnginePanel();
 }
@@ -5541,8 +5541,8 @@ function clearBoardArt(boardEl) {
 
 /* ---------------- Practice your mistakes ----------------
    Replays the game and stops at every position where YOU (S.meSide) blundered/mistook/missed,
-   asking you to find a better move. A move passes only if it's Best/Excellent (or better);
-   otherwise you try again. Between solves it fast-rolls through the intervening moves rather
+   asking you to find the stored best move. Other moves fail immediately without another search.
+   Between solves it fast-rolls through the intervening moves rather
    than teleporting, so you keep the thread of the game. */
 function practiceSpots() {
   const out = [];
@@ -5583,7 +5583,6 @@ function clearPracticeResult() {
 }
 function exitPractice() {
   if (!S.practice) return;
-  S.practice.cancelCheck?.();
   _cancelPromotion?.();
   if (S.practice.rollT) clearTimeout(S.practice.rollT);
   clearDemoTimers();
@@ -5721,57 +5720,9 @@ function renderPracticeHint() {
   const h = S.practiceHint; if (!h) return;
   if (sqByName[h.from]) sqByName[h.from].classList.add("hint-from");
 }
-// Judge a practice attempt instantly from the analysis we already ran — no live engine call.
-// Pass if it's the engine's top move, delivers mate, or loses ≤2% winning chance (Excellent or
-// better). A move that isn't among the searched top lines is, by definition, worse than every
-// line we kept → it can't be Excellent, so it fails immediately.
-function judgePass(solvePos, userUci, fenAfter, verifiedScore = null) {
-  const best = S.bests[solvePos];
-  if (best?.bestmove === userUci) return true;
-  const mover = sideToMove(S.positions[solvePos].fen);
-  const term = terminalScore(fenAfter);
-  if (term?.mate && ((term.mate > 0) === (mover === "w"))) return true;
-  const winBefore = annotationPoints(best?.score || best?.lines?.[0]?.score, solvePos + 1, S);
-  const line = best?.lines?.find(ln => (ln.pv || "").split(/\s+/)[0] === userUci);
-  const score = verifiedScore || (term?.cp === 0 ? {cp:0} : line?.score);
-  if (!score || winBefore == null) return null;
-  const winAfter = annotationPoints(score, solvePos + 1, S);
-  return winAfter == null ? null : Math.max(0, winBefore - winAfter) <= 2;
-}
-async function createPracticeEngine(build, options) {
-  if (!Object.hasOwn(ENGINE_BUILDS, build)) throw Error("Unsupported practice engine");
-  const engine = new Engine(ENGINE_BUILDS[build]);
-  try {
-    await engine.setOptions(options);
-    if (engine.identity && !new RegExp("^Stockfish " + (build === "sf19lite" ? 19 : 18) + "\\b").test(engine.identity)) throw Error("Practice engine differs");
-    return engine;
-  } catch (error) { engine.terminate(); throw error; }
-}
-async function verifyPracticeMove(p, solvePos, userUci) {
-  const root = S.bests[solvePos], settings = {...(S.analyzedSettings || S.settings)}, key = analysisSettingsKey();
-  const history = searchHistory(S.positions, solvePos), fen = S.positions[solvePos].fen;
-  const cached = p.verifiedMoves?.get(solvePos + userUci);
-  if (cached?.root === root) return cached.score;
-  if (!root || (root.calibration && root.calibration.version !== CALIB.version)) throw Error("Practice evidence unavailable");
-  const build = root.calibration?.build || S.activeEngineBuild || settings.enginePath, sf19 = build === "sf19lite";
-  let engine, cancelled = false, timer, rejectCancellation;
-  const valid = () => S.practice === p && S.bests[solvePos] === root && S.positions[solvePos]?.fen === fen && analysisSettingsKey() === key;
-  const cancellation = new Promise((_, reject) => {rejectCancellation = reject;});
-  const cancel = () => {cancelled = true;engine?.terminate();rejectCancellation(Error("Practice check cancelled"));};
-  p.cancelCheck = cancel;
-  const work = (async () => {
-    engine = await createPracticeEngine(build, {Hash:sf19 ? 32 : settings.engineHash, "Skill Level":sf19 ? 20 : settings.engineSkill,
-      UCI_ShowWDL:true, UCI_LimitStrength:false, UCI_Chess960:false});
-    if(cancelled || !valid()){engine.terminate();throw Error("Practice check cancelled");}
-    const result = await engine.analyse(fen, settings.engineDepth, 1, history, null,
-      {cold:true, requireExact:true, searchMove:userUci, budget:sf19 ? {kind:"nodes",value:20000} : {kind:"depth",value:settings.engineDepth}});
-    if(!valid() || result.bestmove !== userUci || !(Number.isFinite(result.score?.cp) || (Number.isInteger(result.score?.mate) && result.score.mate !== 0))) throw Error("Practice check incomplete");
-    return result.score;
-  })();
-  try {
-    const score = await Promise.race([work, cancellation, new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error("Practice check timed out")),15000);})]);
-    (p.verifiedMoves ||= new Map()).set(solvePos + userUci, {root,score});return score;
-  } finally {cancelled=true;clearTimeout(timer);engine?.terminate();if(p.cancelCheck===cancel)p.cancelCheck=null;}
+// Compare the complete move, including promotion, with the stored answer.
+function judgePass(solvePos, userUci) {
+  return S.bests[solvePos]?.bestmove === userUci;
 }
 async function practiceAttempt(from, to, promotion = "q") {
   const p = S.practice;
@@ -5782,17 +5733,7 @@ async function practiceAttempt(from, to, promotion = "q") {
   try { c = new Chess(fen); mv = c.move({ from, to, promotion }); } catch { mv = null; }
   if (!mv) { S.selectedSq = null; renderSelection(); return; }
   const userUci = mv.from + mv.to + (mv.promotion || "");
-  p.checkError = null;
-  let passed = judgePass(solvePos, userUci, c.fen());
-  if (passed == null) {
-    p.busy = true;renderControls();renderReview();renderEngineCurrent();
-    try {passed = judgePass(solvePos,userUci,c.fen(),await verifyPracticeMove(p,solvePos,userUci));}
-    catch {if(S.practice===p)p.checkError="Couldn't verify that move. Please try again.";return;}
-    finally {if(S.practice===p){p.busy=false;renderControls();renderReview();renderEngineCurrent();}}
-    if (S.practice !== p || p.spots[p.i] - 1 !== solvePos || S.positions[solvePos]?.fen !== fen) return;
-    if (passed == null) {p.checkError="Couldn't verify that move. Please try again.";renderEngineCurrent();return;}
-  }
-  if (passed) {
+  if (judgePass(solvePos, userUci)) {
     p.resultBadge = null;
     UI.boardWrap.querySelectorAll('.puzzle-result-badge').forEach(n => {n.parentElement.classList.remove('has-badge');n.remove();});
     p.solving = false;              // lock out further attempts until the next spot
@@ -6401,7 +6342,6 @@ async function applyGame(payload) {
   const positions = buildPositions(payload.pgn);
   if (positions.length < 2) throw new Error("Load a game with moves to review. Standalone positions are not supported.");
   ++_librarySelection;
-  S.practice?.cancelCheck?.();
   _cancelPromotion?.();
   _cancelBoardDrag?.();
 

@@ -75,10 +75,10 @@ test('25,000 distinct licensed puzzles replay legally and cover every theme and 
   }
   assert.ok(library.selection.compressedBytesRead<=library.selection.maxDownloadBytes);
 });
-test('any legal checkmate wins a mate-in-one puzzle, while illegal moves remain uncounted',()=>{
+test('only the recorded solution wins a mate-in-one puzzle, while illegal moves remain uncounted',()=>{
   const p={fen:'7k/8/5KQ1/8/8/8/8/8 w - - 0 1',solution:['g6g7'],themes:['mateIn1']};
   for(const move of new Chess(p.fen).moves({verbose:true})){
-    const c=new Chess(p.fen);c.move(move);if(c.isCheckmate())assert.equal(validatePuzzleMove(p,0,move.lan).status,'correct');
+    const c=new Chess(p.fen);c.move(move);if(c.isCheckmate())assert.equal(validatePuzzleMove(p,0,move.lan).status,move.lan===p.solution[0]?'correct':'incorrect');
   }
   assert.equal(validatePuzzleMove(p,0,'a1a2').status,'illegal');
   assert.equal(validatePuzzleMove(p,0,'g6g5').status,'incorrect');
