@@ -23,13 +23,18 @@ async function setup(t,{puzzle,analyse}={}) {
 async function complete(w,p) {await w.submitPuzzle(p.solution[0]);assert.equal(w.feedback.status,'completed');}
 async function explore(w) {w.root.querySelector('[data-focus=puzzle-analyse]').click();await w.analysisRequest;}
 
-test('Analyse opens below completion, starts at the puzzle FEN and permits both sides without changing progress or review',async t=>{
+test('Analyse stays in puzzle practice with a disabled Analysing button and allows both sides until Next puzzle',async t=>{
   const {a,w,p,calls,engines,board}=await setup(t);
   assert.equal(w.root.querySelector('[data-focus=puzzle-analyse]'),null);
-  await complete(w,p);const completedFen=w.currentFen(),progress=JSON.stringify(w.store.value),review=JSON.stringify(a.state.positions);
+  await complete(w,p);const progress=JSON.stringify(w.store.value),review=JSON.stringify(a.state.positions),status=w.root.querySelector('.puzzle-practice-status').textContent,rating=w.root.querySelector('.puzzle-elo-panel').textContent;
   const button=w.root.querySelector('[data-focus=puzzle-analyse]');assert.equal(button.textContent,'Analyse');
   assert.ok(w.root.querySelector('.puzzle-practice-status').compareDocumentPosition(button)&4);
   await explore(w);assert.equal(w.currentFen(),p.fen);assert.equal(board.querySelector('.puzzle-result-badge'),null);
+  assert.equal(w.root.querySelector('.puzzle-practice-heading').textContent,'Puzzle practice');
+  assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,status);assert.equal(w.root.querySelector('.puzzle-elo-panel').textContent,rating);
+  const analysing=w.root.querySelector('[data-focus=puzzle-analyse]');assert.equal(analysing.textContent,'Analysing');assert.equal(analysing.disabled,true);
+  assert.equal(w.root.querySelector('.puzzle-analysis-session, .puzzle-analysis-controls'),null);
+  assert.ok(w.root.querySelector('.puzzle-practice-actions .primary'));analysing.click();assert.equal(engines.length,1);
   assert.equal(board.parentElement.querySelectorAll('.puzzle-analysis-evalbar').length,1);
   assert.equal(board.parentElement.querySelector('.white-fill').style.height,'54.6%');
   assert.match(board.querySelector('.puzzle-analysis-arrow').getAttribute('aria-label'),/^Best move:/);
@@ -40,19 +45,24 @@ test('Analyse opens below completion, starts at the puzzle FEN and permits both 
   assert.equal(w.puzzleAnalysis.score.cp,60,'Black-relative scores must be converted to White');
   assert.equal(JSON.stringify(w.store.value),progress);assert.equal(JSON.stringify(a.state.positions),review);
   w.flipBoard();assert.ok(board.parentElement.querySelector('.puzzle-analysis-evalbar.flipped'));assert.ok(board.querySelector('.puzzle-analysis-arrow'));
-  w.returnToCompletedPuzzle();assert.equal(w.currentFen(),completedFen);assert.equal(w.feedback.status,'completed');
+  const next={...p,id:'analysis-next'};w.puzzles.push(next);w.queue.push(next);
+  w.root.querySelector('.puzzle-practice-actions .primary').click();await settle();
+  assert.equal(w.activity.id,next.id);assert.equal(w.puzzleAnalysis,null);assert.equal(w.attemptRecorded,false);
   assert.equal(board.parentElement.querySelector('.puzzle-analysis-evalbar'),null);assert.equal(engines[0].dead,true);
+  assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);assert.equal(w.root.querySelector('[data-focus=puzzle-analyse]'),null);
+  await complete(w,next);assert.equal(w.root.querySelector('[data-focus=puzzle-analyse]').disabled,false);
 });
 
 test('analysis navigation retains history, allows a new branch and resets to the original puzzle',async t=>{
-  const {w,p,calls}=await setup(t);await complete(w,p);await explore(w);
+  const {a,w,p,calls,doc}=await setup(t);await complete(w,p);await explore(w);
+  const key=value=>doc.activeElement.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:value,bubbles:true,cancelable:true}));
   w.submitMove('g1f3');await w.analysisRequest;w.submitMove('g8f6');await w.analysisRequest;
-  w.root.querySelector('[data-focus="button-Undo move"]').click();await w.analysisRequest;
+  key('ArrowLeft');await w.analysisRequest;
   assert.equal(w.puzzleAnalysis.index,1);assert.deepEqual(calls.at(-1)[3].moves,['g1f3']);
-  w.root.querySelector('[data-focus="button-Redo move"]').click();await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,2);
+  key('ArrowRight');await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,2);
   w.stepPuzzleAnalysis(1);await w.analysisRequest;w.submitMove('d7d5');await w.analysisRequest;
   assert.deepEqual(w.puzzleAnalysis.line,['g1f3','d7d5']);
-  w.root.querySelector('[data-focus="button-Reset position"]').click();await w.analysisRequest;assert.equal(w.currentFen(),p.fen);
+  key('Home');await w.analysisRequest;assert.equal(w.currentFen(),p.fen);
 });
 
 test('puzzle arrows never focus adjacent squares; analysis arrows replay the accepted solve from its start',async t=>{
@@ -101,6 +111,21 @@ test('stale analysis results cannot replace a newer position or reappear after l
   assert.equal(w.puzzleAnalysis,null);assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);assert.equal(board.parentElement.querySelector('.puzzle-analysis-evalbar'),null);
 });
 
+test('Next puzzle cancels pending analysis immediately, including when the puzzle queue ends',async t=>{
+  const jobs=[];
+  const {w,p,board,engines}=await setup(t,{analyse:()=>{const job=deferred();jobs.push(job);return job.promise;}});
+  await complete(w,p);w.startPuzzleAnalysis();const first=w.analysisRequest;await settle();
+  const next={...p,id:'pending-next'};w.puzzles.push(next);w.queue.push(next);
+  await w.nextPuzzle();assert.equal(w.activity.id,next.id);assert.equal(w.puzzleAnalysis,null);assert.equal(engines[0].dead,true);
+  jobs[0].resolve({score:{cp:900},bestmove:'e2e4'});await first;
+  assert.equal(board.parentElement.querySelector('.puzzle-analysis-evalbar'),null);assert.equal(board.querySelector('.puzzle-analysis-arrow'),null);
+  assert.equal(w.root.querySelector('[data-focus=puzzle-analyse]'),null);
+  await complete(w,next);w.startPuzzleAnalysis();const second=w.analysisRequest;await settle();
+  await w.nextPuzzle();assert.equal(w.activity,null);assert.equal(w.puzzleAnalysis,null);assert.equal(engines[1].dead,true);
+  jobs[1].resolve({score:{cp:-900},bestmove:'e2e4'});await second;
+  assert.equal(board.parentElement.querySelector('.puzzle-analysis-evalbar'),null);assert.equal(w.page,'puzzles');
+});
+
 test('only completed searches update the bar and arrow; early score swings leave the previous fill intact',async t=>{
   const jobs=[];
   const {w,p,board,a}=await setup(t,{analyse:(...args)=>{const job=deferred();jobs.push({...job,progress:preview=>args[4]?.(preview)});return job.promise;}});
@@ -138,8 +163,8 @@ test('engine failure leaves the board playable and retryable; closing during sta
   const {a,w,p,engines}=await setup(t,{analyse:async()=>{throw Error('Engine stopped');}});
   await complete(w,p);await explore(w);assert.match(w.root.querySelector('.puzzle-analysis-status').textContent,/unavailable/);
   w.submitMove('d2d4');await w.analysisRequest;assert.equal(w.puzzleAnalysis.chess.get('d4').color,'w');
-  w.returnToCompletedPuzzle();const boot=deferred(),late=fakeEngine();a.replace('createEngine',()=>boot.promise);
-  w.startPuzzleAnalysis();const request=w.analysisRequest;await settle();await w.close();boot.resolve(late);await request;
+  const boot=deferred(),late=fakeEngine();a.replace('createEngine',()=>boot.promise);
+  w.root.querySelector('.puzzle-analysis-retry').click();const request=w.analysisRequest;await settle();await w.close();boot.resolve(late);await request;
   assert.equal(late.dead,true);assert.equal(engines[0].dead,true);
 });
 

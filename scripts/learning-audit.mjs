@@ -212,6 +212,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   };
   await run("import('./analysis.js').then(m=>{window.analysisProgress=JSON.stringify(m.learningWorkspace.store.value);window.analysisReview=JSON.stringify(m.S.positions);document.querySelector('[data-focus=puzzle-analyse]').click();})");
   await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.puzzleAnalysis?.score&&!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Puzzle analysis engine');
+  assert.equal(await run("document.querySelector('.puzzle-practice-heading').textContent"),'Puzzle practice');
+  assert.equal(await run("(()=>{const b=document.querySelector('[data-focus=puzzle-analyse]');return b.textContent==='Analysing'&&b.disabled&&!!document.querySelector('.puzzle-practice-actions .primary')&&!document.querySelector('.puzzle-analysis-session, .puzzle-analysis-controls');})()"),true,'Analysis must stay in puzzle practice with a disabled Analysing button and Next puzzle');
   await run("window.stableAnalysisBar=document.querySelector('.puzzle-analysis-evalbar');window.stableAnalysisFill=stableAnalysisBar.querySelector('.white-fill');window.analysisBarRemovals=0;window.analysisBarObserver=new MutationObserver(records=>{for(const record of records)for(const node of record.removedNodes)if(node===stableAnalysisBar||node===stableAnalysisFill||node.contains?.(stableAnalysisBar))analysisBarRemovals++;});analysisBarObserver.observe(stableAnalysisBar.parentElement,{childList:true,subtree:true});");
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return w.currentFen()===w.puzzles.find(p=>p.id===w.activity.id).fen})"),true,'Analyse must start at the solver position');
   assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.puzzleAnalysis.line)===JSON.stringify(m.learningWorkspace.puzzleMoves))"),true,'Analysis must retain the moves actually played while solving');
@@ -239,7 +241,9 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run('analysisBarObserver.disconnect()');
   await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);await checkAnalysisBar();await capture('puzzle-analysis-mobile');
   await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
-  await run("import('./analysis.js').then(m=>m.learningWorkspace.returnToCompletedPuzzle())");
+  await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.id===w.activity.id),id:'audit-next-after-analysis',setup:null};window.auditAnalysisEngine=w.analysisEngine;w.puzzles.push(p);w.queue.push(p);document.querySelector('.puzzle-practice-actions .primary').click();})");
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity?.id==='audit-next-after-analysis'&&!m.learningWorkspace.busy)",'Next puzzle exits analysis');
+  assert.equal(await run("import('./analysis.js').then(m=>!m.learningWorkspace.puzzleAnalysis&&auditAnalysisEngine.dead&&!document.querySelector('[data-focus=puzzle-analyse]'))"),true,'Next puzzle must stop the engine and return to solving');
   assert.equal(await run("!!document.querySelector('.puzzle-analysis-evalbar, .puzzle-analysis-arrow')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");
   await run("document.querySelector('input[type=search]').focus()");
