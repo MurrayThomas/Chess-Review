@@ -7,6 +7,7 @@ import { Chess } from "./lib/chess.js";
 import { Engine } from "./engine/uci.js";
 import { flagCodeForCountryId, countryNameForId } from "./flags.js";
 import { BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg } from "./move-grades.js";
+import { puzzleResultBadge } from "./lib/puzzle-badge.js";
 import { CATEGORY_LABEL_FONT, categoryLabelPng } from "./lib/category-label.js";
 import { browserAPI } from "./browser-compat.js";
 import { resetSettingsForRelease } from "./release-settings.js";
@@ -2101,6 +2102,11 @@ function paintBoard({restoring=false}={}) {
         sq.append(badge);
       }
     }
+  }
+  if (clean && S.practice.resultBadge?.solvePos === solvePly) {
+    const result = S.practice.resultBadge, square = sqByName[result.square];
+    square?.classList.add("has-badge");
+    square?.append(puzzleResultBadge(document, result.status));
   }
   syncBoardBadgeLabel();
   renderBestArrow();
@@ -5654,6 +5660,7 @@ function practiceBeginSolve(solvePos) {
   const p = S.practice; if (!p) return;
   S.idx = solvePos;
   p.solving = true; p.demoing = false; p.busy = false;
+  p.resultBadge = null;
   S.selectedSq = null; S.practiceHint = null;
   paintBoard(); renderEvalBar(); renderPlayers(); renderMoves(); renderGraph();
   renderControls(); renderReview(); renderEngineCurrent();
@@ -5779,6 +5786,8 @@ async function practiceAttempt(from, to, promotion = "q") {
     if (passed == null) {p.checkError="Couldn't verify that move. Please try again.";renderEngineCurrent();return;}
   }
   if (passed) {
+    p.resultBadge = null;
+    UI.boardWrap.querySelectorAll('.puzzle-result-badge').forEach(n => {n.parentElement.classList.remove('has-badge');n.remove();});
     p.solving = false;              // lock out further attempts until the next spot
     S.practiceHint = null;
     // Visually play the correct move so the piece lands on its square and STAYS there for a beat
@@ -5803,9 +5812,9 @@ async function practiceAttempt(from, to, promotion = "q") {
           if (S.settings.moveAnim) { animateMove(mv.from, mv.to); animateMove(rookFrom, rookTo); }
         }
       }
-      // Mark it as the "Best move" to confirm they found a strong move.
+      // Confirm the puzzle outcome without assigning an engine review grade.
       toSq.classList.add("has-badge");
-      toSq.append(makeBoardBadge("best", MOVE_GRADE_CONFIG.best.max));
+      toSq.append(puzzleResultBadge(document, "correct"));
     }
     flashSquares([mv.from, mv.to], "good");
     playSanSound(mv.san);
@@ -5813,6 +5822,7 @@ async function practiceAttempt(from, to, promotion = "q") {
     renderControls(); renderReview();
     setTimeout(() => { if (S.practice === p) practiceAdvance(); }, 1300);
   } else {
+    p.resultBadge = {solvePos, square:mv.to, status:"incorrect"};
     p.fails = (p.fails || 0) + 1;
     flashSquares([mv.from, mv.to], "bad");
     buzzBoard();

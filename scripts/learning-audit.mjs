@@ -4,6 +4,13 @@ import assert from 'node:assert/strict';
 
 export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const run=expression=>evaluate(review,expression),results=[];
+  const checkResultBadge=async result=>{
+    const badge=await run("(()=>{const n=document.querySelector('.puzzle-result-badge'),r=n?.getBoundingClientRect(),s=n?.parentElement.getBoundingClientRect(),b=document.querySelector('.board').getBoundingClientRect();return n&&{result:n.dataset.result,label:n.getAttribute('aria-label'),color:n.querySelector('circle').getAttribute('fill'),ratio:r.width/s.width,inside:r.left>=b.left&&r.top>=b.top&&r.right<=b.right+1&&r.bottom<=b.bottom+1};})()");
+    assert.ok(badge,'Puzzle result badge must be visible');assert.equal(badge.result,result);
+    assert.equal(badge.label,result==='correct'?'Correct':'Incorrect');
+    assert.equal(badge.color,result==='correct'?'#81b64c':'#ee4a2f');
+    assert.ok(Math.abs(badge.ratio-.42)<.01,'Puzzle badges must match review badge size');assert.ok(badge.inside,'Puzzle badge must stay inside the board');
+  };
   const geometry="(()=>{const rect=s=>{const r=document.querySelector(s).getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,right:r.right}};return {board:rect('.board'),panel:rect('.learn-shell')}})()";
   const capture=async label=>{
     const data=await run(geometry);
@@ -146,14 +153,17 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await capture('puzzle-arrow-hint');
   await run("import('./analysis.js').then(m=>{window.replyStarted=performance.now();window.replyResolved=false;const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id);w.submitPuzzle(p.solution[0]).then(()=>{replyResolved=true;window.replyElapsed=performance.now()-replyStarted;});})");
   assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.activity.step)"),1);
+  await checkResultBadge('correct');
   await sleep(200);assert.equal(await run('replyResolved'),false);
   await waitFor(review,'replyResolved','Delayed opponent reply');
+  assert.equal(await run("!!document.querySelector('.puzzle-result-badge')"),false,'Opponent replies must not inherit solver badges');
   assert.ok(await run('replyElapsed>=790'),'Reply needs a visible pause');
   assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow, .learn-square.annotated')"),false);
   // A real drag, with deliberately slow storage, must keep the solving move on
   // its destination throughout completion and count earned Elo up afterward.
   await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(async([m,{Chess}])=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-red',setup:null};w.puzzles.push(p);await w.startPuzzleSelection([p]);const wrong=new Chess(p.fen).moves({verbose:true}).find(move=>move.lan!==p.solution[0]&&!new Chess(move.after).isCheckmate());await w.submitPuzzle(wrong.lan);})");
   const wrongColor=await run("getComputedStyle(document.querySelector('.puzzle-wrong'),'::after').backgroundColor");
+  await checkResultBadge('incorrect');
   assert.equal(await run("document.querySelector('.puzzle-practice-status').textContent"),'Wrong move');
   assert.match(wrongColor,/239, 50, 65, 0\.48/,'Wrong feedback must use translucent red');await capture('puzzle-red-feedback');
   const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-solved-count'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
@@ -175,6 +185,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const earned=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
   assert.ok(completionFrames.some(f=>f.elo>completionFrames[0].elo&&f.elo<earned),'Elo must visibly tick through intermediate values');
   await capture('puzzle-earned-elo');
+  await checkResultBadge('correct');
   assert.equal(await run("!!document.querySelector('.puzzle-completion, .puzzle-explanation')||document.querySelector('.puzzle-session').textContent.includes('View solution')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");
   await run("document.querySelector('input[type=search]').focus()");
