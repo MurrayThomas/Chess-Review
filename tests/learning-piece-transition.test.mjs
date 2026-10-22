@@ -30,9 +30,9 @@ for(const cancel of [false,true])test(`piece slides ${cancel?'cancel':'finish'} 
     let resolve;const animation={finished:new Promise(r=>{resolve=r;}),cancel(){resolve();}};
     pending.push({frames,options,animation,resolve});return animation;
   };
-  const transition=slidePuzzlePieces(board,pieceRoutes(sparse,start),()=>dom.window.document.createElement('img'));
+  const transition=slidePuzzlePieces(board,pieceRoutes(sparse,start),()=>dom.window.document.createElement('img'),{duration:120});
   assert.ok(board.classList.contains('puzzle-arranging'));assert.equal(board.querySelectorAll('.puzzle-transition-piece').length,32);
-  assert.ok(pending.some(p=>p.options.delay>0));assert.ok(pending.every(p=>p.options.fill==='both'));
+  assert.ok(pending.every(p=>p.options.duration===120&&!p.options.delay&&p.options.fill==='both'));
   if(cancel)transition.cancel();else pending.forEach(p=>p.resolve());await transition.finished;
   assert.equal(board.querySelector('.puzzle-piece-transition'),null);assert.equal(board.classList.contains('puzzle-arranging'),false);
   transition.cancel();dom.window.close();

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
 import {Chess} from '../lib/chess.js';
 import {LearningWorkspace} from '../lib/learning/workspace.js';
+import {app} from './helpers/app.mjs';
 
 const before=new Chess();before.move('e4');const after=new Chess(before.fen());after.move('d5');
 const puzzle={id:'intro',fen:after.fen(),setup:{fen:before.fen(),move:'d7d5'},solution:['e4d5','d8d5','b1c3'],rating:1200,themes:['fork'],theme:'fork',source:{url:'https://lichess.org/training'}};
@@ -80,6 +81,25 @@ test('a castling setup animates both the king and rook',async t=>{
   const {w,dom}=await setup(t,{item}),destinations=[];t.mock.method(w,'waitForPuzzleReply',async()=>true);
   dom.window.HTMLImageElement.prototype.animate=function(){destinations.push(this.closest('[data-square]').dataset.square);return {finished:Promise.resolve(),cancel(){}};};
   await w.startPuzzleSelection([item]);assert.deepEqual(destinations,['g8','f8']);assert.equal(w.currentFen(),item.fen);assert.equal(w.busy,false);
+});
+
+for(const speed of [1,7,10])test(`puzzle setup and replies match review animation at speed ${speed}`,async t=>{
+  const settings={moveAnim:true,animSpeed:speed},a=app(t);
+  a.state.settings.animSpeed=speed;
+  const duration=a.call('animDuration');
+  assert.equal(duration,440-speed*40);
+  const {w,dom}=await setup(t,{settings}),animations=[];
+  t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  dom.window.HTMLImageElement.prototype.animate=function(frames,options){
+    animations.push({square:this.closest('[data-square]').dataset.square,options});
+    return {finished:Promise.resolve(),cancel(){}};
+  };
+  await w.startPuzzleSelection([puzzle]);
+  await w.submitPuzzle('e4d5');
+  assert.deepEqual(animations.map(a=>a.square),['d5','d5']);
+  assert.ok(animations.every(a=>a.options.duration===duration&&a.options.easing==='cubic-bezier(.22,.61,.36,1)'));
+  settings.moveAnim=false;
+  await w.preparePuzzle(puzzle);assert.equal(animations.length,2);
 });
 
 test('closing while the setup piece is sliding cancels the animation without changing progress',async t=>{

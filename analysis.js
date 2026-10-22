@@ -8,6 +8,7 @@ import { Engine } from "./engine/uci.js";
 import { flagCodeForCountryId, countryNameForId } from "./flags.js";
 import { BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg } from "./move-grades.js";
 import { puzzleResultBadge } from "./lib/puzzle-badge.js";
+import { moveAnimationDuration, MOVE_ANIMATION_EASING } from "./lib/move-animation.js";
 import { CATEGORY_LABEL_FONT, categoryLabelPng } from "./lib/category-label.js";
 import { browserAPI } from "./browser-compat.js";
 import { resetSettingsForRelease } from "./release-settings.js";
@@ -2909,7 +2910,7 @@ function exitAnalysis(mainIdx,{render=true}={}) {
    Minimalist slide: the piece is already on the destination square (paintBoard has
    drawn the final position) — we offset it back to the start square and let it
    slide into place via a transform transition. animSpeed 1..10 → duration 400..40 ms. */
-function animDuration() { return 440 - S.settings.animSpeed * 40; }
+function animDuration() { return moveAnimationDuration(S.settings); }
 function animateMove(fromName, toName, ms) {
   const fromSq = sqByName[fromName], toSq = sqByName[toName];
   if (!fromSq || !toSq) return;
@@ -2924,7 +2925,7 @@ function animateMove(fromName, toName, ms) {
   piece.style.transform = `translate(${dx}px, ${dy}px)`;
   void piece.offsetWidth;                       // force reflow before enabling the transition
   requestAnimationFrame(() => {
-    piece.style.transition = `transform ${dur}ms cubic-bezier(.22,.61,.36,1)`;
+    piece.style.transition = `transform ${dur}ms ${MOVE_ANIMATION_EASING}`;
     piece.style.transform = "translate(0, 0)";
   });
   const cleanup = () => {
@@ -5636,7 +5637,7 @@ function practiceEnterSolve() {
   renderControls(); renderReview(); renderEngineCurrent();
   practiceDemo(solvePos);
 }
-// Replay the mistake: pause, slowly play the wrong move (with its category shown on the board),
+// Replay the mistake: pause, play the wrong move (with its category shown on the board),
 // flag it as wrong (buzz + red flash), then put the piece back and let the player guess.
 function practiceDemo(solvePos) {
   const p = S.practice; if (!p) return;
@@ -5647,7 +5648,7 @@ function practiceDemo(solvePos) {
     if (!S.practice) return;
     S.idx = spot;                          // show the position after the wrong move (badge + tint)
     paintBoard(); renderEvalBar(); renderMoves(); renderGraph(); renderControls(); renderReview();
-    animateMove(mv.from, mv.to, 620);      // slow slide (category shows as the board badge + the coach text)
+    if (S.settings.moveAnim) animateMove(mv.from, mv.to);
     p.demoT.push(setTimeout(() => {
       if (!S.practice) return;
       flashSquares([mv.from, mv.to], "bad");   // signal it was a mistake
