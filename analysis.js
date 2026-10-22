@@ -2480,6 +2480,7 @@ function initBoardInput() {
     // During practice the board only accepts moves while you're actively solving (not while it's
     // rolling to the next mistake or checking your answer).
     if (S.practice && (!S.practice.solving || S.practice.busy)) { e.preventDefault(); return; }
+    clearPracticeResult();
     _cancelBoardDrag?.();
     // Any left-click clears the user's own arrows and square marks.
     clearUserMarkup();
@@ -5574,6 +5575,11 @@ function clearDemoTimers() {
 function removeMoveCallout() {
   const co = UI.boardWrap && UI.boardWrap.querySelector(".move-callout");
   if (co) co.remove();
+}
+function clearPracticeResult() {
+  if (!S.practice?.resultBadge) return;
+  S.practice.resultBadge = null;
+  UI.boardWrap.querySelectorAll('.puzzle-result-badge').forEach(n => {n.parentElement.classList.remove('has-badge');n.remove();});
 }
 function exitPractice() {
   if (!S.practice) return;

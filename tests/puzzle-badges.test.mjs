@@ -61,3 +61,18 @@ test('promotion outcomes use the destination square and remain inside the visibl
   w.flipBoard();badge(w.boardElement,'correct','a8');
   assert.ok(w.boardElement.querySelector('[data-square=a8]').classList.contains('right-col'));
 });
+
+test('review practice clears an incorrect badge on pickup and keeps it cleared after cancellation and repaint',async t=>{
+  const a=review(t);a.state.practice={spots:[1],i:0,solving:true,busy:false};a.state.idx=0;a.call('paintBoard');
+  const board=a.dom.window.document.querySelector('.board');
+  board.getBoundingClientRect=()=>({left:0,top:0,width:800,height:800});
+  await a.call('practiceAttempt','d2','d4');badge(board,'incorrect');
+  const event=new a.dom.window.MouseEvent('pointerdown',{bubbles:true,cancelable:true,button:0,clientX:450,clientY:650});
+  Object.defineProperty(event,'pointerId',{value:1});
+  a.run('sqByName.e2').dispatchEvent(event);
+  assert.ok(a.dom.window.document.querySelector('.drag-piece'));
+  assert.equal(board.querySelector('.puzzle-result-badge'),null);assert.equal(a.state.practice.resultBadge,null);
+  a.dom.window.dispatchEvent(new a.dom.window.Event('blur'));a.call('paintBoard');
+  assert.equal(board.querySelector('.puzzle-result-badge'),null);assert.equal(board.querySelector('.has-badge'),null);
+  assert.equal(a.state.practice.fails,1);assert.equal(a.state.practice.solving,true);
+});
