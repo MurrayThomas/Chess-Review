@@ -83,7 +83,7 @@ test('a castling setup animates both the king and rook',async t=>{
   await w.startPuzzleSelection([item]);assert.deepEqual(destinations,['g8','f8']);assert.equal(w.currentFen(),item.fen);assert.equal(w.busy,false);
 });
 
-for(const speed of [1,7,10])test(`puzzle setup and replies match review animation at speed ${speed}`,async t=>{
+for(const speed of [1,7,10])test(`puzzle loading keeps its original timing while replies match review speed ${speed}`,async t=>{
   const settings={moveAnim:true,animSpeed:speed},a=app(t);
   a.state.settings.animSpeed=speed;
   const duration=a.call('animDuration');
@@ -97,7 +97,8 @@ for(const speed of [1,7,10])test(`puzzle setup and replies match review animatio
   await w.startPuzzleSelection([puzzle]);
   await w.submitPuzzle('e4d5');
   assert.deepEqual(animations.map(a=>a.square),['d5','d5']);
-  assert.ok(animations.every(a=>a.options.duration===duration&&a.options.easing==='cubic-bezier(.22,.61,.36,1)'));
+  assert.deepEqual(animations[0].options,{duration:420,easing:'ease-out'});
+  assert.deepEqual(animations[1].options,{duration,easing:'cubic-bezier(.22,.61,.36,1)'});
   settings.moveAnim=false;
   await w.preparePuzzle(puzzle);assert.equal(animations.length,2);
 });
