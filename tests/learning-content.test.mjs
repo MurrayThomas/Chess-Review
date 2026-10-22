@@ -75,13 +75,34 @@ test('25,000 distinct licensed puzzles replay legally and cover every theme and 
   }
   assert.ok(library.selection.compressedBytesRead<=library.selection.maxDownloadBytes);
 });
-test('only the recorded solution wins a mate-in-one puzzle, while illegal moves remain uncounted',()=>{
-  const p={fen:'7k/8/5KQ1/8/8/8/8/8 w - - 0 1',solution:['g6g7'],themes:['mateIn1']};
+test('any legal checkmate wins a mate-in-one puzzle, while other moves remain incorrect or illegal',()=>{
+  const p={fen:'7k/5K2/8/6Q1/8/8/8/8 w - - 0 1',solution:['g5g7'],themes:['mateIn1']};
+  let alternatives=0;
   for(const move of new Chess(p.fen).moves({verbose:true})){
-    const c=new Chess(p.fen);c.move(move);if(c.isCheckmate())assert.equal(validatePuzzleMove(p,0,move.lan).status,move.lan===p.solution[0]?'correct':'incorrect');
+    const c=new Chess(p.fen);c.move(move);
+    const answer=validatePuzzleMove(p,0,move.lan);
+    assert.equal(answer.status,c.isCheckmate()?'correct':'incorrect',move.san);
+    if(c.isCheckmate()){
+      assert.equal(answer.terminal,true);assert.equal(answer.fen,c.fen());assert.equal(answer.move.lan,move.lan);
+      if(move.lan!==p.solution[0])alternatives++;
+    }
   }
+  assert.ok(alternatives>0);
   assert.equal(validatePuzzleMove(p,0,'a1a2').status,'illegal');
-  assert.equal(validatePuzzleMove(p,0,'g6g5').status,'incorrect');
+  assert.equal(validatePuzzleMove(p,0,'g5g6').status,'incorrect');
+});
+
+test('bundled puzzles accept alternative final checkmates, including captures and underpromotions',()=>{
+  for(const [id,alternatives] of [['0DybW',['c6a5']],['00NEO',['b7g7']],['00LRq',['e8b8','a7b8q','a7b8r','a7b8b','a7b8n']]]){
+    const p=library.puzzles.find(p=>p.id===id),step=p.solution.length-1;
+    const c=new Chess(p.fen);for(const move of p.solution.slice(0,step))playUci(c,move);
+    for(const move of alternatives){
+      const after=new Chess(c.fen());playUci(after,move);assert.ok(after.isCheckmate(),id+':'+move);
+      const answer=validatePuzzleMove(p,step,move);
+      assert.equal(answer.status,'correct',id+':'+move);assert.equal(answer.terminal,true);
+      assert.equal(answer.fen,after.fen());assert.equal(answer.move.lan,move);
+    }
+  }
 });
 test('all opening variations have legal annotated moves and reuse named positions from the offline book',()=>{
   assert.equal(OPENINGS.length,12);

@@ -26,6 +26,20 @@ async function setup(t,{puzzles=[mate,line],initial={},onWrong=()=>{}}={}) {
   const w=make();await w.open();return {w,make,dom,data,state};
 }
 
+for(const [id,alternative] of [['0DybW','c6a5'],['00NEO','b7g7']])test('alternative checkmate completes and awards Elo without a mistake: '+id,async t=>{
+  const puzzle=library.find(p=>p.id===id);let wrong=0;
+  const {w}=await setup(t,{puzzles:[puzzle],onWrong:()=>wrong++});
+  await w.startPuzzleSelection([puzzle],null,{adaptive:true});
+  const elo=w.store.value.puzzleRating.elo;
+  while(w.activity.step<puzzle.solution.length-1)await w.submitPuzzle(puzzle.solution[w.activity.step]);
+  await w.submitPuzzle(alternative);
+  assert.equal(w.attemptRecorded,true);assert.equal(wrong,0);assert.equal(w.activity.mistakes,0);
+  assert.ok(new Chess(w.currentFen()).isCheckmate());assert.equal(w.puzzleMoves.at(-1),alternative);
+  assert.equal(w.store.value.puzzles[id].clean,1);assert.equal(w.store.value.puzzles[id].mistakes,0);
+  assert.equal(w.store.value.puzzleRating.wins,1);assert.ok(w.store.value.puzzleRating.elo>elo);
+  assert.equal(w.store.value.puzzleResume,null);
+});
+
 test('Elo compares the player with puzzle difficulty and calibrates faster for the first twenty puzzles',()=>{
   for(const won of [true,false]) {
     const p=fresh(),r=ratePuzzle(p,mate,won,won?'solved':'wrong');
