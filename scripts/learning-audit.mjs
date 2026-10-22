@@ -311,6 +311,11 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("import('./analysis.js').then(m=>!m.learningWorkspace.puzzleAnalysis&&auditAnalysisEngine.dead&&!document.querySelector('[data-focus=puzzle-analyse]'))"),true,'Next puzzle must stop the engine and return to solving');
   assert.equal(await run("!!document.querySelector('.puzzle-analysis-evalbar, .puzzle-analysis-arrow')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");
+  assert.equal(await run("!!document.querySelector('.board.puzzle-arranging .puzzle-piece-transition')"),true,'Leaving a puzzle must assemble the library board');
+  assert.equal(await run("[...document.querySelectorAll('.board > .sq .piece-img')].every(n=>getComputedStyle(n).visibility==='hidden')"),true,'Library pieces must stay hidden behind the assembly');
+  await capture('puzzle-return-assembling');
+  await waitFor(review,"!document.querySelector('.puzzle-piece-transition, .puzzle-arranging')",'Library pieces assembled');
+  assert.equal(await run("document.querySelectorAll('.board > .sq .piece-img').length"),32);
   await run("document.querySelector('input[type=search]').focus()");
   assert.equal(await run("(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle==='none'&&s.boxShadow==='none';})()"),true,'Concept search must have no outer focus glow');
   await capture('concepts-desktop');

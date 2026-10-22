@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
 import {Chess} from '../lib/chess.js';
 import {pieceRoutes,slidePuzzlePieces} from '../lib/learning/piece-transition.js';
+import {app,loadGame} from './helpers/app.mjs';
 
 const start=new Chess().fen(),sparse='7k/8/8/8/8/8/8/K7 w - - 0 1';
 const onBoard=p=>p.x>0&&p.x<8&&p.y>0&&p.y<8;
@@ -37,4 +38,73 @@ for(const cancel of [false,true])test(`piece slides ${cancel?'cancel':'finish'} 
   if(cancel)transition.cancel();else pending.forEach(p=>p.resolve());await transition.finished;
   assert.equal(board.querySelector('.puzzle-piece-transition'),null);assert.equal(board.classList.contains('puzzle-arranging'),false);
   transition.cancel();dom.window.close();
+});
+
+async function returningWorkspace(t,mode) {
+  const puzzle={id:'return-transition',fen:sparse.replace(' w ',' b '),solution:['h8g8'],rating:450,themes:[]};
+  t.mock.method(globalThis,'fetch',async()=>({ok:true,json:async()=>({schema:1,puzzles:[puzzle]})}));
+  const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  await a.call('openLearning');const w=a.run('learningWorkspace');
+  t.after(()=>w.close());
+  // Return to the user's scratch position and orientation, including any moves
+  // made before entering the puzzle.
+  w.homePosition.move('e4');w.homeBoardFlipped=true;w.render();
+  if(mode)await w.startPuzzleRun(mode);else await w.startRatedPuzzles();
+  const from={...w.displayedBoard},pending=[],board=w.boardElement;
+  board.getBoundingClientRect=()=>({left:0,top:0,width:800,height:800});
+  a.state.settings.moveAnim=true;
+  a.dom.window.HTMLElement.prototype.animate=function(frames,options){
+    let resolve;const animation={finished:new Promise(r=>{resolve=r;}),cancel(){resolve();}};
+    if(this.classList.contains('puzzle-transition-piece'))pending.push({frames,options,resolve});else resolve();
+    return animation;
+  };
+  return {a,w,board,from,pending};
+}
+
+for(const page of ['puzzles','concepts','openings'])test(`leaving a puzzle for ${page} assembles pieces into the saved library board`,async t=>{
+  const {w,board,from,pending}=await returningWorkspace(t);
+  await w.navigate(page);
+  const routes=pieceRoutes(from.fen,w.homePosition.fen(),{fromFlipped:from.flipped,toFlipped:true});
+  assert.equal(w.page,page);assert.equal(w.activity,null);
+  assert.deepEqual(w.displayedBoard,{fen:w.homePosition.fen(),flipped:true});
+  assert.ok(board.classList.contains('puzzle-arranging'));
+  assert.equal(board.querySelectorAll('.puzzle-transition-piece').length,routes.length);
+  assert.equal(pending.length,routes.filter(r=>r.from.x!==r.to.x||r.from.y!==r.to.y).length);
+  assert.ok(pending.every(p=>p.options.duration>=680&&p.options.fill==='both'));
+  pending.forEach(p=>p.resolve());
+  for(let i=0;i<10;i++)await Promise.resolve();
+  assert.equal(board.querySelector('.puzzle-piece-transition'),null);
+  assert.equal(board.classList.contains('puzzle-arranging'),false);
+  assert.equal(board.querySelectorAll('.sq img').length,32);
+});
+
+for(const mode of ['timeAttack','knockout'])for(const showResults of [false,true])test(`${mode} assembles pieces when ${showResults?'showing results':'returning to puzzles'}`,async t=>{
+  const {w,board,pending}=await returningWorkspace(t,mode);
+  await w.finishChallenge('Ended early',showResults);
+  if(!showResults)await w.navigate('puzzles');
+  assert.equal(w.run,null);assert.equal(w.activity,null);
+  assert.ok(board.classList.contains('puzzle-arranging'));assert.ok(pending.length>0);
+  await w.close();
+  assert.equal(board.querySelector('.puzzle-piece-transition'),null);
+  assert.equal(board.classList.contains('puzzle-arranging'),false);
+});
+
+for(const reduced of [false,true])test(`returning from a puzzle respects ${reduced?'system reduced motion':'disabled move animations'}`,async t=>{
+  const {a,w,board,pending}=await returningWorkspace(t);
+  if(reduced)a.dom.window.matchMedia=()=>({matches:true});else a.state.settings.moveAnim=false;
+  await w.navigate('concepts');
+  assert.equal(pending.length,0);assert.equal(board.querySelector('.puzzle-piece-transition'),null);
+  assert.equal(w.currentFen(),w.homePosition.fen());
+});
+
+test('starting another puzzle cancels the return assembly without cancelling the new transition',async t=>{
+  const {w,board,pending}=await returningWorkspace(t);
+  await w.navigate('concepts');assert.ok(board.classList.contains('puzzle-arranging'));
+  const previous=pending.length,starting=w.startPuzzleSelection(w.puzzles);
+  for(let i=0;i<30;i++)await Promise.resolve();
+  assert.ok(pending.length>previous);assert.equal(board.querySelectorAll('.puzzle-piece-transition').length,1);
+  assert.equal(typeof w.cancelPieceTransition,'function');
+  w.cancelPieceTransition();await starting;
+  assert.equal(board.querySelector('.puzzle-piece-transition'),null);
+  assert.equal(w.cancelPieceTransition,null);assert.equal(w.busy,false);
 });
