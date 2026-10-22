@@ -316,10 +316,10 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await capture('concepts-desktop');
   await checkDropdown('concepts-dropdown-desktop','category');
   assert.equal(await run("!!document.querySelector('.learn-card')"),false);
-  await run("import('./analysis.js').then(m=>m.learningWorkspace.startLesson('fork'))");
-  await run("import('./analysis.js').then(m=>m.learningWorkspace.lessonTab('practise'))");
-  await run("document.querySelector('[data-square=e4]').click();document.querySelector('[data-square=f6]').click()");
-  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.feedback?.status==='correct')",'Real concept validation');
+  await run("document.querySelector('.learn-library-row > button').click()");
+  assert.equal(await run("!!document.querySelector('.learn-notice-card[aria-modal=true]')&&document.querySelector('.learn-notice-card').contains(document.activeElement)"),true);
+  await capture('concepts-coming-soon');
+  await run("document.querySelector('.learn-notice-card button').click()");
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('openings'))");
   assert.equal(await run("!!document.querySelector('.learn-bookmark')||[...document.querySelectorAll('.learn-filters button')].some(n=>n.textContent.includes('Saved'))"),false,'Opening favorites must be removed');
   await run("document.querySelector('input[type=search]').focus()");

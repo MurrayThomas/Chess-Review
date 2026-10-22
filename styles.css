@@ -168,6 +168,11 @@
 .learn-opening-moves .learn-button { text-align: left; border-color: transparent; background: transparent; padding: 10px 12px; }
 .learn-opening-moves [aria-current="step"] { background: color-mix(in oklab,var(--accent) 14%,transparent); color: var(--accent); }
 .learn-opening-moves .learn-button:hover { background: var(--panel); }
+.learn-notice-overlay { position: fixed; inset: 0; z-index: 210; display: grid; place-items: center; padding: 24px; background: #0009; pointer-events: auto; }
+.learning-workspace:has(.learn-notice-overlay) { z-index: 2200; }
+.learn-notice-card { width: min(100%,440px); box-sizing: border-box; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: 0 20px 80px #0005; }
+.learn-notice-card h2 { margin: 0 0 14px; font-size: 23px; }
+.learn-notice-card p { color: var(--ink-2); line-height: 1.7; margin: 0 0 24px; }
 .learn-rules { border-top: 1px solid var(--line); padding-top: 18px; }
 .learn-storage-error { padding: 16px; margin: 0 0 24px; border: 1px solid var(--q-mistake); border-radius: 10px; }
 @keyframes learn-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

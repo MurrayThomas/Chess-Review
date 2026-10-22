@@ -137,6 +137,19 @@ test('opening playback pauses on manual navigation and stops at the end, on vari
   await w.startOpening('italian');w.toggleOpeningPlayback();await w.close();assert.equal(w.openingTimer,null);
 });
 
+test('Concept Learn opens a focused in-progress dialog without starting a lesson',async t=>{
+  const {w,dom,data}=await workspace(t);await w.navigate('concepts');
+  const learn=w.root.querySelector('.learn-library-row > button');learn.focus();learn.click();
+  const notice=w.root.querySelector('.learn-notice-card');assert.equal(notice.getAttribute('aria-modal'),'true');
+  assert.match(notice.textContent,/one-person project/);assert.match(notice.textContent,/still working on these lessons/);
+  assert.equal(w.activity,null);assert.equal(data['learning:v1']?.lessons?.fork,undefined);
+  assert.equal(notice.contains(dom.window.document.activeElement),true);
+  const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
+  key('Tab');assert.equal(notice.contains(dom.window.document.activeElement),true);
+  key('Escape');assert.equal(w.conceptNotice,null);assert.equal(w.closed,false);assert.equal(dom.window.document.activeElement,learn);
+  learn.click();w.conceptNotice.querySelector('button').click();assert.equal(w.conceptNotice,null);assert.equal(dom.window.document.activeElement,learn);
+});
+
 test('puzzles hide solution information, persist intermediate steps and distinguish assisted and repeat solves',async t=>{
   const {w,data}=await workspace(t);const p=w.puzzles.find(p=>p.solution.length>=3);
   await w.startPuzzleSelection([p]);assert.ok(!w.root.textContent.includes('Why the solution works'));assert.equal(w.root.querySelectorAll('.annotated').length,0);
