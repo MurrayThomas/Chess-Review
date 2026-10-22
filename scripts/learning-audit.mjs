@@ -187,6 +187,29 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await capture('puzzle-earned-elo');
   await checkResultBadge('correct');
   assert.equal(await run("!!document.querySelector('.puzzle-completion, .puzzle-explanation')||document.querySelector('.puzzle-session').textContent.includes('View solution')"),false);
+  const checkAnalysisBar=async()=>{
+    const rects=await run("(()=>{const b=document.querySelector('.board').getBoundingClientRect(),e=document.querySelector('.puzzle-analysis-evalbar').getBoundingClientRect();return {board:{top:b.top,bottom:b.bottom,left:b.left},bar:{top:e.top,bottom:e.bottom,left:e.left,right:e.right,height:e.height}}})()");
+    assert.ok(Math.abs(rects.bar.top-rects.board.top)<1&&Math.abs(rects.bar.bottom-rects.board.bottom)<1,'Analysis evaluation bar must span the board from top to bottom: '+JSON.stringify(rects));
+    assert.ok(rects.bar.left>=0&&rects.bar.right<rects.board.left,'Analysis evaluation bar must sit beside the left edge');
+    assert.ok(rects.bar.height>100);
+  };
+  await run("import('./analysis.js').then(m=>{window.analysisProgress=JSON.stringify(m.learningWorkspace.store.value);window.analysisReview=JSON.stringify(m.S.positions);document.querySelector('[data-focus=puzzle-analyse]').click();})");
+  await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.puzzleAnalysis?.score&&!m.learningWorkspace.puzzleAnalysis.pending&&!!document.querySelector('.puzzle-analysis-arrow'))",'Puzzle analysis engine');
+  assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace;return w.currentFen()===w.puzzles.find(p=>p.id===w.activity.id).fen})"),true,'Analyse must start at the solver position');
+  await capture('puzzle-analysis-desktop');await checkAnalysisBar();
+  await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(([m,{Chess}])=>{window.analysisMove=new Chess(m.learningWorkspace.currentFen()).moves({verbose:true})[0].lan;})");
+  const analysisFrom=await squarePoint('analysisMove.slice(0,2)'),analysisTo=await squarePoint('analysisMove.slice(2,4)');
+  for(const pt of [analysisFrom,analysisTo]){
+    await call('Input.dispatchMouseEvent',{type:'mousePressed',...pt,button:'left',clickCount:1},review.sessionId);
+    await call('Input.dispatchMouseEvent',{type:'mouseReleased',...pt,button:'left',clickCount:1},review.sessionId);
+  }
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.puzzleAnalysis.index===1&&!m.learningWorkspace.puzzleAnalysis.pending)",'Free puzzle analysis move');
+  assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.store.value)===analysisProgress&&JSON.stringify(m.S.positions)===analysisReview)"),true,'Exploring must preserve puzzle progress and review');
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.flipBoard())");await checkAnalysisBar();await capture('puzzle-analysis-flipped');
+  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);await checkAnalysisBar();await capture('puzzle-analysis-mobile');
+  await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.returnToCompletedPuzzle())");
+  assert.equal(await run("!!document.querySelector('.puzzle-analysis-evalbar, .puzzle-analysis-arrow')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");
   await run("document.querySelector('input[type=search]').focus()");
   assert.equal(await run("(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle==='none'&&s.boxShadow==='none';})()"),true,'Concept search must have no outer focus glow');
