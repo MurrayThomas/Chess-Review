@@ -23,6 +23,19 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);
     await fs.writeFile(path.join(out,label+'.png'),Buffer.from(shot.data,'base64'));results.push({label,...data,...bounds});
   };
+  const checkDropdown=async(label,key)=>{
+    await run(`document.querySelector('[data-focus="${key}"]').click()`);
+    await sleep(180);
+    const menu=await run("(()=>{const field=document.querySelector('.learn-dropdown.open'),menu=field.querySelector('[role=listbox]'),r=menu.getBoundingClientRect(),option=document.activeElement,o=option.getBoundingClientRect();return {visible:getComputedStyle(menu).display==='flex',left:r.left,right:r.right,width:innerWidth,hit:document.elementFromPoint(o.x+o.width/2,o.y+o.height/2)===option,selected:option.getAttribute('aria-selected'),focusColor:getComputedStyle(option).backgroundColor};})()");
+    assert.ok(menu.visible&&menu.hit,label+': dropdown must be visible above the library rows');
+    assert.ok(menu.left>=0&&menu.right<=menu.width,label+': dropdown outside viewport');
+    assert.equal(menu.selected,'true');assert.notEqual(menu.focusColor,'rgba(0, 0, 0, 0)');
+    await capture(label);
+    await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape'},review.sessionId);
+    await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',code:'Escape'},review.sessionId);
+    assert.equal(await run("!!document.querySelector('.learn-dropdown.open')"),false);
+    assert.equal(await run("!!document.querySelector('.learning-workspace')"),true);
+  };
   await run("import('./analysis.js').then(m=>{m.go(2);m.toggleFlip();})");
   const before=await run("import('./analysis.js').then(m=>({idx:m.S.idx,flipped:m.S.flipped,pgn:m.S.pgn,evals:JSON.stringify(m.S.evals)}))");
   await run("window.auditBoard=document.querySelector('.board');window.auditFrames=[];window.auditSampling=true;function sample(){const r=auditBoard.getBoundingClientRect();auditFrames.push({x:r.x,y:r.y,width:r.width,height:r.height});if(auditSampling)requestAnimationFrame(sample);}requestAnimationFrame(sample);");
@@ -249,6 +262,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("document.querySelector('input[type=search]').focus()");
   assert.equal(await run("(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle==='none'&&s.boxShadow==='none';})()"),true,'Concept search must have no outer focus glow');
   await capture('concepts-desktop');
+  await checkDropdown('concepts-dropdown-desktop','category');
   assert.equal(await run("!!document.querySelector('.learn-card')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.startLesson('fork'))");
   await run("import('./analysis.js').then(m=>m.learningWorkspace.lessonTab('practise'))");
@@ -259,13 +273,17 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("document.querySelector('input[type=search]').focus()");
   assert.equal(await run("(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle==='none'&&s.boxShadow==='none';})()"),true,'Opening search must have no outer focus glow');
   await capture('openings-desktop');
+  await checkDropdown('openings-dropdown-desktop','family');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.startOpening('italian',{practice:true,color:'b'}))");
+  await checkDropdown('opening-variation-dropdown','opening-variation');
+  await checkDropdown('opening-color-dropdown','practice-color');
   await run("document.querySelector('[data-square=e7]').click();document.querySelector('[data-square=e5]').click()");
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply===3)",'Opening reply');
   for(const [width,height] of [[1366,768],[960,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);
     for(const page of ['puzzles','concepts','openings']){
       await run(`import('./analysis.js').then(m=>m.learningWorkspace.navigate('${page}'))`);await capture(page+'-'+width);
+      if(page!=='puzzles')await checkDropdown(page+'-dropdown-'+width,page==='concepts'?'category':'family');
     }
     const geometryBefore=await run(geometry);
     await run("document.querySelector('[aria-label=Settings]').click()");

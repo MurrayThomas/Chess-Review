@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {JSDOM} from 'jsdom';
 import {Chess} from '../lib/chess.js';
 import {LearningWorkspace} from '../lib/learning/workspace.js';
-import {LESSONS, OPENINGS, linePositions} from '../lib/learning/content.js';
+import {LESSONS, OPENINGS, CATEGORIES, linePositions} from '../lib/learning/content.js';
 import {validateExercise} from '../lib/learning/validation.js';
 import {app, loadGame, branch} from './helpers/app.mjs';
 
@@ -225,6 +225,45 @@ test('concept and opening libraries use readable rows without progress labels',a
     assert.equal(w.root.querySelector('.learn-card'),null);assert.doesNotMatch(w.root.textContent,/not started|in progress/);
   }
   assert.equal(w.root.querySelector('.learn-bookmark'),null);assert.doesNotMatch(w.root.textContent,/★|☆|Saved/);
+});
+
+test('themed library dropdowns filter content and dismiss without leaving learning',async t=>{
+  const {w,dom}=await workspace(t),doc=dom.window.document;
+  for(const [page,key,value] of [['concepts','category',CATEGORIES[0]],['openings','family',OPENINGS[0].family]]){
+    await w.navigate(page);assert.equal(w.root.querySelector('select'),null);
+    const trigger=w.root.querySelector(`[data-focus="${key}"]`);trigger.click();
+    const menu=doc.getElementById(trigger.getAttribute('aria-controls'));
+    [...menu.children].find(n=>n.textContent===value).click();
+    assert.equal(w.filters[key],value);assert.equal(doc.activeElement.dataset.focus,key);
+    assert.ok([...w.root.querySelectorAll('.learn-library-row')].every(n=>page==='concepts'
+      ?LESSONS.some(l=>l.title===n.querySelector('h3').textContent&&l.category===value)
+      :OPENINGS.some(o=>o.title===n.querySelector('h3').textContent&&o.family===value)));
+    const current=w.root.querySelector(`[data-focus="${key}"]`);current.click();
+    doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+    assert.equal(w.closed,false);assert.equal(current.getAttribute('aria-expanded'),'false');assert.equal(doc.activeElement,current);
+    current.click();w.root.querySelector('[data-focus="difficulty"]').click();
+    assert.equal(current.getAttribute('aria-expanded'),'false');assert.equal(w.root.querySelectorAll('.learn-dropdown.open').length,1);
+    doc.body.dispatchEvent(new dom.window.Event('pointerdown',{bubbles:true}));assert.equal(w.dropdown,null);
+    current.click();w.root.querySelector('input[type=search]').focus();assert.equal(w.dropdown,null);
+  }
+});
+
+test('opening dropdowns support keyboard browsing, preserve practice state and honor disabled controls',async t=>{
+  const {w,dom}=await workspace(t),doc=dom.window.document;
+  await w.startOpening('italian',{practice:true});
+  const key=name=>doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
+  const color=w.root.querySelector('[data-focus="practice-color"]');color.focus();key('ArrowDown');key('End');
+  assert.equal(doc.activeElement.textContent,'Black');assert.equal(w.activity.color,'w');
+  doc.activeElement.click();await settle();assert.equal(w.activity.color,'b');assert.equal(w.activity.ply,1);assert.equal(w.flipped,true);
+  assert.equal(doc.activeElement.dataset.focus,'practice-color');
+  const variation=w.root.querySelector('[data-focus="opening-variation"]');variation.focus();key('ArrowDown');key('End');
+  doc.activeElement.click();await settle();assert.equal(w.activity.line,OPENINGS.find(o=>o.id==='italian').lines.length-1);
+  assert.equal(w.activity.ply,1);assert.equal(w.store.value.resume.line,w.activity.line);
+  const current=w.root.querySelector('[data-focus="practice-color"]');current.focus();key('ArrowUp');key('Home');
+  assert.equal(doc.activeElement.textContent,'White');key('b');assert.equal(doc.activeElement.textContent,'Black');
+  key('Tab');assert.equal(w.dropdown,null);assert.equal(doc.activeElement,current);
+  w.busy=true;w.render();assert.equal(w.root.querySelector('[data-focus="practice-color"]').disabled,true);
+  w.root.querySelector('[data-focus="practice-color"]').click();assert.equal(w.dropdown,null);
 });
 
 test('learning keeps review panels mounted until loading finishes and can close before mounting',async t=>{
