@@ -234,9 +234,7 @@
 .has-learning-morph3 .topbar { z-index: 70; }
 .learning-workspace.learning-embedded { position: fixed; inset: 60px 0 0; overflow: auto; overscroll-behavior: contain; min-height: 0; }
 .learning-embedded .learn-shell { max-height: var(--learn-panel-height); padding: 0 8px 0 0; scrollbar-gutter: stable; }
-.learn-scene-layer { position: fixed; inset: 60px 0 0; z-index: 25; pointer-events: none; overflow: hidden; }
-.learn-scene-ghost { position: fixed; overflow: hidden; pointer-events: none; contain: layout paint; will-change: transform, opacity; }
-.learn-scene-ghost, .learn-scene-ghost * { animation: none !important; transition: none !important; }
+.learn-transition-surface { will-change: transform, opacity; pointer-events: none !important; }
 .learn-swoop-anchor { position: relative; z-index: 40 !important; will-change: transform; }
 .learning-workspace .learn-library { display: flex; flex-direction: column; margin: 12px 0 28px; }
 .learn-library-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--line); }

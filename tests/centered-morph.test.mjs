@@ -4,6 +4,7 @@ import {JSDOM} from 'jsdom';
 import {fullSizeLearningLayout, boardExpansionFrames, centeredMorph} from '../lib/learning/centered-morph.js';
 import {capturePanels} from '../lib/learning/morph.js';
 import {app, loadGame} from './helpers/app.mjs';
+import {LearningWorkspace} from '../lib/learning/workspace.js';
 
 test('learning reserves Settings without moving and bounds the square board at all window sizes',()=>{
   for(const width of [320,390,600,760,960,1280,1440,1920,2560]){
@@ -20,7 +21,7 @@ test('learning reserves Settings without moving and bounds the square board at a
   const board={x:92,y:142,width:700};const p=fullSizeLearningLayout({width:1920,height:1080,board});
   assert.ok(p.boardSize>board.width);assert.ok(p.boardX<board.x);assert.equal(p.boardY+60,board.y);
   assert.equal(p.boardX+p.boardSize,board.x+board.width);
-  assert.ok(board.x-p.boardX<=32);assert.equal(p.panelX,board.x+board.width+32);
+  assert.ok(board.x-p.boardX>32&&board.x-p.boardX<=80);assert.equal(p.panelX,board.x+board.width+32);
   const tight=fullSizeLearningLayout({width:1366,height:1080,board:{x:350,y:70,width:800}});
   assert.equal(tight.boardX+tight.boardSize,1150);assert.equal(tight.boardY+60,70);
 });
@@ -36,14 +37,31 @@ test('Morph 3 clears outgoing text before revealing its single live destination 
   const {dom,doc,source,board,target,animations}=scene(t);
   const controller=new dom.window.AbortController();
   const pending=centeredMorph(doc,capturePanels([source]),[target],{board,fromBoard:board.getBoundingClientRect(),variant:'morph3',signal:controller.signal});
-  const outgoing=animations.find(a=>a.target.classList.contains('learn-scene-ghost'));
+  const outgoing=animations.find(a=>a.target===source);
   const incoming=animations.find(a=>a.target===target);
   assert.ok(outgoing.options.duration<=incoming.options.delay);
   assert.equal(incoming.options.fill,'both');
   assert.equal(doc.querySelectorAll('#target').length,1);
+  assert.equal(doc.querySelector('.learn-scene-ghost'),null);
   controller.abort();await pending;
   assert.equal(doc.querySelector('.learn-scene-layer'),null);
   assert.ok(animations.every(a=>a.cancelled));
+  assert.equal(doc.querySelector('.learn-transition-surface'),null);
+});
+
+test('both transitions preserve the real slider controls, their values and scroll context',async t=>{
+  const {dom,doc,source,board,target,animations}=scene(t);
+  source.className='learning-workspace';source.innerHTML='<div class="learn-dual-range"><input type="range" min="350" max="3050" value="350"><input type="range" min="350" max="3050" value="3050"></div>';
+  const sliders=[...source.querySelectorAll('input')];sliders[0].value='1000';sliders[1].value='2200';source.scrollTop=120;
+  for(const exiting of [false,true]){
+    const controller=new dom.window.AbortController();
+    const pending=centeredMorph(doc,capturePanels([source]),[target],{board,fromBoard:board.getBoundingClientRect(),exiting,signal:controller.signal});
+    assert.deepEqual([...doc.querySelectorAll('input')],sliders);
+    assert.deepEqual(sliders.map(n=>n.value),['1000','2200']);assert.equal(source.scrollTop,120);
+    assert.ok(sliders.every(n=>n.closest('.learning-workspace')===source));
+    assert.ok(animations.some(a=>a.target===source));controller.abort();await pending;
+    assert.equal(doc.querySelector('.learn-transition-surface'),null);
+  }
 });
 
 function scene(t) {
@@ -72,6 +90,18 @@ test('the scene moves the real board as one surface and releases it synchronousl
   assert.ok(animations.some(a=>a.target===board&&a.options.duration===720));
   dom.window.dispatchEvent(new dom.window.Event('resize'));await resize;
   assert.equal(doc.querySelector('.learn-scene-layer'),null);
+});
+
+test('workspace transitions measure and animate the square grid rather than its wider review wrapper',async t=>{
+  const {dom,doc,source,board,target,animations}=scene(t),grid=board.querySelector('.board');
+  grid.getBoundingClientRect=()=>({x:344,y:112,width:540,height:540});
+  const w=new LearningWorkspace({document:doc,storage:{},settings:()=>({moveAnim:true}),embedded:{boardWrap:board}});
+  w.boardElement=grid;
+  const pending=w.transitionPanels(capturePanels([source]),[target],{fromBoard:grid.getBoundingClientRect()});
+  const effect=animations.find(a=>a.target===grid);
+  assert.ok(effect);assert.equal(effect.frames[0].transform,'translate(0px, 0px) scale(1)');
+  assert.equal(animations.some(a=>a.target===board),false);
+  w.motionController.abort();await pending;
 });
 
 test('reduced motion skips board and panel movement',async t=>{
