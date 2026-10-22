@@ -61,6 +61,11 @@ Distributed by Lichess (lila); high-quality vector SVGs.
   CC0 Freesound upload, mirrored to Pixabay via the `freesound_community` account.
   Source: https://pixabay.com/sound-effects/film-special-effects-training-program-incorrect2-88735/
 
+## Puzzle success sounds
+- **Files:** `sounds/success/*.wav` — Warm Marimba, Crystal Chime, Gentle Piano,
+  Soft Retro, and Airy Bloom.
+- **Source:** generated with ChatGPT and supplied by the maintainer for Chess Review.
+
 ## Chess engine
 - **Files:** `engine/stockfish*.js`, `engine/stockfish*.wasm`
 - **Project:** Stockfish.js by Nathan Rugg (nmrugg), a JS/WASM port of Stockfish —

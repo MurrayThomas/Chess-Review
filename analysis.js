@@ -311,6 +311,7 @@ const DEFAULT_SETTINGS = {
   boardTheme: "maple", pieceStyle: "image", sound: true,
   // Master volume (0–100) applied to every sound the extension plays.
   soundVolume: 50,
+  puzzleSuccessSound: "warm-marimba",
   // Custom board colours (used when boardTheme === "custom" — the colour-picker chip, shown first).
   boardCustomLight: "#f9f9f9", boardCustomDark: "#e1a652",
   // Per-event sound mapping + knobs (see FX_SOUNDS / SOUND_EVENTS). snd = an FX_SOUNDS id or "default"
@@ -518,6 +519,17 @@ const FX_SOUNDS = [
   ["08", "Sound 08", "sounds/fx/chess_sound_08.wav"],
   ["09", "Sound 09", "sounds/fx/chess_sound_09.wav"],
 ];
+const PUZZLE_SUCCESS_SOUNDS = [
+  ["warm-marimba", "Warm Marimba", "sounds/success/01-warm-marimba.wav"],
+  ["crystal-chime", "Crystal Chime", "sounds/success/02-crystal-chime.wav"],
+  ["gentle-piano", "Gentle Piano", "sounds/success/03-gentle-piano.wav"],
+  ["soft-retro", "Soft Retro", "sounds/success/04-soft-retro.wav"],
+  ["airy-bloom", "Airy Bloom", "sounds/success/05-airy-bloom.wav"],
+];
+function puzzleSuccessChoice() {
+  const id = S.settings.puzzleSuccessSound;
+  return id === "none" ? null : PUZZLE_SUCCESS_SOUNDS.find(([key]) => key === id) || PUZZLE_SUCCESS_SOUNDS[0];
+}
 // Board events that get their own sound + knobs. [key, label, lichessFile]. "default" maps the event
 // to lichessFile (the stock Lichess cue, shown as "Lichess"), still pitch/speed-tunable so you can A/B it.
 const SOUND_EVENTS = [
@@ -629,17 +641,25 @@ function processedFx(url, pitch, speed) {
 }
 // Play an event's sound now (no throttle) — used for the move board and settings previews.
 function triggerFx(ev) {
+  const cfg = fxConfig(ev);
+  triggerAudio(fxUrl(ev), cfg.pitch, cfg.speed);
+}
+function triggerAudio(url, pitch = 0, speed = 1) {
   const ctx = audioCtx();
   if (!ctx) return;
   if (ctx.state === "suspended") ctx.resume().catch(() => {});
-  const cfg = fxConfig(ev);
-  processedFx(fxUrl(ev), cfg.pitch, cfg.speed).then((fx) => {
+  processedFx(url, pitch, speed).then((fx) => {
     const src = ctx.createBufferSource(), gain = ctx.createGain();
     src.buffer = fx.buffer; src.playbackRate.value = fx.rate;
     gain.gain.value = masterVol();
     src.connect(gain).connect(ctx.destination);
     src.start();
   }).catch(() => {});
+}
+function playPuzzleSuccess(preview = false) {
+  if (!preview && !S.settings.sound) return;
+  const choice = puzzleSuccessChoice();
+  if (choice) triggerAudio(_url(choice[2]));
 }
 // Fast-scrub feel (holding ←/→): nav events fire quicker than a click can ring out. Throttle the cue
 // to a tidy cadence; Web Audio is naturally polyphonic so overlapping plays don't garble.
@@ -1561,7 +1581,7 @@ async function openLearning() {
   UI.settings.hidden = true;
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
-    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound,
+    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound, onPuzzleSuccess:playPuzzleSuccess,
     embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag,
       drawArrow:(from,to,flipped)=>learningArrow(from,to,flipped,USER_ARROW_COLOR),
       drawBestArrow:(from,to,flipped)=>learningArrow(from,to,flipped,/^#[0-9a-f]{6}$/i.test(S.settings.bestArrowColor || "")?S.settings.bestArrowColor:ARROW_COLOR)},
@@ -4664,7 +4684,7 @@ const VISUAL_SETTING_KEYS = [
   ...BADGE_SETTING_KEYS,
   "graphStyle", "barStyle", "insightFont", "showCoords", "coordSize", ...BACKGROUND_SETTING_KEYS,
   "coach", "coachPlain", "boardTheme", "pieceStyle", "boardCustomLight", "boardCustomDark",
-  "sound", "soundVolume", "soundFx", ...ARROW_SETTING_KEYS,
+  "sound", "soundVolume", "soundFx", "puzzleSuccessSound", ...ARROW_SETTING_KEYS,
   "moveAnim", "animSpeed", "loaderStyle", "learningTransition",
 ];
 function resetSettingKeys(keys) {
@@ -4814,13 +4834,26 @@ function visualSettings() {
       el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Font size of the move commentary in the Insight panel.")),
     ),
     section("Sound",
-      toggleRow("Move sound", "sound"),
+      toggleRow("Sound effects", "sound"),
       slider("Volume", "soundVolume", 0, 100, 1, { fmt: (v) => v + " %" }),
+      puzzleSuccessControls(),
       el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Pick a sound for each board event, then shape it with the pitch and speed knobs. Changes preview as you make them.")),
       ...SOUND_EVENTS.map(([key, label]) => fxEventControls(key, label)),
       el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "A missed practice move plays the Incorrect cue.")),
     ),
     el("button", { class: "set-reset", onclick: resetVisualSettings }, "Reset to default"),
+  );
+}
+function puzzleSuccessControls() {
+  const choice = puzzleSuccessChoice();
+  return el("div", { class: "set-fx set-puzzle-success" },
+    el("div", { class: "set-row" }, el("span", { class: "set-lbl" }, "Puzzle success"),
+      ddField(choice?.[0] || "none", [...PUZZLE_SUCCESS_SOUNDS.map(([id, label]) => [id, label]), ["none", "Off"]], async (value) => {
+        await setSetting("puzzleSuccessSound", value);
+        playPuzzleSuccess(true);
+      })),
+    el("span", { class: "set-note" }, "Plays when you solve a practice position or finish a puzzle."),
+    el("button", { class: "set-reset", disabled: !choice, onclick: () => playPuzzleSuccess(true) }, "Preview sound"),
   );
 }
 // Coach dropdown — only coaches that have a built animated character. Uses the
@@ -5769,6 +5802,7 @@ async function practiceAttempt(from, to, promotion = "q") {
     }
     flashSquares([mv.from, mv.to], "good");
     playSanSound(mv.san);
+    playPuzzleSuccess();
     renderControls(); renderReview();
     setTimeout(() => { if (S.practice === p) practiceAdvance(); }, 1300);
   } else {
