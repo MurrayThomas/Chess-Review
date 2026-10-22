@@ -255,7 +255,7 @@ test('old presentation preferences all select Morph 3 and Settings stays open wi
 test('puzzle types and two handles on one Elo track filter the full adaptive session',async t=>{
   const {w,dom}=await workspace(t);
   const doc=dom.window.document;
-  assert.equal(w.root.querySelectorAll('.learn-puzzle-start .primary').length,1);
+  assert.equal(w.root.querySelectorAll('.puzzle-mode-grid .primary').length,3);
   assert.equal(w.root.querySelector('[aria-label="Phase"]'),null);assert.equal(w.root.querySelector('[aria-label="Progress"]'),null);
   assert.doesNotMatch(w.root.textContent,/How rating works|Provisional|Unsolved|Race the clock/);
   doc.querySelector('[data-focus="theme-fork"]').click();assert.deepEqual([...w.puzzleThemes],['fork']);

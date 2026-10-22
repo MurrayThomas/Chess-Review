@@ -76,7 +76,7 @@ test('Knockout has no timer and ends immediately on its first wrong move with it
   assert.equal(w.run,null);assert.equal(w.result.solved,2);assert.equal(w.result.results.at(-1).correct,false);
   assert.equal(data['learning:v1'].bests.knockout,2);assert.equal(data['learning:v1'].bests.timeAttack,undefined);
   await w.startPuzzleRun('knockout');await wrong(w);assert.equal(w.result.best,2);assert.equal(w.result.personalBest,false);
-  await w.navigate('puzzles');assert.equal(w.root.querySelector('[data-focus=knockout] .puzzle-mode-record strong').textContent,'2');
+  await w.navigate('puzzles');assert.equal(w.root.querySelector('[data-focus=knockout]').closest('.puzzle-mode').querySelector('.puzzle-mode-record strong').textContent,'2');
 });
 
 test('a partial continuation earns no point and a wrong move later in it ends Knockout',async t=>{
