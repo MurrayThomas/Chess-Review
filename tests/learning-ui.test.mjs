@@ -69,6 +69,9 @@ test('each opening practice line completes from both sides and legal deviations 
 test('puzzles hide solution information, persist intermediate steps and distinguish assisted and repeat solves',async t=>{
   const {w,data}=await workspace(t);const p=w.puzzles.find(p=>p.solution.length>=3);
   await w.startPuzzleSelection([p]);assert.ok(!w.root.textContent.includes('Why the solution works'));assert.equal(w.root.querySelectorAll('.annotated').length,0);
+  assert.equal(w.root.querySelector('[data-focus="puzzle-hint"]').hasAttribute('title'),false);
+  assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,p.fen.split(' ')[1]==='w'?'White to move':'Black to move');
+  assert.equal(w.root.querySelector('.puzzle-practice-status').classList.contains('puzzle-quiet-status'),false);
   await w.submitPuzzle(p.solution[0]);assert.equal(w.activity.step,2);assert.equal(data['learning:v1'].resume.step,2);
   const resume=structuredClone(data['learning:v1'].resume);await w.navigate('home');await w.resume(resume);assert.equal(w.activity.step,2);
   while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);assert.equal(w.store.value.puzzles[p.id].clean,1);

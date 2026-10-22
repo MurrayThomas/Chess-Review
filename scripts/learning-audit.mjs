@@ -110,6 +110,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("document.querySelectorAll('.puzzle-session [data-puzzle-elo]').length"),1);
   assert.equal(await run("!!document.querySelector('.puzzle-session .learn-panel, .puzzle-session .learn-move-input, .learn-board-caption')"),false);
   assert.deepEqual(await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>n.textContent)"),['Hint','Skip']);
+  assert.equal(await run("document.querySelector('[data-focus=puzzle-hint]').hasAttribute('title')"),false,'Hint must have no hover tooltip');
+  assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace,status=document.querySelector('.puzzle-practice-status');return status.textContent===(w.currentFen().split(' ')[1]==='w'?'White to move':'Black to move')&&getComputedStyle(status).position!=='absolute';})"),true,'Ready puzzles must show which side moves in the feedback area');
   const puzzleActions=await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>{const s=getComputedStyle(n);return {color:s.color,background:s.backgroundColor,border:s.borderColor}})");
   assert.deepEqual(puzzleActions[0],puzzleActions[1],'Hint and Skip must share neutral styling');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to puzzles');
@@ -152,6 +154,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   // its destination throughout completion and count earned Elo up afterward.
   await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(async([m,{Chess}])=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-red',setup:null};w.puzzles.push(p);await w.startPuzzleSelection([p]);const wrong=new Chess(p.fen).moves({verbose:true}).find(move=>move.lan!==p.solution[0]&&!new Chess(move.after).isCheckmate());await w.submitPuzzle(wrong.lan);})");
   const wrongColor=await run("getComputedStyle(document.querySelector('.puzzle-wrong'),'::after').backgroundColor");
+  assert.equal(await run("document.querySelector('.puzzle-practice-status').textContent"),'Wrong move');
   assert.match(wrongColor,/239, 50, 65, 0\.48/,'Wrong feedback must use translucent red');await capture('puzzle-red-feedback');
   const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-solved-count'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
   assert.equal(eloAlignment.alignment,'baseline');assert.ok(Math.max(...eloAlignment.bottoms)-Math.min(...eloAlignment.bottoms)<4,'Solved count and Elo change should align with the Elo label');

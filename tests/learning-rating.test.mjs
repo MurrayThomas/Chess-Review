@@ -111,7 +111,7 @@ test('wrong answers play the practice cue, keep the position and lower Elo once 
   await w.startPuzzleSelection([mate]);const fen=w.currentFen();
   await w.submitPuzzle(wrongMove(mate));assert.equal(cues,1);assert.equal(w.currentFen(),fen);assert.equal(w.activity.step,0);
   assert.equal(w.store.value.puzzleRating.elo,1176);assert.equal(w.root.querySelectorAll('.puzzle-wrong').length,2);
-  assert.match(w.root.textContent,/Wrong move — try again/);assert.equal(w.store.value.puzzles[mate.id].ratingResult.delta,-24);
+  assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,'Wrong move');assert.equal(w.store.value.puzzles[mate.id].ratingResult.delta,-24);
   await w.submitPuzzle(wrongMove(mate));assert.equal(cues,2);assert.equal(w.store.value.puzzleRating.elo,1176);
   await w.submitPuzzle(mate.solution[0]);assert.equal(w.feedback.status,'completed');assert.equal(w.store.value.puzzleRating.elo,1176);
   assert.equal(w.store.value.puzzles[mate.id].clean,0);assert.equal(w.store.value.puzzles[mate.id].recovered,1);
