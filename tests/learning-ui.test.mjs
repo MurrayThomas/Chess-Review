@@ -76,7 +76,9 @@ test('puzzles hide solution information, persist intermediate steps and distingu
   const resume=structuredClone(data['learning:v1'].resume);await w.navigate('home');await w.resume(resume);assert.equal(w.activity.step,2);
   while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);assert.equal(w.store.value.puzzles[p.id].clean,1);
   assert.equal(w.root.querySelector('.puzzle-explanation, .puzzle-completion'),null);assert.equal(w.root.textContent.includes('View solution'),false);
-  await w.preparePuzzle(p);await w.hintPuzzle();assert.equal(w.activity.assisted,true);assert.equal(w.root.querySelectorAll('.annotated').length,1);
+  await w.preparePuzzle(p);await w.hintPuzzle();assert.equal(w.activity.assisted,true);assert.equal(w.root.querySelectorAll('.puzzle-hint-square').length,1);
+  w.root.querySelector(`[data-square="${p.solution[0].slice(0,2)}"]`).click();
+  assert.equal(w.root.querySelectorAll('.puzzle-hint-square').length,1);assert.equal(w.root.querySelectorAll('.annotated').length,0);
   await w.revealPuzzle();assert.equal(w.store.value.puzzles[p.id].assisted,1);assert.equal(w.store.value.puzzles[p.id].clean,1);
   assert.equal(w.root.querySelector('.puzzle-explanation, .puzzle-completion'),null);assert.equal(w.root.textContent.includes('View solution'),false);
   await w.preparePuzzle(p);while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);assert.equal(w.store.value.puzzles[p.id].clean,2);

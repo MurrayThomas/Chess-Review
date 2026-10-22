@@ -112,7 +112,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await fs.writeFile(path.join(out,'puzzle-pieces-arranging.png'),Buffer.from(arrangementShot.data,'base64'));
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity?.kind==='puzzle'&&!m.learningWorkspace.busy)",'Puzzle');
   assert.equal(await run("!!document.querySelector('.puzzle-piece-transition, .puzzle-arranging')"),false);
-  assert.equal(await run("!!document.querySelector('.learn-square.annotated')"),false);
+  assert.equal(await run("!!document.querySelector('.puzzle-hint-square')"),false);
   await capture('puzzle-practice');
   assert.equal(await run("document.querySelectorAll('.puzzle-session [data-puzzle-elo]').length"),1);
   assert.equal(await run("!!document.querySelector('.puzzle-session .learn-panel, .puzzle-session .learn-move-input, .learn-board-caption')"),false);
@@ -145,7 +145,19 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.currentFen()===introAfter&&!m.learningWorkspace.busy&&m.learningWorkspace.activity.step===0&&m.learningWorkspace.store.value.puzzleRating.elo===introElo)"),true,'Setup move must not advance the solution or change Elo');
   await run("document.querySelector('[data-focus=puzzle-hint]').click()");
   await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.busy)",'Piece hint');
-  assert.equal(await run("document.querySelectorAll('.learn-square.annotated').length"),1);
+  assert.equal(await run("document.querySelectorAll('.puzzle-hint-square').length"),1);
+  assert.equal(await run("!!document.querySelector('.learn-square.annotated')"),false);
+  await run("import('./analysis.js').then(m=>{m.learningWorkspace.selected=null;m.learningWorkspace.render();})");
+  const hintColor=await run("getComputedStyle(document.querySelector('.puzzle-hint-square'),'::before').backgroundColor");
+  const hintedPiece=await point(await run("document.querySelector('.puzzle-hint-square').dataset.square"));
+  await call('Input.dispatchMouseEvent',{type:'mousePressed',...hintedPiece,button:'left',clickCount:1},review.sessionId);
+  assert.equal(await run("!!document.querySelector('.drag-piece')&&!!document.querySelector('.puzzle-hint-square.sel')"),true);
+  assert.equal(await run("getComputedStyle(document.querySelector('.sq.sel'),'::before').backgroundColor"),hintColor,'Hint must match the piece selection highlight');
+  await call('Input.dispatchMouseEvent',{type:'mouseReleased',...hintedPiece,button:'left',clickCount:1},review.sessionId);
+  await call('Input.dispatchMouseEvent',{type:'mousePressed',...hintedPiece,button:'left',clickCount:1},review.sessionId);
+  assert.equal(await run("!!document.querySelector('.sq.sel')"),false);
+  assert.equal(await run("getComputedStyle(document.querySelector('.puzzle-hint-square'),'::before').backgroundColor"),hintColor,'Deselecting the piece must preserve the hint');
+  await call('Input.dispatchMouseEvent',{type:'mouseReleased',...hintedPiece,button:'left',clickCount:1},review.sessionId);
   assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow')"),false);
   await run("document.querySelector('[data-focus=puzzle-hint]').click()");
   await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.busy)",'Move hint');
@@ -158,7 +170,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await waitFor(review,'replyResolved','Delayed opponent reply');
   assert.equal(await run("!!document.querySelector('.puzzle-result-badge')"),false,'Opponent replies must not inherit solver badges');
   assert.ok(await run('replyElapsed>=790'),'Reply needs a visible pause');
-  assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow, .learn-square.annotated')"),false);
+  assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow, .puzzle-hint-square')"),false);
   // A real drag, with deliberately slow storage, must keep the solving move on
   // its destination throughout completion and count earned Elo up afterward.
   await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(async([m,{Chess}])=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-red',setup:null};w.puzzles.push(p);await w.startPuzzleSelection([p]);const wrong=new Chess(p.fen).moves({verbose:true}).find(move=>move.lan!==p.solution[0]&&!new Chess(move.after).isCheckmate());await w.submitPuzzle(wrong.lan);})");

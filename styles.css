@@ -705,7 +705,7 @@ button { font-family: inherit; cursor: pointer; }
   content: ""; position: absolute; inset: 0; z-index: 0;
   background: var(--hl-color, rgba(255, 224, 64, .46));
 }
-.sq.sel::before { content: ''; position: absolute; inset: 0; z-index: 0; background: rgba(255,230,88,.52); pointer-events: none; }
+.sq.sel::before, .sq.puzzle-hint-square::before { content: ''; position: absolute; inset: 0; z-index: 0; background: rgba(255,230,88,.52); pointer-events: none; }
 /* the user's single-square marker (red, translucent) — sits behind the piece */
 .sq.marked::after {
   content: ""; position: absolute; inset: 0; z-index: 0;

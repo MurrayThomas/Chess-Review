@@ -85,14 +85,33 @@ test('puzzle hints use the configured best-move arrow and reset for the next sol
   await w.startPuzzleSelection([puzzle]);
   assert.equal(doc.querySelector('.learn-board-caption'),null);
   await w.hintPuzzle();const elo=w.store.value.puzzleRating.elo;
-  assert.ok(elo<1200);assert.ok(board.querySelector('[data-square=e2].annotated'));assert.equal(board.querySelector('.puzzle-hint-arrow'),null);
+  assert.ok(elo<1200);assert.ok(board.querySelector('[data-square=e2].puzzle-hint-square'));assert.equal(board.querySelector('.annotated, .puzzle-hint-arrow'),null);
   await w.hintPuzzle();const arrow=board.querySelector('.best-arrow');assert.ok(arrow);
   assert.equal(arrow.querySelector('g').getAttribute('fill'),'#123456');assert.equal(arrow.querySelector('g').getAttribute('opacity'),'0.7');
   assert.equal(w.store.value.puzzleRating.elo,elo);
-  await w.submitPuzzle('e2e4');assert.equal(board.querySelector('.annotated, .puzzle-hint-arrow'),null);
-  await w.hintPuzzle();assert.ok(board.querySelector('[data-square=g1].annotated'));assert.equal(board.querySelector('.puzzle-hint-arrow'),null);
+  await w.submitPuzzle('e2e4');assert.equal(board.querySelector('.puzzle-hint-square, .puzzle-hint-arrow'),null);
+  await w.hintPuzzle();assert.ok(board.querySelector('[data-square=g1].puzzle-hint-square'));assert.equal(board.querySelector('.puzzle-hint-arrow'),null);
   await w.hintPuzzle();assert.ok(board.querySelector('.puzzle-hint-arrow'));assert.equal(w.store.value.puzzleRating.elo,elo);
   await w.submitPuzzle('g1f3');assert.equal(w.store.value.puzzleRating.elo,elo);assert.equal(w.store.value.puzzles[puzzle.id].clean,0);
+  await w.close();
+});
+
+test('puzzle hint highlights survive pickup, deselection, cancellation and wrong moves until the correct move',async t=>{
+  const {a,w,doc,board,down,up,event}=await setup(t);
+  const puzzle={id:'persistent-hint',fen:new Chess().fen(),solution:['e2e4'],rating:1200,themes:[],theme:'fork',source:{url:'https://lichess.org/training'}};
+  w.puzzles=[puzzle];await w.startPuzzleSelection([puzzle]);await w.hintPuzzle();await w.hintPuzzle();
+  const hinted=()=>board.querySelector('[data-square=e2].puzzle-hint-square');
+  down('e2');assert.ok(doc.querySelector('.drag-piece'));assert.ok(hinted());up('e2');
+  down('e2');assert.equal(w.selected,null);assert.ok(hinted());
+  a.dom.window.dispatchEvent(event('pointercancel','e2'));assert.equal(doc.querySelector('.drag-piece'),null);assert.ok(hinted());
+  down('g1');assert.equal(w.selected,'g1');assert.ok(hinted());
+  a.dom.window.dispatchEvent(new a.dom.window.Event('blur'));assert.equal(w.selected,null);assert.ok(hinted());
+  down('g1',2);assert.ok(hinted());up('g1',2);assert.ok(hinted());
+  down('e2');a.dom.window.dispatchEvent(event('pointermove','e5'));up('e5');assert.equal(w.selected,null);assert.ok(hinted());
+  down('e2');a.dom.window.dispatchEvent(event('pointermove','e3'));up('e3');await settle();
+  assert.equal(w.activity.step,0);assert.ok(hinted());assert.ok(board.querySelector('.puzzle-hint-arrow'));
+  down('e2');assert.ok(hinted());a.dom.window.dispatchEvent(event('pointermove','e4'));up('e4');await settle();
+  assert.equal(w.feedback.status,'completed');assert.equal(board.querySelector('.puzzle-hint-square, .puzzle-hint-arrow'),null);
   await w.close();
 });
 
