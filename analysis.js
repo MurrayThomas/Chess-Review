@@ -5771,7 +5771,7 @@ async function practiceAttempt(from, to, promotion = "q") {
     renderControls(); renderReview();
     setTimeout(() => { if (S.practice === p) practiceAdvance(); }, 1300);
   } else {
-    p.resultBadge = {solvePos, square:mv.to, status:"incorrect"};
+    p.resultBadge = {solvePos, square:mv.from, status:"incorrect"};
     p.fails = (p.fails || 0) + 1;
     flashSquares([mv.from, mv.to], "bad");
     buzzBoard();

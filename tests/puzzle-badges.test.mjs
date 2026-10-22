@@ -27,8 +27,9 @@ test('puzzle outcomes label legal attempts, clear on replies and retries, and pe
   await w.startPuzzleSelection([p]);const board=w.boardElement;
   assert.equal(board.querySelector('.sq-badge'),null);
   await w.submitPuzzle('e2e5');assert.equal(board.querySelector('.sq-badge'),null);
-  await w.submitPuzzle('d2d4');badge(board,'incorrect','d4');assert.equal(w.currentFen(),p.fen);
-  w.flipBoard();badge(board,'incorrect','d4');
+  await w.submitPuzzle('d2d4');badge(board,'incorrect','d2');assert.equal(w.currentFen(),p.fen);
+  assert.ok(board.querySelector('[data-square=d2] .piece-img'));
+  w.flipBoard();badge(board,'incorrect','d2');
   board.querySelector('[data-square=e2]').click();assert.equal(board.querySelector('.sq-badge'),null);
   const reply=deferred();t.mock.method(w,'waitForPuzzleReply',()=>reply.promise);
   const accepted=w.submitPuzzle('e2e4');await settle();badge(board,'correct','e4');
@@ -45,9 +46,12 @@ test('puzzle outcomes label legal attempts, clear on replies and retries, and pe
 
 test('review practice uses outcome badges instead of review categories and keeps wrong attempts across repaints',async t=>{
   const a=review(t);a.state.practice={spots:[1],i:0,solving:true,busy:false};a.state.idx=0;a.call('paintBoard');
-  const board=a.dom.window.document.querySelector('.board');
-  await a.call('practiceAttempt','d2','d4');badge(board,'incorrect');assert.ok(a.run('sqByName.d4').querySelector('.puzzle-result-badge'));
-  a.call('paintBoard');badge(board,'incorrect');
+  let board=a.dom.window.document.querySelector('.board');
+  await a.call('practiceAttempt','d2','d4');badge(board,'incorrect');assert.ok(a.run('sqByName.d2').querySelector('.puzzle-result-badge'));
+  assert.ok(a.run('sqByName.d2').querySelector('.piece-img'));
+  a.state.flipped=true;a.call('buildBoard');a.call('paintBoard');
+  board=a.dom.window.document.querySelector('.board');
+  badge(board,'incorrect');assert.ok(a.run('sqByName.d2').querySelector('.puzzle-result-badge'));
   await a.call('practiceAttempt','e2','e4');badge(board,'correct');assert.ok(a.run('sqByName.e4').querySelector('.puzzle-result-badge'));
   assert.equal(board.querySelector('.sq-badge[data-category]'),null);
 });
