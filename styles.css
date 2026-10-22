@@ -285,12 +285,22 @@
 .puzzle-skip { background: transparent; border-color: transparent; color: var(--ink-2); }
 .puzzle-practice-status { padding: 20px 0; font-size: 16px; font-weight: 600; }
 .puzzle-practice-status.completed { color: var(--accent); }
-.puzzle-practice-status.incorrect { color: var(--q-mistake); }
+.puzzle-practice-status.incorrect { color: #f35a66; }
 .puzzle-quiet-status { position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0; clip-path: inset(50%); white-space: nowrap; }
 .learn-board > svg.puzzle-hint-arrow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 8; }
 .learn-board[data-puzzle-board] .piece-img { animation: none; }
 .learn-square.puzzle-reply-target { z-index: 5; }
 .puzzle-completion .puzzle-explanation { margin-top: 12px; }
+.learning-workspace .puzzle-session > .puzzle-elo-panel { margin: -8px 0 24px; gap: 12px 20px; }
+.puzzle-session [data-puzzle-elo] { font-size: 32px; font-variant-numeric: tabular-nums; transform-origin: left center; }
+.puzzle-elo-panel[data-elo-motion="gain"] [data-puzzle-elo] { color: var(--accent); animation: puzzle-elo-reward .9s ease-out; }
+.puzzle-elo-panel[data-elo-motion="gain"] .puzzle-elo-change { animation: puzzle-elo-delta .9s ease-out; }
+.puzzle-elo-change.loss { color: #f35a66; }
+.puzzle-elo-change.gain { color: var(--accent); }
+@keyframes puzzle-elo-reward { 0% { transform: scale(1); text-shadow: none; } 30% { transform: scale(1.065); text-shadow: 0 0 18px color-mix(in srgb,var(--accent) 35%,transparent); } 100% { transform: scale(1); text-shadow: none; } }
+@keyframes puzzle-elo-delta { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .puzzle-elo-panel [data-puzzle-elo], .puzzle-elo-panel .puzzle-elo-change { animation: none !important; } }
+.learning-workspace[data-motion="off"] .puzzle-elo-panel [data-puzzle-elo], .learning-workspace[data-motion="off"] .puzzle-elo-panel .puzzle-elo-change { animation: none; }
 .learn-theme-row { display: flex; align-items: center; gap: 12px; min-height: 45px; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 14px; cursor: pointer; }
 .learning-workspace .learn-theme-row input { width: 16px; height: 16px; padding: 0; margin: 0; accent-color: var(--accent); cursor: pointer; }
 .learn-theme-row:has(input:checked) { color: var(--ink); }

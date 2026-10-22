@@ -163,3 +163,39 @@ test('rapid duplicate starts and wrong submissions create one active puzzle and 
   await Promise.all([w.submitPuzzle(wrong),w.submitPuzzle(wrong)]);
   assert.equal(w.activity.mistakes,1);assert.equal(w.store.value.puzzleRating.losses,1);
 });
+
+function eloFrames(dom) {
+  const pending=new Map();let id=0;
+  dom.window.requestAnimationFrame=fn=>{pending.set(++id,fn);return id;};
+  dom.window.cancelAnimationFrame=key=>pending.delete(key);
+  const start=dom.window.performance.now();
+  return {pending,step(ms){const batch=[...pending.values()];pending.clear();batch.forEach(fn=>fn(start+ms));}};
+}
+
+test('live Elo counts up monotonically after a saved win and survives an intervening render',async t=>{
+  const {w,dom}=await setup(t);await w.startPuzzleSelection([mate]);const frames=eloFrames(dom);
+  const value=()=>Number(w.root.querySelector('[data-puzzle-elo]').textContent.replace(/[^\d-]/g,''));
+  assert.equal(value(),1200);await w.submitPuzzle(mate.solution[0]);assert.equal(w.store.value.puzzleRating.elo,1224);
+  const samples=[value()];frames.step(220);samples.push(value());
+  assert.ok(value()>1200&&value()<1224);const intermediate=value();w.render();assert.equal(value(),intermediate);
+  frames.step(550);samples.push(value());frames.step(1100);samples.push(value());
+  assert.deepEqual(samples,[...samples].sort((a,b)=>a-b));assert.equal(value(),1224);
+  assert.equal(w.root.querySelectorAll('[data-puzzle-elo]').length,1);assert.equal(frames.pending.size,0);
+  assert.equal(w.root.querySelector('[data-puzzle-elo]').getAttribute('aria-label'),(1224).toLocaleString()+' Elo');
+});
+
+test('failed saves do not animate phantom Elo; saving recovery triggers one real reward',async t=>{
+  const {w,dom,state}=await setup(t);await w.startPuzzleSelection([mate]);const frames=eloFrames(dom);state.fail=true;
+  await w.submitPuzzle(mate.solution[0]);assert.equal(w.store.value.puzzleRating.elo,1200);assert.equal(frames.pending.size,0);
+  state.fail=false;await w.retrySave();w.render();assert.equal(w.store.value.puzzleRating.elo,1224);
+  assert.equal(frames.pending.size,1);frames.step(1300);assert.equal(w.root.querySelector('[data-puzzle-elo]').textContent,(1224).toLocaleString());
+  await w.retrySave();w.render();assert.equal(frames.pending.size,0);
+});
+
+test('reduced motion settles Elo immediately and closing cancels an active counter',async t=>{
+  const {w,dom}=await setup(t);await w.startPuzzleSelection([mate]);const frames=eloFrames(dom);
+  dom.window.matchMedia=()=>({matches:true});await w.submitPuzzle(mate.solution[0]);
+  assert.equal(w.root.querySelector('[data-puzzle-elo]').textContent,(1224).toLocaleString());assert.equal(frames.pending.size,0);
+  dom.window.matchMedia=()=>({matches:false});w.store.value.puzzleRating.elo=1250;w.render();assert.equal(frames.pending.size,1);
+  await w.close();assert.equal(frames.pending.size,0);
+});

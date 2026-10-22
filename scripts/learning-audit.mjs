@@ -77,9 +77,14 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity?.kind==='puzzle'&&!m.learningWorkspace.busy)",'Puzzle');
   assert.equal(await run("!!document.querySelector('.learn-square.annotated')"),false);
   await capture('puzzle-practice');
+  assert.equal(await run("document.querySelectorAll('.puzzle-session [data-puzzle-elo]').length"),1);
   assert.equal(await run("!!document.querySelector('.puzzle-session .learn-panel, .puzzle-session .learn-move-input, .learn-board-caption')"),false);
   assert.deepEqual(await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>n.textContent)"),['Hint','Skip']);
-  await run("import('./analysis.js').then(m=>m.learningWorkspace.startPuzzleSelection([m.learningWorkspace.puzzles.find(p=>p.solution.length>=5)]))");
+  await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.solution.length>=5&&!w.store.value.puzzles[p.id]?.ratingResult);window.introBefore=p.setup.fen;window.introAfter=p.fen;window.introElo=w.store.value.puzzleRating.elo;window.introFinished=false;void w.startPuzzleSelection([p]).then(()=>{introFinished=true;});})");
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.currentFen()===introBefore&&m.learningWorkspace.busy&&m.learningWorkspace.activity.step===0)"),true,'Fresh puzzle must first show the preceding position');
+  assert.equal(await run("document.querySelector('[data-focus=puzzle-hint]').disabled"),true);
+  await waitFor(review,'introFinished','Opponent setup move');
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.currentFen()===introAfter&&!m.learningWorkspace.busy&&m.learningWorkspace.activity.step===0&&m.learningWorkspace.store.value.puzzleRating.elo===introElo)"),true,'Setup move must not advance the solution or change Elo');
   await run("document.querySelector('[data-focus=puzzle-hint]').click()");
   await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.busy)",'Piece hint');
   assert.equal(await run("document.querySelectorAll('.learn-square.annotated').length"),1);
@@ -94,6 +99,28 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await waitFor(review,'replyResolved','Delayed opponent reply');
   assert.ok(await run('replyElapsed>=790'),'Reply needs a visible pause');
   assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow, .learn-square.annotated')"),false);
+  // A real drag, with deliberately slow storage, must keep the solving move on
+  // its destination throughout completion and count earned Elo up afterward.
+  await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(async([m,{Chess}])=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-red',setup:null};w.puzzles.push(p);await w.startPuzzleSelection([p]);const wrong=new Chess(p.fen).moves({verbose:true}).find(move=>move.lan!==p.solution[0]&&!new Chess(move.after).isCheckmate());await w.submitPuzzle(wrong.lan);})");
+  const wrongColor=await run("getComputedStyle(document.querySelector('.puzzle-wrong'),'::after').backgroundColor");
+  assert.match(wrongColor,/239, 50, 65, 0\.48/,'Wrong feedback must use translucent red');await capture('puzzle-red-feedback');
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.eloFrame==null)",'Loss counter');
+  await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,p={...w.puzzles.find(p=>p.themes.includes('mateIn1')),id:'audit-drag-finish',setup:null,rating:w.store.value.puzzleRating.elo};w.puzzles.push(p);await w.startPuzzleSelection([p]);window.solveFrom=p.solution[0].slice(0,2);window.solveTo=p.solution[0].slice(2,4);window.eloBefore=w.store.value.puzzleRating.elo;const original=w.store.update.bind(w.store);window.restoreAuditSave=()=>{w.store.update=original;};w.store.update=async change=>{await new Promise(r=>setTimeout(r,220));return original(change);};})");
+  const squarePoint=async name=>run("(()=>{const r=document.querySelector('[data-square=\"'+"+name+"+'\"]').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()");
+  const from=await squarePoint('solveFrom'),to=await squarePoint('solveTo');
+  await call('Input.dispatchMouseEvent',{type:'mousePressed',...from,button:'left',clickCount:1},review.sessionId);
+  assert.equal(await run("getComputedStyle(document.querySelector('[data-square=\"'+solveFrom+'\"]'),'::before').backgroundColor"),'rgba(255, 230, 88, 0.52)','Picked-up square must remain highlighted');
+  await call('Input.dispatchMouseEvent',{type:'mouseMoved',...to,button:'left',buttons:1},review.sessionId);
+  await run("window.completionFrames=[];window.sampleCompletion=true;function sampleCompletionFrame(){const origin=document.querySelector('[data-square=\"'+solveFrom+'\"] .piece-img');completionFrames.push({originVisible:!!origin&&getComputedStyle(origin).visibility!=='hidden',elo:Number(document.querySelector('[data-puzzle-elo]').textContent.replace(/[^0-9-]/g,''))});if(sampleCompletion)requestAnimationFrame(sampleCompletionFrame);}requestAnimationFrame(sampleCompletionFrame);");
+  await call('Input.dispatchMouseEvent',{type:'mouseReleased',...to,button:'left',clickCount:1},review.sessionId);
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.attemptRecorded&&!m.learningWorkspace.busy)",'Saved solving move');
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.eloFrame==null&&m.learningWorkspace.store.value.puzzleRating.elo>eloBefore)",'Earned Elo count-up');
+  await run('sampleCompletion=false;restoreAuditSave()');
+  const completionFrames=await run('completionFrames');assert.ok(completionFrames.length>10);
+  assert.ok(completionFrames.every(f=>!f.originVisible),'Dropped solving piece must never reappear on its origin while saving');
+  const earned=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
+  assert.ok(completionFrames.some(f=>f.elo>completionFrames[0].elo&&f.elo<earned),'Elo must visibly tick through intermediate values');
+  await capture('puzzle-earned-elo');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");await capture('concepts-desktop');
   assert.equal(await run("!!document.querySelector('.learn-card')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.startLesson('fork'))");
@@ -124,6 +151,6 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await capture('puzzles-reduced-motion');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.close())");
   assert.equal(await run("import('./analysis.js').then(m=>m.S.settings.showConcepts===false&&m.S.settings.conceptsEnabled===false)"),true);
-  await fs.writeFile(path.join(out,'results.json'),JSON.stringify({passed:true,frames,sliderFrames,reverseFrames,results},null,2));
+  await fs.writeFile(path.join(out,'results.json'),JSON.stringify({passed:true,frames,sliderFrames,reverseFrames,completionFrames,results},null,2));
   console.log(`Learning browser audit passed: ${results.length} screenshots and measurements in ${out}`);
 }

@@ -61,3 +61,24 @@ test('reduced motion applies the setup without a pause or sliding animation',asy
   dom.window.HTMLImageElement.prototype.animate=()=>{throw Error('Unexpected animation');};
   await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.lastMove,'d7d5');assert.equal(w.busy,false);
 });
+
+test('a previously attempted puzzle skips its setup without awarding another result',async t=>{
+  const {w,sounds}=await setup(t);await w.persist(p=>{p.puzzles[puzzle.id]={attempts:1,clean:1};});
+  t.mock.method(w,'waitForPuzzleReply',()=>{throw Error('Unexpected intro');});
+  await w.startPuzzleSelection([puzzle]);assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.activity.rated,false);assert.deepEqual(sounds,[]);
+});
+
+test('a castling setup animates both the king and rook',async t=>{
+  const fen='r3k2r/8/8/8/8/8/8/R3K2R b KQkq - 0 1',c=new Chess(fen);c.move('O-O');
+  const item={...puzzle,setup:{fen,move:'e8g8'},fen:c.fen(),solution:['a1a2']};
+  const {w,dom}=await setup(t,{item}),destinations=[];t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  dom.window.HTMLImageElement.prototype.animate=function(){destinations.push(this.closest('[data-square]').dataset.square);return {finished:Promise.resolve(),cancel(){}};};
+  await w.startPuzzleSelection([item]);assert.deepEqual(destinations,['g8','f8']);assert.equal(w.currentFen(),item.fen);assert.equal(w.busy,false);
+});
+
+test('closing while the setup piece is sliding cancels the animation without changing progress',async t=>{
+  const {w,dom}=await setup(t);let finish,cancelled=false;t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finish=resolve;}),cancel(){cancelled=true;finish();}});
+  const opening=w.startPuzzleSelection([puzzle]);await settle();assert.ok(finish);assert.equal(w.busy,true);
+  await w.close();await opening;assert.equal(cancelled,true);assert.equal(w.store.value.puzzleRating.played,0);assert.equal(w.activity.step,0);
+});

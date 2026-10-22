@@ -43,5 +43,12 @@ transaction. The saved result prevents duplicate updates from repeated input,
 save recovery and concurrent review tabs. Failed writes retain the existing
 unsaved-progress banner and recovery path.
 
+Practice keeps Elo visible beside the controls. A saved gain counts up over
+900 ms with a small pulse and its positive delta; losses settle over 350 ms.
+Only the number changes during the count, so the board stays intact. Reduced
+motion uses the final value immediately. Failed saves do not animate a gain;
+a successful retry shows it once, and the accessible label always contains
+the saved final Elo. The opponent's introductory setup move never changes Elo.
+
 Check with `node --test tests/learning-rating.test.mjs` and
 `npm run test:learning-browser` (isolated Chrome profile).
