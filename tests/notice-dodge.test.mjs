@@ -1,7 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
-import {escapePosition,evasiveNoticeButton} from '../lib/learning/notice-dodge.js';
+import {escapePosition,escapeTiming,evasiveNoticeButton} from '../lib/learning/notice-dodge.js';
+
+test('each escape gradually increases reaction time, travel time and the catch window',()=>{
+  let previous=escapeTiming(0);
+  for(let i=1;i<=12;i++) {
+    const next=escapeTiming(i);
+    assert.ok(next.reaction>previous.reaction);assert.ok(next.duration>previous.duration);assert.ok(next.rest>previous.rest);
+    previous=next;
+  }
+  assert.deepEqual(escapeTiming(100),{reaction:240,duration:615,rest:900});
+});
+
+test('the escape halo permits positions outside the compact box without approaching screen edges',()=>{
+  const target=escapePosition({width:456,height:144,minX:-72,minY:-12,buttonWidth:110,buttonHeight:42,
+    current:{x:274,y:0},pointer:{x:330,y:20},safe:{left:0,top:0,right:110,bottom:44},random:()=>0});
+  assert.ok(target.x>=-72&&target.x+110<=456&&target.y>=-12&&target.y+42<=144);
+  assert.ok(target.x<0||target.x+110>384||target.y+42>44,'Use the bounded space outside the actions');
+});
 
 test('escape destinations stay inside the dialog and leave the dismiss button a wide berth',()=>{
   for(const width of [248,318,468])for(const pointer of [{x:0,y:0},{x:width,y:140},{x:width/2,y:70}]) {
@@ -35,7 +52,7 @@ test('the evasive button reacts before hover, respects a catch window, resets on
   assert.equal(timers.size,1);clock=120;for(const [id,fn] of timers){timers.delete(id);fn();}flush();
   assert.equal(button.dataset.dodges,'2','A pointer that stays close triggers another escape after the catch window');
   view.dispatchEvent(new view.Event('resize'));assert.equal(button.style.left,'');assert.equal(button.style.top,'');
-  clock=240;move(440,220);assert.equal(frames.size,1);dispose();assert.equal(frames.size,0);assert.equal(timers.size,0);
+  clock=500;move(440,220);assert.equal(timers.size,1);dispose();assert.equal(frames.size,0);assert.equal(timers.size,0);
   move(440,220);assert.equal(frames.size,0,'Closing the dialog removes every dodge listener');
 });
 

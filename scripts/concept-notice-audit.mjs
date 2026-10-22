@@ -20,11 +20,14 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("import('./analysis.js').then(async m=>{m.S.settings.moveAnim=false;await m.openLearning();await m.learningWorkspace.navigate('concepts');})");
   for(const [width,height] of [[1920,1080],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);
+    await sleep(600); // Let the review finish applying its responsive CSS zoom.
     await pointer(0,0);await open();const initial=await geometry();
     assert.ok(Math.abs((initial.card.left+initial.card.right)/2-initial.width/2)<2,'Dialog must be centered horizontally: '+JSON.stringify(initial));
     assert.ok(Math.abs((initial.card.top+initial.card.bottom)/2-initial.height/2)<2,'Dialog must be centered vertically: '+JSON.stringify(initial));
     assert.ok(initial.reject.left-initial.accept.right>=32,'Initial buttons need a generous gap');
     assert.ok(initial.card.left>=15&&initial.card.right<=initial.width-15&&initial.card.top>=15&&initial.card.bottom<=initial.height-15,'Dialog must fit the viewport: '+JSON.stringify(initial));
+    assert.ok(initial.card.width<=460&&initial.card.height<400,'Keep the dialog compact');
+    assert.equal(await run("getComputedStyle(document.querySelector('.learn-notice-card')).userSelect"),'none');
     await shot('concept-notice-'+width);
     // Proximity, rather than entering the button itself, should start each escape.
     for(let i=0;i<5;i++) {
@@ -32,9 +35,10 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       const dodges=await run("Number(document.querySelector('.learn-notice-reject').dataset.dodges||0)");
       await pointer((r.left+r.right)/2,(r.top+r.bottom)/2);
       await waitFor(review,`Number(document.querySelector('.learn-notice-reject').dataset.dodges)>${dodges}`,'Button escape');
-      await sleep(180);const next=await geometry(),b=next.reject,a=next.accept,bounds=next.arena;
+      await run("Promise.allSettled(document.querySelector('.learn-notice-reject').getAnimations().map(a=>a.finished))");
+      await sleep(70);const next=await geometry(),b=next.reject,a=next.accept;
       assert.ok(Math.hypot(b.left-r.left,b.top-r.top)>50,'Escape should travel, not jitter: '+JSON.stringify({before,next}));
-      assert.ok(b.left>=bounds.left-1&&b.right<=bounds.right+1&&b.top>=bounds.top-1&&b.bottom<=bounds.bottom+1,'Escape stays in its arena');
+      assert.ok(b.left>=Math.max(15,next.card.left-73)&&b.right<=Math.min(next.width-15,next.card.right+73)&&b.top>=next.arena.top-13&&b.bottom<=Math.min(next.height-15,next.card.bottom+73),'Escape stays in the small halo around the dialog');
       assert.ok(b.left>=a.right+39||b.right<=a.left-39||b.top>=a.bottom+39||b.bottom<=a.top-39,'Dismiss button keeps its protected space: '+JSON.stringify(next));
     }
     await shot('concept-notice-dodged-'+width);
