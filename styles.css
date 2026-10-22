@@ -326,6 +326,7 @@
 .puzzle-practice-actions { display: flex; align-items: center; gap: 12px; padding: 4px 0 20px; border-bottom: 1px solid var(--line); }
 .puzzle-practice-actions .learn-button { min-width: 96px; min-height: 46px; font-weight: 600; }
 .puzzle-hint, .puzzle-skip { background: transparent; border-color: color-mix(in srgb, var(--line) 72%, var(--ink-2)); color: var(--ink-2); }
+.puzzle-hint:disabled, .puzzle-skip:disabled { opacity: 1; cursor: wait; }
 .puzzle-practice-status { padding: 20px 0; font-size: 16px; font-weight: 600; }
 .puzzle-practice-status.completed { color: var(--accent); }
 .puzzle-practice-status.incorrect { color: #f35a66; }
