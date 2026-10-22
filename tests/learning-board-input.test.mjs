@@ -9,7 +9,8 @@ async function setup(t) {
   const original=globalThis.fetch;globalThis.fetch=async()=>({ok:true,json:async()=>({schema:1,puzzles:[{}]})});
   t.after(()=>{globalThis.fetch=original;});
   await a.call('openLearning');const w=a.run('learningWorkspace'),doc=a.dom.window.document;
-  await w.startOpening('italian',{practice:true,color:'w'});
+  const puzzle={id:'board-input',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3','b8c6','f1c4'],rating:1200,themes:[]};
+  w.puzzles=[puzzle];await w.startPuzzleSelection([puzzle]);
   const board=doc.querySelector('.board');board.getBoundingClientRect=()=>({left:0,top:0,width:800,height:800});
   const point=sq=>({clientX:(sq.charCodeAt(0)-97)*100+50,clientY:(8-Number(sq[1]))*100+50});
   const event=(type,sq,button=0)=>{const e=new a.dom.window.MouseEvent(type,{bubbles:true,cancelable:true,button,...point(sq)});Object.defineProperty(e,'pointerId',{value:1});return e;};
@@ -20,16 +21,17 @@ async function setup(t) {
 
 test('learning immediately lifts pieces, shares review drag tracking, and restores pieces on cancellation',async t=>{
   const {a,w,doc,board,down,up,event}=await setup(t);
+  t.mock.method(w,'waitForPuzzleReply',async()=>true);
   down('e2');assert.equal(doc.querySelectorAll('.drag-piece img').length,1);
   assert.equal(board.querySelector('[data-square=e2] img').style.visibility,'hidden');
   assert.ok(board.querySelector('[data-square=e4]').classList.contains('legal'));
   a.dom.window.dispatchEvent(event('pointermove','e4'));up('e4');await settle();
-  assert.equal(w.activity.ply,2);assert.equal(doc.querySelector('.drag-piece'),null);
+  assert.equal(w.activity.step,2);assert.equal(doc.querySelector('.drag-piece'),null);
   down('g1');a.dom.window.dispatchEvent(event('pointercancel','g1'));
   assert.equal(doc.querySelector('.drag-piece'),null);assert.equal(w.selected,null);
   assert.equal(board.querySelector('[data-square=g1] img').style.visibility,'');
   down('b8');assert.ok(doc.querySelector('.drag-piece'));a.dom.window.dispatchEvent(event('pointermove','c6'));up('c6');
-  assert.equal(w.activity.ply,2,'Wrong-side pieces must snap back');
+  assert.equal(w.activity.step,2,'Wrong-side pieces must snap back');
   down('g1');await w.close();assert.equal(doc.querySelector('.drag-piece'),null);
 });
 
@@ -59,11 +61,12 @@ test('learning free play can promote through the same graphical picker',async t=
 
 test('learning supports click moves, toggled right-click markup, and clears annotations on a left click',async t=>{
   const {w,doc,board,down,up}=await setup(t);
+  t.mock.method(w,'waitForPuzzleReply',async()=>true);
   down('g1',2);up('g1',2);assert.ok(board.querySelector('[data-square=g1]').classList.contains('marked'));
   down('g1',2);up('g1',2);assert.equal(board.querySelector('[data-square=g1]').classList.contains('marked'),false);
   down('g1',2);up('f3',2);assert.equal(board.querySelectorAll('.user-arrows').length,1);
   down('e2');up('e2');assert.equal(board.querySelector('.user-arrows'),null);
-  down('e4');up('e4');await settle();assert.equal(w.activity.ply,2);
+  down('e4');up('e4');await settle();assert.equal(w.activity.step,2);
   assert.equal(doc.querySelector('.drag-piece'),null);await w.close();
 });
 
@@ -80,7 +83,7 @@ test('clicking a selected piece again hides destinations while preserving drag a
 
 test('puzzle hints use the configured best-move arrow and reset for the next solver turn',async t=>{
   const {a,w,doc,board}=await setup(t);
-  const puzzle={id:'hint-line',fen:w.openingState.positions[0],solution:['e2e4','e7e5','g1f3'],rating:1200,themes:[],theme:'fork',source:{url:'https://lichess.org/training'}};
+  const puzzle={id:'hint-line',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3'],rating:1200,themes:[],theme:'fork',source:{url:'https://lichess.org/training'}};
   w.puzzles=[puzzle];a.state.settings.bestArrowColor='#123456';a.state.settings.arrowOpacity=.7;
   await w.startPuzzleSelection([puzzle]);
   assert.equal(doc.querySelector('.learn-board-caption'),null);
@@ -117,7 +120,7 @@ test('puzzle hint highlights survive pickup, deselection, cancellation and wrong
 
 test('learning promotion requires an explicit choice and Escape cancels without closing learning',async t=>{
   const {a,w,doc,board,down,up}=await setup(t);
-  w.openingState.positions[0]='7k/P7/8/8/8/8/8/7K w - - 0 1';w.render();
+  await w.navigate('puzzles');w.homePosition.load('7k/P7/8/8/8/8/8/7K w - - 0 1');w.render();
   const moves=[];w.submitMove=move=>moves.push(move);
   down('a7');up('a7');down('a8');up('a8');
   assert.equal(doc.querySelectorAll('.learn-promotion .promotion-options button').length,4);

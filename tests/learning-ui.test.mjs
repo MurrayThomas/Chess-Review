@@ -100,25 +100,43 @@ test('the difficult-exercise library resumes the actual exercise that needs anot
   await w.navigate('concepts');w.filters.status='Struggled';await w.startLesson('outpost');
   assert.equal(w.activity.tab,'practise');assert.equal(w.activity.exercise,1);
 });
-test('board click input, keyboard navigation and opening replies support both colors',async t=>{
-  const {w,dom}=await workspace(t);await w.startOpening('italian');w.activity.practice=true;w.activity.ply=0;w.render();
-  w.root.querySelector('[data-square="e2"]').click();w.root.querySelector('[data-square="e4"]').click();await settle();
-  assert.equal(w.activity.ply,2);assert.match(w.feedback.feedback,/opponent has replied/);
-  const square=w.root.querySelector('[data-square="a8"]');square.focus();square.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));assert.equal(dom.window.document.activeElement.dataset.square,'b8');
-  await w.startOpening('italian',{color:'b',practice:true});assert.equal(w.activity.ply,1);assert.equal(w.flipped,true);
-  await w.submitOpening('e7e5');assert.equal(w.activity.ply,3);assert.equal(w.openingState.positions.length,11);
+test('openings show only moves and review-style controls, with keyboard navigation and saved positions',async t=>{
+  const {w,dom,data}=await workspace(t);await w.startOpening('italian',{practice:true,color:'b'});
+  const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
+  assert.equal(w.activity.practice,undefined);assert.equal(w.activity.ply,0);assert.equal(w.flipped,true);
+  assert.equal(w.root.querySelector('.learn-copy, .learn-opening-notes, .learn-move-input, [data-focus="practice-color"]'),null);
+  assert.equal(w.root.querySelectorAll('.learn-opening-controls button').length,5);
+  w.root.querySelector('[data-square="e2"]').click();w.root.querySelector('[data-square="e4"]').click();
+  assert.equal(w.activity.ply,0);assert.equal(w.selected,null);
+  assert.equal(w.root.querySelector('.learn-opening-controls [aria-label="Previous move"]').disabled,true);
+  key('ArrowRight');assert.equal(w.activity.ply,1);assert.equal(w.lastMove,'e2e4');
+  const square=w.root.querySelector('[data-square="a8"]');square.focus();key('ArrowRight');assert.equal(w.activity.ply,2);
+  key('ArrowLeft');assert.equal(w.activity.ply,1);
+  key('End');assert.equal(w.activity.ply,w.openingState.moves.length);assert.equal(w.root.querySelector('[aria-label="Next move"]').disabled,true);
+  key('Home');assert.equal(w.activity.ply,0);assert.equal(w.lastMove,null);
+  w.root.querySelector('[data-focus="opening-move-3"]').click();assert.equal(w.activity.ply,4);
+  assert.equal(w.root.querySelector('[aria-current="step"]').textContent,'Nc6');
+  await w.store.queue;assert.equal(data['learning:v1'].resume.ply,4);
+  const resume=structuredClone(data['learning:v1'].resume);await w.navigate('openings');await w.resume(resume);
+  assert.equal(w.activity.ply,4);assert.equal(w.currentFen(),linePositions(OPENINGS.find(o=>o.id==='italian').lines[0]).positions[4]);
+  await w.navigate('openings');const search=w.root.querySelector('input');search.focus();key('ArrowRight');assert.equal(w.activity,null);
 });
-test('each opening practice line completes from both sides and legal deviations stay neutral',async t=>{
-  const {w}=await workspace(t);
-  for(const o of OPENINGS)for(let line=0;line<o.lines.length;line++)for(const color of ['w','b']) {
-    await w.startOpening(o.id,{line,color,practice:true});const state=linePositions(o.lines[line]);
-    while(w.activity.ply<state.moves.length)await w.submitOpening(state.moves[w.activity.ply]);
-    assert.equal(w.feedback.status,'completed');assert.ok(w.store.value.openings[o.id].completed[line+':'+color]);
-  }
-  assert.ok(OPENINGS.every(o=>w.store.value.openings[o.id].status==='completed'));
-  await w.startOpening('italian',{practice:true});await w.submitOpening('d2d4');assert.equal(w.activity.ply,0);assert.equal(w.feedback.status,'info');assert.match(w.feedback.feedback,/does not mean it is a bad move/);
-  await w.startOpening('italian',{practice:true,color:'b',ply:5});await w.submitOpening('g8f6');assert.equal(w.activity.line,1);assert.equal(w.activity.ply,7);
+
+test('opening playback pauses on manual navigation and stops at the end, on variation changes and on exit',async t=>{
+  t.mock.timers.enable({apis:['setInterval']});
+  const {w}=await workspace(t);await w.startOpening('italian');
+  w.root.querySelector('[aria-label="Play"]').click();assert.ok(w.openingTimer);t.mock.timers.tick(1000);assert.equal(w.activity.ply,1);
+  w.root.querySelector('[aria-label="Pause"]').click();t.mock.timers.tick(2000);assert.equal(w.activity.ply,1);
+  w.toggleOpeningPlayback();w.stepOpening(2);assert.equal(w.openingTimer,null);
+  w.stepOpening(w.openingState.moves.length-1);w.toggleOpeningPlayback();t.mock.timers.tick(1000);
+  assert.equal(w.activity.ply,w.openingState.moves.length);assert.equal(w.openingTimer,null);
+  w.toggleOpeningPlayback();assert.equal(w.activity.ply,0);assert.ok(w.openingTimer);
+  w.root.querySelector('[data-focus="opening-variation"]').click();w.dropdown.field.querySelectorAll('[role="option"]')[1].click();
+  assert.equal(w.activity.line,1);assert.equal(w.activity.ply,0);assert.equal(w.openingTimer,null);
+  w.toggleOpeningPlayback();await w.navigate('concepts');assert.equal(w.openingTimer,null);t.mock.timers.tick(2000);assert.equal(w.activity,null);
+  await w.startOpening('italian');w.toggleOpeningPlayback();await w.close();assert.equal(w.openingTimer,null);
 });
+
 test('puzzles hide solution information, persist intermediate steps and distinguish assisted and repeat solves',async t=>{
   const {w,data}=await workspace(t);const p=w.puzzles.find(p=>p.solution.length>=3);
   await w.startPuzzleSelection([p]);assert.ok(!w.root.textContent.includes('Why the solution works'));assert.equal(w.root.querySelectorAll('.annotated').length,0);
@@ -177,7 +195,7 @@ test('review game, move, board orientation and keyboard state survive learning o
   await a.call('openLearning');const w=a.run('learningWorkspace');assert.ok(w.ready);
   assert.equal(w.currentFen(),new Chess().fen());assert.equal(w.activity,null);
   a.dom.window.document.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
-  assert.equal(a.state.idx,before.idx);await w.startOpening('italian');await w.submitOpening('e2e4');await w.close();
+  assert.equal(a.state.idx,before.idx);await w.startOpening('italian');w.stepOpening(1);await w.close();
   assert.equal(a.state.idx,before.idx);assert.equal(a.state.flipped,before.flipped);assert.equal(a.state.pgn,before.pgn);assert.equal(a.state.positions,before.positions);
   a.dom.window.document.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));assert.equal(a.state.idx,before.idx+1);
 });
@@ -223,7 +241,7 @@ test('in-place learning preserves the actual board and topbar across all destina
   board.querySelector('[data-square=e5]').click();assert.ok(w.marked.has('e5'));
   await w.submitExercise(['e5']);assert.equal(w.feedback.status,'correct');
   await w.startOpening('italian',{practice:true});
-  board.querySelector('[data-square=e2]').click();board.querySelector('[data-square=e4]').click();await settle();
+  doc.querySelector('[aria-label="Next move"]').click();doc.querySelector('[aria-label="Next move"]').click();
   assert.equal(w.activity.ply,2);assert.equal(a.state.idx,0);
   const drag=new a.dom.window.Event('dragstart',{bubbles:true,cancelable:true});board.dispatchEvent(drag);assert.equal(drag.defaultPrevented,false);
   const orientation=a.state.flipped;a.call('toggleFlip');assert.equal(a.state.flipped,orientation);assert.equal(w.flipped,true);
@@ -301,22 +319,14 @@ test('themed library dropdowns filter content and dismiss without leaving learni
   }
 });
 
-test('opening dropdowns support keyboard browsing, preserve practice state and honor disabled controls',async t=>{
-  const {w,dom}=await workspace(t),doc=dom.window.document;
-  await w.startOpening('italian',{practice:true});
+test('opening variation dropdown keeps arrow browsing separate from move navigation',async t=>{
+  const {w,dom}=await workspace(t),doc=dom.window.document;await w.startOpening('italian');w.stepOpening(3);
   const key=name=>doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
-  const color=w.root.querySelector('[data-focus="practice-color"]');color.focus();key('ArrowDown');key('End');
-  assert.equal(doc.activeElement.textContent,'Black');assert.equal(w.activity.color,'w');
-  doc.activeElement.click();await settle();assert.equal(w.activity.color,'b');assert.equal(w.activity.ply,1);assert.equal(w.flipped,true);
-  assert.equal(doc.activeElement.dataset.focus,'practice-color');
-  const variation=w.root.querySelector('[data-focus="opening-variation"]');variation.focus();key('ArrowDown');key('End');
-  doc.activeElement.click();await settle();assert.equal(w.activity.line,OPENINGS.find(o=>o.id==='italian').lines.length-1);
-  assert.equal(w.activity.ply,1);assert.equal(w.store.value.resume.line,w.activity.line);
-  const current=w.root.querySelector('[data-focus="practice-color"]');current.focus();key('ArrowUp');key('Home');
-  assert.equal(doc.activeElement.textContent,'White');key('b');assert.equal(doc.activeElement.textContent,'Black');
-  key('Tab');assert.equal(w.dropdown,null);assert.equal(doc.activeElement,current);
-  w.busy=true;w.render();assert.equal(w.root.querySelector('[data-focus="practice-color"]').disabled,true);
-  w.root.querySelector('[data-focus="practice-color"]').click();assert.equal(w.dropdown,null);
+  const variation=w.root.querySelector('[data-focus="opening-variation"]');variation.focus();variation.click();key('ArrowDown');key('End');
+  assert.equal(w.activity.ply,3);doc.activeElement.click();await settle();
+  assert.equal(w.activity.line,OPENINGS.find(o=>o.id==='italian').lines.length-1);assert.equal(w.activity.ply,0);
+  assert.equal(w.store.value.resume.line,w.activity.line);assert.equal(doc.activeElement.dataset.focus,'opening-variation');
+  doc.activeElement.click();key('Escape');assert.equal(w.dropdown,null);assert.equal(w.closed,false);
 });
 
 test('learning keeps review panels mounted until loading finishes and can close before mounting',async t=>{

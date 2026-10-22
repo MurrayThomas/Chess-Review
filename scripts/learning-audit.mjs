@@ -326,11 +326,16 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("(()=>{const s=getComputedStyle(document.activeElement);return s.outlineStyle==='none'&&s.boxShadow==='none';})()"),true,'Opening search must have no outer focus glow');
   await capture('openings-desktop');
   await checkDropdown('openings-dropdown-desktop','family');
-  await run("import('./analysis.js').then(m=>m.learningWorkspace.startOpening('italian',{practice:true,color:'b'}))");
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.startOpening('italian',{color:'b'}))");
   await checkDropdown('opening-variation-dropdown','opening-variation');
-  await checkDropdown('opening-color-dropdown','practice-color');
-  await run("document.querySelector('[data-square=e7]').click();document.querySelector('[data-square=e5]').click()");
-  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply===3)",'Opening reply');
+  await capture('opening-viewer-desktop');
+  await run("document.querySelector('[aria-label=\"Next move\"]').click()");
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight'},review.sessionId);
+  await call('Input.dispatchKeyEvent',{type:'keyUp',key:'ArrowRight',code:'ArrowRight'},review.sessionId);
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply===2)",'Opening keyboard navigation');
+  await run("document.querySelector('.learn-opening-controls [aria-label=Play]').click()");
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply>=3)",'Opening playback');
+  await run("document.querySelector('.learn-opening-controls [aria-label=Pause]').click()");
   for(const [width,height] of [[1366,768],[960,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);
     for(const page of ['puzzles','concepts','openings']){
@@ -338,6 +343,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       if(page==='puzzles')await checkModeCards();
       if(page!=='puzzles')await checkDropdown(page+'-dropdown-'+width,page==='concepts'?'category':'family');
     }
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.startOpening('italian'))");await capture('opening-viewer-'+width);
     await showStatistics();await capture('statistics-'+width);
     await run("document.querySelector('.learn-stat-untried summary').click()");await capture('statistics-untried-'+width);
     await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('openings'))");
