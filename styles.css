@@ -264,10 +264,35 @@
 .learn-text-button { border: 0; background: transparent; color: var(--ink-3); font-size: 12px; padding: 6px; min-height: 30px; }
 .learn-puzzle-options fieldset { border: 0; padding: 0; margin: 0 0 24px; min-width: 0; }
 .learn-puzzle-options legend { color: var(--ink-2); font-size: 13px; font-weight: 600; padding: 0; margin-bottom: 12px; }
-.learn-elo-slider { display: block; margin-bottom: 12px; }
-.learn-elo-slider > span { display: flex; justify-content: space-between; color: var(--ink-3); font-size: 12px; }
-.learn-elo-slider output { color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.learning-workspace .learn-elo-slider input { width: 100%; padding: 0; margin: 12px 0; accent-color: var(--accent); cursor: pointer; min-height: 20px; }
+.learn-elo-range { position: relative; }
+.learn-range-value { display: block; color: var(--ink-2); font-size: 13px; font-variant-numeric: tabular-nums; margin: 2px 0 8px; }
+.learn-dual-range { position: relative; height: 36px; margin: 4px 10px 12px; touch-action: none; cursor: pointer; }
+.learn-range-rail { position: absolute; left: 0; right: 0; top: 16px; height: 4px; border-radius: 4px; background: linear-gradient(to right,var(--line) 0% var(--range-low),var(--accent) var(--range-low) var(--range-high),var(--line) var(--range-high) 100%); }
+.learning-workspace .learn-dual-range input { appearance: none; -webkit-appearance: none; position: absolute; inset: 0; width: 100%; min-width: 0; height: 36px; min-height: 0; padding: 0; margin: 0; border: 0; background: transparent; pointer-events: none; }
+.learn-dual-range input:focus-visible { outline: none; }
+.learn-dual-range input::-webkit-slider-runnable-track { height: 4px; background: transparent; border: 0; }
+.learn-dual-range input::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; margin-top: -8px; border: 3px solid var(--panel); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); pointer-events: auto; cursor: grab; }
+.learn-dual-range input::-moz-range-track { height: 4px; background: transparent; border: 0; }
+.learn-dual-range input::-moz-range-thumb { width: 14px; height: 14px; border: 3px solid var(--panel); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); pointer-events: auto; cursor: grab; }
+.learn-dual-range input:focus-visible::-webkit-slider-thumb { outline: 3px solid var(--accent); outline-offset: 3px; }
+.learn-dual-range input:focus-visible::-moz-range-thumb { outline: 3px solid var(--accent); outline-offset: 3px; }
+.learn-dual-range input:active::-webkit-slider-thumb { cursor: grabbing; }
+.puzzle-practice-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 8px 0 24px; }
+.learning-workspace .puzzle-practice-heading h2 { margin: 0; font-size: 30px; }
+.puzzle-back { order: 2; border-color: transparent; background: transparent; color: var(--ink-3); font-size: 20px; padding: 8px 12px; }
+.puzzle-session .learn-study { margin: 0; }
+.puzzle-practice-actions { display: flex; align-items: center; gap: 12px; padding: 4px 0 20px; border-bottom: 1px solid var(--line); }
+.puzzle-practice-actions .learn-button { min-width: 96px; min-height: 46px; font-weight: 600; }
+.puzzle-hint { background: color-mix(in srgb,var(--accent) 12%,transparent); color: var(--accent); border-color: color-mix(in srgb,var(--accent) 40%,var(--line)); }
+.puzzle-skip { background: transparent; border-color: transparent; color: var(--ink-2); }
+.puzzle-practice-status { padding: 20px 0; font-size: 16px; font-weight: 600; }
+.puzzle-practice-status.completed { color: var(--accent); }
+.puzzle-practice-status.incorrect { color: var(--q-mistake); }
+.puzzle-quiet-status { position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0; clip-path: inset(50%); white-space: nowrap; }
+.learn-board > svg.puzzle-hint-arrow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 8; }
+.learn-board[data-puzzle-board] .piece-img { animation: none; }
+.learn-square.puzzle-reply-target { z-index: 5; }
+.puzzle-completion .puzzle-explanation { margin-top: 12px; }
 .learn-theme-row { display: flex; align-items: center; gap: 12px; min-height: 45px; border-bottom: 1px solid var(--line); color: var(--ink-2); font-size: 14px; cursor: pointer; }
 .learning-workspace .learn-theme-row input { width: 16px; height: 16px; padding: 0; margin: 0; accent-color: var(--accent); cursor: pointer; }
 .learn-theme-row:has(input:checked) { color: var(--ink); }

@@ -45,17 +45,23 @@ test('puzzle move sounds follow the existing mute setting',async t=>{
 function replyPuzzle() {
   const c=new Chess();c.move('e4');c.move('d5');return puzzle(c.fen(),['e4d5','d8d5','b1c3']);
 }
-const afterReply=()=>new Promise(resolve=>setTimeout(resolve,140));
-test('automatic opponent replies also play their normal sound after the accepted move',async t=>{
-  const {w,sounds}=await setup(t,replyPuzzle());await w.submitPuzzle('e4d5');
-  assert.deepEqual(sounds,['capture']);await afterReply();assert.deepEqual(sounds,['capture','capture']);
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+test('accepted moves stay on the board before a delayed opponent reply and its sound',async t=>{
+  const {w,sounds}=await setup(t,replyPuzzle());const pending=w.submitPuzzle('e4d5');
+  const accepted=w.currentFen();assert.equal(w.activity.step,1);assert.equal(w.busy,true);assert.deepEqual(sounds,['capture']);
+  await sleep(150);assert.equal(w.currentFen(),accepted);assert.deepEqual(sounds,['capture']);
+  await w.submitPuzzle('b1a3');assert.equal(w.activity.mistakes,0);
+  await pending;assert.equal(w.activity.step,2);assert.equal(w.busy,false);assert.deepEqual(sounds,['capture','capture']);
 });
 
-for(const action of ['wrong answer','navigation','close','mute'])test(`${action} prevents a pending opponent reply sound from playing`,async t=>{
-  const {a,w,sounds,wrong}=await setup(t,replyPuzzle());await w.submitPuzzle('e4d5');
-  if(action==='wrong answer')await w.submitPuzzle('b1a3');
-  else if(action==='navigation')await w.navigate('puzzles');
-  else if(action==='close')await w.close();
-  else a.state.settings.sound=false;
-  await afterReply();assert.deepEqual(sounds,['capture']);assert.equal(wrong(),action==='wrong answer'?1:0);
+test('closing during the reply pause cancels motion and sound while preserving a resumable accepted move',async t=>{
+  const {a,w,sounds}=await setup(t,replyPuzzle());const pending=w.submitPuzzle('e4d5');
+  await w.close();await pending;assert.deepEqual(sounds,['capture']);assert.equal(w.replyTimer,null);
+  assert.equal(a.store['learning:v1'].resume.step,2);assert.equal(w.activity.step,1);
+});
+
+test('muting during the reply pause suppresses the reply sound without skipping its move',async t=>{
+  const {a,w,sounds}=await setup(t,replyPuzzle());const pending=w.submitPuzzle('e4d5');
+  a.state.settings.sound=false;await pending;
+  assert.deepEqual(sounds,['capture']);assert.equal(w.activity.step,2);
 });

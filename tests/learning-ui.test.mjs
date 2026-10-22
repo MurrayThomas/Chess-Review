@@ -154,7 +154,7 @@ test('old presentation preferences all select Morph 3 and Settings stays open wi
   await w.close();await a.call('resetVisualSettings');assert.equal(a.store.settings.learningTransition,'morph3');
 });
 
-test('puzzle type checkboxes and crossing Elo sliders filter the full adaptive session',async t=>{
+test('puzzle types and two handles on one Elo track filter the full adaptive session',async t=>{
   const {w,dom}=await workspace(t);
   const doc=dom.window.document;
   assert.equal(w.root.querySelectorAll('.learn-puzzle-start .primary').length,1);
@@ -163,7 +163,8 @@ test('puzzle type checkboxes and crossing Elo sliders filter the full adaptive s
   doc.querySelector('[data-focus="theme-fork"]').click();assert.deepEqual([...w.puzzleThemes],['fork']);
   assert.ok(w.filteredPuzzles().every(p=>p.themes.includes('fork')));
   const slider=doc.querySelector('[aria-label="Minimum"]');slider.value=slider.max;slider.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
-  const max=Number(slider.max);assert.deepEqual(w.puzzleRange,[max,max]);assert.equal(doc.querySelector('[aria-label="Maximum"]').value,String(max));
+  const max=Number(slider.max);assert.deepEqual(w.puzzleRange,[max-50,max]);assert.equal(doc.querySelector('[aria-label="Maximum"]').value,String(max));
+  assert.equal(doc.querySelectorAll('.learn-dual-range').length,1);assert.equal(doc.querySelectorAll('.learn-dual-range input').length,2);
   assert.equal(doc.querySelector('[data-focus="solve-puzzle"]').disabled,!w.filteredPuzzles().length);
   const puzzle=w.puzzles.find(p=>p.themes.includes('fork'));w.puzzleRange=[puzzle.rating,puzzle.rating];w.render();
   await w.startRatedPuzzles();assert.equal(w.puzzles.find(p=>p.id===w.activity.id).rating,puzzle.rating);

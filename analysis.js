@@ -1562,7 +1562,9 @@ async function openLearning() {
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound,
-    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag, drawArrow:(from,to,flipped)=>{const a=arrowXY(from,flipped),b=arrowXY(to,flipped);const {shaft,head}=arrowBuild(arrowWaypoints(a,b),S.settings.arrowHead,S.settings.arrowHead*.70);return arrowNode(shaft,head,USER_ARROW_COLOR);}},
+    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag,
+      drawArrow:(from,to,flipped)=>learningArrow(from,to,flipped,USER_ARROW_COLOR),
+      drawBestArrow:(from,to,flipped)=>learningArrow(from,to,flipped,/^#[0-9a-f]{6}$/i.test(S.settings.bestArrowColor || "")?S.settings.bestArrowColor:ARROW_COLOR)},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
@@ -2163,6 +2165,12 @@ function renderBestArrow() {
   const arrowColor = /^#[0-9a-f]{6}$/i.test(S.settings.bestArrowColor || "")
     ? S.settings.bestArrowColor : ARROW_COLOR;
   svg.replaceChildren(arrowNode(shaft, head, arrowColor));
+}
+
+function learningArrow(from, to, flipped, color) {
+  const a = arrowXY(from, flipped), b = arrowXY(to, flipped);
+  const {shaft, head} = arrowBuild(arrowWaypoints(a, b), S.settings.arrowHead, S.settings.arrowHead * .70);
+  return arrowNode(shaft, head, color);
 }
 
 // Keep saved arrow settings in attributes, never interpolate them into markup.

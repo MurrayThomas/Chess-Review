@@ -11,8 +11,11 @@ opening progress and puzzle records remain intact when upgrading.
   the current position and the player can try again. The loss stays: further
   mistakes, completing the line, retrying or reopening that puzzle cannot
   change its rating result a second time.
-- A hint, revealed solution or skip also counts as one loss. The solving UI
-  explains this before those controls are used. Illegal input has no effect.
+- A hint, revealed solution or skip also counts as one loss. The Hint tooltip
+  explains the Elo forfeiture. First press highlights the piece; a second
+  press shows its move with the configured best-move arrow. The hint cycle
+  resets at each new solver turn without adding another Elo loss.
+  Illegal input has no effect.
 - Previously rated or completed puzzles remain available for unrated review.
   Puzzle records from before this feature are not rated retroactively.
 - These rules also apply to first encounters during timed challenges. Challenge
@@ -31,7 +34,7 @@ puzzle difficulty ratings remain fixed.
 Elo and recalculates the pool after every result. If that band is exhausted,
 it chooses among the ten nearest available puzzles. Known solutions and puzzles
 already visited in the session are excluded. Optional minimum/maximum Elo
-sliders and puzzle-type checkboxes constrain this pool throughout the session.
+handles on one slider and puzzle-type checkboxes constrain this pool throughout the session.
 The default selection includes all ratings and types. The page shows only the
 player's Elo and count of cleanly solved puzzles; pairing still uses current Elo.
 

@@ -76,7 +76,7 @@ test('wrong answers play the practice cue, keep the position and lower Elo once 
   await w.startPuzzleSelection([mate]);const fen=w.currentFen();
   await w.submitPuzzle(wrongMove(mate));assert.equal(cues,1);assert.equal(w.currentFen(),fen);assert.equal(w.activity.step,0);
   assert.equal(w.store.value.puzzleRating.elo,1176);assert.equal(w.root.querySelectorAll('.puzzle-wrong').length,2);
-  assert.match(w.root.textContent,/Wrong move — try again/);assert.match(w.root.textContent,/-24 Elo/);
+  assert.match(w.root.textContent,/Wrong move — try again/);assert.equal(w.store.value.puzzles[mate.id].ratingResult.delta,-24);
   await w.submitPuzzle(wrongMove(mate));assert.equal(cues,2);assert.equal(w.store.value.puzzleRating.elo,1176);
   await w.submitPuzzle(mate.solution[0]);assert.equal(w.feedback.status,'completed');assert.equal(w.store.value.puzzleRating.elo,1176);
   assert.equal(w.store.value.puzzles[mate.id].clean,0);assert.equal(w.store.value.puzzles[mate.id].recovered,1);
@@ -134,11 +134,13 @@ test('adaptive practice resumes, pairs from current Elo after each result, and f
   await next.startRatedPuzzles();assert.equal(next.activity,null);
 });
 
-test('Black-to-move puzzle history retains its real move numbers and side labels',async t=>{
+test('Black puzzles keep their orientation and use a board-focused practice surface',async t=>{
   const puzzle=library.find(p=>p.fen.split(' ')[1]==='b'&&p.solution.length>=3);
   const {w}=await setup(t,{puzzles:[puzzle]});await w.startPuzzleSelection([puzzle]);await w.submitPuzzle(puzzle.solution[0]);
-  const spans=[...w.root.querySelectorAll('.puzzle-played-line span')];
-  const move=Number(puzzle.fen.split(' ')[5]);assert.ok(spans[0].textContent.startsWith(move+'… '));assert.ok(spans[1].textContent.startsWith((move+1)+'. '));
+  assert.equal(w.flipped,true);assert.equal(w.root.querySelector('.learn-board').getAttribute('aria-label'),'Black to move. Chessboard.');
+  assert.equal(w.root.querySelector('.puzzle-played-line, .puzzle-task-meta, .learn-move-input'),null);
+  assert.deepEqual([...w.root.querySelectorAll('.puzzle-practice-actions button')].map(n=>n.textContent),['Hint','Skip']);
+  assert.doesNotMatch(w.root.textContent,/Find the best continuation|matched to your Elo|Flip board/);
 });
 
 test('rapid duplicate starts and wrong submissions create one active puzzle and one rating loss',async t=>{
