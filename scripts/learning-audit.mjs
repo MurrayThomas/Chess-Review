@@ -59,13 +59,13 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("document.querySelector('.learn-puzzle-start .primary').textContent"),'Solve a puzzle');
   assert.equal(await run("!!document.querySelector('[aria-label=Phase], [aria-label=Progress], .learn-style-option')"),false);
   await capture('puzzles-desktop');
-  await run("window.auditNav=document.querySelector('.learn-nav');import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('concepts');const a=m.learningWorkspace.navAnimation;a.pause();a.currentTime=220;})");
+  await run("window.auditNav=document.querySelector('.learn-nav');import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('concepts');const a=m.learningWorkspace.navAnimation;a.pause();a.currentTime=a.effect.getTiming().duration*.35;})");
   const swoop=await run("(()=>{const n=document.querySelector('.learn-nav-indicator').getBoundingClientRect(),b=document.querySelector('.learn-nav [aria-current]').getBoundingClientRect();return {same:document.querySelector('.learn-nav')===auditNav,width:n.width,targetWidth:b.width,height:n.height,targetHeight:b.height};})()");
   assert.ok(swoop.same&&swoop.width>swoop.targetWidth*1.15&&swoop.height<swoop.targetHeight,'Tab highlight must stretch and soften while swooping');
   await capture('tabs-liquid-swoop');
   const redirected=await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,indicator=w.navIndicator,before=indicator.getBoundingClientRect();await w.navigate('openings');w.navAnimation.pause();w.navAnimation.currentTime=0;const after=indicator.getBoundingClientRect();return Math.abs(before.x-after.x)<1&&Math.abs(before.width-after.width)<1;})");
   assert.ok(redirected,'Rapid tab changes must continue from the painted highlight');
-  await run("import('./analysis.js').then(m=>{m.learningWorkspace.navAnimation.currentTime=260;})");
+  await run("import('./analysis.js').then(m=>{const a=m.learningWorkspace.navAnimation;a.currentTime=a.effect.getTiming().duration*.4;})");
   await capture('tabs-liquid-redirect');
   await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,a=w.navAnimation;a.play();await a.finished;w.render();window.auditNavRetained=w.nav===auditNav&&w.navAnimation===a;})");
   assert.ok(await run('auditNavRetained'),'Routine renders must preserve the tab bar without restarting its animation');
