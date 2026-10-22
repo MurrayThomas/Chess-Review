@@ -109,6 +109,16 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("document.querySelectorAll('.puzzle-session [data-puzzle-elo]').length"),1);
   assert.equal(await run("!!document.querySelector('.puzzle-session .learn-panel, .puzzle-session .learn-move-input, .learn-board-caption')"),false);
   assert.deepEqual(await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>n.textContent)"),['Hint','Skip']);
+  const puzzleActions=await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>{const s=getComputedStyle(n);return {color:s.color,background:s.backgroundColor,border:s.borderColor}})");
+  assert.deepEqual(puzzleActions[0],puzzleActions[1],'Hint and Skip must share neutral styling');
+  assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to puzzles');
+  assert.equal(await run("!!document.querySelector('.puzzle-practice-heading button, .puzzle-back')"),false);
+  await run("import('./analysis.js').then(m=>{window.savedPuzzle={id:m.learningWorkspace.activity.id,step:m.learningWorkspace.activity.step};document.querySelector('.learn-header [data-focus=review]').click();})");
+  await waitFor(review,"!!document.querySelector('[data-focus=solve-puzzle]')",'Back to puzzle library');
+  assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to review');
+  await run("document.querySelector('[data-focus=solve-puzzle]').click()");
+  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity?.kind==='puzzle'&&!m.learningWorkspace.busy)",'Resume from puzzle library');
+  assert.equal(await run("Promise.all([import('./analysis.js'),savedPuzzle]).then(([m,saved])=>m.learningWorkspace.activity.id===saved.id&&m.learningWorkspace.activity.step===saved.step)"),true);
   await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.solution.length>=5&&!w.store.value.puzzles[p.id]?.ratingResult);window.introBefore=p.setup.fen;window.introAfter=p.fen;window.introElo=w.store.value.puzzleRating.elo;window.introFinished=false;void w.startPuzzleSelection([p]).then(()=>{introFinished=true;});})");
   assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.currentFen()===introBefore&&m.learningWorkspace.busy&&m.learningWorkspace.activity.step===0)"),true,'Fresh puzzle must first show the preceding position');
   assert.equal(await run("document.querySelector('[data-focus=puzzle-hint]').disabled"),true);
@@ -161,6 +171,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const earned=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
   assert.ok(completionFrames.some(f=>f.elo>completionFrames[0].elo&&f.elo<earned),'Elo must visibly tick through intermediate values');
   await capture('puzzle-earned-elo');
+  assert.equal(await run("!!document.querySelector('.puzzle-completion, .puzzle-explanation')||document.querySelector('.puzzle-session').textContent.includes('View solution')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('concepts'))");await capture('concepts-desktop');
   assert.equal(await run("!!document.querySelector('.learn-card')"),false);
   await run("import('./analysis.js').then(m=>m.learningWorkspace.startLesson('fork'))");
