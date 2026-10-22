@@ -201,7 +201,10 @@
 .learn-morph-surface * { animation: none !important; }
 
 /* Puzzle feedback stays on the squares; the review board never shakes or moves. */
-.learn-square.puzzle-wrong::after { content: ''; position: absolute; inset: 0; z-index: 0; border: 3px solid rgba(255,58,78,.9); background: rgba(239,50,65,.48); pointer-events: none; }
+.learn-square.puzzle-wrong::after, .learn-square.puzzle-correct::after { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.learn-square.puzzle-wrong::after { background: rgba(239,50,65,.12); }
+.learn-square.puzzle-correct { background-image: none; }
+.learn-square.puzzle-correct::after { background: rgba(129,182,76,.14); }
 .learn-feedback > strong { display: block; margin-bottom: 4px; color: var(--ink); }
 .puzzle-elo-panel { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; border: 1px solid var(--line); background: var(--panel-2); border-radius: 7px; padding: 16px 18px; margin: 20px 0; }
 .puzzle-elo-number { display: grid; gap: 3px; flex: none; }

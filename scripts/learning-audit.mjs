@@ -165,7 +165,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const wrongColor=await run("getComputedStyle(document.querySelector('.puzzle-wrong'),'::after').backgroundColor");
   await checkResultBadge('incorrect');
   assert.equal(await run("document.querySelector('.puzzle-practice-status').textContent"),'Wrong move');
-  assert.match(wrongColor,/239, 50, 65, 0\.48/,'Wrong feedback must use translucent red');await capture('puzzle-red-feedback');
+  assert.match(wrongColor,/239, 50, 65, 0\.12/,'Wrong feedback must use faint red');await capture('puzzle-red-feedback');
   const eloAlignment=await run("(()=>{const panel=document.querySelector('.puzzle-session .puzzle-elo-panel');return {alignment:getComputedStyle(panel).alignItems,bottoms:[panel.querySelector('.puzzle-elo-number span'),panel.querySelector('.puzzle-solved-count'),panel.querySelector('.puzzle-elo-change')].map(n=>n.getBoundingClientRect().bottom)}})()");
   assert.equal(eloAlignment.alignment,'baseline');assert.ok(Math.max(...eloAlignment.bottoms)-Math.min(...eloAlignment.bottoms)<4,'Solved count and Elo change should align with the Elo label');
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.eloFrame==null)",'Loss counter');
@@ -185,6 +185,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const earned=await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRating.elo)");
   assert.ok(completionFrames.some(f=>f.elo>completionFrames[0].elo&&f.elo<earned),'Elo must visibly tick through intermediate values');
   await capture('puzzle-earned-elo');
+  assert.equal(await run("document.querySelectorAll('.puzzle-correct').length"),2);
+  assert.match(await run("getComputedStyle(document.querySelector('.puzzle-correct'),'::after').backgroundColor"),/129, 182, 76, 0\.14/,'Correct feedback must use faint green');
   await checkResultBadge('correct');
   assert.equal(await run("!!document.querySelector('.puzzle-completion, .puzzle-explanation')||document.querySelector('.puzzle-session').textContent.includes('View solution')"),false);
   const checkAnalysisBar=async()=>{

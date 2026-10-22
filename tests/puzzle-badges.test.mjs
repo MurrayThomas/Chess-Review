@@ -32,8 +32,11 @@ test('puzzle outcomes label legal attempts, clear on replies and retries, and pe
   board.querySelector('[data-square=e2]').click();assert.equal(board.querySelector('.sq-badge'),null);
   const reply=deferred();t.mock.method(w,'waitForPuzzleReply',()=>reply.promise);
   const accepted=w.submitPuzzle('e2e4');await settle();badge(board,'correct','e4');
+  assert.deepEqual([...board.querySelectorAll('.puzzle-correct')].map(n=>n.dataset.square).sort(),['e2','e4']);
   reply.resolve(true);await accepted;assert.equal(board.querySelector('.sq-badge'),null);
+  assert.equal(board.querySelector('.puzzle-correct'),null);
   await w.submitPuzzle('g1f3');badge(board,'correct','f3');assert.equal(w.feedback.status,'completed');
+  assert.equal(board.querySelectorAll('.puzzle-correct').length,2);
   w.flipBoard();badge(board,'correct','f3');
   await w.preparePuzzle(p);assert.equal(board.querySelector('.sq-badge'),null);
   await w.submitPuzzle('d2d4');await w.revealPuzzle();assert.equal(board.querySelector('.sq-badge'),null);
