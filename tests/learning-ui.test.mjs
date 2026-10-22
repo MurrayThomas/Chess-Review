@@ -25,7 +25,7 @@ test('puzzle entry, loading errors, filtered empty states and focus restoration 
   assert.equal(w.page,'puzzles');assert.deepEqual([...w.root.querySelectorAll('.learn-nav button')].map(n=>n.textContent),['Puzzles','Concepts','Openings']);
   await w.navigate('concepts');w.filters.search='no such topic';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   w.root.querySelector('.learn-empty button').click();assert.ok(w.root.textContent.includes('Develop your pieces'));
-  await w.navigate('openings');w.filters.bookmarks=true;w.render();assert.ok(w.root.querySelector('.learn-empty'));
+  await w.navigate('openings');w.filters.search='no such opening';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   const old=globalThis.fetch;globalThis.fetch=async()=>{throw Error('Offline library missing');};await w.load();assert.match(w.root.textContent,/Offline library missing/);
   globalThis.fetch=old;await w.load();assert.equal(w.ready,true);await w.close();assert.equal(doc.querySelector('.app').inert,false);
 });
@@ -219,8 +219,7 @@ test('concept and opening libraries use readable rows without progress labels',a
     await w.navigate(page);assert.ok(w.root.querySelectorAll('.learn-library-row').length>0);
     assert.equal(w.root.querySelector('.learn-card'),null);assert.doesNotMatch(w.root.textContent,/not started|in progress/);
   }
-  w.root.querySelector('.learn-bookmark').click();await settle();
-  assert.ok(Object.values(w.store.value.openings).some(o=>o.bookmarked));
+  assert.equal(w.root.querySelector('.learn-bookmark'),null);assert.doesNotMatch(w.root.textContent,/★|☆|Saved/);
 });
 
 test('learning keeps review panels mounted until loading finishes and can close before mounting',async t=>{
