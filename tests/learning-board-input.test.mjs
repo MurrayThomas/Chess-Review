@@ -149,8 +149,10 @@ test('a picked-up solver piece survives the opponent introduction and reply with
   assert.equal(w.selected,'e4');assert.equal(w.busy,false);
   a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');await settle();
   assert.equal(w.activity.step,1);assert.equal(w.busy,true);assert.equal(doc.querySelector('.drag-piece'),null);
+  assert.deepEqual([...board.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort(),['d5','e4']);
   down('b1');const knight=doc.querySelector('.drag-piece');assert.ok(knight);advance();await settle();
   assert.equal(doc.querySelector('.drag-piece'),knight);assert.equal(w.activity.step,2);
+  assert.deepEqual([...board.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort(),['d5','d8']);
   finishSlide();await settle();assert.equal(w.busy,false);assert.equal(doc.querySelector('.drag-piece'),knight);
   a.dom.window.dispatchEvent(event('pointermove','c3'));up('c3');await settle();
   assert.equal(w.feedback.status,'completed');assert.equal(w.store.value.puzzleRating.played,1);
