@@ -314,7 +314,7 @@ const DEFAULT_SETTINGS = {
   // Master volume (0–100) applied to every sound the extension plays.
   soundVolume: 50,
   puzzleSuccessSound: "warm-marimba",
-  puzzleIncorrectSound: true,
+  puzzleIncorrectSound: "default",
   // Custom board colours (used when boardTheme === "custom" — the colour-picker chip, shown first).
   boardCustomLight: "#f9f9f9", boardCustomDark: "#e1a652",
   // Per-event sound mapping + knobs (see FX_SOUNDS / SOUND_EVENTS). snd = an FX_SOUNDS id or "default"
@@ -324,6 +324,8 @@ const DEFAULT_SETTINGS = {
     capture: { snd: "default", pitch: 0, speed: 1 },
     check:   { snd: "default", pitch: 0, speed: 1 },
     castle:  { snd: "default", pitch: 0, speed: 1 },
+    puzzleSuccess: { pitch: 0, speed: 1 },
+    puzzleIncorrect: { pitch: 0, speed: 1 },
   },
   // Best-move arrow (the engine's recommendation in the current position)
   bestArrow: true, bestArrowColor: "#85ae4a", arrowOpacity: 0.65, arrowShaft: 0.2, arrowHead: 0.4,
@@ -546,20 +548,35 @@ const _eventDef = (ev) => SOUND_EVENTS.find(([k]) => k === ev) || SOUND_EVENTS[0
 // Per-event config { snd, pitch, speed }, with safe fallbacks for old/missing stored settings.
 function fxConfig(ev) {
   const c = (S.settings.soundFx && S.settings.soundFx[ev]) || {};
-  const snd = c.snd === "default" || _fxFileById(c.snd) ? c.snd : "default";
+  let snd = c.snd === "default" || _fxFileById(c.snd) ? c.snd : "default";
+  if (ev === "puzzleSuccess") snd = puzzleSuccessChoice()?.[0] || "none";
+  if (ev === "puzzleIncorrect") {
+    const id = S.settings.puzzleIncorrectSound;
+    // Preserve On/Off choices saved by the earlier toggle.
+    snd = id === false || id === "none" ? "none" : _fxFileById(id) ? id : "default";
+  }
   return { snd, pitch: Number.isFinite(+c.pitch) ? +c.pitch : 0, speed: +c.speed > 0 ? +c.speed : 1 };
 }
 function setFx(ev, field, val) {
+  if (field === "snd" && (ev === "puzzleSuccess" || ev === "puzzleIncorrect")) {
+    const key = ev === "puzzleSuccess" ? "puzzleSuccessSound" : "puzzleIncorrectSound";
+    S.settings[key] = val;
+    return writeSettings({ [key]: val });
+  }
   // Write fresh objects rather than mutating in place — S.settings.soundFx may still be aliased to the
   // shared DEFAULT_SETTINGS object (settings are loaded with a shallow spread).
   const fx = { ...(S.settings.soundFx || {}) };
   fx[ev] = { ...fxConfig(ev), [field]: val };
+  if (ev === "puzzleSuccess" || ev === "puzzleIncorrect") delete fx[ev].snd;
   S.settings.soundFx = fx;
-  writeSettings({ soundFx: { [ev]: { [field]: val } } });
+  return writeSettings({ soundFx: { [ev]: { [field]: val } } });
 }
 // Resolve an event's chosen sound to a packaged URL.
 function fxUrl(ev) {
   const cfg = fxConfig(ev);
+  if (cfg.snd === "none") return null;
+  if (ev === "puzzleSuccess") return _url(puzzleSuccessChoice()[2]);
+  if (ev === "puzzleIncorrect") return _url(_fxFileById(cfg.snd) || "sounds/Wrong/Incorrect.mp3");
   if (cfg.snd === "default") return _url(_eventDef(ev)[2]);
   return _url(_fxFileById(cfg.snd) || _eventDef(ev)[2]);
 }
@@ -645,7 +662,10 @@ function processedFx(url, pitch, speed) {
 // Play an event's sound now (no throttle) — used for the move board and settings previews.
 function triggerFx(ev) {
   const cfg = fxConfig(ev);
-  triggerAudio(fxUrl(ev), cfg.pitch, cfg.speed);
+  const url = fxUrl(ev);
+  if (!url) return;
+  const volume = ev === "puzzleSuccess" ? puzzleSuccessChoice()?.[3] ?? 1 : 1;
+  triggerAudio(url, cfg.pitch, cfg.speed, volume);
 }
 function triggerAudio(url, pitch = 0, speed = 1, volume = 1) {
   const ctx = audioCtx();
@@ -661,8 +681,7 @@ function triggerAudio(url, pitch = 0, speed = 1, volume = 1) {
 }
 function playPuzzleSuccess(preview = false) {
   if (!preview && !S.settings.sound) return;
-  const choice = puzzleSuccessChoice();
-  if (choice) triggerAudio(_url(choice[2]), 0, 1, choice[3] ?? 1);
+  triggerFx("puzzleSuccess");
 }
 // Fast-scrub feel (holding ←/→): nav events fire quicker than a click can ring out. Throttle the cue
 // to a tidy cadence; Web Audio is naturally polyphonic so overlapping plays don't garble.
@@ -695,12 +714,10 @@ function playMoveSound(ply) {
   if (!S.settings.sound || ply < 1 || !S.positions[ply]) return;
   playEvent(sanSound(S.positions[ply].san));
 }
-// Puzzles and practice share an independently switchable Incorrect cue.
-let _wrongAudio = null;
+// Puzzles and practice share the selected incorrect-puzzle effect and tuning.
 function playWrongSound() {
-  if (!S.settings.sound || S.settings.puzzleIncorrectSound === false) return;
-  if (!_wrongAudio) _wrongAudio = new Audio(_url("sounds/Wrong/Incorrect.mp3"));
-  try { _wrongAudio.volume = masterVol(); _wrongAudio.currentTime = 0; _wrongAudio.play().catch(() => {}); } catch {}
+  if (!S.settings.sound) return;
+  triggerFx("puzzleIncorrect");
 }
 
 /* ---------------- State ---------------- */
@@ -4853,23 +4870,12 @@ function visualSettings() {
     section("Sound",
       toggleRow("Sound effects", "sound"),
       slider("Volume", "soundVolume", 0, 100, 1, { fmt: (v) => v + " %" }),
-      puzzleSuccessControls(),
-      toggleRow("Incorrect sound", "puzzleIncorrectSound", setSetting, "Play the Incorrect cue for a wrong puzzle or practice move."),
-      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Pick a sound for each board event, then shape it with the pitch and speed knobs. Changes preview as you make them.")),
+      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Pick a sound for each event, then shape it with the pitch and speed knobs. Changes preview as you make them.")),
+      fxEventControls("puzzleSuccess", "Puzzle success"),
+      fxEventControls("puzzleIncorrect", "Incorrect puzzle"),
       ...SOUND_EVENTS.map(([key, label]) => fxEventControls(key, label)),
     ),
     el("button", { class: "set-reset", onclick: resetVisualSettings }, "Reset to default"),
-  );
-}
-function puzzleSuccessControls() {
-  const choice = puzzleSuccessChoice();
-  return el("div", { class: "set-fx set-puzzle-success" },
-    el("div", { class: "set-row" }, el("span", { class: "set-lbl" }, "Puzzle success"),
-      ddField(choice?.[0] || "none", [...PUZZLE_SUCCESS_SOUNDS.map(([id, label]) => [id, label]), ["none", "Off"]], async (value) => {
-        await setSetting("puzzleSuccessSound", value);
-        playPuzzleSuccess(true);
-      })),
-    el("span", { class: "set-note" }, "Plays when you solve a practice position or finish a puzzle."),
   );
 }
 // Coach dropdown — only coaches that have a built animated character. Uses the
@@ -4885,16 +4891,19 @@ function coachPicker() {
   dropdown.classList.add("coach-dropdown");
   return el("div", { class: "set-row" }, el("span", { class: "set-lbl" }, "Coach"), dropdown);
 }
-// Controls for one board event: a sound dropdown (the 9 base sounds + the original cue) plus pitch and
-// speed knobs. Everything previews on change. The dropdown re-renders the panel so its label updates;
+// Controls for one event: a sound dropdown plus pitch and speed knobs.
+// Everything previews on change. The dropdown re-renders the panel so its label updates;
 // the sliders save + preview live without a rebuild (so the drag isn't interrupted).
 function fxEventControls(ev, label) {
   const cfg = fxConfig(ev);
-  const opts = [["default", "Lichess"], ...FX_SOUNDS.map(([id, l]) => [id, l])];
-  return el("div", { class: "set-fx" },
+  let opts = [["default", "Lichess"], ...FX_SOUNDS.map(([id, l]) => [id, l])];
+  if (ev === "puzzleSuccess") opts = [...PUZZLE_SUCCESS_SOUNDS.map(([id, label]) => [id, label]), ["none", "Off"]];
+  else if (ev === "puzzleIncorrect") {opts[0] = ["default", "Incorrect"];opts.push(["none", "Off"]);}
+  const cls = ev === "puzzleSuccess" ? " set-puzzle-success" : ev === "puzzleIncorrect" ? " set-puzzle-incorrect" : "";
+  return el("div", { class: "set-fx" + cls, "data-sound-event": ev },
     el("div", { class: "set-row" }, el("span", { class: "set-lbl" }, label),
-      ddField(cfg.snd, opts, (v) => {
-        setFx(ev, "snd", v);
+      ddField(cfg.snd, opts, async (v) => {
+        await setFx(ev, "snd", v);
         triggerFx(ev);
         if (UI.settings && !UI.settings.hidden) renderSettings();
       })),

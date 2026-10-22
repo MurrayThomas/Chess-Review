@@ -93,10 +93,7 @@ test('Sound settings save and preview each choice, support Off without a preview
 
 test('incorrect sounds can be muted independently in puzzles and practice and reset in Sound settings', async t => {
   const a = app(t), played = [];
-  a.context.Audio = class {
-    constructor(url) { this.url = url; }
-    play() { played.push(this.url);return Promise.resolve(); }
-  };
+  a.replace('triggerAudio', url => played.push(url));
   loadGame(a, '1. e4 e5');
   a.state.bests[0] = {bestmove:'e2e4',score:{cp:40},lines:[]};
   a.call('computeDerived');a.call('buildUI');a.call('renderAll');
@@ -104,9 +101,12 @@ test('incorrect sounds can be muted independently in puzzles and practice and re
   a.call('toggleSettings');
   const doc = a.dom.window.document;
   const select = async value => {
-    doc.querySelector(`[data-setting="puzzleIncorrectSound"][data-value="${value}"]`).click();
+    const label = value ? 'Incorrect' : 'Off';
+    [...doc.querySelectorAll('.set-puzzle-incorrect .lib-dd-opt')].find(b => b.textContent === label).click();
     await settle();await a.run('_settingsWriteQueue');await settle();
-    assert.equal(a.store.settings.puzzleIncorrectSound, value);
+    assert.equal(a.store.settings.puzzleIncorrectSound, value ? 'default' : 'none');
+    assert.equal(doc.querySelector('.set-puzzle-incorrect .lib-dd-cur').textContent, label);
+    played.length = 0;
   };
   await select(false);
   a.state.practice = {spots:[1],i:0,solving:true,busy:false};
@@ -127,7 +127,68 @@ test('incorrect sounds can be muted independently in puzzles and practice and re
   await w.submitPuzzle('d2d4');assert.equal(played.length, 2);
   await a.call('setSetting', 'puzzleIncorrectSound', false);
   await a.call('resetSettingKeys', a.run('VISUAL_SETTING_KEYS'));
-  assert.equal(a.store.settings.puzzleIncorrectSound, true);
+  assert.equal(a.store.settings.puzzleIncorrectSound, 'default');
+});
+
+test('both puzzle sounds share the event dropdown, pitch and speed layout and save live tuning', async t => {
+  const {a} = setup(t), played = [];
+  a.replace('triggerAudio', (...args) => played.push(args));
+  a.call('toggleSettings');
+  const doc = a.dom.window.document;
+  for (const [event, label] of [['puzzleSuccess', 'Puzzle success'], ['puzzleIncorrect', 'Incorrect puzzle']]) {
+    const controls = doc.querySelector(`[data-sound-event="${event}"]`);
+    assert.ok(controls.classList.contains('set-fx'));
+    assert.equal(controls.querySelector('.set-row > .set-lbl').textContent, label);
+    assert.ok(controls.querySelector('.lib-dd-field'));
+    assert.equal(controls.querySelector('.set-seg'), null);
+    assert.deepEqual([...controls.querySelectorAll('.set-fx-knob .set-lbl')].map(n => n.textContent), ['Pitch', 'Speed']);
+    const [pitch, speed] = controls.querySelectorAll('input[type=range]');
+    pitch.value = -4;pitch.dispatchEvent(new a.dom.window.Event('input'));pitch.dispatchEvent(new a.dom.window.Event('change'));
+    speed.value = 1.35;speed.dispatchEvent(new a.dom.window.Event('input'));speed.dispatchEvent(new a.dom.window.Event('change'));
+    await a.run('_settingsWriteQueue');
+    assert.equal(a.store.settings.soundFx[event].pitch, -4);
+    assert.equal(a.store.settings.soundFx[event].speed, 1.35);
+    assert.deepEqual(played.at(-1).slice(1), [-4, 1.35, 1]);
+  }
+  const controls = () => doc.querySelector('.set-puzzle-incorrect');
+  [...controls().querySelectorAll('.lib-dd-opt')].find(b => b.textContent === 'Sound 03').click();
+  await settle();await a.run('_settingsWriteQueue');await settle();
+  assert.equal(a.store.settings.puzzleIncorrectSound, '03');
+  assert.deepEqual(played.at(-1), ['https://extension.test/sounds/fx/chess_sound_03.wav', -4, 1.35, 1]);
+  [...controls().querySelectorAll('.lib-dd-opt')].find(b => b.textContent === 'Off').click();
+  await settle();await a.run('_settingsWriteQueue');await settle();
+  const count = played.length;
+  controls().querySelector('input').dispatchEvent(new a.dom.window.Event('change'));
+  assert.equal(played.length, count);
+  await a.call('resetSettingKeys', a.run('VISUAL_SETTING_KEYS'));
+  for (const event of ['puzzleSuccess', 'puzzleIncorrect']) {
+    assert.equal(a.call('fxConfig', event).pitch, 0);
+    assert.equal(a.call('fxConfig', event).speed, 1);
+  }
+});
+
+test('puzzle playback applies independent saved pitch and speed and supports legacy incorrect mute settings', async t => {
+  const a = app(t), played = [];
+  a.state.settings.sound = true;
+  a.replace('triggerAudio', (...args) => played.push(args));
+  await a.call('setFx', 'puzzleSuccess', 'pitch', 3);
+  await a.call('setFx', 'puzzleSuccess', 'speed', 1.5);
+  await a.call('setFx', 'puzzleIncorrect', 'pitch', -2);
+  await a.call('setFx', 'puzzleIncorrect', 'speed', .75);
+  a.state.settings.puzzleSuccessSound = 'soft-retro';
+  a.call('playPuzzleSuccess');a.call('playWrongSound');
+  assert.deepEqual(played, [
+    ['https://extension.test/sounds/success/04-soft-retro.wav', 3, 1.5, .25],
+    ['https://extension.test/sounds/Wrong/Incorrect.mp3', -2, .75, 1],
+  ]);
+  a.state.settings.puzzleIncorrectSound = false;
+  a.call('playWrongSound');assert.equal(played.length, 2);
+  a.state.settings.puzzleIncorrectSound = true;
+  a.call('playWrongSound');assert.equal(played.length, 3);
+  a.state.settings.puzzleIncorrectSound = 'removed-effect';
+  a.call('playWrongSound');assert.match(played.at(-1)[0], /Wrong\/Incorrect\.mp3$/);
+  a.state.settings.sound = false;
+  a.call('playPuzzleSuccess');a.call('playWrongSound');assert.equal(played.length, 4);
 });
 
 test('practice plays success once for an accepted answer and stays silent for wrong or illegal answers', async t => {
