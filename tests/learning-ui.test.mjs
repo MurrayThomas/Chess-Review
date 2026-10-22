@@ -36,31 +36,40 @@ test('puzzle statistics show saved patterns, preserve settings and resume, and r
   const {w,dom,data}=await workspace(t),doc=dom.window.document;
   const button=()=>w.root.querySelector('[data-focus="puzzle-statistics"]');
   button().focus();button().click();
-  assert.equal(w.page,'statistics');assert.match(w.root.textContent,/Your patterns start here/);
+  assert.equal(w.page,'statistics');assert.match(w.root.textContent,/No attempts yet/);
+  assert.equal(button().textContent,'Back to puzzle overview');
+  assert.equal(w.root.querySelector('[data-focus="review"]').textContent,'← Back to review');
   assert.equal(doc.activeElement.id,'learn-statistics-title');
   assert.equal(w.root.querySelector('.learn-nav [aria-current]').textContent,'Puzzles');
-  w.root.querySelector('.learn-stat-empty button').click();assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
+  button().click();assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
   const fork=w.puzzles.find(p=>p.themes.includes('fork')&&p.themes.filter(t=>t in THEME_NAMES).length===1),mate=w.puzzles.find(p=>p.themes.includes('mateIn1')&&!p.themes.includes('fork'));
   await w.persist(progress=>{
     progress.puzzles[fork.id]={attempts:8,clean:2,assisted:2,recovered:3,mistakes:9};
     progress.puzzles[mate.id]={attempts:10,clean:9,assisted:0,mistakes:1};
     progress.puzzleResume={kind:'puzzle',id:fork.id,step:0};
+    progress.puzzleTimeMs=3723000;
   });
   const saved=structuredClone(data['learning:v1']);
   w.puzzleThemes.add('sacrifice');w.puzzleRange=[2000,2200];
   button().click();
-  assert.match(w.root.querySelector('.learn-stat-highlights').textContent,/Needs practiceForks25% clean · 2 of 8/);
-  assert.match(w.root.querySelector('.learn-stat-highlights').textContent,/StrongestMate in one90% clean · 9 of 10/);
-  assert.match(w.root.querySelector('[data-theme="fork"]').textContent,/2 clean · 6 need work/);
-  assert.match(w.root.querySelector('.learn-stat-overview').textContent,/18 attempts/);
+  assert.equal(w.root.querySelector('.learn-stat-highlights, .learn-stat-note, .learn-stat-intro'),null);
+  assert.doesNotMatch(w.root.querySelector('.learn-puzzle-statistics').textContent,/clean|need work|Early results|Highlights appear/i);
+  assert.match(w.root.querySelector('[data-theme="fork"]').textContent,/2 correct · 6 incorrect/);
+  assert.deepEqual([...w.root.querySelectorAll('.learn-stat-overview > div')].map(n=>n.textContent),['18Attempts','11Correct','7Incorrect','1h 2m 3sTime spent']);
   assert.equal(w.root.querySelector('.learn-stat-untried').open,false);
   doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
   assert.equal(w.closed,false);assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
   assert.deepEqual([...w.puzzleThemes],['sacrifice']);assert.deepEqual(w.puzzleRange,[2000,2200]);
   assert.deepEqual(data['learning:v1'],saved);
-  button().click();w.root.querySelector('[data-focus="review"]').click();await settle();
+  button().click();button().click();await settle();
   assert.equal(w.page,'puzzles');assert.equal(w.closed,false);assert.equal(doc.activeElement,button());
   button().click();await w.navigate('concepts');assert.ok(w.root.querySelector('.learn-library'));
+});
+
+test('the statistics footer returns directly to review',async t=>{
+  const {w}=await workspace(t);w.showPuzzleStatistics(true);
+  w.root.querySelector('[data-focus="review"]').click();await settle();
+  assert.equal(w.closed,true);
 });
 
 test('Escape closes Settings before leaving puzzle statistics on the embedded learning board',async t=>{

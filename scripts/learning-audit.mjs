@@ -92,7 +92,9 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.ok(await run("!!document.querySelector('.learn-stat-empty')"));
   await capture('statistics-empty');
   await showStatistics();await capture('statistics-desktop');
-  await run("document.querySelector('[data-focus=review]').click()");
+  assert.equal(await run("document.querySelector('[data-focus=review]').textContent"),'← Back to review');
+  assert.equal(await run("document.querySelector('[data-focus=puzzle-statistics]').textContent"),'Back to puzzle overview');
+  await run("document.querySelector('[data-focus=puzzle-statistics]').click()");
   assert.equal(await run("document.activeElement.dataset.focus"),'puzzle-statistics');
   await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('puzzles'))");
   await run("window.auditNav=document.querySelector('.learn-nav');import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('concepts');const a=m.learningWorkspace.navAnimation;a.pause();a.currentTime=a.effect.getTiming().duration*.35;})");

@@ -14,8 +14,8 @@ test('learning tabs lead the side panel, with Back in its footer across librarie
     assert.ok(w.shell.lastElementChild.querySelector('[data-focus=review]'));
   };
   check();assert.ok(w.root.querySelector('[data-focus=puzzle-statistics]'));
-  w.showPuzzleStatistics(true);check();assert.equal(w.root.querySelector('[data-focus=review]').textContent,'← Back to puzzles');
-  w.root.querySelector('[data-focus=review]').click();check();assert.equal(w.page,'puzzles');
+  w.showPuzzleStatistics(true);check();assert.equal(w.root.querySelector('[data-focus=review]').textContent,'← Back to review');
+  w.root.querySelector('[data-focus=puzzle-statistics]').click();check();assert.equal(w.page,'puzzles');
   await w.navigate('concepts');check();await w.navigate('openings');check();
   const main=w.shell.querySelector('.learn-main');main.scrollTop=100;w.render();
   assert.equal(w.shell.querySelector('.learn-main').scrollTop,100);
