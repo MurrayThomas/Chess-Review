@@ -27,11 +27,13 @@ a minimum magnitude of one. K is 48 during provisional play and 24 afterward.
 Beating harder puzzles earns more; missing easier puzzles costs more. Imported
 puzzle difficulty ratings remain fixed.
 
-"Play at my level" selects an unseen puzzle within 200 points of the current
+"Solve a puzzle" selects an unseen puzzle within 200 points of the current
 Elo and recalculates the pool after every result. If that band is exhausted,
 it chooses among the ten nearest available puzzles. Known solutions and puzzles
-already visited in the session are excluded. The library defaults to a nearby
-rating range, with an option to browse all ratings.
+already visited in the session are excluded. Optional minimum/maximum Elo
+sliders and puzzle-type checkboxes constrain this pool throughout the session.
+The default selection includes all ratings and types. The page shows only the
+player's Elo and count of cleanly solved puzzles; pairing still uses current Elo.
 
 Rating and the per-puzzle result are written in the same locked progress
 transaction. The saved result prevents duplicate updates from repeated input,
@@ -39,4 +41,4 @@ save recovery and concurrent review tabs. Failed writes retain the existing
 unsaved-progress banner and recovery path.
 
 Check with `node --test tests/learning-rating.test.mjs` and
-`npm run test:learning-anchored` (isolated Chrome profile).
+`npm run test:learning-browser` (isolated Chrome profile).

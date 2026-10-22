@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {app,loadGame} from './helpers/app.mjs';
 
 test('Concepts setting hides and restores its panel, persists, and preserves analysis choices and layout',async t=>{
-  const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  const a=app(t);loadGame(a,'1. e4 e5');a.state.settings.showConcepts=true;a.call('computeDerived');a.call('buildUI');a.call('renderAll');
   const doc=a.dom.window.document,mod=doc.querySelector('[data-mod="concepts"]'),before=JSON.stringify(a.state.layout);
   const width=a.call('layoutPageSize',a.state.layout).pageW;
   assert.equal(mod.hidden,false);await a.call('toggleSettings');doc.querySelectorAll('.set-tab')[2].click();
@@ -19,4 +19,12 @@ test('saved hidden panel preference applies at startup for automatic and custom 
     assert.equal(a.dom.window.document.querySelector('[data-mod="concepts"]').hidden,true);
     a.call('resetConceptDefaults');assert.equal(a.state.settings.showConcepts,false);
   }
+});
+
+test('both concept features default off and existing preferences migrate once',t=>{
+  const a=app(t);assert.equal(a.state.settings.showConcepts,false);assert.equal(a.state.settings.conceptsEnabled,false);
+  const settings={showConcepts:true,conceptsEnabled:true};a.call('migrateConceptDefaults',settings);
+  assert.equal(settings.showConcepts,false);assert.equal(settings.conceptsEnabled,false);
+  settings.showConcepts=true;settings.conceptsEnabled=true;a.call('migrateConceptDefaults',settings);
+  assert.equal(settings.showConcepts,true);assert.equal(settings.conceptsEnabled,true);
 });

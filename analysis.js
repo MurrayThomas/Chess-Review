@@ -284,7 +284,7 @@ function engineWorkerCount(requested = null, positions = Infinity,
 }
 
 const DEFAULT_SETTINGS = {
-  showConcepts: true,
+  showConcepts: false,
   conceptsEnabled: false,
   conceptGroups: DEFAULT_CONCEPT_GROUPS,
   disabledConcepts: [],
@@ -327,7 +327,7 @@ const DEFAULT_SETTINGS = {
   showThreat: false,
   // Move animation (sliding piece on single-step navigation). 1 = slow, 10 = fast.
   moveAnim: true, animSpeed: 7,
-  learningTransition: "morph",
+  learningTransition: "morph3",
   // Loading animation while the analysis runs (selectable style).
   loaderStyle: "wave",
   // Engine panel: how many candidate lines to show. The batch only searches the single best line
@@ -1562,7 +1562,7 @@ async function openLearning() {
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound,
-    embedded:LearningWorkspace.presentationFor(S.settings) === "page" ? null : {stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag, drawArrow:(from,to,flipped)=>{const a=arrowXY(from,flipped),b=arrowXY(to,flipped);const {shaft,head}=arrowBuild(arrowWaypoints(a,b),S.settings.arrowHead,S.settings.arrowHead*.70);return arrowNode(shaft,head,USER_ARROW_COLOR);}},
+    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag, drawArrow:(from,to,flipped)=>{const a=arrowXY(from,flipped),b=arrowXY(to,flipped);const {shaft,head}=arrowBuild(arrowWaypoints(a,b),S.settings.arrowHead,S.settings.arrowHead*.70);return arrowNode(shaft,head,USER_ARROW_COLOR);}},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
@@ -4760,12 +4760,6 @@ function visualSettings() {
       toggleRow("Animation", "moveAnim"),
       slider("Speed", "animSpeed", 1, 10, 1, { fmt: (v) => (440 - v * 40) + " ms" }),
     ),
-    section("Learning experience",
-      el("div", {class:"learn-style-options", role:"group", "aria-label":"Learning presentation"}, ...LearningWorkspace.presentations.map(({id,label,description})=>
-        el("button", {type:"button",class:"learn-style-option", "data-presentation":id,"aria-pressed":String(S.settings.learningTransition===id),onclick:()=>setSetting("learningTransition",id)},
-          el("span", {class:"learn-style-radio","aria-hidden":"true"}),el("span",{},el("strong",{},label),el("small",{},description))))),
-      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Each morph includes its own layout and animation. Reduced motion uses an instant transition.")),
-    ),
     section("Layout",
       seg("Eval", "evalView", ["both", "bar", "graph"]),
       seg("Bar", "barStyle", ["gradient", "classic", "mono", "accent"], null, (value) => value === "classic" ? "Solid" : value),
@@ -4990,7 +4984,6 @@ function positionSettings() {
   UI.settings.style.right = window.innerWidth <= 520 ? "" : "24px";
 }
 async function toggleSettings() {
-  if (learningWorkspace?.embedded && !["morph2","morph3","morph4","newway"].includes(learningWorkspace.presentation)) await learningWorkspace.close();
   closeArrowColorPicker();
   UI.settings.hidden = !UI.settings.hidden;
   if (!UI.settings.hidden) renderSettings();
@@ -4998,6 +4991,13 @@ async function toggleSettings() {
 }
 
 /* ---------------- Optional, isolated concept analysis ---------------- */
+function migrateConceptDefaults(settings) {
+  if (settings.conceptsDefaultedOff) return;
+  settings.showConcepts = false;
+  settings.conceptsEnabled = false;
+  settings.conceptsDefaultedOff = true;
+}
+
 let _conceptSession = null, _conceptPositions = null, _conceptEnabled = false, _conceptRenderTimer = null;
 let _conceptGameKeys = [], _conceptSelection = null;
 function conceptMoveInput(positions, ply) {
@@ -6517,6 +6517,7 @@ async function resetLegacyZoom() {
     S.settings = { ...DEFAULT_SETTINGS, ...(store.settings || {}) };
     const loadedSettings = structuredClone(S.settings);
     S.settings.learningTransition = LearningWorkspace.presentationFor(store.settings || {});
+    migrateConceptDefaults(S.settings);
     migrateVisualAssetSettings(S.settings);
     migrateEngineSettings(S.settings);
     delete S.settings.wrongSound; // older selectable mistake cues were removed
