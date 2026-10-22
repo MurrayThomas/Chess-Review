@@ -86,6 +86,16 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
     await run("import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Ended early'))");
     await capture(mode+'-results');
+    assert.equal(await run("document.querySelector('[data-focus=puzzle-overview]').textContent"),'Back to puzzle overview');
+    assert.equal(await run("document.querySelector('.puzzle-run-results').textContent.includes('Each check is a solved puzzle')"),false);
+    await run("import('./analysis.js').then(m=>{window.replaySaved=JSON.stringify(m.learningWorkspace.store.value);window.replayId=m.learningWorkspace.result.results[0].id;document.querySelector('.puzzle-run-history button').click();})");
+    await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity?.replay&&!m.learningWorkspace.busy)",'Run puzzle replay');
+    assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.activity.id===replayId&&m.learningWorkspace.activity.step===0&&!m.learningWorkspace.activity.rated&&!m.learningWorkspace.run)"),true);
+    await capture(mode+'-replay');
+    await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id);while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);})");
+    assert.equal(await run("import('./analysis.js').then(m=>JSON.stringify(m.learningWorkspace.store.value)===replaySaved)"),true,'Replay must preserve saved progress');
+    await run("document.querySelector('[data-focus=replay-back]').click()");
+    assert.equal(await run("document.activeElement.dataset.focus"),'replay-1');
     await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('puzzles'))");
   }
   await run("document.querySelector('[data-focus=puzzle-statistics]').click()");
@@ -184,7 +194,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("import('./analysis.js').then(m=>{const w=m.learningWorkspace,status=document.querySelector('.puzzle-practice-status');return status.textContent===(w.currentFen().split(' ')[1]==='w'?'White to move':'Black to move')&&getComputedStyle(status).position!=='absolute';})"),true,'Ready puzzles must show which side moves in the feedback area');
   const puzzleActions=await run("[...document.querySelectorAll('.puzzle-practice-actions button')].map(n=>{const s=getComputedStyle(n);return {color:s.color,background:s.backgroundColor,border:s.borderColor}})");
   assert.deepEqual(puzzleActions[0],puzzleActions[1],'Hint and Skip must share neutral styling');
-  assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to puzzles');
+  assert.equal(await run("document.querySelector('[data-focus=puzzle-overview]').textContent"),'Back to puzzle overview');
   assert.equal(await run("!!document.querySelector('.puzzle-practice-heading button:not(.puzzle-rating-toggle), .puzzle-back')"),false);
   const checkRatingCollapse=async label=>{
     for(const enabled of [false,true]){
@@ -216,7 +226,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     }
   };
   await checkRatingCollapse('Puzzle practice');
-  await run("import('./analysis.js').then(m=>{window.savedPuzzle={id:m.learningWorkspace.activity.id,step:m.learningWorkspace.activity.step};document.querySelector('.learn-header [data-focus=review]').click();})");
+  await run("import('./analysis.js').then(m=>{window.savedPuzzle={id:m.learningWorkspace.activity.id,step:m.learningWorkspace.activity.step};document.querySelector('[data-focus=puzzle-overview]').click();})");
   await waitFor(review,"!!document.querySelector('[data-focus=solve-puzzle]')",'Back to puzzle library');
   assert.equal(await run("document.querySelector('.learn-header [data-focus=review]').textContent"),'← Back to review');
   await run("document.querySelector('[data-focus=solve-puzzle]').click()");

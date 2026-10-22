@@ -180,22 +180,23 @@ test('puzzles hide solution information, persist intermediate steps and distingu
   await w.preparePuzzle(p);while(!w.attemptRecorded)await w.submitPuzzle(p.solution[w.activity.step]);assert.equal(w.store.value.puzzles[p.id].clean,2);
 });
 
-test('the puzzle header returns to the library, preserves the attempt and then returns to review',async t=>{
+test('the upper puzzle overview link preserves the attempt and the footer returns to review',async t=>{
   const {w}=await workspace(t),p=w.puzzles.find(p=>p.solution.length>=3);
-  const back=()=>w.root.querySelector('.learn-header [data-focus="review"]');
-  assert.equal(back().textContent,'← Back to review');
+  const back=()=>w.root.querySelector('[data-focus="puzzle-overview"]');
+  assert.equal(back(),null);
   await w.startPuzzleSelection([p],null,{adaptive:true});await w.submitPuzzle(p.solution[0]);
   const step=w.activity.step,elo=w.store.value.puzzleRating.elo;
-  assert.equal(back().textContent,'← Back to puzzles');assert.equal(w.root.querySelector('.puzzle-practice-heading button:not(.puzzle-rating-toggle), .puzzle-back'),null);
-  back().click();await settle();assert.equal(w.closed,false);assert.equal(w.activity,null);assert.equal(w.page,'puzzles');assert.equal(back().textContent,'← Back to review');
+  assert.equal(back().textContent,'Back to puzzle overview');assert.ok(w.root.querySelector('.puzzle-session-navigation').contains(back()));
+  assert.equal(w.root.querySelector('.learn-header [data-focus="review"]').textContent,'← Back to review');
+  back().click();await settle();assert.equal(w.closed,false);assert.equal(w.activity,null);assert.equal(w.page,'puzzles');assert.equal(back(),null);
   assert.equal(w.store.value.puzzleResume.step,step);assert.equal(w.store.value.puzzleRating.elo,elo);
-  await w.startRatedPuzzles();assert.equal(w.activity.id,p.id);assert.equal(w.activity.step,0);assert.equal(w.currentFen(),p.fen);assert.equal(w.lastMove,p.setup.move);assert.equal(back().textContent,'← Back to puzzles');
-  back().click();await settle();back().click();await settle();assert.equal(w.closed,true);assert.equal(w.root.isConnected,false);
+  await w.startRatedPuzzles();assert.equal(w.activity.id,p.id);assert.equal(w.activity.step,0);assert.equal(w.currentFen(),p.fen);assert.equal(w.lastMove,p.setup.move);assert.equal(back().textContent,'Back to puzzle overview');
+  back().click();await settle();w.root.querySelector('[data-focus="review"]').click();await settle();assert.equal(w.closed,true);assert.equal(w.root.isConnected,false);
 });
 
 test('returning from a timed puzzle ends and saves its run before showing the puzzle library',async t=>{
   const {w}=await workspace(t);await w.startChallenge(60);
-  const run=w.run;w.root.querySelector('.learn-header [data-focus="review"]').click();await settle();
+  const run=w.run;w.root.querySelector('[data-focus="puzzle-overview"]').click();await settle();
   assert.equal(w.closed,false);assert.equal(w.run,null);assert.equal(run.clock.runningAt,null);assert.equal(w.activity,null);assert.equal(w.result,null);assert.equal(w.page,'puzzles');
   assert.equal(w.store.value.challenges.length,1);assert.equal(w.root.querySelector('.learn-header [data-focus="review"]').textContent,'← Back to review');
 });

@@ -81,6 +81,35 @@ test('Knockout has no timer and ends immediately on its first wrong move with it
   await w.navigate('puzzles');assert.equal(w.root.querySelector('[data-focus=knockout]').closest('.puzzle-mode').querySelector('.puzzle-mode-record strong').textContent,'2');
 });
 
+for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay solved and missed puzzles without changing saved progress`,async t=>{
+  const {w,dom,data}=await setup(t,{puzzles:[{...line,rating:400},...fixtures.map(p=>({...p,rating:3000}))]});
+  await w.startRatedPuzzles();await w.navigate('puzzles');
+  await w.startPuzzleRun(mode);await solve(w);await wrong(w);
+  if(w.run)await w.finishChallenge('Ended early');
+  const result=w.result,saved=structuredClone(data['learning:v1']);
+  assert.doesNotMatch(w.root.textContent,/Each check is a solved puzzle|Back to puzzles/);
+  assert.equal(w.root.querySelector('[data-focus=puzzle-overview]').textContent,'Back to puzzle overview');
+  const badges=w.root.querySelectorAll('.puzzle-run-history button');
+  assert.equal(badges.length,2);assert.match(badges[0].getAttribute('aria-label'),/Replay puzzle 1: solved/);
+  badges[0].focus();badges[0].click();
+  for(let i=0;i<30;i++)await Promise.resolve();
+  assert.equal(w.activity.id,result.results[0].id);assert.equal(w.activity.step,0);assert.equal(w.activity.rated,false);
+  assert.equal(w.currentFen(),line.fen);assert.equal(w.run,null);assert.equal(w.puzzleThinkingAt,null);
+  assert.equal(w.root.querySelector('.puzzle-rating-region, .puzzle-rating-toggle, #learn-clock'),null);
+  await wrong(w);await w.hintPuzzle();
+  while(!w.attemptRecorded)await w.submitPuzzle(current(w).solution[w.activity.step]);
+  assert.deepEqual(data['learning:v1'],saved);assert.deepEqual(w.store.value,saved);
+  assert.equal(w.root.querySelector('.puzzle-practice-actions button').textContent,'Replay puzzle');
+  await w.preparePuzzle(current(w));assert.equal(w.activity.step,0);assert.equal(w.attemptRecorded,false);
+  w.root.querySelector('[data-focus=replay-back]').click();assert.equal(w.result,result);assert.equal(w.activity,null);
+  await w.replayRunPuzzle(result.results[1].id);await w.skipPuzzle();assert.equal(w.result,result);
+  assert.deepEqual(data['learning:v1'],saved);
+  w.root.querySelector('[data-focus=puzzle-overview]').click();
+  for(let i=0;i<30;i++)await Promise.resolve();
+  assert.equal(w.page,'puzzles');assert.equal(w.result,null);assert.equal(w.runReplay,null);assert.equal(w.closed,false);
+  assert.ok(dom.window.document.querySelector('.learning-workspace'));
+});
+
 test('a partial continuation earns no point and a wrong move later in it ends Knockout',async t=>{
   const {w}=await setup(t,{puzzles:[line,...fixtures.map(p=>({...p,rating:3000}))]});
   // Make the multi-move puzzle the only easy candidate.
