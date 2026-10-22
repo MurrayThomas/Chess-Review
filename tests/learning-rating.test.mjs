@@ -86,6 +86,20 @@ test('wrong answers play the practice cue, keep the position and lower Elo once 
   await reopened.submitPuzzle(mate.solution[0]);assert.equal(reopened.store.value.puzzleRating.played,1);
 });
 
+test('the final solving position paints immediately while its completion is still saving',async t=>{
+  const {w}=await setup(t);await w.startPuzzleSelection([mate]);
+  const original=w.store.storage.set;let release;
+  w.store.storage.set=values=>new Promise(resolve=>{release=async()=>{await original(values);resolve();};});
+  const pending=w.submitPuzzle(mate.solution[0]);
+  const originLabel=w.root.querySelector('[data-square="'+mate.solution[0].slice(0,2)+'"]').getAttribute('aria-label');
+  const paintedFen=w.currentFen();
+  for(let i=0;i<20&&!release;i++)await Promise.resolve();
+  assert.ok(release);await release();await pending;
+  w.store.storage.set=original;
+  assert.match(originLabel,/empty$/);assert.equal(paintedFen,w.solutionFen(mate,1));
+  assert.equal(w.currentFen(),w.solutionFen(mate,1));
+});
+
 test('the review entry wires puzzle failures to the existing practice wrong sound',async t=>{
   const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
   t.mock.method(globalThis,'fetch',async()=>({ok:true,json:async()=>({schema:1,puzzles:[mate]})}));
