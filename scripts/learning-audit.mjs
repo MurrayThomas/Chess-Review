@@ -36,6 +36,13 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     assert.equal(await run("!!document.querySelector('.learn-dropdown.open')"),false);
     assert.equal(await run("!!document.querySelector('.learning-workspace')"),true);
   };
+  const showStatistics=async()=>{
+    await run("Promise.all([import('./analysis.js'),import('./lib/learning/content.js')]).then(async([m,{THEME_NAMES}])=>{const w=m.learningWorkspace;await w.navigate('puzzles');w.store.value=structuredClone(w.store.value);w.store.value.puzzles={};for(const [theme,attempts,clean] of [['fork',12,3],['pin',8,4],['defensiveMove',6,2],['sacrifice',2,1],['mateIn1',15,14],['mateIn2',10,8]]){const p=w.puzzles.find(p=>p.themes.includes(theme)&&p.themes.filter(t=>t in THEME_NAMES).length===1);if(!p)throw Error('Missing statistics fixture: '+theme);w.store.value.puzzles[p.id]={attempts,clean};}document.querySelector('[data-focus=puzzle-statistics]').click();})");
+    assert.equal(await run("document.activeElement.id"),'learn-statistics-title');
+    assert.equal(await run("document.querySelector('.learn-nav [aria-current]').textContent"),'Puzzles');
+    assert.ok(await run("[...document.querySelectorAll('.learn-stat-row, .learn-stat-highlight')].every(n=>n.scrollWidth<=n.clientWidth+1)"),'Statistics content must fit its rows');
+    await run("import('./analysis.js').then(async m=>{const a=m.learningWorkspace.navAnimation;if(a)await a.finished.catch(()=>{});})");
+  };
   await run("import('./analysis.js').then(m=>{m.go(2);m.toggleFlip();})");
   const before=await run("import('./analysis.js').then(m=>({idx:m.S.idx,flipped:m.S.flipped,pgn:m.S.pgn,evals:JSON.stringify(m.S.evals)}))");
   await run("window.auditBoard=document.querySelector('.board');window.auditFrames=[];window.auditSampling=true;function sample(){const r=auditBoard.getBoundingClientRect();auditFrames.push({x:r.x,y:r.y,width:r.width,height:r.height});if(auditSampling)requestAnimationFrame(sample);}requestAnimationFrame(sample);");
@@ -59,6 +66,13 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.equal(await run("document.querySelector('.learn-puzzle-start .primary').textContent"),'Solve a puzzle');
   assert.equal(await run("!!document.querySelector('[aria-label=Phase], [aria-label=Progress], .learn-style-option')"),false);
   await capture('puzzles-desktop');
+  await run("document.querySelector('[data-focus=puzzle-statistics]').click()");
+  assert.ok(await run("!!document.querySelector('.learn-stat-empty')"));
+  await capture('statistics-empty');
+  await showStatistics();await capture('statistics-desktop');
+  await run("document.querySelector('[data-focus=review]').click()");
+  assert.equal(await run("document.activeElement.dataset.focus"),'puzzle-statistics');
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('puzzles'))");
   await run("window.auditNav=document.querySelector('.learn-nav');import('./analysis.js').then(async m=>{await m.learningWorkspace.navigate('concepts');const a=m.learningWorkspace.navAnimation;a.pause();a.currentTime=a.effect.getTiming().duration*.35;})");
   const swoop=await run("(()=>{const n=document.querySelector('.learn-nav-indicator').getBoundingClientRect(),b=document.querySelector('.learn-nav [aria-current]').getBoundingClientRect();return {same:document.querySelector('.learn-nav')===auditNav,width:n.width,targetWidth:b.width,height:n.height,targetHeight:b.height};})()");
   assert.ok(swoop.same&&swoop.width>swoop.targetWidth*1.15&&swoop.height<swoop.targetHeight,'Tab highlight must stretch and soften while swooping');
@@ -297,6 +311,9 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       await run(`import('./analysis.js').then(m=>m.learningWorkspace.navigate('${page}'))`);await capture(page+'-'+width);
       if(page!=='puzzles')await checkDropdown(page+'-dropdown-'+width,page==='concepts'?'category':'family');
     }
+    await showStatistics();await capture('statistics-'+width);
+    await run("document.querySelector('.learn-stat-untried summary').click()");await capture('statistics-untried-'+width);
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('openings'))");
     const geometryBefore=await run(geometry);
     await run("document.querySelector('[aria-label=Settings]').click()");
     assert.deepEqual(await run(geometry),geometryBefore,'Settings moves scene at '+width);

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {JSDOM} from 'jsdom';
 import {Chess} from '../lib/chess.js';
 import {LearningWorkspace} from '../lib/learning/workspace.js';
-import {LESSONS, OPENINGS, CATEGORIES, linePositions} from '../lib/learning/content.js';
+import {LESSONS, OPENINGS, CATEGORIES, THEME_NAMES, linePositions} from '../lib/learning/content.js';
 import {validateExercise} from '../lib/learning/validation.js';
 import {app, loadGame, branch} from './helpers/app.mjs';
 
@@ -30,6 +30,48 @@ test('puzzle entry, loading errors, filtered empty states and focus restoration 
   await w.navigate('openings');w.filters.search='no such opening';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   const old=globalThis.fetch;globalThis.fetch=async()=>{throw Error('Offline library missing');};await w.load();assert.match(w.root.textContent,/Offline library missing/);
   globalThis.fetch=old;await w.load();assert.equal(w.ready,true);await w.close();assert.equal(doc.querySelector('.app').inert,false);
+});
+
+test('puzzle statistics show saved patterns, preserve settings and resume, and return focus without leaving learning',async t=>{
+  const {w,dom,data}=await workspace(t),doc=dom.window.document;
+  const button=()=>w.root.querySelector('[data-focus="puzzle-statistics"]');
+  button().focus();button().click();
+  assert.equal(w.page,'statistics');assert.match(w.root.textContent,/Your patterns start here/);
+  assert.equal(doc.activeElement.id,'learn-statistics-title');
+  assert.equal(w.root.querySelector('.learn-nav [aria-current]').textContent,'Puzzles');
+  w.root.querySelector('.learn-stat-empty button').click();assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
+  const fork=w.puzzles.find(p=>p.themes.includes('fork')&&p.themes.filter(t=>t in THEME_NAMES).length===1),mate=w.puzzles.find(p=>p.themes.includes('mateIn1')&&!p.themes.includes('fork'));
+  await w.persist(progress=>{
+    progress.puzzles[fork.id]={attempts:8,clean:2,assisted:2,recovered:3,mistakes:9};
+    progress.puzzles[mate.id]={attempts:10,clean:9,assisted:0,mistakes:1};
+    progress.puzzleResume={kind:'puzzle',id:fork.id,step:0};
+  });
+  const saved=structuredClone(data['learning:v1']);
+  w.puzzleThemes.add('sacrifice');w.puzzleRange=[2000,2200];
+  button().click();
+  assert.match(w.root.querySelector('.learn-stat-highlights').textContent,/Needs practiceForks25% clean · 2 of 8/);
+  assert.match(w.root.querySelector('.learn-stat-highlights').textContent,/StrongestMate in one90% clean · 9 of 10/);
+  assert.match(w.root.querySelector('[data-theme="fork"]').textContent,/2 clean · 6 need work/);
+  assert.match(w.root.querySelector('.learn-stat-overview').textContent,/18 attempts/);
+  assert.equal(w.root.querySelector('.learn-stat-untried').open,false);
+  doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+  assert.equal(w.closed,false);assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
+  assert.deepEqual([...w.puzzleThemes],['sacrifice']);assert.deepEqual(w.puzzleRange,[2000,2200]);
+  assert.deepEqual(data['learning:v1'],saved);
+  button().click();w.root.querySelector('[data-focus="review"]').click();await settle();
+  assert.equal(w.page,'puzzles');assert.equal(w.closed,false);assert.equal(doc.activeElement,button());
+  button().click();await w.navigate('concepts');assert.ok(w.root.querySelector('.learn-library'));
+});
+
+test('Escape closes Settings before leaving puzzle statistics on the embedded learning board',async t=>{
+  const a=app(t);loadGame(a,'1. e4 e5');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
+  await a.call('openLearning');const w=a.run('learningWorkspace'),doc=a.dom.window.document;
+  w.showPuzzleStatistics(true);await a.call('toggleSettings');
+  doc.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+  assert.equal(doc.querySelector('#settings').hidden,true);assert.equal(w.page,'statistics');
+  doc.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+  assert.equal(w.page,'puzzles');assert.equal(w.closed,false);assert.equal(doc.activeElement.dataset.focus,'puzzle-statistics');
+  await w.close();
 });
 test('square exercise uses selection, alternative answers, lesson completion and durable difficult-exercise tracking',async t=>{
   const {w,data}=await workspace(t);await w.startLesson('outpost');await w.lessonTab('practise');
