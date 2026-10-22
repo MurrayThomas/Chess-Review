@@ -251,7 +251,11 @@
 /* The single learning scene uses the review board and leaves Settings its own gutter. */
 .has-learning-morph3 .topbar { z-index: 70; }
 .learning-workspace.learning-embedded { position: fixed; inset: 60px 0 0; overflow: auto; overscroll-behavior: contain; min-height: 0; }
-.learning-embedded .learn-shell { max-height: var(--learn-panel-height); padding: 0 8px 0 0; scrollbar-gutter: stable; }
+.learning-embedded .learn-shell { display: flex; flex-direction: column; height: var(--learn-panel-height); max-height: var(--learn-panel-height); padding: 0; overflow: hidden; }
+.learning-embedded .learn-nav { flex: none; }
+.learning-embedded .learn-main { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding-right: 8px; }
+.learn-footer { min-height: 0; margin-top: 16px; border-bottom: 0; border-top: 1px solid var(--line); }
+.learning-embedded .learn-footer { flex: none; min-height: 0; margin: 0; padding: 12px 0 0; border: 0; background: transparent; }
 .learn-transition-surface { will-change: transform, opacity; pointer-events: none !important; }
 .learn-swoop-anchor { position: relative; z-index: 40 !important; will-change: transform; }
 .learning-workspace .learn-library { display: flex; flex-direction: column; margin: 12px 0 28px; }
@@ -362,7 +366,8 @@
 .learn-notes summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--ink-2); }
 .learn-opening-notes { margin-top: 24px; }
 .learn-notes + .primary { margin-top: 16px; }
-.learning-embedded.learn-stacked .learn-shell { max-height: none; padding-bottom: 24px; overflow: visible; }
+.learning-embedded.learn-stacked .learn-shell { height: auto; max-height: none; padding-bottom: 24px; overflow: visible; }
+.learning-embedded.learn-stacked .learn-main { flex: none; overflow: visible; padding-right: 0; }
 @media (max-width: 480px) {
   .learning-embedded .learn-header { flex-wrap: wrap; }
   .learning-embedded .learn-brand { font-size: 16px; }

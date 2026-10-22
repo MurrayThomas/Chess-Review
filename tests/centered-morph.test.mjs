@@ -16,7 +16,10 @@ test('learning reserves Settings without moving and bounds the square board at a
     assert.ok(p.panelX>=0&&p.panelX+p.panelWidth<=width);
     if(width>=760)assert.ok(p.panelX+p.panelWidth<=width-334);
     if(p.stacked)assert.ok(p.panelY>p.boardY+p.boardSize);
-    else assert.ok(p.panelX>=p.boardX+p.boardSize+24);
+    else {
+      assert.ok(p.panelX>=p.boardX+p.boardSize+24);
+      assert.equal(p.panelY,p.boardY);assert.equal(p.panelHeight,p.boardSize);
+    }
   }
   const board={x:92,y:142,width:700};const p=fullSizeLearningLayout({width:1920,height:1080,board});
   assert.ok(p.boardSize>board.width);assert.ok(p.boardX<board.x);assert.equal(p.boardY+60,board.y);
