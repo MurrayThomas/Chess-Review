@@ -17,6 +17,15 @@ test('learning tabs lead the side panel, with Back in its footer across librarie
   w.showPuzzleStatistics(true);check();assert.equal(w.root.querySelector('[data-focus=review]').textContent,'← Back to review');
   w.root.querySelector('[data-focus=puzzle-statistics]').click();check();assert.equal(w.page,'puzzles');
   await w.navigate('concepts');check();await w.navigate('openings');check();
+  // On a short viewport the former opening-only 64px reservation shrank the board.
+  Object.defineProperty(a.dom.window,'innerHeight',{value:700,configurable:true});
+  w.reviewBoardRect={x:100,y:100,width:600,height:600};w.positionCentered();
+  const boardSize=w.root.style.getPropertyValue('--learn-board-size');
+  await w.startOpening('italian');check();
+  assert.equal(w.root.style.getPropertyValue('--learn-board-size'),boardSize);
+  assert.ok(w.shell.querySelector('.learn-opening-controls'));
+  assert.equal(w.boardInfo.querySelector('.learn-opening-controls'),null);
+  await w.navigate('openings');
   const main=w.shell.querySelector('.learn-main');main.scrollTop=100;w.render();
   assert.equal(w.shell.querySelector('.learn-main').scrollTop,100);
 });

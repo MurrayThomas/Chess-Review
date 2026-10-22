@@ -100,12 +100,16 @@ test('the difficult-exercise library resumes the actual exercise that needs anot
   await w.navigate('concepts');w.filters.status='Struggled';await w.startLesson('outpost');
   assert.equal(w.activity.tab,'practise');assert.equal(w.activity.exercise,1);
 });
-test('openings show only moves and review-style controls, with keyboard navigation and saved positions',async t=>{
+test('openings pair moves in a scorecard with two side controls, keyboard navigation and saved positions',async t=>{
   const {w,dom,data}=await workspace(t);await w.startOpening('italian',{practice:true,color:'b'});
   const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
   assert.equal(w.activity.practice,undefined);assert.equal(w.activity.ply,0);assert.equal(w.flipped,true);
   assert.equal(w.root.querySelector('.learn-copy, .learn-opening-notes, .learn-move-input, [data-focus="practice-color"]'),null);
-  assert.equal(w.root.querySelectorAll('.learn-opening-controls button').length,5);
+  assert.equal(w.root.querySelectorAll('.learn-opening-controls button').length,2);
+  assert.ok(w.root.querySelector('.learn-opening-toolbar .learn-opening-controls'));
+  assert.equal(w.root.querySelector('.learn-board-column .learn-opening-controls'),null);
+  assert.deepEqual([...w.root.querySelectorAll('.learn-opening-moves thead th')].map(n=>n.textContent),['#','White','Black']);
+  assert.deepEqual([...w.root.querySelectorAll('.learn-opening-moves tbody tr:first-child button')].map(n=>n.textContent),['e4','e5']);
   w.root.querySelector('[data-square="e2"]').click();w.root.querySelector('[data-square="e4"]').click();
   assert.equal(w.activity.ply,0);assert.equal(w.selected,null);
   assert.equal(w.root.querySelector('.learn-opening-controls [aria-label="Previous move"]').disabled,true);
@@ -122,19 +126,32 @@ test('openings show only moves and review-style controls, with keyboard navigati
   await w.navigate('openings');const search=w.root.querySelector('input');search.focus();key('ArrowRight');assert.equal(w.activity,null);
 });
 
-test('opening playback pauses on manual navigation and stops at the end, on variation changes and on exit',async t=>{
-  t.mock.timers.enable({apis:['setInterval']});
-  const {w}=await workspace(t);await w.startOpening('italian');
-  w.root.querySelector('[aria-label="Play"]').click();assert.ok(w.openingTimer);t.mock.timers.tick(1000);assert.equal(w.activity.ply,1);
-  w.root.querySelector('[aria-label="Pause"]').click();t.mock.timers.tick(2000);assert.equal(w.activity.ply,1);
-  w.toggleOpeningPlayback();w.stepOpening(2);assert.equal(w.openingTimer,null);
-  w.stepOpening(w.openingState.moves.length-1);w.toggleOpeningPlayback();t.mock.timers.tick(1000);
-  assert.equal(w.activity.ply,w.openingState.moves.length);assert.equal(w.openingTimer,null);
-  w.toggleOpeningPlayback();assert.equal(w.activity.ply,0);assert.ok(w.openingTimer);
-  w.root.querySelector('[data-focus="opening-variation"]').click();w.dropdown.field.querySelectorAll('[role="option"]')[1].click();
-  assert.equal(w.activity.line,1);assert.equal(w.activity.ply,0);assert.equal(w.openingTimer,null);
-  w.toggleOpeningPlayback();await w.navigate('concepts');assert.equal(w.openingTimer,null);t.mock.timers.tick(2000);assert.equal(w.activity,null);
-  await w.startOpening('italian');w.toggleOpeningPlayback();await w.close();assert.equal(w.openingTimer,null);
+test('opening highlights follow backward moves in either orientation and reset on starting positions and variation changes',async t=>{
+  const {w,dom}=await workspace(t);
+  const highlighted=()=>[...w.root.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort();
+  for(const color of ['w','b']) {
+    await w.startOpening('italian',{color});
+    const line=w.openingState;
+    for(let ply=1;ply<=line.moves.length;ply++) {
+      w.stepOpening(ply);
+      assert.deepEqual(highlighted(),[line.moves[ply-1].slice(0,2),line.moves[ply-1].slice(2,4)].sort());
+    }
+    for(let ply=line.moves.length-1;ply>=0;ply--) {
+      w.root.querySelector('[aria-label="Previous move"]').click();
+      assert.equal(w.currentFen(),line.positions[ply]);
+      assert.deepEqual(highlighted(),ply?[line.moves[ply].slice(0,2),line.moves[ply].slice(2,4)].sort():[]);
+      assert.equal(w.root.querySelectorAll('[aria-current="step"]').length,ply?1:0);
+    }
+    w.stepOpening(3);w.root.querySelector('[data-square="a8"]').focus();
+    dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true,cancelable:true}));
+    assert.equal(dom.window.document.activeElement.dataset.focus,'opening-prev');
+    assert.deepEqual(highlighted(),['f3','g1']);
+    w.stepOpening(0);assert.deepEqual(highlighted(),[]);
+    w.stepOpening(4);
+    w.root.querySelector('[data-focus="opening-variation"]').click();w.dropdown.field.querySelectorAll('[role="option"]')[1].click();
+    assert.equal(w.activity.line,1);assert.equal(w.activity.ply,0);assert.deepEqual(highlighted(),[]);
+    assert.equal(w.root.querySelector('.learn-opening-progress').textContent,'Starting position');
+  }
 });
 
 test('Concept Learn opens a focused in-progress dialog without starting a lesson',async t=>{

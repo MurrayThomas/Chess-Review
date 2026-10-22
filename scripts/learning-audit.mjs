@@ -384,9 +384,10 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await call('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight'},review.sessionId);
   await call('Input.dispatchKeyEvent',{type:'keyUp',key:'ArrowRight',code:'ArrowRight'},review.sessionId);
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply===2)",'Opening keyboard navigation');
-  await run("document.querySelector('.learn-opening-controls [aria-label=Play]').click()");
-  await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.ply>=3)",'Opening playback');
-  await run("document.querySelector('.learn-opening-controls [aria-label=Pause]').click()");
+  assert.equal(await run("document.querySelectorAll('.learn-opening-controls button').length"),2);
+  await run("document.querySelector('.learn-opening-controls [aria-label=\"Previous move\"]').click()");
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.activity.ply)"),1);
+  assert.deepEqual(await run("[...document.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort()"),['e5','e7']);
   for(const [width,height] of [[1366,768],[960,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);
     for(const page of ['puzzles','concepts','openings']){
