@@ -16,7 +16,7 @@ if (process.argv.includes('--working-tree')) {
   // Keep the workspace and its progress/input dependencies from the same revision.
   await fs.cp(path.join(root,'lib'),path.join(source,'lib'),{recursive:true});
 }
-await fs.appendFile(path.join(source,'analysis.js'),'\nexport {S, learningWorkspace, openLearning, go, toggleFlip, applyLayoutMode};\n');
+await fs.appendFile(path.join(source,'analysis.js'),'\nexport {S, learningWorkspace, openLearning, go, toggleFlip, applyLayoutMode, applyUserMove, paintBoard, exitAnalysis};\n');
 await fs.writeFile(path.join(source,'audit.html'),'<!doctype html><script type="module" src="audit.js"></script>');
 await fs.writeFile(path.join(source,'audit.js'),"import {browserAPI} from './browser-compat.js'; window.api=browserAPI;");
 const profile=await fs.mkdtemp(path.join(artifacts,'learning-profile-'));

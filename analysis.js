@@ -1575,20 +1575,25 @@ async function openLearning() {
   }
   const playing = !!S.autoTimer;
   if (playing) { clearInterval(S.autoTimer); S.autoTimer = null; renderControls(); }
-  const snapshot = {idx:S.idx, flipped:S.flipped, variationIdx:S.variation?.idx, selectedSq:S.selectedSq,
-    lineWalking:S.lineWalking, bestWalking:S.bestWalking};
+  const sourceFen=activePos().fen, wasAnalysis=S.analysisMode;
+  const snapshot = {idx:S.idx, flipped:S.flipped, selectedSq:wasAnalysis?null:S.selectedSq,
+    lineWalking:!wasAnalysis&&S.lineWalking, bestWalking:!wasAnalysis&&S.bestWalking};
   stopLineWalk();
+  if(wasAnalysis)exitAnalysis(undefined,{render:false});
   UI.settings.hidden = true;
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
     settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound, onPuzzleSuccess:playPuzzleSuccess,
-    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:activePos().fen, startDrag,
+    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:sourceFen, startDrag,
+      restoreBoard:()=>{
+        paintBoard({restoring:true});
+        if(wasAnalysis){renderEvalBar();renderPlayers();renderControls();renderReview();renderEngineCurrent();}
+      },
       drawArrow:(from,to,flipped)=>learningArrow(from,to,flipped,USER_ARROW_COLOR),
       drawBestArrow:(from,to,flipped)=>learningArrow(from,to,flipped,/^#[0-9a-f]{6}$/i.test(S.settings.bestArrowColor || "")?S.settings.bestArrowColor:ARROW_COLOR)},
     onClose:()=>{
       learningWorkspace = null;
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
-      if(S.variation&&snapshot.variationIdx!=null)S.variation.idx=snapshot.variationIdx;
       if(!S.practice){paintBoard();}
       renderControls();
       if(deferredPracticeAdvance){
@@ -2034,8 +2039,8 @@ function buildBoard() {
   clearBoardArt(board);
   paintBoard();
 }
-function paintBoard() {
-  if (learningWorkspace?.embedded) return;
+function paintBoard({restoring=false}={}) {
+  if (learningWorkspace?.embedded&&!restoring) return;
   const pos = activePos();
   const boardEl = UI.boardWrap.querySelector(".board");
   if (boardEl) boardEl.classList.toggle("analysis", S.analysisMode);
@@ -2883,10 +2888,11 @@ function variationTerminal(v, idx) {
 }
 // Exit analysis mode. With mainIdx: jump to that mainline position; otherwise stay put.
 // (Analysis mode is indicated/closed via the Exit button in the controls bar.)
-function exitAnalysis(mainIdx) {
+function exitAnalysis(mainIdx,{render=true}={}) {
   stopLineWalk();
   if (!S.analysisMode) { if (mainIdx != null) go(mainIdx); return; }
   S.analysisMode = false; S.variation = null; S.selectedSq = null; S.liveToken++;
+  if(!render)return;
   if (mainIdx != null) { go(mainIdx); return; }
   paintBoard(); renderEvalBar(); renderPlayers(); renderControls(); renderReview(); renderEngineCurrent();
 }

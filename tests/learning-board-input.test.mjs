@@ -33,6 +33,30 @@ test('learning immediately lifts pieces, shares review drag tracking, and restor
   down('g1');await w.close();assert.equal(doc.querySelector('.drag-piece'),null);
 });
 
+test('the learning library board supports independent moves, arrows, marks and piece pickup',async t=>{
+  const {a,w,doc,board,down,up,event}=await setup(t);await w.navigate('puzzles');
+  const reviewFen=a.call('activePos').fen,reviewPositions=a.state.positions,progress=JSON.stringify(w.store.value);
+  assert.equal(w.currentFen(),new Chess().fen());
+  down('g1',2);up('f3',2);assert.ok(board.querySelector('.user-arrows'));
+  down('e4',2);up('e4',2);assert.ok(board.querySelector('[data-square=e4].marked'));
+  down('e2');assert.ok(doc.querySelector('.drag-piece'));assert.ok(board.querySelector('[data-square=e4].legal'));up('e2');down('e4');up('e4');
+  assert.equal(new Chess(w.currentFen()).get('e4').type,'p');assert.equal(board.querySelector('.user-arrows'),null);
+  down('e7');a.dom.window.dispatchEvent(event('pointermove','e5'));up('e5');
+  const scratchFen=w.currentFen();assert.equal(new Chess(scratchFen).get('e5').color,'b');
+  await w.navigate('concepts');await w.navigate('openings');assert.equal(w.currentFen(),scratchFen);
+  a.call('toggleFlip');assert.equal(w.currentFen(),scratchFen);assert.equal(a.state.analysisMode,false);assert.equal(board.classList.contains('analysis'),false);
+  assert.equal(a.call('activePos').fen,reviewFen);assert.equal(a.state.positions,reviewPositions);assert.equal(JSON.stringify(w.store.value),progress);
+  await w.close();assert.equal(a.call('activePos').fen,reviewFen);assert.equal(doc.querySelector('.board'),board);
+});
+
+test('learning free play can promote through the same graphical picker',async t=>{
+  const {w,doc,down,up}=await setup(t);await w.navigate('puzzles');
+  w.homePosition.load('7k/P7/8/8/8/8/8/7K w - - 0 1');w.render();
+  down('a7');up('a7');down('a8');up('a8');
+  assert.deepEqual([...doc.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['wQ','wR','wB','wN']);
+  doc.querySelector('[aria-label="Promote to knight"]').click();assert.equal(w.homePosition.get('a8').type,'n');assert.equal(w.activity,null);
+});
+
 test('learning supports click moves, toggled right-click markup, and clears annotations on a left click',async t=>{
   const {w,doc,board,down,up}=await setup(t);
   down('g1',2);up('g1',2);assert.ok(board.querySelector('[data-square=g1]').classList.contains('marked'));

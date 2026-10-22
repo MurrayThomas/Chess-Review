@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {JSDOM} from 'jsdom';
+import {Chess} from '../lib/chess.js';
 import {LearningWorkspace} from '../lib/learning/workspace.js';
 import {LESSONS, OPENINGS, linePositions} from '../lib/learning/content.js';
 import {validateExercise} from '../lib/learning/validation.js';
@@ -90,23 +91,40 @@ test('all timed modes end at expiry before accepting another answer; partially h
     assert.equal(w.run,null);assert.equal(w.result.solved,0);assert.equal(w.result.missed.length,1);assert.equal(w.store.value.bests[duration],0);
   }
 });
-test('review game, move, variation, board orientation and keyboard state survive learning',async t=>{
+test('review game, move, board orientation and keyboard state survive learning on its own fresh board',async t=>{
   const a=app(t);loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
   a.call('go',2);a.state.flipped=true;a.call('buildBoard');const before={idx:a.state.idx,flipped:a.state.flipped,pgn:a.state.pgn,positions:a.state.positions};
   await a.call('openLearning');const w=a.run('learningWorkspace');assert.ok(w.ready);
+  assert.equal(w.currentFen(),new Chess().fen());assert.equal(w.activity,null);
   a.dom.window.document.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
   assert.equal(a.state.idx,before.idx);await w.startOpening('italian');await w.submitOpening('e2e4');await w.close();
   assert.equal(a.state.idx,before.idx);assert.equal(a.state.flipped,before.flipped);assert.equal(a.state.pgn,before.pgn);assert.equal(a.state.positions,before.positions);
   a.dom.window.document.dispatchEvent(new a.dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));assert.equal(a.state.idx,before.idx+1);
 });
-test('a playing review variation pauses and resumes without losing its branch or selected move',async t=>{
+
+test('concept promotions use piece images for board moves and unspecified typed promotions',async t=>{
+  const {w,dom}=await workspace(t);await w.startLesson('promotion');await w.lessonTab('practise');
+  w.root.querySelector('[data-square=e7]').click();w.root.querySelector('[data-square=e8]').click();
+  assert.deepEqual([...w.root.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['wq','wr','wb','wn']);
+  w.root.querySelector('[aria-label="Promote to bishop"]').click();await settle();assert.equal(w.feedback.status,'correct');
+  await w.lessonTab('practise');const input=w.root.querySelector('[aria-label="Enter a chess move"]');input.value='e7e8';
+  input.closest('form').dispatchEvent(new dom.window.Event('submit',{bubbles:true,cancelable:true}));
+  assert.equal(w.root.querySelector('[aria-label="Promotion piece"]'),null);assert.equal(w.root.querySelectorAll('.promotion-options img').length,4);
+  w.root.querySelector('[aria-label="Promote to knight"]').click();await settle();assert.equal(w.feedback.status,'correct');
+});
+test('entering learning leaves a playing analysis variation and glides from it into a fresh untinted board',async t=>{
   const a=app(t);loadGame(a,'1. e4 e5 2. Nf3 Nc6');a.call('computeDerived');a.call('buildUI');a.call('renderAll');
-  a.replace('requestLiveEval',async()=>{});const v=branch(a,0,1),positions=v.positions;
+  a.replace('requestLiveEval',async()=>{});const v=branch(a,0,1),source=v.positions[v.idx].fen,routes=[];
+  t.mock.method(LearningWorkspace.prototype,'arrangePuzzlePieces',async function(from,to){routes.push({from,to});});
   a.call('paintBoard');a.call('startLineWalk');assert.equal(a.state.lineWalking,true);
   await a.call('openLearning');assert.equal(a.state.lineWalking,false);const w=a.run('learningWorkspace');
+  assert.equal(a.state.analysisMode,false);assert.equal(a.state.variation,null);assert.equal(w.currentFen(),new Chess().fen());
+  assert.equal(a.dom.window.document.querySelector('.board').classList.contains('analysis'),false);
+  assert.deepEqual(routes,[{from:{fen:source,flipped:false},to:{fen:new Chess().fen(),flipped:false}}]);
   await w.startLesson('chain');w.flipped=!w.flipped;await w.close();
-  assert.equal(a.state.analysisMode,true);assert.equal(a.state.variation,v);assert.equal(v.idx,1);assert.equal(v.positions,positions);
-  assert.equal(a.state.lineWalking,true);a.call('stopLineWalk');
+  assert.equal(a.state.analysisMode,false);assert.equal(a.state.variation,null);assert.equal(a.state.lineWalking,false);
+  assert.equal(a.call('activePos').fen,a.state.positions[a.state.idx].fen);
+  assert.equal(a.dom.window.document.querySelector('.board').classList.contains('analysis'),false);
 });
 
 test('in-place learning preserves the actual board and topbar across all destinations and restores review input',async t=>{
@@ -116,9 +134,9 @@ test('in-place learning preserves the actual board and topbar across all destina
   await a.call('openLearning');const w=a.run('learningWorkspace');
   assert.ok(w.embedded);assert.ok(doc.querySelector('.learning-embedded'));assert.notEqual(doc.querySelector('.app').inert,true);
   assert.equal(doc.querySelector('.topbar'),topbar);assert.equal(doc.querySelector('.board'),board);
-  assert.deepEqual([...board.children],squares);assert.equal(board.inert,true);
+  assert.equal(board.querySelectorAll('[data-square]').length,64);assert.equal(board.inert,false);assert.equal(w.currentFen(),new Chess().fen());
   a.call('toggleFlip');assert.ok(board.querySelector('.learn-square'));assert.equal(w.flipped,!a.state.flipped);
-  a.call('toggleFlip');assert.deepEqual([...board.children],squares);
+  a.call('toggleFlip');assert.equal(w.flipped,a.state.flipped);assert.equal(w.currentFen(),new Chess().fen());
   assert.ok([...doc.querySelectorAll('.mod')].every(node=>node.inert));
   await w.startLesson('outpost');await w.lessonTab('practise');
   assert.equal(doc.querySelector('.board'),board);assert.equal(doc.querySelectorAll('.learn-board').length,1);
@@ -135,7 +153,7 @@ test('in-place learning preserves the actual board and topbar across all destina
   a.call('buildBoard');a.call('paintBoard');assert.equal(doc.querySelector('.board'),board);assert.ok(board.querySelector('.learn-square'));
   a.state.bests[0]={bestmove:'e2e4'};a.state.userArrows=[{from:'e2',to:'e4'}];a.call('refreshArrows');
   assert.equal(board.querySelector('svg'),null,'Review arrows must never appear over a learning position');
-  w.shell.scrollTop=300;await w.navigate('concepts');assert.equal(w.shell.scrollTop,0);assert.deepEqual([...board.children],squares);
+  w.shell.scrollTop=300;await w.navigate('concepts');assert.equal(w.shell.scrollTop,0);assert.equal(w.currentFen(),new Chess().fen());assert.equal(board.querySelectorAll('[data-square]').length,64);
   await w.close();assert.equal(wrap.parentNode,parent);assert.equal(doc.querySelector('.board'),board);
   assert.deepEqual([...board.querySelectorAll('.sq')],squares.filter(node=>node.classList.contains('sq')));assert.equal(board.inert,false);
   assert.ok(board.querySelector('svg.user-arrows'));
