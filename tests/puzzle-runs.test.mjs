@@ -126,3 +126,68 @@ test('failed record writes recover once and leaving ends the run without creatin
   assert.equal(w.run,null);assert.equal(w.result,null);assert.equal(data['learning:v1'].challenges.length,1);
   assert.equal(data['learning:v1'].challenges[0].results.length,1);
 });
+
+for(const mode of ['timeAttack','knockout'])test(`${mode} warns on entry with selected types and never saves a filtered personal best`,async t=>{
+  const puzzles=fixtures.map((p,i)=>({...p,themes:i%3===0?['mateIn1']:i%3===1?['fork']:['pin']}));
+  const {w,dom,data}=await setup(t,{puzzles});
+  await w.persist(p=>{p.bests[mode]=1;});
+  w.root.querySelector('[data-focus=theme-mateIn1]').click();
+  w.root.querySelector('[data-focus=theme-fork]').click();
+  assert.equal(w.root.querySelector('.puzzle-run-notice-overlay'),null);
+  const trigger=w.root.querySelector(`[data-focus=${mode}]`);trigger.focus();
+  const starting=w.startPuzzleRun(mode);
+  const dialog=w.root.querySelector('.puzzle-run-notice-card');
+  assert.equal(dialog.getAttribute('role'),'dialog');assert.match(dialog.textContent,/Personal best disabled/);
+  assert.match(dialog.textContent,/All types/);assert.equal(w.run,null);
+  assert.equal(dom.window.document.activeElement.dataset.focus,'run-notice-continue');
+  dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Tab',bubbles:true,cancelable:true}));
+  assert.equal(dom.window.document.activeElement.dataset.focus,'run-notice-cancel');
+  dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Tab',shiftKey:true,bubbles:true,cancelable:true}));
+  assert.equal(dom.window.document.activeElement.dataset.focus,'run-notice-continue');
+  await w.startPuzzleRun(mode); // Repeated entry cannot bypass the notice.
+  assert.equal(w.root.querySelectorAll('.puzzle-run-notice-card').length,1);
+  dialog.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  assert.equal(w.run.bestEligible,false);assert.equal(w.run.clock?.started??true,true);
+  assert.ok(w.run.puzzles.every(p=>!p.themes.includes('pin')));
+  // The pool and eligibility stay fixed throughout the run.
+  w.puzzleThemes.clear();
+  await solve(w);await solve(w);await solve(w);
+  assert.ok(w.run.results.every(r=>!puzzles.find(p=>p.id===r.id).themes.includes('pin')));
+  assert.equal(data['learning:v1'].bests[mode],1);
+  assert.ok(!w.root.querySelector('.puzzle-run-stats').textContent.includes('Record'));
+  await w.finishChallenge('Ended early');
+  assert.equal(w.result.solved,3);assert.equal(w.result.personalBest,false);assert.equal(w.result.best,1);
+  assert.equal(data['learning:v1'].bests[mode],1);assert.equal(data['learning:v1'].challenges.at(-1).bestEligible,false);
+  assert.equal(w.root.querySelector('.learn-results h2').textContent,'Run complete');
+  assert.ok(!w.root.querySelector('.learn-results').textContent.includes('Personal best'));
+  await w.navigate('puzzles');
+  await w.startPuzzleRun(mode);assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+  assert.equal(w.run.bestEligible,true);await solve(w);await solve(w);await w.finishChallenge('Ended early');
+  assert.equal(data['learning:v1'].bests[mode],2);assert.equal(w.result.personalBest,true);
+});
+
+test('filtered run notices cancel with button, Escape or backdrop and restore focus without starting a timer',async t=>{
+  const {w,dom,data}=await setup(t);w.puzzleThemes.add('mateIn1');w.render();
+  for(const cancel of ['button','escape','backdrop']){
+    const trigger=w.root.querySelector('[data-focus=timeAttack]');trigger.focus();
+    const starting=w.startPuzzleRun('timeAttack');
+    assert.equal(w.root.querySelector('.learn-header').inert,true);
+    if(cancel==='button')w.root.querySelector('[data-focus=run-notice-cancel]').click();
+    else if(cancel==='escape')dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true}));
+    else w.root.querySelector('.puzzle-run-notice-overlay').click();
+    await starting;
+    assert.equal(w.run,null);assert.equal(w.puzzleRunNotice,null);assert.equal(w.closed,false);
+    assert.equal(w.root.querySelector('.learn-header').inert,false);assert.equal(dom.window.document.activeElement,trigger);
+  }
+  assert.equal(data['learning:v1'],undefined);
+  const starting=w.startPuzzleRun('timeAttack');await w.close();await starting;
+  assert.equal(w.run,null);assert.equal(w.puzzleRunNotice,null);
+});
+
+test('a filtered run without an existing best never creates a record, including after reload',async t=>{
+  const {w,data}=await setup(t);w.puzzleThemes.add('mateIn1');
+  const starting=w.startPuzzleRun('knockout');w.root.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  await solve(w);await w.finishChallenge('Ended early');await w.store.load();
+  assert.equal(w.result.personalBest,false);assert.equal(w.store.value.bests.knockout,undefined);
+  assert.equal(data['learning:v1'].bests.knockout,undefined);
+});
