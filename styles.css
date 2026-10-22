@@ -531,6 +531,27 @@ button { font-family: inherit; cursor: pointer; }
 .brand-name span { color: var(--ink-3); font-weight: 600; }
 
 .topbar-meta { display: flex; align-items: center; gap: 18px; margin-left: 6px; }
+.has-learning .topbar-meta { pointer-events: none; animation: meta-swoop-up .48s cubic-bezier(.55,-.25,.7,.5) both; }
+.topbar-meta.meta-return { animation: meta-drop-in 1.05s both; transform-origin: 50% 0; }
+@keyframes meta-swoop-up {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  25% { transform: translateY(6px) rotate(-2deg); opacity: 1; }
+  100% { transform: translateY(-160px) rotate(9deg); opacity: 0; visibility: hidden; }
+}
+@keyframes meta-drop-in {
+  0% { transform: translateY(-160px) rotate(-9deg); opacity: 0; animation-timing-function: cubic-bezier(.55,.05,1,.6); }
+  48% { transform: translateY(5px) rotate(3deg) scaleY(.9); opacity: 1; animation-timing-function: ease-out; }
+  68% { transform: translateY(-14px) rotate(-2deg) scaleY(1.04); animation-timing-function: ease-in; }
+  82% { transform: translateY(2px) rotate(1deg); animation-timing-function: ease-out; }
+  92% { transform: translateY(-4px) rotate(-.5deg); }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+.topbar-meta[data-motion="off"] { animation: none; }
+.has-learning .topbar-meta[data-motion="off"] { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .has-learning .topbar-meta, .topbar-meta.meta-return { animation: none; }
+  .has-learning .topbar-meta { visibility: hidden; }
+}
 .meta-chip { display: flex; align-items: center; gap: 7px; color: var(--ink-2); font-size: 12.5px; }
 .meta-chip b { color: var(--ink); font-weight: 600; }
 .meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); }

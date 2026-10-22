@@ -50,6 +50,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await waitFor(review,"!!document.querySelector('.puzzle-arranging')",'Review pieces gliding into a fresh board');
   await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace?.ready&&!m.learningWorkspace.transitioning)",'Learning expansion');
   await run('auditSampling=false');
+  assert.equal(await run("getComputedStyle(document.querySelector('.topbar-meta')).visibility"),'hidden','Review metadata must disappear while learning is open');
+  assert.equal(await run("document.querySelector('.topbar-meta').getAttribute('aria-hidden')"),'true');
   const frames=await run('auditFrames');
   assert.ok(frames.length>10,'Board expansion must be observable across frames');
   for(const frame of frames)assert.ok(Math.abs(frame.width-frame.height)<1,'Animation distorts board');
@@ -153,6 +155,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await run("(()=>{const low=document.querySelector('[aria-label=Minimum]'),high=document.querySelector('[aria-label=Maximum]');low.value=1000;low.dispatchEvent(new Event('input',{bubbles:true}));high.value=2400;high.dispatchEvent(new Event('input',{bubbles:true}));window.auditSlider=low;window.auditShell=document.querySelector('.learn-shell');auditShell.scrollTop=120;window.sliderFrames=[];window.sampleSliders=true;function sample(){if(auditSlider.isConnected){sliderFrames.push({same:document.querySelector('[aria-label=Minimum]')===auditSlider,count:document.querySelectorAll('[aria-label=Minimum]').length,appearance:getComputedStyle(auditSlider).appearance,context:!!auditSlider.closest('.learning-workspace'),value:auditSlider.value,scroll:auditShell.scrollTop});}if(sampleSliders)requestAnimationFrame(sample);}requestAnimationFrame(sample);})()");
   await run("import('./analysis.js').then(m=>{void m.learningWorkspace.close();})");
   await sleep(60);
+  const drop=await run("(()=>{const n=document.querySelector('.topbar-meta'),a=n.getAnimations().find(a=>a.animationName==='meta-drop-in');if(!a)return null;a.pause();a.currentTime=0;const start=n.getBoundingClientRect().bottom;a.currentTime=504;const landing=n.getBoundingClientRect().top;a.currentTime=714;const bounce=n.getBoundingClientRect().top;a.currentTime=1050;const end=n.getBoundingClientRect().top;return {start,landing,bounce,end,hidden:n.hasAttribute('aria-hidden')};})()");
+  assert.ok(drop&&drop.start<0&&drop.landing>drop.end&&drop.bounce<drop.end&&!drop.hidden,'Review metadata must fall from above the viewport and bounce on landing');
   assert.equal(await run("document.getAnimations().some(a=>a.effect?.target===auditShell)"),true,'Return should animate the live shell');
   const returning=await call('Page.captureScreenshot',{format:'png'},review.sessionId);
   await fs.writeFile(path.join(out,'return-live-controls.png'),Buffer.from(returning.data,'base64'));
@@ -170,6 +174,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   for(const frame of reverseFrames){assert.ok(frame.width<=reverseFrames[0].width+1,'A quick reversal must not jump to the fully expanded size');assert.ok(Math.abs(frame.right-reverseFrames[0].right)<1,'A quick reversal must keep the original right edge');}
   assert.equal(await run("!!document.querySelector('.learn-transition-surface, .learn-swoop-anchor')"),false);
   await run("import('./analysis.js').then(m=>m.openLearning())");
+  assert.equal(await run("getComputedStyle(document.querySelector('.topbar-meta')).visibility"),'hidden','Reopening learning must hide metadata again');
   const closed=await run(geometry);
   await run("document.querySelector('[aria-label=Settings]').click()");await sleep(200);
   assert.deepEqual(await run(geometry),closed,'Settings moved the learning scene');
