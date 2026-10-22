@@ -266,11 +266,8 @@
 .learning-workspace .learn-library-row p { font-size: 13px; margin: 0; line-height: 1.5; }
 .learning-workspace .learn-library-row .learn-eyebrow { color: var(--ink-3); font-size: 11px; font-weight: 500; letter-spacing: .4px; }
 .learn-library-row > .learn-button { flex: none; background: transparent; border-color: transparent; padding: 8px 4px; color: var(--accent); }
-.learning-workspace .learn-category { margin: 36px 0; }
-.learning-workspace .learn-category > h3 { margin: 0; padding-left: 12px; border-left: 3px solid var(--accent); color: var(--ink); font-size: 22px; font-weight: 700; line-height: 1.3; }
-.learning-workspace .learn-category .learn-library { margin: 16px 0 0; }
-.learning-workspace .learn-category .learn-library-row { padding: 16px 0; }
-.learning-workspace .learn-category .learn-library-row h3 { margin: 0; font-size: 18px; }
+.learning-workspace .learn-category { margin: 28px 0; }
+.learning-workspace .learn-category > h3 { margin: 0; color: var(--ink-2); font-size: 18px; font-weight: 600; }
 .learn-puzzle-start { padding: 8px 0 28px; border-bottom: 1px solid var(--line); }
 .learning-workspace .learn-puzzle-start h2 { font-size: 32px; margin: 0; }
 .learning-workspace .learn-puzzle-start > .primary { min-width: 200px; padding: 14px 24px; }
