@@ -16,7 +16,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     const data=await run(geometry);
     const bounds=await run("({width:innerWidth,scroll:document.querySelector('.learning-workspace').scrollWidth,stacked:document.querySelector('.learning-workspace').classList.contains('learn-stacked')})");
     assert.ok(bounds.scroll<=bounds.width+1,label+': horizontal overflow');
-    assert.ok(data.board.x>=0&&data.board.right<=bounds.width+1,label+': board outside viewport');
+    assert.ok(data.board.x>=0&&data.board.right<=bounds.width+1,label+': board outside viewport '+JSON.stringify({board:data.board,viewport:bounds.width}));
     assert.ok(Math.abs(data.board.width-data.board.height)<1,label+': board must stay square');
     assert.ok(data.panel.x>=0&&data.panel.right<=bounds.width+1,label+': panel outside viewport');
     assert.equal(await run("[...document.querySelectorAll('.learn-nav button')].every(n=>parseFloat(getComputedStyle(n).fontSize)>=14)"),true,label+': learning tabs should use larger text');
@@ -63,9 +63,31 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   assert.deepEqual(await run("[...document.querySelectorAll('.learn-nav button')].map(n=>n.textContent)"),['Puzzles','Concepts','Openings']);
   assert.equal(await run("document.querySelector('.board')===auditBoard"),true);
   assert.equal(await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(([m,{Chess}])=>m.learningWorkspace.currentFen()===new Chess().fen()&&!m.S.analysisMode&&!document.querySelector('.board').classList.contains('analysis')&&!document.querySelector('.board').inert)"),true,'Learning must start on a fresh, interactive board without analysis tint');
-  assert.equal(await run("document.querySelector('.learn-puzzle-start .primary').textContent"),'Solve a puzzle');
+  assert.deepEqual(await run("[...document.querySelectorAll('.puzzle-mode-name')].map(n=>n.textContent)"),['Solve a puzzle','Time attack','Knockout']);
   assert.equal(await run("!!document.querySelector('[aria-label=Phase], [aria-label=Progress], .learn-style-option')"),false);
   await capture('puzzles-desktop');
+  const checkModeCards=async()=>{
+    const cards=await run("[...document.querySelectorAll('.puzzle-mode-button')].map(n=>{const r=n.getBoundingClientRect();return {y:r.y,width:r.width,height:r.height,fits:n.scrollWidth<=n.clientWidth+1};})");
+    assert.equal(cards.length,3);assert.ok(cards.every(c=>c.fits));
+    assert.ok(cards.every(c=>Math.abs(c.y-cards[0].y)<1&&Math.abs(c.width-cards[0].width)<1&&Math.abs(c.height-cards[0].height)<1),'Mode cards must align and have equal size');
+  };
+  await checkModeCards();
+  for(const mode of ['timeAttack','knockout']){
+    await run(`import('./analysis.js').then(m=>m.learningWorkspace.startPuzzleRun('${mode}'))`);
+    assert.equal(await run("document.querySelector('#learn-clock')?.textContent||null"),mode==='timeAttack'?'3:00':null);
+    await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace;for(let n=0;n<2;n++){const id=w.activity.id;while(w.activity?.id===id){const p=w.puzzles.find(p=>p.id===id);await w.submitPuzzle(p.solution[w.activity.step]);}}})");
+    assert.equal(await run("document.querySelector('[data-run-score]').textContent"),'2');
+    if(mode==='timeAttack'){
+      await run("Promise.all([import('./analysis.js'),import('./lib/chess.js')]).then(async([m,{Chess}])=>{const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id),c=new Chess(w.currentFen());await w.submitPuzzle(c.moves({verbose:true}).find(x=>x.lan!==p.solution[w.activity.step]&&!new Chess(x.after).isCheckmate()).lan);})");
+      assert.equal(await run("document.querySelectorAll('.puzzle-run-history li.missed').length"),1);
+    }
+    await capture(mode+'-desktop');
+    await call('Emulation.setDeviceMetricsOverride',{width:320,height:640,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(600);await capture(mode+'-mobile');
+    await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Ended early'))");
+    await capture(mode+'-results');
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('puzzles'))");
+  }
   await run("document.querySelector('[data-focus=puzzle-statistics]').click()");
   assert.ok(await run("!!document.querySelector('.learn-stat-empty')"));
   await capture('statistics-empty');
@@ -204,9 +226,11 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await capture('puzzle-arrow-hint');
   await run("import('./analysis.js').then(m=>{window.replyStarted=performance.now();window.replyResolved=false;const w=m.learningWorkspace,p=w.puzzles.find(p=>p.id===w.activity.id);w.submitPuzzle(p.solution[0]).then(()=>{replyResolved=true;window.replyElapsed=performance.now()-replyStarted;});})");
   assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.activity.step)"),1);
+  assert.deepEqual(await run("[...document.querySelectorAll('.sq.last-move')].map(n=>getComputedStyle(n,'::before').backgroundColor)"),[hintColor,hintColor],'Both squares of the user move must match pickup');
   await checkResultBadge('correct');
   await sleep(200);assert.equal(await run('replyResolved'),false);
   await waitFor(review,'replyResolved','Delayed opponent reply');
+  assert.deepEqual(await run("[...document.querySelectorAll('.sq.last-move')].map(n=>getComputedStyle(n,'::before').backgroundColor)"),[hintColor,hintColor],'Both squares of the opponent move must match pickup');
   assert.equal(await run("!!document.querySelector('.puzzle-result-badge')"),false,'Opponent replies must not inherit solver badges');
   assert.ok(await run('replyElapsed>=790'),'Reply needs a visible pause');
   assert.equal(await run("!!document.querySelector('.puzzle-hint-arrow, .puzzle-hint-square')"),false);
@@ -309,6 +333,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(200);
     for(const page of ['puzzles','concepts','openings']){
       await run(`import('./analysis.js').then(m=>m.learningWorkspace.navigate('${page}'))`);await capture(page+'-'+width);
+      if(page==='puzzles')await checkModeCards();
       if(page!=='puzzles')await checkDropdown(page+'-dropdown-'+width,page==='concepts'?'category':'family');
     }
     await showStatistics();await capture('statistics-'+width);
