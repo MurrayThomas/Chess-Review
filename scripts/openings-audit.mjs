@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
+import {OPENINGS} from '../lib/learning/content.js';
 
 // Run with: node scripts/learning-browser.mjs --working-tree --openings
 export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
@@ -11,6 +12,10 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   for(const [width,height] of [[1920,1080],[1366,768],[960,768],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);
     await sleep(200);
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('openings'))");
+    assert.deepEqual(await run("[...document.querySelectorAll('.learn-library-row h3')].map(n=>n.textContent)"),OPENINGS.map(o=>o.title));
+    const libraryScreenshot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},review.sessionId);
+    await fs.writeFile(path.join(out,`opening-library-${width}.png`),Buffer.from(libraryScreenshot.data,'base64'));
     await run("import('./analysis.js').then(m=>m.learningWorkspace.navigate('puzzles'))");
     const board=await run(rect('.board'));
     for(const color of ['w','b']) {
@@ -36,6 +41,16 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       await fs.writeFile(path.join(out,label+'.png'),Buffer.from(screenshot.data,'base64'));
       results.push({label,board,controls});
     }
+    // Exercise a newly added, long variation as Black at every viewport size.
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.startOpening('benko',{color:'b'}))");
+    await run("document.querySelector('[data-focus=\"opening-variation\"]').click()");
+    await run("document.querySelectorAll('#learn-options-opening-variation [role=\"option\"]')[1].click()");
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.stepOpening(14))");
+    assert.equal(await run("document.querySelector('.learn-opening-progress').textContent"),'14 of 14 moves');
+    assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.flipped)"),true);
+    assert.equal(await run("[...document.querySelectorAll('.learn-opening-score, .learn-opening-moves, .learn-opening-toolbar, .learn-opening-moves button')].every(n=>n.scrollWidth<=n.clientWidth+1)"),true,'New variation must fit at '+width);
+    const expandedScreenshot=await call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false},review.sessionId);
+    await fs.writeFile(path.join(out,`opening-benko-${width}.png`),Buffer.from(expandedScreenshot.data,'base64'));
   }
   await fs.writeFile(path.join(out,'openings-results.json'),JSON.stringify(results,null,2));
   console.log(JSON.stringify({ok:true,out,views:results.length}));

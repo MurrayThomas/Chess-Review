@@ -105,11 +105,39 @@ test('bundled puzzles accept alternative final checkmates, including captures an
   }
 });
 test('all opening variations have legal annotated moves and reuse named positions from the offline book',()=>{
-  assert.equal(OPENINGS.length,12);
+  assert.equal(OPENINGS.length,36);
+  assert.equal(new Set(OPENINGS.map(o=>o.id)).size,OPENINGS.length);
+  assert.equal(new Set(OPENINGS.map(o=>o.title)).size,OPENINGS.length);
+  const lines=OPENINGS.flatMap(o=>o.lines);
+  assert.equal(lines.length,72);
+  assert.equal(new Set(lines.map(line=>line.moves.join(' '))).size,lines.length);
+  const bookNames={
+    italian:/Italian Game/,ruy:/Ruy Lopez/,scotch:/Scotch Game/,'queens-gambit':/Queen's Gambit/,
+    slav:/Slav Defense/,london:/London System/,sicilian:/Sicilian Defense/,french:/French Defense/,
+    caro:/Caro-Kann Defense/,'kings-indian':/King's Indian Defense/,nimzo:/Nimzo-Indian Defense/,english:/English Opening/,
+    vienna:/Vienna Game/,'kings-gambit':/King's Gambit/,'four-knights':/Four Knights Game/,petrov:/Petrov's Defense/,
+    philidor:/Philidor Defense/,ponziani:/Ponziani Opening/,'danish-gambit':/Danish Gambit/,scandinavian:/Scandinavian Defense/,
+    pirc:/Pirc Defense/,modern:/Modern Defense/,alekhine:/Alekhine Defense/,'semi-slav':/Semi-Slav Defense/,
+    tarrasch:/Tarrasch Defense/,chigorin:/Chigorin Defense/,trompowsky:/Trompowsky Attack/,colle:/Colle System/,
+    'queens-indian':/Queen's Indian Defense/,grunfeld:/Grünfeld Defense/,benoni:/Benoni Defense/,benko:/Benko Gambit/,
+    catalan:/Catalan Opening/,reti:/Réti Opening/,dutch:/Dutch Defense/,bird:/Bird Opening/
+  };
   for(const o of OPENINGS){
     assert.ok(o.plans&&o.structure&&o.mistakes&&o.tactic&&o.source);
+    assert.ok(o.level>=1&&o.level<=3);
     assert.ok(o.lines.length>=2);assert.deepEqual(o.colors,['w','b']);
-    for(const line of o.lines){assert.equal(line.moves.length,line.notes.length);const {positions}=linePositions(line);assert.ok(positions.slice(1).some(fen=>Array.isArray(book[positionKey(fen)])),o.id);for(const fen of positions)legalPosition(fen);}
+    assert.equal(new Set(o.lines.map(line=>line.name)).size,o.lines.length);
+    for(const line of o.lines){
+      const label=o.id+':'+line.name;
+      assert.ok(line.name&&line.moves.length>=10,label);
+      assert.equal(line.moves.length,line.notes.length,label);
+      assert.ok(line.notes.every(note=>typeof note==='string'&&note.trim().length>0),label);
+      const {positions}=linePositions(line);
+      // Require this course's opening, rather than accepting a generic e4/d4 name.
+      const names=positions.map(fen=>book[positionKey(fen)]).filter(Array.isArray);
+      assert.ok(bookNames[o.id]&&names.some(entry=>bookNames[o.id].test(entry[1])),label);
+      for(const fen of positions)legalPosition(fen);
+    }
   }
 });
 test('instructional tactical examples distinguish an uncovered attack from a safe gain and replay the Italian king hunt legally',()=>{

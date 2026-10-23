@@ -67,6 +67,10 @@ and matched against the existing offline `data/book.json` from
 [lichess-org/chess-openings](https://github.com/lichess-org/chess-openings), CC0.
 Every variation has one annotation per move. Courses teach plans for both colors;
 the offline book supplies names and position recognition, not instructional text.
+The opening library contains 36 courses, 72 variations and 836 annotated half-moves.
+All variations are legally replayed and checked for their course’s named book
+positions, unique course IDs and nonempty move annotations by
+`tests/learning-content.test.mjs`.
 
 Each lesson records related existing concept IDs. Technical catalog variants are
 grouped into familiar topics instead of presented as research-named lessons.

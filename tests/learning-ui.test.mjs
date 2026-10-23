@@ -344,6 +344,31 @@ test('concept and opening libraries use readable rows without progress labels',a
   assert.equal(w.root.querySelector('.learn-bookmark'),null);assert.doesNotMatch(w.root.textContent,/★|☆|Saved/);
 });
 
+test('expanded opening library supports search, family and level filters, both colors and saved variation positions',async t=>{
+  const {w,data}=await workspace(t);await w.navigate('openings');
+  const titles=()=>[...w.root.querySelectorAll('.learn-library-row h3')].map(n=>n.textContent);
+  assert.deepEqual(titles(),OPENINGS.map(o=>o.title));
+  const search=w.root.querySelector('input[type=search]');
+  search.value='Scandinavian';search.dispatchEvent(new w.doc.defaultView.Event('input',{bubbles:true}));
+  assert.deepEqual(titles(),['Scandinavian Defense']);
+  w.filters.search='';w.filters.family='Indian defenses';w.filters.difficulty='Advanced';w.render();
+  assert.deepEqual(titles(),['King’s Indian Defense','Nimzo–Indian Defense','Grünfeld Defense','Modern Benoni','Benko Gambit']);
+  w.filters.family='All';w.filters.difficulty='All';w.filters.search='Bird';w.filters.color='Black';w.render();
+  w.root.querySelector('.learn-library-row button').click();await settle();
+  assert.equal(w.activity.id,'bird');assert.equal(w.activity.color,'b');assert.equal(w.flipped,true);
+  w.root.querySelector('[data-focus="opening-variation"]').click();
+  w.dropdown.field.querySelectorAll('[role="option"]')[1].click();
+  w.stepOpening(w.openingState.moves.length);await settle();
+  assert.equal(w.activity.line,1);assert.equal(w.root.querySelector('.learn-opening-progress').textContent,'12 of 12 moves');
+  const resume=structuredClone(data['learning:v1'].resume);
+  await w.navigate('openings');await w.resume(resume);
+  assert.deepEqual(w.activity,resume);assert.equal(w.flipped,true);
+  assert.equal(w.openingState.positions[w.activity.ply],linePositions(OPENINGS.find(o=>o.id==='bird').lines[1]).positions.at(-1));
+  await w.startOpening('grunfeld',{color:'w',line:1});
+  assert.equal(w.flipped,false);w.stepOpening(w.openingState.moves.length);
+  assert.equal(w.root.querySelector('.learn-opening-progress').textContent,'14 of 14 moves');
+});
+
 test('themed library dropdowns filter content and dismiss without leaving learning',async t=>{
   const {w,dom}=await workspace(t),doc=dom.window.document;
   for(const [page,key,value] of [['concepts','category',CATEGORIES[0]],['openings','family',OPENINGS[0].family]]){
