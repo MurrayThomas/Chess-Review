@@ -113,6 +113,21 @@ for(const speed of [1,7,10])test(`the first puzzle move and later replies match 
   await w.preparePuzzle(puzzle);assert.equal(animations.length,2);
 });
 
+test('Time attack caps piece duration and reply pauses while other modes retain their settings',async t=>{
+  const settings={moveAnim:true,animSpeed:1},{w,dom}=await setup(t,{settings}),timers=[];
+  t.mock.method(dom.window,'setTimeout',(callback,delay)=>{timers.push({callback,delay});return timers.length;});
+  try {
+    w.run={mode:'timeAttack'};assert.equal(w.puzzleMoveDuration(),100);
+    settings.animSpeed=7;assert.equal(w.puzzleMoveDuration(),64);
+    settings.animSpeed=10;assert.equal(w.puzzleMoveDuration(),24);
+    const reply=w.waitForPuzzleReply();assert.equal(timers.at(-1).delay,80);timers.at(-1).callback();await reply;
+    w.feedback={status:'incorrect'};
+    const loss=w.waitForPuzzleReply(600);assert.equal(timers.at(-1).delay,180);timers.at(-1).callback();await loss;
+    w.run=null;settings.animSpeed=1;assert.equal(w.puzzleMoveDuration(),400);
+    const normal=w.waitForPuzzleReply(450);assert.equal(timers.at(-1).delay,450);timers.at(-1).callback();await normal;
+  } finally {w.run=null;}
+});
+
 test('closing while the setup piece is sliding cancels the animation without changing progress',async t=>{
   const {w,dom}=await setup(t);let finish,cancelled=false;t.mock.method(w,'waitForPuzzleReply',async()=>true);
   dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finish=resolve;}),cancel(){cancelled=true;finish();}});

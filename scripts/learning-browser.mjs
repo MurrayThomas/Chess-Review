@@ -43,6 +43,6 @@ try {
   await waitFor(review,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.analyzing)",'Review');
   const {windowId}=await call('Browser.getWindowForTarget',{targetId:review.targetId});
   await call('Browser.setWindowBounds',{windowId,bounds:{width:1920,height:1080}});await sleep(400);
-  const {auditLearning}=await import(process.argv.includes('--openings')?'./openings-audit.mjs':process.argv.includes('--concept-notice')?'./concept-notice-audit.mjs':process.argv.includes('--run-notice')?'./puzzle-run-notice-audit.mjs':process.argv.includes('--run-layout')?'./puzzle-run-layout-audit.mjs':'./learning-audit.mjs');
+  const {auditLearning}=await import(process.argv.includes('--openings')?'./openings-audit.mjs':process.argv.includes('--concept-notice')?'./concept-notice-audit.mjs':process.argv.includes('--run-notice')?'./puzzle-run-notice-audit.mjs':process.argv.includes('--run-layout')?'./puzzle-run-layout-audit.mjs':process.argv.includes('--puzzle-speed')?'./puzzle-speed-audit.mjs':'./learning-audit.mjs');
   await auditLearning({review,call,evaluate,waitFor,sleep,out});
 } finally {clearInterval(keepAlive);ws?.close();chrome.kill();}

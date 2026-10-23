@@ -21,7 +21,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
 - [x] 3 Remove spurious green focus frames after opening arrow navigation; style
   and right-align Opening library like Back to puzzle overview. Order tabs
   Puzzles, Openings, Concepts.
-- [ ] 4 Speed up Time attack piece animations. Show destinations and capture
+- [x] 4 Speed up Time attack piece animations. Show destinations and capture
   rings while picking up during opponent animation in all modes. In Time attack
   allow early solver drops and finish the opponent animation instantly.
 - [ ] 5 Remove puzzle-statistics divider clutter; improve summary metrics; show
@@ -88,3 +88,12 @@ task at a time, and commit each completed logical change before moving on.
   checks pass. Chrome verifies real key events and retains normal focus-visible
   support across 10 opening views (five widths, both colors). Source/diff checks
   pass; desktop and phone screenshots inspected.
+
+- Item 3 committed as c123bdec.
+- Item 4: Time attack piece moves take 24–100 ms (64 ms at default speed),
+  reply pauses cap at 80 ms and loss feedback at 180 ms. Board assembly is
+  unchanged. All puzzle modes show future-position legal destinations during
+  opponent motion. Time attack early drops finish the opponent slide, await the
+  stable turn, then accept one solver move. Promotion stays explicit; close and
+  expiry cancel queued moves. 83 focused tests, source/diff checks and real Chrome
+  pointer capture/continuation checks pass. Capture-marker screenshot inspected.

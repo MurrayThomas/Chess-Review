@@ -144,6 +144,7 @@ test('a picked-up solver piece survives the opponent introduction and reply with
   a.dom.window.HTMLImageElement.prototype.animate=()=>({finished:new Promise(resolve=>{finishSlide=resolve;}),cancel(){finishSlide?.();}});
   const opening=w.startPuzzleSelection([puzzle]);await settle();
   down('e4');assert.ok(board.querySelector('[data-square=e4].sel'));assert.ok(doc.querySelector('.drag-piece'));
+  assert.ok(board.querySelector('[data-square=d5].legal-cap'),'The capture marker uses the settled opponent position during the introduction');
   a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');
   assert.equal(w.activity.step,0);assert.equal(w.store.value.puzzleRating.played,0);assert.equal(doc.querySelector('.drag-piece'),null);
   down('e4');const ghost=doc.querySelector('.drag-piece');advance();await settle();
@@ -153,7 +154,9 @@ test('a picked-up solver piece survives the opponent introduction and reply with
   a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');await settle();
   assert.equal(w.activity.step,1);assert.equal(w.busy,true);assert.equal(doc.querySelector('.drag-piece'),null);
   assert.deepEqual([...board.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort(),['d5','e4']);
-  down('b1');const knight=doc.querySelector('.drag-piece');assert.ok(knight);advance();await settle();
+  down('b1');const knight=doc.querySelector('.drag-piece');assert.ok(knight);
+  assert.ok(board.querySelector('[data-square=c3].legal'),'Destinations appear while the opponent reply is pending');
+  advance();await settle();
   assert.equal(doc.querySelector('.drag-piece'),knight);assert.equal(w.activity.step,2);
   assert.deepEqual([...board.querySelectorAll('.last-move')].map(n=>n.dataset.square).sort(),['d5','d8']);
   finishSlide();await settle();assert.equal(w.busy,false);assert.equal(doc.querySelector('.drag-piece'),knight);
@@ -179,4 +182,81 @@ test('a solver piece captured by the opponent cancels its pickup cleanly',async 
   t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{advance=()=>resolve(true);}));
   const opening=w.startPuzzleSelection([puzzle]);await settle();down('d5');assert.ok(doc.querySelector('.drag-piece'));
   advance();await opening;assert.equal(doc.querySelector('.drag-piece'),null);assert.equal(w.selected,null);assert.equal(w.store.value.puzzleRating.played,0);
+});
+
+function controlledReplies(t,w) {
+  t.mock.method(w,'waitForPuzzleReply',function(){
+    if(!this.opponentPlaying)return Promise.resolve(true);
+    this.replyPending=true;
+    return new Promise(resolve=>{this.releaseReply=value=>{this.releaseReply=null;this.replyPending=false;resolve(value);};});
+  });
+}
+const drain=async()=>{for(let i=0;i<100;i++)await Promise.resolve();};
+function quickPuzzle(solution=['e4d5','d8d5','b1c3']) {
+  const before=new Chess();before.move('e4');const after=new Chess(before.fen());after.move('d5');
+  return {id:'quick-reply',fen:after.fen(),setup:{fen:before.fen(),move:'d7d5'},solution,rating:450,themes:[]};
+}
+
+test('Time attack accepts early capture and continuation drops exactly once',async t=>{
+  const {a,w,doc,board,down,up,event}=await setup(t);w.puzzles=[quickPuzzle()];
+  a.state.settings.moveAnim=true;controlledReplies(t,w);
+  const starting=w.startPuzzleRun('timeAttack');await drain();const running=w.run;
+  down('e4');assert.ok(board.querySelector('[data-square=d5].legal-cap'));
+  a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');up('d5');
+  await starting;await drain();
+  assert.equal(w.activity.step,1);assert.equal(w.run.correctMoves,1);assert.equal(w.run.solved,0);
+  down('b1');assert.ok(board.querySelector('[data-square=c3].legal'));
+  a.dom.window.dispatchEvent(event('pointermove','c3'));up('c3');up('c3');await drain();
+  assert.equal(w.result.solved,1);assert.equal(running.correctMoves,2);assert.equal(w.result.results.length,1);
+  assert.equal(w.store.value.puzzleRating.played,0);assert.equal(doc.querySelector('.drag-piece'),null);
+  assert.equal(w.pendingOpponent,null);assert.equal(w.earlyPuzzleMove,null);
+});
+
+test('Knockout shows capture markers during the reply but keeps early drops blocked',async t=>{
+  const {a,w,board,down,up,event}=await setup(t);w.puzzles=[quickPuzzle()];
+  a.state.settings.moveAnim=true;controlledReplies(t,w);
+  const starting=w.startPuzzleRun('knockout');await drain();
+  down('e4');assert.ok(board.querySelector('[data-square=d5].legal-cap'));
+  a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');await drain();
+  assert.equal(w.activity.step,0);assert.equal(w.run.correctMoves,0);assert.equal(w.pendingOpponent.fastForward,false);
+  w.releaseReply(true);await starting;assert.equal(w.busy,false);
+});
+
+test('an early Time attack drop finishes the active slide at its destination',async t=>{
+  const {a,w,doc,down,up,event}=await setup(t);w.puzzles=[quickPuzzle(['e4d5'])];
+  a.state.settings.moveAnim=true;t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  const animations=[];
+  a.dom.window.HTMLImageElement.prototype.animate=function(frames,options){
+    let release;const finished=new Promise(resolve=>{release=resolve;});
+    const animation={finished,finishes:0,finish(){this.finishes++;release();},cancel(){release();},options};
+    animations.push(animation);return animation;
+  };
+  const starting=w.startPuzzleRun('timeAttack');await drain();const running=w.run;assert.ok(w.replyAnimation);
+  assert.equal(animations[0].options.duration,64);
+  down('e4');a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');await starting;await drain();
+  assert.equal(animations[0].finishes,1);assert.equal(w.result.solved,1);assert.equal(running.correctMoves,1);
+  assert.equal(doc.querySelector('.puzzle-reply-target, .drag-piece'),null);
+});
+
+test('early Time attack promotion waits for an explicit piece choice',async t=>{
+  const {a,w,doc,down,up,event}=await setup(t),before=new Chess('7k/P7/8/8/8/8/8/7K b - - 0 1'),after=new Chess(before.fen());after.move('Kh7');
+  w.puzzles=[{id:'early-promotion',fen:after.fen(),setup:{fen:before.fen(),move:'h8h7'},solution:['a7a8n'],rating:450,themes:[]}];
+  a.state.settings.moveAnim=true;controlledReplies(t,w);
+  const starting=w.startPuzzleRun('timeAttack');await drain();const running=w.run;
+  down('a7');a.dom.window.dispatchEvent(event('pointermove','a8'));up('a8');await starting;await drain();
+  assert.equal(w.activity.step,0);assert.equal(doc.querySelectorAll('.promotion-options button').length,4);
+  doc.querySelector('[aria-label="Promote to knight"]').click();await drain();
+  assert.equal(w.result.solved,1);assert.equal(running.correctMoves,1);
+});
+
+for(const ending of ['close','deadline'])test(`an early Time attack drop cannot score after ${ending}`,async t=>{
+  const {a,w,doc,down,up,event}=await setup(t);w.puzzles=[quickPuzzle(['e4d5'])];
+  a.state.settings.moveAnim=true;controlledReplies(t,w);
+  const starting=w.startPuzzleRun('timeAttack');await drain();const running=w.run;down('e4');
+  if(ending==='deadline')w.run.clock.expired=()=>true;
+  a.dom.window.dispatchEvent(event('pointermove','d5'));up('d5');
+  if(ending==='close')await w.close();
+  await starting;await drain();
+  assert.equal(w.result.solved,0);assert.equal(running.correctMoves,0);assert.equal(w.result.results.length,0);
+  assert.equal(doc.querySelector('.drag-piece'),null);assert.equal(w.pendingOpponent,null);
 });
