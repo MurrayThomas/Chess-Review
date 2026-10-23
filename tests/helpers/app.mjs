@@ -9,6 +9,7 @@ import {expectedPoints, SF19_OUTCOME} from '../../lib/public-scoring.js';
 import {calibratedReview,scoringEvidenceComplete} from '../../lib/calibrated-review.js';
 import {analyseCalibratedPosition} from '../../lib/calibrated-search.js';
 import {LearningWorkspace} from '../../lib/learning/workspace.js';
+import {presentationFor} from '../../lib/learning/presentations.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
 
@@ -36,6 +37,7 @@ export function app(t, {hardware} = {}) {
   };
   const context = vm.createContext({
     window: dom.window, document: dom.window.document, navigator: dom.window.navigator, LearningWorkspace,
+    loadLearningWorkspace:async () => ({LearningWorkspace}), presentationFor,
     location: dom.window.location, Node: dom.window.Node, HTMLElement: dom.window.HTMLElement,
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
     URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,

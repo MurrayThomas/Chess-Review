@@ -409,7 +409,7 @@ test('learning keeps review panels mounted until loading finishes and can close 
   const originalFetch=globalThis.fetch;let release;
   globalThis.fetch=()=>new Promise(resolve=>{release=()=>resolve({ok:true,json:async()=>structuredClone(library)});});
   t.after(()=>{globalThis.fetch=originalFetch;});
-  const opening=a.call('openLearning'),w=a.run('learningWorkspace');
+  const opening=a.call('openLearning');await settle();const w=a.run('learningWorkspace');
   assert.equal(doc.querySelector('.learning-active'),null);
   assert.equal(w.shell,undefined);assert.equal(wrap.parentNode,parent);
   assert.ok([...doc.querySelectorAll('.mod')].every(node=>!node.inert));
@@ -417,7 +417,7 @@ test('learning keeps review panels mounted until loading finishes and can close 
   assert.ok(doc.querySelector('.learning-active'));assert.equal(doc.querySelector('.board'),board);
   await w.close();assert.equal(wrap.parentNode,parent);
 
-  const canceledOpening=a.call('openLearning'),canceled=a.run('learningWorkspace');
+  const canceledOpening=a.call('openLearning');await settle();const canceled=a.run('learningWorkspace');
   await canceled.close();release();await canceledOpening;
   assert.equal(a.run('learningWorkspace'),null);
   assert.equal(doc.querySelector('.learning-workspace'),null);

@@ -11,7 +11,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   retain learning lessons, document reuse, exclude prototype from the extension.
   Implemented: prototype archived, production UI/worker imports removed,
   three bounded learning rule modules retained.
-- [ ] 8.2 Improve performance without sacrificing features. Report significant
+- [x] 8.2 Improve performance without sacrificing features. Report significant
   optimizations that require tradeoffs for the user to decide.
 - [ ] 1 Put a dot-grouped puzzle count beside Puzzle types. Show custom-filter
   warnings on every overview Play in Time attack/Knockout; skip only Play again.
@@ -57,3 +57,13 @@ task at a time, and commit each completed logical change before moving on.
   dynamic innerHTML assignment).
 - 8.1 Chrome and Firefox packages build successfully; package staging contains
   no research folder, live concept runtime, coach-insights or fast-coach module.
+
+- 8.2: deferred learning entry and cached library queries implemented. See
+  [performance measurements and larger options](PERFORMANCE_REVIEW.md).
+  Focused run/input/transition/isolation checks: 64/64 pass. Wider learning,
+  review and settings run: 76/77 pass; its loading-test timing was updated for
+  deferred entry and the complete UI/performance rerun passes 31/31.
+  Source verification and lint pass (the same two warnings).
+  Headless Chrome loads the deferred module and exercises learning, then the
+  existing return-scroll assertion fails. The unchanged prior package fails
+  the exact same assertion, so this is a pre-existing audit limitation.

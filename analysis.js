@@ -15,7 +15,7 @@ import { resetSettingsForRelease } from "./release-settings.js";
 import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
-import { LearningWorkspace } from "./lib/learning/workspace.js";
+import { loadLearningWorkspace, presentationFor } from "./lib/learning-loader.js";
 
 /* ---------------- Opening book ----------------
  * Offline lookup table built from lichess-org/chess-openings (bundled in data/book.json).
@@ -1568,8 +1568,17 @@ function buildUI() {
 }
 
 let learningWorkspace = null;
+let openingLearning = false;
 let deferredPracticeAdvance = false;
 async function openLearning() {
+  if (learningWorkspace || openingLearning) return;
+  openingLearning = true;
+  const positions = S.positions;
+  let LearningWorkspace;
+  try { ({LearningWorkspace} = await loadLearningWorkspace()); }
+  catch (error) { console.warn(error); toast("Learning could not load. Try opening it again."); return; }
+  finally { openingLearning = false; }
+  if (S.positions !== positions) return;
   _cancelPromotion?.();
   _cancelBoardDrag?.();
   if (learningWorkspace) return;
@@ -6274,7 +6283,7 @@ async function resetLegacyZoom() {
     S.library = Array.isArray(store.library) ? store.library : [];
     S.settings = { ...DEFAULT_SETTINGS, ...(store.settings || {}) };
     const loadedSettings = structuredClone(S.settings);
-    S.settings.learningTransition = LearningWorkspace.presentationFor(store.settings || {});
+    S.settings.learningTransition = presentationFor(store.settings || {});
     for (const key of ["showConcepts", "conceptsEnabled", "conceptGroups", "disabledConcepts", "conceptsView", "conceptsDefaultedOff"]) delete S.settings[key];
     migrateVisualAssetSettings(S.settings);
     migrateEngineSettings(S.settings);
