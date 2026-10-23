@@ -1,0 +1,42 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+
+// Disposable authored run summaries exercise wrapping without playing 26 puzzles.
+export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
+  const run=expression=>evaluate(review,expression);
+  await run("import('./analysis.js').then(async m=>{m.S.settings.moveAnim=false;await m.openLearning();})");
+  const grid=async()=>{
+    const boxes=await run("(()=>{const list=document.querySelector('.puzzle-run-history'),r=list.getBoundingClientRect();return [...list.children].map(n=>{const b=n.getBoundingClientRect();return {left:b.left,top:b.top,width:b.width,height:b.height,right:b.right,listRight:r.right};});})()");
+    assert.equal(boxes.length,26);
+    const rows=new Map();
+    for(const box of boxes){
+      assert.ok(Math.abs(box.width-boxes[0].width)<1&&Math.abs(box.height-boxes[0].height)<1,'Puzzle cells must have uniform dimensions');
+      assert.ok(box.right<=box.listRight+1,'Puzzle cells must fit their list');
+      const row=Math.round(box.top);if(!rows.has(row))rows.set(row,box.left);
+    }
+    assert.ok([...rows.values()].every(left=>Math.abs(left-boxes[0].left)<1),'Each wrapped row must start at the same position');
+  };
+  for(const mode of ['timeAttack','knockout']) {
+    await run(`import('./analysis.js').then(async m=>{const w=m.learningWorkspace;await w.navigate('puzzles');await w.startPuzzleRun('${mode}');w.run.results=w.puzzles.slice(0,26).map((p,i)=>({id:p.id,number:i+1,rating:p.rating,correct:i%4!==3}));w.run.solved=20;w.run.bestEligible=false;w.render();})`);
+    for(const [width,height] of [[1920,1080],[1280,800],[390,844],[320,640]]) {
+      await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(300);
+      await grid();
+      assert.equal(await run("(()=>{const p=document.querySelector('.puzzle-run-panel'),cue=p.querySelector('.puzzle-practice-status').getBoundingClientRect(),list=p.querySelector('.puzzle-run-history').getBoundingClientRect(),meta=p.querySelector('.puzzle-run-meta').getBoundingClientRect();return cue.bottom<=list.top+1&&list.bottom<=meta.top+1;})()"),true);
+    }
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Out of lives'))");
+    for(const [width,height] of [[1920,1080],[390,844],[320,640]]) {
+      await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(300);await grid();
+      const header=await run("(()=>{const h=document.querySelector('.puzzle-run-results h2'),b=document.querySelector('[data-focus=puzzle-overview]'),a=h.getBoundingClientRect(),c=b.getBoundingClientRect();return {title:h.textContent,center:a.top+a.height/2-c.top-c.height/2,eyebrow:!!document.querySelector('.puzzle-run-results .learn-eyebrow')};})()");
+      assert.equal(header.title,'Run complete');assert.equal(header.eyebrow,false);assert.ok(Math.abs(header.center)<2,'Result heading must align with the overview button');
+      const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,`${mode}-results-${width}.png`),Buffer.from(shot.data,'base64'));
+    }
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.replayRunPuzzle(m.learningWorkspace.result.results[0].id))");
+    await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.busy)",'Replay ready');
+    assert.equal(await run("document.querySelector('.puzzle-run-results h2').textContent"),'Run complete');await grid();
+    assert.equal(await run("document.querySelectorAll('.puzzle-run-history [aria-current=true]').length"),1);
+    const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,`${mode}-replay-320.png`),Buffer.from(shot.data,'base64'));
+    await run("import('./analysis.js').then(m=>m.learningWorkspace.returnToRunResults())");
+  }
+  console.log('Run layout and in-place replay checks passed at 1920, 1280, 390 and 320 pixels. Screenshots: '+out);
+}

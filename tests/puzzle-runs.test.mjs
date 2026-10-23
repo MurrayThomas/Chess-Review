@@ -86,7 +86,9 @@ for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay s
   await w.startRatedPuzzles();await w.navigate('puzzles');
   await w.startPuzzleRun(mode);await solve(w);await wrong(w);
   if(w.run)await w.finishChallenge('Ended early');
-  const result=w.result,saved=structuredClone(data['learning:v1']);
+  const result=w.result,saved=structuredClone(data['learning:v1']),heading=w.root.querySelector('.learn-results h2').textContent;
+  assert.equal(w.root.querySelector('.learn-results .learn-eyebrow'),null);
+  assert.ok(w.root.querySelector('.puzzle-run-results.puzzle-session .puzzle-practice-heading'));
   assert.doesNotMatch(w.root.textContent,/Each check is a solved puzzle|Back to puzzles/);
   assert.equal(w.root.querySelector('[data-focus=puzzle-overview]').textContent,'Back to puzzle overview');
   const badges=w.root.querySelectorAll('.puzzle-run-history button');
@@ -95,6 +97,12 @@ for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay s
   for(let i=0;i<30;i++)await Promise.resolve();
   assert.equal(w.activity.id,result.results[0].id);assert.equal(w.activity.step,0);assert.equal(w.activity.rated,false);
   assert.equal(w.currentFen(),line.fen);assert.equal(w.run,null);assert.equal(w.puzzleThinkingAt,null);
+  assert.equal(w.root.querySelector('.learn-results h2').textContent,heading);
+  assert.equal(w.root.querySelectorAll('.puzzle-run-history button').length,2);
+  assert.equal(w.root.querySelectorAll('.puzzle-run-history [aria-current=true]').length,1);
+  assert.doesNotMatch(w.root.textContent,/Puzzle replay/);
+  await w.replayRunPuzzle(result.results[1].id);assert.equal(w.activity.id,result.results[1].id);
+  await w.replayRunPuzzle(result.results[0].id);assert.equal(w.activity.id,result.results[0].id);
   assert.equal(w.root.querySelector('.puzzle-rating-region, .puzzle-rating-toggle, #learn-clock'),null);
   await wrong(w);await w.hintPuzzle();
   while(!w.attemptRecorded)await w.submitPuzzle(current(w).solution[w.activity.step]);
@@ -309,4 +317,11 @@ test('Elo slider changes are quiet until run entry and normal filtered puzzles s
   full.dispatchEvent(new dom.window.Event('input',{bubbles:true}));
   await w.startPuzzleRun('timeAttack');assert.equal(w.run.bestEligible,true);
   assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+});
+
+for(const mode of ['timeAttack','knockout'])test(`${mode} places the turn cue above history and the current puzzle number`,async t=>{
+  const {w}=await setup(t);await w.startPuzzleRun(mode);
+  const panel=w.root.querySelector('.puzzle-run-panel'),cue=panel.querySelector('.puzzle-turn-cue'),history=panel.querySelector('.puzzle-run-history'),number=panel.querySelector('.puzzle-run-meta');
+  assert.match(cue.textContent,/White to move|Black to move/);
+  assert.ok(cue.compareDocumentPosition(history)&4);assert.ok(history.compareDocumentPosition(number)&4);
 });

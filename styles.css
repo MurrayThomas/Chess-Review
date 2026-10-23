@@ -365,13 +365,13 @@
 .puzzle-run-stats #learn-clock { color: var(--accent); }
 .puzzle-run-stats #learn-clock.running-low { color: #f35a66; }
 .puzzle-run-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 18px 0 12px; color: var(--ink-2); font-size: 13px; }
-.learning-workspace .puzzle-run-history { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; max-height: 156px; overflow-y: auto; margin: 16px 0; padding: 0; }
-.learning-workspace .puzzle-run-history li { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; margin: 0; padding: 7px 9px; border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 8px; background: color-mix(in srgb,var(--accent) 9%,transparent); color: var(--accent); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.learning-workspace .puzzle-run-history { display: grid; grid-template-columns: repeat(auto-fill,minmax(56px,1fr)); align-content: start; gap: 8px; list-style: none; max-height: 156px; overflow-y: auto; margin: 16px 0; padding: 0; }
+.learning-workspace .puzzle-run-history li { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 0; min-height: 44px; margin: 0; padding: 7px 6px; box-sizing: border-box; border: 1px solid color-mix(in srgb,var(--accent) 30%,transparent); border-radius: 8px; background: color-mix(in srgb,var(--accent) 9%,transparent); color: var(--accent); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .learning-workspace .puzzle-run-history li.missed { color: #f35a66; border-color: #f35a664d; background: #f35a6612; }
 .puzzle-run-history li > span:first-child { font-size: 17px; }
 .puzzle-session-navigation { display: flex; justify-content: flex-end; }
 .learning-workspace .puzzle-run-history li:has(.puzzle-run-replay) { padding: 0; }
-.puzzle-run-replay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; padding: 7px 9px; border: 0; border-radius: inherit; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.puzzle-run-replay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 100%; min-width: 0; min-height: 42px; padding: 7px 6px; box-sizing: border-box; border: 0; border-radius: inherit; background: transparent; color: inherit; font: inherit; cursor: pointer; }
 .puzzle-run-replay > span:first-child { font-size: 17px; }
 .puzzle-run-replay:hover { background: color-mix(in srgb,currentColor 12%,transparent); }
 .puzzle-run-replay:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
@@ -2207,3 +2207,8 @@ button { font-family: inherit; cursor: pointer; }
 /* Keep the filtered count beside the puzzle-type choices. */
 .learn-theme-list legend { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; width: 100%; box-sizing: border-box; }
 .learn-puzzle-count { color: var(--ink-2); font-size: 12px; font-weight: 400; letter-spacing: normal; white-space: nowrap; }
+
+.puzzle-run-replay[aria-current="true"] { background: color-mix(in srgb,currentColor 18%,transparent); box-shadow: inset 0 0 0 1px currentColor; }
+.puzzle-run-panel > .puzzle-practice-status { padding-bottom: 0; }
+
+.learning-workspace .puzzle-run-results .puzzle-practice-heading h2 { font-size: clamp(20px,1.4vw,24px); }

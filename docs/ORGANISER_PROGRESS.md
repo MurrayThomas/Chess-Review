@@ -15,7 +15,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   optimizations that require tradeoffs for the user to decide.
 - [x] 1 Put a dot-grouped puzzle count beside Puzzle types. Show custom-filter
   warnings on every overview Play in Time attack/Knockout; skip only Play again.
-- [ ] 2 Keep Time attack replay on Run complete; remove the mode/death subtitle;
+- [x] 2 Keep Time attack replay on Run complete; remove the mode/death subtitle;
   align the heading with Back to puzzle overview, following Knockout. Fix puzzle
   box wrapping in both modes. Put side-to-move above the solved list/Puzzle x.
 - [ ] 3 Remove spurious green focus frames after opening arrow navigation; style
@@ -74,3 +74,10 @@ task at a time, and commit each completed logical change before moving on.
   it. Updated migration and lifecycle checks: 58 passing plus all six corrected
   re-entry/reload cases passing. Chrome notice audit passes at 1920/390/320,
   and the desktop count screenshot was visually inspected. Source/diff checks pass.
+
+- Item 1 committed as e939582e.
+- Item 2: result summaries and selectable history remain visible during replay
+  in both modes, with equal grid cells and turn cues preceding history/current
+  puzzle labels. Mode/reason subtitles removed and result headings share the
+  overview-button row. 33 run checks and Chrome layout/replay checks at
+  1920/1280/390/320 pass; desktop and phone screenshots inspected.
