@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {createHash} from 'node:crypto';
 import {Chess} from '../lib/chess.js';
 import {LESSONS, OPENINGS, CATEGORIES, THEME_NAMES, playUci, linePositions, positionKey} from '../lib/learning/content.js';
 import {legalPosition} from '../lib/concepts/detectors/E020-concepts.mjs';
@@ -47,8 +48,9 @@ test('unsupported objectives, failed admission and exhausted proofs abstain; leg
   assert.equal(validateExercise(fork,'e4e5').status,'illegal');
   assert.equal(validateExercise(fork,'e4c5').status,'incorrect');
 });
-test('25,000 distinct licensed puzzles replay legally and cover every theme and difficulty, with sampled runtime validation and explanations',()=>{
-  assert.equal(library.schema,1);assert.equal(library.license,'CC0-1.0');assert.equal(library.puzzles.length,25_000);
+test('50,000 distinct licensed puzzles replay legally and cover every theme and difficulty, with sampled runtime validation and explanations',()=>{
+  assert.equal(library.schema,1);assert.equal(library.license,'CC0-1.0');assert.equal(library.puzzles.length,50_000);
+  assert.equal(library.selection.target,50_000);assert.equal(library.selection.maximumPerGroup,2084);
   assert.equal(new Set(library.puzzles.map(p=>p.id)).size,library.puzzles.length);
   assert.equal(new Set(library.puzzles.map(p=>positionKey(p.fen))).size,library.puzzles.length);
   const quotas={};
@@ -70,10 +72,15 @@ test('25,000 distinct licensed puzzles replay legally and cover every theme and 
   }
   assert.equal(Object.keys(quotas).length,36);
   for(const theme of Object.keys(THEME_NAMES))for(const difficulty of ['Introductory','Intermediate','Advanced']){
-    const n=quotas[theme+':'+difficulty];assert.ok(n>=12&&n<=1042,theme+':'+difficulty+' = '+n);
+    const n=quotas[theme+':'+difficulty];assert.ok(n>=12&&n<=2084,theme+':'+difficulty+' = '+n);
     assert.equal(library.selection.groups[theme+difficulty],n);
   }
   assert.ok(library.selection.compressedBytesRead<=library.selection.maxDownloadBytes);
+});
+test('expansion preserves every original puzzle record and ID for saved progress and resumable puzzles',()=>{
+  assert.equal(library.selection.retained,25_000);
+  const retained=JSON.stringify(library.puzzles.slice(0,25_000));
+  assert.equal(createHash('sha256').update(retained).digest('hex'),'46d54f3b6b68088a328b1b67f98c26597d35fe9505376ce26d586b39705ebf0b');
 });
 test('any legal checkmate wins a mate-in-one puzzle, while other moves remain incorrect or illegal',()=>{
   const p={fen:'7k/5K2/8/6Q1/8/8/8/8 w - - 0 1',solution:['g5g7'],themes:['mateIn1']};

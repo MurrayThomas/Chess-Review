@@ -2,7 +2,7 @@
 
 ## Puzzle library
 
-`puzzles.json` contains 25,000 distinct positions from the
+`puzzles.json` contains 50,000 distinct positions from the
 [Lichess puzzle database](https://database.lichess.org/#puzzles), whose exports are
 dedicated to the public domain under
 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
@@ -10,10 +10,10 @@ Every record retains its original puzzle ID, game URL, training URL and a SHA-25
 of its source CSV row. The archive URL, retrieval timestamp and imported row count
 are in the JSON header. The app never downloads puzzles during use.
 
-The importer targets 25,000 positions across three difficulty bands and twelve
+The importer targets 50,000 positions across three difficulty bands and twelve
 themes, requiring at least 500 plays, popularity 85 and rating deviation at most
 100. It assigns multi-theme candidates to the least populated eligible group,
-caps each group at 1,042 positions and reserves at least twelve per group.
+caps each group at 2,084 positions and reserves at least twelve per group.
 Rare combinations such as advanced mate-in-one positions naturally have fewer
 examples; counts are recorded in the JSON header. Difficulty bands use source
 ratings below 1,300, 1,300–1,849, and 1,850 or higher, not estimated user ratings.
@@ -34,12 +34,12 @@ solution. No runtime engine evaluation is exposed while solving.
 
 To refresh deliberately, use Node 24 and run
 `node scripts/import-learning-puzzles.mjs`, then run the learning content tests.
-This maintenance command downloads at most a 64 MiB archive prefix, stopping
-when the target and coverage requirements are met; ordinary tests, builds and
-application use stay offline. Existing records and IDs are retained so saved
-progress and resumable puzzles survive expansion. A library already meeting
-the target is left untouched. Increase the explicit target in the importer to
-expand further. Failed or insufficient imports never replace the library.
+This maintenance command downloads at most a 64 MiB archive prefix and decodes
+successive compressed frames until the target and coverage requirements are met.
+Ordinary tests, builds and application use stay offline. Existing records and IDs
+are retained so saved progress and resumable puzzles survive expansion. A library
+already meeting the target is left untouched. Increase the explicit target in the
+importer to expand further. Failed or insufficient imports never replace the library.
 Records use one JSON line each to keep the larger library compact and reviewable.
 
 The displayed solution commentary is original to Chess Review, derived from

@@ -1,14 +1,13 @@
 // Explicit maintenance command; never called by the extension or normal build.
 // Only a bounded archive prefix is downloaded. No full database is needed.
-import {Readable, Transform} from 'node:stream';
-import {createZstdDecompress} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {readFile, writeFile, rename} from 'node:fs/promises';
 import {legalPosition, uci} from '../lib/concepts/detectors/E020-concepts.mjs';
+import {readPuzzleArchive} from './puzzle-archive.mjs';
 
 const source = 'https://database.lichess.org/lichess_db_puzzle.csv.zst';
 const themes = ['mateIn1', 'mateIn2', 'fork', 'pin', 'skewer', 'discoveredAttack', 'defensiveMove', 'promotion', 'hangingPiece', 'sacrifice', 'backRankMate', 'endgame'];
-const target = 25_000, minimum = 12, maximum = Math.ceil(target / 36 * 1.5);
+const target = 50_000, minimum = 12, maximum = Math.ceil(target / 36 * 1.5);
 const maxBytes = 64 * 1024 * 1024;
 const output = new URL('../data/learning/puzzles.json', import.meta.url);
 const previous = JSON.parse(await readFile(output, 'utf8'));
@@ -23,7 +22,7 @@ for (const p of puzzles) {
   positions.add(key); ids.add(p.id); counts.set(bucket, counts.get(bucket) + 1);
 }
 const complete = () => puzzles.length === target && [...counts.values()].every(n => n >= minimum);
-if (complete()) { console.log('The existing 25,000-puzzle library already meets the selection quotas.'); process.exit(0); }
+if (complete()) { console.log(`The existing ${target.toLocaleString('en-US')}-puzzle library already meets the selection quotas.`); process.exit(0); }
 const play = (chess, move) => chess.move({from: move.slice(0, 2), to: move.slice(2, 4), promotion: move[4]});
 const abort = new AbortController();
 const response = await fetch(source, {headers: {Range: `bytes=0-${maxBytes - 1}`},
@@ -33,27 +32,12 @@ if (response.status !== 206 || !range || +range[1] >= maxBytes) {
   await response.body?.cancel();
   throw Error('Server must support a bounded range download starting at byte zero');
 }
-const compressed = Readable.fromWeb(response.body), decoder = createZstdDecompress();
-compressed.on('error', error => decoder.destroy(error));
-// Node's decoder rejects zstd's leading skippable metadata frame. Strip only
-// the frame declared by its signature and size, preserving compressed bytes.
-let prefix = Buffer.alloc(0), started = false, bytes = 0;
-const stripMetadata = new Transform({transform(chunk, encoding, done) {
-  bytes += chunk.length;
-  if (bytes > maxBytes) return done(Error('Archive exceeded download budget'));
-  if (started) return done(null, chunk);
-  prefix = Buffer.concat([prefix, chunk]);
-  if (prefix.length < 8) return done();
-  const magic = prefix.readUInt32LE(0), skip = (magic & 0xfffffff0) === 0x184d2a50 ? 8 + prefix.readUInt32LE(4) : 0;
-  if (skip > 1024 * 1024) return done(Error('Unexpected archive metadata size'));
-  if (prefix.length < skip) return done();
-  started = true; done(null, prefix.subarray(skip)); prefix = Buffer.alloc(0);
-}});
-stripMetadata.on('error', error => decoder.destroy(error));
-compressed.pipe(stripMetadata).pipe(decoder);
 let pending = '', rows = 0, reported = 0;
+let bytes = 0;
 try {
-  for await (const chunk of decoder) {
+  const archive = await readPuzzleArchive(response.body, maxBytes);
+  bytes = archive.bytes;
+  for (const chunk of archive.frames()) {
     pending += chunk.toString('utf8');
     let end;
     while ((end = pending.indexOf('\n')) >= 0) {
@@ -90,10 +74,7 @@ try {
     if (complete()) break;
     if (rows - reported >= 10_000) { reported = rows; console.error(`Read ${rows} rows; selected ${puzzles.length}/${target}`); }
   }
-} catch (error) {
-  // A truncated ranged frame can end with an incomplete trailing record.
-  if (error.code !== 'Z_BUF_ERROR') throw error;
-} finally { abort.abort(); compressed.destroy(); stripMetadata.destroy(); decoder.destroy(); }
+} finally { abort.abort(); }
 if (!complete()) throw Error(`Insufficient varied content: ${puzzles.length}/${target} in ${rows} rows; smallest group ${Math.min(...counts.values())}`);
 const header = {schema: 1, source, license: 'CC0-1.0',
   sourceDocumentation: 'https://database.lichess.org/#puzzles', retrievedAt: new Date().toISOString(), rowsRead: rows,

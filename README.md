@@ -16,7 +16,7 @@ Settings available alongside learning, with reserved space on desktop windows.
 **Morph in place 3** keeps the review board size and familiar piece handling while
 the surrounding panels transition into learning.
 The learning workspace includes 23 concept lessons with 47
-exercises, 25,000 offline puzzles, Time attack and Knockout modes, and 36 opening courses
+exercises, 50,000 offline puzzles, Time attack and Knockout modes, and 36 opening courses
 with 24 annotated lines. Lessons use move, square-selection and position-reading
 exercises. Opening practice supports both colors and automatic opponent replies.
 Progress and bookmarks stay in your browser, and **Back to review** restores your
