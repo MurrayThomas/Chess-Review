@@ -3,14 +3,17 @@ import assert from 'node:assert/strict';
 import {JSDOM} from 'jsdom';
 import {escapePosition,escapeTiming,evasiveNoticeButton} from '../lib/learning/notice-dodge.js';
 
-test('each escape gradually increases reaction time, travel time and the catch window',()=>{
+test('the first sixteen escapes stay fast before fatigue gradually opens a catch window',()=>{
   let previous=escapeTiming(0);
-  for(let i=1;i<=12;i++) {
+  assert.deepEqual(previous,{reaction:0,duration:75,rest:40});
+  for(let i=1;i<=16;i++)assert.deepEqual(escapeTiming(i),previous,'No early slowdown');
+  for(let i=17;i<=40;i++) {
     const next=escapeTiming(i);
     assert.ok(next.reaction>previous.reaction);assert.ok(next.duration>previous.duration);assert.ok(next.rest>previous.rest);
     previous=next;
   }
-  assert.deepEqual(escapeTiming(100),{reaction:240,duration:615,rest:900});
+  assert.deepEqual(escapeTiming(24),{reaction:24,duration:131,rest:136});
+  assert.deepEqual(escapeTiming(100),{reaction:150,duration:360,rest:600});
 });
 
 test('the escape halo permits positions outside the compact box without approaching screen edges',()=>{
@@ -76,25 +79,35 @@ test('the evasive button reacts before hover, respects a catch window, resets on
   const flush=()=>{for(const [id,fn] of frames){frames.delete(id);fn();}};
   const dispose=evasiveNoticeButton({arena,button,safeButton,view});
   move(155,315);assert.equal(frames.size,0,'Approaching Fair enough never starts the game');
-  move(420,220);assert.equal(frames.size,1);move(421,220);assert.equal(frames.size,1);flush();
-  assert.equal(button.dataset.dodges,'1');assert.notEqual(button.style.left,'338px');
+  move(340,220);assert.equal(frames.size,1,'React almost 100 pixels before the pointer reaches the button');move(421,220);assert.equal(frames.size,1);flush();
+  assert.equal(button.dataset.dodges,'1');assert.ok(Math.hypot(parseFloat(button.style.left)-338,parseFloat(button.style.top))>=60);
+  const escaped=button.getBoundingClientRect();
+  assert.ok(Math.hypot(Math.max(escaped.left-421,0,421-escaped.right),Math.max(escaped.top-220,0,220-escaped.bottom))>=64,'Choose a destination away from the latest pointer position');
   const now=button.getBoundingClientRect();move(now.left,now.top);flush();assert.equal(button.dataset.dodges,'1','A brief reaction window permits a real catch');
   assert.equal(timers.size,1);clock=120;for(const [id,fn] of timers){timers.delete(id);fn();}flush();
   assert.equal(button.dataset.dodges,'2','A pointer that stays close triggers another escape after the catch window');
   view.dispatchEvent(new view.Event('resize'));assert.equal(button.style.left,'');assert.equal(button.style.top,'');
-  clock=500;move(440,220);assert.equal(timers.size,1);dispose();assert.equal(frames.size,0);assert.equal(timers.size,0);
+  button.dataset.dodges='17';clock=500;move(440,220);assert.equal(timers.size,1);dispose();assert.equal(frames.size,0);assert.equal(timers.size,0);
   move(440,220);assert.equal(frames.size,0,'Closing the dialog removes every dodge listener');
 });
 
-test('touch presses can trigger an escape and reduced motion skips animation',t=>{
+test('a quick pointer click cannot beat a queued dodge, while recovery and keyboard catches work',t=>{
   const dom=new JSDOM('<div><button>Fair enough</button><button>Unacceptable</button></div>');t.after(()=>dom.window.close());
   const view=dom.window,arena=view.document.querySelector('div'),[safeButton,button]=arena.children;let frame;
   view.requestAnimationFrame=fn=>{frame=fn;return 1;};view.cancelAnimationFrame=()=>{frame=null;};view.matchMedia=()=>({matches:true});
   const rect=(left,top,width,height)=>({left,top,right:left+width,bottom:top+height,width,height});
   arena.getBoundingClientRect=()=>rect(0,0,300,170);safeButton.getBoundingClientRect=()=>rect(0,128,94,42);button.getBoundingClientRect=()=>rect(190,128,110,42);
-  let animations=0;button.animate=()=>{animations++;};const dispose=evasiveNoticeButton({arena,button,safeButton,view});
-  button.dispatchEvent(new view.MouseEvent('pointerdown',{clientX:230,clientY:145}));assert.ok(frame);frame();
-  assert.equal(button.dataset.dodges,'1');assert.equal(animations,0);dispose();
+  let animations=0,catches=0;button.animate=()=>{animations++;};button.addEventListener('click',()=>catches++);
+  t.mock.method(view.performance,'now',()=>0);
+  const dispose=evasiveNoticeButton({arena,button,safeButton,view});
+  const press=()=>button.dispatchEvent(new view.MouseEvent('pointerdown',{clientX:230,clientY:145}));
+  const click=()=>button.dispatchEvent(new view.MouseEvent('click',{detail:1,cancelable:true}));
+  press();assert.ok(frame);click();assert.equal(catches,0,'A pointer press that triggers a dodge cannot also catch it');
+  press();click();assert.equal(catches,0,'A pending animation frame must not permit a click-through');frame();
+  assert.equal(button.dataset.dodges,'1');assert.equal(animations,0,'Reduced motion skips animation');
+  press();click();assert.equal(catches,1,'An actual recovery window still permits a pointer catch');
+  button.dispatchEvent(new view.MouseEvent('click',{detail:0}));assert.equal(catches,2,'Keyboard activation stays available');
+  dispose();press();click();assert.equal(catches,3,'Disposal removes the click guard');
 });
 
 test('escape coordinates account for the review’s CSS zoom',t=>{

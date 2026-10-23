@@ -33,8 +33,16 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:4,y:4,button:'left',clickCount:1},review.sessionId);
     await key('Escape');assert.equal(await run("!!document.querySelector('.learn-notice-overlay')"),true);
     await shot('concept-notice-'+width);
+    // A rapid press must dodge rather than win before the queued frame runs.
+    const pressX=(initial.reject.left+initial.reject.right)/2,pressY=(initial.reject.top+initial.reject.bottom)/2;
+    await call('Input.dispatchMouseEvent',{type:'mousePressed',x:pressX,y:pressY,button:'left',clickCount:1},review.sessionId);
+    await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:pressX,y:pressY,button:'left',clickCount:1},review.sessionId);
+    await waitFor(review,"Number(document.querySelector('.learn-notice-reject').dataset.dodges)>0",'Immediate press escape');
+    assert.equal(await run("document.querySelector('.learn-notice-reject').disabled"),false,'An immediate pointer click must not catch an alert button');
+    await run("Promise.allSettled(document.querySelector('.learn-notice-reject').getAnimations().map(a=>a.finished))");
+    await sleep(70);
     // Proximity, rather than entering the button itself, should start each escape.
-    for(let i=0;i<5;i++) {
+    for(let i=0;i<18;i++) {
       const before=await geometry(),r=before.reject;
       const dodges=await run("Number(document.querySelector('.learn-notice-reject').dataset.dodges||0)");
       await pointer((r.left+r.right)/2,(r.top+r.bottom)/2);
