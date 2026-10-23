@@ -136,3 +136,8 @@ task at a time, and commit each completed logical change before moving on.
 - Item 10: address-bar assumption, current job/reload dependencies and safe
   naming options documented in EXTENSION_URL_OPTIONS.md using official Chrome
   and Mozilla sources. No routes, identity or links changed.
+
+- Final broad verification found one stale assertion from item 5 in the solving-
+  time test: it still expected the old value-before-label text. The test now
+  checks the semantic Time spent label and 3s value separately, preserving its
+  timing/storage checks. The other two failures match the recorded baseline.
