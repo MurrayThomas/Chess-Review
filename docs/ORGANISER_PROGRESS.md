@@ -30,7 +30,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   a temporary layout export button. Preserve the current bottom gap/defaults.
 - [x] 7 Add a Visual-settings debug option to inspect different screen states.
 - [x] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
-- [ ] 10 Report options for changing the extension link at the top safely.
+- [x] 10 Report options for changing the extension link at the top safely.
   Make no link or identifier changes.
 - [ ] 11 Rework the extension popup in the existing visual theme, with animated
   water-style buttons and a new action to open a blank Chess Review.
@@ -131,3 +131,8 @@ task at a time, and commit each completed logical change before moving on.
 - Item 9: reviewed all three open issues and both open PRs, their patches, CI
   jobs and research failure logs. Recommendations and limitations are saved in
   ORGANISER_REPORTS.md. No GitHub mutations or dependency changes were made.
+
+- Item 9 committed as b09424e3.
+- Item 10: address-bar assumption, current job/reload dependencies and safe
+  naming options documented in EXTENSION_URL_OPTIONS.md using official Chrome
+  and Mozilla sources. No routes, identity or links changed.
