@@ -231,7 +231,7 @@ test('live Elo counts up monotonically after a saved win and survives an interve
   frames.step(550);samples.push(value());frames.step(1100);samples.push(value());
   assert.deepEqual(samples,[...samples].sort((a,b)=>a-b));assert.equal(value(),1224);
   assert.equal(w.root.querySelectorAll('[data-puzzle-elo]').length,1);assert.equal(frames.pending.size,0);
-  assert.equal(w.root.querySelector('[data-puzzle-elo]').getAttribute('aria-label'),(1224).toLocaleString()+' Elo');
+  assert.equal(w.root.querySelector('[data-puzzle-elo]').getAttribute('aria-label'),(1224).toLocaleString()+' rating');
 });
 
 test('failed saves do not animate phantom Elo; saving recovery triggers one real reward',async t=>{

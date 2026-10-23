@@ -223,13 +223,52 @@ test('a filtered run without an existing best never creates a record, including 
   assert.equal(data['learning:v1'].bests.knockout,undefined);
 });
 
+for(const mode of ['timeAttack','knockout'])for(const filter of ['type','rating','both'])test(`${mode} remembers accepted ${filter} notice for Play again, both modes and reopening`,async t=>{
+  const {w,data}=await setup(t);
+  if(filter!=='rating')w.puzzleThemes.add('mateIn1');
+  if(filter!=='type')w.puzzleRange=[650,850];
+  const starting=w.startPuzzleRun(mode);
+  const notice=w.root.querySelector('.puzzle-run-notice-card');
+  assert.match(notice.textContent,/Personal best disabled/);
+  notice.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  assert.equal(data['learning:v1'].puzzleRunNoticeAccepted,true);
+  await solve(w);await w.finishChallenge('Ended early');
+  const start=w.startPuzzleRun.bind(w);let restarting;
+  t.mock.method(w,'startPuzzleRun',mode=>restarting=start(mode));
+  w.root.querySelector('[data-focus=run-again]').click();await restarting;
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+  assert.equal(w.run.mode,mode);assert.equal(w.run.bestEligible,false);
+  await solve(w);await w.finishChallenge('Ended early');
+  const other=mode==='timeAttack'?'knockout':'timeAttack';
+  await w.navigate('puzzles');await w.startPuzzleRun(other);
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
+  assert.equal(w.run.bestEligible,false);await w.close();
+  const reopened=(await setup(t,{initial:data})).w;
+  reopened.puzzleRange=[650,850];reopened.puzzleThemes.add('mateIn1');
+  await reopened.startPuzzleRun(mode);
+  assert.equal(reopened.root.querySelector('.puzzle-run-notice-card'),null);
+  assert.equal(reopened.run.bestEligible,false);await solve(reopened);
+  assert.equal(reopened.store.value.bests[mode],undefined);
+});
+
+test('acceptance stays remembered during storage failures and is saved on retry',async t=>{
+  const {w,data,state}=await setup(t);w.puzzleThemes.add('mateIn1');state.fail=true;
+  const starting=w.startPuzzleRun('knockout');
+  w.root.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  assert.equal(w.run.bestEligible,false);await w.finishChallenge('Ended early');
+  await w.startPuzzleRun('knockout');
+  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);assert.ok(w.run);
+  state.fail=false;await w.retrySave();
+  assert.equal(data['learning:v1'].puzzleRunNoticeAccepted,true);
+});
+
 for(const mode of ['timeAttack','knockout'])for(const range of [[450,850],[650,1650],[650,850]])test(`${mode} with Elo ${range.join('–')} counts solves without setting records`,async t=>{
   const {w,data}=await setup(t);await w.persist(p=>{p.bests[mode]=1;});
   w.puzzleRange=[...range];w.render();
   assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
   const starting=w.startPuzzleRun(mode),notice=w.root.querySelector('.puzzle-run-notice-card');
-  assert.match(notice.textContent,/limited the puzzle Elo range/);
-  assert.match(notice.textContent,/Puzzles solved will still count/);
+  assert.match(notice.textContent,/full rating range/);
+  assert.doesNotMatch(notice.textContent,/Elo|Puzzles solved/);
   assert.equal(w.run,null);
   notice.querySelector('[data-focus=run-notice-continue]').click();await starting;
   assert.equal(w.run.bestEligible,false);

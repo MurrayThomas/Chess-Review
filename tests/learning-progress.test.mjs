@@ -2,6 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {ProgressStore, normalizeProgress, PROGRESS_KEY, recordPuzzle, progressTotals, ChallengeClock, challengeResult} from '../lib/learning/progress.js';
 const memory=()=>{const values={};return {values,async get(key){return {[key]:structuredClone(values[key])};},async set(data){Object.assign(values,structuredClone(data));}};};
+test('filtered run notice acceptance defaults off and only accepts a saved boolean',()=>{
+  for(const value of [null,{schema:1},{schema:1,puzzleRunNoticeAccepted:'true'},{schema:1,puzzleRunNoticeAccepted:1}])assert.equal(normalizeProgress(value).puzzleRunNoticeAccepted,false);
+  assert.equal(normalizeProgress({schema:1,puzzleRunNoticeAccepted:true}).puzzleRunNoticeAccepted,true);
+});
 test('unique solves, repeats, assistance and struggles remain distinct across reloads',async()=>{
   const storage=memory(),store=new ProgressStore(storage);
   await store.load();

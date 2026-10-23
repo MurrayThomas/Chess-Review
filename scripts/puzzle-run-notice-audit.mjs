@@ -1,0 +1,34 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+
+export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
+  const run=expression=>evaluate(review,expression);
+  await run("import('./analysis.js').then(async m=>{m.S.settings.moveAnim=false;await m.openLearning();const w=m.learningWorkspace;w.puzzleRange=[600,1200];w.puzzleThemes.add('mateIn1');w.render();document.querySelector('[data-focus=timeAttack]').click();})");
+  await waitFor(review,"!!document.querySelector('.puzzle-run-notice-card')",'Filtered run notice');
+  for(const [width,height] of [[1920,1080],[390,844],[320,640]]) {
+    await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);
+    await sleep(600);
+    const layout=await run("(()=>{const card=document.querySelector('.puzzle-run-notice-card'),r=card.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height,viewportWidth:innerWidth,viewportHeight:innerHeight,copy:card.textContent,backdrop:getComputedStyle(card.parentElement).backgroundColor,overflow:card.scrollWidth>card.clientWidth,buttons:[...card.querySelectorAll('button')].map(n=>{const b=n.getBoundingClientRect();return {width:b.width,height:b.height};})};})()");
+    assert.ok(layout.left>=15&&layout.right<=layout.viewportWidth-15&&layout.top>=15&&layout.bottom<=layout.viewportHeight-15,'Notice must fit the viewport: '+JSON.stringify(layout));
+    assert.ok(layout.width<=341&&layout.height<220,'Keep the notice compact');
+    assert.equal(layout.overflow,false);assert.ok(layout.buttons.every(b=>b.width>=42&&b.height>=42));
+    assert.match(layout.copy,/full rating range/);assert.doesNotMatch(layout.copy,/Elo|Puzzles solved/);
+    assert.match(layout.backdrop,/0\.267/,'Use a lighter backdrop');
+    const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);
+    await fs.writeFile(path.join(out,'run-notice-'+width+'.png'),Buffer.from(shot.data,'base64'));
+  }
+  await run("document.querySelector('[data-focus=run-notice-continue]').click()");
+  await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.run&&!m.learningWorkspace.busy&&!m.learningWorkspace.startingPuzzleRun)",'Accepted run');
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.store.value.puzzleRunNoticeAccepted&&!m.learningWorkspace.run.bestEligible)"),true);
+  await run("import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Ended early'))");
+  await run("document.querySelector('[data-focus=run-again]').click()");
+  await waitFor(review,"import('./analysis.js').then(m=>!!m.learningWorkspace.run&&!m.learningWorkspace.busy&&!m.learningWorkspace.startingPuzzleRun)",'Play again without another notice');
+  assert.equal(await run("!!document.querySelector('.puzzle-run-notice-card')"),false);
+  await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace;await w.finishChallenge('Ended early');await w.navigate('puzzles');await w.startPuzzleRun('knockout');})");
+  assert.equal(await run("import('./analysis.js').then(m=>m.learningWorkspace.run.mode==='knockout'&&!m.learningWorkspace.run.bestEligible&&!document.querySelector('.puzzle-run-notice-card'))"),true);
+  await call('Emulation.clearDeviceMetricsOverride',{},review.sessionId);
+  await run("import('./analysis.js').then(async m=>{await m.learningWorkspace.close();await m.openLearning();const w=m.learningWorkspace;w.puzzleRange=[600,1200];await w.startPuzzleRun('timeAttack');})");
+  assert.equal(await run("import('./analysis.js').then(m=>!!m.learningWorkspace.run&&!m.learningWorkspace.run.bestEligible&&!document.querySelector('.puzzle-run-notice-card'))"),true);
+  console.log('Run notice browser checks passed at 1920, 390 and 320 pixels, including Play again, both modes and reopening. Screenshots: '+out);
+}

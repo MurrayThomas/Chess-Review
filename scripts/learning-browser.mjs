@@ -35,7 +35,7 @@ try {
   const call=(method,params={},sessionId)=>new Promise((resolve,reject)=>{const id=++seq,timer=setTimeout(()=>{pending.delete(id);reject(Error(method+' timed out'));},method==='Extensions.loadUnpacked'?60000:20000);pending.set(id,{resolve,reject,timer});ws.send(JSON.stringify({id,method,params,sessionId}));});
   const loaded=await call('Extensions.loadUnpacked',{path:source});
   const tab=async url=>{const {targetId}=await call('Target.createTarget',{url});const {sessionId}=await call('Target.attachToTarget',{targetId,flatten:true});return {targetId,sessionId};};
-  const evaluate=async(t,expression)=>{const result=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true},t.sessionId);if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;};
+  const evaluate=async(t,expression)=>{const result=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true},t.sessionId).catch(error=>{throw Error(error.message+' while evaluating: '+expression,{cause:error});});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;};
   const waitFor=async(t,expression,label)=>{for(let i=0;i<250;i++){if(await evaluate(t,expression))return;await sleep(100);}throw Error(label+' did not become ready');};
   const audit=await tab(`chrome-extension://${loaded.id}/audit.html`);await waitFor(audit,'!!window.api','Storage API');
   await evaluate(audit,"api.storage.local.set({settings:{engineDepth:4,engineWorkers:1,depthBumped:true,sound:false,coachPlain:true},'job:learn-audit':{pgn:'1. e4 e5 2. Nf3 Nc6 *',meta:{gameId:'learn-audit'},source:'pgn'}})");
@@ -43,6 +43,6 @@ try {
   await waitFor(review,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.analyzing)",'Review');
   const {windowId}=await call('Browser.getWindowForTarget',{targetId:review.targetId});
   await call('Browser.setWindowBounds',{windowId,bounds:{width:1920,height:1080}});await sleep(400);
-  const {auditLearning}=await import(process.argv.includes('--openings')?'./openings-audit.mjs':process.argv.includes('--concept-notice')?'./concept-notice-audit.mjs':'./learning-audit.mjs');
+  const {auditLearning}=await import(process.argv.includes('--openings')?'./openings-audit.mjs':process.argv.includes('--concept-notice')?'./concept-notice-audit.mjs':process.argv.includes('--run-notice')?'./puzzle-run-notice-audit.mjs':'./learning-audit.mjs');
   await auditLearning({review,call,evaluate,waitFor,sleep,out});
 } finally {clearInterval(keepAlive);ws?.close();chrome.kill();}

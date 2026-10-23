@@ -22,7 +22,7 @@ test('skipping charges one Elo loss and carries its delta to the next puzzle wit
   assert.equal(w.activity.id,'second');assert.equal(w.store.value.puzzleRating.elo,1176);
   assert.equal(w.store.value.puzzleRating.losses,1);
   assert.equal(w.store.value.puzzles.first.ratingResult.reason,'skip');
-  assert.equal(w.root.querySelector('.puzzle-elo-change.loss').textContent,'-24 Elo');
+  assert.equal(w.root.querySelector('.puzzle-elo-change.loss').textContent,'-24 rating');
   assert.equal(w.root.querySelector('.puzzle-practice-status').textContent,'White to move');
   assert.equal(w.root.querySelector('.puzzle-result-badge, .puzzle-wrong'),null);assert.deepEqual(sounds,[]);
   await w.submitPuzzle('e2e4');
