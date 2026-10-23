@@ -176,7 +176,7 @@ test('catching Unacceptable reveals the bullet joke, stops dodging and keeps dis
   const {w,dom}=await workspace(t);await w.navigate('concepts');
   w.root.querySelector('.learn-library-row > button').click();const runner=w.root.querySelector('.learn-notice-reject');
   runner.focus();runner.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}));
-  assert.equal(w.root.querySelector('#learn-notice-copy').textContent,'Whoa, your mouse speed is insane. Do you play a lot of bullet?');
+  assert.equal(w.root.querySelector('#learn-notice-copy').textContent,"Whoa, nice mouse speed! Why don't you use that in some of your bullet games?");
   assert.equal(runner.disabled,true);assert.equal(w.disposeConceptDodge,null);
   assert.equal(dom.window.document.activeElement.textContent,'Fair enough');
   w.root.querySelector('.learn-notice-accept').click();assert.equal(w.conceptNotice,null);

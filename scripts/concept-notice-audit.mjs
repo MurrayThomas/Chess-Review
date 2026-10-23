@@ -58,7 +58,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     await run("document.querySelector('.learn-notice-accept').focus()");await key('Tab');
     assert.equal(await run('document.activeElement.textContent'),'Unacceptable');
     const beforeCatch=await geometry();await key('Enter');
-    assert.equal(await run("document.querySelector('#learn-notice-copy').textContent"),'Whoa, your mouse speed is insane. Do you play a lot of bullet?');
+    assert.equal(await run("document.querySelector('#learn-notice-copy').textContent"),"Whoa, nice mouse speed! Why don't you use that in some of your bullet games?");
     assert.equal(await run('document.activeElement.textContent'),'Fair enough');
     const afterCatch=await geometry();assert.ok(Math.abs(beforeCatch.card.top-afterCatch.card.top)<1,'The catch should not shift the dialog');
     await shot('concept-notice-caught-'+width);
