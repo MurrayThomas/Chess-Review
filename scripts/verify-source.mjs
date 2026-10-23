@@ -16,7 +16,7 @@ async function files(dir, prefix = '', excludeResearchRuns = false) {
   const result = [];
   try {
     for (const entry of await readdir(dir, {withFileTypes: true})) {
-      if (['.git', 'node_modules', 'web-ext-artifacts', 'calibration-runs', 'scratch', '.codex', '.agents'].includes(entry.name)) continue;
+      if (['.git', 'node_modules', 'web-ext-artifacts', 'calibration-runs', 'scratch', '.scratch', '.codex', '.agents'].includes(entry.name)) continue;
       const name = prefix + entry.name;
       if (excludeResearchRuns && name === 'research/runs' && entry.isDirectory()) continue;
       if (entry.isDirectory()) result.push(...await files(path.join(dir, entry.name), name + '/', excludeResearchRuns));
@@ -58,9 +58,10 @@ export async function verifySource(root) {
   try { await stat(path.join(root, '.git')); hasGit = true; }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
   if (hasGit) {
-    const trackedRuns = execFileSync('git', ['ls-files', '--', 'research/runs'], {
+    const trackedRuns = execFileSync('git', ['ls-files', '--', 'research/runs', '.scratch'], {
       cwd: root, encoding: 'utf8', windowsHide: true,
     }).trim();
+    if (trackedRuns.split('\n').some(file => file.startsWith('.scratch/'))) throw Error('Generated scratch checkouts must not be tracked: ' + trackedRuns);
     if (trackedRuns) throw Error('Generated research runs must not be tracked: ' + trackedRuns);
   }
   const model = JSON.parse(await readFile(path.join(root, 'data/calibration.json'), 'utf8'));

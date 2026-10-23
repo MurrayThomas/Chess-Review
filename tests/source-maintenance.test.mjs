@@ -126,3 +126,17 @@ test('history batches preserve byte boundaries, binary skips, and later blob and
   git(['commit', '--allow-empty', '-qm', claim]);
   assert.throws(() => verifyHistory(['HEAD', '^HEAD~1'], root, options), /numerical-agreement/);
 });
+
+test('source scanning skips local scratch checkouts and rejects tracked scratch source', async t => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'chess-review-scratch-'));
+  t.after(() => rm(root, {recursive: true, force: true}));
+  await mkdir(path.join(root, 'data'));
+  await writeFile(path.join(root, 'data/calibration.json'), await readFile(new URL('../data/calibration.json', import.meta.url)));
+  await writeFile(path.join(root, 'analysis.js'), '');
+  await mkdir(path.join(root, '.scratch/old-checkout'), {recursive: true});
+  await writeFile(path.join(root, '.scratch/old-checkout/README.md'), 'Accuracy within ' + '9' + '5% of Chess' + '.com');
+  await verifySource(root);
+  const git = args => execFileSync('git', args, {cwd: root, encoding: 'utf8', windowsHide: true});
+  git(['init', '-q']); git(['add', '--', '.scratch']);
+  await assert.rejects(verifySource(root), /scratch checkouts must not be tracked/);
+});
