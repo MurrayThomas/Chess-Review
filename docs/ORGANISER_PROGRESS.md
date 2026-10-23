@@ -29,7 +29,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
 - [x] 6 Add proportional group resizing/multiselection to Reorganize panels and
   a temporary layout export button. Preserve the current bottom gap/defaults.
 - [x] 7 Add a Visual-settings debug option to inspect different screen states.
-- [ ] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
+- [x] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
 - [ ] 10 Report options for changing the extension link at the top safely.
   Make no link or identifier changes.
 - [ ] 11 Rework the extension popup in the existing visual theme, with animated
@@ -126,3 +126,8 @@ task at a time, and commit each completed logical change before moving on.
   ACTIVE for 2026-10-23 21:57:55 Europe/Copenhagen (two minutes after the
   reported five-hour reset). It must skip completed work and stay quiet if all
   items are done. Pause it if the queue is completed before its first run.
+
+- Item 7 committed as 90738fd4.
+- Item 9: reviewed all three open issues and both open PRs, their patches, CI
+  jobs and research failure logs. Recommendations and limitations are saved in
+  ORGANISER_REPORTS.md. No GitHub mutations or dependency changes were made.
