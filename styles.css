@@ -544,12 +544,11 @@ button { font-family: inherit; cursor: pointer; }
 .brand-name span { color: var(--ink-3); font-weight: 600; }
 
 .topbar-meta { display: flex; align-items: center; gap: 18px; margin-left: 6px; }
-.has-learning .topbar-meta { pointer-events: none; animation: meta-swoop-up .48s cubic-bezier(.55,-.25,.7,.5) both; }
+.has-learning .topbar-meta { pointer-events: none; animation: meta-swoop-up .28s ease-out both; }
 .topbar-meta.meta-return { animation: meta-drop-in 1.05s both; transform-origin: 50% 0; }
 @keyframes meta-swoop-up {
-  0% { transform: translateY(0) rotate(0); opacity: 1; }
-  25% { transform: translateY(6px) rotate(-2deg); opacity: 1; }
-  100% { transform: translateY(-160px) rotate(9deg); opacity: 0; visibility: hidden; }
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-24px); opacity: 0; visibility: hidden; }
 }
 @keyframes meta-drop-in {
   0% { transform: translateY(-160px) rotate(-9deg); opacity: 0; animation-timing-function: cubic-bezier(.55,.05,1,.6); }
