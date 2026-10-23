@@ -72,6 +72,12 @@ Settings let you choose an engine, rating mode, board, pieces, sounds, coach and
 category-badge appearance. Badge numbers describe move categories; they are
 separate from position evaluation and game accuracy.
 
+**Settings → Visual → Layout → Reorganize panels** unlocks the review layout.
+Use each panel’s selection check, **Select right panels**, or **Select all** to
+choose a group. Drag a handle to move the group or a corner to scale its spacing,
+contents and dimensions together. **Export layout** downloads a JSON proposal
+that can be shared for a future default arrangement.
+
 Both engines offer **Use recorded rating** and **Moves only**. The first compares
 your performance with public players near the rating saved in the game; the
 second ignores that rating and estimates a blitz rating level from your choices.

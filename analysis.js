@@ -16,6 +16,7 @@ import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { loadLearningWorkspace, presentationFor } from "./lib/learning-loader.js";
+import { panelScale, panelGroupBounds, scalePanelGroup, movePanelGroup } from "./lib/panel-layout.js";
 
 /* ---------------- Opening book ----------------
  * Offline lookup table built from lichess-org/chess-openings (bundled in data/book.json).
@@ -1644,7 +1645,9 @@ function makeMod(key, ...inner) {
   const gripE = el("div", { class: "mod-resize e", title: "Drag to change width" });
   const gripS = el("div", { class: "mod-resize s", title: "Drag to change height" });
   const gripSE = el("div", { class: "mod-resize se", title: "Drag to resize", html: GRIP_SVG });
-  const mod = el("div", { class: "mod", "data-mod": key }, handle, innerWrap, gripE, gripS, gripSE);
+  const select = el("button", {type:"button",class:"mod-select","aria-label":"Select "+key+" panel","aria-pressed":"false",
+    onclick:e=>{e.stopPropagation();togglePanelSelection(key);}}, "✓");
+  const mod = el("div", { class: "mod", "data-mod": key }, handle, select, innerWrap, gripE, gripS, gripSE);
   makeMovable(mod, handle, { e: gripE, s: gripS, se: gripSE }, key);
   return mod;
 }
@@ -1669,6 +1672,53 @@ function saveLayout() {
 // "auto" = the responsive layout in styles.css, which fits any window. "custom" = the free canvas the
 // user arranged in Reorganize mode, placed from S.layout and zoomed to fit the window.
 const isCustomLayout = () => S.layoutMode === "custom";
+const selectedPanels = new Set();
+let cancelPanelGesture = null;
+function visiblePanelKeys() {
+  return [...UI.canvas.querySelectorAll('.mod')].filter(mod=>!mod.hidden&&getComputedStyle(mod).display!=="none"&&S.layout[mod.dataset.mod]).map(mod=>mod.dataset.mod);
+}
+function selectedPanelKeys() {return visiblePanelKeys().filter(key=>selectedPanels.has(key));}
+function togglePanelSelection(key) {
+  if(!S.reorganize)return;
+  if(selectedPanels.has(key))selectedPanels.delete(key);else selectedPanels.add(key);
+  syncPanelSelection();
+}
+function syncPanelSelection() {
+  const group=selectedPanelKeys().length>1;
+  for(const mod of UI.canvas.querySelectorAll('.mod')){
+    const selected=S.reorganize&&selectedPanels.has(mod.dataset.mod);
+    mod.classList.toggle('panel-selected',selected);
+    mod.querySelector('.mod-select').setAttribute('aria-pressed',String(selected));
+    mod.querySelector('.mod-handle').title=selected&&group?'Drag to move selected panels':'Drag to move';
+    for(const grip of mod.querySelectorAll('.mod-resize'))grip.title=selected&&group?'Drag to scale selected panels':grip.classList.contains('e')?'Drag to change width':grip.classList.contains('s')?'Drag to change height':'Drag to resize';
+  }
+  renderReorgBanner();
+}
+function selectPanels(keys) {
+  selectedPanels.clear();for(const key of keys)selectedPanels.add(key);syncPanelSelection();
+}
+function selectRightPanels() {
+  const board=S.layout.board;if(!board)return;
+  selectPanels(visiblePanelKeys().filter(key=>S.layout[key].x>=board.x+board.w-2));
+}
+function panelLayoutExport() {
+  return {schema:"chess-review-layout-v1",layoutVersion:LAYOUT_VERSION,layoutMode:S.layoutMode,
+    layout:structuredClone(layoutForSave()),displayedLayout:structuredClone(isCustomLayout()?S.layout:snapshotLayout()),accuracyExpanded:S.qbreakExpanded,
+    visiblePanels:visiblePanelKeys(),viewport:{width:window.innerWidth,height:window.innerHeight,devicePixelRatio:window.devicePixelRatio||1}};
+}
+function exportPanelLayout() {
+  const blob=new window.Blob([JSON.stringify(panelLayoutExport(),null,2)+"\n"],{type:"application/json"});
+  const url=window.URL.createObjectURL(blob),link=el("a",{href:url,download:"chess-review-layout.json"});
+  document.body.append(link);link.click();link.remove();setTimeout(()=>window.URL.revokeObjectURL(url),1000);
+}
+function applyPanelBox(mod,b) {
+  mod.style.left=b?b.x+"px":"";mod.style.top=b?b.y+"px":"";
+  mod.style.width=b?b.w+"px":"";mod.style.height=b?b.h+"px":"";
+  const scale=b?panelScale(b):1,inner=mod.querySelector('.mod-inner');
+  inner.style.flex=scale===1?"":"none";
+  inner.style.width=scale===1?"":b.w/scale+"px";inner.style.height=scale===1?"":b.h/scale+"px";
+  inner.style.transform=scale===1?"":"scale("+scale+")";inner.style.transformOrigin=scale===1?"":"top left";
+}
 function applyLayoutMode() {
   const custom = isCustomLayout();
   UI.canvas.classList.toggle("auto", !custom);
@@ -1690,8 +1740,7 @@ function applyLayout() {
       if (key === "accuracy") b.h = Math.max(MINH, b.h - collapse.delta);
       if (collapse.belowKeys.includes(key)) b.y = Math.max(0, b.y - collapse.delta);
     }
-    mod.style.left = b ? b.x + "px" : ""; mod.style.top = b ? b.y + "px" : "";
-    mod.style.width = b ? b.w + "px" : ""; mod.style.height = b ? b.h + "px" : "";
+    applyPanelBox(mod,b);
   }
   fitEnginePanel();
   requestAnimationFrame(positionSettings);
@@ -1744,7 +1793,7 @@ function accuracyReflowInfo(layout = S.layout) {
   const qb = accMod && accMod.querySelector(".qbreak");
   const gap = qb ? (parseFloat(getComputedStyle(qb).rowGap) || 0) : 0;
   const rowH = row ? row.offsetHeight : 24;
-  const delta = Math.round((QBREAK_FULL.length - QBREAK_SUMMARY.length) * (rowH + gap));
+  const delta = Math.round((QBREAK_FULL.length - QBREAK_SUMMARY.length) * (rowH + gap))*panelScale(acc);
   const belowKeys = [];
   for (const [k, o] of Object.entries(layout)) {
     if (k === "accuracy") continue;
@@ -1764,7 +1813,7 @@ function reflowAccuracy(expanded) {
   const acc = S.layout.accuracy; if (!acc) return;
   if (!expanded && !S._accReflow) {
     const { delta, belowKeys } = accuracyReflowInfo();
-    acc.h = Math.max(MINH, acc.h - delta);
+    acc.h = Math.max(MINH*panelScale(acc), acc.h - delta);
     for (const k of belowKeys) S.layout[k].y = Math.max(0, S.layout[k].y - delta);
     S._accReflow = { delta, belowKeys };
   } else if (expanded && S._accReflow) {
@@ -1786,67 +1835,54 @@ function snapResize(b, mw = MINW) {
   return { w: Math.max(mw, snapGrid(b.w)), h: Math.max(MINH, snapGrid(b.h)) };
 }
 function makeMovable(mod, handle, grips, key) {
-  // Move the module (drag the handle in the top-left).
-  handle.addEventListener("pointerdown", (e) => {
-    e.preventDefault(); e.stopPropagation();
-    const b = S.layout[key];
-    const sx = e.clientX, sy = e.clientY, ox = b.x, oy = b.y;
-    try { handle.setPointerCapture(e.pointerId); } catch {}
-    mod.classList.add("dragging");
-    const move = (ev) => {
-      const s = snapDrag({ x: Math.max(0, ox + (ev.clientX - sx)), y: Math.max(0, oy + (ev.clientY - sy)), w: b.w, h: b.h });
-      b.x = s.x; b.y = s.y;
-      mod.style.left = b.x + "px"; mod.style.top = b.y + "px";
+  const begin=(kind,target)=>(e)=>{
+    if(!S.reorganize||e.button!==0)return;
+    e.preventDefault();e.stopPropagation();
+    cancelPanelGesture?.();
+    if(e.ctrlKey||e.metaKey||e.shiftKey){togglePanelSelection(key);return;}
+    if(!selectedPanels.has(key))selectPanels([key]);
+    const keys=selectedPanelKeys(),group=keys.length>1,start=structuredClone(S.layout),reflow=S._accReflow&&structuredClone(S._accReflow);
+    const bounds=panelGroupBounds(start,keys),box=start[key],sx=e.clientX,sy=e.clientY;
+    if(!bounds||!box)return;
+    clearTimeout(_saveLayoutT);
+    for(const name of keys)UI.canvas.querySelector('[data-mod="'+name+'"]').classList.add(kind==='move'?'dragging':'resizing');
+    try{target.setPointerCapture(e.pointerId);}catch{}
+    const apply=ev=>{
+      const dx=ev.clientX-sx,dy=ev.clientY-sy;
+      if(kind==='move')S.layout=movePanelGroup(start,keys,snapGrid(dx),snapGrid(dy));
+      else if(group){
+        const rx=box.x+box.w-bounds.x,ry=box.y+box.h-bounds.y;
+        const factor=kind==='e'?1+dx/rx:kind==='s'?1+dy/ry:1+(dx*rx+dy*ry)/(rx*rx+ry*ry);
+        S.layout=scalePanelGroup(start,keys,factor);
+        if(reflow&&keys.includes('accuracy'))S._accReflow={...reflow,delta:reflow.delta*S.layout.accuracy.w/start.accuracy.w};
+      }else{
+        const b={...box},size=snapResize({w:kind.includes('e')?box.w+dx:box.w,h:kind.includes('s')?box.h+dy:box.h},modMinW(key));
+        if(kind.includes('e'))b.w=size.w;if(kind.includes('s'))b.h=size.h;
+        S.layout={...start,[key]:b};
+      }
+      applyLayout();growCanvas();if(keys.includes('board'))alignPlayers();
     };
-    const up = (ev) => {
-      handle.removeEventListener("pointermove", move);
-      handle.removeEventListener("pointerup", up);
-      try { handle.releasePointerCapture(ev.pointerId); } catch {}
-      const s = snapDrag({ x: b.x, y: b.y, w: b.w, h: b.h }); // settle on the grid
-      b.x = s.x; b.y = s.y;
-      mod.style.left = b.x + "px"; mod.style.top = b.y + "px";
-      mod.classList.remove("dragging");
-      growCanvas(); saveLayout();
-      if (key === "board") alignPlayers();
+    const move=ev=>{if(ev.pointerId===e.pointerId)apply(ev);};
+    const finish=(cancelled,ev)=>{
+      if(ev&&ev.pointerId!==e.pointerId)return;
+      window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);window.removeEventListener('pointercancel',cancel);window.removeEventListener('blur',blur);
+      try{target.releasePointerCapture(e.pointerId);}catch{}
+      cancelPanelGesture=null;
+      if(cancelled){S.layout=start;S._accReflow=reflow;applyLayout();growCanvas();}
+      else if(ev)apply(ev);
+      for(const name of keys)UI.canvas.querySelector('[data-mod="'+name+'"]').classList.remove('dragging','resizing');
+      saveLayout();if(keys.includes('board'))alignPlayers();
     };
-    handle.addEventListener("pointermove", move);
-    handle.addEventListener("pointerup", up);
-  });
-  // Resize. dir = "e" (width), "s" (height) or "se" (both).
-  const startResize = (dir, gripEl) => (e) => {
-    e.preventDefault(); e.stopPropagation();
-    const b = S.layout[key];
-    const sx = e.clientX, sy = e.clientY, ow = b.w, oh = b.h;
-    try { gripEl.setPointerCapture(e.pointerId); } catch {} // reliable tracking even over the board/other modules
-    mod.classList.add("resizing");
-    const apply = (ev) => {
-      const w = dir.includes("e") ? Math.max(modMinW(key), ow + (ev.clientX - sx)) : ow;
-      const h = dir.includes("s") ? Math.max(MINH, oh + (ev.clientY - sy)) : oh;
-      const s = snapResize({ x: b.x, y: b.y, w, h }, modMinW(key));
-      if (dir.includes("e")) { b.w = s.w; mod.style.width = b.w + "px"; }
-      if (dir.includes("s")) { b.h = s.h; mod.style.height = b.h + "px"; }
-      if (key === "engine") fitEnginePanel();
-      if (key === "board") alignPlayers();
-    };
-    const move = (ev) => apply(ev);
-    const up = (ev) => {
-      gripEl.removeEventListener("pointermove", move);
-      gripEl.removeEventListener("pointerup", up);
-      try { gripEl.releasePointerCapture(ev.pointerId); } catch {}
-      apply(ev); // settle on the grid
-      mod.classList.remove("resizing");
-      growCanvas(); saveLayout();
-      if (key === "board") alignPlayers();
-    };
-    gripEl.addEventListener("pointermove", move);
-    gripEl.addEventListener("pointerup", up);
+    const up=ev=>finish(false,ev),cancel=ev=>finish(true,ev),blur=()=>finish(true);
+    cancelPanelGesture=blur;
+    window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',cancel);window.addEventListener('blur',blur);
   };
-  grips.e.addEventListener("pointerdown", startResize("e", grips.e));
-  grips.s.addEventListener("pointerdown", startResize("s", grips.s));
-  grips.se.addEventListener("pointerdown", startResize("se", grips.se));
+  handle.addEventListener('pointerdown',begin('move',handle));
+  for(const dir of ['e','s','se'])grips[dir].addEventListener('pointerdown',begin(dir,grips[dir]));
 }
 // Back to the automatic layout and its window-dependent fit.
 function resetLayout() {
+  cancelPanelGesture?.();
   S._accReflow = null;   // drop any collapse offset so the fresh layout isn't double-adjusted
   S.layout = structuredClone(DEFAULT_LAYOUT);
   S.layoutMode = "auto";
@@ -1871,22 +1907,32 @@ function toggleReorganize() {
     // The snapshot already fits at the current zoom. Refitting here would change
     // every panel's apparent size just for unlocking its drag handles.
   }
+  cancelPanelGesture?.();
   S.reorganize = !S.reorganize;
+  if(!S.reorganize)selectedPanels.clear();
   UI.canvas.classList.toggle("reorganizing", S.reorganize);
   if (S.reorganize && UI.settings) UI.settings.hidden = true; // move the settings panel out of the way
-  renderReorgBanner();
+  syncPanelSelection();
   if (UI.settings && !UI.settings.hidden) renderSettings();   // refresh the button label if open
 }
 function renderReorgBanner() {
-  let b = document.querySelector(".reorg-banner");
-  if (!S.reorganize) { if (b) b.remove(); return; }
-  if (b) return;
-  // Just a "Done" button to leave reorganize mode — dragging the handle / edges is self-explanatory,
-  // so no instruction bar. (Settings is hidden while reorganizing, so this is the way back out.)
-  b = el("div", { class: "reorg-banner" },
-    el("button", { class: "reorg-done", onclick: toggleReorganize }, "Done"),
-  );
-  document.body.append(b);
+  let banner=document.querySelector('.reorg-banner');
+  if(!S.reorganize){banner?.remove();return;}
+  if(!banner){
+    banner=el('div',{class:'reorg-banner',role:'toolbar','aria-label':'Reorganize panels'},
+      el('span',{class:'reorg-hint'},'Select panels, then move or scale them together.'),
+      el('div',{class:'reorg-actions'},
+        el('button',{type:'button','data-reorg':'right',onclick:selectRightPanels},'Select right panels'),
+        el('button',{type:'button','data-reorg':'all',onclick:()=>selectPanels(visiblePanelKeys())},'Select all'),
+        el('button',{type:'button','data-reorg':'clear',onclick:()=>selectPanels([])},'Clear'),
+        el('span',{class:'reorg-count',role:'status'}),
+        el('button',{type:'button','data-reorg':'export',onclick:exportPanelLayout},'Export layout'),
+        el('button',{type:'button',class:'reorg-done',onclick:toggleReorganize},'Done')));
+    document.body.append(banner);
+  }
+  const count=selectedPanelKeys().length;
+  banner.querySelector('.reorg-count').textContent=count+' panel'+(count===1?'':'s')+' selected';
+  banner.querySelector('[data-reorg=clear]').disabled=!count;
 }
 
 /* ---------------- Board ---------------- */
@@ -3071,7 +3117,8 @@ function alignPlayers() {
   const board = UI.boardWrap && UI.boardWrap.querySelector(".board");
   const top = UI.playerTop && UI.playerTop.querySelector(".player-strip");
   if (!board || !top) return;
-  const off = Math.max(4, Math.round(board.getBoundingClientRect().left - UI.boardWrap.getBoundingClientRect().left));
+  const scale=isCustomLayout()?panelScale(S.layout.board):1;
+  const off = Math.max(4, Math.round((board.getBoundingClientRect().left - UI.boardWrap.getBoundingClientRect().left)/scale));
   top.style.paddingLeft = off + "px";
   const bot = UI.playerBot.querySelector(".player-strip");
   if (bot) bot.style.paddingLeft = off + "px";
@@ -4153,12 +4200,13 @@ function fitEnginePanel() {
   const head = UI.engine?.querySelector('.panel-head');
   const body = UI.engine?.querySelector('.engine-body');
   if (!mod || !head || !body) return;
+  const scale=isCustomLayout()?panelScale(S.layout.engine):1;
   const height = Math.max(DEFAULT_LAYOUT.engine.h,
-    Math.ceil((head.getBoundingClientRect().height + body.scrollHeight + 4) / GRID) * GRID);
+    Math.ceil(((head.offsetHeight||head.getBoundingClientRect().height/scale) + body.scrollHeight + 4) / GRID) * GRID)*scale;
   mod.style.minHeight = height + "px";
   if (isCustomLayout() && S.layout.engine) {
     S.layout.engine.h = Math.max(S.layout.engine.h, height);
-    mod.style.height = S.layout.engine.h + "px";
+    applyPanelBox(mod,S.layout.engine);
     growCanvas();
   } else if (UI.canvas.classList.contains("desktop-layout")) {
     mod.style.height = height + "px";
@@ -4730,7 +4778,8 @@ function visualSettings() {
       seg("Bar", "barStyle", ["gradient", "classic", "mono", "accent"], null, (value) => value === "classic" ? "Solid" : value),
       seg("Graph", "graphStyle", ["area", "line", "color", "minimal"]),
       el("button", { class: "set-reset reorg-toggle-btn", onclick: toggleReorganize }, S.reorganize ? "Done reorganizing" : "Reorganize panels"),
-      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Reorganize lets you drag and resize the panels, and your arrangement is saved. Reset layout goes back to the automatic layout that fits any window.")),
+      el("div", { class: "set-row hint" }, el("span", { class: "set-note" }, "Select several panels to move or scale them together. Your arrangement is saved. Export it to share a proposed layout; Reset layout restores the automatic layout.")),
+      el("button", { class: "set-reset", onclick: exportPanelLayout }, "Export panel layout"),
       el("button", { class: "set-reset", onclick: resetLayout }, "Reset layout"),
     ),
     section("Move list",

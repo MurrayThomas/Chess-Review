@@ -1567,6 +1567,11 @@ button { font-family: inherit; cursor: pointer; }
   background: color-mix(in oklab, var(--panel) 78%, transparent);
 }
 .mod-resize { position: absolute; display: none; }
+.mod-select { position: absolute; display: none; place-items: center; top: 3px; right: 22px; width: 22px; height: 22px; padding: 0; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); color: transparent; cursor: pointer; z-index: 9; }
+.canvas.reorganizing .mod-select { display: grid; }
+.mod-select[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.canvas.reorganizing .mod.panel-selected { outline: 2px solid var(--accent); outline-offset: 3px; }
+.canvas.reorganizing .panel-selected .mod-handle, .canvas.reorganizing .panel-selected .mod-resize.se { opacity: .85; }
 .mod-resize.e { top: 8px; bottom: 8px; right: -6px; width: 9px; cursor: ew-resize; z-index: 7; }
 .mod-resize.s { left: 8px; right: 8px; bottom: -6px; height: 9px; cursor: ns-resize; z-index: 7; }
 .mod-resize.se { right: -5px; bottom: -5px; width: 18px; height: 18px; cursor: nwse-resize; z-index: 8;
@@ -1843,7 +1848,12 @@ button { font-family: inherit; cursor: pointer; }
 .est-rating { font-size: 12px; color: var(--ink-3); font-family: var(--font-mono); font-weight: 700; margin-top: 5px; letter-spacing: .01em; cursor: default; }
 
 /* Reorganize-mode banner */
-.reorg-banner { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 120; }
+.reorg-banner { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 120; max-width: calc(100vw - 24px); width: max-content; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); }
+.reorg-hint { display: block; color: var(--ink-2); font-size: 12px; margin-bottom: 8px; }
+.reorg-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.reorg-actions > button { padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; color: var(--ink); background: var(--bg); font: inherit; font-size: 12px; cursor: pointer; }
+.reorg-actions > button:disabled { opacity: .45; cursor: default; }
+.reorg-count { padding: 0 6px; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
 .reorg-banner .reorg-done {
   border-radius: 8px; padding: 8px 18px; font-size: 12.5px; font-weight: 700; cursor: pointer;
   background: var(--accent); color: var(--accent-ink); border: 1px solid var(--accent); box-shadow: var(--shadow);

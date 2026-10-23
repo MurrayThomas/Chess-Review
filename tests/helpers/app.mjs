@@ -10,6 +10,7 @@ import {calibratedReview,scoringEvidenceComplete} from '../../lib/calibrated-rev
 import {analyseCalibratedPosition} from '../../lib/calibrated-search.js';
 import {LearningWorkspace} from '../../lib/learning/workspace.js';
 import {presentationFor} from '../../lib/learning/presentations.js';
+import {panelScale,panelGroupBounds,scalePanelGroup,movePanelGroup} from '../../lib/panel-layout.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
 
@@ -38,6 +39,7 @@ export function app(t, {hardware} = {}) {
   const context = vm.createContext({
     window: dom.window, document: dom.window.document, navigator: dom.window.navigator, LearningWorkspace,
     loadLearningWorkspace:async () => ({LearningWorkspace}), presentationFor,
+    panelScale,panelGroupBounds,scalePanelGroup,movePanelGroup,
     location: dom.window.location, Node: dom.window.Node, HTMLElement: dom.window.HTMLElement,
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
     URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,

@@ -26,7 +26,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   allow early solver drops and finish the opponent animation instantly.
 - [x] 5 Remove puzzle-statistics divider clutter; improve summary metrics; show
   all puzzle types, with zero correct/incorrect/percent for untried types.
-- [ ] 6 Add proportional group resizing/multiselection to Reorganize panels and
+- [x] 6 Add proportional group resizing/multiselection to Reorganize panels and
   a temporary layout export button. Preserve the current bottom gap/defaults.
 - [ ] 7 Add a Visual-settings debug option to inspect different screen states.
 - [ ] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
@@ -104,3 +104,13 @@ task at a time, and commit each completed logical change before moving on.
   untried types. 28 checks passed plus the corrected always-visible-types case
   passing on focused rerun. Chrome checks at 1920/1280/390/320, screenshot review,
   source verification and diff checks pass.
+
+- Item 5 committed as 3ff2ffcb.
+- Item 6: added per-panel selection, select-right/all/clear controls, group movement
+  and proportional resizing including content. Scales persist with existing
+  layouts; Accuracy collapse offsets and engine content floors scale correctly.
+  Export layout downloads geometry/visibility/viewport JSON without game data.
+  Current defaults and bottom spacing remain unchanged. 39 focused layout/board
+  checks pass, as does real Chrome pointer scaling/movement, unchanged-board
+  verification, content scaling, export download parsing and reload checks.
+  Selected-panel screenshot inspected.
