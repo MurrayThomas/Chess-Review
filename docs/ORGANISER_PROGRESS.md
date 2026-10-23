@@ -18,7 +18,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
 - [x] 2 Keep Time attack replay on Run complete; remove the mode/death subtitle;
   align the heading with Back to puzzle overview, following Knockout. Fix puzzle
   box wrapping in both modes. Put side-to-move above the solved list/Puzzle x.
-- [ ] 3 Remove spurious green focus frames after opening arrow navigation; style
+- [x] 3 Remove spurious green focus frames after opening arrow navigation; style
   and right-align Opening library like Back to puzzle overview. Order tabs
   Puzzles, Openings, Concepts.
 - [ ] 4 Speed up Time attack piece animations. Show destinations and capture
@@ -81,3 +81,10 @@ task at a time, and commit each completed logical change before moving on.
   puzzle labels. Mode/reason subtitles removed and result headings share the
   overview-button row. 33 run checks and Chrome layout/replay checks at
   1920/1280/390/320 pass; desktop and phone screenshots inspected.
+
+- Item 2 committed as 8915f809.
+- Item 3: reordered learning tabs, right-aligned/styled Opening library, and
+  prevented shortcut-driven focus restoration on opening arrows. 39 focused
+  checks pass. Chrome verifies real key events and retains normal focus-visible
+  support across 10 opening views (five widths, both colors). Source/diff checks
+  pass; desktop and phone screenshots inspected.

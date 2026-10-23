@@ -24,7 +24,7 @@ test('puzzle entry, loading errors, filtered empty states and focus restoration 
   assert.ok(doc.querySelector('.learning-workspace'));assert.equal(doc.querySelector('.app').inert,true);
   assert.equal(w.root.querySelector('.learn-brand'),null);
   assert.equal(w.root.querySelector('.learn-header').textContent,'← Back to review');
-  assert.equal(w.page,'puzzles');assert.deepEqual([...w.root.querySelectorAll('.learn-nav button')].map(n=>n.textContent),['Puzzles','Concepts','Openings']);
+  assert.equal(w.page,'puzzles');assert.deepEqual([...w.root.querySelectorAll('.learn-nav button')].map(n=>n.textContent),['Puzzles','Openings','Concepts']);
   await w.navigate('concepts');w.filters.search='no such topic';w.render();assert.ok(w.root.querySelector('.learn-empty'));
   w.root.querySelector('.learn-empty button').click();assert.ok(w.root.textContent.includes('Develop your pieces'));
   await w.navigate('openings');w.filters.search='no such opening';w.render();assert.ok(w.root.querySelector('.learn-empty'));
@@ -104,6 +104,9 @@ test('openings pair moves in a scorecard with two side controls, keyboard naviga
   const {w,dom,data}=await workspace(t);await w.startOpening('italian',{practice:true,color:'b'});
   const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
   assert.equal(w.activity.practice,undefined);assert.equal(w.activity.ply,0);assert.equal(w.flipped,true);
+  const back=w.root.querySelector('[data-focus=opening-library]');
+  assert.ok(back.classList.contains('learn-statistics-button'));assert.ok(back.closest('.puzzle-session-navigation'));
+  assert.equal(back.textContent,'Opening library');
   assert.equal(w.root.querySelector('.learn-copy, .learn-opening-notes, .learn-move-input, [data-focus="practice-color"]'),null);
   assert.equal(w.root.querySelectorAll('.learn-opening-controls button').length,2);
   assert.ok(w.root.querySelector('.learn-opening-toolbar .learn-opening-controls'));
@@ -144,7 +147,7 @@ test('opening highlights follow backward moves in either orientation and reset o
     }
     w.stepOpening(3);w.root.querySelector('[data-square="a8"]').focus();
     dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'ArrowLeft',bubbles:true,cancelable:true}));
-    assert.equal(dom.window.document.activeElement.dataset.focus,'opening-prev');
+    assert.equal(dom.window.document.activeElement.closest('.learn-opening-controls'),null);
     assert.deepEqual(highlighted(),['f3','g1']);
     w.stepOpening(0);assert.deepEqual(highlighted(),[]);
     w.stepOpening(4);
