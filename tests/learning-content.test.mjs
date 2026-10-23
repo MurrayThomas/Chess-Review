@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {Chess} from '../lib/chess.js';
 import {LESSONS, OPENINGS, CATEGORIES, THEME_NAMES, playUci, linePositions, positionKey} from '../lib/learning/content.js';
-import {legalPosition} from '../lib/concepts/detectors/E020-concepts.mjs';
+import {legalPosition} from '../lib/learning/rules/E020-concepts.mjs';
 import {validateExercise, validatePuzzleMove, validSquares} from '../lib/learning/validation.js';
 import {puzzleExplanation} from '../lib/learning/workspace.js';
 

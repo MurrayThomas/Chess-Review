@@ -1,5 +1,10 @@
 # Coach concept catalog and scheduling review
 
+The former live extension concept-analysis prototype was separated on 2026-10-23.
+Its [runtime, provenance and historical UI checks](legacy/README.md) remain
+available for reuse. It is no longer shipped or loaded by the extension;
+Learn with Chess Review retains its independent authored concept lessons.
+
 The user approved the ordering and support-routing recommendations on
 2026-10-08. [ACTIVE-QUEUE.md](ACTIVE-QUEUE.md) is the current scheduling policy;
 the catalog and review documents below remain the unchanged E074 snapshot.

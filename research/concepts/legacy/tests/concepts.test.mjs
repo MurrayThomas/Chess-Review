@@ -13,12 +13,13 @@ const provenance = JSON.parse(await fs.readFile(path.join(root, 'lib/concepts/pr
 const verified = provenance.verified;
 const hash = value => createHash('sha256').update(value).digest('hex');
 const normalized = value => value.toString().replaceAll('\r\n', '\n');
-const researchPresent = await fs.access(path.join(root, provenance.trackerPath)).then(() => true, () => false);
+const researchRoot = path.resolve(root, '../../..');
+const researchPresent = await fs.access(path.join(researchRoot, provenance.trackerPath)).then(() => true, () => false);
 
 test('promotion matches canonical E080 tracker with only import relocation and EOF normalization', async () => {
   assert.equal(verified.length, 372);
   if (researchPresent) {
-    const tracker = normalized(await fs.readFile(path.join(root, provenance.trackerPath)));
+    const tracker = normalized(await fs.readFile(path.join(researchRoot, provenance.trackerPath)));
     assert.equal(hash(tracker), provenance.trackerSha256);
     assert.deepEqual(verified.map(r => r.occurrence), [...tracker.matchAll(/^- \[x\] (C\d{4})/gm)].map(m => m[1]));
   }
@@ -26,7 +27,7 @@ test('promotion matches canonical E080 tracker with only import relocation and E
     const promoted = normalized(await fs.readFile(path.join(root, 'lib/concepts/detectors', record.file)));
     assert.equal(hash(promoted), record.promotedSha256, record.file);
     if (!researchPresent) continue; // Release source snapshots deliberately omit research/.
-    const sourceText = normalized(await fs.readFile(path.join(root, source))); assert.equal(hash(sourceText), record.sha256, source);
+    const sourceText = normalized(await fs.readFile(path.join(researchRoot, source))); assert.equal(hash(sourceText), record.sha256, source);
     const relocated = sourceText.replace(/((?:from\s*|import\s*)['"])([^'"]+)(['"])/g, (_, a, specifier, z) => {
       const target = path.posix.normalize(path.posix.join(path.posix.dirname(source), specifier));
       return a + (target === 'lib/chess.js' ? '../../chess.js' : './' + provenance.sources[target].file) + z;
@@ -39,12 +40,12 @@ test('promotion matches canonical E080 tracker with only import relocation and E
 });
 
 test('routing audits retained synthetic events without treating partial scopes as verified', {skip: !researchPresent}, async () => {
-  const {openResearchData} = await import('../research/data-policy.mjs');
+  const {openResearchData} = await import('../../../data-policy.mjs');
   await openResearchData(['D001'], {purpose: 'test'}); // Source eligibility; cases below are authored synthetic.
-  const folders = (await fs.readdir(path.join(root, 'research/experiments'))).filter(f => /^E0(?:[2-7]\d|80)-/.test(f));
+  const folders = (await fs.readdir(path.join(researchRoot, 'research/experiments'))).filter(f => /^E0(?:[2-7]\d|80)-/.test(f));
   const unknown = new Set(); let rows = 0;
   for (const folder of folders) {
-    const file = path.join(root, 'research/experiments', folder, 'evidence/results.json');
+    const file = path.join(researchRoot, 'research/experiments', folder, 'evidence/results.json');
     let raw;
     try { raw = await fs.readFile(file); } catch (e) { if (e.code === 'ENOENT') continue; throw e; }
     const run = JSON.parse(await fs.readFile(path.join(path.dirname(file), 'run.json')));

@@ -24,21 +24,12 @@ game position and orientation. The [learning objective and progress tracker](doc
 preserves the full development brief for work on another computer; [content sources](data/learning/SOURCES.md)
 record licensing and validation scope.
 
-The right-hand Settings panel includes an optional **Concepts** tab after Visual
-and Engine. A separate **Concepts** panel to the right of Accuracy and Engine
-uses those same findings,
-ordered by likely relevance and phrased from your playing side. It follows the
-selected move, includes every match, and separates insights with space. Its top
-aligns with the coach commentary panel; its bottom aligns with Engine. Expand
-an insight's evidence to inspect the original explanation and exact scope.
-Accuracy and the existing move commentary retain their scoring and behavior.
-
-The Settings Concepts panel remains the raw inspection and game-debug view.
-Check **Enable concept analysis** to list supported findings for the
-selected move, with exact verified scopes and game-wide debug metrics. It defaults
-off and stops its worker immediately when disabled. Findings use completed E080
-research's bounded mechanics; broader strategic benefits and coaching usefulness
-remain unproven. Existing scores and coach comments are unchanged.
+The former live concept-analysis prototype is retained under
+[research/concepts/legacy/](research/concepts/legacy/README.md), including its
+proofs, detectors and historical UI tests, for anyone to inspect, implement or
+reuse under the repository license. It is separate from the extension and is
+excluded from release packages. The learning concept lessons remain available;
+their small, bounded exercise validators run only when needed.
 
 **Source:** https://github.com/T-Julsgaard/Chess-Review
 

@@ -36,7 +36,6 @@ try {
     // zooms. Exercise the responsive fallback here; release-layout.mjs checks
     // the real tab/window zoom fit separately.
     await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeResponsive=()=>{_zoomTabId=null;UI.canvas.classList.remove("desktop-layout");applyLayout();};\nglobalThis.__smokePreferences=()=>({settings:structuredClone(S.settings),layoutMode:S.layoutMode});\n');
-    await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeConcepts=()=>({enabled:S.settings.conceptsEnabled,worker:!!_conceptSession?.worker,metrics:_conceptSession?.metrics(),selectedStatus:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.status,selectedFindings:_conceptSession?.entries.get(conceptKey(selectedConceptInput()))?.findings.length});\nglobalThis.__smokeCoachGo=idx=>go(idx);\n');
     await fs.appendFile(path.join(sourceDir,'analysis.js'), '\nglobalThis.__smokeLearningReview=()=>({idx:S.idx,flipped:S.flipped,fen:activePos().fen,classif:[...S.classif]});\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onInstalled.addListener(() => browserAPI.tabs.create({url:browserAPI.runtime.getURL("smoke.html")}));\n');
     await fs.appendFile(path.join(sourceDir,'background.js'), '\nbrowserAPI.runtime.onMessage.addListener((message,sender,reply)=>{if(message.type!=="smokeReleaseReset")return;resetSettingsForRelease({reason:"update",previousVersion:"0.2.0"}).then(()=>reply({ok:true}),error=>reply({error:error.message}));return true;});\n');
@@ -83,47 +82,8 @@ try {
     const ratingSection=()=>[...doc.querySelectorAll('.set-section')].find(section=>section.textContent.includes('Estimated rating'));
     const labels=[...ratingSection().querySelectorAll('.lib-dd-opt')].map(button=>button.textContent);
     if(JSON.stringify(labels)!==JSON.stringify(['Use recorded rating','Moves only']))throw Error('Rating options missing for '+key);
-    if(key==='nnue') {
-      const tabs=[...doc.querySelectorAll('.set-tab')];
-      if(JSON.stringify(tabs.map(tab=>tab.textContent))!==JSON.stringify(['Visual','Engine','Concepts']))throw Error('Concept tab order changed');
-      tabs[2].click();
-      if(doc.querySelector('#conceptsEnabled').checked||frame.contentWindow.__smokeConcepts().worker)throw Error('Disabled concepts started work');
-      doc.querySelector('#conceptsEnabled').click();
-      if(!frame.contentWindow.__smokeConcepts().enabled)throw Error('Native concept toggle reverted');
-      const conceptStarted = performance.now();
-      for(let ply=1;ply<=22;ply++) {
-        frame.contentWindow.__smokeCoachGo(ply);
-        for(let i=0;i<200&&frame.contentWindow.__smokeConcepts().selectedStatus!=='complete';i++)await wait(50);
-        if(frame.contentWindow.__smokeConcepts().selectedStatus!=='complete')throw Error('Selected concept response timed out at '+ply);
-      }
-      const conceptWallMs = performance.now()-conceptStarted;
-      const concepts=frame.contentWindow.__smokeConcepts();
-      if(concepts.metrics.processed!==22||!concepts.metrics.found||concepts.metrics.errors.length){await report({step:'concept-diagnostics',metrics:concepts.metrics});throw Error('Concept worker failed: '+JSON.stringify(concepts));}
-        if(!doc.querySelector('#conceptsMount .coach-insights-panel')||!doc.querySelector('#engineMount .engine-body'))throw Error('Concepts and Engine must have independent panels');
-        frame.contentWindow.__smokeCoachGo(3);await wait(150);
-        const coachCount=doc.querySelectorAll('.coach-insight').length;
-        if(coachCount!==frame.contentWindow.__smokeConcepts().selectedFindings||!coachCount)throw Error('Coach omitted matched findings');
-        const coachPanel=doc.querySelector('.coach-insights-panel'),coachBox=coachPanel.closest('.mod'),coachBody=coachPanel.querySelector('.coach-insights-body');
-        if(coachPanel.getBoundingClientRect().height>coachBox.getBoundingClientRect().height+1||coachBody.clientHeight<100)throw Error('Coach contents escape their panel');
-        const viewCost=frame.contentWindow.__smokeConcepts().metrics.timeMs;
-        doc.querySelector('#concept-view-reply').click();
-        if(doc.querySelector('#concept-view-reply').getAttribute('aria-pressed')!=='true'||doc.querySelectorAll('.coach-insight').length>2)throw Error('Coach reply switch failed');
-        if(frame.contentWindow.__smokeConcepts().metrics.timeMs!==viewCost)throw Error('View switch repeated analysis');
-        doc.querySelector('#concept-view-all').click();
-        if(doc.querySelectorAll('.coach-insight').length!==coachCount)throw Error('All concepts did not restore findings');
-        const positionBefore=doc.querySelector('.coach-position').textContent;
-        frame.contentWindow.__smokeCoachGo(4);await wait(150);
-        if(doc.querySelector('.coach-position').textContent===positionBefore)throw Error('Coach retained previous move');
-        frame.contentWindow.__smokeCoachGo(0);await wait(150);
-        if(doc.querySelectorAll('.coach-insight').length)throw Error('Coach retained results at start');
-        if(!doc.querySelector('#engineMount .engine-body'))throw Error('Engine panel was replaced');
-        doc.querySelector('#conceptsEnabled').click();
-        if(frame.contentWindow.__smokeConcepts().worker)throw Error('Disabled concept worker remained active');
-        await report({step:'coach',key,allMatches:coachCount,moveReplacement:true});
-      await report({step:'concepts',key,conceptWallMs,metrics:concepts.metrics});
-      // The panel rebuilds; reacquire its current buttons.
-      [...doc.querySelectorAll('.set-tab')].find(tab=>tab.textContent==='Engine').click();
-    }
+    if(JSON.stringify([...doc.querySelectorAll('.set-tab')].map(tab=>tab.textContent))!==JSON.stringify(['Visual','Engine']))throw Error('Settings tabs changed');
+    if(doc.querySelector('#conceptsMount'))throw Error('Retired concept panel present');
     const calibration=await (await fetch('./data/calibration.json')).json();
     const chess=new Chess(),game=new Chess(),positions=[{fen:chess.fen()}];
     game.loadPgn(pgn);

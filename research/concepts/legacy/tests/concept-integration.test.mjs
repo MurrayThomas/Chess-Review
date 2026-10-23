@@ -20,12 +20,12 @@ const inputFor=(moves,move)=>{const c=new Chess();for(const m of moves)c.move(m)
 const run=input=>{const job=startConceptRun(input,p);for(const d of DETECTORS)runConceptStage(job,d);supplementalConcepts(job);return {job,summary:conceptRunSummary(job)};};
 
 test('promotion retains research bytes and explicit adaptation; accepted tracker and support remain separate',async()=>{
- for(const [file,expected] of Object.entries(p.runtime)) assert.equal(hash(normal(await fs.readFile(new URL('../'+file,import.meta.url),'utf8'))),expected,file);
+ for(const [file,expected] of Object.entries(p.runtime)) assert.equal(hash(normal(await fs.readFile(new URL(file.startsWith('lib/') ? '../'+file : '../../../../'+file,import.meta.url),'utf8'))),expected,file);
  assert.equal(INTEGRATION_FINGERPRINT,hash(JSON.stringify({records:p.sources,runtime:p.runtime,entries:p.entries,verified:p.verified,profile:'P003-staged-4000-panels-v1'})));
- const tracker=normal(await fs.readFile(new URL('../'+p.trackerPath,import.meta.url),'utf8'));
+ const tracker=normal(await fs.readFile(new URL('../../../../'+p.trackerPath,import.meta.url),'utf8'));
  assert.equal(hash(tracker),p.trackerSha256);assert.equal(p.verified.length,378);assert.equal(DETECTORS.length,99);assert.equal(DETECTORS.filter(d=>d.role==='detector').length,98);assert.equal(DETECTORS.find(d=>d.study==='E140').researchStatus,'support');
  for(const [file,r]of Object.entries(p.sources)){
-  const original=normal(await fs.readFile(new URL('../'+file,import.meta.url),'utf8'));
+  const original=normal(await fs.readFile(new URL(file.startsWith('lib/') ? '../'+file : '../../../../'+file,import.meta.url),'utf8'));
   assert.equal(hash(original),r.sha256,file);
   let adapted=original.replace(/((?:from\s*|import\s*\(\s*|import\s*)['"])([^'"]+)(['"])/g,(_,a,s,z)=>{
    if(s==='node:assert/strict'||s==='node:util')return a+'../assert.js'+z;
@@ -51,7 +51,7 @@ test('browser assertions preserve the plain-data certificate checker semantics',
 
 test('staged chain agrees with original research on events, evidence and statuses for a real opening move',async()=>{
  const input=inputFor(['e2e4','e7e5'],'g1f3');
- const {explainMove}=await import('../research/experiments/E177-queen-exchange-ending/code/ending.mjs');
+ const {explainMove}=await import('../../../experiments/E177-queen-exchange-ending/code/ending.mjs');
  const source=explainMove(integrationInput(input));
  const {job,summary}=run(input);
  assert.deepEqual(summary.errors,[]);

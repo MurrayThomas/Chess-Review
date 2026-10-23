@@ -2,7 +2,7 @@
 // Only a bounded archive prefix is downloaded. No full database is needed.
 import {createHash} from 'node:crypto';
 import {readFile, writeFile, rename} from 'node:fs/promises';
-import {legalPosition, uci} from '../lib/concepts/detectors/E020-concepts.mjs';
+import {legalPosition, uci} from '../lib/learning/rules/E020-concepts.mjs';
 import {readPuzzleArchive} from './puzzle-archive.mjs';
 
 const source = 'https://database.lichess.org/lichess_db_puzzle.csv.zst';

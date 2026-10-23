@@ -8,9 +8,6 @@ import { CATEGORY_LABEL_FONT, categoryLabelPng } from '../../lib/category-label.
 import {expectedPoints, SF19_OUTCOME} from '../../lib/public-scoring.js';
 import {calibratedReview,scoringEvidenceComplete} from '../../lib/calibrated-review.js';
 import {analyseCalibratedPosition} from '../../lib/calibrated-search.js';
-import {CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS, CONCEPT_ITEMS, normalizeDisabledConcepts} from '../../lib/concepts/controls.js';
-import {ConceptSession, conceptKey} from '../../lib/concepts/session.js';
-import {coachInsights,coachReply} from '../../lib/coach-insights.js';
 import {LearningWorkspace} from '../../lib/learning/workspace.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
@@ -46,7 +43,6 @@ export function app(t, {hardware} = {}) {
     moveAnimationDuration, MOVE_ANIMATION_EASING,
     CATEGORY_LABEL_FONT, categoryLabelPng,
     expectedPoints, SF19_OUTCOME, calibratedReview, scoringEvidenceComplete, analyseCalibratedPosition,
-    ConceptSession, conceptKey, coachInsights, coachReply, CONCEPT_GROUPS, DEFAULT_CONCEPT_GROUPS, normalizeConceptGroups, FAST_CONCEPT_REMOVALS, CONCEPT_ITEMS, normalizeDisabledConcepts,
     Engine: class { constructor() { throw Error('Unexpected real engine'); } },
     fetch: async () => { throw Error('Unexpected network access'); },
     requestAnimationFrame: () => 0, cancelAnimationFrame() {},
