@@ -10,13 +10,17 @@ import { BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, grade
 import { puzzleResultBadge } from "./lib/puzzle-badge.js";
 import { moveAnimationDuration, MOVE_ANIMATION_EASING } from "./lib/move-animation.js";
 import { CATEGORY_LABEL_FONT, categoryLabelPng } from "./lib/category-label.js";
-import { browserAPI } from "./browser-compat.js";
+import { browserAPI as platformAPI } from "./browser-compat.js";
 import { resetSettingsForRelease } from "./release-settings.js";
 import { expectedPoints, SF19_OUTCOME } from "./lib/public-scoring.js";
 import { calibratedReview, scoringEvidenceComplete } from "./lib/calibrated-review.js";
 import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { loadLearningWorkspace, presentationFor } from "./lib/learning-loader.js";
 import { panelScale, panelGroupBounds, scalePanelGroup, movePanelGroup } from "./lib/panel-layout.js";
+import { createScreenPreviewContext, loadScreenPreviewController } from "./lib/screen-previews.js";
+
+const screenPreview = createScreenPreviewContext(location);
+const browserAPI = screenPreview ? {...platformAPI,storage:{...platformAPI.storage,local:screenPreview.storage}} : platformAPI;
 
 /* ---------------- Opening book ----------------
  * Offline lookup table built from lichess-org/chess-openings (bundled in data/book.json).
@@ -778,6 +782,7 @@ function activeBest() {
 
 /* ---------------- Loading + PGN ---------------- */
 async function loadJob() {
+  if(screenPreview)return structuredClone(screenPreview.job);
   const jobId = location.hash.replace(/^#/, "");
   if (!jobId) throw new Error("No analysis job specified.");
 
@@ -797,6 +802,7 @@ async function loadJob() {
   return payload;
 }
 function rememberReviewJob() {
+  if(screenPreview)return false;
   const jobId = location.hash.replace(/^#/, "");
   if (!jobId || !S.pgn) return false;
   try {
@@ -4782,6 +4788,10 @@ function visualSettings() {
       el("button", { class: "set-reset", onclick: exportPanelLayout }, "Export panel layout"),
       el("button", { class: "set-reset", onclick: resetLayout }, "Reset layout"),
     ),
+    section("Debug",
+      el("button", {class:"set-reset","data-debug":"screen-previews",onclick:()=>browserAPI.tabs.create({url:_url("analysis.html")+"?screen-preview=review"})}, "Browse screen previews"),
+      el("div", {class:"set-row hint"},el("span",{class:"set-note"},"Inspect sample review, learning, popup and dialog screens in a separate tab. Preview changes are not saved.")),
+    ),
     section("Move list",
       seg("Style", "mlStyle", ["rows", "cards", "compact"]),
       seg("Badges", "badgeStyle", ["icon", "dot", "label"]),
@@ -6322,7 +6332,8 @@ async function resetLegacyZoom() {
 }
 (async function main() {
   try {
-    await resetSettingsForRelease({ reason: "startup" });
+    if(screenPreview)await screenPreview.configure(await platformAPI.storage.local.get(["settings","layout","layoutMode","layoutVersion"]));
+    else await resetSettingsForRelease({ reason: "startup" });
     // Only the job + stored prefs are needed to build and show the UI. The opening book (~690 KB)
     // and the calibration file are only consumed once scoring/opening refinement runs, so we load
     // them in parallel and don't block the first paint on them — buildUI() can run as soon as the
@@ -6369,7 +6380,7 @@ async function resetLegacyZoom() {
     S.layout = useStored ? { ...structuredClone(DEFAULT_LAYOUT), ...store.layout } : structuredClone(DEFAULT_LAYOUT);
     S.layoutMode = useStored && store.layoutMode === "custom" ? "custom" : "auto";
     if (!useStored) saveLayout();
-    if (store.layoutVersion != null && store.layoutVersion !== LAYOUT_VERSION) await resetLegacyZoom();
+    if (!screenPreview && store.layoutVersion != null && store.layoutVersion !== LAYOUT_VERSION) await resetLegacyZoom();
     S.username = store.username || "";
 
     // Everything the first render needs must be resolved BEFORE buildUI(), so that buildUI() and
@@ -6399,6 +6410,13 @@ async function resetLegacyZoom() {
     // Fit the desktop composition or custom canvas; narrow windows retain the responsive grid.
     initTabZoom();
     requestAnimationFrame(alignPlayers); // measure the board after the first layout
+    if(screenPreview){
+      const {mountScreenPreview}=await loadScreenPreviewController();
+      await mountScreenPreview({context:screenPreview,document,state:S,openLearning,workspace:()=>learningWorkspace,
+        renderAll,renderSettings,toggleSettings,toggleReorganize,openCredits,go,applyUserMove,startPractice,
+        stopAnalysis:()=>{S.batchGen++;terminateEngines();S.analyzing=false;},
+        close:async()=>{const tab=await platformAPI.tabs.getCurrent();if(tab?.id!=null)await platformAPI.tabs.remove(tab.id);}});
+    }
   } catch (err) {
     const e = document.getElementById("error");
     e.hidden = false;

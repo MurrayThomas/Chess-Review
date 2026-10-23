@@ -11,6 +11,7 @@ import {analyseCalibratedPosition} from '../../lib/calibrated-search.js';
 import {LearningWorkspace} from '../../lib/learning/workspace.js';
 import {presentationFor} from '../../lib/learning/presentations.js';
 import {panelScale,panelGroupBounds,scalePanelGroup,movePanelGroup} from '../../lib/panel-layout.js';
+import {createScreenPreviewContext,loadScreenPreviewController} from '../../lib/screen-previews.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
 
@@ -21,8 +22,8 @@ const startup = raw.indexOf('(async function main()');
 if (startup < 0) throw Error('Application startup marker missing');
 const source = raw.slice(0, startup).replace(/^import .*;\r?\n/gm, '');
 
-export function app(t, {hardware} = {}) {
-  const dom = new JSDOM('<!doctype html><div id="root"></div>', { url: 'https://extension.test/analysis.html#test-game', pretendToBeVisual: true });
+export function app(t, {hardware,url='https://extension.test/analysis.html#test-game'} = {}) {
+  const dom = new JSDOM('<!doctype html><div id="root"></div>', { url, pretendToBeVisual: true });
   if (hardware) Object.defineProperties(dom.window.navigator, {
     hardwareConcurrency: {configurable:true,value:hardware.hardwareConcurrency},
     deviceMemory: {configurable:true,value:hardware.deviceMemory},
@@ -42,7 +43,8 @@ export function app(t, {hardware} = {}) {
     panelScale,panelGroupBounds,scalePanelGroup,movePanelGroup,
     location: dom.window.location, Node: dom.window.Node, HTMLElement: dom.window.HTMLElement,
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
-    URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,
+    URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,platformAPI:browserAPI,
+    createScreenPreviewContext,loadScreenPreviewController,
     BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg, puzzleResultBadge,
     moveAnimationDuration, MOVE_ANIMATION_EASING,
     CATEGORY_LABEL_FONT, categoryLabelPng,

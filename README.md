@@ -78,6 +78,14 @@ choose a group. Drag a handle to move the group or a corner to scale its spacing
 contents and dimensions together. **Export layout** downloads a JSON proposal
 that can be shared for a future default arrangement.
 
+### Screen previews
+
+Open Visual settings → Debug → Browse screen previews to inspect sample review,
+learning, dialog and popup states. Use the selector or Alt + Left/Right to switch
+views; collapse the controls for an unobstructed view. Each preview uses private
+in-memory progress and settings, so experiments do not change your saved data.
+
+
 Both engines offer **Use recorded rating** and **Moves only**. The first compares
 your performance with public players near the rating saved in the game; the
 second ignores that rating and estimates a blitz rating level from your choices.

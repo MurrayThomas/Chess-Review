@@ -6,6 +6,7 @@ import { browserAPI } from "./browser-compat.js";
 import {createImportRequest} from "./lib/import-request.js";
 
 const $ = (id) => document.getElementById(id);
+const screenPreview = new window.URLSearchParams(window.location.search).has('screen-preview');
 const statusEl = $("status");
 let activeImport = null;
 function beginImport() {
@@ -40,6 +41,7 @@ function looksLikePgn(s) {
 // anywhere else it shows the menu so you can paste a URL/PGN. The "Analyze this game" button re-runs
 // the same flow.
 async function runCurrentAnalysis() {
+  if(screenPreview)return setStatus("Preview actions are disabled.");
   const operation=beginImport(),signal=operation.request.signal;
   setStatus("Fetching game …");
   try {
@@ -72,6 +74,12 @@ async function runCurrentAnalysis() {
 }
 
 async function init() {
+  if(screenPreview){
+    $("username").value="Preview player";
+    $("manual").open=new window.URLSearchParams(window.location.search).get('screen-preview')==='popup-manual';
+    $("manualInput").value='1. f3 e5 2. g4 Qh4#';
+    setStatus("Sample popup — actions are disabled.");return;
+  }
   // Seed the saved username so the field and the analyze flow have it.
   try {
     const { username = "" } = await browserAPI.storage.local.get("username");
@@ -103,6 +111,7 @@ async function init() {
 }
 
 $("saveUser").addEventListener("click", async () => {
+  if(screenPreview)return setStatus("Preview actions are disabled.");
   const username = $("username").value.trim();
   await browserAPI.storage.local.set({ username });
   setStatus(username ? `Saved: ${username}` : "Username cleared.");
@@ -116,6 +125,7 @@ $("cancelImport").addEventListener("click",()=>{
 });
 
 $("analyzeManual").addEventListener("click", async () => {
+  if(screenPreview)return setStatus("Preview actions are disabled.");
   const raw = $("manualInput").value.trim();
   if (!raw) return setStatus("Paste a URL or PGN.", true);
   const operation=beginImport(),signal=operation.request.signal;

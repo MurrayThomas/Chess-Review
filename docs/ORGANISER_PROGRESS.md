@@ -28,7 +28,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   all puzzle types, with zero correct/incorrect/percent for untried types.
 - [x] 6 Add proportional group resizing/multiselection to Reorganize panels and
   a temporary layout export button. Preserve the current bottom gap/defaults.
-- [ ] 7 Add a Visual-settings debug option to inspect different screen states.
+- [x] 7 Add a Visual-settings debug option to inspect different screen states.
 - [ ] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
 - [ ] 10 Report options for changing the extension link at the top safely.
   Make no link or identifier changes.
@@ -114,3 +114,15 @@ task at a time, and commit each completed logical change before moving on.
   checks pass, as does real Chrome pointer scaling/movement, unchanged-board
   verification, content scaling, export download parsing and reload checks.
   Selected-panel screenshot inspected.
+
+- Item 6 committed as fdfb5d8c.
+- Item 7: 36 isolated sample views, real review/learning components, popup
+  action guards and a collapsible view selector. Four isolation tests and 18
+  related regressions pass. All 36 actual Chrome views and popup guards pass;
+  the complete real extension storage remains unchanged. Source verification
+  and lint pass (same two warnings); review/statistics/popup screenshots inspected.
+  Chrome audits require sandbox escalation to load the local extension.
+- Continuation heartbeat created: continue-organiser-tasks, this same chat,
+  ACTIVE for 2026-10-23 21:57:55 Europe/Copenhagen (two minutes after the
+  reported five-hour reset). It must skip completed work and stay quiet if all
+  items are done. Pause it if the queue is completed before its first run.
