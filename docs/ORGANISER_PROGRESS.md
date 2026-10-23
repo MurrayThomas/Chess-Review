@@ -32,7 +32,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
 - [x] 9 Inspect GitHub issues/PRs and report findings. Make no changes to them.
 - [x] 10 Report options for changing the extension link at the top safely.
   Make no link or identifier changes.
-- [ ] 11 Rework the extension popup in the existing visual theme, with animated
+- [x] 11 Rework the extension popup in the existing visual theme, with animated
   water-style buttons and a new action to open a blank Chess Review.
 
 ## Continuation
@@ -122,10 +122,9 @@ task at a time, and commit each completed logical change before moving on.
   the complete real extension storage remains unchanged. Source verification
   and lint pass (same two warnings); review/statistics/popup screenshots inspected.
   Chrome audits require sandbox escalation to load the local extension.
-- Continuation heartbeat created: continue-organiser-tasks, this same chat,
-  ACTIVE for 2026-10-23 21:57:55 Europe/Copenhagen (two minutes after the
-  reported five-hour reset). It must skip completed work and stay quiet if all
-  items are done. Pause it if the queue is completed before its first run.
+- Continuation heartbeat continue-organiser-tasks resumed this same chat at
+  2026-10-23 21:57:57 Europe/Copenhagen, after the five-hour reset. The queue
+  is now complete; no further scheduled continuation is needed.
 
 - Item 7 committed as 90738fd4.
 - Item 9: reviewed all three open issues and both open PRs, their patches, CI
@@ -141,3 +140,30 @@ task at a time, and commit each completed logical change before moving on.
   time test: it still expected the old value-before-label text. The test now
   checks the semantic Time spent label and 3s value separately, preserving its
   timing/storage checks. The other two failures match the recorded baseline.
+
+- Item 10 committed as 54d030a9; the final statistics-test correction is
+  cbb967a2 (test: align solving-time assertions with statistics cards).
+- Item 11: rebuilt the popup with the learning tabs’ flowing liquid highlight,
+  two clear primary actions, visible keyboard focus and reduced-motion support.
+  Manual setup retains username saving and URL/PGN imports and fits the native
+  600px popup height without scrolling. The menu now waits for an explicit
+  choice on chess sites so Open Chess Review is always reachable. Shortcuts
+  and in-page review buttons retain direct game launch.
+- The new no-game entry opens a welcome screen with learning and saved games;
+  it creates no game job and starts no engine, opening-book or calibration work.
+  Saved-game selection restores the review, keeps reload recovery per tab, and
+  leaves independently opened blank tabs empty. The new welcome state is also
+  available in the debug catalogue (now 37 views). Preview launch actions stay
+  isolated. Existing position-only PGN rejection remains intact.
+- Final maintained suite: 649/651 pass. Only the two previously proven baseline
+  failures remain: learning-skip-feedback final-loss display and puzzle-analysis
+  alternative-mate handling. All eight new blank-workspace checks pass, as do
+  the popup/import checks and all 29 storage/settings/release regressions.
+- Final source verification, history verification (8,759 retained blobs before
+  the final commits), engine hashes and lint pass; lint retains the same two
+  warnings. Both final browser packages build under
+  web-ext-artifacts/release-0.3.0-j2a5E4/.
+- The packaged Chrome audit passes actual liquid pointer animation, native Tab
+  navigation, reduced motion, expanded-popup size, empty startup, 1280/390/320
+  layouts, learning return/focus, saved-game reload, independent blank tabs, PGN
+  imports and preview guards. Final popup and welcome screenshots inspected.

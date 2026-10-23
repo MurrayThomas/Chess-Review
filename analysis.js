@@ -20,6 +20,7 @@ import { panelScale, panelGroupBounds, scalePanelGroup, movePanelGroup } from ".
 import { createScreenPreviewContext, loadScreenPreviewController } from "./lib/screen-previews.js";
 
 const screenPreview = createScreenPreviewContext(location);
+const blankLaunch = new window.URLSearchParams(location.search).get("workspace") === "blank";
 const browserAPI = screenPreview ? {...platformAPI,storage:{...platformAPI.storage,local:screenPreview.storage}} : platformAPI;
 
 /* ---------------- Opening book ----------------
@@ -718,7 +719,7 @@ function playWrongSound() {
 
 /* ---------------- State ---------------- */
 const S = {
-  pgn: "", headers: {}, meta: {},
+  pgn: "", headers: {}, meta: {}, blank: false,
   positions: [], clocks: [], evals: [], bests: [],
   classif: [], accMove: [], moveGrades: [], searchPreviews: [], _sacCache: [], _forcedCache: [],
   players: { w: {}, b: {} }, meSide: "w",
@@ -783,7 +784,8 @@ function activeBest() {
 /* ---------------- Loading + PGN ---------------- */
 async function loadJob() {
   if(screenPreview)return structuredClone(screenPreview.job);
-  const jobId = location.hash.replace(/^#/, "");
+  const hash = location.hash.replace(/^#/, "");
+  const jobId = hash || (blankLaunch ? "blank-workspace" : "");
   if (!jobId) throw new Error("No analysis job specified.");
 
   const key = `job:${jobId}`;
@@ -794,6 +796,7 @@ async function loadJob() {
     const session = JSON.parse(window.sessionStorage.getItem(key));
     if (session && typeof session.pgn === "string") return session;
   } catch { /* Unavailable or corrupt session storage: use the launch handoff. */ }
+  if(blankLaunch&&!hash)return {source:"blank",analysis:null};
   const data = await browserAPI.storage.local.get(key);
   const payload = data[key];
   if (!payload) throw new Error("Analysis data not found (open via the popup).");
@@ -803,7 +806,7 @@ async function loadJob() {
 }
 function rememberReviewJob() {
   if(screenPreview)return false;
-  const jobId = location.hash.replace(/^#/, "");
+  const jobId = location.hash.replace(/^#/, "") || (blankLaunch ? "blank-workspace" : "");
   if (!jobId || !S.pgn) return false;
   try {
     // Analysis is looked up separately using the current scoring/settings key.
@@ -1479,8 +1482,8 @@ function buildUI() {
     el("div", { class: "topbar-right" },
       // aria-label (not title) → keeps the buttons labelled for screen readers without the native
       // hover tooltip the user found unnecessary.
-      el("button", { class: "icon-btn", "aria-label": "Flip board", onclick: toggleFlip }, icon("flip")),
-      el("button", { class: "icon-btn", "aria-label": "Share game (copy link)", onclick: shareGame }, icon("share")),
+      el("button", { class: "icon-btn", "data-game-action":"", "aria-label": "Flip board", onclick: toggleFlip }, icon("flip")),
+      el("button", { class: "icon-btn", "data-game-action":"", "aria-label": "Share game (copy link)", onclick: shareGame }, icon("share")),
       el("button", { class: "icon-btn", "aria-label": "Credits & attributions", onclick: openCredits }, icon("info")),
       el("button", { class: "icon-btn", "aria-label": "Settings", onclick: toggleSettings }, icon("gear")),
     ),
@@ -1567,7 +1570,7 @@ function buildUI() {
 
   applyLayoutMode();
   initBoardInput();
-  renderCoachAvatar();     // mount the animated coach portrait for the active personality
+  if(!S.blank)renderCoachAvatar(); // no unused animated portrait in the blank workspace
   renderLibrary();
   setLibraryOpen(false);
   renderReviewSaveStatus();
@@ -1595,7 +1598,7 @@ async function openLearning() {
   }
   const playing = !!S.autoTimer;
   if (playing) { clearInterval(S.autoTimer); S.autoTimer = null; renderControls(); }
-  const sourceFen=activePos().fen, wasAnalysis=S.analysisMode;
+  const sourceFen=activePos().fen, wasAnalysis=S.analysisMode, wasBlank=S.blank;
   const snapshot = {idx:S.idx, flipped:S.flipped, selectedSq:wasAnalysis?null:S.selectedSq,
     lineWalking:!wasAnalysis&&S.lineWalking, bestWalking:!wasAnalysis&&S.bestWalking};
   stopLineWalk();
@@ -1603,9 +1606,10 @@ async function openLearning() {
   UI.settings.hidden = true;
   hideBoardBadgeTip();
   learningWorkspace = new LearningWorkspace({document, storage:browserAPI.storage.local, makePiece, url:_url,
-    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound, onOpeningMove:playSanSound, onFreeMove:playSanSound, onPuzzleSuccess:playPuzzleSuccess,
+    settings:()=>S.settings, flipped:S.flipped, book:()=>BOOK || {}, onPuzzleWrong:playWrongSound, onPuzzleMove:playSanSound, onOpeningMove:playSanSound, onFreeMove:playSanSound, onPuzzleSuccess:playPuzzleSuccess,
     createAnalysisEngine:()=>createEngine({Hash:S.settings.engineHash, "Skill Level":S.settings.engineSkill}),
-    embedded:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:sourceFen, startDrag,
+    returnLabel:wasBlank?"← Back to Chess Review":undefined,
+    embedded:wasBlank?null:{stage:UI.canvas, boardWrap:UI.boardWrap, fen:sourceFen, startDrag,
       restoreBoard:()=>{
         paintBoard({restoring:true});
         if(wasAnalysis){renderEvalBar();renderPlayers();renderControls();renderReview();renderEngineCurrent();}
@@ -1614,6 +1618,7 @@ async function openLearning() {
       drawBestArrow:(from,to,flipped)=>learningArrow(from,to,flipped,/^#[0-9a-f]{6}$/i.test(S.settings.bestArrowColor || "")?S.settings.bestArrowColor:ARROW_COLOR)},
     onClose:()=>{
       learningWorkspace = null;
+      if(wasBlank){UI.home?.querySelector("button")?.focus();return;}
       S.idx=snapshot.idx; S.flipped=snapshot.flipped; S.selectedSq=snapshot.selectedSq;
       if(!S.practice){paintBoard();}
       renderControls();
@@ -1902,6 +1907,7 @@ function resetLayout() {
 // they're locked and hover shows nothing. The arranged layout auto-saves and persists. Entering it
 // from the automatic layout freezes what is on screen into a custom canvas first.
 function toggleReorganize() {
+  if(S.blank){toast("Open a game to reorganize review panels.");return;}
   if (!S.reorganize && !isCustomLayout()) {
     S.layout = snapshotLayout();
     // The snapshot holds the breakdown as it is shown; record the collapse offset so the saved
@@ -4151,6 +4157,7 @@ function renderEnginePractice() {
 }
 // Choose the source of the engine lines for the shown position and draw the panel.
 function renderEngineCurrent() {
+  if(S.blank)return;
   // Hide the engine lines for the whole practice flow, not just the solve: while rolling/skipping to
   // the next mistake (or replaying the demo) the lines would briefly flash the answer for the upcoming
   // position. They only reappear once practice is fully finished/exited.
@@ -5953,7 +5960,7 @@ function toggleAuto() {
   renderControls();
 }
 document.addEventListener("keydown", (e) => {
-  if (learningWorkspace) return;
+  if (learningWorkspace || S.blank) return;
   if (e.key === "Tab" && !e.target?.closest?.('#settings,[role="dialog"],[role="alertdialog"]')) {
     e.preventDefault(); return;
   }
@@ -5980,6 +5987,7 @@ document.addEventListener("keydown", (e) => {
 let _reanalyzeT = null;
 function scheduleReanalyze() {
   clearTimeout(_reanalyzeT);
+  if(S.blank)return;
   _reanalyzeT = setTimeout(() => {
     startAnalysis();
   }, 400);
@@ -6003,6 +6011,7 @@ function requestProgress(gen) {
   setTimeout(() => flushProgress(gen), Math.max(0, 140 - (Date.now() - _progLast)));
 }
 async function startAnalysis() {
+  if(S.blank)return;
   if (S.practice) exitPractice();
   S._lastEngineLines = null;
   S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
@@ -6129,6 +6138,7 @@ async function startAnalysis() {
 
 /* ---------------- Render everything ---------------- */
 function renderAll() {
+  if(S.blank)return;
   UI.meta.replaceChildren(...metaChips());
   buildBoard();
   renderEvalBar();
@@ -6141,6 +6151,34 @@ function renderAll() {
   renderEngineCurrent();
 }
 
+/* A blank launch has no game or engine work; learning and saved games stay available. */
+function setBlankWorkspace(blank) {
+  S.blank=blank;UI.canvas.hidden=blank;
+  if(UI.home)UI.home.hidden=!blank;
+  document.querySelector('.app')?.classList.toggle('blank-workspace',blank);
+  for(const button of document.querySelectorAll('[data-game-action]'))button.hidden=blank;
+}
+function showBlankWorkspace() {
+  S.analyzing=false;S.pgn="";S.total=0;S.idx=0;
+  S.positions=[{fen:new Chess().fen()}];
+  S.evals=[null];S.bests=[null];S.meta={};S.headers={};
+  document.title="Chess Review";
+  applySettings();
+  const action=(label,description,symbol,onclick)=>el("button",{type:"button",class:"workspace-home-action",onclick},
+    icon(symbol),el("span",{class:"workspace-home-copy"},el("strong",{},label),el("small",{},description)),el("span",{"aria-hidden":"true"},"→"));
+  UI.home=el("main",{class:"workspace-home","aria-labelledby":"workspaceHomeTitle"},
+    el("div",{class:"workspace-home-art","aria-hidden":"true"},el("img",{src:_url("pieces-img/cburnett/wN.svg"),alt:""})),
+    el("h1",{id:"workspaceHomeTitle"},"Welcome to Chess Review"),
+    el("p",{class:"workspace-home-intro"},"Choose a puzzle, study an opening, or revisit a saved game."),
+    el("div",{class:"workspace-home-actions"},
+      action("Learn with Chess Review","Puzzles, openings and concepts","book",openLearning),
+      action("Open game library","Your saved reviews","library",()=>{
+        setLibraryOpen(true);(UI.libList.querySelector('.lc-open')||UI.libControls.querySelector('button'))?.focus();
+      })),
+    el("p",{class:"workspace-home-note"},"To review a new game, use the extension on Chess.com or Lichess, or paste a URL or PGN in Manual setup."));
+  UI.canvas.before(UI.home);setBlankWorkspace(true);
+}
+
 /* ---------------- Load / switch a game ----------------
    Loads a game's data into the already-built UI and renders it. Used both for the first load
    and for switching to another library game in place — no page reload, so there's no black flash
@@ -6148,7 +6186,12 @@ function renderAll() {
 async function applyGame(payload) {
   const positions = buildPositions(payload.pgn);
   if (positions.length < 2) throw new Error("Load a game with moves to review. Standalone positions are not supported.");
-  ++_librarySelection;
+  const wasBlank=S.blank, selection=++_librarySelection;
+  if(wasBlank){
+    await Promise.all([loadBook(),loadCalibration().catch(error=>{console.warn(error);return null;})]);
+    if(selection!==_librarySelection)return;
+  }
+  if(wasBlank){setBlankWorkspace(false);renderCoachAvatar();}
   _cancelPromotion?.();
   _cancelBoardDrag?.();
 
@@ -6221,6 +6264,7 @@ async function applyGame(payload) {
   requestAnimationFrame(alignPlayers);
   rememberReviewJob();
   if (!restored) startAnalysis();
+  if(wasBlank)initTabZoom();
 }
 
 /* ---------------- Start ---------------- */
@@ -6292,6 +6336,7 @@ async function performTabZoomFit(force) {
 // Isolate zoom before fitting, so two analysis windows on different monitors keep their own fit.
 // Browsers rejecting per-tab scope retain their existing scope.
 async function initTabZoom() {
+  if(S.blank)return;
   try {
     if (!browserAPI?.tabs?.getCurrent) return;
     if (!_zoomInit) _zoomInit = (async () => {
@@ -6338,7 +6383,8 @@ async function resetLegacyZoom() {
     // and the calibration file are only consumed once scoring/opening refinement runs, so we load
     // them in parallel and don't block the first paint on them — buildUI() can run as soon as the
     // job and settings are in, while the book is still downloading.
-    const dataReady = Promise.all([loadBook(), loadCalibration().catch(error => {console.warn(error);return null;})]);
+    const dataReady = blankLaunch&&!location.hash&&!screenPreview ? Promise.resolve()
+      : Promise.all([loadBook(), loadCalibration().catch(error => {console.warn(error);return null;})]);
     const [payload, store] = await Promise.all([loadJob(), browserAPI.storage.local.get(["settings", "username", "layout", "layoutMode", "layoutVersion", "library"])]);
     S.library = Array.isArray(store.library) ? store.library : [];
     S.settings = { ...DEFAULT_SETTINGS, ...(store.settings || {}) };
@@ -6389,9 +6435,11 @@ async function resetLegacyZoom() {
     // Moves panel is the only module whose header is built in buildUI() (the rest are empty mounts
     // filled by renderAll()), that intermediate frame showed the Moves panel sitting on its own.
     await dataReady;         // book + calibration (downloaded in parallel; usually already resolved)
+    if(blankLaunch&&!location.hash&&payload.source!=="blank"&&!screenPreview)
+      await Promise.all([loadBook(),loadCalibration().catch(error=>{console.warn(error);return null;})]);
     // Resolve any stored analysis for this game by id (same derivation as currentGameId(), but from
     // the payload since S isn't populated yet) so applyGame() needs no lookup await of its own.
-    if (!("analysis" in payload)) {
+    if (payload.source!=="blank"&&!("analysis" in payload)) {
       let saved = null;
       try {
         const k = "analysis:" + ((payload.meta && (payload.meta.gameId || payload.meta.libraryId)) || ("pgn:" + simpleHash(payload.pgn || "")));
@@ -6400,8 +6448,10 @@ async function resetLegacyZoom() {
       } catch {}
       payload.analysis = saved;
     }
+    S.blank=payload.source==="blank"&&((blankLaunch&&!location.hash)||screenPreview?.id==="workspace-blank");
     buildUI();               // built once; switching games re-uses it (no full page reload)
-    await applyGame(payload);
+    if(S.blank)showBlankWorkspace();
+    else await applyGame(payload);
     // Two-phase load: now that initialization succeeded, remove the job data so it doesn't accumulate.
     const jobId = location.hash.replace(/^#/, "");
     if (jobId && rememberReviewJob()) {

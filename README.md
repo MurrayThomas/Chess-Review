@@ -68,6 +68,11 @@ You can also paste a game URL or PGN into the popup. If your username cannot be
 detected, enter it once; it is remembered locally. Chess Review is intended for
 review after play.
 
+Choose **Open Chess Review** in the popup to start without a game. The welcome
+screen offers learning and your saved game library, without starting Stockfish.
+The popup stays open on chess sites until you choose an action; the keyboard
+shortcut and in-page review button still launch a game review directly.
+
 Settings let you choose an engine, rating mode, board, pieces, sounds, coach and
 category-badge appearance. Badge numbers describe move categories; they are
 separate from position evaluation and game accuracy.

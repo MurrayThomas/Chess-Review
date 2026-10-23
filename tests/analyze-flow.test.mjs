@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 // The API facade is captured at import time, just as it is in an extension page.
 globalThis.chrome = {};
-const { analyzeActiveTab, reloadActiveAndAnalyze, openAnalysisTab } = await import('../analyze-flow.js');
+const { analyzeActiveTab, reloadActiveAndAnalyze, openAnalysisTab, openBlankWorkspaceTab } = await import('../analyze-flow.js');
 import {createImportRequest} from '../lib/import-request.js';
 import {deferred,settle} from './helpers/app.mjs';
 
@@ -109,4 +109,17 @@ test('canceling tab creation closes only that operation\'s late tab',async t=>{
   const opening=openAnalysisTab({pgn:'1. e4'},{signal:request.signal});await settle();request.cancel();
   await assert.rejects(opening,error=>error.code==='IMPORT_CANCELLED');pending.resolve({id:99});await settle();
   assert.deepEqual(removed,[99]);assert.equal(s.payload(),undefined);
+});
+
+test('blank workspace opens an extension tab without writing a game job',async t=>{
+  const s=setup(t,'https://example.test/');await openBlankWorkspaceTab();
+  assert.deepEqual(s.opened,[{url:'chrome-extension://test/analysis.html?workspace=blank'}]);assert.deepEqual(s.store,{});
+});
+
+test('canceling a blank launch removes its late tab without touching any game job',async t=>{
+  const s=setup(t),pending=deferred(),request=createImportRequest(),removed=[];t.after(()=>request.dispose());
+  s.store['job:keep']={pgn:'1. e4 e5'};chrome.tabs.create=()=>pending.promise;chrome.tabs.remove=async id=>{removed.push(id);};
+  const opening=openBlankWorkspaceTab({signal:request.signal});request.cancel();
+  await assert.rejects(opening,error=>error.name==='AbortError');pending.resolve({id:25});await settle();
+  assert.deepEqual(removed,[25]);assert.equal(s.store['job:keep'].pgn,'1. e4 e5');
 });

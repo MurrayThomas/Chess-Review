@@ -1,0 +1,77 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
+  const base=await evaluate(review,'location.origin');
+  const tab=async url=>{const {targetId}=await call('Target.createTarget',{url});const {sessionId}=await call('Target.attachToTarget',{targetId,flatten:true});return {targetId,sessionId};};
+  const run=(target,expression)=>evaluate(target,expression);
+  const resize=(target,width,height)=>call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},target.sessionId);
+  const shot=async(target,name)=>{await sleep(100);const image=await call('Page.captureScreenshot',{format:'png'},target.sessionId);await fs.writeFile(path.join(out,name+'.png'),Buffer.from(image.data,'base64'));};
+  const targets=async()=> (await call('Target.getTargets')).targetInfos;
+  const newTarget=async(previous,pattern)=>{for(let i=0;i<100;i++){const found=(await targets()).find(t=>!previous.has(t.targetId)&&pattern.test(t.url));if(found){const {sessionId}=await call('Target.attachToTarget',{targetId:found.targetId,flatten:true});return {targetId:found.targetId,sessionId};}await sleep(100);}throw Error('Expected new extension tab did not open');};
+  await run(review,"import('./browser-compat.js').then(async({browserAPI:api})=>{await api.storage.local.set({username:'keep-user','learning:v1':{schema:1,puzzleRating:{elo:1700,wins:2,losses:1}},library:[{id:'blank-saved',pgn:'1. d4 d5',opName:'Saved opponent',myName:'Saved player',meta:{},result:'draw'}]});window.blankBaseline=await api.storage.local.get(['username','learning:v1','library']);})");
+  const popup=await tab(base+'/popup.html');await waitFor(popup,"!!document.querySelector('#status')?.textContent",'Popup');await resize(popup,360,600);
+  assert.equal(await run(popup,'document.documentElement.scrollWidth<=document.documentElement.clientWidth'),true);
+  await shot(popup,'popup-default');
+  // Use real pointer events and inspect the in-flight liquid shape.
+  const point=await run(popup,"(()=>{const r=document.querySelector('#openWorkspace').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()");
+  await call('Input.dispatchMouseEvent',{type:'mouseMoved',...point},popup.sessionId);await sleep(50);
+  assert.equal(await run(popup,"document.querySelector('#openWorkspace').dataset.highlighted"),'true');
+  assert.equal(await run(popup,"document.querySelector('.fluid-indicator').getAnimations().some(a=>a.playState==='running')"),true);
+  await sleep(300);await shot(popup,'popup-open-highlight');
+  await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]},popup.sessionId);
+  await run(popup,"document.querySelector('#analyzeCurrent').focus()");
+  assert.equal(await run(popup,"document.querySelector('.fluid-indicator').getAnimations().length"),0);
+  await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9},popup.sessionId);
+  await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9},popup.sessionId);
+  assert.equal(await run(popup,'document.activeElement.id'),'openWorkspace');
+  await run(popup,"document.querySelector('#manual').open=true");await sleep(100);assert.equal(await run(popup,"document.querySelector('#analyzeManual').getBoundingClientRect().bottom<=600"),true);assert.equal(await run(popup,'document.documentElement.scrollHeight<=innerHeight'),true);await shot(popup,'popup-manual');
+  assert.equal(await run(popup,'document.documentElement.scrollWidth<=document.documentElement.clientWidth'),true);
+  console.log('Popup layout, actual liquid hover, keyboard focus and reduced motion passed.');
+
+  let previous=new Set((await targets()).map(t=>t.targetId));await run(popup,"document.querySelector('#openWorkspace').click()");
+  const blank=await newTarget(previous,/analysis.html\?workspace=blank/);
+  await waitFor(blank,"!!document.querySelector('.workspace-home')",'Blank workspace');
+  assert.equal(await run(blank,"getComputedStyle(document.querySelector('#canvas')).display"),'none');
+  assert.equal(await run(blank,"import('./analysis.js').then(m=>m.S.blank&&!m.S.analyzing&&m.S.pgn===''&&m.S.evalEngines.length===0)"),true);
+  assert.equal(await run(blank,"performance.getEntriesByType('resource').some(r=>['/data/book.json','/data/calibration.json','.wasm','.nnue'].some(part=>r.name.includes(part)))"),false);
+  for(const width of [1280,390,320]){await resize(blank,width,900);await shot(blank,'blank-'+width);assert.equal(await run(blank,'document.documentElement.scrollWidth<=innerWidth'),true);}
+  await resize(blank,1280,900);
+  await run(blank,"document.querySelector('.workspace-home-action').click()");
+  await waitFor(blank,"!!document.querySelector('.learning-workspace .learn-theme-list')",'Learning without a game');
+  assert.equal(await run(blank,"import('./analysis.js').then(m=>!m.S.analyzing&&m.S.blank)"),true);
+  assert.match(await run(blank,"document.querySelector('[data-focus=review]').textContent"),/Back to Chess Review/);
+  await shot(blank,'blank-learning');
+  await run(blank,"document.querySelector('[data-focus=review]').click()");
+  await waitFor(blank,"!document.querySelector('.learning-workspace')",'Return to blank workspace');
+  assert.equal(await run(blank,"document.activeElement===document.querySelector('.workspace-home-action')"),true);
+  assert.equal(await run(review,"import('./browser-compat.js').then(async({browserAPI:api})=>JSON.stringify(await api.storage.local.get(['username','learning:v1','library']))===JSON.stringify(blankBaseline))"),true);
+  console.log('Blank startup, zero engine/data work, narrow layouts and learning round-trip passed.');
+
+  await run(blank,"document.querySelectorAll('.workspace-home-action')[1].click();document.querySelector('.lc-open').click()");
+  await waitFor(blank,"import('./analysis.js').then(m=>!m.S.blank&&!m.S.analyzing&&m.S.pgn==='1. d4 d5')",'Saved game from blank');
+  assert.notEqual(await run(blank,"getComputedStyle(document.querySelector('#canvas')).display"),'none');
+  const beforeReload=await run(blank,'performance.timeOrigin');
+  await call('Page.reload',{},blank.sessionId);
+  await waitFor(blank,'performance.timeOrigin>'+beforeReload,'New document after reload');
+  await waitFor(blank,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.blank&&!m.S.analyzing&&m.S.pgn==='1. d4 d5')",'Reload saved game');
+  const secondPopup=await tab(base+'/popup.html');await waitFor(secondPopup,"!!document.querySelector('#status')?.textContent",'Second popup');
+  previous=new Set((await targets()).map(t=>t.targetId));await run(secondPopup,"document.querySelector('#openWorkspace').click()");
+  const secondBlank=await newTarget(previous,/analysis.html\?workspace=blank/);await waitFor(secondBlank,"!!document.querySelector('.workspace-home')",'Independent blank tab');
+  assert.equal(await run(secondBlank,"import('./analysis.js').then(m=>m.S.blank&&m.S.pgn==='')"),true);
+  console.log('Saved-game review, reload recovery and independent blank tabs passed.');
+
+  const paste=await tab(base+'/popup.html');await waitFor(paste,"!!document.querySelector('#status')?.textContent",'Paste popup');
+  previous=new Set((await targets()).map(t=>t.targetId));
+  await run(paste,"document.querySelector('#manual').open=true;document.querySelector('#manualInput').value='1. e4 e5 2. Nf3 Nc6';document.querySelector('#analyzeManual').click()");
+  const pasted=await newTarget(previous,/analysis.html#/);await waitFor(pasted,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.analyzing&&m.S.total===4)",'Pasted game');
+  const preview=await tab(base+'/popup.html?screen-preview=popup');await waitFor(preview,"document.querySelector('#username')?.value==='Preview player'",'Popup preview');
+  previous=new Set((await targets()).map(t=>t.targetId));await run(preview,"document.querySelector('#openWorkspace').click()");await sleep(100);
+  assert.equal((await targets()).filter(target=>target.type==='page').every(target=>previous.has(target.targetId)),true);assert.match(await run(preview,"document.querySelector('#status').textContent"),/Preview actions are disabled/);
+  const homePreview=await tab(base+'/analysis.html?screen-preview=workspace-blank');
+  await waitFor(homePreview,"document.body?.dataset.previewReady==='true'",'Blank screen preview');
+  assert.equal(await run(homePreview,"document.querySelector('[aria-label=\"Screen preview\"]').value"),'workspace-blank');
+  assert.equal(await run(homePreview,"getComputedStyle(document.querySelector('#canvas')).display"),'none');
+  console.log('Pasted-game import, preview launch guard and blank screen preview passed. Screenshots: '+out);
+}

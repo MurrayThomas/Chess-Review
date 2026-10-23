@@ -1,25 +1,28 @@
 // popup.js — UI logic. A module, so we can import the shared helper functions.
-import { openAnalysisTab, analyzeActiveTab, reloadActiveAndAnalyze, isSupportedChessUrl } from "./analyze-flow.js";
+import { openAnalysisTab, analyzeActiveTab, reloadActiveAndAnalyze, isSupportedChessUrl, openBlankWorkspaceTab } from "./analyze-flow.js";
 import { findGameById, parseGameId, parseFlip, gameMeta } from "./chesscom.js";
 import { parseLichessGameId, parseLichessFlip, fetchGamePgn as fetchLichessPgn } from "./lichess.js";
 import { browserAPI } from "./browser-compat.js";
+import {mountFluidActions} from "./lib/fluid-actions.js";
 import {createImportRequest} from "./lib/import-request.js";
 
 const $ = (id) => document.getElementById(id);
 const screenPreview = new window.URLSearchParams(window.location.search).has('screen-preview');
 const statusEl = $("status");
 let activeImport = null;
+const disposeFluidActions=mountFluidActions(document.querySelector(".popup-actions"));
+window.addEventListener("pagehide",disposeFluidActions,{once:true});
 function beginImport() {
   activeImport?.request.cancel();
   const operation = {request:createImportRequest()}; activeImport = operation;
-  for(const id of ["analyzeCurrent","analyzeManual","saveUser"])$(id).disabled=true;
+  for(const id of ["analyzeCurrent","analyzeManual","saveUser","openWorkspace"])$(id).disabled=true;
   $("username").readOnly=true;$("cancelImport").hidden=false;
   return operation;
 }
 function finishImport(operation) {
   operation.request.dispose();
   if(activeImport!==operation)return;
-  activeImport=null;for(const id of ["analyzeCurrent","analyzeManual","saveUser"])$(id).disabled=false;
+  activeImport=null;for(const id of ["analyzeCurrent","analyzeManual","saveUser","openWorkspace"])$(id).disabled=false;
   $("username").readOnly=false;$("cancelImport").hidden=true;
 }
 const importCurrent = operation => activeImport === operation && !operation.request.signal.aborted;
@@ -36,10 +39,7 @@ function looksLikePgn(s) {
   return /\[\s*\w+\s+"[^"]*"\s*\]/.test(s) || /\b1\.\s*[A-Za-z]/.test(s);
 }
 
-// The icon now uses a default_popup, so the popup opens on every click (pinned or in the overflow
-// menu). On a chess game page it behaves like a one-click review — auto-analyzing the current game;
-// anywhere else it shows the menu so you can paste a URL/PGN. The "Analyze this game" button re-runs
-// the same flow.
+// Keep the action menu open on every site so the user can choose a review or a blank workspace.
 async function runCurrentAnalysis() {
   if(screenPreview)return setStatus("Preview actions are disabled.");
   const operation=beginImport(),signal=operation.request.signal;
@@ -102,19 +102,30 @@ async function init() {
   let tab = null;
   try { [tab] = await browserAPI.tabs.query({ active: true, currentWindow: true }); } catch {}
   if (isSupportedChessUrl(tab && tab.url)) {
-    runCurrentAnalysis(); // on a chess game page → one-click review
+    setStatus("Ready to review the game in your active tab.");
   } else {
-    // Not a chess game page → nothing to auto-analyze; invite a paste, but leave "Manual setup"
-    // collapsed by default so the popup opens clean (the user can expand it when they want it).
-    setStatus("Open a chess.com or Lichess game to review it — or use Manual setup below to paste a URL or PGN.");
+    setStatus("For game review, open a Chess.com or Lichess game, or paste a URL or PGN below.");
   }
 }
 
 $("saveUser").addEventListener("click", async () => {
   if(screenPreview)return setStatus("Preview actions are disabled.");
   const username = $("username").value.trim();
-  await browserAPI.storage.local.set({ username });
-  setStatus(username ? `Saved: ${username}` : "Username cleared.");
+  try {
+    await browserAPI.storage.local.set({ username });
+    setStatus(username ? `Saved: ${username}` : "Username cleared.");
+  } catch { setStatus("Your username could not be saved. Please try again.",true); }
+});
+
+$("openWorkspace").addEventListener("click",async()=>{
+  if(screenPreview)return setStatus("Preview actions are disabled.");
+  const operation=beginImport();setStatus("Opening Chess Review …");
+  try {
+    await openBlankWorkspaceTab({signal:operation.request.signal});
+    if(importCurrent(operation)){finishImport(operation);window.close();}
+  } catch(error) {
+    if(importCurrent(operation))setStatus(error.message,true);
+  } finally { finishImport(operation); }
 });
 
 $("analyzeCurrent").addEventListener("click", runCurrentAnalysis);

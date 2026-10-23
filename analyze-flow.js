@@ -41,6 +41,21 @@ export async function openAnalysisTab(payload, {signal} = {}) {
   } finally {request.dispose();}
 }
 
+/** Open the app without a game handoff, preserving independent per-tab sessions. */
+export async function openBlankWorkspaceTab({signal} = {}) {
+  const request=createImportRequest(signal);
+  try {
+    checkImport(request.signal);
+    const opening=browserAPI.tabs.create({url:browserAPI.runtime.getURL("analysis.html?workspace=blank")}).then(async tab=>{
+      if(request.signal.aborted&&tab?.id!=null){
+        try {await browserAPI.tabs.remove(tab.id);} catch {}
+      }
+      return tab;
+    });
+    return await waitImport(opening,request.signal);
+  } finally {request.dispose();}
+}
+
 async function getActiveTab() {
   const [tab] = await browserAPI.tabs.query({ active: true, currentWindow: true });
   return tab || null;
