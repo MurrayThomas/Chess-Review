@@ -547,8 +547,8 @@ button { font-family: inherit; cursor: pointer; }
 .has-learning .topbar-meta { pointer-events: none; animation: meta-swoop-up .28s ease-out both; }
 .topbar-meta.meta-return { animation: meta-drop-in 1.05s both; transform-origin: 50% 0; }
 @keyframes meta-swoop-up {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-24px); opacity: 0; visibility: hidden; }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-60px); visibility: hidden; }
 }
 @keyframes meta-drop-in {
   0% { transform: translateY(-160px) rotate(-9deg); opacity: 0; animation-timing-function: cubic-bezier(.55,.05,1,.6); }
