@@ -13,7 +13,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
   three bounded learning rule modules retained.
 - [x] 8.2 Improve performance without sacrificing features. Report significant
   optimizations that require tradeoffs for the user to decide.
-- [ ] 1 Put a dot-grouped puzzle count beside Puzzle types. Show custom-filter
+- [x] 1 Put a dot-grouped puzzle count beside Puzzle types. Show custom-filter
   warnings on every overview Play in Time attack/Knockout; skip only Play again.
 - [ ] 2 Keep Time attack replay on Run complete; remove the mode/death subtitle;
   align the heading with Back to puzzle overview, following Knockout. Fix puzzle
@@ -67,3 +67,10 @@ task at a time, and commit each completed logical change before moving on.
   Headless Chrome loads the deferred module and exercises learning, then the
   existing return-scroll assertion fails. The unchanged prior package fails
   the exact same assertion, so this is a pre-existing audit limitation.
+
+- Completed local commits: 4de6c0a8 (8.1 separation), dc1ff399 (8.2 performance).
+- Item 1: count moved into the Puzzle types legend with Danish dot grouping.
+  Warning acceptance is no longer stored; only result-screen Play again skips
+  it. Updated migration and lifecycle checks: 58 passing plus all six corrected
+  re-entry/reload cases passing. Chrome notice audit passes at 1920/390/320,
+  and the desktop count screenshot was visually inspected. Source/diff checks pass.

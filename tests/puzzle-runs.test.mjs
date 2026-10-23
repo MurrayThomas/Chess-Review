@@ -223,43 +223,48 @@ test('a filtered run without an existing best never creates a record, including 
   assert.equal(data['learning:v1'].bests.knockout,undefined);
 });
 
-for(const mode of ['timeAttack','knockout'])for(const filter of ['type','rating','both'])test(`${mode} remembers accepted ${filter} notice for Play again, both modes and reopening`,async t=>{
+for(const mode of ['timeAttack','knockout'])for(const filter of ['type','rating','both'])test(`${mode} warns on each overview entry and reload for ${filter}, skipping only Play again`,async t=>{
   const {w,data}=await setup(t);
   if(filter!=='rating')w.puzzleThemes.add('mateIn1');
   if(filter!=='type')w.puzzleRange=[650,850];
   const starting=w.startPuzzleRun(mode);
-  const notice=w.root.querySelector('.puzzle-run-notice-card');
-  assert.match(notice.textContent,/Personal best disabled/);
-  notice.querySelector('[data-focus=run-notice-continue]').click();await starting;
-  assert.equal(data['learning:v1'].puzzleRunNoticeAccepted,true);
+  w.root.querySelector('[data-focus=run-notice-continue]').click();await starting;
+  assert.equal('puzzleRunNoticeAccepted' in (data['learning:v1']||{}),false);
   await solve(w);await w.finishChallenge('Ended early');
   const start=w.startPuzzleRun.bind(w);let restarting;
-  t.mock.method(w,'startPuzzleRun',mode=>restarting=start(mode));
+  t.mock.method(w,'startPuzzleRun',(mode,options)=>restarting=start(mode,options));
   w.root.querySelector('[data-focus=run-again]').click();await restarting;
   assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
   assert.equal(w.run.mode,mode);assert.equal(w.run.bestEligible,false);
   await solve(w);await w.finishChallenge('Ended early');
-  const other=mode==='timeAttack'?'knockout':'timeAttack';
-  await w.navigate('puzzles');await w.startPuzzleRun(other);
-  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
-  assert.equal(w.run.bestEligible,false);await w.close();
+  await w.navigate('puzzles');
+  const reenter=w.startPuzzleRun(mode,{again:true}); // A stale option cannot bypass an overview entry.
+  assert.ok(w.root.querySelector('.puzzle-run-notice-card'));
+  w.root.querySelector('[data-focus=run-notice-continue]').click();await reenter;
+  await w.finishChallenge('Ended early');await w.navigate('puzzles');
+  const other=mode==='timeAttack'?'knockout':'timeAttack',switching=w.startPuzzleRun(other);
+  assert.ok(w.root.querySelector('.puzzle-run-notice-card'));
+  w.root.querySelector('[data-focus=run-notice-continue]').click();await switching;await w.close();
+  data['learning:v1'].puzzleRunNoticeAccepted=true; // Old saved acceptance must not suppress the warning.
   const reopened=(await setup(t,{initial:data})).w;
   reopened.puzzleRange=[650,850];reopened.puzzleThemes.add('mateIn1');
-  await reopened.startPuzzleRun(mode);
-  assert.equal(reopened.root.querySelector('.puzzle-run-notice-card'),null);
+  const reopening=reopened.startPuzzleRun(mode);
+  assert.ok(reopened.root.querySelector('.puzzle-run-notice-card'));
+  reopened.root.querySelector('[data-focus=run-notice-continue]').click();await reopening;
   assert.equal(reopened.run.bestEligible,false);await solve(reopened);
   assert.equal(reopened.store.value.bests[mode],undefined);
 });
 
-test('acceptance stays remembered during storage failures and is saved on retry',async t=>{
+test('save failures and retries do not turn entry warnings into a saved preference',async t=>{
   const {w,data,state}=await setup(t);w.puzzleThemes.add('mateIn1');state.fail=true;
   const starting=w.startPuzzleRun('knockout');
   w.root.querySelector('[data-focus=run-notice-continue]').click();await starting;
-  assert.equal(w.run.bestEligible,false);await w.finishChallenge('Ended early');
-  await w.startPuzzleRun('knockout');
-  assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);assert.ok(w.run);
-  state.fail=false;await w.retrySave();
-  assert.equal(data['learning:v1'].puzzleRunNoticeAccepted,true);
+  await w.finishChallenge('Ended early');
+  const reenter=w.startPuzzleRun('knockout');
+  assert.ok(w.root.querySelector('.puzzle-run-notice-card'));
+  w.root.querySelector('[data-focus=run-notice-continue]').click();await reenter;
+  assert.ok(w.run);state.fail=false;await w.retrySave();
+  assert.equal('puzzleRunNoticeAccepted' in (data['learning:v1']||{}),false);
 });
 
 for(const mode of ['timeAttack','knockout'])for(const range of [[450,850],[650,1650],[650,850]])test(`${mode} with Elo ${range.join('–')} counts solves without setting records`,async t=>{

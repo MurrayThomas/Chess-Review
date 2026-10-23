@@ -2203,3 +2203,7 @@ button { font-family: inherit; cursor: pointer; }
 .puzzle-run-notice-card h2 { margin: 0 0 8px; font-size: 17px; }
 .puzzle-run-notice-card p { color: var(--ink-2); font-size: 14px; line-height: 1.5; margin: 0 0 16px; }
 .puzzle-run-notice-card .learn-inline { justify-content: flex-end; }
+
+/* Keep the filtered count beside the puzzle-type choices. */
+.learn-theme-list legend { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; width: 100%; box-sizing: border-box; }
+.learn-puzzle-count { color: var(--ink-2); font-size: 12px; font-weight: 400; letter-spacing: normal; white-space: nowrap; }
