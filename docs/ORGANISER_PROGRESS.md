@@ -24,7 +24,7 @@ never push. Preserve the pre-existing staged marketing/STORE_LISTING2.md change.
 - [x] 4 Speed up Time attack piece animations. Show destinations and capture
   rings while picking up during opponent animation in all modes. In Time attack
   allow early solver drops and finish the opponent animation instantly.
-- [ ] 5 Remove puzzle-statistics divider clutter; improve summary metrics; show
+- [x] 5 Remove puzzle-statistics divider clutter; improve summary metrics; show
   all puzzle types, with zero correct/incorrect/percent for untried types.
 - [ ] 6 Add proportional group resizing/multiselection to Reorganize panels and
   a temporary layout export button. Preserve the current bottom gap/defaults.
@@ -97,3 +97,10 @@ task at a time, and commit each completed logical change before moving on.
   stable turn, then accept one solver move. Promotion stays explicit; close and
   expiry cancel queued moves. 83 focused tests, source/diff checks and real Chrome
   pointer capture/continuation checks pass. Capture-marker screenshot inspected.
+
+- Item 4 committed as a4417994.
+- Item 5: rebuilt the four metrics as semantic summary cards; removed separator
+  and track clutter; all puzzle types stay in one list with zero values for
+  untried types. 28 checks passed plus the corrected always-visible-types case
+  passing on focused rerun. Chrome checks at 1920/1280/390/320, screenshot review,
+  source verification and diff checks pass.

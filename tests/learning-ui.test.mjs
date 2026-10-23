@@ -36,7 +36,10 @@ test('puzzle statistics show saved patterns, preserve settings and resume, and r
   const {w,dom,data}=await workspace(t),doc=dom.window.document;
   const button=()=>w.root.querySelector('[data-focus="puzzle-statistics"]');
   button().focus();button().click();
-  assert.equal(w.page,'statistics');assert.match(w.root.textContent,/No attempts yet/);
+  assert.equal(w.page,'statistics');
+  assert.equal(w.root.querySelectorAll('.learn-stat-row').length,Object.keys(THEME_NAMES).length);
+  assert.ok([...w.root.querySelectorAll('.learn-stat-row')].every(row=>row.textContent.includes('0 correct · 0 incorrect')&&row.textContent.endsWith('0%')));
+  assert.equal(w.root.querySelector('.learn-stat-untried, .learn-stat-track'),null);
   assert.equal(button().textContent,'Back to puzzle overview');
   assert.equal(w.root.querySelector('[data-focus="review"]').textContent,'← Back to review');
   assert.equal(doc.activeElement.id,'learn-statistics-title');
@@ -55,8 +58,9 @@ test('puzzle statistics show saved patterns, preserve settings and resume, and r
   assert.equal(w.root.querySelector('.learn-stat-highlights, .learn-stat-note, .learn-stat-intro'),null);
   assert.doesNotMatch(w.root.querySelector('.learn-puzzle-statistics').textContent,/clean|need work|Early results|Highlights appear/i);
   assert.match(w.root.querySelector('[data-theme="fork"]').textContent,/2 correct · 6 incorrect/);
-  assert.deepEqual([...w.root.querySelectorAll('.learn-stat-overview > div')].map(n=>n.textContent),['18Attempts','11Correct','7Incorrect','1h 2m 3sTime spent']);
-  assert.equal(w.root.querySelector('.learn-stat-untried').open,false);
+  assert.deepEqual([...w.root.querySelectorAll('.learn-stat-overview > div')].map(n=>n.textContent),['Attempts18','Correct11','Incorrect7','Time spent1h 2m 3s']);
+  assert.equal(w.root.querySelector('.learn-stat-untried'),null);
+  assert.equal(w.root.querySelectorAll('.learn-stat-row').length,Object.keys(THEME_NAMES).length);
   doc.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
   assert.equal(w.closed,false);assert.equal(w.page,'puzzles');assert.equal(doc.activeElement,button());
   assert.deepEqual([...w.puzzleThemes],['sacrifice']);assert.deepEqual(w.puzzleRange,[2000,2200]);
