@@ -28,6 +28,10 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     assert.ok(initial.card.left>=15&&initial.card.right<=initial.width-15&&initial.card.top>=15&&initial.card.bottom<=initial.height-15,'Dialog must fit the viewport: '+JSON.stringify(initial));
     assert.ok(initial.card.width<=460&&initial.card.height<400,'Keep the dialog compact');
     assert.equal(await run("getComputedStyle(document.querySelector('.learn-notice-card')).userSelect"),'none');
+    assert.equal(await run("getComputedStyle(document.querySelector('#learn-notice-copy')).fontSize"),'17px');
+    await call('Input.dispatchMouseEvent',{type:'mousePressed',x:4,y:4,button:'left',clickCount:1},review.sessionId);
+    await call('Input.dispatchMouseEvent',{type:'mouseReleased',x:4,y:4,button:'left',clickCount:1},review.sessionId);
+    await key('Escape');assert.equal(await run("!!document.querySelector('.learn-notice-overlay')"),true);
     await shot('concept-notice-'+width);
     // Proximity, rather than entering the button itself, should start each escape.
     for(let i=0;i<5;i++) {
@@ -59,6 +63,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   await open();const r=(await geometry()).reject;await pointer(r.left+8,r.top+8);
   await waitFor(review,"Number(document.querySelector('.learn-notice-reject').dataset.dodges)>0",'Reduced-motion escape');
   assert.equal(await run("document.querySelector('.learn-notice-reject').getAnimations().length"),0);
-  await key('Escape');assert.equal(await run("!!document.querySelector('.learn-notice-overlay')"),false);
+  await key('Escape');assert.equal(await run("!!document.querySelector('.learn-notice-overlay')"),true);
+  await run("document.querySelector('.learn-notice-accept').focus()");await key('Enter');
+  assert.equal(await run("!!document.querySelector('.learn-notice-overlay')"),false);
   console.log('Concept notice browser checks passed at 1920, 390 and 320 pixels, including escapes, catches and reduced motion. Screenshots: '+out);
 }

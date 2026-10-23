@@ -165,7 +165,10 @@ test('Concept Learn opens a focused in-progress dialog without starting a lesson
   const key=name=>dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:name,bubbles:true,cancelable:true}));
   key('Tab');assert.equal(dom.window.document.activeElement.textContent,'Unacceptable');
   key('Tab');assert.equal(dom.window.document.activeElement.textContent,'Fair enough');
-  key('Escape');assert.equal(w.conceptNotice,null);assert.equal(w.closed,false);assert.equal(dom.window.document.activeElement,learn);
+  const overlay=w.conceptNotice;
+  overlay.click();notice.click();key('Escape');
+  assert.equal(w.conceptNotice,overlay);assert.equal(w.closed,false);assert.equal(dom.window.document.activeElement.textContent,'Fair enough');
+  key('Enter');assert.equal(w.conceptNotice,null);assert.equal(dom.window.document.activeElement,learn);
   learn.click();w.conceptNotice.querySelector('button').click();assert.equal(w.conceptNotice,null);assert.equal(dom.window.document.activeElement,learn);
 });
 

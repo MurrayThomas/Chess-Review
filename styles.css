@@ -180,7 +180,7 @@
 .learn-notice-card { width: min(100%,440px); box-sizing: border-box; padding: clamp(20px,4vw,28px); border: 1px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: 0 20px 80px #0005; text-align: center; user-select: none; -webkit-user-select: none; }
 .learn-notice-card * { user-select: none; -webkit-user-select: none; }
 .learn-notice-card h2 { margin: 0 auto 16px; max-width: 380px; font-size: 23px; line-height: 1.25; text-wrap: balance; }
-.learn-notice-card p { color: var(--ink-2); line-height: 1.7; margin: 0 auto; max-width: 380px; text-wrap: pretty; }
+.learn-notice-card p { color: var(--ink-2); font-size: 17px; line-height: 1.7; margin: 0 auto; max-width: 380px; text-wrap: pretty; }
 .learn-notice-actions { position: relative; height: 44px; margin-top: 24px; }
 .learn-notice-actions .learn-button { position: absolute; bottom: 0; white-space: nowrap; touch-action: manipulation; }
 .learn-notice-accept { left: 0; z-index: 1; }

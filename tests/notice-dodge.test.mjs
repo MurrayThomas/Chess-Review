@@ -30,6 +30,36 @@ test('escape destinations stay inside the dialog and leave the dismiss button a 
   }
 });
 
+test('escapes vary beyond opposite corners and avoid recently visited spots',()=>{
+  let seed=42;
+  const random=()=>{seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/2**32;};
+  for(const width of [248,318,468]) {
+    const safe={left:0,top:0,right:94,bottom:42},recent=[],visited=new Set();
+    let current={x:width-110,y:0},interior=0;
+    for(let i=0;i<30;i++) {
+      const target=escapePosition({width,height:150,minX:-16,minY:-12,buttonWidth:110,buttonHeight:42,
+        current,pointer:{x:current.x+55,y:current.y+21},safe,recent,random});
+      assert.ok(target);
+      assert.ok(target.x>=-16&&target.x+110<=width&&target.y>=-12&&target.y+42<=150);
+      assert.ok(target.x>=safe.right+40||target.y>=safe.bottom+40);
+      assert.ok(target.travel>=60&&target.clearance>=64,'Each escape clears the pointer and travels a meaningful distance');
+      visited.add(`${Math.round(target.x)},${Math.round(target.y)}`);
+      if(target.x>0&&target.x<width-120&&target.y>0&&target.y<98)interior++;
+      recent.push(current);if(recent.length>4)recent.shift();current=target;
+    }
+    assert.ok(visited.size>=15,'Repeated chases should have many distinct destinations');
+    assert.ok(interior>=3,'Destinations should include the interior, not just edges');
+  }
+  const options={width:600,height:300,buttonWidth:110,buttonHeight:42,current:{x:450,y:100},
+    pointer:{x:505,y:121},safe:{left:0,top:0,right:94,bottom:42},random};
+  const recent=[];
+  for(let i=0;i<12;i++) {
+    const target=escapePosition({...options,recent});
+    assert.ok(recent.every(p=>Math.hypot(target.x-p.x,target.y-p.y)>=48),'Avoid recent destinations when space permits');
+    recent.push(target);if(recent.length>4)recent.shift();
+  }
+});
+
 test('the evasive button reacts before hover, respects a catch window, resets on resize and cleans up',t=>{
   const dom=new JSDOM('<div id="arena"><button id="safe">Fair enough</button><button id="runner">Unacceptable</button></div>');
   t.after(()=>dom.window.close());
