@@ -802,6 +802,7 @@ button { font-family: inherit; cursor: pointer; }
 /* eval bar */
 .evalbar {
   width: 26px; border-radius: 8px; overflow: hidden; position: relative;
+  container-type: inline-size;
   background: #2b2b2b; flex: none;
   border: 1px solid var(--line);
   /* clip-path (not just overflow:hidden) so the rounded corners also clip the .white-fill while it's
@@ -815,7 +816,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .evalbar .score {
   position: absolute; left: 0; right: 0; text-align: center;
-  font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: -.3px;
+  /* Leave room inside the existing bar, including multi-digit scores and mates. */
+  font-family: var(--font-mono); font-size: min(12px, calc((100cqw - 2px) / (var(--score-chars, 4) * .6)));
+  font-weight: 700; letter-spacing: -.3px; white-space: nowrap;
 }
 .evalbar .score.top { top: 4px; color: #cfcdc4; }
 .evalbar .score.bot { bottom: 4px; color: #2a2a2a; }

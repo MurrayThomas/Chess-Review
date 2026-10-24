@@ -3091,9 +3091,11 @@ function renderEvalBar() {
   const clamp = Math.max(-600, Math.min(600, cp));
   const whiteShare = e.mate != null ? (e.mate > 0 ? 100 : 0) : 50 + (clamp / 600) * 46;
   bar.title = "Eval " + evalText(e);
+  const text = evalBarText(e);
+  bar.style.setProperty("--score-chars", text.length);
   bar.querySelector(".white-fill").style.height = whiteShare + "%";
-  bar.querySelector(".score.top").textContent = cp < 0 ? evalBarText(e) : "";
-  bar.querySelector(".score.bot").textContent = cp >= 0 ? evalBarText(e) : "";
+  bar.querySelector(".score.top").textContent = cp < 0 ? text : "";
+  bar.querySelector(".score.bot").textContent = cp >= 0 ? text : "";
 }
 
 /* ---------------- Player strips ---------------- */
