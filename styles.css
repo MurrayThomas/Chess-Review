@@ -412,7 +412,7 @@
 .puzzle-session > .puzzle-session-navigation { grid-column: 2; grid-row: 1; }
 .puzzle-practice-heading { display: contents; }
 .puzzle-practice-heading h2 { grid-column: 1; grid-row: 1; }
-.puzzle-practice-heading .puzzle-rating-toggle { grid-column: 2; grid-row: 2; align-self: start; justify-self: end; margin-top: 8px; z-index: 1; }
+.puzzle-practice-heading .puzzle-rating-toggle { grid-column: 2; grid-row: 2; align-self: start; justify-self: center; margin-top: 8px; z-index: 1; }
 .learning-workspace .puzzle-practice-heading h2 { min-width: 0; margin: 0; font-size: clamp(23px,2.2vw,30px); }
 .puzzle-session .learn-study { margin: 0; }
 .puzzle-session > .puzzle-practice-heading + * { margin-top: 24px; }
@@ -424,6 +424,7 @@
 .puzzle-session .puzzle-rating-region .puzzle-elo-panel { padding: 8px 0 16px; margin: 0; }
 .puzzle-practice-actions { display: flex; align-items: center; gap: 12px; padding: 4px 0 20px; border-bottom: 1px solid var(--line); }
 .puzzle-practice-actions .learn-button { min-width: 96px; min-height: 46px; font-weight: 600; }
+@media (max-width:360px) { .puzzle-practice-actions .puzzle-hint, .puzzle-practice-actions .puzzle-skip { min-width: 80px; } }
 .puzzle-hint, .puzzle-skip { background: transparent; border-color: color-mix(in srgb, var(--line) 72%, var(--ink-2)); color: var(--ink-2); }
 .puzzle-hint:disabled, .puzzle-skip:disabled { opacity: 1; cursor: default; }
 .puzzle-session:has(.puzzle-rating-region[data-enabled="false"]) .puzzle-practice-actions { padding-right: 60px; }

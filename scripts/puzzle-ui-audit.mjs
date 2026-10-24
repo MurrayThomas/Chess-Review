@@ -58,6 +58,8 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   };
   for(const [width,height] of [[1920,1080],[1280,800],[390,844],[320,640]]){
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(800);
+    assert.equal(await run(`(()=>{const toggle=document.querySelector('.puzzle-rating-toggle').getBoundingClientRect(),navigation=document.querySelector('.puzzle-session-navigation').getBoundingClientRect();
+      return Math.abs(toggle.x+toggle.width/2-navigation.x-navigation.width/2)<1;})()`),true,'Rating switch centers below the navigation button');
     await collapse('solving',width);
   }
   await call('Emulation.setDeviceMetricsOverride',{width:1920,height:1080,deviceScaleFactor:1,mobile:false},review.sessionId);
