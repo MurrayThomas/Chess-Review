@@ -1,5 +1,8 @@
 # Extension performance review — 2026-10-23
 
+Follow-up: [whole-extension audit, 2026-10-24](PERFORMANCE_AUDIT_2026-10-24.md)
+records additional candidates after the two larger options below were declined.
+
 Organiser 8.2 requests optimizations without feature loss. No search depth,
 scoring rules, engine choices, animation options or puzzle content were reduced.
 
