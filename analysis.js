@@ -1510,6 +1510,7 @@ function uciLineToSan(fen, uciMoves, maxPlies = 6) {
    UI skeleton
    =================================================================== */
 function buildUI() {
+  UI.boardObserver?.disconnect();
   const root = document.getElementById("root");
   root.replaceChildren();
 
@@ -1615,6 +1616,10 @@ function buildUI() {
   setLibraryOpen(false);
   renderReviewSaveStatus();
   window.addEventListener("resize", () => { fitEnginePanel(); growCanvas(); alignPlayers(); positionSettings(); });
+  if (window.ResizeObserver) {
+    UI.boardObserver = new window.ResizeObserver(alignPlayers);
+    UI.boardObserver.observe(boardWrap);
+  }
 }
 
 let learningWorkspace = null;
@@ -3133,11 +3138,11 @@ function capturedInfo() {
   for (const t in value) diff += ((cnt.w[t] || 0) - (cnt.b[t] || 0)) * value[t];
   return { capturedBy, diff };
 }
-function playerStrip(side) {
+function playerStrip(side, material = capturedInfo()) {
   const p = S.players[side];
   const toMove = activePos().fen.split(" ")[1] === side;
   const clock = clockFor(side);
-  const { capturedBy, diff } = capturedInfo();
+  const { capturedBy, diff } = material;
   const caps = capturedBy(side);
   // The "+N" sits next to whichever side is ahead; nothing when equal or on the trailing side.
   const ahead = side === "w" ? diff > 0 : diff < 0;
@@ -3160,7 +3165,9 @@ function playerStrip(side) {
         onmouseenter: p.countryName ? (e) => showLabelTip(e.currentTarget, p.countryName) : null,
         onmouseleave: p.countryName ? hideQTip : null })
     : el("span", { class: "avatar", style: { background: side === "w" ? "#3f7d3a" : "#5a5a5a" } }, (p.name[0] || "?").toUpperCase());
-  return el("div", { class: "player-strip" + (toMove ? " active" : "") },
+  return el("div", { class: "player-strip" + (toMove ? " active" : ""),
+    "data-player-key": JSON.stringify([side,p.name,p.rating,p.country,p.countryName]),
+    "data-capture-key": caps.join(",") + "|" + advText },
     avatar,
     el("div", { class: "who" },
       el("span", { class: "name" }, p.name, p.rating ? el("span", { class: "elo" }, ` (${p.rating})`) : null),
@@ -3170,9 +3177,29 @@ function playerStrip(side) {
   );
 }
 function renderPlayers() {
-  UI.playerTop.replaceChildren(playerStrip(S.flipped ? "w" : "b"));
-  UI.playerBot.replaceChildren(playerStrip(S.flipped ? "b" : "w"));
-  alignPlayers();
+  const material = capturedInfo();
+  let replaced = false;
+  for (const [mount, side] of [[UI.playerTop,S.flipped ? "w" : "b"],[UI.playerBot,S.flipped ? "b" : "w"]]) {
+    const p = S.players[side], key = JSON.stringify([side,p.name,p.rating,p.country,p.countryName]);
+    const strip = mount.firstElementChild;
+    if (!strip || strip.dataset.playerKey !== key) { mount.replaceChildren(playerStrip(side,material)); replaced = true; continue; }
+    strip.classList.toggle("active",activePos().fen.split(" ")[1] === side);
+    const clock = clockFor(side), clockNode = strip.querySelector(".clock");
+    if (clockNode) { if (!clock) clockNode.remove(); else if (clockNode.textContent !== clock) clockNode.textContent = clock; }
+    else if (clock) strip.append(el("span",{class:"clock tnum"},clock));
+    const caps = material.capturedBy(side), ahead = side === "w" ? material.diff > 0 : material.diff < 0;
+    const advantage = ahead ? "+" + Math.abs(material.diff) : "", captureKey = caps.join(",") + "|" + advantage;
+    if (strip.dataset.captureKey !== captureKey) {
+      strip.dataset.captureKey = captureKey;
+      const tray = strip.querySelector(".cap-tray");
+      tray.classList.toggle("is-empty",!caps.length);
+      tray.replaceChildren(...caps.map(code=>el("img",{class:"cap-pc",src:_url(`pieces-img/cburnett/${code}.svg`),alt:""})));
+      const adv = strip.querySelector(".adv");
+      if (advantage) { if (adv) adv.textContent = advantage; else tray.after(el("span",{class:"adv"},advantage)); }
+      else adv?.remove();
+    }
+  }
+  if (replaced) alignPlayers();
 }
 // Align the player strip with the board's actual left edge (the board can be
 // centered in its module, so we measure instead of guessing a fixed offset).
@@ -3997,7 +4024,7 @@ function renderGraph() {
   const show = S.settings.evalView === "both" || S.settings.evalView === "graph";
   const mod = UI.graph.closest(".mod");
   if (mod) mod.hidden = !show;   // hidden, not just emptied, so the layout closes the gap
-  if (!show) { UI.graph.replaceChildren(); return; }
+  if (!show) { UI.graph.replaceChildren(); UI.graphRefs = null; return; }
   const W = 384, H = 120, mid = H / 2;
   const maxPly = Math.max(1, S.total);
   const toX = (p) => (p / maxPly) * W;
@@ -4007,6 +4034,13 @@ function renderGraph() {
   const toYc = (cp) => { const c = Math.max(-500, Math.min(500, cp)); return mid + (c / 500) * (mid - 8); };
   const pts = [];
   for (let p = 0; p <= S.total; p++) { if (!S.evals[p]) break; pts.push({ ply: p, cp: scoreToCp(S.evals[p]) }); }
+  const graphKey = JSON.stringify([S.total,S.settings.graphStyle || "area",pts,S.classif]);
+  const retained = UI.graphRefs;
+  if (retained?.key === graphKey && retained.marker.isConnected) {
+    const x = String(toX(Math.min(S.idx,maxPly)));
+    if (retained.marker.getAttribute("x1") !== x) { retained.marker.setAttribute("x1",x); retained.marker.setAttribute("x2",x); }
+    return;
+  }
   let line = "", fill = "";
   if (pts.length) {
     line = "M" + pts.map((s) => `${toX(s.ply).toFixed(1)},${toY(s.cp).toFixed(1)}`).join(" L");
@@ -4015,7 +4049,7 @@ function renderGraph() {
   const dots = pts.filter((s) => ["blunder", "mistake", "miss", "brilliant", "great"].includes(S.classif[s.ply]));
   const markerX = toX(Math.min(S.idx, maxPly));
   const midLine = `<line x1="0" y1="${mid}" x2="${W}" y2="${mid}" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 3"/>`;
-  const marker = `<line x1="${markerX}" y1="0" x2="${markerX}" y2="${H}" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>`;
+  const marker = `<line class="eval-position" x1="${markerX}" y1="0" x2="${markerX}" y2="${H}" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>`;
   const style = S.settings.graphStyle || "area";
   // Classification dots are drawn on every style except the bare "minimal" one.
   const dotsSvg = style === "minimal" ? "" : dots.map((s) =>
@@ -4104,6 +4138,7 @@ function renderGraph() {
     el("div", { class: "panel-body", style: { paddingTop: "8px", paddingBottom: "8px" } },
       el("div", { class: "evalgraph clickable-graph", title: "Click to jump to a move", html: svg, onclick: jumpFromEvent, onmousemove: hoverMove, onmouseleave: hideHover })),
   ));
+  UI.graphRefs = {key:graphKey,marker:UI.graph.querySelector(".eval-position")};
 }
 
 /* ---------------- Move list ---------------- */
@@ -4147,12 +4182,6 @@ function highlightCurrentMove(forceScroll = false) {
 let _movesSig = null;
 let _movesClassSig = null;
 function renderMoves() {
-  const rows = [];
-  for (let ply = 1; ply <= S.total; ply++) {
-    const number = Number(S.positions[ply - 1].fen.split(" ")[5]);
-    if (!rows.length || rows[rows.length - 1].number !== number) rows.push({number, w:0, b:0});
-    rows[rows.length - 1][S.positions[ply].color] = ply;
-  }
   const ml = S.settings.mlStyle;
   // Keep move cells mounted while classifications arrive. Replacing the list during analysis
   // drops the hovered element and makes its hover state flicker; only changed badges need updates.
@@ -4178,6 +4207,12 @@ function renderMoves() {
   }
   _movesSig = sig;
   _movesClassSig = classSig;
+  const rows = [];
+  for (let ply = 1; ply <= S.total; ply++) {
+    const number = Number(S.positions[ply - 1].fen.split(" ")[5]);
+    if (!rows.length || rows[rows.length - 1].number !== number) rows.push({number, w:0, b:0});
+    rows[rows.length - 1][S.positions[ply].color] = ply;
+  }
   let list;
   if (ml === "compact") {
     list = el("div", { class: "movelist ml-compact ml-scroll" });
@@ -4242,6 +4277,7 @@ function panelContextKey(i = S.idx, want = S.settings.engineLines) {
     S.settings.engineDepth, S.settings.engineHash, S.settings.engineSkill, want]);
 }
 function cachedPanelLines() {
+  if (!panelLineCache.size) return null;
   const key = panelContextKey(), entry = panelLineCache.get(key);
   if (entry) { panelLineCache.delete(key); panelLineCache.set(key, entry); }
   return entry;
@@ -4249,12 +4285,15 @@ function cachedPanelLines() {
 async function requestPanelLines() {
   if (S.analyzing || S.analysisMode) return;          // not during the batch, not in variation mode
   const want = S.settings.engineLines;
+  if (!want || want <= 1 && !S._panelNeedsLive) {
+    if (S._panelRequest) { S.panelToken++; S._panelRequest = null; S.liveEngine?.cancelPending(); S.liveEngine?.stop(); }
+    return;
+  }
   const key = panelContextKey();
   if (S._panelRequest && S._panelRequest.key !== key) {
     S.panelToken++; S._panelRequest = null;
     S.liveEngine?.cancelPending(); S.liveEngine?.stop();
   }
-  if (!want || want <= 1 && !S._panelNeedsLive) return;
   const i = S.idx;
   const stored = S.bests[i];
   if (!stored || !stored.lines) return;               // position not analysed yet
@@ -4316,6 +4355,9 @@ function renderEngine(lines, padFromCache = false) {
   // SAN stays correct) to fill slots that the new position hasn't searched yet — and to hold the
   // panel steady while the engine re-computes (lines === null, e.g. "Play best moves from here").
   const cached = S._lastEngineLines?.fen === curFen && S._lastEngineLines?.historyKey === historyKey && S._lastEngineLines?.configKey === configKey ? S._lastEngineLines : null;
+  const renderKey = JSON.stringify([curFen,historyKey,configKey,want,S.analysisMode,S.liveError,S.bestWalking,
+    padFromCache,lines,(!lines || padFromCache) && cached?.lines]);
+  if (UI.engineRenderKey === renderKey && UI.engineRenderNode === UI.engine.firstChild) return;
   let body;
   if (S.analysisMode && S.liveError) {
     body = el("div", { class: "engine-empty" }, S.liveError);
@@ -4369,6 +4411,7 @@ function renderEngine(lines, padFromCache = false) {
     el("div", { class: "panel-body engine-body" },
       el("div", { class: "engine-candidates", style: { minHeight: (want * 46) + "px" } }, body), bestWalkBtn),
   ));
+  UI.engineRenderKey = renderKey; UI.engineRenderNode = UI.engine.firstChild;
   fitEnginePanel();
 }
 
@@ -5947,7 +5990,7 @@ function libCard(r) {
   return el("div", { class: "lib-card" + (r.id === curId ? " active" : ""), "data-game-id":r.id },
     el("button", { tabindex:"-1", class: "lc-fav" + (r.fav ? " on" : ""), title: r.fav ? "Remove favorite" : "Favorite",
       onclick: (e) => { e.stopPropagation(); toggleFav(r.id); } }, r.fav ? "★" : "☆"),
-    el("button", {type:"button", class:"lc-open", tabindex:"-1", "aria-label":"Open game against " + (r.opName || "unknown player"), onclick:()=>openLibraryGame(r)},
+    el("button", {type:"button", class:"lc-open", tabindex:"-1", "aria-label":"Open game against " + (r.opName || "unknown player"), onclick:()=>openLibraryGame(UI.libraryCards?.get(r.id)?.rec || r)},
     el("div", { class: "lc-top" },
       el("span", { class: "lc-result lc-" + (r.result || "none") }, rLetter),
       el("span", { class: "lc-opp" }, "vs " + (r.opName || "?")),
@@ -5972,19 +6015,35 @@ function renderLibrary() {
   const setRes  = (v) => { S.libResult = v; renderLibrary(); };
   const setType = (v) => { S.libType = v; renderLibrary(); };
   const types = Array.from(new Set(S.library.map((r) => r.type).filter(Boolean)));
-  UI.libControls.replaceChildren(
+  const controlsKey = JSON.stringify([S.libSort,S.libResult,S.libType,types]);
+  if (UI.libraryControlsKey !== controlsKey) UI.libControls.replaceChildren(
     libDropdown("Sort", S.libSort, [["history", "Most recent"], ["accuracy", "Highest accuracy"], ["rating", "Highest rating"], ["unsolved", "Unsolved"], ["favorite", "Favorites"]], setSort),
     libDropdown("Result", S.libResult, [["all", "All results"], ["win", "Wins"], ["loss", "Losses"], ["draw", "Draws"]], setRes),
     libDropdown("Type", S.libType, [["all", "All types"], ...types.map((t) => [t, t])], setType),
   );
+  UI.libraryControlsKey = controlsKey;
+  UI.libraryCards ||= new Map();
+  const ids = new Set(S.library.map(rec=>rec.id));
+  for (const id of UI.libraryCards.keys()) if (!ids.has(id)) UI.libraryCards.delete(id);
 
   if (!recs.length) {
-    UI.libList.replaceChildren(el("div", { class: "lib-empty" },
-      S.library.length ? "No games match these filters." : "Analyzed games are saved here automatically. Analyze a game to start your library."));
+    const message = S.library.length ? "No games match these filters." : "Analyzed games are saved here automatically. Analyze a game to start your library.";
+    if (UI.libList.firstChild?.textContent !== message) UI.libList.replaceChildren(el("div", { class: "lib-empty" },message));
     restore();
     return;
   }
-  UI.libList.replaceChildren(...recs.map(libCard));
+  let cursor = UI.libList.firstChild;
+  const current = currentGameId();
+  for (const rec of recs) {
+    const key = JSON.stringify([rec.fav,rec.result,rec.opName,rec.type,rec.myAcc,rec.solved]);
+    let entry = UI.libraryCards.get(rec.id);
+    if (!entry || entry.key !== key) { entry = {key,node:libCard(rec),rec}; UI.libraryCards.set(rec.id,entry); }
+    else entry.rec = rec;
+    entry.node.classList.toggle("active",rec.id === current);
+    if (entry.node !== cursor) UI.libList.insertBefore(entry.node,cursor);
+    cursor = entry.node.nextSibling;
+  }
+  while (cursor) { const next = cursor.nextSibling; cursor.remove(); cursor = next; }
   restore();
 }
 
