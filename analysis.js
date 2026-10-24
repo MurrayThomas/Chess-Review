@@ -8,6 +8,7 @@ import { Engine } from "./engine/uci.js";
 import { flagCodeForCountryId, countryNameForId } from "./flags.js";
 import { BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg } from "./move-grades.js";
 import { puzzleResultBadge } from "./lib/puzzle-badge.js";
+import { matedKingSquare, mateMark } from "./lib/mate-mark.js";
 import { moveAnimationDuration, MOVE_ANIMATION_EASING } from "./lib/move-animation.js";
 import { CATEGORY_LABEL_FONT, categoryLabelPng } from "./lib/category-label.js";
 import { browserAPI as platformAPI } from "./browser-compat.js";
@@ -2136,6 +2137,14 @@ function buildBoard() {
   clearBoardArt(board);
   paintBoard();
 }
+let mateMarkFen = null, mateMarkSquare = null;
+function matedSquare(fen) {
+  if (fen !== mateMarkFen) {
+    mateMarkFen = fen;
+    try { mateMarkSquare = matedKingSquare(new Chess(fen)); } catch { mateMarkSquare = null; }
+  }
+  return mateMarkSquare;
+}
 function paintBoard({restoring=false}={}) {
   if (learningWorkspace?.embedded&&!restoring) return;
   const pos = activePos();
@@ -2171,6 +2180,7 @@ function paintBoard({restoring=false}={}) {
     ? `color-mix(in srgb, ${QUALITY[cls].color} 50%, transparent)`
     : null;
   const set = BUNDLED_PIECE_SETS[S.settings.pieceStyle] || BUNDLED_PIECE_SETS.image;
+  const mated = matedSquare(pos.fen);
   for (const [name, sq] of Object.entries(sqByName)) {
     const oldBadge = sq.querySelector(".sq-badge");
     const keepBadge = oldBadge && name === pos.to && cls && oldBadge.dataset.category === cls
@@ -2186,7 +2196,10 @@ function paintBoard({restoring=false}={}) {
     if (oldBadge && !keepBadge) oldBadge.remove();
     const isHl = hl.has(name);
     sq.classList.toggle("hl", isHl);
-    sq.classList.toggle("has-badge", name === pos.to && !!(cls && QUALITY[cls]));
+    sq.classList.toggle("has-badge", (name === pos.to && !!(cls && QUALITY[cls])) || name === mated);
+    const keepMate = name === mated && sq.querySelector(".mate-badge");
+    if (!keepMate) sq.querySelectorAll(".mate-glow, .mate-badge").forEach(n => n.remove());
+    if (name === mated && !keepMate) sq.prepend(...mateMark(document));
     if (isHl && tint) sq.style.setProperty("--hl-color", tint);
     else sq.style.removeProperty("--hl-color");
     if (ch && !keepPiece) sq.append(makePiece(ch.toUpperCase(), ch === ch.toUpperCase() ? "w" : "b"));

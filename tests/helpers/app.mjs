@@ -13,6 +13,7 @@ import {presentationFor} from '../../lib/learning/presentations.js';
 import {panelScale,panelGroupBounds,scalePanelGroup,movePanelGroup} from '../../lib/panel-layout.js';
 import {createScreenPreviewContext,loadScreenPreviewController} from '../../lib/screen-previews.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
+import {matedKingSquare,mateMark} from '../../lib/mate-mark.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
 
 // Execute the real application in a DOM, stubbing only browser/engine boundaries.
@@ -45,7 +46,7 @@ export function app(t, {hardware,url='https://extension.test/analysis.html#test-
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
     URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,platformAPI:browserAPI,
     createScreenPreviewContext,loadScreenPreviewController,
-    BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg, puzzleResultBadge,
+    BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg, puzzleResultBadge, matedKingSquare, mateMark,
     moveAnimationDuration, MOVE_ANIMATION_EASING,
     CATEGORY_LABEL_FONT, categoryLabelPng,
     expectedPoints, SF19_OUTCOME, calibratedReview, scoringEvidenceComplete, analyseCalibratedPosition,
