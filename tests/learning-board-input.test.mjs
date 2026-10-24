@@ -19,6 +19,29 @@ async function setup(t) {
   return {a,w,doc,board,down,up,event};
 }
 
+for(const mode of ['timeAttack','knockout'])test(`${mode} results retain the embedded puzzle board and its wrong-move badge`,async t=>{
+  const {a,w,doc,board,down,up}=await setup(t);
+  t.mock.method(w,'waitForPuzzleReply',async()=>true);
+  const puzzle=w.puzzles[0];w.puzzles=Array.from({length:4},(_,i)=>({...puzzle,id:'final-board-'+i}));
+  await w.startPuzzleRun(mode);
+  if(mode==='timeAttack'){await w.submitPuzzle('d2d4');await w.submitPuzzle('d2d4');}
+  await w.submitPuzzle('e2e4');
+  if(mode==='knockout')w.flipBoard();
+  const fen=w.currentFen(),flipped=w.flipped;
+  const position=()=>[...board.querySelectorAll('[data-square]')].map(n=>[n.dataset.square,n.querySelector('img')?.dataset.piece]);
+  const expected=position();await w.submitPuzzle('g1h3');
+  assert.equal(w.run,null);assert.equal(w.currentFen(),fen);assert.equal(w.flipped,flipped);
+  assert.equal(doc.querySelector('.board'),board);assert.deepEqual(position(),expected);
+  assert.ok(board.querySelector('[data-square=g1] .puzzle-result-badge[data-result=incorrect]'));
+  assert.ok(board.querySelector('[data-square=g1].puzzle-wrong'));
+  assert.ok(board.querySelector('[data-square=h3].puzzle-wrong'));
+  down('e4');up('e4');board.querySelector('[data-square=g1]').click();
+  assert.equal(doc.querySelector('.drag-piece'),null);assert.equal(w.selected,null);assert.equal(w.currentFen(),fen);
+  assert.ok(board.querySelector('.puzzle-result-badge[data-result=incorrect]'));
+  w.render();assert.deepEqual(position(),expected);assert.ok(board.querySelector('.puzzle-result-badge'));
+  assert.equal(a.state.analysisMode,false);
+});
+
 test('learning immediately lifts pieces, shares review drag tracking, and restores pieces on cancellation',async t=>{
   const {a,w,doc,board,down,up,event}=await setup(t);
   t.mock.method(w,'waitForPuzzleReply',async()=>true);

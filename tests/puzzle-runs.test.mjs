@@ -137,6 +137,43 @@ test('a partial continuation earns no point and a wrong move later in it ends Kn
   await wrong(w);assert.equal(w.result.solved,0);assert.equal(w.result.results.length,1);
 });
 
+for(const mode of ['timeAttack','knockout'])test(`${mode} keeps the final puzzle and wrong badge after running out of lives`,async t=>{
+  const {w,dom}=await setup(t,{puzzles:[{...line,rating:400},...fixtures.map(p=>({...p,rating:3000}))]});
+  await w.startPuzzleRun(mode);
+  if(mode==='timeAttack'){await wrong(w);await wrong(w);}
+  await w.submitPuzzle(current(w).solution[0]);
+  const fen=w.currentFen(),flipped=w.flipped;
+  const squares=()=>[...w.root.querySelectorAll('.learn-square')].map(n=>n.getAttribute('aria-label'));
+  const position=squares();await wrong(w);
+  assert.equal(w.run,null);assert.equal(w.activity,null);assert.equal(w.result.reason,'Out of lives');
+  assert.equal(w.currentFen(),fen);assert.equal(w.flipped,flipped);assert.deepEqual(squares(),position);
+  const badge=()=>w.root.querySelector('.puzzle-result-badge[data-result=incorrect]');
+  assert.ok(badge());const square=badge().closest('[data-square]').dataset.square;
+  const saved=structuredClone(w.store.value);
+  w.root.querySelector(`[data-square=${square}]`).click();
+  dom.window.document.activeElement.dispatchEvent(new dom.window.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
+  assert.ok(badge());assert.equal(w.currentFen(),fen);assert.deepEqual(w.store.value,saved);
+  w.render();assert.ok(badge());assert.deepEqual(squares(),position);
+  w.flipBoard();assert.equal(w.flipped,!flipped);assert.ok(badge());assert.equal(w.currentFen(),fen);
+  await w.replayRunPuzzle(w.result.results[0].id);assert.equal(badge(),null);
+  w.returnToRunResults();assert.equal(w.currentFen(),fen);assert.ok(badge());
+  assert.equal(badge().closest('[data-square]').dataset.square,square);
+  await w.navigate('puzzles');assert.equal(badge(),null);assert.equal(w.currentFen(),w.homePosition.fen());
+});
+
+test('Time attack keeps its unfinished puzzle position when the clock expires',async t=>{
+  const {w}=await setup(t,{puzzles:[{...line,rating:400},...fixtures.map(p=>({...p,rating:3000}))]});
+  await w.startPuzzleRun('timeAttack');clearInterval(w.ticker);
+  await w.submitPuzzle(line.solution[0]);
+  const fen=w.currentFen(),flipped=w.flipped;
+  w.run.clock.remainingMs=0;w.run.clock.runningAt=null;
+  await w.submitPuzzle(line.solution[w.activity.step]);
+  assert.equal(w.result.reason,'Time is up');assert.equal(w.result.solved,0);assert.equal(w.result.results.length,0);
+  assert.equal(w.currentFen(),fen);assert.equal(w.flipped,flipped);
+  assert.equal(w.root.querySelectorAll('.learn-square').length,64);
+  assert.equal(w.root.querySelector('.puzzle-result-badge'),null);
+});
+
 test('illegal moves and assistance calls cannot consume lives or bypass run scoring',async t=>{
   const {w}=await setup(t);await w.startPuzzleRun('timeAttack');const id=w.activity.id;
   await w.submitPuzzle('a1a1');await w.hintPuzzle();await w.revealPuzzle();await w.skipPuzzle();
