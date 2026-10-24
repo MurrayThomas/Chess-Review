@@ -4219,6 +4219,7 @@ function renderEngineCurrent() {
   } else {
     const b = S.bests[S.idx];
     let lines = b ? b.lines : null;
+    if (S._panelNeedsLive && !terminalScore(S.positions[S.idx].fen)) lines = null;
     // The batch only stored the single best line. If the user wants more, show the richer set we
     // searched on demand for THIS position (requestPanelLines), then ensure that search is running.
     const panel = cachedPanelLines();
@@ -4253,11 +4254,11 @@ async function requestPanelLines() {
     S.panelToken++; S._panelRequest = null;
     S.liveEngine?.cancelPending(); S.liveEngine?.stop();
   }
-  if (!want || want <= 1) return;                     // user only wants the single line
+  if (!want || want <= 1 && !S._panelNeedsLive) return;
   const i = S.idx;
   const stored = S.bests[i];
   if (!stored || !stored.lines) return;               // position not analysed yet
-  if (stored.lines.length >= want) return;            // batch already has enough (old saved games)
+  if (stored.lines.length >= want && !S._panelNeedsLive) return;
   if (cachedPanelLines()) return; // includes completed forced positions with fewer legal moves
   if (S._panelRequest?.key === key) return S._panelRequest.promise;
   const fen = S.positions[i].fen;
@@ -5315,10 +5316,20 @@ async function setEngineSetting(key, value) {
       "Our accuracy and estimated-rating calibration is built primarily around Stockfish 18 NNUE at depth 16. Other depths have less validation behind their review scores, so changing the depth may produce less reliable results. We recommend keeping depth 16 for the most consistent game reviews.", "Keep depth 16", true);
     if (!proceed) return;
   }
+  const previous = {pgn:S.pgn, settingsKey:analysisSettingsKey(), bests:S.bests, evals:S.evals,
+    engineBuild:S.engineFallbackBuild || S.activeEngineBuild};
   S.settings[key] = value;
-  S.engineFallbackBuild = null;
-  S.activeEngineBuild = null;
   await writeSettings({ [key]: value });
+  if (key === "engineWorkers") {
+    if (S.analyzing) scheduleReanalyze(true);
+    if (UI.settings && !UI.settings.hidden) renderSettings();
+    return;
+  }
+  const lineKey = key === "engineLines" || key === "fastLines" || key === "fastAnalysis";
+  const fixedProtocol = ["engineDepth","engineHash","engineSkill","classifyLines","ratingMode"].includes(key)
+    && S.settings.enginePath === "sf19lite" && previous.engineBuild === "sf19lite"
+    && (S.analyzing || reusableSf19Analysis(previous));
+  if (!lineKey && !fixedProtocol) { S.engineFallbackBuild = null; S.activeEngineBuild = null; }
   resetLiveEngine();
   invalidateVariationEvals();
   // The helper engine (threat preview / practice judging) must also be rebuilt with the new
@@ -5333,9 +5344,11 @@ async function setEngineSetting(key, value) {
   // lines on demand for the position you're viewing. So the line-count settings (panel "Lines",
   // fast-mode lines/toggle) are purely a display choice — they never require re-analysis; just
   // refresh the panel (which kicks off an on-demand search if more lines are wanted).
-  const lineKey = key === "engineLines" || key === "fastLines" || key === "fastAnalysis";
-  const displayOnly = lineKey && !S.analyzing;
-  if (!displayOnly) scheduleReanalyze();
+  if (fixedProtocol) {
+    if (["engineDepth","engineHash","engineSkill"].includes(key)) S._panelNeedsLive = true;
+    computeDerived(); renderReview(); renderStats(); renderGraph(); renderMoves();
+    if (!S.analyzing) saveToLibrary();
+  } else if (!lineKey) scheduleReanalyze();
   renderEngineCurrent();
   if (UI.settings && !UI.settings.hidden) renderSettings();
 }
@@ -5713,6 +5726,22 @@ function analysisSettingsKey() {
     S.settings.engineHash, S.settings.engineSkill]);
 }
 
+function reusableSf19Analysis(saved) {
+  if (S.settings.enginePath !== "sf19lite" || saved?.engineBuild !== "sf19lite"
+    || saved.pgn !== S.pgn || !completeAnalysis(saved, S.total + 1)
+    || !scoringEvidenceComplete(saved.bests, S.total, CALIB)) return false;
+  let previous, current;
+  try { previous = JSON.parse(saved.settingsKey); current = JSON.parse(analysisSettingsKey()); } catch { return false; }
+  if (!Array.isArray(previous) || previous.length !== current.length
+    || [0,1,2,4].some(i => previous[i] !== current[i])) return false;
+  const expectedContext = S.positions[0].fen === new Chess().fen() ? CALIB.context.sf19.candidateVersion : null;
+  const wdl = score => Array.isArray(score?.wdl) && score.wdl.length === 3
+    && score.wdl.every(n => Number.isInteger(n) && n >= 0) && score.wdl.reduce((a,b)=>a+b,0) === 1000;
+  return saved.bests.slice(0,S.total).every(root => root.calibration.contextVersion === expectedContext
+    && root.ratingEvidence?.candidateVersion === CALIB.movesOnly.sf19.candidateVersion
+    && root.ratingEvidence.bestmove === root.bestmove && wdl(root.ratingEvidence.best) && wdl(root.ratingEvidence.played));
+}
+
 function completeAnalysis(saved, count) {
   return !!saved && Array.isArray(saved.bests) && saved.bests.length === count
     && saved.bests.every(Boolean) && Array.isArray(saved.evals) && saved.evals.length === count
@@ -5722,7 +5751,7 @@ function completeAnalysis(saved, count) {
 function canRestoreAnalysis(saved) {
   return completeAnalysis(saved, S.total + 1) && saved.pgn === S.pgn
     && (!saved.engineBuild || Object.hasOwn(ENGINE_BUILDS, saved.engineBuild))
-    && saved.settingsKey === analysisSettingsKey()
+    && (saved.settingsKey === analysisSettingsKey() || reusableSf19Analysis(saved))
     && scoringEvidenceComplete(saved.bests, S.total, CALIB);
 }
 
@@ -5838,6 +5867,7 @@ function saveToLibrary() {
     // stays light, and so re-opening a saved game can render instantly WITHOUT re-analyzing.
     const analysis = {
       pgn: S.pgn, settingsKey: analysisSettingsKey(), engineBuild: S.activeEngineBuild,
+      panelNeedsLive: !!S._panelNeedsLive,
       evals: S.evals, bests: S.bests, multipv: S.analyzedMultipv,
     };
     // Before library collision resolution, distinct PGNs may share the short ID.
@@ -6065,11 +6095,11 @@ document.addEventListener("keydown", (e) => {
    UI updates during analysis are throttled: computeDerived()+renders are O(N), so doing them
    on every completion is O(N²) and stalls the message loop that feeds the workers. */
 let _reanalyzeT = null;
-function scheduleReanalyze() {
+function scheduleReanalyze(preserveCompleted = false) {
   clearTimeout(_reanalyzeT);
   if(S.blank)return;
   _reanalyzeT = setTimeout(() => {
-    startAnalysis();
+    startAnalysis({preserveCompleted});
   }, 400);
 }
 function terminateEngines() {
@@ -6090,22 +6120,31 @@ function requestProgress(gen) {
   _progScheduled = true;
   setTimeout(() => flushProgress(gen), Math.max(0, 140 - (Date.now() - _progLast)));
 }
-async function startAnalysis() {
+async function startAnalysis({preserveCompleted = false} = {}) {
   if(S.blank)return;
   if (S.practice) exitPractice();
   S._lastEngineLines = null;
   panelLineCache.clear(); S._panelRequest = null; S.panelToken++;
+  S.liveEngine?.cancelPending(); S.liveEngine?.stop();
+  preserveCompleted = preserveCompleted && S.analyzedSettingsKey === analysisSettingsKey()
+    && !S.engineFallbackBuild && S.activeEngineBuild === S.settings.enginePath;
+  const priorBuild = preserveCompleted ? S.activeEngineBuild : null;
+  S.analyzedSettingsKey = analysisSettingsKey();
   S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
   const gen = ++S.batchGen;
   S.engineFallbackBuild = null;
   S.activeEngineBuild = null;
   terminateEngines();
-  S.evals = new Array(S.total + 1).fill(null);
-  S.bests = new Array(S.total + 1).fill(null);
+  if (!preserveCompleted) {
+    S.evals = new Array(S.total + 1).fill(null);
+    S.bests = new Array(S.total + 1).fill(null);
+    S._panelNeedsLive = false;
+  }
   S.searchPreviews = new Array(S.total + 1).fill(null);
   S._sacCache = []; S._forcedCache = []; S._panelCache = null;
   S.progress = 0;
-  S.completed = 0;
+  while (S.progress < S.total && S.bests[S.progress] && S.bests[S.progress + 1]) S.progress++;
+  S.completed = S.bests.slice(1).filter(Boolean).length;
   S.analysisError = null;
   S.analyzing = true;
   revRefs = null; statsRefs = null;
@@ -6124,6 +6163,7 @@ async function startAnalysis() {
   // Batch analysis defaults to MultiPV=1. Extra lines provide root alternatives for
   // annotations and inspection; the engine panel fills its lines on demand.
   const multipv = Math.max(1, Math.min(ENGINE_MAX_LINES, S.settings.classifyLines || 1));
+  S.analyzedSettingsKey = analysisSettingsKey();
   S.analyzedMultipv = multipv; // remember how many lines this run computed (for setEngineSetting)
   const nWorkers = engineWorkerCount(S.settings.engineWorkers, S.total + 1);
   // createEngine() readies each worker AND falls back down the build chain if the chosen build can't
@@ -6148,6 +6188,9 @@ async function startAnalysis() {
   // the game. Keep one build throughout the review so its scoring model agrees
   // with every position, even if individual startups took different fallbacks.
   const build = engines[0].buildKey;
+  if (priorBuild && build !== priorBuild) {
+    S.bests.fill(null); S.evals.fill(null); S.progress = 0; S.completed = 0;
+  }
   for (const eng of engines) if (eng.buildKey !== build) eng.terminate();
   engines = engines.filter(eng => eng.buildKey === build);
   if (build) {
@@ -6163,10 +6206,12 @@ async function startAnalysis() {
   // filled arrays. `contig` tracks the contiguous-analyzed prefix that navigation/eval-graph
   // are allowed to expose during analysis.
   let nextIdx = 0, contig = -1;
+  while (contig + 1 <= S.total && S.bests[contig + 1]) contig++;
   async function worker(eng) {
     while (gen === S.batchGen) {
       const i = nextIdx++;
       if (i > S.total) return;
+      if (S.bests[i]) continue;
       const terminal = terminalScore(S.positions[i].fen, i);
       const res = terminal ? { score: terminal, bestmove: null, pv: "", lines: [] }
         : await analyseCalibratedPosition(eng, {fen: S.positions[i].fen, history: searchHistory(S.positions, i),
@@ -6330,7 +6375,10 @@ async function applyGame(payload) {
     try { const k = "analysis:" + currentGameId(); const s = await browserAPI.storage.local.get(k); saved = s[k] || null; } catch {}
   }
   const restored = canRestoreAnalysis(saved);
+  S._panelNeedsLive = false;
   if (restored) {
+    const oldSettings = JSON.parse(saved.settingsKey), currentSettings = JSON.parse(analysisSettingsKey());
+    S._panelNeedsLive = !!saved.panelNeedsLive || [5,7,8].some(i => oldSettings[i] !== currentSettings[i]);
     S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
     S.evals = saved.evals;
     S.bests = saved.bests;
