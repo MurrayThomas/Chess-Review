@@ -29,12 +29,13 @@ test('skipping charges one Elo loss and carries its delta to the next puzzle wit
   assert.equal(w.root.querySelector('.puzzle-elo-change.loss'),null);
 });
 
-test('the last skip shows its loss on the puzzle library and never charges an already failed puzzle twice',async t=>{
+test('the last skip returns to the puzzle library and never charges an already failed puzzle twice',async t=>{
   const {w}=await setup(t);
   await w.submitPuzzle('d2d4');assert.equal(w.store.value.puzzleRating.elo,1176);
   await w.skipPuzzle();assert.equal(w.store.value.puzzleRating.elo,1176);
   await w.skipPuzzle();assert.equal(w.activity,null);
-  assert.ok(w.root.querySelector('.puzzle-elo-change.loss'));
+  // The library shows no rating panel; the rating and its changes appear only during puzzle play.
+  assert.equal(w.root.querySelector('.puzzle-elo-panel'),null);
   assert.equal(w.store.value.puzzleRating.losses,2);assert.equal(w.root.textContent.includes('Wrong move'),false);
 });
 
