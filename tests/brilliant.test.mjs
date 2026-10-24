@@ -39,7 +39,7 @@ test('a sacrifice in a losing position cannot become Brilliant after an opponent
 test('a materially costly move with an evaluation error is not a sound brilliant', t => {
   const a = app(t), S = offerGame(a, [{ cp: 0 }, { cp: -100 }]);
   a.call('computeDerived');
-  assert.equal(S._sacCache[1], true);
+  assert.equal(a.call('_sacAt', 1), true);
   assert.notEqual(S.classif[1], 'brilliant');
 });
 

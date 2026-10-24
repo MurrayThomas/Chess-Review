@@ -1225,7 +1225,7 @@ function getStandardRating(wp) {
 }
 // Per-ply move category, ported from getMoveRating(). `mover` made move i; `isTop` = it was the
 // engine's #1; `book` = the resulting position is theory; arrays sac/std/loss are indexed by ply.
-function classifyMove(i, mover, isTop, book, sac, std, loss, wpDrop, state = S) {
+function classifyMove(i, mover, isTop, book, std, loss, wpDrop, state = S) {
   if (book) return "book";
   // "Forced": only one legal move in the position before — we have no separate icon, so it reads
   // as Best (you couldn't have done better).
@@ -1257,7 +1257,8 @@ function classifyMove(i, mover, isTop, book, sac, std, loss, wpDrop, state = S) 
   // Do not reward delays of a known mate or moves that merely remain best in a decided position.
   const beforeMate = decisionMate(i, "best", mover, state), afterMate = decisionMate(i, "played", mover, state);
   const soundMate = !(beforeMate > 0) || (afterMate > 0 && keepMating(i));
-  if (sac[i] && soundMate && brilliantEligible(i, mover, std, wpDrop, state)) return "brilliant";
+  // Legal exchange searches are needed only after the cheap scoring conditions pass.
+  if (soundMate && brilliantEligible(i, mover, std, wpDrop, state) && _sacAt(i, state)) return "brilliant";
 
   // Great — an only-good move that capitalises on the opponent's mistake/blunder.
   if (!previousMiss && wasNotMateRel(0) && notMateRel && std[i] === "excellent"
@@ -1390,7 +1391,6 @@ function classifyLine(state) {
   const std = new Array(N + 1).fill(null);
   const loss = new Array(N + 1).fill(null);
   const wpDrop = new Array(N + 1).fill(null); // win%-drop per ply ("expected points" basis)
-  const sac = new Array(N + 1).fill(false);
   const isTop = new Array(N + 1).fill(false);
   const bookAt = new Array(N + 1).fill(false);
 
@@ -1416,7 +1416,6 @@ function classifyLine(state) {
       loss[i] = (scoreToCp(evidence.best) - scoreToCp(evidence.played)) / 100;
     }
     std[i] = getStandardRating(wpDrop[i]);   // bucket on win%-drop, not raw pawns
-    sac[i] = _sacAt(i, state);
   }
   // Second pass: final category per ply (Brilliant-Chess logic). A move stays unlabelled until both
   // its own and the previous position's eval are in, so the panel fills in cleanly during analysis.
@@ -1426,7 +1425,7 @@ function classifyLine(state) {
     // hide a losing mate or a move the engine rates as an error.
     const safeBook = bookAt[i] && !((decisionMate(i, "played", state.positions[i].color, state) ?? 0) < 0)
       && wpDrop[i] != null && wpDrop[i] < (CALIB?.clsWp?.inacc ?? 5);
-    state.classif[i] = classifyMove(i, state.positions[i].color, isTop[i], safeBook, sac, std, loss, wpDrop, state);
+    state.classif[i] = classifyMove(i, state.positions[i].color, isTop[i], safeBook, std, loss, wpDrop, state);
     const root = state.bests[i - 1];
     const top = root?.lines?.find(l => l.multipv === 1), runnerUp = root?.lines?.find(l => l.multipv === 2);
     const criticalLoss = top && runnerUp ? Math.max(0, annotationPoints(top.score, i, state) - annotationPoints(runnerUp.score, i, state)) : null;
@@ -5129,7 +5128,7 @@ const CONTRIBUTORS = [
   { name: "Kristian Julsgaard", username: "Julsgaard", role: "Contributor" },
   { name: "Arthur Guedes", username: "arthurhguedes", role: "Contributor" },
   { name: "Thomas Murray", username: "MurrayThomas", role: "Contributor" },
-  { name: "T-Julsgaard", username: "T-Julsgaard", role: "Maintainer" },
+  { name: "T-Julsgaard", username: "T-Julsgaard", role: "Creator & lead developer" },
 ];
 const REPO_URL = "https://github.com/T-Julsgaard/Chess-Review";
 let _closeCredits = null;
