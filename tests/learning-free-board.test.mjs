@@ -50,6 +50,20 @@ test('only Left and Right navigate free-board history, cancel pickup and preserv
   assert.equal(a.state.idx,reviewIndex);assert.equal(w.root.querySelector('.learn-move-nav'),null);
 });
 
+test('free-board arrows never move or restore keyboard focus onto squares',async t=>{
+  const {a,w,doc,board,key}=await setup(t),reviewIndex=a.state.idx;
+  const start=w.currentFen();w.submitMove('e2e4');const end=w.currentFen();
+  for(const [value,fen] of [['ArrowLeft',start],['ArrowLeft',start],['ArrowRight',end],['ArrowRight',end],['ArrowUp',end],['ArrowDown',end]]) {
+    board.querySelector('[data-square=e2]').focus();
+    assert.equal(key(value,doc.activeElement),false,'Board arrows suppress the browser default');
+    assert.equal(doc.activeElement,w.root,`${value} leaves focus off the board squares`);
+    assert.equal(w.currentFen(),fen);
+    assert.equal(board.querySelector('.marked, .selected, .sel'),null);
+    assert.equal(w.marked.size,0);assert.equal(w.boardMarks.size,0);
+  }
+  assert.equal(a.state.idx,reviewIndex);
+});
+
 test('a new move after going back replaces the future continuation without changing saved learning progress',async t=>{
   const {w,sounds,key}=await setup(t),progress=JSON.stringify(w.store.value);
   w.submitMove('e2e4');const first=w.currentFen();w.submitMove('g1f3');key('ArrowLeft');assert.equal(w.currentFen(),first);
