@@ -4,6 +4,16 @@ import assert from 'node:assert/strict';
 
 export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   const run=expression=>evaluate(review,expression);
+  const controlsTop=()=>run("document.querySelector('[data-mod=controls]').getBoundingClientRect().top");
+  for(const mode of ['auto','custom']){
+    await run(`import('./analysis.js').then(m=>{m.S.layoutMode='${mode}';m.applyLayoutMode();})`);
+    const top=await controlsTop();
+    for(let i=0;i<4;i++){
+      await run("document.querySelector('.qbreak-toggle').click()");await sleep(100);
+      assert.ok(Math.abs(await controlsTop()-top)<1,mode+': accuracy expansion must keep playback controls in place');
+    }
+  }
+  await run("import('./analysis.js').then(m=>{m.S.layoutMode='auto';m.applyLayoutMode();})");
   await run(`import('./analysis.js').then(async m=>{
     m.S.settings.moveAnim=true;await m.openLearning();const w=m.learningWorkspace;
     const {Chess}=await import('./lib/chess.js');

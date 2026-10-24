@@ -1837,7 +1837,7 @@ function growCanvas() {
   UI.canvas.style.minWidth = pageW + "px";
 }
 // What collapsing the accuracy breakdown is worth on the canvas: the hidden rows' height (+ the
-// column row-gap), and every module in the same column sitting at/below the accuracy panel.
+// column row-gap), and modules below it in the same column. Playback controls stay anchored.
 function accuracyReflowInfo(layout = S.layout) {
   const accMod = UI.canvas.querySelector('.mod[data-mod="accuracy"]');
   const acc = layout.accuracy;
@@ -1848,10 +1848,9 @@ function accuracyReflowInfo(layout = S.layout) {
   const delta = Math.round((QBREAK_FULL.length - QBREAK_SUMMARY.length) * (rowH + gap))*panelScale(acc);
   const belowKeys = [];
   for (const [k, o] of Object.entries(layout)) {
-    if (k === "accuracy") continue;
+    if (k === "accuracy" || k === "controls") continue;
     const overlapX = o.x < acc.x + acc.w && o.x + o.w > acc.x;
-    const followsLearningRow = k === "controls" && layout.learn && o.y === layout.learn.y;
-    if ((overlapX || followsLearningRow) && o.y >= acc.y + acc.h - 1) belowKeys.push(k);
+    if (overlapX && o.y >= acc.y + acc.h - 1) belowKeys.push(k);
   }
   return { delta, belowKeys };
 }
