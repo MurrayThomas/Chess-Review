@@ -322,6 +322,10 @@
 .learning-workspace .learn-stat-types .learn-stat-row { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px 16px; margin: 0; padding: 13px 0; color: var(--ink); }
 .learn-stat-type { display: flex; flex-direction: column; gap: 3px; font-size: 16px; }
 .learn-stat-rate { align-self: center; font-size: 18px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.learn-stat-track { grid-column: 1 / -1; display: flex; height: 6px; overflow: hidden; border-radius: 3px; background: var(--line); }
+.learn-stat-track > span { display: block; height: 100%; }
+.learn-stat-correct { background: var(--accent); }
+.learn-stat-incorrect { background: #f35a66; }
 .learn-resume { margin-left: 12px; background: transparent; }
 .learning-workspace .puzzle-elo-panel { border: 0; background: transparent; padding: 0; margin: 22px 0; justify-content: flex-start; flex-wrap: wrap; gap: 12px 24px; }
 .puzzle-elo-number { display: flex; align-items: baseline; gap: 6px; }

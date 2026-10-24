@@ -8,9 +8,11 @@ export async function auditLearning({review,call,evaluate,sleep,out}) {
   await run("import('./analysis.js').then(async m=>{m.S.settings.moveAnim=false;await m.openLearning();m.learningWorkspace.showPuzzleStatistics(true);})");
   assert.equal(await run("document.querySelectorAll('.learn-stat-row').length"),Object.keys(THEME_NAMES).length);
   assert.equal(await run("[...document.querySelectorAll('.learn-stat-row')].every(n=>n.textContent.includes('0 correct · 0 incorrect')&&n.textContent.endsWith('0%'))"),true);
-  assert.equal(await run("!!document.querySelector('.learn-stat-untried, .learn-stat-track')"),false);
+  assert.equal(await run("!!document.querySelector('.learn-stat-untried')"),false);
+  assert.equal(await run("[...document.querySelectorAll('.learn-stat-track > span')].every(n=>n.style.width==='0%')"),true);
   await run("import('./analysis.js').then(async m=>{const w=m.learningWorkspace,puzzle=w.puzzles.find(p=>p.themes.includes('fork'));await w.persist(p=>{p.puzzles[puzzle.id]={attempts:3,clean:1,mistakes:2};p.puzzleTimeMs=843000;});w.render();})");
-  assert.deepEqual(await run("[...document.querySelectorAll('.learn-stat-overview > div')].map(n=>n.textContent)"),['Attempts3','Correct1','Incorrect2','Time spent14m 3s']);
+  assert.deepEqual(await run("[...document.querySelectorAll('.learn-stat-overview > div')].map(n=>n.textContent)"),['Correct1','Incorrect2','Attempts3','Time spent14m 3s']);
+  assert.equal(await run("(()=>{const row=document.querySelector('[data-theme=fork]');return Math.abs(parseFloat(row.querySelector('.learn-stat-correct').style.width)-100/3)<.01&&Math.abs(parseFloat(row.querySelector('.learn-stat-incorrect').style.width)-200/3)<.01;})()"),true);
   for(const [width,height] of [[1920,1080],[1280,800],[390,844],[320,640]]) {
     await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(250);
     if(width<760)await run("document.querySelector('.learn-puzzle-statistics').scrollIntoView({block:'start'})");
