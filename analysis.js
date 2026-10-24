@@ -5371,8 +5371,9 @@ async function setEngineSetting(key, value) {
     return;
   }
   const lineKey = key === "engineLines" || key === "fastLines" || key === "fastAnalysis";
+  const scoringBuild = S.analyzing ? S.evalEngines[0]?.buildKey : previous.engineBuild;
   const fixedProtocol = ["engineDepth","engineHash","engineSkill","classifyLines","ratingMode"].includes(key)
-    && S.settings.enginePath === "sf19lite" && previous.engineBuild === "sf19lite"
+    && S.settings.enginePath === "sf19lite" && scoringBuild === "sf19lite"
     && (S.analyzing || reusableSf19Analysis(previous));
   if (!lineKey && !fixedProtocol) { S.engineFallbackBuild = null; S.activeEngineBuild = null; }
   resetLiveEngine();

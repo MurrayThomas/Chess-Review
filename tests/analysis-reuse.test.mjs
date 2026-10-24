@@ -43,3 +43,8 @@ test('SF19 reuse rejects incomplete, stale, fallback, wrong-history and malforme
 test('display line changes do not restart an active game analysis',async t=>{
   const a=review(t);a.state.analyzing=true;let count=0;a.replace('scheduleReanalyze',()=>count++);await a.call('setEngineSetting','engineLines',3);assert.equal(count,0);
 });
+test('active SF19 reuse follows the scoring pool rather than a helper engine fallback label',async t=>{
+  const a=review(t),S=a.state;sf19(a);S.analyzing=true;let count=0;a.replace('scheduleReanalyze',()=>count++);
+  S.evalEngines=[{buildKey:'nnue'}];await a.call('setEngineSetting','engineHash',32);assert.equal(count,1);
+  S.evalEngines=[{buildKey:'sf19lite'}];await a.call('setEngineSetting','engineHash',64);assert.equal(count,1);
+});
