@@ -2198,10 +2198,7 @@ function paintBoard({restoring=false}={}) {
     if (oldBadge && !keepBadge) oldBadge.remove();
     const isHl = hl.has(name);
     sq.classList.toggle("hl", isHl);
-    sq.classList.toggle("has-badge", (name === pos.to && !!(cls && QUALITY[cls])) || name === mated);
-    const keepMate = name === mated && sq.querySelector(".mate-badge");
-    if (!keepMate) sq.querySelectorAll(".mate-glow, .mate-badge").forEach(n => n.remove());
-    if (name === mated && !keepMate) sq.prepend(...mateMark(document));
+    sq.classList.toggle("has-badge", name === pos.to && !!(cls && QUALITY[cls]));
     if (isHl && tint) sq.style.setProperty("--hl-color", tint);
     else sq.style.removeProperty("--hl-color");
     if (ch && !keepPiece) sq.append(makePiece(ch.toUpperCase(), ch === ch.toUpperCase() ? "w" : "b"));
@@ -2214,6 +2211,7 @@ function paintBoard({restoring=false}={}) {
       }
     }
   }
+  if (boardEl) mateMark(boardEl, sqByName[mated], mated, S.flipped);
   if (clean && S.practice.resultBadge?.solvePos === solvePly) {
     const result = S.practice.resultBadge, square = sqByName[result.square];
     square?.classList.add("has-badge");
