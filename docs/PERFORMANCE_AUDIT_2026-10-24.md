@@ -1,9 +1,10 @@
 # Extension performance follow-up — 2026-10-24
 
 Thomas requested additional findings across the shipped extension, excluding
-research. This is a report, with disposable diagnostic candidates only. No
-production optimization was implemented. Puzzle chunking and the laptop engine
-preset from the previous review are excluded from the recommendations.
+research. The original review below records diagnostic candidates. The seven
+optimizations are now implemented; see [implementation and validation](PERFORMANCE_IMPLEMENTATION.md).
+Puzzle chunking and the laptop engine preset from the previous review remain
+excluded from the recommendations.
 
 ## Priorities
 
