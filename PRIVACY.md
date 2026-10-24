@@ -1,6 +1,6 @@
 # Privacy Policy — Chess Review
 
-_Last updated: 2026-10-14_
+_Last updated: 2026-10-24_
 
 Chess Review is a browser extension that reviews the chess games you play on
 **Chess.com** and **Lichess**. This policy explains exactly what the extension
@@ -16,7 +16,7 @@ service by the extension.** Sharing a game is an explicit user action described 
   move classifications, an evaluation graph, and an estimated rating.
 - To fetch a game you ask it to review, it calls the **public Chess.com and
   Lichess APIs** (for example to retrieve the PGN of the game by its id, or the
-  games of the username you provide). These requests go directly from your
+  games of players detected on the page or in local game history). These requests go directly from your
   browser to those chess platforms — the same services you are already using.
 - The content scripts read game identifiers, public player information, board
   orientation and available moves from Chess.com/Lichess pages to support
@@ -34,8 +34,11 @@ browser's `chrome.storage.local`:
   puzzle results, unfinished activities, and timed-challenge history and personal bests.
   Learning content is bundled for offline use. Choosing a source puzzle link opens
   Lichess in a new tab; progress is not sent with that link.
-- The chess username you enter or that is detected from the page, used to seat
-  you on the correct side of the board.
+- Player names and identifiers from the 50 most recent distinct games opened for
+  analysis on each platform. Together with your saved game library (up to 300
+  games), these support automatic player and board perspective detection.
+  Chess.com and Lichess evidence are kept separate. Previously saved usernames
+  may still be used as archive lookup candidates.
 - A cache of public game/API responses, PGNs, and computed analysis, so
   re-opening a game does not require re-downloading or re-analyzing it.
 - Chess.com monthly archive responses can contain other games and optional

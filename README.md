@@ -64,9 +64,14 @@ Click the image below to watch the introduction video.
 2. Click the extension icon → **Analyze this game**, or press `Ctrl+Shift+Y`.
 3. Stockfish reviews the game in an analysis tab.
 
-You can also paste a game URL or PGN into the popup. If your username cannot be
-detected, enter it once; it is remembered locally. Chess Review is intended for
-review after play.
+You can also paste a game URL or PGN into the popup. Player detection runs locally
+and separately for Chess.com and Lichess, using the 50 most recent distinct games
+opened for analysis and the saved library (up to 300 games). It requires a clear
+frequency lead and several different opponents; ties remain unknown. The site's
+board orientation takes priority. Repeatedly watching one player can still produce
+an incorrect account guess. A pasted Chess.com URL needs a cached game or known
+players' archives; otherwise, open the game on Chess.com or paste its PGN.
+Chess Review is intended for review after play.
 
 Choose **Open Chess Review** in the popup to start without a game. The welcome
 screen offers learning and your saved game library, without starting Stockfish.

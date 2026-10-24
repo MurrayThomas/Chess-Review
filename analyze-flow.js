@@ -5,6 +5,8 @@ import { findGameById, gameMeta, parseFlip, parseGameId } from "./chesscom.js";
 import { parseLichessGameId, parseLichessFlip, fetchGamePgn as fetchLichessPgn } from "./lichess.js";
 import { browserAPI } from "./browser-compat.js";
 import {createImportRequest, checkImport, importDelay, waitImport} from "./lib/import-request.js";
+import {archivePlayers} from "./lib/player-history.js";
+import {getCachedGame} from "./gamecache.js";
 
 /** Save the analysis payload and open analysis.html in a new tab. */
 export async function openAnalysisTab(payload, {signal} = {}) {
@@ -162,7 +164,7 @@ async function analyzeTab(tab, username, signal) {
   // the player(s) read off the page first, then any provided/stored handle. A game lives in BOTH
   // players' archives, so trying each in turn means a wrong or own stored username (e.g. when you
   // open SOMEONE ELSE'S game) no longer blocks the lookup.
-  const provided = (username || "").trim();
+  const savedCandidates = await waitImport(archivePlayers(browserAPI.storage.local, username), signal);
   const detected = Array.isArray(info.usernames) ? info.usernames : (info.username ? [info.username] : []);
   const candidates = [];
   const addCand = (n) => {
@@ -170,13 +172,14 @@ async function analyzeTab(tab, username, signal) {
     if (n && !candidates.some((x) => x.toLowerCase() === n.toLowerCase())) candidates.push(n);
   };
   detected.forEach(addCand);
-  addCand(provided);
+  savedCandidates.forEach(addCand);
   // Bound the archive lookups: on a busy page the sweep may surface a few extra handles, but the
   // two players + the stored handle are always at the front, so 4 candidates is plenty.
   candidates.length = Math.min(candidates.length, 4);
-  if (!candidates.length) {
-    const e = new Error("Couldn't detect a username automatically — enter it below.");
-    e.code = "NO_USERNAME"; // the popup uses this code to open the manual section
+  let game = await waitImport(getCachedGame("chesscom", gameId), signal);
+  if (!candidates.length && !game?.pgn) {
+    const e = new Error("Couldn't read the players on this page. Open the finished game on Chess.com and try again, or paste its PGN.");
+    e.code = "NO_USERNAME";
     throw e;
   }
 
@@ -185,9 +188,9 @@ async function analyzeTab(tab, username, signal) {
   // cache-first (a previously fetched game costs no request) then fast-then-deep: the current/prev
   // month checks resolve a just-finished game in ~one hop, and only an older game opened from a
   // review URL falls through to the serial page-back.
-  let game = null;
   let lookupError = null;
   for (const user of candidates) {
+    if (game?.pgn) break;
     try {
       const hit = await findGameById(user, gameId, {signal});
       if (hit && hit.pgn) { game = hit; break; }
@@ -201,17 +204,6 @@ async function analyzeTab(tab, username, signal) {
   }
 
   checkImport(signal);
-  // Remember the user's OWN handle for next time — but never overwrite it with an opponent's name
-  // picked up from someone else's game. Only persist an explicitly typed handle, or seed an empty
-  // store with the page's POV player on first run.
-  if (provided) {
-    await browserAPI.storage.local.set({ username: provided });
-  } else {
-    const { username: stored } = await browserAPI.storage.local.get("username");
-    checkImport(signal);
-    if (!stored && detected[0]) await browserAPI.storage.local.set({ username: detected[0] });
-  }
-
   // Board perspective: the page's own ?flip= hint is the user's actual POV, so it's the primary
   // signal. Read it straight from the tab URL (works even if the content script is stale), falling
   // back to whatever the content script reported. Null = no hint → the analysis page uses the
@@ -222,6 +214,28 @@ async function analyzeTab(tab, username, signal) {
   // them by username so the right flag lands on the right side (analysis.js resolves id → flag art).
   attachCountries(meta, info && info.countries);
   await openAnalysisTab({ pgn: game.pgn, meta, source: "active-tab" }, {signal});
+}
+
+/** Pasted Chess.com URLs use local player evidence for public archive lookup. */
+export async function analyzeChesscomUrl(url, {signal} = {}) {
+  const request = createImportRequest(signal);
+  try {
+    signal = request.signal;
+    const parsed = parseGameId(url);
+    if (!parsed) throw new Error("Couldn't read a game ID from the URL.");
+    let game = await waitImport(getCachedGame("chesscom", parsed.id), signal);
+    if (!game?.pgn) {
+      const candidates = await waitImport(archivePlayers(browserAPI.storage.local), signal);
+      if (!candidates.length) throw new Error("Open this game on Chess.com and choose Analyze this game, or paste its PGN.");
+      let lookupError;
+      for (const name of candidates) {
+        try { game = await findGameById(name, parsed.id, {monthsBack:18, signal});if (game?.pgn) break; }
+        catch (error) {checkImport(signal);lookupError ||= error;}
+      }
+      if (!game?.pgn) throw new Error("Couldn't find this game in the known players' archives. Open it on Chess.com and choose Analyze this game, or paste its PGN.", {cause:lookupError});
+    }
+    await openAnalysisTab({pgn:game.pgn, meta:{...gameMeta(game),flip:parseFlip(url)},source:"url"}, {signal});
+  } finally {request.dispose();}
 }
 
 // Stamp the scraped { usernameLower: countryId } map onto meta.white/black by matching usernames.

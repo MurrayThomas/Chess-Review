@@ -10,7 +10,7 @@
 import { analyzeActiveTab, openAnalysisTab, reloadActiveAndAnalyze } from "./analyze-flow.js";
 import { browserAPI } from "./browser-compat.js";
 import { resetSettingsForRelease } from "./release-settings.js";
-import {createImportRequest, checkImport, waitImport} from "./lib/import-request.js";
+import {createImportRequest, checkImport} from "./lib/import-request.js";
 
 const pendingReviews = new Map();
 function reviewForTab(tabId, gameKey) {
@@ -56,18 +56,16 @@ browserAPI.commands.onCommand.addListener((command) => {
 
 async function runAnalyze(onFail, tabId = null, signal) {
   const request = createImportRequest(signal);
-  let username;
   try {
-    ({ username } = await waitImport(browserAPI.storage.local.get("username"),request.signal));
     checkImport(request.signal);
-    await analyzeActiveTab(username, tabId, {signal:request.signal});
+    await analyzeActiveTab(undefined, tabId, {signal:request.signal});
     return {ok:true};
   } catch (err) {
     // Only a "can't see the game on the page" failure is worth a reload (the SPA hasn't exposed
     // the finished game yet). Username/archive/network errors won't be fixed by reloading.
     if (err.code !== "NO_GAME") { if(!request.signal.aborted)onFail(err); return {ok:false,error:err.message}; }
     try {
-      await reloadActiveAndAnalyze(username, err.tabId, {signal:request.signal});
+      await reloadActiveAndAnalyze(undefined, err.tabId, {signal:request.signal});
       return {ok:true};
     } catch (err2) {
       console.warn("[Chess Analyzer] couldn't analyze active game:", (err2 && err2.message) || err.message);

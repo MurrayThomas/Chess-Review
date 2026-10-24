@@ -66,7 +66,7 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
   previous=new Set((await targets()).map(t=>t.targetId));
   await run(paste,"document.querySelector('#manual').open=true;document.querySelector('#manualInput').value='1. e4 e5 2. Nf3 Nc6';document.querySelector('#analyzeManual').click()");
   const pasted=await newTarget(previous,/analysis.html#/);await waitFor(pasted,"!!document.querySelector('.board')&&import('./analysis.js').then(m=>!m.S.analyzing&&m.S.total===4)",'Pasted game');
-  const preview=await tab(base+'/popup.html?screen-preview=popup');await waitFor(preview,"document.querySelector('#username')?.value==='Preview player'",'Popup preview');
+  const preview=await tab(base+'/popup.html?screen-preview=popup');await waitFor(preview,"document.body.dataset.previewReady==='true'",'Popup preview');
   previous=new Set((await targets()).map(t=>t.targetId));await run(preview,"document.querySelector('#openWorkspace').click()");await sleep(100);
   assert.equal((await targets()).filter(target=>target.type==='page').every(target=>previous.has(target.targetId)),true);assert.match(await run(preview,"document.querySelector('#status').textContent"),/Preview actions are disabled/);
   const homePreview=await tab(base+'/analysis.html?screen-preview=workspace-blank');

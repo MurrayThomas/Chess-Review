@@ -16,9 +16,9 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       const status=await evaluate(tab,"({ready:document.body.dataset.previewReady,error:document.querySelector('#error')?.hidden?'':document.querySelector('#error')?.textContent,view:document.querySelector('[aria-label=\"Screen preview\"]')?.value})");
       assert.equal(status.error,'',view.id+': '+status.error);assert.equal(status.ready,'true');assert.equal(status.view,view.id);
       if(view.id.startsWith('popup')){
-        assert.equal(await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#username').value"),'Preview player');
+        assert.equal(await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#username')"),null);
         assert.equal(await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#manual').open"),view.id==='popup-manual');
-        await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#saveUser').click()");
+        await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#analyzeManual').click()");
         assert.match(await evaluate(tab,"document.querySelector('.screen-preview-popup').contentDocument.querySelector('#status').textContent"),/Preview actions are disabled/);
       }else if(view.id==='run-notice')assert.equal(await evaluate(tab,"!!document.querySelector('.puzzle-run-notice-card')"),true);
       else if(view.id==='concept-notice')assert.equal(await evaluate(tab,"!!document.querySelector('.learn-notice-overlay')"),true);

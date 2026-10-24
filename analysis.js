@@ -19,6 +19,7 @@ import { analyseCalibratedPosition } from "./lib/calibrated-search.js";
 import { loadLearningWorkspace, presentationFor } from "./lib/learning-loader.js";
 import { panelScale, panelGroupBounds, scalePanelGroup, movePanelGroup } from "./lib/panel-layout.js";
 import { createScreenPreviewContext, loadScreenPreviewController } from "./lib/screen-previews.js";
+import { rememberAnalyzedGame, historyGame } from "./lib/player-history.js";
 
 const screenPreview = createScreenPreviewContext(location);
 const blankLaunch = new window.URLSearchParams(location.search).get("workspace") === "blank";
@@ -5827,10 +5828,10 @@ async function openLibraryGame(rec) {
   try { const s = await browserAPI.storage.local.get("analysis:" + rec.id); analysis = s["analysis:" + rec.id] || null; } catch {}
   if (selection !== _librarySelection) return;
   // Switch in place — no page reload, no black flash. The sidebar stays open (it only closes when
-  // the mouse leaves the library area), so you can pick another game right away. Reproduce the exact
-  // perspective the game was saved with: prefer a stored flip hint, else the saved meSide — so a
-  // re-opened game is never seated the wrong way up regardless of the current stored username.
-  const flip = (rec.meta && rec.meta.flip != null) ? rec.meta.flip : (rec.meSide === "b");
+  // the mouse leaves the library area), so you can pick another game right away. Preserve an
+  // explicit orientation. Platform games without one can use newly learned account evidence;
+  // legacy records without a known platform retain their saved side.
+  const flip = (rec.meta && rec.meta.flip != null) ? rec.meta.flip : historyGame(rec) ? null : (rec.meSide === "b");
   const known = rec.playerKnown === true || (rec.playerKnown == null && !!rec.myName && (rec.meSide === "b" || rec.myName.toLowerCase() === S.username.toLowerCase()));
   const meta = {...(rec.meta || {}), libraryId:rec.id, flip, playerKnown:known, myName:known ? rec.myName : ""};
   return applyGame({ pgn: rec.pgn, meta, source: "library", analysis });
@@ -6237,6 +6238,10 @@ async function applyGame(payload) {
   const positions = buildPositions(payload.pgn);
   if (positions.length < 2) throw new Error("Load a game with moves to review. Standalone positions are not supported.");
   const wasBlank=S.blank, selection=++_librarySelection;
+  const inferredName = await rememberAnalyzedGame(payload, browserAPI.storage.local);
+  if(selection!==_librarySelection)return;
+  const automaticIdentity = !!historyGame(payload) || payload.meta?.identityMode === "automatic" || (!payload.meta?.myName && payload.meta?.playerKnown == null);
+  if(automaticIdentity)payload={...payload,meta:{...payload.meta,identityMode:"automatic",myName:inferredName,playerKnown:!!inferredName}};
   if(wasBlank){
     await Promise.all([loadBook(),loadCalibration().catch(error=>{console.warn(error);return null;})]);
     if(selection!==_librarySelection)return;
@@ -6283,7 +6288,7 @@ async function applyGame(payload) {
   S.analysisError = null;
   S.openingHeader = deriveOpening(S.headers);
   S.opening = S.openingHeader;
-  const { players, meSide, playerKnown } = derivePlayers(S.headers, S.meta, S.username);
+  const { players, meSide, playerKnown } = derivePlayers(S.headers, S.meta, "");
   S.players = players;
   const flip = S.meta && S.meta.flip;
   const side = flip === true ? "b" : flip === false ? "w" : meSide;

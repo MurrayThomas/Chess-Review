@@ -21,6 +21,8 @@ test('popup offers a blank workspace and still submits a game PGN',async t=>{
   vm.runInContext(source,context);await settle();
   assert.ok(document.getElementById('openWorkspace'));
   assert.equal(document.getElementById('exploreMode'),null);
+  assert.equal(document.getElementById('username'),null);
+  assert.equal(document.getElementById('saveUser'),null);
   assert.doesNotMatch(document.body.textContent,/Explore board|or FEN/i);
   assert.doesNotMatch(document.getElementById('manualInput').placeholder,/FEN/i);
   assert.match(document.getElementById('status').textContent,/URL or PGN/);
@@ -46,14 +48,15 @@ test('Cancel import immediately enables retry and ignores the canceled operation
   requests[1].job.resolve();await settle();assert.equal(closed,1);assert.equal(start.disabled,false);
 });
 
-function popup(t,{supported=false,preview=false,open=async()=>{},current=async()=>{},save=async()=>{}}={}) {
+function popup(t,{supported=false,preview=false,open=async()=>{},current=async()=>{},manual=async()=>{},save=async()=>{}}={}) {
   const html=fs.readFileSync(new URL('../popup.html',import.meta.url),'utf8');
   const source=fs.readFileSync(new URL('../popup.js',import.meta.url),'utf8').replace(/^import .*;\r?\n/gm,'');
   const dom=new JSDOM(html,{url:'https://extension.test/popup.html'+(preview?'?screen-preview=popup':'')});
   let closed=0;t.after(()=>dom.window.close());dom.window.close=()=>{closed++;};
   const context=vm.createContext({document:dom.window.document,window:dom.window,console,createImportRequest,mountFluidActions,
     browserAPI:{storage:{local:{async get(){return {};},set:save}},tabs:{async query(){return [{url:supported?'https://lichess.org/AAAAAAAA':'https://example.test'}];}}},
-    isSupportedChessUrl:()=>supported,openBlankWorkspaceTab:open,analyzeActiveTab:current});
+    isSupportedChessUrl:()=>supported,openBlankWorkspaceTab:open,analyzeActiveTab:current,
+    parseGameId:value=>value.includes('/game/')?{id:'12345678'}:null,analyzeChesscomUrl:manual});
   vm.runInContext(source,context);
   return {dom,doc:dom.window.document,closed:()=>closed};
 }
@@ -76,14 +79,21 @@ test('blank-workspace launch failures are recoverable and suppress duplicate ope
   assert.equal(button.disabled,false);assert.match(p.doc.getElementById('status').textContent,/Tab could not open/);assert.equal(p.closed(),0);
 });
 
-test('preview actions cannot open a blank workspace or change a saved username',async t=>{
+test('preview actions cannot open a workspace or import a game',async t=>{
   let writes=0,opens=0;const p=popup(t,{preview:true,open:async()=>{opens++;},save:async()=>{writes++;}});await settle();
-  p.doc.getElementById('openWorkspace').click();p.doc.getElementById('saveUser').click();await settle();
+  p.doc.getElementById('openWorkspace').click();p.doc.getElementById('analyzeManual').click();await settle();
   assert.equal(opens,0);assert.equal(writes,0);assert.match(p.doc.getElementById('status').textContent,/Preview actions are disabled/);
 });
 
-test('a username save failure is announced without losing the typed username',async t=>{
-  const p=popup(t,{save:async()=>{throw Error('Storage full');}});await settle();
-  p.doc.getElementById('username').value='keep me';p.doc.getElementById('saveUser').click();await settle();
-  assert.match(p.doc.getElementById('status').textContent,/could not be saved/);assert.equal(p.doc.getElementById('username').value,'keep me');
+test('a pasted Chess.com URL uses automatic archive lookup without a username field',async t=>{
+  const calls=[],p=popup(t,{manual:async(url,options)=>{calls.push({url,signal:options.signal});}});await settle();
+  p.doc.getElementById('manualInput').value='https://www.chess.com/game/live/12345678';
+  p.doc.getElementById('analyzeManual').click();await settle();
+  assert.equal(calls.length,1);assert.equal(calls[0].url,'https://www.chess.com/game/live/12345678');assert.equal(p.closed(),1);
+});
+
+test('missing player detection directs the user to the PGN field',async t=>{
+  const p=popup(t,{supported:true,current:async()=>{throw Object.assign(Error('Paste its PGN.'),{code:'NO_USERNAME'});}});await settle();
+  p.doc.getElementById('analyzeCurrent').click();await settle();
+  assert.equal(p.doc.getElementById('manual').open,true);assert.equal(p.doc.activeElement.id,'manualInput');
 });

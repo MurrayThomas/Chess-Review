@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 
 // The API facade is captured at import time, just as it is in an extension page.
 globalThis.chrome = {};
-const { analyzeActiveTab, reloadActiveAndAnalyze, openAnalysisTab, openBlankWorkspaceTab } = await import('../analyze-flow.js');
+const { analyzeActiveTab, reloadActiveAndAnalyze, openAnalysisTab, openBlankWorkspaceTab, analyzeChesscomUrl } = await import('../analyze-flow.js');
 import {createImportRequest} from '../lib/import-request.js';
 import {deferred,settle} from './helpers/app.mjs';
 
@@ -14,7 +14,7 @@ function setup(t, url = 'https://www.chess.com/game/live/12345678') {
   Object.assign(globalThis.chrome, {
     runtime: { getURL: path => `chrome-extension://test/${path}` },
     storage: { local: {
-      async get(key) { return { [key]: store[key] }; },
+      async get(key) { return Array.isArray(key) ? Object.fromEntries(key.map(k=>[k,store[k]])) : { [key]: store[key] }; },
       async set(data) { Object.assign(store, structuredClone(data)); },
       async remove(key) { delete store[key]; },
     } },
@@ -60,6 +60,39 @@ for (const url of ['https://www.chess.com/game/live/12345678', 'https://lichess.
 test('missing content script and username produces a recoverable username error', async t => {
   setup(t);
   await assert.rejects(analyzeActiveTab(''), err => err.code === 'NO_USERNAME' && err.tabId === 1);
+});
+
+test('active-tab imports do not permanently adopt the first detected player',async t=>{
+  const s=setup(t);t.mock.method(chrome.tabs,'sendMessage',async()=>({gameId:'12345678',usernames:['SomeoneElse','TheirOpponent']}));
+  await analyzeActiveTab();assert.equal(s.opened.length,1);assert.equal(s.store.username,undefined);
+});
+
+test('active-tab lookup can use player evidence without a content script or saved username',async t=>{
+  const s=setup(t);s.store.library=[{pgn:'[Site "Chess.com"]\n[White "KnownPlayer"]\n[Black "Friend"]\n\n1. e4 e5',meta:{gameId:'other'}}];
+  await analyzeActiveTab();assert.equal(s.opened.length,1);assert.equal(s.store.username,undefined);
+});
+
+test('pasted Chess.com URLs use history and preserve URL perspective',async t=>{
+  const s=setup(t);s.store.library=[{pgn:'[Site "Chess.com"]\n[White "KnownPlayer"]\n[Black "Friend"]\n\n1. e4 e5',meta:{gameId:'other'}}];
+  await analyzeChesscomUrl('https://www.chess.com/game/live/12345678?flip=true');
+  assert.equal(s.payload().meta.flip,true);assert.equal(s.payload().source,'url');
+});
+
+test('pasted Chess.com URLs without player evidence explain the page and PGN recovery paths',async t=>{
+  const s=setup(t);await assert.rejects(analyzeChesscomUrl('https://www.chess.com/game/live/12345678'),/Open this game on Chess.com.*paste its PGN/);
+  assert.equal(s.opened.length,0);
+});
+
+test('a cached pasted game needs no username or network lookup',async t=>{
+  const s=setup(t);s.store['gamecache:chesscom:12345678']={data:{pgn:'1. e4 e5',url:'https://www.chess.com/game/live/12345678'}};
+  t.mock.method(globalThis,'fetch',async()=>{throw Error('Network should not be used');});
+  await analyzeChesscomUrl('https://www.chess.com/game/live/12345678');assert.equal(s.opened.length,1);
+});
+
+test('a cached active-tab game needs no detected player or saved username',async t=>{
+  const s=setup(t);s.store['gamecache:chesscom:12345678']={data:{pgn:'1. e4 e5',url:'https://www.chess.com/game/live/12345678'}};
+  t.mock.method(globalThis,'fetch',async()=>{throw Error('Network should not be used');});
+  await analyzeActiveTab();assert.equal(s.opened.length,1);
 });
 
 test('retry retains the original tab before and during the reload', async t => {
