@@ -179,7 +179,9 @@ function injectLichessReviewButton(followUp) {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = "fbt chess-analyzer-review"; // fbt = Lichess's button style, so it fits in
-  btn.style.borderRadius = "0"; // match the square corners of the other follow-up buttons
+  const analysisLink = firstEl(followUp, LI.analysisLink);
+  // Read before insertion: adding a sibling can change Lichess's last-child styling.
+  btn.style.borderRadius = analysisLink ? getComputedStyle(analysisLink).borderRadius : "6px";
   const logo = document.createElement("img");
   logo.className = "chess-analyzer-review-logo";
   logo.alt = "";
@@ -214,7 +216,6 @@ function injectLichessReviewButton(followUp) {
 
   // Place it directly beneath "Analysis board" (the only <a class="fbt"> in the row); if that link
   // isn't found, fall back to appending to the row so the button still appears.
-  const analysisLink = firstEl(followUp, LI.analysisLink);
   if (analysisLink) {
     analysisLink.insertAdjacentElement("afterend", btn);
   } else {
