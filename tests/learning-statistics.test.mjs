@@ -22,6 +22,7 @@ test('statistics count clean attempts separately from mistakes, help and skips, 
   assert.deepEqual(fork,{theme:'fork',name:'Forks',attempts:5,clean:2,needsWork:3,rate:.4});
   assert.equal(stats.types.find(type=>type.theme==='pin').attempts,5,'multi-theme puzzles count once per type');
   assert.equal(stats.weakest.theme,'fork');assert.equal(stats.strongest.theme,'mateIn1');
+  assert.deepEqual(stats.types.filter(type=>type.rate!==null).map(type=>type.theme),['mateIn1','sacrifice','fork','pin']);
   assert.equal(stats.types.at(-1).rate,null);
 });
 
