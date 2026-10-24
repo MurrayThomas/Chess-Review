@@ -138,7 +138,9 @@ function badgeLabelStyle(value = S.settings.badgeTooltip) {
   return Object.hasOwn(BADGE_LABEL_STYLES, value) ? value : "off";
 }
 // Accuracy breakdown: compact (default) vs. full list (expanded via the expander arrow).
-const QBREAK_SUMMARY = ["brilliant","great","best","mistake","miss","blunder"];
+// The compact list holds every category the move list badges (NOTEWORTHY) plus Best, so its
+// totals match the badges at a glance; the expander adds Excellent, Good and book moves.
+const QBREAK_SUMMARY = ["brilliant","great","best","inacc","mistake","miss","blunder"];
 const QBREAK_FULL = ["brilliant","great","best","excellent","good","inacc","mistake","miss","blunder","book"];
 const NOTEWORTHY = new Set(["brilliant","great","inacc","mistake","miss","blunder"]);
 // Explanation for each category (shown as a tooltip in the accuracy panel). The classifier
@@ -393,9 +395,9 @@ const DEFAULT_LAYOUT = {
   controls: { x: 1194, y: 928, w: 310, h: 54  },
   coach:    { x: 1570, y: 0,   w: 192, h: 196 },
   review:   { x: 1200, y: 60,  w: 604, h: 136 },
-  moves:    { x: 1200, y: 216, w: 300, h: 390 },
+  moves:    { x: 1200, y: 216, w: 300, h: 419 },
   accuracy: { x: 1510, y: 216, w: 294, h: 506 },
-  graph:    { x: 1200, y: 620, w: 300, h: 178 },
+  graph:    { x: 1200, y: 649, w: 300, h: 178 },
   engine:   { x: 1510, y: 736, w: 294, h: 178 },
   learn:    { x: 1510, y: 928, w: 294, h: 54 },
 };

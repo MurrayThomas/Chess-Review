@@ -119,12 +119,12 @@ test('desktop matches the saved canvas geometry and preserves the gap when accur
   }));
   a.state.layoutMode = 'custom'; a.call('applyLayoutMode'); a.call('reflowAccuracy', false);
   const savedCanvas = geometry();
-  assert.deepEqual(savedCanvas.engine, ['1510px', '620px', '294px', '178px']);
-  assert.deepEqual(savedCanvas.accuracy, ['1510px', '216px', '294px', '390px']);
-  assert.deepEqual(savedCanvas.graph, ['1200px', '620px', '300px', '178px']);
+  assert.deepEqual(savedCanvas.engine, ['1510px', '649px', '294px', '178px']);
+  assert.deepEqual(savedCanvas.accuracy, ['1510px', '216px', '294px', '419px']);
+  assert.deepEqual(savedCanvas.graph, ['1200px', '649px', '300px', '178px']);
   assert.deepEqual(savedCanvas.review, ['1200px', '60px', '604px', '136px']);
-  assert.deepEqual(savedCanvas.moves, ['1200px', '216px', '300px', '390px']);
-  assert.deepEqual(savedCanvas.controls, ['1194px', '812px', '310px', '54px']);
+  assert.deepEqual(savedCanvas.moves, ['1200px', '216px', '300px', '419px']);
+  assert.deepEqual(savedCanvas.controls, ['1194px', '841px', '310px', '54px']);
   a.state.layoutMode = 'auto'; a.call('applyLayoutMode');
   a.viewport(1920, 920); await a.call('initTabZoom');
   assert.deepEqual(geometry(), savedCanvas);
