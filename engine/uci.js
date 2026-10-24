@@ -21,6 +21,34 @@ export function positionCommand(fen, history = null) {
   return `position fen ${initial}` + (moves.length ? ` moves ${moves.join(" ")}` : "");
 }
 
+// Each engine revisits a root for best/played/rating searches. Cache only an exact
+// immutable context, after its first successful legal replay. Limit retained text
+// as well as entry count so unusually long imported games cannot grow this cache.
+export class PositionCommandCache {
+  constructor(limit = 4) { this.limit = limit; this.entries = new Map(); }
+  get(fen, history) {
+    if (!history || typeof fen !== "string" || typeof history.initialFen !== "string"
+      || !Array.isArray(history.moves)) return positionCommand(fen, history);
+    const snapshot = {initialFen: history.initialFen, moves: [...history.moves]};
+    if (!snapshot.moves.every(move => typeof move === "string" && /^[a-h][1-8][a-h][1-8][qrbn]?$/.test(move))) {
+      throw Error("Invalid history move");
+    }
+    const key = JSON.stringify([fen, snapshot.initialFen, snapshot.moves]);
+    if (this.entries.has(key)) {
+      const command = this.entries.get(key);
+      this.entries.delete(key); this.entries.set(key, command);
+      return command;
+    }
+    const command = positionCommand(fen, snapshot);
+    if (key.length <= 16384 && this.limit > 0) {
+      this.entries.set(key, command);
+      if (this.entries.size > this.limit) this.entries.delete(this.entries.keys().next().value);
+    }
+    return command;
+  }
+  clear() { this.entries.clear(); }
+}
+
 // How long to wait for the engine's "readyok" handshake before declaring the build dead.
 // If a build can't be instantiated (CSP change, missing/blocked wasm, a future browser
 // change), the worker never replies — without this cap _ready would hang forever and every
@@ -58,6 +86,7 @@ export class Engine {
     this.scriptPath = scriptPath;
     this.dead = false;
     this.queue = [];
+    this.positionCommands = new PositionCommandCache();
     this.current = null;
     this.multipv = 1;
     const unsupported = engineCapabilityError();
@@ -273,7 +302,7 @@ export class Engine {
    * never changes the completed result returned by this promise.
    */
   async analyse(fen, depth = 12, multipv = 1, history = null, onProgress = null, options = {}) {
-    const command = positionCommand(fen, history);
+    const command = this.positionCommands.get(fen, history);
     const { searchMove = null, budget = null, cold = false, requireExact = false } = options;
     if (budget && (!['nodes', 'depth'].includes(budget.kind) || !Number.isSafeInteger(budget.value) || budget.value < 1)) throw Error("Invalid search budget");
     if (searchMove) {
@@ -291,6 +320,7 @@ export class Engine {
   }
 
   terminate() {
+    this.positionCommands.clear();
     try { this._send("quit"); } catch {}
     this.dead = true;
     clearTimeout(this._searchTimer);

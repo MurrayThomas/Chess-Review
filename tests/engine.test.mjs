@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { Engine, positionCommand } from '../engine/uci.js';
+import { Engine, positionCommand, PositionCommandCache } from '../engine/uci.js';
 import { Chess } from '../lib/chess.js';
 
 class WorkerStub {
@@ -9,6 +9,21 @@ class WorkerStub {
   terminate() { this.terminated=true; }
   line(data) { this.onmessage({data}); }
 }
+
+test('validated history reuse avoids legal replay while retaining snapshots and bounded entries',t=>{
+  const cache=new PositionCommandCache(2),chess=new Chess(),initialFen=chess.fen();
+  chess.move('e4');const fen=chess.fen(),history={initialFen,moves:['e2e4']};
+  const original=Chess.prototype.move;let replays=0;
+  t.mock.method(Chess.prototype,'move',function(...args){replays++;return original.apply(this,args);});
+  const expected=cache.get(fen,history);assert.equal(replays,1);
+  assert.equal(cache.get(fen,{initialFen,moves:['e2e4']}),expected);assert.equal(replays,1);
+  history.moves[0]='d2d4';assert.throws(()=>cache.get(fen,history),/does not reach/);
+  assert.throws(()=>cache.get(fen,{initialFen,moves:['e2e4\ngo infinite']}),/Invalid history move/);
+  assert.throws(()=>cache.get(fen.replace(/ 1$/,' 9'),{initialFen,moves:['e2e4']}),/does not reach/);
+  chess.move('e5');cache.get(chess.fen(),{initialFen,moves:['e2e4','e7e5']});
+  chess.move('Nf3');cache.get(chess.fen(),{initialFen,moves:['e2e4','e7e5','g1f3']});
+  assert.equal(cache.entries.size,2);cache.clear();assert.equal(cache.entries.size,0);
+});
 
 test('search progress is throttled, exact-only and isolated from final results', async t => {
   t.mock.timers.enable({ apis: ['Date', 'setTimeout'], now: 1000 });
