@@ -134,9 +134,11 @@ function badgeLabelStyle(value = S.settings.badgeTooltip) {
   return Object.hasOwn(BADGE_LABEL_STYLES, value) ? value : "off";
 }
 // Accuracy breakdown: compact (default) vs. full list (expanded via the expander arrow).
-const QBREAK_SUMMARY = ["brilliant","great","best","mistake","miss","blunder"];
+// The compact list shows exactly the categories the move list badges (NOTEWORTHY), so its totals
+// match the badges at a glance; the expander adds the rest, including Best and book moves.
+const QBREAK_SUMMARY = ["brilliant","great","inacc","mistake","miss","blunder"];
 const QBREAK_FULL = ["brilliant","great","best","excellent","good","inacc","mistake","miss","blunder","book"];
-const NOTEWORTHY = new Set(["brilliant","great","inacc","mistake","miss","blunder"]);
+const NOTEWORTHY = new Set(QBREAK_SUMMARY);
 // Explanation for each category (shown as a tooltip in the accuracy panel). The classifier
 // (computeDerived → classifyMove) works on the engine's eval in PAWNS: "loss" is how much the
 // eval drops after your move vs. the best continuation; a "sacrifice" is a real, voluntary
