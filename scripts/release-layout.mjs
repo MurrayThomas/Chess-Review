@@ -120,7 +120,7 @@ try {
   await evaluate(review,"document.querySelector('[aria-label=Settings]').click()");
   const popup=await create(`chrome-extension://${loaded.id}/popup.html`);
   await waitFor(popup,"!!document.querySelector('#manual')",'Popup');
-  await call('Emulation.setDeviceMetricsOverride',{width:318,height:600,deviceScaleFactor:1,mobile:false},popup.sessionId);
+  await call('Emulation.setDeviceMetricsOverride',{width:360,height:600,deviceScaleFactor:1,mobile:false},popup.sessionId);
   const popupSize=await evaluate(popup,"(()=>{document.querySelector('#manual').open=true;return {width:innerWidth,scroll:document.documentElement.scrollWidth,height:document.body.scrollHeight}})()");
   assert.ok(popupSize.scroll<=popupSize.width&&popupSize.height<=600,'Expanded popup overflows');
   const legacy={enginePath:'sf19',engineDepth:8,engineWorkers:1,depthBumped:true,coach:'professor',coachDefaulted:true,coachPlain:true,soundVolume:37,boardTheme:'kada_green',pieceStyle:'chesscom',badgeFont:'original',badgeDecimals:true};

@@ -12,7 +12,10 @@ try { ({recordPath}=JSON.parse(await fs.readFile(path.join(artifacts,'latest-rel
 catch(error) { if(error.code!=='ENOENT')throw error; }
 const releases=JSON.parse(await fs.readFile(recordPath || path.join(artifacts,'release-sizes.json')));
 const packages=recordPath ? releases.packages : releases;
-const requested=process.argv.slice(2);
+// Current learning/popup flows have dedicated learning-browser.mjs audits. This
+// option keeps engine/review smoke coverage usable without the legacy Home flow.
+const reviewOnly=process.argv.includes('--review-only');
+const requested=process.argv.slice(2).filter(arg=>arg!=='--review-only');
 if(requested.some(browser=>!['chrome','firefox'].includes(browser)))throw Error('Optional arguments: chrome firefox');
 const reportDir=recordPath ? path.dirname(recordPath) : artifacts;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -121,6 +124,7 @@ try {
       }
       frame.style.width='1680px';frame.style.height='1000px';await wait(250);
       await report({step:'responsive-layouts',sizes});
+      if (${!reviewOnly}) {
       const reviewBefore=JSON.stringify(frame.contentWindow.__smokeLearningReview());
       const clickLearning=text=>{
         const button=[...doc.querySelectorAll('.learning-workspace button')].find(b=>b.textContent===text);
@@ -151,6 +155,7 @@ try {
       const learning=(await browserAPI.storage.local.get('learning:v1'))['learning:v1'];
       if(!learning?.lessons.fork.exercises[0]?.passed||!Object.values(learning.puzzles).some(p=>p.assisted>0))throw Error('Learning progress not persisted');
       await report({step:'learning',proofWorker:true,openingBlackReply:true,puzzleSpoilersHidden:true,assistancePersisted:true,reviewPreserved:true});
+      }
     }
     const handoff=(await browserAPI.storage.local.get('job:'+id))['job:'+id];
     if(handoff)throw Error('Completed startup left its one-shot handoff behind');
@@ -223,7 +228,7 @@ try {
   if(!(await browserAPI.storage.local.get('library')).library.find(game=>game.id===library[0].id)?.fav)throw Error('Favorite flag lost after startup recovery');
   resetFrame.remove();
   await report({step:'one-time-release-reset',preservedUsername:true,preservedGamesAndFavorites:true,preservedAnalyses:true,defaultsRendered:true,customizationsRetained:true,backgroundAndPageCoordination:true,startupRecovery:true});
-  await report({done:true,ok:true,results});
+  await report({done:true,ok:true,results,learning:${!reviewOnly}});
 } catch(e){await report({done:true,ok:false,error:e.message,stack:e.stack});}
 `);
     if(release.browser==='chrome'){
