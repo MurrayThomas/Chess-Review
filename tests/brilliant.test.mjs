@@ -5,6 +5,14 @@ import { Chess } from '../lib/chess.js';
 import { app, loadGame, branch } from './helpers/app.mjs';
 
 const offerFen = '7k/8/4p3/8/8/8/8/K2Q4 w - - 0 1';
+// Reconstructed from the user's screenshot: ...Bg2 offers a bishop, but Kxg2 Rxd4
+// wins the queen on another square. The second fixture reverses the colors/ranks.
+const countercaptureCases = [
+  { fen: 'r2r2k1/pp4pp/4p3/qP1bNp2/P2Q4/7P/5P2/R3R1K1 b - - 0 1',
+    played: 'd5g2', moves: '1... Bg2', accepted: 'Kxg2', refund: 'Rxd4', alternative: '1... Be4' },
+  { fen: 'r3r1k1/5p2/7p/p2q4/Qp1BnP2/4P3/PP4PP/R2R2K1 w - - 0 1',
+    played: 'd4g7', moves: '1. Bg7', accepted: 'Kxg7', refund: 'Rxd5', alternative: '1. Be5' },
+];
 const pgn = (fen, moves) => `[SetUp "1"]\n[FEN "${fen}"]\n\n${moves}`;
 function moveAt(fen, uci) {
   return new Chess(fen).move({ from: uci.slice(0, 2), to: uci.slice(2, 4), promotion: uci[4] });
@@ -116,6 +124,106 @@ test('sacrifice evidence credits captures and follows legal recapture chains', t
   assert.equal(a.call('isSacrifice', xray), true);
   // The bishop can decline a losing recapture, so the opponent's gain is 5, not 7.
   assert.equal(a.call('exchangeGain', new Chess(xray.after), 'd5', { nodes: 0, maxNodes: 1200 }), 5);
+});
+
+test('the screenshot bishop offer is repaid by a queen countercapture, for either color', t => {
+  const a = app(t);
+  for (const { fen, played, accepted, refund } of countercaptureCases) {
+    const move = moveAt(fen, played), after = new Chess(move.after);
+    // The old, same-square evidence sees a three-pawn loss. The whole-board reply
+    // sees nine pawns regained, even though the queen is on a different square.
+    assert.equal(a.call('exchangeGain', after, played.slice(2, 4), { nodes: 0, maxNodes: 128 }), 3);
+    const take = after.move(accepted);
+    assert.equal(take.captured, 'b');
+    const budget = { nodes: 0, maxNodes: 512 };
+    assert.equal(a.call('shortCaptureGain', after, 3, budget), 9);
+    assert.ok(budget.nodes <= 512);
+    assert.equal(after.move(refund).captured, 'q');
+    assert.equal(a.call('isSacrifice', move), false);
+  }
+});
+
+test('refunded offers stay Best/Excellent in reviews and hypothetical branches', t => {
+  const a = app(t);
+  for (const { fen, played, moves, alternative } of countercaptureCases) {
+    // Equal synthetic engine scores deliberately pass the quality gate, isolating
+    // the material rule from whether Stockfish actually recommends this move.
+    const S = loadGame(a, pgn(fen, moves));
+    for (const [bestmove, expected] of [[played, 'best'], ['a1a1', 'excellent']]) {
+      S.bests[0].bestmove = bestmove;
+      a.call('computeDerived'); assert.equal(S.classif[1], expected);
+      const v = branch(a); a.call('classifyVariationMoves');
+      assert.equal(v.positions[1].classif, expected);
+    }
+    const candidate = { ...S.positions[1], eval: { cp: 0 }, best: null };
+    loadGame(a, pgn(fen, alternative));
+    const v = branch(a); v.positions[1] = candidate;
+    a.call('classifyVariationMoves');
+    assert.equal(v.positions[1].classif, 'excellent');
+  }
+});
+
+test('short forcing captures include quiet check evasions, not imaginary passes', t => {
+  const a = app(t);
+  const forcing = '2q3k1/4p3/8/3N4/8/7p/8/K4BN1 w - - 0 1';
+  const quiet = '2q4k/4p3/8/3N4/8/7p/8/K4BN1 w - - 0 1';
+  const c = new Chess(forcing), move = c.move('Bg2');
+  c.move('hxg2');
+  assert.equal(a.call('shortCaptureGain', c, 3, { nodes: 0, maxNodes: 512 }), 10);
+  c.move('Nxe7+');
+  assert.ok(c.moves({ verbose: true }).every(m => m.piece === 'k' && !m.captured));
+  c.move('Kh8'); assert.equal(c.move('Nxc8').captured, 'q');
+  assert.equal(a.call('isSacrifice', move), false);
+  // Without check, Black can move the queen. Do not assume the second capture
+  // succeeds merely because it would happen after an unforced bad response.
+  assert.equal(a.call('isSacrifice', moveAt(quiet, 'f1g2')), true);
+});
+
+test('refunds credit the played capture, but partial and unsafe refunds retain an investment', t => {
+  const a = app(t);
+  // Bxd5 exd5 Rxa7: one pawn already won plus a minor regained repays the bishop.
+  const repaid = '7k/n7/4p3/3p4/2B5/8/8/R6K w - - 0 1';
+  assert.equal(a.call('isSacrifice', moveAt(repaid, 'c4d5')), false);
+  const examples = [
+    // Bd5 exd5 Rxa7 wins just one pawn for the bishop.
+    ['7k/p7/4p3/8/2B5/8/8/R6K w - - 0 1', 1],
+    // The apparent Qxa7 refund loses that queen to Rxa7.
+    ['r7/q6k/4p3/8/2B5/8/8/Q6K w - - 0 1', 0],
+    // Rxa7 is answered by Rxf1+ on ANOTHER square, winning White's queen.
+    ['5rk1/r7/4p3/8/2B5/8/8/R4Q1K w - - 0 1', 1],
+  ];
+  for (const [fen, recovery] of examples) {
+    const c = new Chess(fen), move = c.move('Bd5'); c.move('exd5');
+    assert.equal(a.call('shortCaptureGain', c, 3, { nodes: 0, maxNodes: 512 }), recovery);
+    assert.equal(a.call('isSacrifice', move), true);
+  }
+});
+
+test('a genuine mating sacrifice keeps its material investment', t => {
+  const a = app(t), fen = '7k/6pp/4p3/8/8/8/8/R2Q3K w - - 0 1';
+  const c = new Chess(fen), move = c.move('Qd5'); c.move('exd5'); c.move('Ra8#');
+  assert.equal(c.isCheckmate(), true);
+  assert.equal(a.call('isSacrifice', move), true);
+  const S = loadGame(a, pgn(fen, '1. Qd5'), [{ cp: 0 }, { mate: 2 }]);
+  a.call('computeDerived'); assert.equal(S.classif[1], 'brilliant');
+});
+
+test('refund searches preserve boards and only memoize completed, horizon-specific results', t => {
+  const a = app(t), { fen, played, accepted } = countercaptureCases[0];
+  const c = new Chess(moveAt(fen, played).after); c.move(accepted);
+  const original = c.fen(), budget = { nodes: 0, maxNodes: 0 };
+  assert.equal(a.call('shortCaptureGain', c, 3, budget), null);
+  assert.equal(budget.captureMemo.size, 0);
+  budget.nodes = 0; budget.maxNodes = 512;
+  assert.equal(a.call('shortCaptureGain', c, 3, budget), 9);
+  const count = budget.nodes;
+  assert.equal(a.call('shortCaptureGain', c, 3, budget), 9);
+  assert.equal(budget.nodes, count);
+  assert.equal(a.call('shortCaptureGain', c, 0, budget), 9);
+  assert.ok(budget.nodes > count);
+  assert.equal(c.fen(), original);
+  const move = moveAt(offerFen, 'd1d5');
+  assert.equal(a.call('hasLastingOffer', new Chess(move.after), 'd5', 0, { nodes: 0, maxNodes: 0 }), false);
 });
 
 test('pinned attackers, pawn offers and unavoidable piece losses do not count', t => {

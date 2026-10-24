@@ -1,7 +1,8 @@
 # Brilliant move rules
 
-Brilliant is an explanation of a strong voluntary piece sacrifice. It is a move
-annotation, separate from the evaluation-based accuracy and rating models.
+Brilliant is an explanation of a strong voluntary piece sacrifice with a material
+investment that is not repaid by a short capture sequence. It is a move annotation,
+separate from the evaluation-based accuracy and rating models.
 
 ## Published meaning
 
@@ -31,6 +32,16 @@ A material heuristic cannot establish human difficulty or aesthetic merit.
    gain are credited before requiring a strictly positive material cost. Thus an
    equal trade does not qualify, but a rook for a minor and pawn can qualify with
    one pawn net loss. This is an explicit design choice, not a fitted size threshold.
+   **Short material refunds do not count as sacrifices.** For each legal acceptance,
+   a separate bounded material search considers captures and promotions on every
+   square for three plies after acceptance, finishing local exchanges at its
+   horizon. It includes quiet legal check evasions inside that horizon and lets
+   either side decline optional captures. At least one acceptance must leave a
+   strictly positive net investment after this recovery check and the played
+   move's material credit. For example, offering a bishop that can be taken by the
+   king does not qualify when the immediate reply safely captures a queen elsewhere.
+   Capturing a defended queen is not credited at face value: recaptures and
+   countercaptures elsewhere can make that apparent refund unprofitable.
 2. **An offer attributable to the move.** Moving the offered piece, creating a
    legal offer or increasing its net exchange cost supplies this evidence. For an
    unmoved piece, compare legal exchanges before and after: releasing a pin or
@@ -88,15 +99,24 @@ evaluation-dependent eligibility is recomputed as analysis results arrive.
 
 ## Limits and cost
 
-The exchange calculation is restricted to captures on one square, with a shared
-128-position cap per candidate move. Completed local exchange results are reused
-within that budget; incomplete or exhausted results are never cached. Position
+Local offer attribution and avoidability use same-square exchanges with a shared
+128-position cap per candidate move. The subsequent cross-square recovery check
+has a separate shared 512-position cap, including its horizon exchange work.
+Completed results are reused within each budget; incomplete or exhausted results
+are never cached. Recovery memo keys also include the remaining horizon. Position
 keys retain board, turn, castling and en-passant state; move counters do not affect
-this local material calculation. Exhaustion withholds the label. It does not
-solve intermediate checks elsewhere, delayed sacrifices or compensation by a
-later combination. Newly promoted pieces and ambiguous rook relocation are not
-automatically treated as offers of existing material. Promotions may still offer
-a different existing piece after crediting the promotion gain.
+this local material calculation. Exhaustion withholds the label.
+
+The recovery check deliberately filters short material-winning combinations,
+including some attractive ones. It does not measure human difficulty, search
+quiet preparatory moves or non-capturing checks, or establish that compensation
+cannot be recovered beyond its horizon. An optional quiet move stops a material
+line; the check does not assume that the opponent cooperates with a later fork.
+Mate and stalemate have no material bonus in this search, so a sacrifice whose
+compensation is mating or drawing remains eligible under the engine gates.
+Newly promoted pieces and ambiguous rook relocation are not automatically treated
+as offers of existing material. Promotions may still offer a different existing
+piece after crediting the promotion gain.
 
 Quiet sacrifices that renew a persistent offer without increasing its local cost
 or creating check can be missed. Without preceding history, ignoring a fresh
@@ -129,7 +149,23 @@ require a new prespecified experiment. They are not part of the current model.
 
 ## Verification
 
-Dedicated legal-board fixtures cover sound offers without a prior error, losing
+The reported bishop offer can be reproduced from this position. The continuation
+shows hypothetical acceptance, not the opponent's best defense or a recorded game:
+
+```pgn
+[SetUp "1"]
+[FEN "r2r2k1/pp4pp/4p3/qP1bNp2/P2Q4/7P/5P2/R3R1K1 b - - 0 1"]
+
+1... Bg2 2. Kxg2 Rxd4 *
+```
+
+The bishop offer must not receive Brilliant even with synthetic equal engine
+scores that pass all quality gates. An isolated Chrome extension check also
+verifies that it renders an ordinary category and grade instead of Brilliant/10.0.
+
+Dedicated legal-board fixtures cover the reported bishop-for-queen countercapture
+for both colors and in hypothetical branches, short forcing refunds with quiet
+check evasions, unsafe and partial refunds, sound offers without a prior error, losing
 offers, exchanges, equal trades, x-rays, pins, unavoidable losses, forced moves,
 declined and repeated offers, actual stalemate after acceptance, persistent hanging
 material, new threats, defender/pin release, promotions, mate maintenance/delays, missing alternatives,

@@ -145,7 +145,7 @@ const NOTEWORTHY = new Set(["brilliant","great","inacc","mistake","miss","blunde
 // eval drops after your move vs. the best continuation; a "sacrifice" is a real, voluntary
 // give-up of material (not a recapture/trade), detected on the board.
 const QUALITY_DESC = {
-  brilliant: "A strong, sound piece sacrifice: you voluntarily offer material while keeping a satisfactory position. Ordinary trades and unnecessary sacrifices in clearly winning positions do not count.",
+  brilliant: "A strong, sound piece sacrifice with a lasting material investment. Ordinary trades, offers repaid by a short capture sequence, and unnecessary sacrifices in clearly winning positions do not count.",
   great:     "An only-good move that capitalises on the opponent's mistake or blunder.",
   best:      "Exactly the engine's top move — the best possible move in the position (also shown for forced, only-legal moves).",
   excellent: "An alternative nearly as strong as the engine's top move: loses less than 2 percentage points in estimated winning chances, or begins or preserves a forced mate.",
@@ -1064,6 +1064,41 @@ function couldBeSaved(chess, square, color, budget = { nodes: 0, maxNodes: 128 }
   }
   return false;
 }
+function captureMaterial(move) {
+  return (SAC_VAL[move.captured] || 0) + (move.promotion ? SAC_VAL[move.promotion] - SAC_VAL.p : 0);
+}
+// A short material-only search across ALL squares detects apparent sacrifices repaid by an
+// immediate countercapture (or a short forcing capture sequence). Quiet check evasions are real
+// moves, not permission to pass while checked. At the horizon, finish each local exchange rather
+// than crediting a hanging queen/rook at face value. Mate/stalemate has no material reward here:
+// the independent engine evidence still decides whether a lasting investment is sound.
+function shortCaptureGain(chess, plies, budget) {
+  const memo = budget.captureMemo || (budget.captureMemo = new Map());
+  const key = chess.fen().split(" ").slice(0, 4).join(" ") + ":" + plies;
+  if (memo.has(key)) return memo.get(key);
+  if (++budget.nodes > budget.maxNodes) return null;
+  const legal = chess.moves({ verbose: true });
+  if (!legal.length) { memo.set(key, 0); return 0; }
+  const mustEvade = plies > 0 && chess.isCheck();
+  const candidates = legal.filter(m => m.captured || m.promotion || mustEvade);
+  let best = legal.length > candidates.length ? 0 : -Infinity;
+  for (const m of candidates) {
+    const after = new Chess(m.after);
+    const reply = plies > 0 ? shortCaptureGain(after, plies - 1, budget) : exchangeGain(after, m.to, budget);
+    if (reply == null) return null;
+    best = Math.max(best, captureMaterial(m) - reply);
+  }
+  memo.set(key, best);
+  return best;
+}
+function hasLastingOffer(chess, square, credit, budget) {
+  for (const m of chess.moves({ verbose: true }).filter(m => m.to === square && m.captured)) {
+    const recovery = shortCaptureGain(new Chess(m.after), 3, budget);
+    if (recovery == null) return false;
+    if (captureMaterial(m) - credit - recovery > 0) return true;
+  }
+  return false;
+}
 // A voluntary offer of a non-pawn piece with a strictly positive local material cost. Material
 // captured by the played move is credited first, so equal/profitable trades do not count. A rook
 // for a minor and pawn can still count (one pawn net); there is no fitted sacrifice-size threshold.
@@ -1073,7 +1108,8 @@ function isSacrifice(move) {
   try { after = new Chess(move.after); before = new Chess(move.before); } catch { return false; }
   if (before.turn() !== move.color || after.turn() !== _opp(move.color)) return false;
   const budget = { nodes: 0, maxNodes: 128 };
-  const captured = (SAC_VAL[move.captured] || 0) + (move.promotion ? SAC_VAL[move.promotion] - SAC_VAL.p : 0);
+  const recoveryBudget = { nodes: 0, maxNodes: 512 };
+  const captured = captureMaterial(move);
   let priorThreats = null;
   const targets = after.board().flat().filter(p => p && p.color === move.color
     && ["n", "b", "r", "q"].includes(p.type) && after.attackers(p.square, _opp(move.color)).length);
@@ -1110,7 +1146,8 @@ function isSacrifice(move) {
         if (previousGain <= earlierGain) continue;
       }
     }
-    if (couldBeSaved(before, source, move.color, budget)) return true;
+    if (couldBeSaved(before, source, move.color, budget)
+      && hasLastingOffer(after, square, captured, recoveryBudget)) return true;
   }
   return false;
 }
