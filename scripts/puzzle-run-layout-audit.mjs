@@ -22,19 +22,23 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
     for(const [width,height] of [[1920,1080],[1280,800],[390,844],[320,640]]) {
       await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(300);
       await grid();
-      assert.equal(await run("(()=>{const p=document.querySelector('.puzzle-run-panel'),cue=p.querySelector('.puzzle-practice-status').getBoundingClientRect(),list=p.querySelector('.puzzle-run-history').getBoundingClientRect(),meta=p.querySelector('.puzzle-run-meta').getBoundingClientRect();return cue.bottom<=list.top+1&&list.bottom<=meta.top+1;})()"),true);
+      assert.equal(await run("(()=>{const p=document.querySelector('.puzzle-run-panel'),cue=p.querySelector('.puzzle-practice-status').getBoundingClientRect(),list=p.querySelector('.puzzle-run-history').getBoundingClientRect();return cue.bottom<=list.top+1&&!p.querySelector('.puzzle-run-meta');})()"),true);
     }
     await run("import('./analysis.js').then(m=>m.learningWorkspace.finishChallenge('Out of lives'))");
     for(const [width,height] of [[1920,1080],[390,844],[320,640]]) {
       await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(300);await grid();
       const header=await run("(()=>{const h=document.querySelector('.puzzle-run-results h2'),b=document.querySelector('[data-focus=puzzle-overview]'),a=h.getBoundingClientRect(),c=b.getBoundingClientRect();return {title:h.textContent,center:a.top+a.height/2-c.top-c.height/2,eyebrow:!!document.querySelector('.puzzle-run-results .learn-eyebrow')};})()");
       assert.equal(header.title,'Run complete');assert.equal(header.eyebrow,false);assert.ok(Math.abs(header.center)<2,'Result heading must align with the overview button');
+      assert.equal(await run("(()=>{const b=document.querySelector('[data-focus=run-again]');return b.getBoundingClientRect().width<180;})()"),true);
       const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,`${mode}-results-${width}.png`),Buffer.from(shot.data,'base64'));
     }
+    const resultText=await run("document.querySelector('.puzzle-run-results').textContent");
     await run("import('./analysis.js').then(m=>m.learningWorkspace.replayRunPuzzle(m.learningWorkspace.result.results[0].id))");
     await waitFor(review,"import('./analysis.js').then(m=>!m.learningWorkspace.busy)",'Replay ready');
     assert.equal(await run("document.querySelector('.puzzle-run-results h2').textContent"),'Run complete');await grid();
     assert.equal(await run("document.querySelectorAll('.puzzle-run-history [aria-current=true]').length"),1);
+    assert.equal(await run("document.querySelector('.puzzle-run-results').textContent"),resultText);
+    assert.equal(await run("!!document.querySelector('.puzzle-practice-actions, .puzzle-practice-status, .puzzle-run-meta, [data-focus=replay-back], .puzzle-analyse')"),false);
     const shot=await call('Page.captureScreenshot',{format:'png'},review.sessionId);await fs.writeFile(path.join(out,`${mode}-replay-320.png`),Buffer.from(shot.data,'base64'));
     await run("import('./analysis.js').then(m=>m.learningWorkspace.returnToRunResults())");
   }

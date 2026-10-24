@@ -59,6 +59,7 @@ test('Time attack starts at three minutes, advances on success or failure, and e
   assert.equal(w.root.querySelector('.puzzle-practice-actions, .puzzle-run-lives, [data-focus=end-run]'),null);
   assert.ok(!w.root.textContent.includes('Find the full continuation'));
   assert.equal(w.root.querySelector('[data-focus=puzzle-hint]'),null);
+  assert.equal(w.root.querySelector('.puzzle-run-meta'),null);
   await solve(w);assert.equal(w.run.solved,1);assert.equal(data['learning:v1'].bests.timeAttack,1);
   const first=w.run.results[0].id;await wrong(w);
   assert.equal(w.run.lives,2);assert.equal(w.run.solved,1);assert.notEqual(w.activity.id,first);
@@ -81,7 +82,7 @@ test('Knockout has no timer and ends immediately on its first wrong move with it
   await w.navigate('puzzles');assert.equal(w.root.querySelector('[data-focus=knockout]').closest('.puzzle-mode').querySelector('.puzzle-mode-record strong').textContent,'2');
 });
 
-for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay solved and missed puzzles without changing saved progress`,async t=>{
+for(const mode of ['timeAttack','knockout'])test(`${mode} result badges only select a read-only board and preserve the results controls`,async t=>{
   const {w,dom,data}=await setup(t,{puzzles:[{...line,rating:400},...fixtures.map(p=>({...p,rating:3000}))]});
   await w.startRatedPuzzles();await w.navigate('puzzles');
   await w.startPuzzleRun(mode);await solve(w);await wrong(w);
@@ -91,6 +92,8 @@ for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay s
   assert.ok(w.root.querySelector('.puzzle-run-results.puzzle-session .puzzle-practice-heading'));
   assert.doesNotMatch(w.root.textContent,/Each check is a solved puzzle|Back to puzzles/);
   assert.equal(w.root.querySelector('[data-focus=puzzle-overview]').textContent,'Back to puzzle overview');
+  const controls=()=>[...w.root.querySelectorAll('.puzzle-run-results button:not(.learn-square)')].map(n=>n.textContent);
+  const originalControls=controls();
   const badges=w.root.querySelectorAll('.puzzle-run-history button');
   assert.equal(badges.length,2);assert.match(badges[0].getAttribute('aria-label'),/Replay puzzle 1: solved/);
   badges[0].focus();badges[0].click();
@@ -100,18 +103,26 @@ for(const mode of ['timeAttack','knockout'])test(`${mode} result badges replay s
   assert.equal(w.root.querySelector('.learn-results h2').textContent,heading);
   assert.equal(w.root.querySelectorAll('.puzzle-run-history button').length,2);
   assert.equal(w.root.querySelectorAll('.puzzle-run-history [aria-current=true]').length,1);
-  assert.doesNotMatch(w.root.textContent,/Puzzle replay/);
+  assert.doesNotMatch(w.root.textContent,/Puzzle replay|Close puzzle|Hint|Skip|White to move|Black to move/);
+  assert.deepEqual(controls(),originalControls);
+  assert.equal(w.root.querySelector('.puzzle-practice-actions, .puzzle-practice-status, .puzzle-run-meta'),null);
   await w.replayRunPuzzle(result.results[1].id);assert.equal(w.activity.id,result.results[1].id);
   await w.replayRunPuzzle(result.results[0].id);assert.equal(w.activity.id,result.results[0].id);
   assert.equal(w.root.querySelector('.puzzle-rating-region, .puzzle-rating-toggle, #learn-clock'),null);
-  await wrong(w);await w.hintPuzzle();
-  while(!w.attemptRecorded)await w.submitPuzzle(current(w).solution[w.activity.step]);
+  const fen=w.currentFen();
+  for(const square of current(w).solution[0].match(/.{2}/g).slice(0,2))w.root.querySelector(`[data-square=${square}]`).click();
+  await wrong(w);await w.submitMove(current(w).solution[0]);await w.hintPuzzle();await w.revealPuzzle();await w.skipPuzzle();
+  w.startPuzzleAnalysis();
+  assert.equal(w.currentFen(),fen);assert.equal(w.activity.step,0);assert.equal(w.activity.assisted,false);
+  assert.equal(w.puzzleAnalysis,null);assert.deepEqual(controls(),originalControls);
   assert.deepEqual(data['learning:v1'],saved);assert.deepEqual(w.store.value,saved);
-  assert.equal(w.root.querySelector('.puzzle-practice-actions button').textContent,'Replay puzzle');
-  await w.preparePuzzle(current(w));assert.equal(w.activity.step,0);assert.equal(w.attemptRecorded,false);
-  w.root.querySelector('[data-focus=replay-back]').click();assert.equal(w.result,result);assert.equal(w.activity,null);
-  await w.replayRunPuzzle(result.results[1].id);await w.skipPuzzle();assert.equal(w.result,result);
+  w.returnToRunResults();assert.equal(w.result,result);assert.equal(w.activity,null);
+  await w.replayRunPuzzle(result.results[1].id);
   assert.deepEqual(data['learning:v1'],saved);
+  w.root.querySelector('[data-focus=run-again]').click();
+  for(let i=0;i<30;i++)await Promise.resolve();
+  assert.equal(w.run.mode,mode);assert.equal(w.runReplay,null);assert.equal(w.activity.replay,false);
+  await w.finishChallenge('Ended early');
   w.root.querySelector('[data-focus=puzzle-overview]').click();
   for(let i=0;i<30;i++)await Promise.resolve();
   assert.equal(w.page,'puzzles');assert.equal(w.result,null);assert.equal(w.runReplay,null);assert.equal(w.closed,false);
@@ -319,9 +330,9 @@ test('Elo slider changes are quiet until run entry and normal filtered puzzles s
   assert.equal(w.root.querySelector('.puzzle-run-notice-card'),null);
 });
 
-for(const mode of ['timeAttack','knockout'])test(`${mode} places the turn cue above history and the current puzzle number`,async t=>{
+for(const mode of ['timeAttack','knockout'])test(`${mode} places the turn cue above history without a current puzzle label`,async t=>{
   const {w}=await setup(t);await w.startPuzzleRun(mode);
   const panel=w.root.querySelector('.puzzle-run-panel'),cue=panel.querySelector('.puzzle-turn-cue'),history=panel.querySelector('.puzzle-run-history'),number=panel.querySelector('.puzzle-run-meta');
   assert.match(cue.textContent,/White to move|Black to move/);
-  assert.ok(cue.compareDocumentPosition(history)&4);assert.ok(history.compareDocumentPosition(number)&4);
+  assert.ok(cue.compareDocumentPosition(history)&4);assert.equal(number,null);
 });

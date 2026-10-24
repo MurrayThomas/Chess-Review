@@ -382,6 +382,7 @@
 .puzzle-run-replay:hover { background: color-mix(in srgb,currentColor 12%,transparent); }
 .puzzle-run-replay:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .puzzle-run-results .puzzle-run-stats { margin: 24px 0; }
+.learning-workspace .puzzle-run-results > [data-focus="run-again"] { justify-self: start; width: auto; padding-inline: 24px; }
 @media (max-width: 420px) {
   .puzzle-mode-grid { gap: 6px; }
   .puzzle-mode-name { font-size: 12px; }
