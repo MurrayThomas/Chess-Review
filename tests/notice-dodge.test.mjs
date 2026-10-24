@@ -111,14 +111,25 @@ test('a quick pointer click cannot beat a queued dodge, while recovery and keybo
 });
 
 test('escape coordinates account for the review’s CSS zoom',t=>{
-  const dom=new JSDOM('<div><button>Fair enough</button><button>Unacceptable</button></div>');t.after(()=>dom.window.close());
-  const view=dom.window,arena=view.document.querySelector('div'),[safeButton,button]=arena.children;let frame;
-  view.requestAnimationFrame=fn=>{frame=fn;return 1;};view.cancelAnimationFrame=()=>{};
-  Object.defineProperties(arena,{offsetWidth:{value:600},offsetHeight:{value:340}});
+  // Destinations are random, so seed Math.random and compare with escapePosition's on-screen choice.
+  const seeded=seed=>()=>(seed=(seed*1103515245+12345)%2147483648)/2147483648;
+  let random;t.mock.method(Math,'random',()=>random());
   const rect=(left,top,width,height)=>({left,top,right:left+width,bottom:top+height,width,height});
-  arena.getBoundingClientRect=()=>rect(0,0,300,170);safeButton.getBoundingClientRect=()=>rect(0,128,94,42);button.getBoundingClientRect=()=>rect(0,0,110,42);
-  const dispose=evasiveNoticeButton({arena,button,safeButton,view});
-  button.dispatchEvent(new view.MouseEvent('pointerenter',{clientX:20,clientY:20}));frame();
-  const x=parseFloat(button.style.left)*.5,y=parseFloat(button.style.top)*.5;
-  assert.ok(x>=134);assert.ok(x+110<=300&&y+42<=170);dispose();
+  const safe={left:0,top:128,right:94,bottom:170},pointer={x:20,y:20};
+  for(let seed=1;seed<=40;seed++) {
+    const dom=new JSDOM('<div><button>Fair enough</button><button>Unacceptable</button></div>');
+    const view=dom.window,arena=view.document.querySelector('div'),[safeButton,button]=arena.children;let frame;
+    view.requestAnimationFrame=fn=>{frame=fn;return 1;};view.cancelAnimationFrame=()=>{};
+    Object.defineProperties(arena,{offsetWidth:{value:600},offsetHeight:{value:340}});
+    arena.getBoundingClientRect=()=>rect(0,0,300,170);safeButton.getBoundingClientRect=()=>rect(0,128,94,42);button.getBoundingClientRect=()=>rect(0,0,110,42);
+    const dispose=evasiveNoticeButton({arena,button,safeButton,view});
+    random=seeded(seed);button.dispatchEvent(new view.MouseEvent('pointerenter',{clientX:pointer.x,clientY:pointer.y}));frame();
+    const target=escapePosition({width:300,height:170,buttonWidth:110,buttonHeight:42,current:{x:0,y:0},pointer,safe,random:seeded(seed)});
+    // left/top are unscaled CSS pixels: twice the on-screen offset at 50% zoom.
+    assert.equal(button.style.left,target.x/.5+'px');assert.equal(button.style.top,target.y/.5+'px');
+    assert.ok(target.x>=0&&target.y>=0&&target.x+110<=300&&target.y+42<=170,'Stays inside the arena');
+    assert.ok(Math.hypot(Math.max(target.x-pointer.x,0,pointer.x-target.x-110),Math.max(target.y-pointer.y,0,pointer.y-target.y-42))>=64,'Leaves the pointer');
+    assert.ok(target.x>=safe.right+40||target.y+42<=safe.top-40,'Keeps clear of the dismiss button');
+    dispose();dom.window.close();
+  }
 });

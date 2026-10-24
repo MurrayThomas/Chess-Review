@@ -86,11 +86,12 @@ test('puzzle arrows never focus adjacent squares; analysis arrows replay the acc
   assert.equal(JSON.stringify(w.store.value),progress);
 });
 
-test('analysis preserves the recorded solution after rejecting an alternative mate and resuming a solve',async t=>{
+test('analysis preserves the recorded solution after rejecting a wrong move and resuming a solve',async t=>{
   const p={id:'history-mate',fen:'7k/5Q2/6K1/8/8/8/8/8 w - - 0 1',solution:['f7g7'],rating:1200,themes:[],source:{url:'https://lichess.org/training'}};
   const {w}=await setup(t,{puzzle:p});
-  const alternative=new Chess(p.fen).moves({verbose:true}).find(m=>m.lan!==p.solution[0]&&new Chess(m.after).isCheckmate());
-  await w.submitPuzzle(alternative.lan);assert.equal(w.activity.step,0);assert.deepEqual(w.puzzleMoves,[]);
+  // Any checkmate is accepted, so the rejected attempt must be a move that does not mate.
+  const wrong=new Chess(p.fen).moves({verbose:true}).find(m=>m.lan!==p.solution[0]&&!new Chess(m.after).isCheckmate());
+  await w.submitPuzzle(wrong.lan);assert.equal(w.activity.step,0);assert.deepEqual(w.puzzleMoves,[]);
   await w.submitPuzzle(p.solution[0]);await explore(w);assert.deepEqual(w.puzzleAnalysis.line,p.solution);
   const second={...p,id:'history-resume',fen:new Chess().fen(),solution:['e2e4','e7e5','g1f3']};w.puzzles.push(second);
   await w.preparePuzzle(second,{step:2});assert.equal(w.activity.step,0);assert.deepEqual(w.puzzleMoves,[]);
