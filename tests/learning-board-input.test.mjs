@@ -124,6 +124,8 @@ test('learning promotion requires an explicit choice and Escape cancels without 
   const moves=[];w.submitMove=move=>moves.push(move);
   down('a7');up('a7');down('a8');up('a8');
   assert.equal(doc.querySelectorAll('.learn-promotion .promotion-options button').length,4);
+  assert.equal(doc.querySelector('.learn-promotion').parentNode,board);
+  assert.equal(doc.querySelector('.learn-promotion h3'),null);
   assert.deepEqual([...doc.querySelectorAll('.promotion-options img')].map(n=>n.dataset.piece),['wQ','wR','wB','wN']);
   assert.ok([...doc.querySelectorAll('.promotion-options button')].every(n=>n.textContent===''));
   assert.deepEqual(moves,[]);

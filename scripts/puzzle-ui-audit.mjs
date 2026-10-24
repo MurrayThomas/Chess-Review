@@ -97,5 +97,27 @@ export async function auditLearning({review,call,evaluate,waitFor,sleep,out}) {
       return Math.abs(next.width-analyse.width)<1&&Math.abs(next.height-analyse.height)<1;})()`),true,'Analyse matches Next puzzle dimensions');
     await collapse('completed',width);
   }
-  console.log('Puzzle cursor, navigation, static turn cue, arrow focus, rating collapse and matched buttons passed at desktop and mobile widths. Screenshots: '+out);
+  for(const [width,height] of [[1920,1080],[390,844],[320,640]]){
+    await call('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false},review.sessionId);await sleep(500);
+    for(const color of ['w','b'])for(const flipped of [false,true]){
+      const square=color==='w'?'a8':'a1',from=color==='w'?'a7':'a2';
+      await run(`import('./analysis.js').then(async m=>{const w=m.learningWorkspace;
+        const puzzle={id:'promotion-${color}-${flipped}',fen:'${color==='w'?'7k/P7/8/8/8/8/8/7K w':'7k/8/8/8/8/8/p7/7K b'} - - 0 1',solution:['${from}${square}n'],rating:1200,themes:[]};
+        w.puzzles=[puzzle];await w.startPuzzleSelection(w.puzzles);w.flipped=${flipped};w.render();
+        window.uiBoardBefore=getComputedStyle(document.querySelector('.board')).filter;
+        document.querySelector('[data-square=${from}]').click();document.querySelector('[data-square=${square}]').click();
+      })`);
+      const placement=await run(`(()=>{const overlay=document.querySelector('.learn-promotion'),options=[...overlay.querySelectorAll('.promotion-options button')],square=document.querySelector('[data-square=${square}]').getBoundingClientRect(),queen=options[0].getBoundingClientRect();
+        return {aligned:Math.abs(square.x-queen.x)<1&&Math.abs(square.y-queen.y)<1&&Math.abs(square.width-queen.width)<1&&Math.abs(square.height-queen.height)<1,
+          inside:options.every(n=>{const r=n.getBoundingClientRect(),b=document.querySelector('.board').getBoundingClientRect();return r.x>=b.x-1&&r.right<=b.right+1&&r.y>=b.y-1&&r.bottom<=b.bottom+1;}),
+          heading:!!overlay.querySelector('h3'),background:getComputedStyle(overlay).backgroundColor,filter:getComputedStyle(document.querySelector('.board')).filter===uiBoardBefore};})()`);
+      assert.deepEqual(placement,{aligned:true,inside:true,heading:false,background:'rgba(0, 0, 0, 0)',filter:true},'Promotion anchors to '+square+' at '+width+'px, flipped='+flipped);
+      if(width===1920)await screenshot(`promotion-${color}-${flipped}`);
+      const target=await run("(()=>{const r=document.querySelector('[aria-label=\"Promote to knight\"]').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()");
+      await call('Input.dispatchMouseEvent',{type:'mousePressed',...target,button:'left',clickCount:1},review.sessionId);
+      await call('Input.dispatchMouseEvent',{type:'mouseReleased',...target,button:'left',clickCount:1},review.sessionId);
+      await waitFor(review,"import('./analysis.js').then(m=>m.learningWorkspace.activity.step===1&&!m.learningWorkspace.busy&&!document.querySelector('.learn-promotion'))",'Underpromotion');
+    }
+  }
+  console.log('Playback position, rating alignment, promotion anchoring in both orientations and existing puzzle UI checks passed at desktop and mobile widths. Screenshots: '+out);
 }
