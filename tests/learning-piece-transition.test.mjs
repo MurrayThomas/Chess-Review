@@ -78,12 +78,16 @@ for(const page of ['puzzles','concepts','openings'])test(`leaving a puzzle for $
   assert.equal(board.querySelectorAll('.sq img').length,32);
 });
 
-for(const mode of ['timeAttack','knockout'])for(const showResults of [false,true])test(`${mode} assembles pieces when ${showResults?'showing results':'returning to puzzles'}`,async t=>{
+for(const mode of ['timeAttack','knockout'])for(const showResults of [false,true])test(`${mode} ${showResults?'retains the final board in results':'assembles pieces when returning to puzzles'}`,async t=>{
   const {w,board,pending}=await returningWorkspace(t,mode);
+  const lastBoard={...w.displayedBoard};
   await w.finishChallenge('Ended early',showResults);
   if(!showResults)await w.navigate('puzzles');
   assert.equal(w.run,null);assert.equal(w.activity,null);
-  assert.ok(board.classList.contains('puzzle-arranging'));assert.ok(pending.length>0);
+  if(showResults){
+    assert.equal(board.classList.contains('puzzle-arranging'),false);assert.equal(pending.length,0);
+    assert.equal(w.result.board.fen,lastBoard.fen);assert.deepEqual(w.displayedBoard,lastBoard);
+  }else{assert.ok(board.classList.contains('puzzle-arranging'));assert.ok(pending.length>0);}
   await w.close();
   assert.equal(board.querySelector('.puzzle-piece-transition'),null);
   assert.equal(board.classList.contains('puzzle-arranging'),false);
