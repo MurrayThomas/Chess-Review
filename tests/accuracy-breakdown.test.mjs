@@ -10,7 +10,7 @@ test('expanded Accuracy puts Book last and keeps all categories', t => {
   assert.equal(labels.at(-1), 'book'); assert.equal(labels[2], 'best');
 });
 
-test('compact Accuracy shows every category the move list badges, so inaccuracies are counted at a glance', t => {
+test('compact Accuracy shows Best and every category the move list badges, so inaccuracies are counted at a glance', t => {
   const a = app(t), S = loadGame(a, '1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5'); a.call('computeDerived');
   S.classif = [null, 'best', 'best', 'inacc', 'best', 'inacc', 'blunder'];
   for (const side of ['w', 'b']) S.counts[side] = Object.fromEntries(a.run('QUALITY_ORDER').map(k => [k, 0]));
@@ -20,7 +20,8 @@ test('compact Accuracy shows every category the move list badges, so inaccuracie
   const badged = new Set([...doc.querySelectorAll('.ml-move [data-badge-category]')].map(n => n.dataset.badgeCategory));
   const rows = [...doc.querySelectorAll('.qbreak [data-category]')].map(n => n.dataset.category);
   assert.deepEqual([...badged].sort(), ['blunder', 'inacc']);
-  assert.deepEqual(rows, ['brilliant', 'great', 'inacc', 'mistake', 'miss', 'blunder']);
+  assert.deepEqual(rows, ['brilliant', 'great', 'best', 'inacc', 'mistake', 'miss', 'blunder']);
+  for (const k of a.run('NOTEWORTHY')) assert.ok(rows.includes(k), `${k} is badged in the move list but has no compact row`);
   const inacc = doc.querySelector('.qbreak [data-category="inacc"]').closest('.qbreak-row');
   assert.equal(inacc.querySelector(S.meSide === 'w' ? '.ct.left' : '.ct:not(.left)').textContent, '2');
 });
