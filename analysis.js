@@ -1224,7 +1224,7 @@ function getStandardRating(wp) {
   return r;
 }
 // Per-ply move category, ported from getMoveRating(). `mover` made move i; `isTop` = it was the
-// engine's #1; `book` = the resulting position is theory; arrays sac/std/loss are indexed by ply.
+// engine's #1; `book` = the resulting position is theory; std/loss are indexed by ply.
 function classifyMove(i, mover, isTop, book, std, loss, wpDrop, state = S) {
   if (book) return "book";
   // "Forced": only one legal move in the position before — we have no separate icon, so it reads
@@ -2972,6 +2972,8 @@ function invalidateVariationEvals() {
 function resetLiveEngine() {
   S._lastEngineLines = null;
   S._panelCache = null;
+  panelLineCache.clear();
+  S._panelRequest = null;
   S.liveToken++; S.panelToken++; S.liveEngineGeneration++;
   S.liveEngine?.terminate();
   S.liveEngine = null; S.liveEnginePromise = null; S.liveError = null;
@@ -4219,8 +4221,9 @@ function renderEngineCurrent() {
     let lines = b ? b.lines : null;
     // The batch only stored the single best line. If the user wants more, show the richer set we
     // searched on demand for THIS position (requestPanelLines), then ensure that search is running.
-    const panelReady = !!(S._panelCache && S._panelCache.idx === S.idx && S._panelCache.lines);
-    if (panelReady && (!lines || S._panelCache.lines.length > lines.length)) lines = S._panelCache.lines;
+    const panel = cachedPanelLines();
+    const panelReady = !!panel;
+    if (panelReady && (!lines || panel.lines.length > lines.length)) lines = panel.lines;
     // While the richer search for THIS position is still pending, keep the previous render's extra
     // lines on screen so the panel doesn't shrink to one line then grow back on every move.
     const padFromCache = S.settings.engineLines > 1 && !panelReady && !!lines && lines.length < S.settings.engineLines;
@@ -4231,28 +4234,56 @@ function renderEngineCurrent() {
 // Live, on-demand search of the position you're viewing on the mainline, to fill the extra engine-
 // panel candidate lines beyond the single line the batch stored. Cheap: it only runs for the
 // position currently shown, is cancelled when you navigate away, and no-ops when 1 line is enough.
+const panelLineCache = new Map();
+function panelContextKey(i = S.idx, want = S.settings.engineLines) {
+  return JSON.stringify([S.positions[i]?.fen, searchHistory(S.positions, i),
+    S.settings.enginePath, S.engineFallbackBuild || S.activeEngineBuild || S.settings.enginePath,
+    S.settings.engineDepth, S.settings.engineHash, S.settings.engineSkill, want]);
+}
+function cachedPanelLines() {
+  const key = panelContextKey(), entry = panelLineCache.get(key);
+  if (entry) { panelLineCache.delete(key); panelLineCache.set(key, entry); }
+  return entry;
+}
 async function requestPanelLines() {
   if (S.analyzing || S.analysisMode) return;          // not during the batch, not in variation mode
   const want = S.settings.engineLines;
+  const key = panelContextKey();
+  if (S._panelRequest && S._panelRequest.key !== key) {
+    S.panelToken++; S._panelRequest = null;
+    S.liveEngine?.cancelPending(); S.liveEngine?.stop();
+  }
   if (!want || want <= 1) return;                     // user only wants the single line
   const i = S.idx;
   const stored = S.bests[i];
   if (!stored || !stored.lines) return;               // position not analysed yet
   if (stored.lines.length >= want) return;            // batch already has enough (old saved games)
-  if (S._panelCache && S._panelCache.idx === i && S._panelCache.lines.length >= want) return; // cached
+  if (cachedPanelLines()) return; // includes completed forced positions with fewer legal moves
+  if (S._panelRequest?.key === key) return S._panelRequest.promise;
   const fen = S.positions[i].fen;
   if (terminalScore(fen)) return;
   const token = ++S.panelToken;
-  let res;
-  try {
+  const entry = {key, promise: null};
+  S._panelRequest = entry;
+  entry.promise = (async () => { try {
+    // Publish ownership before engine startup can re-render the panel.
+    await Promise.resolve();
     const eng = await ensureLiveEngine();
-    if (token !== S.panelToken || S.analysisMode || activePos().fen !== fen) return;
+    if (token !== S.panelToken || S.analysisMode || panelContextKey() !== key) return;
     eng.cancelPending(); eng.stop();
-    res = await eng.analyse(fen, S.settings.engineDepth, want, searchHistory(S.positions, i));
-  } catch { return; }
-  if (token !== S.panelToken || S.idx !== i || S.analysisMode || activePos().fen !== fen) return;
-  S._panelCache = { idx: i, fen, lines: res.lines };
-  renderEngineCurrent();
+    const res = await eng.analyse(fen, S.settings.engineDepth, want, searchHistory(S.positions, i));
+    if (token !== S.panelToken || S.idx !== i || S.analysisMode || panelContextKey() !== key) return;
+    S._panelCache = { idx: i, fen, lines: res.lines };
+    if (key.length <= 16384) {
+      panelLineCache.set(key, S._panelCache);
+      if (panelLineCache.size > 16) panelLineCache.delete(panelLineCache.keys().next().value);
+    }
+    // Clear before rendering so a failed/uncacheable result cannot leave stale ownership.
+    if (S._panelRequest === entry) S._panelRequest = null;
+    renderEngine(res.lines);
+  } catch { /* A later explicit request can retry a failed panel search. */ }
+  finally { if (S._panelRequest === entry) S._panelRequest = null; } })();
+  return entry.promise;
 }
 const ENGINE_NAME = { nnue: "Stockfish 18 NNUE", sf19lite: "Stockfish 19 Lite" };
 // Keep all candidate lines and the action visible. Only the bottom edge moves, including
@@ -6063,6 +6094,7 @@ async function startAnalysis() {
   if(S.blank)return;
   if (S.practice) exitPractice();
   S._lastEngineLines = null;
+  panelLineCache.clear(); S._panelRequest = null; S.panelToken++;
   S.analyzedSettings = Object.fromEntries(["enginePath","engineDepth","engineHash","engineSkill","classifyLines"].map(key => [key,S.settings[key]]));
   const gen = ++S.batchGen;
   S.engineFallbackBuild = null;
