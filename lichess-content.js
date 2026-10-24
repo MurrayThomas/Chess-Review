@@ -225,9 +225,10 @@ function injectLichessReviewButton(followUp) {
 }
 
 (function watchForFollowUp() {
-  let warnTimer = null;
+  let warnTimer = null, followUpRoot = null, scheduled = false;
   const tryInject = () => {
     const followUp = firstEl(document, LI.followUp);
+    followUpRoot = followUp;
     if (followUp) { injectLichessReviewButton(followUp); return; }
     // No follow-up row found. If clear post-game controls are on screen, the markup likely changed —
     // recheck shortly (the row can lag the rest of the post-game UI), then warn once.
@@ -238,8 +239,24 @@ function injectLichessReviewButton(followUp) {
       }, 4000);
     }
   };
-  const observer = new MutationObserver(tryInject);
+  const relevantSelector = [...LI.followUp, ...LI.postGame].join(",");
+  const schedule = () => {
+    if (scheduled) return;
+    scheduled = true;
+    const run = () => { scheduled = false; tryInject(); };
+    if (document.hidden || typeof requestAnimationFrame !== "function") setTimeout(run, 32);
+    else requestAnimationFrame(run);
+  };
+  const observer = new MutationObserver(records => {
+    if (followUpRoot && !followUpRoot.isConnected) { schedule(); return; }
+    for (const record of records) {
+      if (record.target.closest?.(".chess-analyzer-review")) continue;
+      if (followUpRoot?.contains(record.target) || [...record.addedNodes].some(node => node.nodeType === 1
+        && (node.matches(relevantSelector) || node.querySelector(relevantSelector)))) { schedule(); return; }
+    }
+  });
   observer.observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) tryInject(); });
   tryInject();
 })();
 
