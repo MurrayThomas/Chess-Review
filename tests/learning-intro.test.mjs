@@ -34,10 +34,20 @@ test('fresh puzzles show and animate the recorded opponent move before enabling 
   showMove();await settle();assert.equal(w.currentFen(),puzzle.fen);assert.equal(w.busy,true);assert.deepEqual(sounds,['d5']);
   finishMove();await opening;
   assert.equal(w.root.querySelector('.puzzle-turn-cue'),cue,'The cue stays mounted through introduction renders');
-  assert.equal(cues.length,1,'The cue scoops in once, without restarting during the introduction');
-  assert.equal(cues[0].options.duration,300);
+  assert.equal(cues.length,0,'The turn cue stays static during the introduction');
   assert.equal(w.busy,false);assert.equal(w.lastMove,'d7d5');assert.equal(data['learning:v1'].resume.step,0);
   assert.equal(w.store.value.puzzleRating.played,0);
+});
+
+test('the solver turn label stays mounted and unchanged through a correct move and reply',async t=>{
+  const {w}=await setup(t,{settings:{moveAnim:false}});await w.startPuzzleSelection([puzzle]);
+  const cue=w.root.querySelector('.puzzle-turn-cue');let reply;
+  t.mock.method(w,'waitForPuzzleReply',()=>new Promise(resolve=>{reply=resolve;}));
+  const playing=w.submitPuzzle(puzzle.solution[0]);await settle();
+  assert.equal(w.busy,true);assert.equal(w.root.querySelector('.puzzle-turn-cue'),cue);
+  assert.equal(cue.textContent,'White to move');
+  reply(true);await playing;
+  assert.equal(w.root.querySelector('.puzzle-turn-cue'),cue);assert.equal(cue.textContent,'White to move');
 });
 
 for(const step of [0,2])test(`resuming a puzzle from step ${step} replays the introduction and restarts the full line`,async t=>{

@@ -78,6 +78,10 @@
 .learn-button.primary { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
 .learn-button:disabled { opacity: .45; cursor: default; }
 .learning-workspace :focus-visible, .learn-entry-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.learning-workspace:focus { outline: none; }
+/* Move checks keep navigation locked without flashing its disabled appearance. */
+.learning-workspace:has(.puzzle-session) .learn-nav button:disabled,
+.puzzle-session-navigation .learn-button:disabled { opacity: 1; }
 .learn-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); margin: 10px 0 30px; }
 .learn-stats strong { display: block; font-size: 28px; color: var(--ink); font-variant-numeric: tabular-nums; }
 .learn-stats span { font-size: 13px; color: var(--ink-2); }
@@ -335,7 +339,7 @@
 .learning-workspace .puzzle-rating-toggle[aria-checked="true"] { color: color-mix(in oklab,#7fb45f 80%,var(--ink)); }
 .learning-workspace .puzzle-rating-toggle:hover:not(:disabled) { background: transparent; color: var(--ink); }
 .learning-workspace .puzzle-rating-toggle:active:not(:disabled) { transform: scale(.96); }
-.learning-workspace .puzzle-rating-toggle:disabled { opacity: 1; cursor: wait; }
+.learning-workspace .puzzle-rating-toggle:disabled { opacity: 1; cursor: default; }
 .puzzle-rating-label { font-size: 12px; font-weight: 650; line-height: 1; letter-spacing: .2px; }
 .puzzle-rating-track { position: relative; display: block; width: 44px; height: 23px; border-radius: 20px; background: color-mix(in oklab,var(--ink-3) 22%,var(--panel)); box-shadow: inset 0 1px 3px #0003,inset 0 0 0 1px color-mix(in oklab,var(--ink-3) 20%,transparent); transition: background .32s,box-shadow .32s; }
 [aria-checked="true"] .puzzle-rating-track { background: color-mix(in oklab,#7fb45f 44%,var(--panel)); box-shadow: inset 0 1px 3px #0002,inset 0 0 0 1px #7fb45f50; }
@@ -403,19 +407,24 @@
 .puzzle-session > .puzzle-session-navigation { grid-column: 2; grid-row: 1; }
 .puzzle-practice-heading { display: contents; }
 .puzzle-practice-heading h2 { grid-column: 1; grid-row: 1; }
-.puzzle-practice-heading .puzzle-rating-toggle { grid-column: 2; grid-row: 2; justify-self: end; margin-top: 4px; }
+.puzzle-practice-heading .puzzle-rating-toggle { grid-column: 2; grid-row: 2; align-self: start; justify-self: end; margin-top: 8px; z-index: 1; }
 .learning-workspace .puzzle-practice-heading h2 { min-width: 0; margin: 0; font-size: clamp(23px,2.2vw,30px); }
 .puzzle-session .learn-study { margin: 0; }
 .puzzle-session > .puzzle-practice-heading + * { margin-top: 24px; }
-/* Share the rating row with its switch instead of reserving two rows above the actions. */
-.learning-workspace .puzzle-session > .puzzle-rating-region { grid-column: 1; grid-row: 2; margin: 8px 0 12px; }
-.puzzle-session .puzzle-rating-region .puzzle-elo-panel { margin: 0; }
+/* Let the body shrink independently of the switch so all lower items move together. */
+.puzzle-session-body { display: grid; grid-template-columns: minmax(0,1fr); }
+.learning-workspace .puzzle-session > .puzzle-session-body { margin-top: 8px; }
+.puzzle-session:has(.puzzle-rating-toggle) > .puzzle-session-body { grid-row: 2; }
+.puzzle-session-body .puzzle-rating-content { padding-right: 64px; }
+.puzzle-session .puzzle-rating-region .puzzle-elo-panel { padding: 8px 0 16px; margin: 0; }
 .puzzle-practice-actions { display: flex; align-items: center; gap: 12px; padding: 4px 0 20px; border-bottom: 1px solid var(--line); }
 .puzzle-practice-actions .learn-button { min-width: 96px; min-height: 46px; font-weight: 600; }
 .puzzle-hint, .puzzle-skip { background: transparent; border-color: color-mix(in srgb, var(--line) 72%, var(--ink-2)); color: var(--ink-2); }
-.puzzle-hint:disabled, .puzzle-skip:disabled { opacity: 1; cursor: wait; }
+.puzzle-hint:disabled, .puzzle-skip:disabled { opacity: 1; cursor: default; }
+.puzzle-session:has(.puzzle-rating-region[data-enabled="false"]) .puzzle-practice-actions { padding-right: 60px; }
+.puzzle-practice-actions .primary, .puzzle-session .puzzle-analyse { width: 140px; max-width: 100%; min-height: 46px; box-sizing: border-box; font-weight: 600; }
+.puzzle-session .puzzle-analyse { justify-self: start; }
 .puzzle-practice-status { padding: 20px 0; font-size: 16px; font-weight: 600; }
-.puzzle-turn-cue { transform-origin: left center; }
 .puzzle-practice-status.completed { color: var(--accent); }
 .puzzle-practice-status.incorrect { color: #f35a66; }
 .puzzle-quiet-status { position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0; clip-path: inset(50%); white-space: nowrap; }

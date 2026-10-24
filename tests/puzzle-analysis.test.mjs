@@ -73,11 +73,13 @@ test('puzzle arrows never focus adjacent squares; analysis arrows replay the acc
   const fen=w.currentFen();for(const value of ['ArrowRight','ArrowLeft','ArrowUp','ArrowDown'])key(value);
   assert.equal(w.currentFen(),fen);assert.equal(w.selected,null);assert.equal(w.marked.size,0);assert.equal(w.boardMarks?.size||0,0);
   assert.equal(doc.activeElement.closest('.learn-square'),null);
+  assert.equal(doc.activeElement,w.root,'History arrows must not highlight Back to review');
   await w.submitPuzzle('d2d4');await w.submitPuzzle('e2e4');await w.submitPuzzle('g1f3');
   const completed=w.currentFen(),progress=JSON.stringify(w.store.value);await explore(w);
   assert.deepEqual(w.puzzleAnalysis.line,p.solution);assert.equal(w.currentFen(),p.fen);
   key('ArrowLeft');assert.equal(w.puzzleAnalysis.index,0);
   key('ArrowRight');await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,1);
+  assert.equal(doc.activeElement,w.root,'History renders must keep focus off navigation buttons');
   key('End');await w.analysisRequest;assert.equal(w.currentFen(),completed);
   key('Home');await w.analysisRequest;assert.equal(w.currentFen(),p.fen);
   w.flipBoard();key('ArrowRight');await w.analysisRequest;assert.equal(w.puzzleAnalysis.index,1);
