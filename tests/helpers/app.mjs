@@ -13,6 +13,7 @@ import {ConceptSession, conceptKey} from '../../lib/concepts/session.js';
 import {coachInsights,coachReply} from '../../lib/coach-insights.js';
 import {LearningWorkspace} from '../../lib/learning/workspace.js';
 import {puzzleResultBadge} from '../../lib/puzzle-badge.js';
+import {matedKingSquare,mateMark} from '../../lib/mate-mark.js';
 import {moveAnimationDuration, MOVE_ANIMATION_EASING} from '../../lib/move-animation.js';
 
 // Execute the real application in a DOM, stubbing only browser/engine boundaries.
@@ -42,7 +43,7 @@ export function app(t, {hardware} = {}) {
     location: dom.window.location, Node: dom.window.Node, HTMLElement: dom.window.HTMLElement,
     getComputedStyle: dom.window.getComputedStyle, performance, structuredClone,
     URL, TextEncoder, btoa, console, Chess, flagCodeForCountryId, countryNameForId, browserAPI,
-    BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg, puzzleResultBadge,
+    BADGE_FONTS, MOVE_GRADE_CONFIG, moveGrade, gradeText, gradeLabel, gradeSvg, puzzleResultBadge, matedKingSquare, mateMark,
     moveAnimationDuration, MOVE_ANIMATION_EASING,
     CATEGORY_LABEL_FONT, categoryLabelPng,
     expectedPoints, SF19_OUTCOME, calibratedReview, scoringEvidenceComplete, analyseCalibratedPosition,
