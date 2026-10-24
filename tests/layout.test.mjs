@@ -124,14 +124,14 @@ test('desktop matches the saved canvas geometry and preserves the gap when accur
   assert.deepEqual(savedCanvas.graph, ['1200px', '649px', '300px', '178px']);
   assert.deepEqual(savedCanvas.review, ['1200px', '60px', '604px', '136px']);
   assert.deepEqual(savedCanvas.moves, ['1200px', '216px', '300px', '419px']);
-  assert.deepEqual(savedCanvas.controls, ['1194px', '928px', '310px', '54px']);
+  assert.deepEqual(savedCanvas.controls, ['1194px', '841px', '310px', '54px']);
   a.state.layoutMode = 'auto'; a.call('applyLayoutMode');
   a.viewport(1920, 920); await a.call('initTabZoom');
   assert.deepEqual(geometry(), savedCanvas);
   for (let i = 0; i < 3; i++) {
     a.state.qbreakExpanded = true; a.call('renderStats');
     assert.equal(mod('accuracy').height, '506px'); assert.equal(mod('engine').top, '736px');
-    assert.equal(mod('controls').top, '928px');
+    assert.equal(mod('controls').top, '841px');
     a.state.qbreakExpanded = false; a.call('renderStats');
     assert.deepEqual(geometry(), savedCanvas);
   }

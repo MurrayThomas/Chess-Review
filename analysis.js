@@ -393,7 +393,7 @@ const LAYOUT_VERSION = 8;
 const DEFAULT_LAYOUT = {
   board:    { x: 344,  y: 0,   w: 822, h: 934 },
   evalbar:  { x: 288,  y: 58,  w: 30,  h: 816 },
-  controls: { x: 1194, y: 928, w: 310, h: 54  },
+  controls: { x: 1194, y: 841, w: 310, h: 54  },
   coach:    { x: 1570, y: 0,   w: 192, h: 196 },
   review:   { x: 1200, y: 60,  w: 604, h: 136 },
   moves:    { x: 1200, y: 216, w: 300, h: 419 },
